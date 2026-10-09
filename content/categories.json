@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "categories": [
+    {
+      "id": "ashara-mubashshara",
+      "name": {
+        "ar": "العشرة المبشرون بالجنة"
+      },
+      "order": 1,
+      "review": {
+        "status": "draft",
+        "editorialFlags": [
+          "needsLocators"
+        ],
+        "authoredBy": "sample-content"
+      },
+      "description": {
+        "ar": "عشرة من الصحابة سمّاهم النبي ﷺ في حديث واحد وبشّرهم بالجنة."
+      },
+      "basis": {
+        "type": "paragraph",
+        "text": {
+          "ar": "عشرة من الصحابة سمّاهم النبي ﷺ في حديث واحد وبشّرهم بالجنة."
+        },
+        "reliability": "established",
+        "citations": [
+          {
+            "sourceId": "tirmidhi",
+            "locatorStatus": "pending"
+          },
+          {
+            "sourceId": "abu-dawud",
+            "locatorStatus": "pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "khulafa-rashidun",
+      "name": {
+        "ar": "الخلفاء الراشدون"
+      },
+      "order": 2,
+      "review": {
+        "status": "draft",
+        "editorialFlags": [
+          "needsLocators"
+        ],
+        "authoredBy": "sample-content"
+      },
+      "description": {
+        "ar": "الخلفاء الأربعة بعد النبي ﷺ: أبو بكر وعمر وعثمان وعلي."
+      },
+      "basis": {
+        "type": "paragraph",
+        "text": {
+          "ar": "تولّى الخلافة بعد النبي ﷺ أبو بكر، ثم عمر، ثم عثمان، ثم علي."
+        },
+        "reliability": "established",
+        "citations": [
+          {
+            "sourceId": "tarikh-al-tabari",
+            "locatorStatus": "pending"
+          },
+          {
+            "sourceId": "al-bidaya",
+            "locatorStatus": "pending"
+          }
+        ]
+      }
+    },
+    {
+      "id": "muhajirun",
+      "name": {
+        "ar": "المهاجرون"
+      },
+      "order": 3,
+      "review": {
+        "status": "draft",
+        "editorialFlags": [],
+        "authoredBy": "sample-content"
+      },
+      "description": {
+        "ar": "الصحابة الذين هاجروا من مكة إلى المدينة."
+      }
+    }
+  ]
+}

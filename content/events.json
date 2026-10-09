@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "events": [
+    {
+      "id": "hijrah",
+      "name": {
+        "ar": "الهجرة النبوية"
+      },
+      "type": "hijrah",
+      "date": {
+        "precision": "year",
+        "era": "afterHijra",
+        "hijriYear": 1,
+        "gregorianYear": 622
+      },
+      "summary": {
+        "ar": "هجرة النبي ﷺ من مكة إلى المدينة، ومنها يبدأ التأريخ الهجري."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 9,
+            "ayahFrom": 40
+          }
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "tarikh-al-tabari",
+          "locatorStatus": "pending"
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "editorialFlags": [
+          "needsLocators"
+        ],
+        "authoredBy": "sample-content"
+      },
+      "place": {
+        "ar": "من مكة إلى المدينة"
+      },
+      "participants": [
+        {
+          "displayName": {
+            "ar": "أبو بكر الصديق"
+          },
+          "companionId": "abu-bakr"
+        }
+      ]
+    },
+    {
+      "id": "badr",
+      "name": {
+        "ar": "غزوة بدر"
+      },
+      "type": "battle",
+      "date": {
+        "precision": "month",
+        "era": "afterHijra",
+        "hijriYear": 2,
+        "hijriMonth": 9,
+        "gregorianYear": 624
+      },
+      "summary": {
+        "ar": "أول معركة كبرى بين المسلمين وقريش، وانتصر فيها المسلمون."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 3,
+            "ayahFrom": 123
+          }
+        },
+        {
+          "sourceId": "tarikh-al-tabari",
+          "locatorStatus": "pending"
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "editorialFlags": [
+          "needsLocators"
+        ],
+        "authoredBy": "sample-content"
+      },
+      "place": {
+        "ar": "بدر"
+      },
+      "participants": [
+        {
+          "displayName": {
+            "ar": "أبو بكر الصديق"
+          },
+          "companionId": "abu-bakr"
+        },
+        {
+          "displayName": {
+            "ar": "عمر بن الخطاب"
+          },
+          "companionId": "umar"
+        }
+      ]
+    }
+  ]
+}

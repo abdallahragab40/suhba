@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Palette.ink and Palette.paper (lib/core/design_system/tokens/palette.dart). -->
+    <color name="brand_ink">#FF0C0C0D</color>
+    <color name="brand_paper">#FFEDEBE6</color>
+    <!-- Launch background: paper in light mode, ink in dark (values-night). -->
+    <color name="launch_background">@color/brand_paper</color>
+</resources>

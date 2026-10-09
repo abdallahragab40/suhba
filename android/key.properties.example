@@ -1,0 +1,7 @@
+# Copy to android/key.properties (git-ignored) and fill in. Paths are
+# relative to android/. Keep the keystore and passwords out of the repo:
+# losing the upload key means asking the store to reset it.
+storeFile=../keys/upload-keystore.jks
+storePassword=
+keyAlias=upload
+keyPassword=

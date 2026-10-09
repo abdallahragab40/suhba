@@ -1,0 +1,4 @@
+tags:
+  # Golden tests depend on platform font rasterization; goldens are generated
+  # on macOS and verified by the macOS CI job only.
+  golden:

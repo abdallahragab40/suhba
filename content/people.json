@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "people": [
+    {
+      "id": "aisha",
+      "name": {
+        "ar": "عائشة بنت أبي بكر"
+      },
+      "honorific": "sahabi",
+      "gender": "female",
+      "review": {
+        "status": "draft",
+        "authoredBy": "sample-content"
+      }
+    },
+    {
+      "id": "hafsa",
+      "name": {
+        "ar": "حفصة بنت عمر"
+      },
+      "honorific": "sahabi",
+      "gender": "female",
+      "review": {
+        "status": "draft",
+        "authoredBy": "sample-content"
+      }
+    }
+  ]
+}

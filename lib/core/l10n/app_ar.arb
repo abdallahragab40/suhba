@@ -1,0 +1,1242 @@
+{
+  "@@locale": "ar",
+  "appTitle": "سِيَر الصحابة",
+  "@appTitle": {
+    "description": "Working app name, shown in the app bar and the task switcher."
+  },
+  "designGalleryTitle": "معرض نظام التصميم",
+  "@designGalleryTitle": {
+    "description": "Title of the developer-facing design system gallery."
+  },
+  "themeModeSystem": "حسب النظام",
+  "@themeModeSystem": {
+    "description": "Theme option that follows the device setting."
+  },
+  "themeModeLight": "المظهر الفاتح",
+  "@themeModeLight": {
+    "description": "Light theme option."
+  },
+  "themeModeDark": "المظهر الداكن",
+  "@themeModeDark": {
+    "description": "Dark theme option."
+  },
+  "changeThemeTooltip": "تغيير المظهر",
+  "@changeThemeTooltip": {
+    "description": "Tooltip and accessibility label of the button that cycles the theme mode."
+  },
+  "tabHome": "الرئيسية",
+  "@tabHome": {
+    "description": "Bottom navigation: home tab."
+  },
+  "tabCompanions": "الصحابة",
+  "@tabCompanions": {
+    "description": "Bottom navigation: companions directory tab."
+  },
+  "tabSaved": "المحفوظات",
+  "@tabSaved": {
+    "description": "Bottom navigation: bookmarks and continue-reading tab."
+  },
+  "tabSettings": "الإعدادات",
+  "@tabSettings": {
+    "description": "Bottom navigation: settings tab."
+  },
+  "underConstructionTitle": "قيد الإنشاء",
+  "@underConstructionTitle": {
+    "description": "Placeholder title for screens not built yet."
+  },
+  "underConstructionMessage": "ستُضاف هذه الشاشة في مرحلة لاحقة من التطوير.",
+  "@underConstructionMessage": {
+    "description": "Placeholder message for screens not built yet."
+  },
+  "notFoundTitle": "الصفحة غير موجودة",
+  "@notFoundTitle": {
+    "description": "Title shown for an unknown route or deep link."
+  },
+  "notFoundMessage": "قد يكون الرابط قديمًا أو غير صحيح.",
+  "@notFoundMessage": {
+    "description": "Explanation shown for an unknown route."
+  },
+  "goHome": "العودة إلى الرئيسية",
+  "@goHome": {
+    "description": "Button that returns to the home tab."
+  },
+  "errorTitle": "تعذّر عرض هذا المحتوى",
+  "@errorTitle": {
+    "description": "Title of the generic error view."
+  },
+  "errorMessage": "حدث خطأ غير متوقع. حاول مرة أخرى.",
+  "@errorMessage": {
+    "description": "Message of the generic error view."
+  },
+  "retry": "إعادة المحاولة",
+  "@retry": {
+    "description": "Retry button."
+  },
+  "loading": "جارٍ التحميل",
+  "@loading": {
+    "description": "Accessibility label for loading placeholders."
+  },
+  "reliabilityEstablished": "ثابت",
+  "@reliabilityEstablished": {
+    "description": "Reliability level: established in the sources."
+  },
+  "reliabilityReported": "رواية تاريخية",
+  "@reliabilityReported": {
+    "description": "Reliability level: a historical report."
+  },
+  "reliabilityDisputed": "مختلف فيه",
+  "@reliabilityDisputed": {
+    "description": "Reliability level: disputed."
+  },
+  "reliabilityUnknown": "غير معروف",
+  "@reliabilityUnknown": {
+    "description": "Reliability level: not reliably documented."
+  },
+  "reliabilitySemantics": "درجة الثبوت: {level}",
+  "@reliabilitySemantics": {
+    "description": "Screen-reader label of a reliability badge.",
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "reliabilityProvisional": "تصنيف مبدئي بانتظار المراجعة",
+  "@reliabilityProvisional": {
+    "description": "Shown on reliability badges of unreviewed (draft) content."
+  },
+  "dateHijriYear": "{year} هـ",
+  "@dateHijriYear": {
+    "description": "A year after the Hijrah.",
+    "placeholders": {
+      "year": {
+        "type": "String"
+      }
+    }
+  },
+  "dateBeforeHijraYear": "{year} قبل الهجرة",
+  "@dateBeforeHijraYear": {
+    "description": "A year before the Hijrah.",
+    "placeholders": {
+      "year": {
+        "type": "String"
+      }
+    }
+  },
+  "dateGregorianYear": "{year} م",
+  "@dateGregorianYear": {
+    "description": "A Gregorian year.",
+    "placeholders": {
+      "year": {
+        "type": "String"
+      }
+    }
+  },
+  "dateHijriRange": "{start} – {end} هـ",
+  "@dateHijriRange": {
+    "description": "A span of years after the Hijrah.",
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "dateBeforeHijraRange": "{start} – {end} قبل الهجرة",
+  "@dateBeforeHijraRange": {
+    "description": "A span of years before the Hijrah.",
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "dateGregorianRange": "{start} – {end} م",
+  "@dateGregorianRange": {
+    "description": "A span of Gregorian years.",
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "dateSpan": "{start} – {end}",
+  "@dateSpan": {
+    "description": "A span between two fully formatted dates (e.g. across the Hijrah).",
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "dateDayMonthYear": "{day} {month} {year}",
+  "@dateDayMonthYear": {
+    "description": "Day, Hijri month name and formatted year.",
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "month": {
+        "type": "String"
+      },
+      "year": {
+        "type": "String"
+      }
+    }
+  },
+  "dateMonthYear": "{month} {year}",
+  "@dateMonthYear": {
+    "description": "Hijri month name and formatted year.",
+    "placeholders": {
+      "month": {
+        "type": "String"
+      },
+      "year": {
+        "type": "String"
+      }
+    }
+  },
+  "dateApprox": "نحو سنة {date}",
+  "@dateApprox": {
+    "description": "An approximate date.",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "dateWithGregorian": "{hijri} / {gregorian}",
+  "@dateWithGregorian": {
+    "description": "Hijri date followed by the Gregorian year.",
+    "placeholders": {
+      "hijri": {
+        "type": "String"
+      },
+      "gregorian": {
+        "type": "String"
+      }
+    }
+  },
+  "dateUnknown": "غير معروف على وجه التحقيق",
+  "@dateUnknown": {
+    "description": "A date that is not reliably documented."
+  },
+  "hijriMonthName": "{month, select, 1{المحرّم} 2{صفر} 3{ربيع الأول} 4{ربيع الآخر} 5{جمادى الأولى} 6{جمادى الآخرة} 7{رجب} 8{شعبان} 9{رمضان} 10{شوّال} 11{ذو القعدة} 12{ذو الحجة} other{}}",
+  "@hijriMonthName": {
+    "description": "Hijri month name by number (1–12).",
+    "placeholders": {
+      "month": {
+        "type": "String"
+      }
+    }
+  },
+  "quranRef": "{surah}: {ayah}",
+  "@quranRef": {
+    "description": "A Qur'an reference to one ayah.",
+    "placeholders": {
+      "surah": {
+        "type": "String"
+      },
+      "ayah": {
+        "type": "String"
+      }
+    }
+  },
+  "quranRefRange": "{surah}: {from}–{to}",
+  "@quranRefRange": {
+    "description": "A Qur'an reference to a run of ayahs.",
+    "placeholders": {
+      "surah": {
+        "type": "String"
+      },
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  },
+  "percent": "{value}٪",
+  "@percent": {
+    "description": "A percentage.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "draftBadge": "مسودة — لم يُراجَع",
+  "@draftBadge": {
+    "description": "Label on every item whose content has not been approved by a qualified reviewer."
+  },
+  "draftBannerTitle": "محتوى تجريبي لم يُراجَع علميًا بعد",
+  "@draftBannerTitle": {
+    "description": "Banner shown while the app runs on unreviewed (draft) content."
+  },
+  "draftBannerMessage": "النصوص والمصادر هنا للتطوير والمراجعة، ولا تُعتمد قبل أن يراجعها مختص.",
+  "@draftBannerMessage": {
+    "description": "Explanation under the draft banner."
+  },
+  "directoryAll": "الكل",
+  "@directoryAll": {
+    "description": "Category filter: show every companion."
+  },
+  "directoryEmpty": "لا يوجد صحابة في هذا التصنيف بعد.",
+  "@directoryEmpty": {
+    "description": "Empty state of a filtered directory."
+  },
+  "companionNotFound": "لم نجد هذا الصحابي.",
+  "@companionNotFound": {
+    "description": "Shown for an unknown companion link."
+  },
+  "backToDirectory": "العودة إلى الصحابة",
+  "@backToDirectory": {
+    "description": "Button on the companion-not-found state."
+  },
+  "profileAtAGlance": "في سطور",
+  "@profileAtAGlance": {
+    "description": "Profile section title for key facts."
+  },
+  "profileBirth": "المولد",
+  "@profileBirth": {
+    "description": "Fact label."
+  },
+  "profileDeath": "الوفاة",
+  "@profileDeath": {
+    "description": "Fact label."
+  },
+  "profileDeathPlace": "مكان الوفاة",
+  "@profileDeathPlace": {
+    "description": "Fact label."
+  },
+  "profileSectionsKicker": "السيرة",
+  "@profileSectionsKicker": {
+    "description": "Kicker above the list of biography sections."
+  },
+  "profileSectionsTitle": "فصول السيرة",
+  "@profileSectionsTitle": {
+    "description": "Title of the list of biography sections."
+  },
+  "profileTimelineKicker": "التسلسل",
+  "@profileTimelineKicker": {
+    "description": "Kicker above the timeline preview."
+  },
+  "profileTimelineTitle": "محطات من حياته",
+  "@profileTimelineTitle": {
+    "description": "Title of the timeline preview (male)."
+  },
+  "profileTimelineTitleFemale": "محطات من حياتها",
+  "@profileTimelineTitleFemale": {
+    "description": "Title of the timeline preview (female)."
+  },
+  "profileStoriesKicker": "حكايات",
+  "@profileStoriesKicker": {
+    "description": "Kicker above the stories list."
+  },
+  "profileStoriesTitle": "قصص من السيرة",
+  "@profileStoriesTitle": {
+    "description": "Title of the stories list."
+  },
+  "profileRelatedKicker": "الصلات",
+  "@profileRelatedKicker": {
+    "description": "Kicker above related people."
+  },
+  "profileRelatedTitle": "ذوو صلة",
+  "@profileRelatedTitle": {
+    "description": "Title of the related people list."
+  },
+  "profileReferencesKicker": "المصادر",
+  "@profileReferencesKicker": {
+    "description": "Kicker above the reference list."
+  },
+  "profileReferencesTitle": "مراجع هذه السيرة",
+  "@profileReferencesTitle": {
+    "description": "Title of the reference list."
+  },
+  "relationFather": "الأب",
+  "@relationFather": {
+    "description": "Relation label."
+  },
+  "relationMother": "الأم",
+  "@relationMother": {
+    "description": "Relation label."
+  },
+  "relationChild": "من الأبناء",
+  "@relationChild": {
+    "description": "Relation label."
+  },
+  "relationSpouse": "من الأزواج",
+  "@relationSpouse": {
+    "description": "Relation label."
+  },
+  "relationSibling": "من الإخوة",
+  "@relationSibling": {
+    "description": "Relation label."
+  },
+  "relationRelative": "من الأقارب",
+  "@relationRelative": {
+    "description": "Relation label."
+  },
+  "relationTeacher": "من شيوخه",
+  "@relationTeacher": {
+    "description": "Relation label."
+  },
+  "relationStudent": "من تلاميذه",
+  "@relationStudent": {
+    "description": "Relation label."
+  },
+  "relationBrotherhood": "أخوه في المؤاخاة",
+  "@relationBrotherhood": {
+    "description": "Relation label."
+  },
+  "citationsTitle": "مصادر هذه المعلومة",
+  "@citationsTitle": {
+    "description": "Title of the citation sheet."
+  },
+  "citationsButton": "عرض المصادر ({count})",
+  "@citationsButton": {
+    "description": "Screen-reader label of a citation marker.",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "citationLocatorPending": "الموضع بانتظار التحقق",
+  "@citationLocatorPending": {
+    "description": "Shown when a citation's volume/page/number has not been checked."
+  },
+  "citationVolume": "ج {volume}",
+  "@citationVolume": {
+    "description": "Citation volume.",
+    "placeholders": {
+      "volume": {
+        "type": "String"
+      }
+    }
+  },
+  "citationPage": "ص {page}",
+  "@citationPage": {
+    "description": "Citation page.",
+    "placeholders": {
+      "page": {
+        "type": "String"
+      }
+    }
+  },
+  "citationHadithNumber": "رقم {number}",
+  "@citationHadithNumber": {
+    "description": "Hadith number.",
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "citationAuthorDeath": "{author} (ت {year} هـ)",
+  "@citationAuthorDeath": {
+    "description": "Author with death year.",
+    "placeholders": {
+      "author": {
+        "type": "String"
+      },
+      "year": {
+        "type": "String"
+      }
+    }
+  },
+  "citationGrading": "{grade} — {gradedBy}",
+  "@citationGrading": {
+    "description": "A hadith grading and who made it.",
+    "placeholders": {
+      "grade": {
+        "type": "String"
+      },
+      "gradedBy": {
+        "type": "String"
+      }
+    }
+  },
+  "gradeSahih": "صحيح",
+  "@gradeSahih": {
+    "description": "Hadith grade."
+  },
+  "gradeHasan": "حسن",
+  "@gradeHasan": {
+    "description": "Hadith grade."
+  },
+  "gradeDaif": "ضعيف",
+  "@gradeDaif": {
+    "description": "Hadith grade."
+  },
+  "citationUnknownSource": "مصدر غير معروف",
+  "@citationUnknownSource": {
+    "description": "Fallback when a cited source is missing."
+  },
+  "citationDraftNotice": "هذا المحتوى مسودة لم يراجعها مختص بعد؛ التصنيف والمواضع مبدئية.",
+  "@citationDraftNotice": {
+    "description": "Notice in the citation sheet for draft content."
+  },
+  "reliabilityExplainEstablished": "من القرآن الكريم، أو حديث صحيح أو حسن، أو مما اتفق عليه المؤرخون.",
+  "@reliabilityExplainEstablished": {
+    "description": "Explains the established level."
+  },
+  "reliabilityExplainReported": "وردت في كتب السيرة والتاريخ، ولم يُحكم على إسنادها.",
+  "@reliabilityExplainReported": {
+    "description": "Explains the reported level."
+  },
+  "reliabilityExplainDisputed": "تعدّدت فيه الروايات أو اختلف فيه أهل العلم.",
+  "@reliabilityExplainDisputed": {
+    "description": "Explains the disputed level."
+  },
+  "reliabilityExplainUnknown": "لم يثبت على وجه التحقيق.",
+  "@reliabilityExplainUnknown": {
+    "description": "Explains the unknown level."
+  },
+  "storyReadingMinutes": "{count, plural, =1{دقيقة قراءة} =2{دقيقتا قراءة} few{{minutes} دقائق قراءة} other{{minutes} دقيقة قراءة}}",
+  "@storyReadingMinutes": {
+    "description": "Reading time; count drives the plural form, minutes is the formatted number.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "profileAtAGlanceKicker": "تعريف",
+  "@profileAtAGlanceKicker": {
+    "description": "Kicker above the key facts of a profile."
+  },
+  "readerNextSection": "القسم التالي",
+  "@readerNextSection": {
+    "description": "Reader navigation."
+  },
+  "readerPreviousSection": "القسم السابق",
+  "@readerPreviousSection": {
+    "description": "Reader navigation."
+  },
+  "readerSectionSources": "مصادر هذا القسم",
+  "@readerSectionSources": {
+    "description": "Heading of the source list at the end of a section."
+  },
+  "readerSettings": "إعدادات القراءة",
+  "@readerSettings": {
+    "description": "Title and tooltip of the reading settings sheet."
+  },
+  "readerTextSize": "حجم خط القراءة: {size}",
+  "@readerTextSize": {
+    "description": "Slider label; size is the formatted point size.",
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "readerTextSample": "هذا نصٌّ لمعاينة حجم خط القراءة.",
+  "@readerTextSample": {
+    "description": "Preview sentence in the reading settings."
+  },
+  "readerDigits": "الأرقام",
+  "@readerDigits": {
+    "description": "Label of the digit style choice."
+  },
+  "digitsArabicIndic": "عربية (١٢٣)",
+  "@digitsArabicIndic": {
+    "description": "Arabic-Indic digits option."
+  },
+  "digitsWestern": "غربية (123)",
+  "@digitsWestern": {
+    "description": "Western digits option."
+  },
+  "quranReference": "قال الله تعالى — {ref}",
+  "@quranReference": {
+    "description": "Heading of a Qur'an quotation; ref is e.g. التوبة: ٤٠.",
+    "placeholders": {
+      "ref": {
+        "type": "String"
+      }
+    }
+  },
+  "quranTextPending": "يُعرض نص الآية هنا من مصحف رقمي معتمد عند إضافته.",
+  "@quranTextPending": {
+    "description": "Shown until a verified Qur'an dataset is bundled."
+  },
+  "hadithLabel": "حديث",
+  "@hadithLabel": {
+    "description": "Kicker of a hadith quotation."
+  },
+  "reportLabel": "رواية",
+  "@reportLabel": {
+    "description": "Kicker of a historical report quotation."
+  },
+  "quoteTextPending": "النص بانتظار نقله من المصدر المعتمد.",
+  "@quoteTextPending": {
+    "description": "Shown when a quotation's exact wording has not been copied from the source yet."
+  },
+  "disputeLabel": "مسألة مختلف فيها",
+  "@disputeLabel": {
+    "description": "Kicker of a dispute note."
+  },
+  "disputeShowOpinions": "عرض الأقوال ({count})",
+  "@disputeShowOpinions": {
+    "description": "Expands a dispute note.",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "disputeOpinion": "القول {n}",
+  "@disputeOpinion": {
+    "description": "Label of one opinion.",
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "lessonLabel": "درس وعبرة",
+  "@lessonLabel": {
+    "description": "Kicker of an editorial lesson."
+  },
+  "sectionNotFound": "لم نجد هذا القسم.",
+  "@sectionNotFound": {
+    "description": "Unknown section link."
+  },
+  "storyNotFound": "لم نجد هذه القصة.",
+  "@storyNotFound": {
+    "description": "Unknown story link."
+  },
+  "profileFullTimeline": "الخط الزمني كاملًا",
+  "@profileFullTimeline": {
+    "description": "Button from the profile to the timeline."
+  },
+  "timelineTitle": "الخط الزمني",
+  "@timelineTitle": {
+    "description": "Timeline screen title."
+  },
+  "eraPreIslam": "قبل الإسلام",
+  "@eraPreIslam": {
+    "description": "Timeline era."
+  },
+  "eraMakkan": "العهد المكي",
+  "@eraMakkan": {
+    "description": "Timeline era."
+  },
+  "eraMadinan": "العهد المدني",
+  "@eraMadinan": {
+    "description": "Timeline era."
+  },
+  "eraAfterProphet": "بعد وفاة النبي ﷺ",
+  "@eraAfterProphet": {
+    "description": "Timeline era."
+  },
+  "eraKicker": "المرحلة",
+  "@eraKicker": {
+    "description": "Kicker above each era of the timeline."
+  },
+  "timelineOpenSection": "اقرأ في السيرة",
+  "@timelineOpenSection": {
+    "description": "Opens the biography section linked to a timeline entry."
+  },
+  "timelineEvent": "الحدث: {name}",
+  "@timelineEvent": {
+    "description": "Names the historical event linked to a timeline entry.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "storyChaptersKicker": "الفصول",
+  "@storyChaptersKicker": {
+    "description": "Kicker above a story's chapter list."
+  },
+  "storyChaptersTitle": "فصول القصة",
+  "@storyChaptersTitle": {
+    "description": "Title of a story's chapter list."
+  },
+  "storyStart": "ابدأ القراءة",
+  "@storyStart": {
+    "description": "Opens the first chapter."
+  },
+  "storyChapterOf": "الفصل {n} من {total}",
+  "@storyChapterOf": {
+    "description": "Chapter position.",
+    "placeholders": {
+      "n": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "storyNextChapter": "الفصل التالي",
+  "@storyNextChapter": {
+    "description": "Reader navigation."
+  },
+  "storyPreviousChapter": "الفصل السابق",
+  "@storyPreviousChapter": {
+    "description": "Reader navigation."
+  },
+  "storyEnd": "انتهت القصة",
+  "@storyEnd": {
+    "description": "Shown after the last chapter."
+  },
+  "storyCompanions": "صحابة في هذه القصة",
+  "@storyCompanions": {
+    "description": "Heading of the companions linked to a story."
+  },
+  "bookmarkAdd": "حفظ",
+  "@bookmarkAdd": {
+    "description": "Tooltip: save this item."
+  },
+  "bookmarkRemove": "إزالة من المحفوظات",
+  "@bookmarkRemove": {
+    "description": "Tooltip: unsave this item."
+  },
+  "bookmarkSaved": "حُفظ في المحفوظات",
+  "@bookmarkSaved": {
+    "description": "Snackbar after saving."
+  },
+  "bookmarkRemoved": "أُزيل من المحفوظات",
+  "@bookmarkRemoved": {
+    "description": "Snackbar after unsaving."
+  },
+  "continueKicker": "تابع",
+  "@continueKicker": {
+    "description": "Kicker above continue reading."
+  },
+  "continueTitle": "تابع القراءة",
+  "@continueTitle": {
+    "description": "Title of the continue-reading list."
+  },
+  "progressRead": "قُرئ {percent}",
+  "@progressRead": {
+    "description": "Reading progress; percent is formatted.",
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "savedKicker": "المحفوظات",
+  "@savedKicker": {
+    "description": "Kicker above saved items."
+  },
+  "savedTitle": "ما حفظته",
+  "@savedTitle": {
+    "description": "Title above saved items."
+  },
+  "savedCompanions": "الصحابة",
+  "@savedCompanions": {
+    "description": "Saved group."
+  },
+  "savedSections": "أقسام السيرة",
+  "@savedSections": {
+    "description": "Saved group."
+  },
+  "savedStories": "القصص",
+  "@savedStories": {
+    "description": "Saved group."
+  },
+  "savedChapters": "فصول القصص",
+  "@savedChapters": {
+    "description": "Saved group."
+  },
+  "savedEmptyTitle": "لا توجد محفوظات بعد",
+  "@savedEmptyTitle": {
+    "description": "Empty saved screen title."
+  },
+  "savedEmptyMessage": "احفظ صحابيًّا أو قسمًا من السيرة أو قصة لتجده هنا.",
+  "@savedEmptyMessage": {
+    "description": "Empty saved screen message."
+  },
+  "searchTooltip": "بحث",
+  "@searchTooltip": {
+    "description": "Search button tooltip."
+  },
+  "searchHint": "ابحث باسم أو لقب أو عنوان أو عبارة…",
+  "@searchHint": {
+    "description": "Search field hint."
+  },
+  "searchStart": "ابحث في أسماء الصحابة وألقابهم وكناهم، وفي عناوين السيرة والقصص ونصوصها.",
+  "@searchStart": {
+    "description": "Shown before typing."
+  },
+  "searchNoResults": "لا نتائج لـ «{query}»",
+  "@searchNoResults": {
+    "description": "No search results.",
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "searchRecent": "عمليات بحث سابقة",
+  "@searchRecent": {
+    "description": "Heading of recent queries (kept in memory only)."
+  },
+  "searchClear": "مسح",
+  "@searchClear": {
+    "description": "Clears the search field."
+  },
+  "searchKindCompanions": "الصحابة",
+  "@searchKindCompanions": {
+    "description": "Search result group."
+  },
+  "searchKindStories": "القصص",
+  "@searchKindStories": {
+    "description": "Search result group."
+  },
+  "searchKindSections": "أقسام السيرة",
+  "@searchKindSections": {
+    "description": "Search result group."
+  },
+  "searchKindChapters": "فصول القصص",
+  "@searchKindChapters": {
+    "description": "Search result group."
+  },
+  "homeFeaturedKicker": "صحابي اليوم",
+  "@homeFeaturedKicker": {
+    "description": "Kicker on the home hero (changes daily)."
+  },
+  "homeReadBiography": "اقرأ السيرة",
+  "@homeReadBiography": {
+    "description": "Opens the featured companion."
+  },
+  "homeCategoriesKicker": "التصنيفات",
+  "@homeCategoriesKicker": {
+    "description": "Kicker above categories."
+  },
+  "homeCategoriesTitle": "تصفّح الصحابة",
+  "@homeCategoriesTitle": {
+    "description": "Title above categories."
+  },
+  "homeStoriesKicker": "حكايات",
+  "@homeStoriesKicker": {
+    "description": "Kicker above stories."
+  },
+  "homeStoriesTitle": "قصص مختارة",
+  "@homeStoriesTitle": {
+    "description": "Title above stories."
+  },
+  "settingsAppearance": "المظهر",
+  "@settingsAppearance": {
+    "description": "Settings group."
+  },
+  "settingsReading": "القراءة",
+  "@settingsReading": {
+    "description": "Settings group."
+  },
+  "settingsContent": "المحتوى",
+  "@settingsContent": {
+    "description": "Settings group."
+  },
+  "settingsContentVersion": "إصدار المحتوى: {version}",
+  "@settingsContentVersion": {
+    "description": "Bundled content version.",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsChannelDraft": "محتوى تجريبي (مسودة)",
+  "@settingsChannelDraft": {
+    "description": "Content channel."
+  },
+  "settingsChannelPublished": "محتوى منشور",
+  "@settingsChannelPublished": {
+    "description": "Content channel."
+  },
+  "settingsAbout": "عن التطبيق والمنهج",
+  "@settingsAbout": {
+    "description": "Opens the about page."
+  },
+  "settingsSources": "المصادر المعتمدة",
+  "@settingsSources": {
+    "description": "Opens the sources directory."
+  },
+  "settingsLicenses": "التراخيص",
+  "@settingsLicenses": {
+    "description": "Opens the licence page."
+  },
+  "aboutIntro": "سِيَر الصحابة تطبيق تعليمي يعرض سير صحابة النبي ﷺ وقصصهم، معزوّةً إلى مصادرها.",
+  "@aboutIntro": {
+    "description": "About: introduction."
+  },
+  "aboutMethodTitle": "المنهج",
+  "@aboutMethodTitle": {
+    "description": "About section."
+  },
+  "aboutMethodBody": "يسير التطبيق على منهج أهل السنة والجماعة في عرض السيرة والتاريخ، ويعزو كل معلومة إلى مصدرها، ويميّز بين الثابت والمروي والمختلف فيه وما لم يثبت. وتركّز هذه النسخة على السيرة والفضائل والمآثر وأهم الأحداث، ولا تتناول تفاصيل الفتنة.",
+  "@aboutMethodBody": {
+    "description": "About: methodology."
+  },
+  "aboutReliabilityTitle": "درجات الثبوت",
+  "@aboutReliabilityTitle": {
+    "description": "About section."
+  },
+  "aboutReviewTitle": "حالة المراجعة",
+  "@aboutReviewTitle": {
+    "description": "About section."
+  },
+  "aboutReviewDraft": "لم يُراجَع المحتوى بعد. النصوص الحالية للتطوير والمراجعة، ولن تُنشر قبل أن يراجعها مختص مؤهل.",
+  "@aboutReviewDraft": {
+    "description": "About: draft status."
+  },
+  "aboutReviewPublished": "راجع المحتوى المنشور مختصون مؤهلون قبل نشره.",
+  "@aboutReviewPublished": {
+    "description": "About: published status."
+  },
+  "aboutImagesTitle": "الصور",
+  "@aboutImagesTitle": {
+    "description": "About section."
+  },
+  "aboutImagesBody": "لا يتضمن التطبيق صورًا أو رسومًا للصحابة أو للنبي ﷺ، وتُستخدم بدلًا منها الزخارف الهندسية والخط العربي. ولا توجد صور فوتوغرافية فيه حاليًا.",
+  "@aboutImagesBody": {
+    "description": "About: images policy."
+  },
+  "sourceTypeQuran": "القرآن الكريم",
+  "@sourceTypeQuran": {
+    "description": "Source group."
+  },
+  "sourceTypeHadith": "كتب الحديث",
+  "@sourceTypeHadith": {
+    "description": "Source group."
+  },
+  "sourceTypeBiographical": "كتب التراجم",
+  "@sourceTypeBiographical": {
+    "description": "Source group."
+  },
+  "sourceTypeHistory": "كتب التاريخ",
+  "@sourceTypeHistory": {
+    "description": "Source group."
+  },
+  "sourceTypeSira": "كتب السيرة",
+  "@sourceTypeSira": {
+    "description": "Source group."
+  },
+  "sourceTypeTafsir": "كتب التفسير",
+  "@sourceTypeTafsir": {
+    "description": "Source group."
+  },
+  "sourceTypeOther": "مصادر أخرى",
+  "@sourceTypeOther": {
+    "description": "Source group."
+  },
+  "homeCategoryCount": "{count, plural, =0{لا صحابة بعد} =1{صحابي واحد} =2{صحابيان} few{{n} صحابة} other{{n} صحابيًّا}}",
+  "@homeCategoryCount": {
+    "description": "Number of companions in a category; n is the formatted number.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "savedLoadErrorMessage": "تعذّر تحميل المحفوظات. لم يُحذف شيء منها؛ حاول مرة أخرى.",
+  "@savedLoadErrorMessage": {
+    "description": "Saved screen: the saved items or positions failed to load."
+  },
+  "savedItemLoading": "جارٍ التحميل…",
+  "@savedItemLoading": {
+    "description": "Saved item placeholder while its content loads."
+  },
+  "savedItemLoadError": "تعذّر تحميل هذا العنصر",
+  "@savedItemLoadError": {
+    "description": "Saved item whose content failed to load (it is kept)."
+  },
+  "savedItemUnavailableTitle": "لم يعد هذا العنصر متاحًا",
+  "@savedItemUnavailableTitle": {
+    "description": "Saved item whose target was removed from the content."
+  },
+  "savedItemUnavailableMessage": "حُذف من المحتوى في تحديث سابق، ويمكنك إزالته من المحفوظات.",
+  "@savedItemUnavailableMessage": {
+    "description": "Explains an unavailable saved item."
+  },
+  "bookmarkUpdateFailed": "تعذّر حفظ التغيير. حاول مرة أخرى.",
+  "@bookmarkUpdateFailed": {
+    "description": "Snackbar when saving or removing a bookmark fails."
+  },
+  "progressSaveFailed": "تعذّر حفظ موضع القراءة.",
+  "@progressSaveFailed": {
+    "description": "Snackbar when saving the reading position fails."
+  },
+  "readerPassageChanged": "تغيّر هذا النص منذ قراءتك الأخيرة، فعرضناه من أوله.",
+  "@readerPassageChanged": {
+    "description": "Reader notice: the saved position belongs to an older version of the text."
+  },
+  "readerRestorePosition": "موضعي السابق",
+  "@readerRestorePosition": {
+    "description": "Snackbar action: jump to the position saved for the older text."
+  },
+  "errorUnsupportedContent": "هذا المحتوى بصيغة أحدث مما يقرؤه هذا الإصدار من التطبيق. حدّث التطبيق لعرضه.",
+  "@errorUnsupportedContent": {
+    "description": "Error message when bundled content is in a format this app version cannot read."
+  },
+  "readerMarkComplete": "أنهيتُ القراءة",
+  "@readerMarkComplete": {
+    "description": "Button at the end of a passage: mark it as read."
+  },
+  "readerCompleted": "أتممتَ قراءة هذا النص.",
+  "@readerCompleted": {
+    "description": "Shown at the end of a passage that is marked as read."
+  },
+  "readerReadAgain": "اقرأه من جديد",
+  "@readerReadAgain": {
+    "description": "Button: forget the progress of a finished passage and start over."
+  },
+  "profileStartReading": "ابدأ قراءة السيرة",
+  "@profileStartReading": {
+    "description": "Profile: start the biography at its first section."
+  },
+  "profileContinueReading": "تابع القراءة",
+  "@profileContinueReading": {
+    "description": "Profile: resume the biography."
+  },
+  "profileBiographyFinishedMale": "أتممتَ قراءة سيرته.",
+  "@profileBiographyFinishedMale": {
+    "description": "Profile: every section of his biography is finished."
+  },
+  "profileBiographyFinishedFemale": "أتممتَ قراءة سيرتها.",
+  "@profileBiographyFinishedFemale": {
+    "description": "Profile: every section of her biography is finished."
+  },
+  "profileReadFromStart": "اقرأها من البداية",
+  "@profileReadFromStart": {
+    "description": "Profile: open the first section of a finished biography."
+  },
+  "profileBiographyNotWrittenMale": "لم تُكتب سيرته المفصّلة بعد؛ يعرض هذا الملف تعريفًا موجزًا ومصادره.",
+  "@profileBiographyNotWrittenMale": {
+    "description": "Profile of a companion without a written biography. Promises no date."
+  },
+  "profileBiographyNotWrittenFemale": "لم تُكتب سيرتها المفصّلة بعد؛ يعرض هذا الملف تعريفًا موجزًا ومصادره.",
+  "@profileBiographyNotWrittenFemale": {
+    "description": "Profile of a companion without a written biography. Promises no date."
+  },
+  "passageFinished": "مكتمل",
+  "@passageFinished": {
+    "description": "Marker (and its spoken label) for a finished section or chapter."
+  },
+  "readerSectionContents": "فهرس الأقسام",
+  "@readerSectionContents": {
+    "description": "Reader app bar button and sheet title: the biography's sections."
+  },
+  "readerChapterContents": "فهرس الفصول",
+  "@readerChapterContents": {
+    "description": "Reader app bar button and sheet title: the story's chapters."
+  },
+  "readerReadingNow": "تقرؤه الآن",
+  "@readerReadingNow": {
+    "description": "Contents sheet: marks the passage currently open."
+  },
+  "profileSectionCount": "{count, plural, =1{قسم واحد} =2{قسمان} few{{n} أقسام} other{{n} قسمًا}}",
+  "@profileSectionCount": {
+    "description": "Number of sections in a biography; n is the formatted number.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "profileResumeDetail": "{title} · قُرئ {percent}",
+  "@profileResumeDetail": {
+    "description": "Profile: the section to resume and how much of it was read (percent is formatted).",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "searchScopeAll": "الكل",
+  "@searchScopeAll": {
+    "description": "Search filter chip: every kind of result."
+  },
+  "searchScopeCompanions": "الصحابة",
+  "@searchScopeCompanions": {
+    "description": "Search filter chip: companions only."
+  },
+  "searchScopeBiographies": "السِّيَر",
+  "@searchScopeBiographies": {
+    "description": "Search filter chip: biography sections only."
+  },
+  "searchScopeStories": "القصص",
+  "@searchScopeStories": {
+    "description": "Search filter chip: stories and their chapters."
+  },
+  "searchIncomplete": "تعذّر تحميل بعض المحتوى، فقد تكون النتائج ناقصة.",
+  "@searchIncomplete": {
+    "description": "Search: some files failed to load; results may be missing."
+  },
+  "searchFilterLabel": "تصفية النتائج",
+  "@searchFilterLabel": {
+    "description": "Spoken label of the search filter chips."
+  },
+  "searchNoResultsIncomplete": "لا نتائج لـ «{query}» فيما أمكن تحميله من المحتوى.",
+  "@searchNoResultsIncomplete": {
+    "description": "Search: nothing found, but some content failed to load.",
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "searchWithin": "في: {name}",
+  "@searchWithin": {
+    "description": "Search filter chip: results within one companion's biography or one story; tap to remove.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "undo": "تراجع",
+  "@undo": {
+    "description": "Snack bar action: put back what was just removed."
+  },
+  "historyTitle": "سجل القراءة",
+  "@historyTitle": {
+    "description": "Title of the finished-reading screen, and links to it."
+  },
+  "historyEmpty": "لم تُتمّ قراءة شيء بعد.",
+  "@historyEmpty": {
+    "description": "Reading history with nothing finished."
+  },
+  "historyReset": "إعادة تعيين التقدّم",
+  "@historyReset": {
+    "description": "Button: forget the progress of one passage."
+  },
+  "continueRemove": "إزالة من «تابع القراءة»",
+  "@continueRemove": {
+    "description": "Button on an unfinished passage: forget its position."
+  },
+  "bookmarkRemovedUndo": "أُزيل من المحفوظات.",
+  "@bookmarkRemovedUndo": {
+    "description": "Snack bar after removing a saved item (with undo)."
+  },
+  "settingsYourData": "بيانات القراءة على هذا الجهاز",
+  "@settingsYourData": {
+    "description": "Settings group: the reader's own data."
+  },
+  "settingsClearHistory": "مسح سجل القراءة",
+  "@settingsClearHistory": {
+    "description": "Settings: delete every reading position and finished mark."
+  },
+  "settingsClearSaved": "مسح المحفوظات",
+  "@settingsClearSaved": {
+    "description": "Settings: delete every saved item."
+  },
+  "settingsNothingToClear": "لا شيء لمسحه",
+  "@settingsNothingToClear": {
+    "description": "Subtitle when there is no data of that kind."
+  },
+  "clearHistoryTitle": "مسح سجل القراءة؟",
+  "@clearHistoryTitle": {
+    "description": "Confirmation dialog title."
+  },
+  "clearSavedTitle": "مسح المحفوظات؟",
+  "@clearSavedTitle": {
+    "description": "Confirmation dialog title."
+  },
+  "clearConfirm": "مسح",
+  "@clearConfirm": {
+    "description": "Confirmation dialog: the destructive button."
+  },
+  "cancel": "إلغاء",
+  "@cancel": {
+    "description": "Dialog: cancel."
+  },
+  "historyCleared": "مُسح سجل القراءة.",
+  "@historyCleared": {
+    "description": "Snack bar after clearing the history."
+  },
+  "savedCleared": "مُسحت المحفوظات.",
+  "@savedCleared": {
+    "description": "Snack bar after clearing saved items."
+  },
+  "historyResetDone": "أُعيد تعيين تقدّمك في «{title}».",
+  "@historyResetDone": {
+    "description": "Snack bar after resetting one passage (with undo).",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "historyFinishedOn": "أُتمّت في {date}",
+  "@historyFinishedOn": {
+    "description": "When a passage was finished; date is formatted.",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "countTexts": "{count, plural, =1{نص واحد} =2{نصّان} few{{n} نصوص} other{{n} نصًّا}}",
+  "@countTexts": {
+    "description": "Number of passages with saved progress; n is formatted.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "countItems": "{count, plural, =1{عنصر واحد} =2{عنصران} few{{n} عناصر} other{{n} عنصرًا}}",
+  "@countItems": {
+    "description": "Number of saved items; n is formatted.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "clearHistoryMessage": "سيُحذف موضع القراءة وعلامة الإتمام لـ{what} من هذا الجهاز، ولا يمكن التراجع عن ذلك. لن تتأثر المحفوظات ولا الإعدادات.",
+  "@clearHistoryMessage": {
+    "description": "Confirmation dialog body; what is the formatted count.",
+    "placeholders": {
+      "what": {
+        "type": "String"
+      }
+    }
+  },
+  "clearSavedMessage": "سيُحذف {what} من المحفوظات على هذا الجهاز، ولا يمكن التراجع عن ذلك. لن يتأثر سجل القراءة ولا الإعدادات.",
+  "@clearSavedMessage": {
+    "description": "Confirmation dialog body; what is the formatted count.",
+    "placeholders": {
+      "what": {
+        "type": "String"
+      }
+    }
+  }
+}

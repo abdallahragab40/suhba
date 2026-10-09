@@ -1,0 +1,1299 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "content.schema.json",
+  "title": "Siyar al-Sahaba content",
+  "description": "Definitions for every content file. Per-file schemas in this folder point at these.",
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:[-.][a-z0-9]+)*$",
+      "description": "ASCII slug: lowercase letters, digits, '-' and '.' between them."
+    },
+    "localizedText": {
+      "type": "object",
+      "properties": {
+        "ar": {
+          "type": "string",
+          "minLength": 1
+        },
+        "en": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "ar"
+      ]
+    },
+    "reliability": {
+      "type": "string",
+      "enum": [
+        "established",
+        "reported",
+        "disputed",
+        "unknown"
+      ]
+    },
+    "historicalDate": {
+      "type": "object",
+      "properties": {
+        "precision": {
+          "type": "string",
+          "enum": [
+            "exact",
+            "month",
+            "year",
+            "approx",
+            "range",
+            "unknown"
+          ]
+        },
+        "era": {
+          "type": "string",
+          "enum": [
+            "beforeHijra",
+            "afterHijra"
+          ]
+        },
+        "hijriYear": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "hijriMonth": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12
+        },
+        "hijriDay": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30
+        },
+        "gregorianYear": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "endEra": {
+          "type": "string",
+          "enum": [
+            "beforeHijra",
+            "afterHijra"
+          ]
+        },
+        "hijriYearEnd": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "gregorianYearEnd": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "precision"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "precision": {
+                "const": "exact"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "hijriYear",
+              "hijriMonth",
+              "hijriDay"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "precision": {
+                "const": "month"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "hijriYear",
+              "hijriMonth"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "precision": {
+                "enum": [
+                  "year",
+                  "approx"
+                ]
+              }
+            }
+          },
+          "then": {
+            "anyOf": [
+              {
+                "required": [
+                  "hijriYear"
+                ]
+              },
+              {
+                "required": [
+                  "gregorianYear"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "precision": {
+                "const": "range"
+              }
+            }
+          },
+          "then": {
+            "anyOf": [
+              {
+                "required": [
+                  "hijriYear",
+                  "hijriYearEnd"
+                ]
+              },
+              {
+                "required": [
+                  "gregorianYear",
+                  "gregorianYearEnd"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "quranRef": {
+      "type": "object",
+      "properties": {
+        "surah": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 114
+        },
+        "ayahFrom": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "ayahTo": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "surah",
+        "ayahFrom"
+      ]
+    },
+    "grading": {
+      "type": "object",
+      "properties": {
+        "grade": {
+          "type": "string",
+          "enum": [
+            "sahih",
+            "hasan",
+            "daif"
+          ]
+        },
+        "gradedBy": {
+          "$ref": "#/$defs/localizedText"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "grade",
+        "gradedBy"
+      ]
+    },
+    "citation": {
+      "type": "object",
+      "properties": {
+        "sourceId": {
+          "$ref": "#/$defs/id"
+        },
+        "locatorStatus": {
+          "type": "string",
+          "enum": [
+            "complete",
+            "pending"
+          ]
+        },
+        "volume": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "page": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hadithNumber": {
+          "type": "string",
+          "minLength": 1
+        },
+        "chapterTitle": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "quranRef": {
+          "$ref": "#/$defs/quranRef"
+        },
+        "grading": {
+          "$ref": "#/$defs/grading"
+        },
+        "note": {
+          "$ref": "#/$defs/localizedText"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "sourceId",
+        "locatorStatus"
+      ],
+      "description": "A pointer into one source. Never invent a locator: leave volume/page/hadithNumber out and set locatorStatus to 'pending' until checked against the edition."
+    },
+    "citations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/citation"
+      }
+    },
+    "datedClaim": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "$ref": "#/$defs/historicalDate"
+        },
+        "reliability": {
+          "$ref": "#/$defs/reliability"
+        },
+        "citations": {
+          "$ref": "#/$defs/citations"
+        },
+        "note": {
+          "$ref": "#/$defs/localizedText"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "date",
+        "reliability"
+      ]
+    },
+    "fact": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "reliability": {
+          "$ref": "#/$defs/reliability"
+        },
+        "text": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "date": {
+          "$ref": "#/$defs/historicalDate"
+        },
+        "citations": {
+          "$ref": "#/$defs/citations"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "reliability"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "text"
+          ]
+        },
+        {
+          "required": [
+            "date"
+          ]
+        }
+      ]
+    },
+    "review": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "draft",
+            "sourced",
+            "inReview",
+            "approved",
+            "rejected"
+          ]
+        },
+        "editorialFlags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "fitnaAdjacent",
+              "needsLocators",
+              "needsSourceText"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "authoredBy": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ]
+    },
+    "gender": {
+      "type": "string",
+      "enum": [
+        "male",
+        "female"
+      ]
+    },
+    "personRef": {
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "companionId": {
+          "$ref": "#/$defs/id"
+        },
+        "personId": {
+          "$ref": "#/$defs/id"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "displayName"
+      ],
+      "oneOf": [
+        {
+          "required": [
+            "companionId"
+          ]
+        },
+        {
+          "required": [
+            "personId"
+          ]
+        }
+      ]
+    },
+    "relation": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "father",
+            "mother",
+            "child",
+            "spouse",
+            "sibling",
+            "relative",
+            "teacher",
+            "student",
+            "brotherhood"
+          ]
+        },
+        "person": {
+          "$ref": "#/$defs/personRef"
+        },
+        "citations": {
+          "$ref": "#/$defs/citations"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "person"
+      ]
+    },
+    "membership": {
+      "type": "object",
+      "properties": {
+        "categoryId": {
+          "$ref": "#/$defs/id"
+        },
+        "citations": {
+          "$ref": "#/$defs/citations"
+        },
+        "note": {
+          "$ref": "#/$defs/localizedText"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "categoryId",
+        "citations"
+      ]
+    },
+    "opinion": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "citations": {
+          "$ref": "#/$defs/citations"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "citations"
+      ]
+    },
+    "textStatus": {
+      "type": "string",
+      "enum": [
+        "complete",
+        "pendingFromSource"
+      ]
+    },
+    "contentBlock": {
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "paragraph"
+            },
+            "text": {
+              "$ref": "#/$defs/localizedText"
+            },
+            "reliability": {
+              "$ref": "#/$defs/reliability"
+            },
+            "citations": {
+              "$ref": "#/$defs/citations"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "text",
+            "reliability",
+            "citations"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "lesson"
+            },
+            "text": {
+              "$ref": "#/$defs/localizedText"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "text"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "quranQuote"
+            },
+            "ref": {
+              "$ref": "#/$defs/quranRef"
+            },
+            "note": {
+              "$ref": "#/$defs/localizedText"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "ref"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "hadithQuote"
+            },
+            "textStatus": {
+              "$ref": "#/$defs/textStatus"
+            },
+            "reliability": {
+              "$ref": "#/$defs/reliability"
+            },
+            "citations": {
+              "$ref": "#/$defs/citations"
+            },
+            "text": {
+              "$ref": "#/$defs/localizedText"
+            },
+            "summary": {
+              "$ref": "#/$defs/localizedText"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "textStatus",
+            "reliability",
+            "citations"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "reportQuote"
+            },
+            "textStatus": {
+              "$ref": "#/$defs/textStatus"
+            },
+            "reliability": {
+              "$ref": "#/$defs/reliability"
+            },
+            "citations": {
+              "$ref": "#/$defs/citations"
+            },
+            "text": {
+              "$ref": "#/$defs/localizedText"
+            },
+            "summary": {
+              "$ref": "#/$defs/localizedText"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "textStatus",
+            "reliability",
+            "citations"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "disputeNote"
+            },
+            "text": {
+              "$ref": "#/$defs/localizedText"
+            },
+            "opinions": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/opinion"
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "text",
+            "opinions"
+          ]
+        }
+      ]
+    },
+    "biographySection": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "earlyLife",
+            "conversion",
+            "withProphet",
+            "virtues",
+            "contributions",
+            "character",
+            "lessons",
+            "death",
+            "custom"
+          ]
+        },
+        "title": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "blocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/contentBlock"
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "title",
+        "blocks"
+      ]
+    },
+    "timelineEvent": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "era": {
+          "type": "string",
+          "enum": [
+            "preIslam",
+            "makkan",
+            "madinan",
+            "afterProphet"
+          ]
+        },
+        "date": {
+          "$ref": "#/$defs/historicalDate"
+        },
+        "title": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "reliability": {
+          "$ref": "#/$defs/reliability"
+        },
+        "citations": {
+          "$ref": "#/$defs/citations"
+        },
+        "summary": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "eventId": {
+          "$ref": "#/$defs/id"
+        },
+        "sectionId": {
+          "$ref": "#/$defs/id"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "era",
+        "date",
+        "title",
+        "reliability",
+        "citations"
+      ]
+    },
+    "companionFile": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "order": {
+          "type": "integer",
+          "description": "Display order in lists (lower first). Companions without one sort after those with one, by name."
+        },
+        "gender": {
+          "$ref": "#/$defs/gender"
+        },
+        "name": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "fullName": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "summary": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "review": {
+          "$ref": "#/$defs/review"
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "lineage": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "kunya": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "titles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/localizedText"
+          }
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "birth": {
+          "$ref": "#/$defs/datedClaim"
+        },
+        "death": {
+          "$ref": "#/$defs/datedClaim"
+        },
+        "deathPlace": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "atAGlance": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/fact"
+          }
+        },
+        "memberships": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/membership"
+          }
+        },
+        "relations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/relation"
+          }
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/biographySection"
+          }
+        },
+        "storyIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "timeline": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/timelineEvent"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "id",
+        "gender",
+        "name",
+        "fullName",
+        "summary",
+        "review",
+        "references"
+      ],
+      "description": "content/companions/<id>.json"
+    },
+    "storyChapter": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "title": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "blocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/contentBlock"
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "blocks"
+      ]
+    },
+    "storyFile": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "title": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "synopsis": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "companionIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1
+        },
+        "readingMinutes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "chapters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/storyChapter"
+          },
+          "minItems": 1
+        },
+        "review": {
+          "$ref": "#/$defs/review"
+        },
+        "eventIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "id",
+        "title",
+        "synopsis",
+        "companionIds",
+        "readingMinutes",
+        "chapters",
+        "review"
+      ],
+      "description": "content/stories/<id>.json"
+    },
+    "category": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "order": {
+          "type": "integer"
+        },
+        "review": {
+          "$ref": "#/$defs/review"
+        },
+        "description": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "basis": {
+          "$ref": "#/$defs/contentBlock"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "order",
+        "review"
+      ]
+    },
+    "historicalEvent": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "hijrah",
+            "battle",
+            "treaty",
+            "pledge",
+            "appointment",
+            "death",
+            "other"
+          ]
+        },
+        "date": {
+          "$ref": "#/$defs/historicalDate"
+        },
+        "summary": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "reliability": {
+          "$ref": "#/$defs/reliability"
+        },
+        "citations": {
+          "$ref": "#/$defs/citations"
+        },
+        "review": {
+          "$ref": "#/$defs/review"
+        },
+        "place": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "participants": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/personRef"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "type",
+        "date",
+        "summary",
+        "reliability",
+        "citations",
+        "review"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "quran",
+            "hadithCollection",
+            "biographical",
+            "history",
+            "sira",
+            "tafsir",
+            "other"
+          ]
+        },
+        "title": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "review": {
+          "$ref": "#/$defs/review"
+        },
+        "author": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "authorDeathAH": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "edition": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "publisher": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "numberingScheme": {
+          "$ref": "#/$defs/localizedText"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "title",
+        "review"
+      ]
+    },
+    "person": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "honorific": {
+          "type": "string",
+          "enum": [
+            "sahabi",
+            "prophet",
+            "alayhiSalam",
+            "none"
+          ]
+        },
+        "review": {
+          "$ref": "#/$defs/review"
+        },
+        "gender": {
+          "$ref": "#/$defs/gender"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "honorific",
+        "review"
+      ]
+    },
+    "categoriesFile": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/category"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "categories"
+      ],
+      "description": "content/categories.json"
+    },
+    "eventsFile": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/historicalEvent"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "events"
+      ],
+      "description": "content/events.json"
+    },
+    "sourcesFile": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/source"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "sources"
+      ],
+      "description": "content/sources.json"
+    },
+    "peopleFile": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "people": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/person"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "people"
+      ],
+      "description": "content/people.json"
+    },
+    "metaFile": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "contentVersion": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "contentVersion"
+      ],
+      "description": "content/meta.json"
+    },
+    "reviewersFile": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "reviewers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/id"
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "qualification": {
+                "type": "string",
+                "minLength": 1
+              },
+              "addedAt": {
+                "type": "string",
+                "format": "date"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "name",
+              "qualification",
+              "addedAt"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "reviewers"
+      ],
+      "description": "content/reviewers.json — qualified reviewers only."
+    },
+    "approvalFile": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "companion",
+            "story",
+            "event",
+            "category",
+            "source",
+            "person"
+          ]
+        },
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "reviewerId": {
+          "$ref": "#/$defs/id"
+        },
+        "approvedAt": {
+          "type": "string",
+          "format": "date"
+        },
+        "contentHash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "checklist": {
+          "type": "object",
+          "properties": {
+            "sourcesMatch": {
+              "type": "boolean"
+            },
+            "gradingsCorrect": {
+              "type": "boolean"
+            },
+            "noEmbellishment": {
+              "type": "boolean"
+            },
+            "reliabilityCorrect": {
+              "type": "boolean"
+            },
+            "honorificsCorrect": {
+              "type": "boolean"
+            },
+            "fitnaSignOff": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "sourcesMatch",
+            "gradingsCorrect",
+            "noEmbellishment",
+            "reliabilityCorrect",
+            "honorificsCorrect"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "kind",
+        "id",
+        "reviewerId",
+        "approvedAt",
+        "contentHash",
+        "checklist"
+      ],
+      "description": "content/reviews/<kind>.<id>.json"
+    }
+  }
+}

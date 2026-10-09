@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "id": "said-ibn-zayd",
+  "order": 9,
+  "gender": "male",
+  "name": {
+    "ar": "سعيد بن زيد"
+  },
+  "fullName": {
+    "ar": "سعيد بن زيد بن عمرو بن نفيل القرشي العدوي"
+  },
+  "summary": {
+    "ar": "أحد العشرة المبشرين بالجنة، ومن المهاجرين."
+  },
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators"
+    ],
+    "authoredBy": "sample-content"
+  },
+  "references": [
+    "isabah",
+    "siyar",
+    "istiab",
+    "usd-al-ghabah",
+    "tabaqat-ibn-sad"
+  ],
+  "kunya": {
+    "ar": "أبو الأعور"
+  },
+  "aliases": [
+    "ابو الاعور"
+  ],
+  "death": {
+    "date": {
+      "precision": "range",
+      "era": "afterHijra",
+      "hijriYear": 50,
+      "hijriYearEnd": 51
+    },
+    "reliability": "disputed",
+    "citations": [
+      {
+        "sourceId": "isabah",
+        "locatorStatus": "pending"
+      },
+      {
+        "sourceId": "siyar",
+        "locatorStatus": "pending"
+      }
+    ]
+  },
+  "memberships": [
+    {
+      "categoryId": "ashara-mubashshara",
+      "citations": [
+        {
+          "sourceId": "tirmidhi",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "abu-dawud",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "categoryId": "muhajirun",
+      "citations": [
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "pending"
+        }
+      ]
+    }
+  ]
+}

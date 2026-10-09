@@ -1,0 +1,13 @@
+{
+  "json.schemas": [
+    { "fileMatch": ["/content/companions/*.json"], "url": "./content/schema/companion.schema.json" },
+    { "fileMatch": ["/content/stories/*.json"], "url": "./content/schema/story.schema.json" },
+    { "fileMatch": ["/content/categories.json"], "url": "./content/schema/categories.schema.json" },
+    { "fileMatch": ["/content/events.json"], "url": "./content/schema/events.schema.json" },
+    { "fileMatch": ["/content/sources.json"], "url": "./content/schema/sources.schema.json" },
+    { "fileMatch": ["/content/people.json"], "url": "./content/schema/people.schema.json" },
+    { "fileMatch": ["/content/meta.json"], "url": "./content/schema/meta.schema.json" },
+    { "fileMatch": ["/content/reviewers.json"], "url": "./content/schema/reviewers.schema.json" },
+    { "fileMatch": ["/content/reviews/*.json"], "url": "./content/schema/approval.schema.json" }
+  ]
+}

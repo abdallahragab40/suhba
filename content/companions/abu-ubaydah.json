@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "id": "abu-ubaydah",
+  "order": 10,
+  "gender": "male",
+  "name": {
+    "ar": "أبو عبيدة بن الجراح"
+  },
+  "fullName": {
+    "ar": "عامر بن عبد الله بن الجراح القرشي الفهري"
+  },
+  "summary": {
+    "ar": "أحد العشرة المبشرين بالجنة، ومن المهاجرين."
+  },
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators"
+    ],
+    "authoredBy": "sample-content"
+  },
+  "references": [
+    "isabah",
+    "siyar",
+    "istiab",
+    "usd-al-ghabah",
+    "tabaqat-ibn-sad"
+  ],
+  "kunya": {
+    "ar": "أبو عبيدة"
+  },
+  "titles": [
+    {
+      "ar": "أمين هذه الأمة"
+    }
+  ],
+  "aliases": [
+    "ابو عبيدة",
+    "عامر بن الجراح",
+    "امين الامة"
+  ],
+  "death": {
+    "date": {
+      "precision": "year",
+      "era": "afterHijra",
+      "hijriYear": 18,
+      "gregorianYear": 639
+    },
+    "reliability": "established",
+    "citations": [
+      {
+        "sourceId": "isabah",
+        "locatorStatus": "pending"
+      },
+      {
+        "sourceId": "siyar",
+        "locatorStatus": "pending"
+      }
+    ]
+  },
+  "deathPlace": {
+    "ar": "الشام"
+  },
+  "memberships": [
+    {
+      "categoryId": "ashara-mubashshara",
+      "citations": [
+        {
+          "sourceId": "tirmidhi",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "abu-dawud",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "categoryId": "muhajirun",
+      "citations": [
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "pending"
+        }
+      ]
+    }
+  ]
+}

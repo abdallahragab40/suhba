@@ -1,0 +1,17 @@
+targets:
+  $default:
+    builders:
+      json_serializable:
+        options:
+          # Content is authored by hand: reject unknown keys and report the
+          # exact field on type errors instead of failing silently.
+          checked: true
+          disallow_unrecognized_keys: true
+          explicit_to_json: true
+          include_if_null: false
+      drift_dev:
+        options:
+          databases:
+            app: lib/core/database/app_database.dart
+          schema_dir: drift_schemas/
+          test_dir: test/drift/
