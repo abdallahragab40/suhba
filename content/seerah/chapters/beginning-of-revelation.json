@@ -51,6 +51,19 @@
     {
       "type": "paragraph",
       "text": {
+        "ar": "وذكر النبي ﷺ أنه كان يعرف حجرًا بمكة كان يسلّم عليه قبل أن يُبعث، كما في صحيح مسلم."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
         "ar": "ثم جاءه الملك وهو في غار حراء فأمره بالقراءة، فأخبره النبي ﷺ أنه ليس بقارئ، فضمّه الملك ضمًّا شديدًا ثلاث مرات، ثم قرأ عليه أوائل سورة العلق."
       },
       "reliability": "established",
@@ -155,6 +168,57 @@
       ]
     },
     {
+      "type": "disputeNote",
+      "text": {
+        "ar": "واختلف أهل العلم في مدة فترة الوحي بعد النزول الأول."
+      },
+      "opinions": [
+        {
+          "text": {
+            "ar": "أنها كانت أيامًا قليلة."
+          },
+          "citations": [
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "text": {
+            "ar": "أنها طالت أشهرًا، وقيل أكثر من ذلك، والروايات في تحديدها غير قاطعة."
+          },
+          "citations": [
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "pending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ثم رأى النبي ﷺ الملك الذي جاءه بحراء جالسًا على كرسي بين السماء والأرض، فرجع إلى أهله وطلب أن يُدثّر، فنزلت أوائل سورة المدثر بالأمر بالقيام والإنذار، وتطهير الثياب، وهجر الأوثان، والصبر لله."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
       "type": "quranQuote",
       "ref": {
         "surah": 74,
@@ -188,9 +252,216 @@
       ]
     },
     {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان أول ما نزل يذكّر الإنسان بأنه مخلوق من علق، وبأن الله علّمه بالقلم ما لم يعلم، فكانت البداية تعريفًا بالخالق وتكريمًا للعلم."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 96,
+            "ayahFrom": 1,
+            "ayahTo": 5
+          }
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وذكر النبي ﷺ أن يوم الاثنين هو اليوم الذي وُلد فيه واليوم الذي أُنزل عليه فيه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "text": {
+        "ar": "كيف كان يأتيه الوحي"
+      }
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وسأل الحارث بن هشام النبي ﷺ عن كيفية إتيان الوحي، فأخبر أنه يأتيه أحيانًا مثل صلصلة الجرس، وهو أشدّه عليه، فيفصم عنه وقد وعى ما قيل، وأحيانًا يتمثّل له الملك رجلًا فيكلّمه فيعي ما يقول."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وذكرت عائشة أنها رأته ينزل عليه الوحي في اليوم الشديد البرد، فيفصم عنه وإن جبينه ليتفصّد عرقًا، لما يجد من ثقله."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 73,
+            "ayahFrom": 5
+          }
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان النبي ﷺ في أول الأمر يعالج من التنزيل شدة، فيحرّك به لسانه وشفتيه حرصًا على حفظه، فنزل أن الله تكفّل بجمعه في صدره وبيانه، فكان بعد ذلك إذا أتاه جبريل استمع، فإذا انطلق قرأه كما قرأه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 75,
+            "ayahFrom": 16,
+            "ayahTo": 19
+          }
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وأُمر النبي ﷺ في أوائل ما نزل بقيام الليل، فكان يقوم هو وطائفة من أصحابه، حتى نزل التخفيف بعد ذلك في آخر سورة المزمّل."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 73,
+            "ayahFrom": 1,
+            "ayahTo": 4
+          }
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 73,
+            "ayahFrom": 20
+          }
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "text": {
+        "ar": "أثر البداية"
+      }
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكانت خديجة أول من آمن به وصدّقه، ثم آمن به أقرب الناس إليه ممن عرفوه عن قرب؛ إذ كان صدقه وأمانته معروفين لديهم قبل أن يحدّثهم بشيء."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ولم يعش ورقة بن نوفل طويلًا بعد ذلك، ولكن ما تنبّأ به من أن قومه سيعادونه ويخرجونه تحقّق بعد سنين، حين اضطرّه أذى قريش إلى الهجرة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ولم يكن النبي ﷺ يتطلّع إلى النبوة أو يرجوها، كما قال الله تعالى: وما كنت ترجو أن يُلقى إليك الكتاب إلا رحمة من ربك."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 28,
+            "ayahFrom": 86
+          }
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ثم تتابع الوحي منجّمًا بحسب الوقائع طوال ثلاث وعشرين سنة، ليثبّت به فؤاده ويعلّم الناس على مكث، كما ذكر القرآن."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 17,
+            "ayahFrom": 106
+          }
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 25,
+            "ayahFrom": 32
+          }
+        }
+      ]
+    },
+    {
       "type": "lesson",
       "text": {
         "ar": "جاءت أول كلمة من الوحي أمرًا بالقراءة باسم الله؛ فالعلم في هذا الدين يبدأ من الله ويعود إليه. ووقفت خديجة إلى جانب النبي ﷺ بكلمات استدلّت فيها بأخلاقه، فكان خلقه أول شاهد على صدقه."
+      }
+    },
+    {
+      "type": "lesson",
+      "text": {
+        "ar": "انتقل النبي ﷺ بالوحي من الخلوة إلى البلاغ، ومن التعبّد في الغار إلى دعوة الناس؛ فالعبادة الخاصة تُعدّ صاحبها لحمل الأمانة العامة."
       }
     }
   ],
@@ -201,6 +472,6 @@
       "needsSourceText"
     ],
     "authoredBy": "draft-revision-4",
-    "coverage": "sample"
+    "coverage": "complete"
   }
 }

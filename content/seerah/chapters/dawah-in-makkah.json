@@ -101,6 +101,40 @@
     {
       "type": "paragraph",
       "text": {
+        "ar": "وكان السابقون من طبقات شتّى: من الأشراف كأبي بكر وعثمان، ومن الشباب كالزبير وسعد، ومن الموالي والمستضعفين كبلال وعمار بن ياسر وأبيه وأمه وخبّاب بن الأرت، فجمعهم الإيمان على تفاوت أنسابهم وأموالهم."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكانت الصلاة في أول الأمر ركعتين بالغداة وركعتين بالعشي على ما يذكره أهل السير، قبل أن تُفرض الصلوات الخمس ليلة الإسراء."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "al-bidaya",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
         "ar": "ثم نزل الأمر بإنذار العشيرة الأقربين، فصعد النبي ﷺ الصفا ونادى بطون قريش، فلما اجتمعوا سألهم: هل يصدّقونه لو أخبرهم بخطر قريب منهم؟ فأقرّوا أنهم لم يعرفوا عليه كذبًا قط، فأنذرهم."
       },
       "reliability": "established",
@@ -153,6 +187,190 @@
       ]
     },
     {
+      "type": "heading",
+      "text": {
+        "ar": "موقف قريش"
+      }
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وحاولت قريش أن توقف الدعوة بالضغط على أبي طالب، فمشى إليه وجوهها يطلبون أن يكفّ ابن أخيه أو يخلّي بينهم وبينه، فردّهم ردًّا جميلًا وبقي على حمايته. ويروي ابن إسحاق عبارة مشهورة للنبي ﷺ في ذلك، وفي إسنادها ضعف."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "al-bidaya",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ثم جرّبت الإغراء؛ فيروي ابن إسحاق أن عتبة بن ربيعة عرض على النبي ﷺ المال والجاه والملك على أن يترك ما يدعو إليه، فقرأ عليه النبي ﷺ أوائل سورة فصّلت، فرجع عتبة إلى قومه يشير عليهم أن يخلّوا بينه وبين العرب."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 41,
+            "ayahFrom": 1,
+            "ayahTo": 13
+          }
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ولما فشلت المساومة لجأت إلى التشويه، فاتهمته بالشعر والسحر والكهانة والجنون، وتشاور رؤساؤها في موسم الحج على كلمة يصدّون بها الوافدين عنه، وقد سجّل القرآن هذه التهم وردّ عليها."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 52,
+            "ayahFrom": 29,
+            "ayahTo": 30
+          }
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 74,
+            "ayahFrom": 18,
+            "ayahTo": 25
+          }
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان القرآن يتحدّاهم أن يأتوا بمثله، ويحاورهم بالحجة في التوحيد والبعث، ويضرب لهم الأمثال من الأمم السابقة، ويثبّت المؤمنين بأخبار الأنبياء قبلهم."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 2,
+            "ayahFrom": 23
+          }
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 17,
+            "ayahFrom": 88
+          }
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وتعنّتت قريش فطلبت آيات حسية: أن يفجّر لهم ينبوعًا، أو يكون له بيت من زخرف، أو يرقى في السماء، فجاء الجواب في القرآن بأنه بشر رسول."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 17,
+            "ayahFrom": 90,
+            "ayahTo": 93
+          }
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان أبو جهل من أشدّهم عداوة، فهمّ يومًا أن يطأ عنق النبي ﷺ وهو ساجد، فنكص على عقبيه وهو يتّقي بيديه، ونزلت فيه آيات من آخر سورة العلق."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 96,
+            "ayahFrom": 9,
+            "ayahTo": 19
+          }
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ويذكر ابن إسحاق أن عبد الله بن مسعود كان أول من جهر بالقرآن عند الكعبة بعد النبي ﷺ، فقرأ سورة الرحمن، فقاموا إليه يضربونه."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان النبي ﷺ يعرض الإسلام على من يفد إلى مكة في المواسم، فأسلم من الوافدين أفراد رجعوا يدعون قومهم، منهم الطفيل بن عمرو الدوسي على ما يذكره أهل السير."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ودخل الإسلام بيوتًا كثيرة من بطون قريش، حتى صار في كل قبيلة تقريبًا من أسلم، فكثر حديث الناس عنه في مكة، واشتد قلق رؤسائها على مكانتهم."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
       "type": "paragraph",
       "text": {
         "ar": "وكان القرآن المكي يبني الإيمان بالله وحده، واليقين باليوم الآخر، وكرامة الإنسان، وأخلاق الصدق والعدل والرحمة، قبل تفصيل كثير من الأحكام."
@@ -170,6 +388,12 @@
       "text": {
         "ar": "بدأت الدعوة بالأقرب فالأقرب، ونمت بالصحبة الموثوقة والتعليم الهادئ قبل المواجهة العلنية؛ وفي ذلك درس في التدرج وبناء الأساس قبل الإعلان."
       }
+    },
+    {
+      "type": "lesson",
+      "text": {
+        "ar": "وصبر النبي ﷺ على الإغراء كما صبر على الأذى؛ فالداعية لا تشتريه المناصب ولا تثنيه المحن."
+      }
     }
   ],
   "review": {
@@ -179,6 +403,6 @@
       "needsSourceText"
     ],
     "authoredBy": "draft-revision-4",
-    "coverage": "sample"
+    "coverage": "complete"
   }
 }

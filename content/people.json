@@ -141,6 +141,58 @@
         "authoredBy": "draft-revision-4"
       },
       "gender": "female"
+    },
+    {
+      "id": "ruqayyah",
+      "name": {
+        "ar": "رقية بنت رسول الله"
+      },
+      "honorific": "sahabi",
+      "review": {
+        "status": "draft",
+        "editorialFlags": [],
+        "authoredBy": "draft-revision-4"
+      },
+      "gender": "female"
+    },
+    {
+      "id": "umm-kulthum-bint-muhammad",
+      "name": {
+        "ar": "أم كلثوم بنت رسول الله"
+      },
+      "honorific": "sahabi",
+      "review": {
+        "status": "draft",
+        "editorialFlags": [],
+        "authoredBy": "draft-revision-4"
+      },
+      "gender": "female"
+    },
+    {
+      "id": "al-hasan",
+      "name": {
+        "ar": "الحسن بن علي"
+      },
+      "honorific": "sahabi",
+      "review": {
+        "status": "draft",
+        "editorialFlags": [],
+        "authoredBy": "draft-revision-4"
+      },
+      "gender": "male"
+    },
+    {
+      "id": "al-husayn",
+      "name": {
+        "ar": "الحسين بن علي"
+      },
+      "honorific": "sahabi",
+      "review": {
+        "status": "draft",
+        "editorialFlags": [],
+        "authoredBy": "draft-revision-4"
+      },
+      "gender": "male"
     }
   ]
 }

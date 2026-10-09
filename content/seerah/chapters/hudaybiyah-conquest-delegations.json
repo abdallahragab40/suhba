@@ -111,6 +111,83 @@
       ]
     },
     {
+      "type": "paragraph",
+      "text": {
+        "ar": "وحمل دحية الكلبي كتاب النبي ﷺ إلى هرقل، فسأل هرقل أبا سفيان، وكان يومئذ بالشام في تجارة، عن نسب النبي ﷺ وصدقه وأتباعه، فاستدلّ من جوابه على صدقه، كما في الحديث الطويل في صحيح البخاري."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وأما كسرى فمزّق الكتاب، فدعا النبي ﷺ أن يُمزَّقوا كل ممزّق."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وصالح النبي ﷺ أهل خيبر بعد فتحها على أن يعملوا في أرضها ولهم شطر ما يخرج منها، وقدم عليه في خيبر جعفر بن أبي طالب ومن بقي من مهاجري الحبشة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وفي ذي القعدة من السنة السابعة اعتمر النبي ﷺ وأصحابه عمرة القضاء كما نصّ عليه الصلح، وأقاموا بمكة ثلاثة أيام ثم خرجوا وفاءً بالشرط."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 48,
+            "ayahFrom": 27
+          }
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وفي السنة الثامنة كانت مؤتة في أطراف الشام، فاستُشهد فيها الأمراء الثلاثة زيد بن حارثة وجعفر بن أبي طالب وعبد الله بن رواحة، ثم أخذ الراية خالد بن الوليد فانحاز بالناس."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
       "type": "heading",
       "text": {
         "ar": "الفتح"
@@ -130,6 +207,48 @@
         {
           "sourceId": "sirat-ibn-hisham",
           "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وأسلم أبو سفيان بن حرب قبيل دخول مكة، وأعلن النبي ﷺ أن من دخل دار أبي سفيان فهو آمن، ومن أغلق عليه بابه فهو آمن، ومن دخل المسجد فهو آمن."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ودخل خالد بن الوليد من أسفل مكة، فلقيه نفر من قريش فقاتلوه، وكان ذلك أكثر ما وقع من قتال يوم الفتح، ثم بايع أهل مكة النبي ﷺ على الإسلام رجالًا ونساءً."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 60,
+            "ayahFrom": 12
+          }
         }
       ]
     },
@@ -202,6 +321,91 @@
       ]
     },
     {
+      "type": "paragraph",
+      "text": {
+        "ar": "ثم حاصر النبي ﷺ الطائف بعد حنين أيامًا ولم يفتحها، فرجع عنها ودعا لأهلها، فجاء وفد ثقيف بعد ذلك فأسلموا."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وقسم النبي ﷺ غنائم حنين بالجعرانة، فأعطى المؤلفة قلوبهم من قريش وغيرها، فوجد بعض الأنصار في أنفسهم، فجمعهم وخطبهم يذكّرهم بنعمة الله عليهم، ويسألهم أما يرضون أن يذهب الناس بالشاء والبعير ويرجعوا هم برسول الله إلى رحالهم، فبكوا ورضوا."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وتخلّف عن تبوك ثلاثة من الصحابة بغير عذر، منهم كعب بن مالك، فصدقوا النبي ﷺ ولم يعتذروا بالكذب، فهُجروا خمسين ليلة حتى نزلت توبتهم."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 9,
+            "ayahFrom": 118
+          }
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وفي السنة التاسعة حجّ أبو بكر بالناس، وبُلّغ فيها أوائل سورة براءة، وأُعلن ألا يحج بعد العام مشرك ولا يطوف بالبيت عريان."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وتتابعت الوفود من ثقيف وبني تميم وقبائل اليمن وغيرها تعلن إسلامها، وكان النبي ﷺ يستقبلهم ويعلّمهم ويكتب لهم ويبعث معهم من يفقّههم."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
       "type": "infographic",
       "visualId": "hudaybiyah-sequence",
       "caption": {
@@ -213,6 +417,12 @@
       "text": {
         "ar": "رأى بعض الصحابة في شروط الحديبية غضاضة، فكانت أعظم فتحًا مما ظنّوا؛ وبعد الفتح كان العفو لا الانتقام. والنصر الحقيقي ما فتح القلوب قبل الأبواب."
       }
+    },
+    {
+      "type": "lesson",
+      "text": {
+        "ar": "وفي كلمته للأنصار بعد حنين تعليم لمعالجة ما في النفوس بالمصارحة والتذكير بالنعمة، لا بالأمر والإلزام وحدهما."
+      }
     }
   ],
   "review": {
@@ -222,7 +432,7 @@
       "needsSourceText"
     ],
     "authoredBy": "draft-revision-4",
-    "coverage": "sample"
+    "coverage": "complete"
   },
   "visualIds": [
     "hudaybiyah-sequence",

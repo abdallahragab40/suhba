@@ -54,6 +54,57 @@
       ]
     },
     {
+      "type": "paragraph",
+      "text": {
+        "ar": "وجاء خبّاب بن الأرت إلى النبي ﷺ وهو متوسّد بردة في ظل الكعبة، يشكو ما يلقون ويسأله أن يدعو لهم، فذكّرهم النبي ﷺ بمن كان قبلهم ممن صبر على أشد من ذلك، وبشّرهم بأن الله سيتمّ هذا الأمر، ونهاهم عن الاستعجال."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ويروي أهل السير أن أمية بن خلف كان يعذّب بلالًا في رمضاء مكة، يضع الصخرة على صدره، وبلال يردّد كلمة التوحيد، حتى اشتراه أبو بكر فأعتقه."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وأُكره عمّار بن ياسر على كلمة الكفر تحت العذاب، فنزل في ذلك أن من أُكره وقلبه مطمئن بالإيمان فلا إثم عليه، على ما يذكره أهل التفسير والسير."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 16,
+            "ayahFrom": 106
+          }
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
       "type": "hadithQuote",
       "textStatus": "pendingFromSource",
       "reliability": "established",
@@ -109,12 +160,42 @@
     {
       "type": "paragraph",
       "text": {
+        "ar": "وأرسلت قريش في طلبهم عمرو بن العاص وعبد الله بن أبي ربيعة بالهدايا إلى النجاشي وبطارقته، وكانت الهجرة الثانية أكبر من الأولى، بلغ عدد رجالها ثمانين ونيّفًا على ما يذكره أهل السير."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
         "ar": "وأرسلت قريش إلى النجاشي تطلب ردّهم، فسمع منهم، وتكلم عنهم جعفر بن أبي طالب، فأمّنهم النجاشي وأبى أن يسلّمهم."
       },
       "reliability": "reported",
       "citations": [
         {
           "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وتروي أم سلمة، وكانت من المهاجرين إلى الحبشة، أن جعفرًا حدّث النجاشي عمّا كانوا عليه في الجاهلية وما جاءهم به النبي ﷺ، وقرأ عليه صدرًا من سورة مريم، فبكى النجاشي، وأبى أن يسلمهم لرسل قريش."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "al-bidaya",
           "locatorStatus": "pending"
         }
       ]
@@ -145,6 +226,19 @@
     {
       "type": "paragraph",
       "text": {
+        "ar": "وأسلم حمزة بن عبد المطلب غضبًا لابن أخيه حين بلغه أن أبا جهل شتمه وآذاه، ثم ثبت على إسلامه، فكان من أعزّ الناس في قريش وأمنعهم، على ما يذكره ابن إسحاق."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
         "ar": "فلما رأت قريش أن الإسلام يفشو، كتبت صحيفة تقاطع فيها بني هاشم وبني المطلب، لا يُبايَعون ولا يُناكَحون، فانحازوا إلى شعب أبي طالب نحو ثلاث سنين، مؤمنُهم وكافرُهم، حتى نُقضت الصحيفة."
       },
       "reliability": "reported",
@@ -155,6 +249,19 @@
         },
         {
           "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وعُلّقت الصحيفة في جوف الكعبة، واشتدّ الجوع بالمحصورين حتى أكلوا ورق الشجر، ثم سعى في نقضها رجال من قريش أنكروا هذا الظلم، منهم هشام بن عمرو وزهير بن أبي أمية والمطعم بن عدي، ويذكر ابن إسحاق أن الأرضة أكلت الصحيفة إلا اسم الله."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
           "locatorStatus": "pending"
         }
       ]
@@ -183,6 +290,44 @@
       ]
     },
     {
+      "type": "paragraph",
+      "text": {
+        "ar": "ولما حضرت أبا طالب الوفاة دخل عليه النبي ﷺ يدعوه إلى كلمة التوحيد، وعنده أبو جهل وعبد الله بن أبي أمية يذكّرانه بملة عبد المطلب، فمات على ذلك، ونزل في ذلك أن الهداية بيد الله."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 28,
+            "ayahFrom": 56
+          }
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وتوفيت خديجة قبل الهجرة بثلاث سنين، فكان فقدها وفقد أبي طالب في وقت متقارب شديدًا على النبي ﷺ: فقد السند في البيت والحماية في القوم."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
       "type": "infographic",
       "visualId": "abyssinia-map",
       "caption": {
@@ -203,7 +348,7 @@
       "needsSourceText"
     ],
     "authoredBy": "draft-revision-4",
-    "coverage": "sample"
+    "coverage": "complete"
   },
   "visualIds": [
     "abyssinia-map"

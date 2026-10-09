@@ -56,6 +56,45 @@
       ]
     },
     {
+      "type": "paragraph",
+      "text": {
+        "ar": "وأعلن النبي ﷺ عزمه على الحج، فقدم المدينة بشر كثير كلهم يريد أن يأتمّ به، وجعل يعلّمهم المناسك ويأمرهم أن يأخذوها عنه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وجمع يوم عرفة بين الظهر والعصر، ثم وقف يدعو حتى غربت الشمس، ثم دفع إلى مزدلفة، ثم رمى ونحر بمنى، فنحر بيده ثلاثًا وستين بدنة وأكمل علي الباقي، كما في حديث جابر."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وخطب الناس يوم النحر بمنى، فسألهم عن اليوم والشهر والبلد، ثم بيّن أن دماءهم وأموالهم وأعراضهم حرام عليهم كحرمة يومهم ذاك، وأمر الشاهد أن يبلّغ الغائب."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
       "type": "hadithQuote",
       "textStatus": "pendingFromSource",
       "reliability": "established",
@@ -129,6 +168,53 @@
     {
       "type": "paragraph",
       "text": {
+        "ar": "وكان قد جهّز جيشًا بإمرة أسامة بن زيد إلى أطراف الشام قبل مرضه، وصلّى بالناس في أول مرضه قاعدًا."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وخطب في مرضه فذكر أن عبدًا خيّره الله بين الدنيا وما عنده فاختار ما عند الله، فبكى أبو بكر وفهم مراده، وأمر بسدّ الأبواب إلى المسجد إلا باب أبي بكر."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ودعا ابنته فاطمة فأسرّ إليها فبكت، ثم أسرّ إليها فضحكت، فلما سُئلت بعد وفاته ذكرت أنه أخبرها أنه يُقبض في وجعه ذلك، ثم أخبرها أنها أول أهله لحاقًا به."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
         "ar": "واشتد عليه المرض، فاستأذن أزواجه أن يُمرّض في بيت عائشة فأذنّ له، وأمر أبا بكر أن يصلي بالناس."
       },
       "reliability": "established",
@@ -139,6 +225,36 @@
         },
         {
           "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وفي صبيحة يوم الاثنين كشف ستر حجرته ينظر إلى المسلمين وهم صفوف في صلاة الفجر خلف أبي بكر، فتبسّم ضاحكًا، وظنّ الناس أنه خارج إليهم، فأشار إليهم أن أتمّوا صلاتكم، وأرخى الستر."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ودخل عبد الرحمن بن أبي بكر ومعه سواك، فأخذته عائشة فليّنته وأعطته إياه فاستنّ به، وكان آخر ما سُمع منه أن يكون مع الرفيق الأعلى."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
           "locatorStatus": "pending"
         }
       ]
@@ -246,6 +362,62 @@
       ]
     },
     {
+      "type": "paragraph",
+      "text": {
+        "ar": "وغسّله أهل بيته وعليه قميصه، ثم صلّى عليه المسلمون أرسالًا: الرجال ثم النساء ثم الصبيان، بغير إمام، على ما يذكره أهل السير."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ولم يترك النبي ﷺ عند موته دينارًا ولا درهمًا ولا عبدًا ولا أمة، وتوفي ودرعه مرهونة عند يهودي في ثلاثين صاعًا من شعير."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان من وصاياه في مرضه الوصية بالصلاة، وبالإحسان إلى من تحت أيدي الناس من الضعفاء، على ما في روايات السنن."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "abu-dawud",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكانت مدة نبوته ثلاثًا وعشرين سنة: ثلاث عشرة بمكة وعشرًا بالمدينة، كما في حديث ابن عباس."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
       "type": "infographic",
       "visualId": "arafat-panel"
     },
@@ -253,6 +425,12 @@
       "type": "lesson",
       "text": {
         "ar": "ختم النبي ﷺ حياته بإكمال البلاغ ووصايا جامعة في الحقوق والحرمات؛ وكان ثبات أبي بكر يوم الوفاة تعليمًا للأمة أن الرسالة باقية بعد صاحبها."
+      }
+    },
+    {
+      "type": "lesson",
+      "text": {
+        "ar": "وفي تبسّمه وهو يرى أصحابه صفوفًا خلف أبي بكر طمأنينة إلى أن الأمانة قد بُلّغت، وأن الجماعة قائمة بعده."
       }
     }
   ],
@@ -263,7 +441,7 @@
       "needsSourceText"
     ],
     "authoredBy": "draft-revision-4",
-    "coverage": "sample"
+    "coverage": "complete"
   },
   "visualIds": [
     "arafat-panel"

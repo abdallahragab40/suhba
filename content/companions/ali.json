@@ -16,10 +16,11 @@
     "status": "draft",
     "editorialFlags": [
       "needsLocators",
+      "needsSourceText",
       "fitnaAdjacent"
     ],
-    "authoredBy": "sample-content",
-    "coverage": "skeleton"
+    "authoredBy": "draft-revision-4",
+    "coverage": "complete"
   },
   "references": [
     "isabah",
@@ -94,5 +95,1654 @@
   "storyIds": [
     "treaty-of-hudaybiyah",
     "day-of-badr"
+  ],
+  "lineage": {
+    "ar": "من بني هاشم بن عبد مناف، من قريش"
+  },
+  "birth": {
+    "date": {
+      "precision": "approx",
+      "era": "beforeHijra",
+      "hijriYear": 23,
+      "gregorianYear": 600
+    },
+    "reliability": "reported",
+    "citations": [
+      {
+        "sourceId": "siyar",
+        "locatorStatus": "pending"
+      },
+      {
+        "sourceId": "tabaqat-ibn-sad",
+        "locatorStatus": "pending"
+      }
+    ]
+  },
+  "titles": [
+    {
+      "ar": "أبو تراب"
+    }
+  ],
+  "atAGlance": [
+    {
+      "label": {
+        "ar": "الخلافة"
+      },
+      "date": {
+        "precision": "range",
+        "era": "afterHijra",
+        "hijriYear": 35,
+        "gregorianYear": 656,
+        "hijriYearEnd": 40,
+        "gregorianYearEnd": 661
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "tarikh-al-tabari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "label": {
+        "ar": "القرابة"
+      },
+      "text": {
+        "ar": "ابن عم النبي ﷺ وزوج ابنته فاطمة"
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "pending"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "type": "father",
+      "person": {
+        "displayName": {
+          "ar": "أبو طالب بن عبد المطلب"
+        },
+        "personId": "abu-talib"
+      },
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "spouse",
+      "person": {
+        "displayName": {
+          "ar": "فاطمة بنت رسول الله"
+        },
+        "personId": "fatimah"
+      },
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "child",
+      "person": {
+        "displayName": {
+          "ar": "الحسن بن علي"
+        },
+        "personId": "al-hasan"
+      },
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "child",
+      "person": {
+        "displayName": {
+          "ar": "الحسين بن علي"
+        },
+        "personId": "al-husayn"
+      },
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "pending"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "ali.early-life",
+      "kind": "earlyLife",
+      "title": {
+        "ar": "النشأة"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "هو علي بن أبي طالب بن عبد المطلب بن هاشم، ابن عم النبي ﷺ، وأمه فاطمة بنت أسد بن هاشم، فهو هاشمي الأبوين، ويُكنى أبا الحسن."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "isabah",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وسمّته أمه حيدرة، وهو من أسماء الأسد، وقد ذكر ذلك عن نفسه في رجزه يوم خيبر كما في صحيح مسلم."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وُلد بمكة قبل البعثة بنحو عشر سنين على المشهور، وكان أبوه أبو طالب كثير العيال قليل المال، فلما أصابت قريشًا أزمة شديدة ضمّه النبي ﷺ إليه تخفيفًا عن عمه، فنشأ في بيت النبي ﷺ وتحت رعايته."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "فكان قريبًا من النبي ﷺ منذ صغره، يرى أخلاقه وعبادته قبل البعثة وبعدها، وهذه النشأة من أسباب سبقه إلى الإسلام."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكان له من الإخوة طالب وعقيل وجعفر، وكان أصغرهم، وبين كل واحد منهم والذي يليه نحو عشر سنين على ما يذكره أهل النسب، وأسلم جعفر وعقيل بعدُ وصار لهما شأن في الإسلام."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "isabah",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويصفه أهل التراجم بأنه كان ربعة من الرجال، عريض المنكبين، شديد الساعدين، واسع العينين، حسن الوجه، كثير التبسّم."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "pending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ali.conversion",
+      "kind": "conversion",
+      "title": {
+        "ar": "إسلامه"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "كان أول من أسلم من الصبيان، صلّى مع النبي ﷺ وخديجة في أول الأمر، ثم صحب النبي ﷺ في دعوته بمكة كلها."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "isabah",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "disputeNote",
+          "text": {
+            "ar": "اختلفت الروايات في سنّه حين أسلم."
+          },
+          "opinions": [
+            {
+              "text": {
+                "ar": "عشر سنين، وهو قول ابن إسحاق وجماعة."
+              },
+              "citations": [
+                {
+                  "sourceId": "sirat-ibn-hisham",
+                  "locatorStatus": "pending"
+                }
+              ]
+            },
+            {
+              "text": {
+                "ar": "أقوال أخرى بين الثامنة والخامسة عشرة، ذكرها ابن حجر والذهبي."
+              },
+              "citations": [
+                {
+                  "sourceId": "isabah",
+                  "locatorStatus": "pending"
+                },
+                {
+                  "sourceId": "siyar",
+                  "locatorStatus": "pending"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويذكر ابن إسحاق أن عليًّا كان يخرج مع النبي ﷺ إلى شعاب مكة يصليان مستخفيين، فرآهما أبو طالب مرة، فسأل النبي ﷺ عن هذا الدين، ثم أوصى ابنه أن يلزمه، وذكر أنه لن يدعوه إلا إلى خير."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وبقي مع النبي ﷺ في سنوات الأذى بمكة، وكان مع بني هاشم في حصار الشعب نحو ثلاث سنين."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ولما قدم أبو ذر الغفاري مكة يسأل عن النبي ﷺ متخفيًا من قريش، رآه علي غريبًا فأضافه أيامًا، ثم سأله عن حاجته، فلما عرفها مشى أمامه حتى أدخله على النبي ﷺ فأسلم."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وليلة الهجرة نام في فراش النبي ﷺ، وتخلّف بعده بمكة أيامًا يؤدّي ما كان عند النبي ﷺ من ودائع الناس، ثم هاجر إلى المدينة فلحق به في قباء."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وهاجر وحده بعد أن أدّى الأمانات، يسير الليل ويكمن النهار على ما يذكره أهل السير، حتى قدم على النبي ﷺ بقباء، فنزل معه."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "pending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ali.with-prophet",
+      "kind": "withProphet",
+      "title": {
+        "ar": "مع النبي ﷺ"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "تزوّج فاطمة بنت النبي ﷺ في المدينة في السنة الثانية على المشهور، فولدت له الحسن والحسين وزينب وأم كلثوم."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "isabah",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكان مهر فاطمة درعه الحُطَمية، على ما في رواية أبي داود، وبنى بها في بيت متواضع قرب المسجد، وعاشا في شظف من العيش يعملان بأيديهما."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "abu-dawud",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكان النبي ﷺ يزورهما، وقد دخل يومًا فلم يجده، فوجده نائمًا في المسجد وقد سقط رداؤه وأصابه التراب، فجعل يمسح عنه ويناديه بأبي تراب، فكان ذلك أحب أسمائه إليه."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وفي بدر كان أحد الثلاثة الذين خرجوا للمبارزة أول القتال مع حمزة وعبيدة بن الحارث، فقتل خصمه، وشهد أحدًا والخندق والمشاهد كلها إلا تبوك."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويوم أحد ثبت مع النبي ﷺ، ولما جُرح النبي ﷺ كان علي يأتي بالماء في مجنّه، وفاطمة تغسل الدم عن وجهه، حتى أحرقت حصيرًا فوضعت رماده على الجرح فاستمسك الدم."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويوم الخندق خرج لمبارزة عمرو بن عبد ودّ، أحد فرسان قريش، حين عبر الخندق يطلب المبارزة، فقتله، على ما يذكره ابن إسحاق."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وفي الحديبية كان كاتب الصلح، ولما طلب سهيل بن عمرو محو وصف النبي ﷺ برسول الله تحرّج علي من محوه، فمحاه النبي ﷺ بيده."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "hadithQuote",
+          "textStatus": "pendingFromSource",
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending",
+              "grading": {
+                "grade": "sahih",
+                "gradedBy": {
+                  "ar": "البخاري، بإخراجه في صحيحه"
+                }
+              }
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending",
+              "grading": {
+                "grade": "sahih",
+                "gradedBy": {
+                  "ar": "مسلم، بإخراجه في صحيحه"
+                }
+              }
+            }
+          ],
+          "summary": {
+            "ar": "حديث سهل بن سعد في خيبر، وأن النبي ﷺ أخبر أنه سيعطي الراية غدًا رجلًا يحب الله ورسوله ويحبه الله ورسوله يفتح الله على يديه، فأعطاها عليًّا."
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وفي غزوة تبوك خلّفه النبي ﷺ على أهله بالمدينة، فشقّ ذلك عليه، فطيّب النبي ﷺ نفسه بأنه منه بمنزلة هارون من موسى، إلا أنه لا نبي بعده."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وفي السنة التاسعة أرسله النبي ﷺ في موسم الحج ليبلّغ الناس أوائل سورة براءة، وكان أبو بكر أمير الحج."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وقبيل فتح مكة كتب حاطب بن أبي بلتعة كتابًا إلى قريش يخبرهم ببعض أمر النبي ﷺ، فبعث النبي ﷺ عليًّا والزبير والمقداد في طلب المرأة التي تحمله، فأدركوها في روضة خاخ وأخذوا الكتاب."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويوم حنين كان ممن ثبت مع النبي ﷺ حين انكشف الناس أول الأمر، على ما يذكره أهل السير."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وبعثه النبي ﷺ إلى اليمن قاضيًا وعاملًا، ثم لحق بالنبي ﷺ في حجة الوداع، فأشركه في هديه."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وفي مرض النبي ﷺ الأخير خرج النبي ﷺ إلى المسجد يتوكّأ على رجلين، أحدهما العباس، والآخر علي بن أبي طالب."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ولما توفي النبي ﷺ تولّى غسله مع نفر من أهل بيته، على ما يذكره أهل السير."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "pending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ali.virtues",
+      "kind": "virtues",
+      "title": {
+        "ar": "فضائله"
+      },
+      "blocks": [
+        {
+          "type": "hadithQuote",
+          "textStatus": "pendingFromSource",
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending",
+              "grading": {
+                "grade": "sahih",
+                "gradedBy": {
+                  "ar": "مسلم، بإخراجه في صحيحه"
+                }
+              }
+            }
+          ],
+          "summary": {
+            "ar": "حديث علي أن النبي ﷺ عهد إليه أنه لا يحبه إلا مؤمن ولا يبغضه إلا منافق."
+          }
+        },
+        {
+          "type": "hadithQuote",
+          "textStatus": "pendingFromSource",
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending",
+              "grading": {
+                "grade": "sahih",
+                "gradedBy": {
+                  "ar": "مسلم، بإخراجه في صحيحه"
+                }
+              }
+            }
+          ],
+          "summary": {
+            "ar": "حديث عائشة في أن النبي ﷺ أدخل عليًّا وفاطمة والحسن والحسين تحت مرطه، وتلا آية التطهير من سورة الأحزاب."
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ولما نزلت آية المباهلة دعا النبي ﷺ عليًّا وفاطمة وحسنًا وحسينًا، على ما في حديث سعد بن أبي وقاص في صحيح مسلم."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "quran",
+              "locatorStatus": "complete",
+              "quranRef": {
+                "surah": 3,
+                "ayahFrom": 61
+              }
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وهو أحد العشرة الذين سمّاهم النبي ﷺ في حديث واحد وبشّرهم بالجنة، وأحد الستة أهل الشورى الذين توفي النبي ﷺ وهو عنهم راضٍ."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "tirmidhi",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكان من أعلم الصحابة بالقضاء والفقه، وكان عمر يستشيره في النوازل ويرجع إلى رأيه، وتُروى عنه أقضية كثيرة في كتب الحديث والفقه."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "isabah",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وقال عمر بن الخطاب إن أقضى الصحابة علي، كما قال إن أقرأهم أبي بن كعب، مع اعتراف عمر بفضل الجميع."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وروى عن النبي ﷺ أحاديث كثيرة، منها التحذير من الكذب على النبي ﷺ، وكان شديد التثبّت فيما يرويه، يستحلف بعض من يحدّثه."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "abu-dawud",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكان من الصحابة الذين جمعوا القرآن حفظًا، ومن أفصح الناس بيانًا، ويُنسب إليه كلام كثير في الحكمة، منه ما يثبت ومنه ما لا تصح نسبته إليه."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "pending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ali.character",
+      "kind": "character",
+      "title": {
+        "ar": "زهده وشجاعته"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "عُرف بالشجاعة في المواقف، وبالزهد في الدنيا مع ولايته؛ فكان يلبس الخشن من الثياب، ويأكل البسيط من الطعام، ويقسم ما في بيت المال على الناس."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "hadithQuote",
+          "textStatus": "pendingFromSource",
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending",
+              "grading": {
+                "grade": "sahih",
+                "gradedBy": {
+                  "ar": "البخاري، بإخراجه في صحيحه"
+                }
+              }
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending",
+              "grading": {
+                "grade": "sahih",
+                "gradedBy": {
+                  "ar": "مسلم، بإخراجه في صحيحه"
+                }
+              }
+            }
+          ],
+          "summary": {
+            "ar": "حديث علي في أن فاطمة شكت ما تلقى من أثر الرحى في يدها وطلبت خادمًا، فعلّمهما النبي ﷺ التسبيح والتحميد والتكبير عند النوم، وذكر أنه خير لهما من خادم."
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكان قويًّا في الحق، رفيقًا بالضعيف، يقف في الخصومة موقف الناس، ويعظ أصحابه بالآخرة ويحذّرهم من الدنيا."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويذكر ابن سعد أنه كان يمشي في الأسواق وهو خليفة، يرشد الضالّ ويعين الضعيف، ويحمل حاجته بنفسه."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وعامل الخوارج قبل قتالهم بالحجة؛ فلم يمنعهم المساجد ولا الفيء ما لم يقاتلوا، حتى سفكوا الدم وقطعوا السبيل."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويروي ابن سعد أنه كان يدعو الناس إلى أن يسألوه عن كتاب الله، وأنه ما من آية إلا وهو يعلم فيمَ نزلت وأين نزلت، وكان ابن عباس من أخصّ من أخذ عنه."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "pending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ali.caliphate",
+      "kind": "contributions",
+      "title": {
+        "ar": "مع الخلفاء وخلافته"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "بايع أبا بكر ثم عمر ثم عثمان، وكان لكل منهم مستشارًا وناصحًا، واستخلفه عمر على المدينة حين خرج إلى الشام."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وتأخّرت بيعته العلنية لأبي بكر حتى توفيت فاطمة بعد النبي ﷺ بنحو ستة أشهر، ثم بايعه، وذكر فضله وسابقته، وكان بعد ذلك معه ومع عمر وعثمان ناصحًا ومعينًا."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وسمّى بعض أبنائه أبا بكر وعمر وعثمان، على ما يذكره ابن سعد وأهل النسب، وزوّج ابنته أم كلثوم من عمر بن الخطاب."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "isabah",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "فلما قُتل عثمان في ذي الحجة سنة خمس وثلاثين بايعه الناس بالمدينة، فتولّى الخلافة في زمن فتنة شديدة، ثم انتقل إلى الكوفة فجعلها مقرّه."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وانتقل إلى الكوفة لأنها أقرب إلى أهل العراق الذين ناصروه، وأوسط بين أطراف الدولة، فصارت مقر الخلافة في عهده."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ووقع في خلافته قتال بين المسلمين لم يُرده أحد من الصحابة ابتداءً: يوم الجمل سنة ست وثلاثين، وقُتل فيه طلحة والزبير، ثم صفين سنة سبع وثلاثين بينه وبين أهل الشام، وانتهت بالتحكيم."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ثم خرجت عليه طائفة رفضت التحكيم، عُرفت بالخوارج، فناظرهم وأرسل إليهم ابن عباس، فرجع بعضهم، وقاتل الباقين بالنهروان سنة ثمان وثلاثين."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وبعد يوم الجمل أكرم عائشة أم المؤمنين، وجهّزها، وردّها إلى المدينة معزّزة مع جماعة من النساء، ونهى أصحابه عن تتبّع المنهزمين وعن أخذ أموالهم."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وفي صفين رُفعت المصاحف ودُعي إلى التحكيم، فاختار أهل العراق أبا موسى الأشعري، واختار أهل الشام عمرو بن العاص، ولم ينته التحكيم إلى اتفاق يجمع الناس."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويذكر المؤرخون أنه حزن على طلحة والزبير بعد يوم الجمل، وذكر سابقتهما وفضلهما، ورجا أن يكون هو وهم ممن قال الله فيهم إنه نزع ما في صدورهم من غلّ."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "quran",
+              "locatorStatus": "complete",
+              "quranRef": {
+                "surah": 15,
+                "ayahFrom": 47
+              }
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وولّى عبد الله بن عباس على البصرة، وقدّم أهل العلم والسابقة في ولايته، وكان يكتب إلى عمّاله يأمرهم بالرفق بالرعية والعدل في الخراج."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "يُذكر ما شجر بين الصحابة بقدر ما يثبت عنه، ومنهج أهل السنة فيه الكف عمّا لم يثبت، وحمل ما وقع على الاجتهاد، والترضّي عنهم جميعًا، فكلهم من أهل السابقة والفضل."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ali.death",
+      "kind": "death",
+      "title": {
+        "ar": "وفاته"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "خرج لصلاة الفجر في الكوفة في رمضان سنة أربعين، فضربه عبد الرحمن بن ملجم، وهو من الخوارج، بسيف مسموم، فتوفي بعد يومين أو ثلاثة."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكان يكثر قبل موته من ذكر الآخرة وتمنّي لقاء الله، ويحذّر الناس من الفرقة، ويوصيهم بتقوى الله ولزوم الجماعة وإصلاح ذات البين."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويذكر المؤرخون أن الخوارج تواعدوا في تلك الليلة على قتل علي ومعاوية وعمرو بن العاص، فنجا معاوية وعمرو، وأُصيب علي."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وأوصى ألا يُقتل بضربته إلا قاتله، وألا يُمثّل به، ونهى أهله عن أن يتعدّوا ذلك."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "disputeNote",
+          "text": {
+            "ar": "اختلفت الروايات في سنّه يوم توفي."
+          },
+          "opinions": [
+            {
+              "text": {
+                "ar": "ثلاث وستون سنة، وهو المشهور."
+              },
+              "citations": [
+                {
+                  "sourceId": "tabaqat-ibn-sad",
+                  "locatorStatus": "pending"
+                },
+                {
+                  "sourceId": "siyar",
+                  "locatorStatus": "pending"
+                }
+              ]
+            },
+            {
+              "text": {
+                "ar": "أقوال أخرى بين الثامنة والخمسين والخامسة والستين."
+              },
+              "citations": [
+                {
+                  "sourceId": "siyar",
+                  "locatorStatus": "pending"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "واختُلف في موضع قبره بالكوفة؛ ويذكر المؤرخون أن أهله أخفوه خشية أن ينبشه الخوارج."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وصلّى عليه ابنه الحسن، ودُفن ليلًا بالكوفة."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكانت خلافته نحو أربع سنين وتسعة أشهر، وبايع الناس بعده ابنه الحسن، ثم تنازل الحسن عن الأمر لمعاوية سنة إحدى وأربعين حقنًا لدماء المسلمين، فسُمّي ذلك العام عام الجماعة."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "pending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ali.lessons",
+      "kind": "lessons",
+      "title": {
+        "ar": "دروس وعبر"
+      },
+      "blocks": [
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "نشأ علي في بيت النبي ﷺ، فكانت التربية الأولى في كنف القدوة سببًا في سبقه وثباته؛ والبيوت الصالحة تصنع الرجال قبل المعارك."
+          }
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "ورضي أن يكون منه بمنزلة هارون من موسى وهو يُخلَّف عن الغزو؛ فالمكانة لا تُقاس بالموقع الظاهر، بل بثقة صاحب الأمر وما يُستأمن عليه المرء."
+          }
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "وفي وصيته في قاتله عدل لا ينسى حتى وهو على فراش الموت: لا يُؤخذ بالدم غير صاحبه، ولا يُتجاوز الحد."
+          }
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "وفي صبره على فتن خلافته، ثم في صلح ابنه الحسن، بيان لقيمة حقن الدماء ووحدة الجماعة."
+          }
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "وفي إكرامه أم المؤمنين بعد القتال ونهيه عن تتبّع المنهزمين أدب في الخلاف: فالخصومة لا تُسقط الحرمات، والمؤمن لا ينسى الفضل لأهله."
+          }
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "وفي رجائه أن يجمعه الله بمن قاتلهم إخوانًا على سرر متقابلين أن الخلاف بين أهل الفضل لا يقطع الأخوة، وأن القلوب يُرجى لها الصفاء ولو اختلفت السيوف."
+          }
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "ومن سيرته أن العلم يُطلب بالسؤال والتثبّت؛ فقد كان يدعو إلى سؤاله، ويتثبّت فيما يُروى له، فجمع بين بذل العلم وحراسته."
+          }
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "ali.t.birth",
+      "era": "preIslam",
+      "date": {
+        "precision": "approx",
+        "era": "beforeHijra",
+        "hijriYear": 23,
+        "gregorianYear": 600
+      },
+      "title": {
+        "ar": "مولده بمكة"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "pending"
+        }
+      ],
+      "sectionId": "ali.early-life"
+    },
+    {
+      "id": "ali.t.islam",
+      "era": "makkan",
+      "date": {
+        "precision": "approx",
+        "era": "beforeHijra",
+        "hijriYear": 13,
+        "gregorianYear": 610
+      },
+      "title": {
+        "ar": "إسلامه صبيًّا"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ],
+      "sectionId": "ali.conversion"
+    },
+    {
+      "id": "ali.t.hijrah",
+      "era": "madinan",
+      "date": {
+        "precision": "year",
+        "era": "afterHijra",
+        "hijriYear": 1,
+        "gregorianYear": 622
+      },
+      "title": {
+        "ar": "مبيته في فراش النبي ﷺ وهجرته"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ],
+      "eventId": "hijrah",
+      "sectionId": "ali.conversion"
+    },
+    {
+      "id": "ali.t.marriage",
+      "era": "madinan",
+      "date": {
+        "precision": "year",
+        "era": "afterHijra",
+        "hijriYear": 2,
+        "gregorianYear": 624
+      },
+      "title": {
+        "ar": "زواجه بفاطمة"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "pending"
+        }
+      ],
+      "sectionId": "ali.with-prophet"
+    },
+    {
+      "id": "ali.t.badr",
+      "era": "madinan",
+      "date": {
+        "precision": "month",
+        "era": "afterHijra",
+        "hijriYear": 2,
+        "hijriMonth": 9,
+        "gregorianYear": 624
+      },
+      "title": {
+        "ar": "مبارزته يوم بدر"
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ],
+      "eventId": "badr",
+      "sectionId": "ali.with-prophet"
+    },
+    {
+      "id": "ali.t.hudaybiyah",
+      "era": "madinan",
+      "date": {
+        "precision": "month",
+        "era": "afterHijra",
+        "hijriYear": 6,
+        "hijriMonth": 11,
+        "gregorianYear": 628
+      },
+      "title": {
+        "ar": "كتابته صلح الحديبية"
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ],
+      "eventId": "hudaybiyah",
+      "sectionId": "ali.with-prophet"
+    },
+    {
+      "id": "ali.t.khaybar",
+      "era": "madinan",
+      "date": {
+        "precision": "month",
+        "era": "afterHijra",
+        "hijriYear": 7,
+        "hijriMonth": 1,
+        "gregorianYear": 628
+      },
+      "title": {
+        "ar": "راية خيبر"
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ],
+      "eventId": "khaybar",
+      "sectionId": "ali.with-prophet"
+    },
+    {
+      "id": "ali.t.tabuk",
+      "era": "madinan",
+      "date": {
+        "precision": "month",
+        "era": "afterHijra",
+        "hijriYear": 9,
+        "hijriMonth": 7,
+        "gregorianYear": 630
+      },
+      "title": {
+        "ar": "استخلافه على أهل النبي ﷺ في تبوك"
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ],
+      "eventId": "tabuk",
+      "sectionId": "ali.with-prophet"
+    },
+    {
+      "id": "ali.t.caliphate",
+      "era": "afterProphet",
+      "date": {
+        "precision": "month",
+        "era": "afterHijra",
+        "hijriYear": 35,
+        "hijriMonth": 12,
+        "gregorianYear": 656
+      },
+      "title": {
+        "ar": "البيعة له بالخلافة"
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "tarikh-al-tabari",
+          "locatorStatus": "pending"
+        }
+      ],
+      "sectionId": "ali.caliphate"
+    },
+    {
+      "id": "ali.t.jamal",
+      "era": "afterProphet",
+      "date": {
+        "precision": "month",
+        "era": "afterHijra",
+        "hijriYear": 36,
+        "hijriMonth": 6,
+        "gregorianYear": 656
+      },
+      "title": {
+        "ar": "يوم الجمل"
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "tarikh-al-tabari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "al-bidaya",
+          "locatorStatus": "pending"
+        }
+      ],
+      "sectionId": "ali.caliphate"
+    },
+    {
+      "id": "ali.t.siffin",
+      "era": "afterProphet",
+      "date": {
+        "precision": "year",
+        "era": "afterHijra",
+        "hijriYear": 37,
+        "gregorianYear": 657
+      },
+      "title": {
+        "ar": "صفين والتحكيم"
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "tarikh-al-tabari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "al-bidaya",
+          "locatorStatus": "pending"
+        }
+      ],
+      "sectionId": "ali.caliphate"
+    },
+    {
+      "id": "ali.t.death",
+      "era": "afterProphet",
+      "date": {
+        "precision": "month",
+        "era": "afterHijra",
+        "hijriYear": 40,
+        "hijriMonth": 9,
+        "gregorianYear": 661
+      },
+      "title": {
+        "ar": "استشهاده بالكوفة"
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "tarikh-al-tabari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "pending"
+        }
+      ],
+      "sectionId": "ali.death"
+    }
   ]
 }

@@ -130,14 +130,14 @@ void main() {
     expect(find.text('القرآن الكريم'), findsOneWidget);
   });
 
-  testApp('a skeleton profile (Uthman) renders without sections', (
+  testApp('a skeleton profile (Talha) renders without sections', (
     tester,
   ) async {
-    await open(tester, 'uthman');
-    expect(find.text('عثمان بن عفان'), findsOneWidget);
+    await open(tester, 'talha');
+    expect(find.text('طلحة بن عبيد الله'), findsOneWidget);
     expect(find.text('فصول السيرة'), findsNothing);
-    expect(find.text('ذو النورين'), findsNothing); // only in the subtitle
-    expect(find.text('أبو عبد الله · ذو النورين'), findsOneWidget);
+    expect(find.text('طلحة الخير'), findsNothing); // only in the subtitle
+    expect(find.text('أبو محمد · طلحة الخير'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 

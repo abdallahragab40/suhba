@@ -84,7 +84,7 @@ void main() {
 
   testApp('a profile without a written biography says so', (tester) async {
     tall(tester);
-    await AppUnderTest(location: '/companions/uthman').pump(tester);
+    await AppUnderTest(location: '/companions/talha').pump(tester);
     expect(find.textContaining('لم تُكتب سيرته المفصّلة بعد'), findsOneWidget);
     expect(find.text('ابدأ قراءة السيرة'), findsNothing);
   });

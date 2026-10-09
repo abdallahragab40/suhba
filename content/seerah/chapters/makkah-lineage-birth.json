@@ -99,6 +99,19 @@
       ]
     },
     {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكانت مكة مركزًا للحج والتجارة معًا: تحجّ إليها العرب كل عام، وتقوم قريبًا منها أسواق عكاظ ومجنّة وذي المجاز، فيجتمع فيها الشعر والتجارة والأخبار."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
       "type": "heading",
       "text": {
         "ar": "النسب"
@@ -117,6 +130,19 @@
         },
         {
           "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وذكر النبي ﷺ أن الله اصطفى كنانة من ولد إسماعيل، واصطفى قريشًا من كنانة، واصطفى من قريش بني هاشم، واصطفاه من بني هاشم، كما في صحيح مسلم."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
           "locatorStatus": "pending"
         }
       ]
@@ -228,6 +254,156 @@
       ]
     },
     {
+      "type": "heading",
+      "text": {
+        "ar": "قريش ومكة قبل المولد"
+      }
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان قصيّ بن كلاب قد جمع قريشًا في مكة بعد تفرّقها، وأقام دار الندوة مجلسًا لشوراها، وتولّى أمر البيت من الحجابة والسقاية والرفادة واللواء، ثم توزّعت هذه المناصب في بنيه وأحفاده."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ويذكر أهل السير أن هاشمًا جدّ النبي ﷺ الثاني هو الذي سنّ لقريش رحلتي الشتاء والصيف، وأن عبد المطلب أعاد حفر بئر زمزم بعد أن طُمرت زمنًا طويلًا، فصارت سقاية الحاج في بيته."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ويروي ابن إسحاق أن عبد المطلب نذر إن رُزق عشرة أبناء أن ينحر أحدهم عند الكعبة، فخرجت القرعة على عبد الله والد النبي ﷺ، ففداه بمئة من الإبل؛ وهي رواية من روايات السيرة تُذكر على أنها كذلك."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وأما خبر الفيل، فإن أبرهة الحبشي، صاحب اليمن، بنى كنيسة أراد أن يصرف إليها حج العرب، ثم سار بجيش ومعه فيل يريد هدم الكعبة، فلما بلغ قرب مكة امتنع الفيل عن التوجه إليها، وأهلك الله الجيش كما قصّه القرآن."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 105,
+            "ayahFrom": 1,
+            "ayahTo": 5
+          }
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "text": {
+        "ar": "العرب على عتبة الرسالة"
+      }
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكانت العرب يومئذ قد بدّلت ملة إبراهيم، فنصبت الأصنام حول الكعبة، وبقيت فيهم بقايا من الحنيفية، وكان منهم أفراد اعتزلوا عبادة الأوثان، كزيد بن عمرو بن نفيل الذي كان يقول إنه على دين إبراهيم."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان في أخلاق العرب كرم ونجدة ووفاء بالجوار، وكانت فيها كذلك عادات جائرة، كوأد البنات الذي ذمّه القرآن، والثأر الذي يتوارثه الأبناء، والربا الذي أثقل الضعفاء."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 81,
+            "ayahFrom": 8,
+            "ayahTo": 9
+          }
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وسمّاه جدّه عبد المطلب محمدًا، وهو اسم لم يكن شائعًا في العرب، على ما يذكره أهل السير."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وأرضعته أيامًا ثويبة مولاة أبي لهب قبل أن يُدفع إلى البادية، وكانت حاضنته أم أيمن بركة الحبشية، وقد بقيت معه حتى كبر، وكان يكرمها ويعرف لها حقها."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
       "type": "lesson",
       "text": {
         "ar": "وُلد ﷺ يتيمًا في وادٍ قليل الموارد، ومن هذا المبدأ المتواضع جاءت رسالة غيّرت حياة الناس؛ فقيمة الإنسان لا تُقاس بما وُلد فيه من سعة."
@@ -241,6 +417,6 @@
       "needsSourceText"
     ],
     "authoredBy": "draft-revision-4",
-    "coverage": "sample"
+    "coverage": "complete"
   }
 }
