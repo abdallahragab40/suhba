@@ -36,7 +36,9 @@
     "ali"
   ],
   "visualIds": [
-    "seerah-timeline"
+    "seerah-timeline",
+    "madinan-campaigns-map",
+    "badr-panel"
   ],
   "blocks": [
     {
@@ -187,6 +189,10 @@
           "locatorStatus": "pending"
         }
       ]
+    },
+    {
+      "type": "infographic",
+      "visualId": "badr-panel"
     },
     {
       "type": "lesson",

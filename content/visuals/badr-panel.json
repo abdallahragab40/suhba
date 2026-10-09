@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "badr-panel",
+  "type": "placePanel",
+  "title": {
+    "ar": "بدر: يوم الفرقان"
+  },
+  "takeaway": {
+    "ar": "عند ماء بدر، على طريق القوافل بين مكة والشام، كانت أول مواجهة كبرى بين المسلمين وقريش."
+  },
+  "notes": [
+    {
+      "ar": "المشهد المرسوم تكوين توضيحي غير تصويري."
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators"
+    ],
+    "authoredBy": "draft-revision-4"
+  },
+  "placeId": "badr",
+  "callouts": [
+    {
+      "label": {
+        "ar": "ماء على طريق القوافل"
+      },
+      "text": {
+        "ar": "كانت بدر موضع ماء ينزله المسافرون بين مكة والمدينة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "label": {
+        "ar": "القلّة والنصر"
+      },
+      "text": {
+        "ar": "خرج المسلمون في نحو ثلاثمائة وبضعة عشر رجلًا، ونصرهم الله وهم أذلة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 3,
+            "ayahFrom": 123
+          }
+        }
+      ]
+    },
+    {
+      "label": {
+        "ar": "يوم الفرقان"
+      },
+      "text": {
+        "ar": "سمّى القرآن يوم بدر يوم الفرقان يوم التقى الجمعان."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 8,
+            "ayahFrom": 41
+          }
+        }
+      ]
+    }
+  ]
+}

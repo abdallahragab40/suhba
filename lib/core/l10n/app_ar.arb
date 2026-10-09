@@ -1842,5 +1842,21 @@
   "searchScopeArchive": "الأحداث والأماكن",
   "@searchScopeArchive": {
     "description": "Search scope filter."
+  },
+  "profileConnectionsKicker": "في السيرة",
+  "@profileConnectionsKicker": {
+    "description": "Profile section kicker: where the companion appears beyond their biography."
+  },
+  "profileConnectionsTitle": "في فصول السيرة وأحداثها",
+  "@profileConnectionsTitle": {
+    "description": "Profile section title for Seerah chapters, events and visuals involving the companion (gender-neutral)."
+  },
+  "profileEvents": "من الأحداث المشتركة",
+  "@profileEvents": {
+    "description": "Profile: shared events the companion took part in (gender-neutral)."
+  },
+  "profileVisuals": "رسوم توضيحية",
+  "@profileVisuals": {
+    "description": "Profile: visuals that show the companion."
   }
 }

@@ -26,7 +26,8 @@
   ],
   "eventIds": [
     "farewell-pilgrimage",
-    "death-of-the-prophet"
+    "death-of-the-prophet",
+    "saqifah"
   ],
   "placeIds": [
     "makkah",
@@ -245,6 +246,10 @@
       ]
     },
     {
+      "type": "infographic",
+      "visualId": "arafat-panel"
+    },
+    {
       "type": "lesson",
       "text": {
         "ar": "ختم النبي ﷺ حياته بإكمال البلاغ ووصايا جامعة في الحقوق والحرمات؛ وكان ثبات أبي بكر يوم الوفاة تعليمًا للأمة أن الرسالة باقية بعد صاحبها."
@@ -259,5 +264,8 @@
     ],
     "authoredBy": "draft-revision-4",
     "coverage": "sample"
-  }
+  },
+  "visualIds": [
+    "arafat-panel"
+  ]
 }

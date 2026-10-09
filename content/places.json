@@ -534,6 +534,78 @@
         ],
         "authoredBy": "draft-revision-4"
       }
+    },
+    {
+      "id": "mutah",
+      "name": {
+        "ar": "مؤتة"
+      },
+      "kind": "battlefield",
+      "location": {
+        "lat": 31.0847,
+        "lon": 35.7015,
+        "precision": "identified"
+      },
+      "summary": {
+        "ar": "موضع في أطراف الشام، التقى عنده جيش المسلمين بجموع الروم وحلفائهم في السنة الثامنة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "editorialFlags": [
+          "needsLocators"
+        ],
+        "authoredBy": "draft-revision-4"
+      },
+      "modernName": {
+        "ar": "مؤتة في الأردن اليوم"
+      }
+    },
+    {
+      "id": "hunayn",
+      "name": {
+        "ar": "حنين"
+      },
+      "kind": "valley",
+      "location": {
+        "lat": 21.47,
+        "lon": 40.08,
+        "precision": "uncertain"
+      },
+      "summary": {
+        "ar": "وادٍ بين مكة والطائف، كانت فيه غزوة حنين بعد فتح مكة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 9,
+            "ayahFrom": 25
+          }
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "editorialFlags": [
+          "needsLocators"
+        ],
+        "authoredBy": "draft-revision-4"
+      },
+      "contemporaryNote": {
+        "ar": "تعيين الوادي اليوم مختلف فيه، والموضع على الخريطة تقريبي."
+      }
     }
   ]
 }

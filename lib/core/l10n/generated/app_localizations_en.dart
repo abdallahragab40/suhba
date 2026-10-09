@@ -1317,4 +1317,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get searchScopeArchive => 'Events and places';
+
+  @override
+  String get profileConnectionsKicker => 'In the Seerah';
+
+  @override
+  String get profileConnectionsTitle => 'In the chapters and events';
+
+  @override
+  String get profileEvents => 'Shared events';
+
+  @override
+  String get profileVisuals => 'Visuals';
 }

@@ -394,79 +394,6 @@
       }
     },
     {
-      "id": "isra-and-miraj",
-      "name": {
-        "ar": "الإسراء والمعراج"
-      },
-      "type": "other",
-      "date": {
-        "precision": "unknown"
-      },
-      "summary": {
-        "ar": "أُسري بالنبي ﷺ ليلًا من المسجد الحرام إلى المسجد الأقصى، ثم عُرج به إلى السماء، وفُرضت الصلوات الخمس."
-      },
-      "reliability": "established",
-      "citations": [
-        {
-          "sourceId": "quran",
-          "locatorStatus": "complete",
-          "quranRef": {
-            "surah": 17,
-            "ayahFrom": 1
-          }
-        },
-        {
-          "sourceId": "quran",
-          "locatorStatus": "complete",
-          "quranRef": {
-            "surah": 53,
-            "ayahFrom": 13,
-            "ayahTo": 18
-          }
-        },
-        {
-          "sourceId": "bukhari",
-          "locatorStatus": "pending",
-          "grading": {
-            "grade": "sahih",
-            "gradedBy": {
-              "ar": "البخاري، بإخراجه في صحيحه"
-            }
-          }
-        },
-        {
-          "sourceId": "muslim",
-          "locatorStatus": "pending",
-          "grading": {
-            "grade": "sahih",
-            "gradedBy": {
-              "ar": "مسلم، بإخراجه في صحيحه"
-            }
-          }
-        }
-      ],
-      "review": {
-        "status": "draft",
-        "editorialFlags": [
-          "needsLocators"
-        ],
-        "authoredBy": "draft-revision-4"
-      },
-      "place": {
-        "ar": "من مكة إلى بيت المقدس"
-      },
-      "placeIds": [
-        "makkah",
-        "bayt-al-maqdis"
-      ],
-      "context": {
-        "ar": "وقع في المرحلة المكية قبل الهجرة، والخلاف في تحديد سنته وشهره كبير."
-      },
-      "outcome": {
-        "ar": "فُرضت الصلوات الخمس، وصدّق أبو بكر الخبر."
-      }
-    },
-    {
       "id": "first-aqabah",
       "name": {
         "ar": "بيعة العقبة الأولى"
@@ -642,46 +569,6 @@
       }
     },
     {
-      "id": "quba-mosque",
-      "name": {
-        "ar": "تأسيس مسجد قباء"
-      },
-      "type": "community",
-      "date": {
-        "precision": "month",
-        "era": "afterHijra",
-        "hijriYear": 1,
-        "hijriMonth": 3,
-        "gregorianYear": 622
-      },
-      "summary": {
-        "ar": "نزل النبي ﷺ أول قدومه في بني عمرو بن عوف بقباء، وأسّس فيها مسجدًا."
-      },
-      "reliability": "established",
-      "citations": [
-        {
-          "sourceId": "bukhari",
-          "locatorStatus": "pending"
-        }
-      ],
-      "review": {
-        "status": "draft",
-        "editorialFlags": [
-          "needsLocators"
-        ],
-        "authoredBy": "draft-revision-4"
-      },
-      "place": {
-        "ar": "قباء"
-      },
-      "placeIds": [
-        "quba"
-      ],
-      "outcome": {
-        "ar": "كان أول مسجد بُني في الهجرة."
-      }
-    },
-    {
       "id": "prophets-mosque",
       "name": {
         "ar": "بناء المسجد النبوي"
@@ -771,6 +658,102 @@
       },
       "outcome": {
         "ar": "نشأت بين الفريقين رابطة قوية، ومن أمثلتها مؤاخاة عبد الرحمن بن عوف وسعد بن الربيع."
+      }
+    },
+    {
+      "id": "quba-mosque",
+      "name": {
+        "ar": "تأسيس مسجد قباء"
+      },
+      "type": "community",
+      "date": {
+        "precision": "month",
+        "era": "afterHijra",
+        "hijriYear": 1,
+        "hijriMonth": 3,
+        "gregorianYear": 622
+      },
+      "summary": {
+        "ar": "نزل النبي ﷺ أول قدومه في بني عمرو بن عوف بقباء، وأسّس فيها مسجدًا."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "editorialFlags": [
+          "needsLocators"
+        ],
+        "authoredBy": "draft-revision-4"
+      },
+      "place": {
+        "ar": "قباء"
+      },
+      "placeIds": [
+        "quba"
+      ],
+      "outcome": {
+        "ar": "كان أول مسجد بُني في الهجرة."
+      }
+    },
+    {
+      "id": "change-of-qiblah",
+      "name": {
+        "ar": "تحويل القبلة"
+      },
+      "type": "community",
+      "date": {
+        "precision": "year",
+        "era": "afterHijra",
+        "hijriYear": 2,
+        "gregorianYear": 624
+      },
+      "summary": {
+        "ar": "صلّى المسلمون إلى بيت المقدس ستة عشر شهرًا أو سبعة عشر، ثم أُمروا بالتوجه إلى الكعبة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 2,
+            "ayahFrom": 144
+          }
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending",
+          "grading": {
+            "grade": "sahih",
+            "gradedBy": {
+              "ar": "البخاري، بإخراجه في صحيحه"
+            }
+          }
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "editorialFlags": [
+          "needsLocators"
+        ],
+        "authoredBy": "draft-revision-4"
+      },
+      "place": {
+        "ar": "المدينة"
+      },
+      "placeIds": [
+        "madinah"
+      ],
+      "context": {
+        "ar": "كان النبي ﷺ يحب أن يُوجَّه إلى الكعبة."
+      },
+      "outcome": {
+        "ar": "صارت الكعبة قبلة المسلمين إلى اليوم."
       }
     },
     {
@@ -951,6 +934,66 @@
       }
     },
     {
+      "id": "letters-to-kings",
+      "name": {
+        "ar": "كتب النبي ﷺ إلى الملوك"
+      },
+      "type": "other",
+      "date": {
+        "precision": "range",
+        "era": "afterHijra",
+        "hijriYear": 6,
+        "gregorianYear": 628,
+        "hijriYearEnd": 7,
+        "gregorianYearEnd": 629
+      },
+      "summary": {
+        "ar": "بعد صلح الحديبية كتب النبي ﷺ إلى الملوك والأمراء يدعوهم إلى الإسلام، ومنهم هرقل وكسرى والنجاشي."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending",
+          "grading": {
+            "grade": "sahih",
+            "gradedBy": {
+              "ar": "البخاري، بإخراجه في صحيحه"
+            }
+          }
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending",
+          "grading": {
+            "grade": "sahih",
+            "gradedBy": {
+              "ar": "مسلم، بإخراجه في صحيحه"
+            }
+          }
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "editorialFlags": [
+          "needsLocators"
+        ],
+        "authoredBy": "draft-revision-4"
+      },
+      "place": {
+        "ar": "المدينة"
+      },
+      "placeIds": [
+        "madinah"
+      ],
+      "context": {
+        "ar": "أتاحت الهدنة مع قريش أن تتوجه الدعوة إلى من وراء الجزيرة."
+      },
+      "outcome": {
+        "ar": "تباينت ردود الملوك بين إكرام الكتاب وتمزيقه."
+      }
+    },
+    {
       "id": "hudaybiyah",
       "name": {
         "ar": "صلح الحديبية"
@@ -1090,6 +1133,109 @@
       }
     },
     {
+      "id": "umrat-al-qada",
+      "name": {
+        "ar": "عمرة القضاء"
+      },
+      "type": "other",
+      "date": {
+        "precision": "month",
+        "era": "afterHijra",
+        "hijriYear": 7,
+        "hijriMonth": 11,
+        "gregorianYear": 629
+      },
+      "summary": {
+        "ar": "اعتمر النبي ﷺ وأصحابه في العام التالي للحديبية، كما نصّ عليه الصلح."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending",
+          "grading": {
+            "grade": "sahih",
+            "gradedBy": {
+              "ar": "البخاري، بإخراجه في صحيحه"
+            }
+          }
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 48,
+            "ayahFrom": 27
+          }
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "editorialFlags": [
+          "needsLocators"
+        ],
+        "authoredBy": "draft-revision-4"
+      },
+      "place": {
+        "ar": "مكة"
+      },
+      "placeIds": [
+        "makkah"
+      ],
+      "context": {
+        "ar": "نصّ صلح الحديبية على أن يرجع المسلمون عامهم ويعتمروا من قابل."
+      },
+      "outcome": {
+        "ar": "أقام المسلمون بمكة ثلاثة أيام ثم خرجوا وفاءً بالشرط."
+      }
+    },
+    {
+      "id": "mutah",
+      "name": {
+        "ar": "غزوة مؤتة"
+      },
+      "type": "battle",
+      "date": {
+        "precision": "month",
+        "era": "afterHijra",
+        "hijriYear": 8,
+        "hijriMonth": 5,
+        "gregorianYear": 629
+      },
+      "summary": {
+        "ar": "أرسل النبي ﷺ جيشًا إلى أطراف الشام، فاستُشهد أمراؤه الثلاثة زيد بن حارثة وجعفر بن أبي طالب وعبد الله بن رواحة، ثم أخذ الراية خالد بن الوليد."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending",
+          "grading": {
+            "grade": "sahih",
+            "gradedBy": {
+              "ar": "البخاري، بإخراجه في صحيحه"
+            }
+          }
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "editorialFlags": [
+          "needsLocators"
+        ],
+        "authoredBy": "draft-revision-4"
+      },
+      "place": {
+        "ar": "مؤتة"
+      },
+      "placeIds": [
+        "mutah"
+      ],
+      "outcome": {
+        "ar": "رجع الجيش إلى المدينة بعد أن انحاز به خالد."
+      }
+    },
+    {
       "id": "conquest-of-makkah",
       "name": {
         "ar": "فتح مكة"
@@ -1156,6 +1302,117 @@
       }
     },
     {
+      "id": "hunayn",
+      "name": {
+        "ar": "غزوة حنين"
+      },
+      "type": "battle",
+      "date": {
+        "precision": "month",
+        "era": "afterHijra",
+        "hijriYear": 8,
+        "hijriMonth": 10,
+        "gregorianYear": 630
+      },
+      "summary": {
+        "ar": "خرج النبي ﷺ بعد فتح مكة إلى هوازن وثقيف، فانكشف المسلمون أول الأمر ثم ثبتوا ونصرهم الله."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 9,
+            "ayahFrom": 25,
+            "ayahTo": 26
+          }
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending",
+          "grading": {
+            "grade": "sahih",
+            "gradedBy": {
+              "ar": "البخاري، بإخراجه في صحيحه"
+            }
+          }
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "editorialFlags": [
+          "needsLocators"
+        ],
+        "authoredBy": "draft-revision-4"
+      },
+      "place": {
+        "ar": "وادي حنين"
+      },
+      "placeIds": [
+        "hunayn"
+      ],
+      "context": {
+        "ar": "تجمّعت هوازن وثقيف لقتال المسلمين بعد الفتح."
+      },
+      "outcome": {
+        "ar": "نزلت فيها آيات من سورة التوبة تذكّر بأن الكثرة لا تغني وحدها."
+      }
+    },
+    {
+      "id": "year-of-delegations",
+      "name": {
+        "ar": "عام الوفود"
+      },
+      "type": "community",
+      "date": {
+        "precision": "range",
+        "era": "afterHijra",
+        "hijriYear": 9,
+        "gregorianYear": 630,
+        "hijriYearEnd": 10,
+        "gregorianYearEnd": 631
+      },
+      "summary": {
+        "ar": "توافدت القبائل على المدينة تعلن إسلامها بعد فتح مكة."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 110,
+            "ayahFrom": 1,
+            "ayahTo": 3
+          }
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "editorialFlags": [
+          "needsLocators"
+        ],
+        "authoredBy": "draft-revision-4"
+      },
+      "place": {
+        "ar": "المدينة"
+      },
+      "placeIds": [
+        "madinah"
+      ],
+      "context": {
+        "ar": "كانت العرب تنتظر ما يكون بين النبي ﷺ وقريش."
+      },
+      "outcome": {
+        "ar": "عمّ الإسلام أكثر الجزيرة العربية."
+      }
+    },
+    {
       "id": "tabuk",
       "name": {
         "ar": "غزوة تبوك"
@@ -1219,59 +1476,6 @@
       },
       "outcome": {
         "ar": "رجع النبي ﷺ إلى المدينة، ونزلت آيات من سورة التوبة."
-      }
-    },
-    {
-      "id": "year-of-delegations",
-      "name": {
-        "ar": "عام الوفود"
-      },
-      "type": "community",
-      "date": {
-        "precision": "range",
-        "era": "afterHijra",
-        "hijriYear": 9,
-        "gregorianYear": 630,
-        "hijriYearEnd": 10,
-        "gregorianYearEnd": 631
-      },
-      "summary": {
-        "ar": "توافدت القبائل على المدينة تعلن إسلامها بعد فتح مكة."
-      },
-      "reliability": "reported",
-      "citations": [
-        {
-          "sourceId": "quran",
-          "locatorStatus": "complete",
-          "quranRef": {
-            "surah": 110,
-            "ayahFrom": 1,
-            "ayahTo": 3
-          }
-        },
-        {
-          "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "pending"
-        }
-      ],
-      "review": {
-        "status": "draft",
-        "editorialFlags": [
-          "needsLocators"
-        ],
-        "authoredBy": "draft-revision-4"
-      },
-      "place": {
-        "ar": "المدينة"
-      },
-      "placeIds": [
-        "madinah"
-      ],
-      "context": {
-        "ar": "كانت العرب تنتظر ما يكون بين النبي ﷺ وقريش."
-      },
-      "outcome": {
-        "ar": "عمّ الإسلام أكثر الجزيرة العربية."
       }
     },
     {
@@ -1402,6 +1606,146 @@
       },
       "outcome": {
         "ar": "بويع أبو بكر بالخلافة، ودُفن النبي ﷺ في حجرة عائشة."
+      }
+    },
+    {
+      "id": "saqifah",
+      "name": {
+        "ar": "البيعة لأبي بكر"
+      },
+      "type": "appointment",
+      "date": {
+        "precision": "month",
+        "era": "afterHijra",
+        "hijriYear": 11,
+        "hijriMonth": 3,
+        "gregorianYear": 632
+      },
+      "summary": {
+        "ar": "بعد وفاة النبي ﷺ اجتمع الأنصار في سقيفة بني ساعدة، فلحق بهم أبو بكر وعمر، فبويع أبو بكر بالخلافة، ثم بايعه الناس في المسجد."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending",
+          "grading": {
+            "grade": "sahih",
+            "gradedBy": {
+              "ar": "البخاري، بإخراجه في صحيحه"
+            }
+          }
+        },
+        {
+          "sourceId": "tarikh-al-tabari",
+          "locatorStatus": "pending"
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "editorialFlags": [
+          "needsLocators"
+        ],
+        "authoredBy": "draft-revision-4"
+      },
+      "place": {
+        "ar": "سقيفة بني ساعدة بالمدينة"
+      },
+      "participants": [
+        {
+          "displayName": {
+            "ar": "أبو بكر الصديق"
+          },
+          "companionId": "abu-bakr"
+        },
+        {
+          "displayName": {
+            "ar": "عمر بن الخطاب"
+          },
+          "companionId": "umar"
+        }
+      ],
+      "placeIds": [
+        "madinah"
+      ],
+      "context": {
+        "ar": "توفي النبي ﷺ ولم يكن للمسلمين خليفة."
+      },
+      "outcome": {
+        "ar": "اجتمعت كلمة المسلمين على أبي بكر."
+      }
+    },
+    {
+      "id": "isra-and-miraj",
+      "name": {
+        "ar": "الإسراء والمعراج"
+      },
+      "type": "other",
+      "date": {
+        "precision": "unknown"
+      },
+      "summary": {
+        "ar": "أُسري بالنبي ﷺ ليلًا من المسجد الحرام إلى المسجد الأقصى، ثم عُرج به إلى السماء، وفُرضت الصلوات الخمس."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 17,
+            "ayahFrom": 1
+          }
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 53,
+            "ayahFrom": 13,
+            "ayahTo": 18
+          }
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending",
+          "grading": {
+            "grade": "sahih",
+            "gradedBy": {
+              "ar": "البخاري، بإخراجه في صحيحه"
+            }
+          }
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending",
+          "grading": {
+            "grade": "sahih",
+            "gradedBy": {
+              "ar": "مسلم، بإخراجه في صحيحه"
+            }
+          }
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "editorialFlags": [
+          "needsLocators"
+        ],
+        "authoredBy": "draft-revision-4"
+      },
+      "place": {
+        "ar": "من مكة إلى بيت المقدس"
+      },
+      "placeIds": [
+        "makkah",
+        "bayt-al-maqdis"
+      ],
+      "context": {
+        "ar": "وقع في المرحلة المكية قبل الهجرة، والخلاف في تحديد سنته وشهره كبير."
+      },
+      "outcome": {
+        "ar": "فُرضت الصلوات الخمس، وصدّق أبو بكر الخبر."
       }
     }
   ]

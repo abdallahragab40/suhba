@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "id": "prophet-household",
+  "type": "relationships",
+  "title": {
+    "ar": "بيت النبي ﷺ قبل البعثة وبعدها"
+  },
+  "takeaway": {
+    "ar": "نشأ علي بن أبي طالب في بيت النبي ﷺ، وتزوّج فاطمة بنت النبي ﷺ من خديجة؛ وكان أبو طالب عمّ النبي ﷺ ووالد علي."
+  },
+  "notes": [
+    {
+      "ar": "الصلات المرسومة صلات نسب وزواج ثابتة بمصادرها، ولا تعني ترتيبًا في الفضل."
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators"
+    ],
+    "authoredBy": "draft-revision-4"
+  },
+  "edges": [
+    {
+      "from": {
+        "displayName": {
+          "ar": "محمد رسول الله"
+        },
+        "personId": "muhammad"
+      },
+      "to": {
+        "displayName": {
+          "ar": "خديجة بنت خويلد"
+        },
+        "personId": "khadijah"
+      },
+      "type": "spouse",
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "from": {
+        "displayName": {
+          "ar": "محمد رسول الله"
+        },
+        "personId": "muhammad"
+      },
+      "to": {
+        "displayName": {
+          "ar": "فاطمة بنت رسول الله"
+        },
+        "personId": "fatimah"
+      },
+      "type": "child",
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "from": {
+        "displayName": {
+          "ar": "خديجة بنت خويلد"
+        },
+        "personId": "khadijah"
+      },
+      "to": {
+        "displayName": {
+          "ar": "فاطمة بنت رسول الله"
+        },
+        "personId": "fatimah"
+      },
+      "type": "child",
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "from": {
+        "displayName": {
+          "ar": "علي بن أبي طالب"
+        },
+        "companionId": "ali"
+      },
+      "to": {
+        "displayName": {
+          "ar": "فاطمة بنت رسول الله"
+        },
+        "personId": "fatimah"
+      },
+      "type": "spouse",
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "from": {
+        "displayName": {
+          "ar": "محمد رسول الله"
+        },
+        "personId": "muhammad"
+      },
+      "to": {
+        "displayName": {
+          "ar": "أبو طالب بن عبد المطلب"
+        },
+        "personId": "abu-talib"
+      },
+      "type": "relative",
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ],
+      "note": {
+        "ar": "عمّه"
+      }
+    },
+    {
+      "from": {
+        "displayName": {
+          "ar": "أبو طالب بن عبد المطلب"
+        },
+        "personId": "abu-talib"
+      },
+      "to": {
+        "displayName": {
+          "ar": "علي بن أبي طالب"
+        },
+        "companionId": "ali"
+      },
+      "type": "child",
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "pending"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "id": "hudaybiyah-sequence",
+  "type": "sequence",
+  "title": {
+    "ar": "صلح الحديبية خطوة بخطوة"
+  },
+  "takeaway": {
+    "ar": "خرج المسلمون معتمرين فمُنعوا، فبايعوا ثم صالحوا على شروط بدت شديدة، فسمّاها القرآن فتحًا مبينًا."
+  },
+  "notes": [
+    {
+      "ar": "الخطوات من روايات الصحيح وكتب السيرة، وترتيبها مأخوذ من سياق رواية البخاري."
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators"
+    ],
+    "authoredBy": "draft-revision-4"
+  },
+  "eventIds": [
+    "hudaybiyah"
+  ],
+  "steps": [
+    {
+      "title": {
+        "ar": "الخروج للعمرة"
+      },
+      "text": {
+        "ar": "خرج النبي ﷺ في ذي القعدة سنة ست معتمرًا، ومعه نحو ألف وأربعمائة من أصحابه، وساقوا الهدي."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ],
+      "placeId": "madinah"
+    },
+    {
+      "title": {
+        "ar": "النزول بالحديبية"
+      },
+      "text": {
+        "ar": "بركت ناقة النبي ﷺ قرب مكة، فأخبر أن الذي حبسها هو الذي حبس الفيل عن مكة، ونزل بالحديبية."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ],
+      "placeId": "al-hudaybiyah"
+    },
+    {
+      "title": {
+        "ar": "بيعة الرضوان"
+      },
+      "text": {
+        "ar": "أرسل النبي ﷺ عثمان بن عفان إلى قريش، وبايع الصحابة تحت الشجرة، وجعل النبي ﷺ يده عن عثمان."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 48,
+            "ayahFrom": 18
+          }
+        }
+      ],
+      "placeId": "al-hudaybiyah"
+    },
+    {
+      "title": {
+        "ar": "كتابة الصلح"
+      },
+      "text": {
+        "ar": "جاء سهيل بن عمرو عن قريش، فكُتب الصلح: يرجع المسلمون عامهم ويعتمرون من قابل، مع هدنة وشروط أخرى."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ],
+      "placeId": "al-hudaybiyah"
+    },
+    {
+      "title": {
+        "ar": "الوفاء بالشرط"
+      },
+      "text": {
+        "ar": "جاء أبو جندل بن سهيل مسلمًا يرسف في قيوده، فردّه النبي ﷺ وفاءً بالعهد، فاشتد ذلك على الصحابة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ],
+      "placeId": "al-hudaybiyah"
+    },
+    {
+      "title": {
+        "ar": "النحر والحلق"
+      },
+      "text": {
+        "ar": "أمر النبي ﷺ أصحابه بالنحر والحلق، فلما تأخروا خرج فنحر وحلق بمشورة أم سلمة، فتتابعوا."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ],
+      "placeId": "al-hudaybiyah"
+    },
+    {
+      "title": {
+        "ar": "نزول سورة الفتح"
+      },
+      "text": {
+        "ar": "نزلت سورة الفتح في طريق العودة، وسمّت الصلح فتحًا مبينًا."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 48,
+            "ayahFrom": 1
+          }
+        }
+      ]
+    }
+  ]
+}

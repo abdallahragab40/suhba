@@ -83,7 +83,12 @@ void main() {
       );
       expect(hijrah.eventId, 'hijrah');
       expect(hijrah.sectionId, 'abu-bakr.hijrah');
-      expect(c.storyIds, ['jam-al-quran', 'the-cave']);
+      expect(c.storyIds, [
+        'jam-al-quran',
+        'the-cave',
+        'treaty-of-hudaybiyah',
+        'day-of-badr',
+      ]);
       expect(c.review.editorialFlags, {
         EditorialFlag.needsLocators,
         EditorialFlag.needsSourceText,

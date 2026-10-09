@@ -2335,6 +2335,30 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'الأحداث والأماكن'**
   String get searchScopeArchive;
+
+  /// Profile section kicker: where the companion appears beyond their biography.
+  ///
+  /// In ar, this message translates to:
+  /// **'في السيرة'**
+  String get profileConnectionsKicker;
+
+  /// Profile section title for Seerah chapters, events and visuals involving the companion (gender-neutral).
+  ///
+  /// In ar, this message translates to:
+  /// **'في فصول السيرة وأحداثها'**
+  String get profileConnectionsTitle;
+
+  /// Profile: shared events the companion took part in (gender-neutral).
+  ///
+  /// In ar, this message translates to:
+  /// **'من الأحداث المشتركة'**
+  String get profileEvents;
+
+  /// Profile: visuals that show the companion.
+  ///
+  /// In ar, this message translates to:
+  /// **'رسوم توضيحية'**
+  String get profileVisuals;
 }
 
 class _AppLocalizationsDelegate

@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "id": "arafat-panel",
+  "type": "placePanel",
+  "title": {
+    "ar": "عرفات في حجة الوداع"
+  },
+  "takeaway": {
+    "ar": "في عرفات وقف النبي ﷺ في حجته الوحيدة بعد الهجرة، وخطب الناس، ونزلت آية إكمال الدين."
+  },
+  "notes": [
+    {
+      "ar": "المشهد المرسوم تكوين توضيحي غير تصويري."
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators"
+    ],
+    "authoredBy": "draft-revision-4"
+  },
+  "placeId": "arafat",
+  "callouts": [
+    {
+      "label": {
+        "ar": "الوقوف"
+      },
+      "text": {
+        "ar": "وقف النبي ﷺ بعرفة يوم التاسع من ذي الحجة حتى غربت الشمس."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "label": {
+        "ar": "الخطبة"
+      },
+      "text": {
+        "ar": "خطب الناس فيها في حرمة الدماء والأموال، ووضع ربا الجاهلية ودمائها، والوصية بالنساء."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "label": {
+        "ar": "إكمال الدين"
+      },
+      "text": {
+        "ar": "نزل فيها يوم الجمعة قوله تعالى: اليوم أكملت لكم دينكم."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 5,
+            "ayahFrom": 3
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -117,7 +117,12 @@ void main() {
       isA<NotFoundFailure>(),
     );
     final stories = (await repo.storyIndex()).getOrThrow();
-    expect(stories.map((s) => s.id), ['jam-al-quran', 'the-cave']);
+    expect(stories.map((s) => s.id), [
+      'day-of-badr',
+      'jam-al-quran',
+      'the-cave',
+      'treaty-of-hudaybiyah',
+    ]);
     for (final s in stories) {
       expect((await repo.story(s.id)).getOrThrow().chapters, isNotEmpty);
     }

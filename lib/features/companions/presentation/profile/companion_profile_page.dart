@@ -12,6 +12,7 @@ import 'package:siyar_sahaba/core/result/failure.dart';
 import 'package:siyar_sahaba/features/bookmarks/domain/bookmark.dart';
 import 'package:siyar_sahaba/features/bookmarks/presentation/bookmark_providers.dart';
 import 'package:siyar_sahaba/features/companions/presentation/profile/biography_entry.dart';
+import 'package:siyar_sahaba/features/companions/presentation/profile/profile_connections.dart';
 import 'package:siyar_sahaba/features/companions/presentation/profile/profile_facts.dart';
 import 'package:siyar_sahaba/features/companions/presentation/profile/profile_header.dart';
 import 'package:siyar_sahaba/features/companions/presentation/profile/profile_sections.dart';
@@ -20,7 +21,8 @@ import 'package:siyar_sahaba/shared/content/presentation/content_text.dart';
 import 'package:siyar_sahaba/shared/content/providers.dart';
 
 /// A companion's profile (S04): header, key facts, the biography's
-/// sections, a timeline preview, stories, related people and references.
+/// sections, a timeline preview, where they appear in the Seerah, events
+/// and visuals, stories, related people and references.
 class CompanionProfilePage extends ConsumerWidget {
   const CompanionProfilePage({required this.id, super.key});
 
@@ -61,15 +63,16 @@ class CompanionProfilePage extends ConsumerWidget {
   }
 }
 
-class _Profile extends StatelessWidget {
+class _Profile extends ConsumerWidget {
   const _Profile({required this.companion});
 
   final Companion companion;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
     final c = companion;
+    final connections = ref.watch(profileConnectionsProvider(c.id));
     final provisional = !c.review.isApproved;
 
     // Number the page's sections in the order they appear (٠١، ٠٢ …).
@@ -120,6 +123,13 @@ class _Profile extends StatelessWidget {
                 entries: c.timeline,
                 provisional: provisional,
               ),
+            ],
+            if (!connections.isEmpty) ...[
+              header(
+                l10n.profileConnectionsKicker,
+                l10n.profileConnectionsTitle,
+              ),
+              ProfileConnectionsView(connections: connections),
             ],
             if (c.storyIds.isNotEmpty) ...[
               header(l10n.profileStoriesKicker, l10n.profileStoriesTitle),

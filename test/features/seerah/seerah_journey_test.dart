@@ -251,6 +251,20 @@ void main() {
     expect(find.text('الهجرة النبوية'), findsOneWidget);
   });
 
+  testApp('a profile shows where the companion appears in the Seerah', (
+    tester,
+  ) async {
+    tall(tester);
+    final app = AppUnderTest(location: '/companions/umar');
+    await app.pump(tester);
+    await reveal(tester, find.text('في فصول السيرة وأحداثها'));
+    expect(find.text('من الأحداث المشتركة'), findsOneWidget);
+    await reveal(tester, find.text('حياة عمر بن الخطاب على خط الزمن'));
+    await tester.tap(find.text('حياة عمر بن الخطاب على خط الزمن'));
+    await tester.pumpAndSettle();
+    expect(app.location, '/visuals/umar-lifeline');
+  });
+
   testApp('Explore filters by kind', (tester) async {
     tall(tester);
     await AppUnderTest(location: '/explore').pump(tester);
@@ -281,7 +295,12 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('أحداث'), findsOneWidget);
     expect(find.text('أماكن'), findsOneWidget);
-    await tester.tap(find.text('صلح الحديبية'));
+    // Narrowed to the archive, the event is the first match.
+    await tester.ensureVisible(find.text('الأحداث والأماكن'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('الأحداث والأماكن'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('صلح الحديبية').first);
     await tester.pumpAndSettle();
     expect(find.byType(EventPage), findsOneWidget);
   });

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "id": "abyssinia-map",
+  "type": "map",
+  "title": {
+    "ar": "الهجرة إلى الحبشة"
+  },
+  "takeaway": {
+    "ar": "عبر المهاجرون الأوائل البحر الأحمر من الحجاز إلى مملكة النجاشي، بعيدًا عن أذى قريش."
+  },
+  "notes": [
+    {
+      "ar": "الخط يصل بين مكة ومنطقة المملكة، ولا يرسم طريق المهاجرين الفعلي ولا ميناء خروجهم."
+    },
+    {
+      "ar": "موضع الحبشة تقريبي يشير إلى منطقة المملكة لا إلى مدينة بعينها."
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators"
+    ],
+    "authoredBy": "draft-revision-4"
+  },
+  "placeIds": [
+    "makkah",
+    "habashah"
+  ],
+  "route": [
+    {
+      "from": "makkah",
+      "to": "habashah",
+      "approximate": true,
+      "note": {
+        "ar": "عبر البحر الأحمر."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    }
+  ]
+}

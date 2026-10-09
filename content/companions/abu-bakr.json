@@ -308,7 +308,8 @@
           "locatorStatus": "pending"
         }
       ],
-      "sectionId": "abu-bakr.caliphate"
+      "sectionId": "abu-bakr.caliphate",
+      "eventId": "saqifah"
     },
     {
       "id": "abu-bakr.t.prayer",
@@ -1777,6 +1778,8 @@
   ],
   "storyIds": [
     "jam-al-quran",
-    "the-cave"
+    "the-cave",
+    "treaty-of-hudaybiyah",
+    "day-of-badr"
   ]
 }

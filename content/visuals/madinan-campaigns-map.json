@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "madinan-campaigns-map",
+  "type": "map",
+  "title": {
+    "ar": "مواضع الأحداث الكبرى في العهد المدني"
+  },
+  "takeaway": {
+    "ar": "امتدت أحداث العهد المدني من المدينة جنوبًا إلى مكة وحنين، وشمالًا إلى خيبر وتبوك ومؤتة."
+  },
+  "notes": [
+    {
+      "ar": "الخريطة تخطيطية؛ وموضع حنين مختلف فيه."
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators"
+    ],
+    "authoredBy": "draft-revision-4"
+  },
+  "placeIds": [
+    "madinah",
+    "badr",
+    "uhud",
+    "khaybar",
+    "al-hudaybiyah",
+    "makkah",
+    "hunayn",
+    "tabuk",
+    "mutah"
+  ]
+}

@@ -128,6 +128,19 @@
         "authoredBy": "draft-revision-4"
       },
       "gender": "male"
+    },
+    {
+      "id": "fatimah",
+      "name": {
+        "ar": "فاطمة بنت رسول الله"
+      },
+      "honorific": "sahabi",
+      "review": {
+        "status": "draft",
+        "editorialFlags": [],
+        "authoredBy": "draft-revision-4"
+      },
+      "gender": "female"
     }
   ]
 }

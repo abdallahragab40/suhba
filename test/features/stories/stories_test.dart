@@ -62,6 +62,12 @@ void main() {
 
   testApp('the profile opens a story', (tester) async {
     final app = await open(tester, '/companions/abu-bakr');
+    await tester.scrollUntilVisible(
+      find.text('جمع القرآن في الصحف'),
+      300,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.pumpAndSettle();
     await tester.tap(find.text('جمع القرآن في الصحف'));
     await tester.pumpAndSettle();
     expect(find.byType(StoryPage), findsOneWidget);

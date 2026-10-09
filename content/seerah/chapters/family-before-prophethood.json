@@ -185,6 +185,13 @@
       ]
     },
     {
+      "type": "infographic",
+      "visualId": "prophet-household",
+      "caption": {
+        "ar": "صلات النسب والزواج في بيت النبي ﷺ، كل صلة بمصدرها."
+      }
+    },
+    {
       "type": "lesson",
       "text": {
         "ar": "كان بيت النبي ﷺ قبل البعثة بيتَ وفاء وكفالة: زوجة تسانده، وأبناء ومكفولون يجدون فيه الرعاية؛ وهذا الاستقرار سبق الرسالة ومهّد لها."
@@ -199,5 +206,8 @@
     ],
     "authoredBy": "draft-revision-4",
     "coverage": "sample"
-  }
+  },
+  "visualIds": [
+    "prophet-household"
+  ]
 }

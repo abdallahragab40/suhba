@@ -1323,4 +1323,16 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get searchScopeArchive => 'الأحداث والأماكن';
+
+  @override
+  String get profileConnectionsKicker => 'في السيرة';
+
+  @override
+  String get profileConnectionsTitle => 'في فصول السيرة وأحداثها';
+
+  @override
+  String get profileEvents => 'من الأحداث المشتركة';
+
+  @override
+  String get profileVisuals => 'رسوم توضيحية';
 }

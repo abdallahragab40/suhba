@@ -372,5 +372,9 @@
   "searchKindEvents": "Events",
   "searchKindPlaces": "Places",
   "searchScopeSeerah": "Seerah",
-  "searchScopeArchive": "Events and places"
+  "searchScopeArchive": "Events and places",
+  "profileConnectionsKicker": "In the Seerah",
+  "profileConnectionsTitle": "In the chapters and events",
+  "profileEvents": "Shared events",
+  "profileVisuals": "Visuals"
 }

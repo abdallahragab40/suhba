@@ -183,6 +183,13 @@
       ]
     },
     {
+      "type": "infographic",
+      "visualId": "abyssinia-map",
+      "caption": {
+        "ar": "الهجرة الأولى عبر البحر."
+      }
+    },
+    {
       "type": "lesson",
       "text": {
         "ar": "لم يكن الصبر في مكة سكونًا، بل كان ثباتًا مع البحث عن مخرج: هجرةٌ إلى أرض آمنة، وتماسكٌ في الحصار، ووفاءٌ بين الأقارب؛ والثبات على الحق لا يمنع الأخذ بالأسباب."
@@ -197,5 +204,8 @@
     ],
     "authoredBy": "draft-revision-4",
     "coverage": "sample"
-  }
+  },
+  "visualIds": [
+    "abyssinia-map"
+  ]
 }
