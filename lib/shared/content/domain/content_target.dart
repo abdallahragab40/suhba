@@ -3,6 +3,7 @@ import 'package:siyar_sahaba/core/result/failure.dart';
 import 'package:siyar_sahaba/core/result/result.dart';
 import 'package:siyar_sahaba/shared/content/domain/companion.dart';
 import 'package:siyar_sahaba/shared/content/domain/content_repository.dart';
+import 'package:siyar_sahaba/shared/content/domain/seerah.dart';
 import 'package:siyar_sahaba/shared/content/domain/story.dart';
 
 part 'content_target.freezed.dart';
@@ -17,7 +18,12 @@ sealed class ContentTarget with _$ContentTarget {
   const factory ContentTarget.story(String id) = StoryTarget;
   const factory ContentTarget.chapter(String storyId, String chapterId) =
       ChapterTarget;
+  const factory ContentTarget.seerahChapter(String id) = SeerahChapterTarget;
+  const factory ContentTarget.seerahTopic(String id) = SeerahTopicTarget;
 }
+
+/// The parent id stored with Seerah reading positions and saved items.
+const seerahParentId = 'seerah';
 
 /// What a [ContentTarget] resolves to in the current content.
 sealed class TargetLookup {
@@ -50,6 +56,16 @@ final class FoundChapter extends TargetLookup {
   const FoundChapter(this.story, this.chapter);
   final Story story;
   final StoryChapter chapter;
+}
+
+final class FoundSeerahChapter extends TargetLookup {
+  const FoundSeerahChapter(this.chapter);
+  final SeerahChapter chapter;
+}
+
+final class FoundSeerahTopic extends TargetLookup {
+  const FoundSeerahTopic(this.topic);
+  final SeerahTopic topic;
 }
 
 /// Resolves [target] against [content]. A target counts as missing only
@@ -90,5 +106,15 @@ Future<Result<TargetLookup>> lookUpTarget(
         final ch = s.chapters.where((c) => c.id == chapterId).firstOrNull;
         return ch == null ? const TargetMissing() : FoundChapter(s, ch);
       });
+    case SeerahChapterTarget(:final id):
+      return missingIfNotFound(
+        await content.seerahChapter(id),
+        FoundSeerahChapter.new,
+      );
+    case SeerahTopicTarget(:final id):
+      return missingIfNotFound(
+        await content.seerahTopic(id),
+        FoundSeerahTopic.new,
+      );
   }
 }

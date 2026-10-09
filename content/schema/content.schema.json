@@ -361,6 +361,15 @@
         "authoredBy": {
           "type": "string",
           "minLength": 1
+        },
+        "coverage": {
+          "type": "string",
+          "enum": [
+            "skeleton",
+            "sample",
+            "complete"
+          ],
+          "description": "The editor's statement of how complete the text is: 'skeleton' (headings or a profile only), 'sample' (a short pilot, not the full treatment) or 'complete' (written to the editorial brief). It is not an approval; the release checklist also checks coverage and review."
         }
       },
       "additionalProperties": false,
@@ -419,7 +428,8 @@
             "relative",
             "teacher",
             "student",
-            "brotherhood"
+            "brotherhood",
+            "companion"
           ]
         },
         "person": {
@@ -624,6 +634,43 @@
             "text",
             "opinions"
           ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "heading"
+            },
+            "text": {
+              "$ref": "#/$defs/localizedText"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "text"
+          ],
+          "description": "A subheading inside a long passage. Not a claim."
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "infographic"
+            },
+            "visualId": {
+              "$ref": "#/$defs/id"
+            },
+            "caption": {
+              "$ref": "#/$defs/localizedText"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "visualId"
+          ],
+          "description": "Shows a visual (content/visuals/<id>.json) inside the passage. Its facts are sourced in the visual itself."
         }
       ]
     },
@@ -953,6 +1000,9 @@
             "pledge",
             "appointment",
             "death",
+            "revelation",
+            "migration",
+            "community",
             "other"
           ]
         },
@@ -979,6 +1029,19 @@
           "items": {
             "$ref": "#/$defs/personRef"
           }
+        },
+        "placeIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "context": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "outcome": {
+          "$ref": "#/$defs/localizedText"
         }
       },
       "additionalProperties": false,
@@ -1231,7 +1294,12 @@
             "event",
             "category",
             "source",
-            "person"
+            "person",
+            "place",
+            "seerah",
+            "seerahChapter",
+            "seerahTopic",
+            "visual"
           ]
         },
         "id": {
@@ -1294,6 +1362,909 @@
         "checklist"
       ],
       "description": "content/reviews/<kind>.<id>.json"
+    },
+    "geoPoint": {
+      "type": "object",
+      "properties": {
+        "lat": {
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90
+        },
+        "lon": {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180
+        },
+        "precision": {
+          "type": "string",
+          "enum": [
+            "identified",
+            "approximate",
+            "uncertain"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "lat",
+        "lon",
+        "precision"
+      ],
+      "description": "A point for schematic maps. 'identified': the site is known today; 'approximate': the area is known; 'uncertain': scholars differ on where it was."
+    },
+    "place": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "city",
+            "town",
+            "mountain",
+            "cave",
+            "valley",
+            "well",
+            "mosque",
+            "battlefield",
+            "region",
+            "other"
+          ]
+        },
+        "location": {
+          "$ref": "#/$defs/geoPoint"
+        },
+        "summary": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "reliability": {
+          "$ref": "#/$defs/reliability"
+        },
+        "citations": {
+          "$ref": "#/$defs/citations"
+        },
+        "review": {
+          "$ref": "#/$defs/review"
+        },
+        "modernName": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "contemporaryNote": {
+          "$ref": "#/$defs/localizedText"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "kind",
+        "location",
+        "summary",
+        "reliability",
+        "citations",
+        "review"
+      ]
+    },
+    "placesFile": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "places": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/place"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "places"
+      ],
+      "description": "content/places.json"
+    },
+    "seerahEra": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "date": {
+          "$ref": "#/$defs/historicalDate"
+        },
+        "summary": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "reliability": {
+          "$ref": "#/$defs/reliability"
+        },
+        "citations": {
+          "$ref": "#/$defs/citations"
+        },
+        "chapterIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "date",
+        "summary",
+        "reliability",
+        "citations",
+        "chapterIds"
+      ]
+    },
+    "seerahFile": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "title": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "subtitle": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "introduction": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/contentBlock"
+          }
+        },
+        "eras": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/seerahEra"
+          }
+        },
+        "chapterIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "topicIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "featuredEventIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "featuredPlaceIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "companionIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "visualIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "methodology": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "review": {
+          "$ref": "#/$defs/review"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "title",
+        "subtitle",
+        "introduction",
+        "eras",
+        "chapterIds",
+        "topicIds",
+        "methodology",
+        "references",
+        "review"
+      ],
+      "description": "content/seerah/seerah.json: the Seerah section (محمد رسول الله ﷺ). The order of chapterIds is the reading order."
+    },
+    "seerahChapterFile": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "title": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "abstract": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "era": {
+          "type": "string",
+          "enum": [
+            "preIslam",
+            "makkan",
+            "madinan"
+          ]
+        },
+        "date": {
+          "$ref": "#/$defs/historicalDate"
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "eventIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "placeIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "companionIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "visualIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "blocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/contentBlock"
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/review"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "id",
+        "title",
+        "abstract",
+        "era",
+        "date",
+        "references",
+        "blocks",
+        "review"
+      ],
+      "description": "content/seerah/chapters/<id>.json"
+    },
+    "seerahTopicFile": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "title": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "abstract": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "chapterIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "companionIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "blocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/contentBlock"
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/review"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "id",
+        "title",
+        "abstract",
+        "references",
+        "blocks",
+        "review"
+      ],
+      "description": "content/seerah/topics/<id>.json"
+    },
+    "visualRouteLeg": {
+      "type": "object",
+      "properties": {
+        "from": {
+          "$ref": "#/$defs/id"
+        },
+        "to": {
+          "$ref": "#/$defs/id"
+        },
+        "approximate": {
+          "type": "boolean"
+        },
+        "note": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "reliability": {
+          "$ref": "#/$defs/reliability"
+        },
+        "citations": {
+          "$ref": "#/$defs/citations"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "from",
+        "to",
+        "approximate",
+        "reliability",
+        "citations"
+      ]
+    },
+    "visualRelationEdge": {
+      "type": "object",
+      "properties": {
+        "from": {
+          "$ref": "#/$defs/personRef"
+        },
+        "to": {
+          "$ref": "#/$defs/personRef"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "father",
+            "mother",
+            "child",
+            "spouse",
+            "sibling",
+            "relative",
+            "teacher",
+            "student",
+            "brotherhood",
+            "companion"
+          ]
+        },
+        "note": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "reliability": {
+          "$ref": "#/$defs/reliability"
+        },
+        "citations": {
+          "$ref": "#/$defs/citations"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "from",
+        "to",
+        "type",
+        "reliability",
+        "citations"
+      ]
+    },
+    "visualStep": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "text": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "placeId": {
+          "$ref": "#/$defs/id"
+        },
+        "date": {
+          "$ref": "#/$defs/historicalDate"
+        },
+        "orderUncertain": {
+          "type": "boolean"
+        },
+        "reliability": {
+          "$ref": "#/$defs/reliability"
+        },
+        "citations": {
+          "$ref": "#/$defs/citations"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "text",
+        "reliability",
+        "citations"
+      ]
+    },
+    "visualBand": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "date": {
+          "$ref": "#/$defs/historicalDate"
+        },
+        "note": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "reliability": {
+          "$ref": "#/$defs/reliability"
+        },
+        "citations": {
+          "$ref": "#/$defs/citations"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "date",
+        "reliability",
+        "citations"
+      ]
+    },
+    "visualCallout": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "text": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "reliability": {
+          "$ref": "#/$defs/reliability"
+        },
+        "citations": {
+          "$ref": "#/$defs/citations"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "text",
+        "reliability",
+        "citations"
+      ]
+    },
+    "visualFile": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "timeline",
+            "map",
+            "relationships",
+            "sequence",
+            "periods",
+            "placePanel"
+          ]
+        },
+        "title": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "takeaway": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/localizedText"
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/review"
+        },
+        "companionId": {
+          "$ref": "#/$defs/id"
+        },
+        "eventIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "placeIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "route": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/visualRouteLeg"
+          }
+        },
+        "edges": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/visualRelationEdge"
+          },
+          "minItems": 1
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/visualStep"
+          },
+          "minItems": 2
+        },
+        "bands": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/visualBand"
+          },
+          "minItems": 1
+        },
+        "placeId": {
+          "$ref": "#/$defs/id"
+        },
+        "callouts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/visualCallout"
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "id",
+        "type",
+        "title",
+        "takeaway",
+        "review"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "timeline"
+              }
+            }
+          },
+          "then": {
+            "oneOf": [
+              {
+                "required": [
+                  "companionId"
+                ]
+              },
+              {
+                "required": [
+                  "eventIds"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "map"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "placeIds"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "relationships"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "edges"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "sequence"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "steps"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "periods"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "bands"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "placePanel"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "placeId",
+              "callouts"
+            ]
+          }
+        }
+      ],
+      "description": "content/visuals/<id>.json: an infographic. Every factual mark resolves to a record (event, place, companion timeline) or carries its own citations. 'takeaway' says in plain words what the reader should learn."
+    },
+    "editionFile": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "companions": {
+          "type": "object",
+          "properties": {
+            "categoryId": {
+              "$ref": "#/$defs/id"
+            },
+            "size": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "minWords": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "minSections": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "minTimeline": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "requiredSectionKinds": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "earlyLife",
+                  "conversion",
+                  "withProphet",
+                  "virtues",
+                  "contributions",
+                  "character",
+                  "lessons",
+                  "death",
+                  "custom"
+                ]
+              },
+              "uniqueItems": true
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "categoryId",
+            "size",
+            "minWords",
+            "minSections",
+            "minTimeline",
+            "requiredSectionKinds"
+          ]
+        },
+        "seerah": {
+          "type": "object",
+          "properties": {
+            "chapters": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "topics": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "minChapterWords": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "minTopicWords": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "chapters",
+            "topics",
+            "minChapterWords",
+            "minTopicWords"
+          ]
+        },
+        "stories": {
+          "type": "object",
+          "properties": {
+            "count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "minWords": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "count",
+            "minWords"
+          ]
+        },
+        "events": {
+          "type": "object",
+          "properties": {
+            "count": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "count"
+          ]
+        },
+        "visuals": {
+          "type": "object",
+          "properties": {
+            "count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "requiredTypes": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "timeline",
+                  "map",
+                  "relationships",
+                  "sequence",
+                  "periods",
+                  "placePanel"
+                ]
+              },
+              "uniqueItems": true
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "count",
+            "requiredTypes"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "id",
+        "companions",
+        "seerah",
+        "stories",
+        "events",
+        "visuals"
+      ],
+      "description": "content/release/edition.json: what the next public edition must contain. Word minimums diagnose thin drafts; they do not establish quality."
     }
   }
 }

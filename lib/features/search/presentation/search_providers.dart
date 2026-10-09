@@ -5,13 +5,15 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:siyar_sahaba/features/search/domain/search_documents.dart';
 import 'package:siyar_sahaba/features/search/domain/search_index.dart';
 import 'package:siyar_sahaba/shared/content/domain/companion.dart';
+import 'package:siyar_sahaba/shared/content/domain/seerah.dart';
 import 'package:siyar_sahaba/shared/content/domain/story.dart';
 import 'package:siyar_sahaba/shared/content/providers.dart';
 
 /// Above this many documents the index is built on a background isolate.
 const _isolateThreshold = 300;
 
-/// The search index over every companion, section, story and chapter.
+/// The search index over every companion, section, story and chapter,
+/// Seerah chapter and essay, event and place.
 final searchIndexProvider = FutureProvider<SearchIndex>((ref) async {
   final repo = ref.watch(contentRepositoryProvider);
   final summaries = (await repo.companionIndex()).getOrThrow();
@@ -36,14 +38,42 @@ final searchIndexProvider = FutureProvider<SearchIndex>((ref) async {
       storyResults.length -
       stories.length;
 
+  // The Seerah, events and places are part of search when the build has
+  // them; failures count like any other.
+  final seerah = (await repo.seerahIndex()).valueOrNull;
+  final seerahChapterResults = await Future.wait([
+    for (final c in seerah?.chapters ?? const <SeerahChapterSummary>[])
+      repo.seerahChapter(c.id),
+  ]);
+  final seerahTopicResults = await Future.wait([
+    for (final t in seerah?.topics ?? const <SeerahTopicSummary>[])
+      repo.seerahTopic(t.id),
+  ]);
+  final seerahChapters = [for (final r in seerahChapterResults) ?r.valueOrNull];
+  final seerahTopics = [for (final r in seerahTopicResults) ?r.valueOrNull];
+  final events = (await repo.events()).valueOrNull;
+  final places = (await repo.places()).valueOrNull;
+  final unavailableAll =
+      unavailable +
+      seerahChapterResults.length -
+      seerahChapters.length +
+      seerahTopicResults.length -
+      seerahTopics.length +
+      (events == null ? 1 : 0) +
+      (places == null ? 1 : 0);
+
   final documents = buildSearchDocuments(
     companions: companions,
     stories: stories,
     categories: categories,
+    seerahChapters: seerahChapters,
+    seerahTopics: seerahTopics,
+    events: events?.values.toList() ?? const [],
+    places: places?.values.toList() ?? const [],
   );
   return documents.length < _isolateThreshold
-      ? SearchIndex(documents, unavailable: unavailable)
-      : _buildOnIsolate(documents, unavailable);
+      ? SearchIndex(documents, unavailable: unavailableAll)
+      : _buildOnIsolate(documents, unavailableAll);
 });
 
 /// Builds the index on a background isolate. A separate function, so the
@@ -81,7 +111,7 @@ class SearchQueryController extends Notifier<String> {
 }
 
 /// The kind of result shown, chosen by the reader.
-enum SearchScope { all, companions, biographies, stories }
+enum SearchScope { all, seerah, companions, biographies, stories, archive }
 
 /// The reader's filters: a [SearchScope] and, optionally, one companion or
 /// story whose passages to search.
@@ -102,6 +132,8 @@ class SearchFilterController extends Notifier<(SearchScope, String?)> {
 SearchFilter _filterFor((SearchScope, String?) f) => SearchFilter(
   kinds: switch (f.$1) {
     SearchScope.all => null,
+    SearchScope.seerah => {SearchKind.seerahChapter, SearchKind.seerahTopic},
+    SearchScope.archive => {SearchKind.event, SearchKind.place},
     SearchScope.companions => {SearchKind.companion},
     SearchScope.biographies => {SearchKind.section},
     SearchScope.stories => {SearchKind.story, SearchKind.chapter},

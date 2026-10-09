@@ -43,12 +43,24 @@ class _SearchPageState extends ConsumerState<SearchPage> {
   /// that tab), leaving search; the query is kept for when it reopens.
   void _open(SearchDocument doc) {
     ref.read(recentSearchesProvider.notifier).add(_field.text);
-    context.go(switch (doc.kind) {
-      SearchKind.companion => AppRoutes.companion(doc.id),
-      SearchKind.section => AppRoutes.section(doc.parentId!, doc.id),
-      SearchKind.story => AppRoutes.story(doc.id),
-      SearchKind.chapter => AppRoutes.chapter(doc.parentId!, doc.id),
-    });
+    switch (doc.kind) {
+      // Events and places sit above the destinations: they replace search,
+      // so back returns to where search was opened.
+      case SearchKind.event:
+        context.pushReplacement(AppRoutes.event(doc.id));
+      case SearchKind.place:
+        context.pushReplacement(AppRoutes.place(doc.id));
+      case _:
+        context.go(switch (doc.kind) {
+          SearchKind.companion => AppRoutes.companion(doc.id),
+          SearchKind.section => AppRoutes.section(doc.parentId!, doc.id),
+          SearchKind.story => AppRoutes.story(doc.id),
+          SearchKind.chapter => AppRoutes.chapter(doc.parentId!, doc.id),
+          SearchKind.seerahChapter => AppRoutes.seerahChapter(doc.id),
+          SearchKind.seerahTopic => AppRoutes.seerahTopic(doc.id),
+          SearchKind.event || SearchKind.place => AppRoutes.home,
+        });
+    }
   }
 
   @override
@@ -177,6 +189,8 @@ class _ResultsView extends ConsumerWidget {
       SearchScope.companions => l10n.searchScopeCompanions,
       SearchScope.biographies => l10n.searchScopeBiographies,
       SearchScope.stories => l10n.searchScopeStories,
+      SearchScope.seerah => l10n.searchScopeSeerah,
+      SearchScope.archive => l10n.searchScopeArchive,
     };
 
     final chips = Semantics(
@@ -296,6 +310,10 @@ class _Results extends StatelessWidget {
       SearchKind.story => l10n.searchKindStories,
       SearchKind.section => l10n.searchKindSections,
       SearchKind.chapter => l10n.searchKindChapters,
+      SearchKind.seerahChapter => l10n.searchKindSeerahChapters,
+      SearchKind.seerahTopic => l10n.searchKindSeerahTopics,
+      SearchKind.event => l10n.searchKindEvents,
+      SearchKind.place => l10n.searchKindPlaces,
     };
     final dim = TextStyle(color: colors.onSurfaceDim);
 

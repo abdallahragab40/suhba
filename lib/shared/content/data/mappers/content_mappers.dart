@@ -17,6 +17,8 @@ import 'package:siyar_sahaba/shared/content/domain/story.dart';
 
 // DTO → domain. One extension per DTO; nested values map recursively.
 
+List<Citation> citationsToDomain(List<CitationDto> list) => _citations(list);
+
 List<Citation> _citations(List<CitationDto> list) => [
   for (final c in list) c.toDomain(),
 ];
@@ -83,8 +85,11 @@ extension FactDtoMapper on FactDto {
 }
 
 extension ReviewDtoMapper on ReviewDto {
-  ReviewInfo toDomain() =>
-      ReviewInfo(status: status, editorialFlags: editorialFlags.toSet());
+  ReviewInfo toDomain() => ReviewInfo(
+    status: status,
+    editorialFlags: editorialFlags.toSet(),
+    coverage: coverage,
+  );
 }
 
 extension PersonRefDtoMapper on PersonRefDto {
@@ -146,6 +151,12 @@ extension ContentBlockDtoMapper on ContentBlockDto {
               citations: _citations(o.citations),
             ),
         ],
+      ),
+    HeadingBlockDto(:final text) => ContentBlock.heading(text: text.toDomain()),
+    InfographicBlockDto(:final visualId, :final caption) =>
+      ContentBlock.infographic(
+        visualId: visualId,
+        caption: caption?.toDomain(),
       ),
   };
 }
@@ -309,6 +320,9 @@ extension HistoricalEventDtoMapper on HistoricalEventDto {
     review: review.toDomain(),
     place: place?.toDomain(),
     participants: [for (final p in participants) p.toDomain()],
+    placeIds: placeIds,
+    context: context?.toDomain(),
+    outcome: outcome?.toDomain(),
   );
 }
 
@@ -343,6 +357,10 @@ extension ManifestDtoMapper on ManifestDto {
     channel: channel,
     companionCount: companionCount,
     storyCount: storyCount,
+    seerahChapterCount: seerahChapterCount,
+    seerahTopicCount: seerahTopicCount,
+    placeCount: placeCount,
+    visualCount: visualCount,
     approvedCount: approvedCount,
     unapprovedCount: unapprovedCount,
   );

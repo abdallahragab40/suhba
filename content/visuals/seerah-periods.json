@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "id": "seerah-periods",
+  "type": "periods",
+  "title": {
+    "ar": "مراحل السيرة على مقياس الزمن"
+  },
+  "takeaway": {
+    "ar": "عاش النبي ﷺ نحو أربعين سنة قبل البعثة، ثم ثلاث عشرة سنة نبيًّا في مكة، ثم عشر سنين في المدينة."
+  },
+  "notes": [
+    {
+      "ar": "أطوال الأشرطة متناسبة مع عدد السنين التقريبي، والسنوات الميلادية موافقة تقريبية."
+    },
+    {
+      "ar": "عمره ﷺ عند الوفاة ثلاث وستون سنة على الصحيح، وفي ذلك روايات أخرى."
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators"
+    ],
+    "authoredBy": "draft-revision-4"
+  },
+  "bands": [
+    {
+      "label": {
+        "ar": "قبل البعثة"
+      },
+      "date": {
+        "precision": "range",
+        "era": "beforeHijra",
+        "hijriYear": 53,
+        "gregorianYear": 570,
+        "hijriYearEnd": 13,
+        "gregorianYearEnd": 610
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ],
+      "note": {
+        "ar": "من المولد إلى الأربعين."
+      }
+    },
+    {
+      "label": {
+        "ar": "العهد المكي"
+      },
+      "date": {
+        "precision": "range",
+        "era": "beforeHijra",
+        "hijriYear": 13,
+        "gregorianYear": 610,
+        "endEra": "afterHijra",
+        "hijriYearEnd": 1,
+        "gregorianYearEnd": 622
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ],
+      "note": {
+        "ar": "ثلاث عشرة سنة بمكة بعد البعثة."
+      }
+    },
+    {
+      "label": {
+        "ar": "العهد المدني"
+      },
+      "date": {
+        "precision": "range",
+        "era": "afterHijra",
+        "hijriYear": 1,
+        "gregorianYear": 622,
+        "hijriYearEnd": 11,
+        "gregorianYearEnd": 632
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ],
+      "note": {
+        "ar": "عشر سنين بالمدينة."
+      }
+    }
+  ]
+}

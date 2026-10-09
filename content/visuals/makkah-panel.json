@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "id": "makkah-panel",
+  "type": "placePanel",
+  "title": {
+    "ar": "مكة: لماذا هي في قلب السيرة"
+  },
+  "takeaway": {
+    "ar": "مكة هي موضع البيت، وموطن قريش، ومولد النبي ﷺ ومبعثه، وإليها عاد فاتحًا."
+  },
+  "notes": [
+    {
+      "ar": "المشهد المرسوم تكوين توضيحي غير تصويري، وليس صورة للمكان في القرن السابع."
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators"
+    ],
+    "authoredBy": "draft-revision-4"
+  },
+  "placeId": "makkah",
+  "callouts": [
+    {
+      "label": {
+        "ar": "البيت"
+      },
+      "text": {
+        "ar": "أول بيت وُضع للناس، رفع قواعده إبراهيم وإسماعيل عليهما السلام."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 3,
+            "ayahFrom": 96
+          }
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 2,
+            "ayahFrom": 127
+          }
+        }
+      ]
+    },
+    {
+      "label": {
+        "ar": "وادٍ غير ذي زرع"
+      },
+      "text": {
+        "ar": "أرض قليلة الماء والزرع، قامت حياتها على الحج والتجارة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 14,
+            "ayahFrom": 37
+          }
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 106,
+            "ayahFrom": 1,
+            "ayahTo": 4
+          }
+        }
+      ]
+    },
+    {
+      "label": {
+        "ar": "المولد والمبعث"
+      },
+      "text": {
+        "ar": "وُلد فيها النبي ﷺ، ونزل عليه الوحي في غار حراء قريبًا منها."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "label": {
+        "ar": "الفتح"
+      },
+      "text": {
+        "ar": "عاد إليها النبي ﷺ سنة ثمان فاتحًا وعفا عن أهلها."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 110,
+            "ayahFrom": 1,
+            "ayahTo": 3
+          }
+        }
+      ]
+    }
+  ]
+}

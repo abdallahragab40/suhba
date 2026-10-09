@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "id": "trustworthiness",
+  "title": {
+    "ar": "أمانته وصدقه"
+  },
+  "abstract": {
+    "ar": "الأمين قبل البعثة، والصادق بشهادة خصومه، والمؤدّي للأمانة حتى في ليلة الهجرة."
+  },
+  "references": [
+    "sirat-ibn-hisham",
+    "bukhari"
+  ],
+  "chapterIds": [
+    "childhood-youth",
+    "dawah-in-makkah",
+    "hijrah-to-madinah"
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "عُرف النبي ﷺ في قريش قبل البعثة بالأمين، وكانوا يحكّمونه ويستودعونه أموالهم."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ولما جمع قريشًا على الصفا أقرّوا أنهم لم يعرفوا عليه كذبًا قط."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "hadithQuote",
+      "textStatus": "pendingFromSource",
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending",
+          "grading": {
+            "grade": "sahih",
+            "gradedBy": {
+              "ar": "البخاري، بإخراجه في صحيحه"
+            }
+          }
+        }
+      ],
+      "summary": {
+        "ar": "حديث أبي سفيان حين سأله هرقل عن النبي ﷺ: هل كانوا يتهمونه بالكذب قبل أن يقول ما قال؟ فأجاب بالنفي، وكان يومئذ على الشرك."
+      }
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وحين هاجر وقريش تطلب قتله، ترك عليًّا ليردّ إلى أهل مكة ودائعهم التي كانت عنده."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "text": {
+        "ar": "الصدق والأمانة هما أساس الثقة، وقد سبقا الرسالة في حياته ﷺ، فكانا أول ما احتجّ به على قومه."
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators",
+      "needsSourceText"
+    ],
+    "authoredBy": "draft-revision-4",
+    "coverage": "sample"
+  }
+}

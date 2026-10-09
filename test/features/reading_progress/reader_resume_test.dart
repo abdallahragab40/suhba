@@ -171,6 +171,8 @@ void main() {
     await tester.pump(const Duration(seconds: 2));
     expect((await row(app, 'abu-bakr.hijrah'))!.completed, isTrue);
 
+    await tester.ensureVisible(find.text('اقرأه من جديد'));
+    await tester.pumpAndSettle();
     await tester.tap(find.text('اقرأه من جديد'));
     await tester.pumpAndSettle();
     expect(await row(app, 'abu-bakr.hijrah'), isNull);

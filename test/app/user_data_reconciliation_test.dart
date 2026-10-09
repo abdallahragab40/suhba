@@ -12,6 +12,7 @@ import 'package:siyar_sahaba/features/reading_progress/data/drift_reading_progre
 import 'package:siyar_sahaba/features/reading_progress/domain/reading_progress.dart';
 import 'package:siyar_sahaba/shared/content/data/asset_content_repository.dart';
 import 'package:siyar_sahaba/shared/content/data/asset_content_source.dart';
+import 'package:siyar_sahaba/shared/content/domain/content_target.dart';
 import 'package:siyar_sahaba/shared/content/providers.dart';
 
 import '../helpers/content_bundle.dart';
@@ -83,6 +84,50 @@ void main() {
     });
     expect(await revisionOf('abu-bakr', 'abu-bakr.hijrah'), isNot(before));
     expect(await revisionOf('abu-bakr', 'abu-bakr.virtues'), other);
+  });
+
+  test('Seerah chapters and essays: unchanged, edited, removed', () async {
+    const chapterFile = 'assets/content/seerah/chapters/hijrah-to-madinah.json';
+    final repo = AssetContentRepository(AssetContentSource(bundle));
+    final hijrah = (await repo.seerahChapter('hijrah-to-madinah')).getOrThrow();
+    final mercy = (await repo.seerahTopic('mercy')).getOrThrow();
+
+    await savePosition(
+      'mercy',
+      companionId: seerahParentId,
+      target: ProgressTarget.seerahTopic,
+      revision: mercy.revision,
+    );
+    await savePosition(
+      'hijrah-to-madinah',
+      companionId: seerahParentId,
+      target: ProgressTarget.seerahChapter,
+      revision: hijrah.revision,
+    );
+    await savePosition(
+      'no-such-chapter',
+      companionId: seerahParentId,
+      target: ProgressTarget.seerahChapter,
+      revision: 'whatever',
+    );
+    await bookmarks.toggle(
+      BookmarkTarget.seerahChapter,
+      'hijrah-to-madinah',
+      parentId: seerahParentId,
+    );
+
+    bundle.editJson(chapterFile, (json) {
+      final block = (json['blocks'] as List)[1] as Map<String, dynamic>;
+      (block['text'] as Map<String, dynamic>)['ar'] = 'نص معدّل للاختبار.';
+    });
+
+    final report = await reconcile();
+    expect(report.confirmedPositions, 1, reason: 'mercy');
+    expect(report.outdatedPositions, 1, reason: 'the edited chapter');
+    expect(report.removedPositions, 1, reason: 'no-such-chapter');
+    expect(report.unavailableBookmarks, 0);
+    expect(await position('no-such-chapter'), isNull);
+    expect(await position('hijrah-to-madinah'), isNotNull);
   });
 
   test('unchanged, edited, removed and unreadable targets', () async {
@@ -197,7 +242,7 @@ void main() {
         settings,
       ).read(userDataReconciliationProvider.future);
       expect(report, isNotNull);
-      expect(settings.getString(SettingsKeys.reconciledContent), '0.1.0+draft');
+      expect(settings.getString(SettingsKeys.reconciledContent), '0.2.0+draft');
       expect(
         await containerWith(
           settings,

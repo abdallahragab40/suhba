@@ -82,6 +82,9 @@ flutter:
     - assets/content/index/
     - assets/content/companions/
     - assets/content/stories/
+    - assets/content/seerah/
+    - assets/content/seerah/chapters/
+    - assets/content/seerah/topics/
     # Licensed landscape/architecture photos; every file is listed in
     # credits.json (checked by test/core/design_system/image_credits_test.dart).
     - assets/images/

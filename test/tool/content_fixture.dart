@@ -220,7 +220,8 @@ class ContentFixture {
   /// fills in every locator, so it can be published.
   void approve(String kind, String id, Map<String, dynamic> item) {
     _completeLocators(item);
-    item['review'] = {'status': 'approved'};
+    final coverage = (item['review'] as Map?)?['coverage'];
+    item['review'] = {'status': 'approved', 'coverage': ?coverage};
     final reviewers = list('reviewers.json', 'reviewers');
     if (reviewers.isEmpty) {
       reviewers.add({
@@ -256,6 +257,104 @@ class ContentFixture {
     },
   };
 
+  /// Adds a minimal Seerah: the section with one period, one chapter (with
+  /// a heading and a visual), one essay, two places, and a map visual.
+  void addSeerah() {
+    files['places.json'] = {
+      'schemaVersion': 1,
+      'places': [_place('place-a', 21.4, 39.8), _place('place-b', 24.4, 39.6)],
+    };
+    files['seerah/seerah.json'] = {
+      'schemaVersion': 1,
+      'title': _t('السيرة'),
+      'subtitle': _t('السيرة النبوية'),
+      'introduction': [_paragraph()],
+      'eras': [
+        {
+          'id': 'era-a',
+          'name': _t('مرحلة'),
+          'date': {'precision': 'year', 'hijriYear': 1, 'gregorianYear': 622},
+          'summary': _t('نص'),
+          'reliability': 'established',
+          'citations': [_pending('bio-a')],
+          'chapterIds': ['chapter-a'],
+        },
+      ],
+      'chapterIds': ['chapter-a'],
+      'topicIds': ['topic-a'],
+      'featuredEventIds': ['event-a'],
+      'featuredPlaceIds': ['place-a'],
+      'companionIds': ['comp-a'],
+      'visualIds': ['visual-a'],
+      'methodology': _t('منهج'),
+      'references': ['bio-a'],
+      'review': _draft(),
+    };
+    files['seerah/chapters/chapter-a.json'] = {
+      'schemaVersion': 1,
+      'id': 'chapter-a',
+      'title': _t('فصل'),
+      'abstract': _t('ملخص'),
+      'era': 'madinan',
+      'date': {'precision': 'year', 'hijriYear': 1, 'gregorianYear': 622},
+      'references': ['bio-a'],
+      'eventIds': ['event-a'],
+      'placeIds': ['place-a'],
+      'companionIds': ['comp-a'],
+      'visualIds': ['visual-a'],
+      'blocks': [
+        {'type': 'heading', 'text': _t('عنوان')},
+        _paragraph(),
+        {'type': 'infographic', 'visualId': 'visual-a'},
+      ],
+      'review': {'status': 'draft', 'coverage': 'complete'},
+    };
+    files['seerah/topics/topic-a.json'] = {
+      'schemaVersion': 1,
+      'id': 'topic-a',
+      'title': _t('موضوع'),
+      'abstract': _t('ملخص'),
+      'references': ['bio-a'],
+      'chapterIds': ['chapter-a'],
+      'blocks': [_paragraph()],
+      'review': {'status': 'draft', 'coverage': 'complete'},
+    };
+    files['visuals/visual-a.json'] = {
+      'schemaVersion': 1,
+      'id': 'visual-a',
+      'type': 'map',
+      'title': _t('خريطة'),
+      'takeaway': _t('خلاصة'),
+      'review': _draft(),
+      'placeIds': ['place-a', 'place-b'],
+      'route': [
+        {
+          'from': 'place-a',
+          'to': 'place-b',
+          'approximate': true,
+          'reliability': 'established',
+          'citations': [_pending('bio-a')],
+        },
+      ],
+    };
+  }
+
+  /// Approves everything [addSeerah] added.
+  void approveSeerah() {
+    for (final p in list('places.json', 'places')) {
+      final place = p as Map<String, dynamic>;
+      approve('place', place['id'] as String, place);
+    }
+    approve(
+      'seerahChapter',
+      'chapter-a',
+      files['seerah/chapters/chapter-a.json']!,
+    );
+    approve('seerahTopic', 'topic-a', files['seerah/topics/topic-a.json']!);
+    approve('visual', 'visual-a', files['visuals/visual-a.json']!);
+    approve('seerah', 'seerah', files['seerah/seerah.json']!);
+  }
+
   /// Gives every pending citation a page and every pending quote a text, so
   /// the item has no pending work.
   static void _completeLocators(Object? node) {
@@ -281,6 +380,22 @@ class ContentFixture {
   }
 
   static Map<String, dynamic> _t(String ar) => {'ar': ar};
+  static Map<String, dynamic> _paragraph() => {
+    'type': 'paragraph',
+    'text': _t('نص'),
+    'reliability': 'established',
+    'citations': [_pending('bio-a')],
+  };
+  static Map<String, dynamic> _place(String id, double lat, double lon) => {
+    'id': id,
+    'name': _t('مكان'),
+    'kind': 'city',
+    'location': {'lat': lat, 'lon': lon, 'precision': 'identified'},
+    'summary': _t('نص'),
+    'reliability': 'established',
+    'citations': [_pending('bio-a')],
+    'review': _draft(),
+  };
   static Map<String, dynamic> _draft() => {'status': 'draft'};
   static Map<String, dynamic> _pending(String sourceId) => {
     'sourceId': sourceId,

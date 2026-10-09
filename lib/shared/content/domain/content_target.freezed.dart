@@ -55,14 +55,16 @@ extension ContentTargetPatterns on ContentTarget {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( CompanionTarget value)?  companion,TResult Function( SectionTarget value)?  section,TResult Function( StoryTarget value)?  story,TResult Function( ChapterTarget value)?  chapter,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( CompanionTarget value)?  companion,TResult Function( SectionTarget value)?  section,TResult Function( StoryTarget value)?  story,TResult Function( ChapterTarget value)?  chapter,TResult Function( SeerahChapterTarget value)?  seerahChapter,TResult Function( SeerahTopicTarget value)?  seerahTopic,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case CompanionTarget() when companion != null:
 return companion(_that);case SectionTarget() when section != null:
 return section(_that);case StoryTarget() when story != null:
 return story(_that);case ChapterTarget() when chapter != null:
-return chapter(_that);case _:
+return chapter(_that);case SeerahChapterTarget() when seerahChapter != null:
+return seerahChapter(_that);case SeerahTopicTarget() when seerahTopic != null:
+return seerahTopic(_that);case _:
   return orElse();
 
 }
@@ -80,14 +82,16 @@ return chapter(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( CompanionTarget value)  companion,required TResult Function( SectionTarget value)  section,required TResult Function( StoryTarget value)  story,required TResult Function( ChapterTarget value)  chapter,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( CompanionTarget value)  companion,required TResult Function( SectionTarget value)  section,required TResult Function( StoryTarget value)  story,required TResult Function( ChapterTarget value)  chapter,required TResult Function( SeerahChapterTarget value)  seerahChapter,required TResult Function( SeerahTopicTarget value)  seerahTopic,}){
 final _that = this;
 switch (_that) {
 case CompanionTarget():
 return companion(_that);case SectionTarget():
 return section(_that);case StoryTarget():
 return story(_that);case ChapterTarget():
-return chapter(_that);}
+return chapter(_that);case SeerahChapterTarget():
+return seerahChapter(_that);case SeerahTopicTarget():
+return seerahTopic(_that);}
 }
 /// A variant of `map` that fallback to returning `null`.
 ///
@@ -101,14 +105,16 @@ return chapter(_that);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( CompanionTarget value)?  companion,TResult? Function( SectionTarget value)?  section,TResult? Function( StoryTarget value)?  story,TResult? Function( ChapterTarget value)?  chapter,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( CompanionTarget value)?  companion,TResult? Function( SectionTarget value)?  section,TResult? Function( StoryTarget value)?  story,TResult? Function( ChapterTarget value)?  chapter,TResult? Function( SeerahChapterTarget value)?  seerahChapter,TResult? Function( SeerahTopicTarget value)?  seerahTopic,}){
 final _that = this;
 switch (_that) {
 case CompanionTarget() when companion != null:
 return companion(_that);case SectionTarget() when section != null:
 return section(_that);case StoryTarget() when story != null:
 return story(_that);case ChapterTarget() when chapter != null:
-return chapter(_that);case _:
+return chapter(_that);case SeerahChapterTarget() when seerahChapter != null:
+return seerahChapter(_that);case SeerahTopicTarget() when seerahTopic != null:
+return seerahTopic(_that);case _:
   return null;
 
 }
@@ -125,13 +131,15 @@ return chapter(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( String id)?  companion,TResult Function( String companionId,  String sectionId)?  section,TResult Function( String id)?  story,TResult Function( String storyId,  String chapterId)?  chapter,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( String id)?  companion,TResult Function( String companionId,  String sectionId)?  section,TResult Function( String id)?  story,TResult Function( String storyId,  String chapterId)?  chapter,TResult Function( String id)?  seerahChapter,TResult Function( String id)?  seerahTopic,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case CompanionTarget() when companion != null:
 return companion(_that.id);case SectionTarget() when section != null:
 return section(_that.companionId,_that.sectionId);case StoryTarget() when story != null:
 return story(_that.id);case ChapterTarget() when chapter != null:
-return chapter(_that.storyId,_that.chapterId);case _:
+return chapter(_that.storyId,_that.chapterId);case SeerahChapterTarget() when seerahChapter != null:
+return seerahChapter(_that.id);case SeerahTopicTarget() when seerahTopic != null:
+return seerahTopic(_that.id);case _:
   return orElse();
 
 }
@@ -149,13 +157,15 @@ return chapter(_that.storyId,_that.chapterId);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( String id)  companion,required TResult Function( String companionId,  String sectionId)  section,required TResult Function( String id)  story,required TResult Function( String storyId,  String chapterId)  chapter,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( String id)  companion,required TResult Function( String companionId,  String sectionId)  section,required TResult Function( String id)  story,required TResult Function( String storyId,  String chapterId)  chapter,required TResult Function( String id)  seerahChapter,required TResult Function( String id)  seerahTopic,}) {final _that = this;
 switch (_that) {
 case CompanionTarget():
 return companion(_that.id);case SectionTarget():
 return section(_that.companionId,_that.sectionId);case StoryTarget():
 return story(_that.id);case ChapterTarget():
-return chapter(_that.storyId,_that.chapterId);}
+return chapter(_that.storyId,_that.chapterId);case SeerahChapterTarget():
+return seerahChapter(_that.id);case SeerahTopicTarget():
+return seerahTopic(_that.id);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -169,13 +179,15 @@ return chapter(_that.storyId,_that.chapterId);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( String id)?  companion,TResult? Function( String companionId,  String sectionId)?  section,TResult? Function( String id)?  story,TResult? Function( String storyId,  String chapterId)?  chapter,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( String id)?  companion,TResult? Function( String companionId,  String sectionId)?  section,TResult? Function( String id)?  story,TResult? Function( String storyId,  String chapterId)?  chapter,TResult? Function( String id)?  seerahChapter,TResult? Function( String id)?  seerahTopic,}) {final _that = this;
 switch (_that) {
 case CompanionTarget() when companion != null:
 return companion(_that.id);case SectionTarget() when section != null:
 return section(_that.companionId,_that.sectionId);case StoryTarget() when story != null:
 return story(_that.id);case ChapterTarget() when chapter != null:
-return chapter(_that.storyId,_that.chapterId);case _:
+return chapter(_that.storyId,_that.chapterId);case SeerahChapterTarget() when seerahChapter != null:
+return seerahChapter(_that.id);case SeerahTopicTarget() when seerahTopic != null:
+return seerahTopic(_that.id);case _:
   return null;
 
 }
@@ -444,6 +456,138 @@ class _$ChapterTargetCopyWithImpl<$Res>
   return _then(ChapterTarget(
 null == storyId ? _self.storyId : storyId // ignore: cast_nullable_to_non_nullable
 as String,null == chapterId ? _self.chapterId : chapterId // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+/// @nodoc
+
+
+class SeerahChapterTarget implements ContentTarget {
+  const SeerahChapterTarget(this.id);
+  
+
+ final  String id;
+
+/// Create a copy of ContentTarget
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$SeerahChapterTargetCopyWith<SeerahChapterTarget> get copyWith => _$SeerahChapterTargetCopyWithImpl<SeerahChapterTarget>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SeerahChapterTarget&&(identical(other.id, id) || other.id == id));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,id);
+
+@override
+String toString() {
+  return 'ContentTarget.seerahChapter(id: $id)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $SeerahChapterTargetCopyWith<$Res> implements $ContentTargetCopyWith<$Res> {
+  factory $SeerahChapterTargetCopyWith(SeerahChapterTarget value, $Res Function(SeerahChapterTarget) _then) = _$SeerahChapterTargetCopyWithImpl;
+@useResult
+$Res call({
+ String id
+});
+
+
+
+
+}
+/// @nodoc
+class _$SeerahChapterTargetCopyWithImpl<$Res>
+    implements $SeerahChapterTargetCopyWith<$Res> {
+  _$SeerahChapterTargetCopyWithImpl(this._self, this._then);
+
+  final SeerahChapterTarget _self;
+  final $Res Function(SeerahChapterTarget) _then;
+
+/// Create a copy of ContentTarget
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? id = null,}) {
+  return _then(SeerahChapterTarget(
+null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+/// @nodoc
+
+
+class SeerahTopicTarget implements ContentTarget {
+  const SeerahTopicTarget(this.id);
+  
+
+ final  String id;
+
+/// Create a copy of ContentTarget
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$SeerahTopicTargetCopyWith<SeerahTopicTarget> get copyWith => _$SeerahTopicTargetCopyWithImpl<SeerahTopicTarget>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SeerahTopicTarget&&(identical(other.id, id) || other.id == id));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,id);
+
+@override
+String toString() {
+  return 'ContentTarget.seerahTopic(id: $id)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $SeerahTopicTargetCopyWith<$Res> implements $ContentTargetCopyWith<$Res> {
+  factory $SeerahTopicTargetCopyWith(SeerahTopicTarget value, $Res Function(SeerahTopicTarget) _then) = _$SeerahTopicTargetCopyWithImpl;
+@useResult
+$Res call({
+ String id
+});
+
+
+
+
+}
+/// @nodoc
+class _$SeerahTopicTargetCopyWithImpl<$Res>
+    implements $SeerahTopicTargetCopyWith<$Res> {
+  _$SeerahTopicTargetCopyWithImpl(this._self, this._then);
+
+  final SeerahTopicTarget _self;
+  final $Res Function(SeerahTopicTarget) _then;
+
+/// Create a copy of ContentTarget
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? id = null,}) {
+  return _then(SeerahTopicTarget(
+null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,
   ));
 }

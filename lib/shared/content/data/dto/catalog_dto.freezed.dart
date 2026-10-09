@@ -377,7 +377,7 @@ $ContentBlockDtoCopyWith<$Res>? get basis {
 /// @nodoc
 mixin _$HistoricalEventDto {
 
- String get id; LocalizedTextDto get name; EventType get type; HistoricalDateDto get date; LocalizedTextDto get summary; Reliability get reliability; List<CitationDto> get citations; ReviewDto get review; LocalizedTextDto? get place; List<PersonRefDto> get participants;
+ String get id; LocalizedTextDto get name; EventType get type; HistoricalDateDto get date; LocalizedTextDto get summary; Reliability get reliability; List<CitationDto> get citations; ReviewDto get review; LocalizedTextDto? get place; List<PersonRefDto> get participants; List<String> get placeIds; LocalizedTextDto? get context; LocalizedTextDto? get outcome;
 /// Create a copy of HistoricalEventDto
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -390,16 +390,16 @@ $HistoricalEventDtoCopyWith<HistoricalEventDto> get copyWith => _$HistoricalEven
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is HistoricalEventDto&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.type, type) || other.type == type)&&(identical(other.date, date) || other.date == date)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.reliability, reliability) || other.reliability == reliability)&&const DeepCollectionEquality().equals(other.citations, citations)&&(identical(other.review, review) || other.review == review)&&(identical(other.place, place) || other.place == place)&&const DeepCollectionEquality().equals(other.participants, participants));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is HistoricalEventDto&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.type, type) || other.type == type)&&(identical(other.date, date) || other.date == date)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.reliability, reliability) || other.reliability == reliability)&&const DeepCollectionEquality().equals(other.citations, citations)&&(identical(other.review, review) || other.review == review)&&(identical(other.place, place) || other.place == place)&&const DeepCollectionEquality().equals(other.participants, participants)&&const DeepCollectionEquality().equals(other.placeIds, placeIds)&&(identical(other.context, context) || other.context == context)&&(identical(other.outcome, outcome) || other.outcome == outcome));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,type,date,summary,reliability,const DeepCollectionEquality().hash(citations),review,place,const DeepCollectionEquality().hash(participants));
+int get hashCode => Object.hash(runtimeType,id,name,type,date,summary,reliability,const DeepCollectionEquality().hash(citations),review,place,const DeepCollectionEquality().hash(participants),const DeepCollectionEquality().hash(placeIds),context,outcome);
 
 @override
 String toString() {
-  return 'HistoricalEventDto(id: $id, name: $name, type: $type, date: $date, summary: $summary, reliability: $reliability, citations: $citations, review: $review, place: $place, participants: $participants)';
+  return 'HistoricalEventDto(id: $id, name: $name, type: $type, date: $date, summary: $summary, reliability: $reliability, citations: $citations, review: $review, place: $place, participants: $participants, placeIds: $placeIds, context: $context, outcome: $outcome)';
 }
 
 
@@ -410,11 +410,11 @@ abstract mixin class $HistoricalEventDtoCopyWith<$Res>  {
   factory $HistoricalEventDtoCopyWith(HistoricalEventDto value, $Res Function(HistoricalEventDto) _then) = _$HistoricalEventDtoCopyWithImpl;
 @useResult
 $Res call({
- String id, LocalizedTextDto name, EventType type, HistoricalDateDto date, LocalizedTextDto summary, Reliability reliability, List<CitationDto> citations, ReviewDto review, LocalizedTextDto? place, List<PersonRefDto> participants
+ String id, LocalizedTextDto name, EventType type, HistoricalDateDto date, LocalizedTextDto summary, Reliability reliability, List<CitationDto> citations, ReviewDto review, LocalizedTextDto? place, List<PersonRefDto> participants, List<String> placeIds, LocalizedTextDto? context, LocalizedTextDto? outcome
 });
 
 
-$LocalizedTextDtoCopyWith<$Res> get name;$HistoricalDateDtoCopyWith<$Res> get date;$LocalizedTextDtoCopyWith<$Res> get summary;$ReviewDtoCopyWith<$Res> get review;$LocalizedTextDtoCopyWith<$Res>? get place;
+$LocalizedTextDtoCopyWith<$Res> get name;$HistoricalDateDtoCopyWith<$Res> get date;$LocalizedTextDtoCopyWith<$Res> get summary;$ReviewDtoCopyWith<$Res> get review;$LocalizedTextDtoCopyWith<$Res>? get place;$LocalizedTextDtoCopyWith<$Res>? get context;$LocalizedTextDtoCopyWith<$Res>? get outcome;
 
 }
 /// @nodoc
@@ -427,7 +427,7 @@ class _$HistoricalEventDtoCopyWithImpl<$Res>
 
 /// Create a copy of HistoricalEventDto
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? type = null,Object? date = null,Object? summary = null,Object? reliability = null,Object? citations = null,Object? review = null,Object? place = freezed,Object? participants = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? type = null,Object? date = null,Object? summary = null,Object? reliability = null,Object? citations = null,Object? review = null,Object? place = freezed,Object? participants = null,Object? placeIds = null,Object? context = freezed,Object? outcome = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -439,7 +439,10 @@ as Reliability,citations: null == citations ? _self.citations : citations // ign
 as List<CitationDto>,review: null == review ? _self.review : review // ignore: cast_nullable_to_non_nullable
 as ReviewDto,place: freezed == place ? _self.place : place // ignore: cast_nullable_to_non_nullable
 as LocalizedTextDto?,participants: null == participants ? _self.participants : participants // ignore: cast_nullable_to_non_nullable
-as List<PersonRefDto>,
+as List<PersonRefDto>,placeIds: null == placeIds ? _self.placeIds : placeIds // ignore: cast_nullable_to_non_nullable
+as List<String>,context: freezed == context ? _self.context : context // ignore: cast_nullable_to_non_nullable
+as LocalizedTextDto?,outcome: freezed == outcome ? _self.outcome : outcome // ignore: cast_nullable_to_non_nullable
+as LocalizedTextDto?,
   ));
 }
 /// Create a copy of HistoricalEventDto
@@ -489,6 +492,30 @@ $LocalizedTextDtoCopyWith<$Res>? get place {
 
   return $LocalizedTextDtoCopyWith<$Res>(_self.place!, (value) {
     return _then(_self.copyWith(place: value));
+  });
+}/// Create a copy of HistoricalEventDto
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$LocalizedTextDtoCopyWith<$Res>? get context {
+    if (_self.context == null) {
+    return null;
+  }
+
+  return $LocalizedTextDtoCopyWith<$Res>(_self.context!, (value) {
+    return _then(_self.copyWith(context: value));
+  });
+}/// Create a copy of HistoricalEventDto
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$LocalizedTextDtoCopyWith<$Res>? get outcome {
+    if (_self.outcome == null) {
+    return null;
+  }
+
+  return $LocalizedTextDtoCopyWith<$Res>(_self.outcome!, (value) {
+    return _then(_self.copyWith(outcome: value));
   });
 }
 }
@@ -572,10 +599,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  LocalizedTextDto name,  EventType type,  HistoricalDateDto date,  LocalizedTextDto summary,  Reliability reliability,  List<CitationDto> citations,  ReviewDto review,  LocalizedTextDto? place,  List<PersonRefDto> participants)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  LocalizedTextDto name,  EventType type,  HistoricalDateDto date,  LocalizedTextDto summary,  Reliability reliability,  List<CitationDto> citations,  ReviewDto review,  LocalizedTextDto? place,  List<PersonRefDto> participants,  List<String> placeIds,  LocalizedTextDto? context,  LocalizedTextDto? outcome)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _HistoricalEventDto() when $default != null:
-return $default(_that.id,_that.name,_that.type,_that.date,_that.summary,_that.reliability,_that.citations,_that.review,_that.place,_that.participants);case _:
+return $default(_that.id,_that.name,_that.type,_that.date,_that.summary,_that.reliability,_that.citations,_that.review,_that.place,_that.participants,_that.placeIds,_that.context,_that.outcome);case _:
   return orElse();
 
 }
@@ -593,10 +620,10 @@ return $default(_that.id,_that.name,_that.type,_that.date,_that.summary,_that.re
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  LocalizedTextDto name,  EventType type,  HistoricalDateDto date,  LocalizedTextDto summary,  Reliability reliability,  List<CitationDto> citations,  ReviewDto review,  LocalizedTextDto? place,  List<PersonRefDto> participants)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  LocalizedTextDto name,  EventType type,  HistoricalDateDto date,  LocalizedTextDto summary,  Reliability reliability,  List<CitationDto> citations,  ReviewDto review,  LocalizedTextDto? place,  List<PersonRefDto> participants,  List<String> placeIds,  LocalizedTextDto? context,  LocalizedTextDto? outcome)  $default,) {final _that = this;
 switch (_that) {
 case _HistoricalEventDto():
-return $default(_that.id,_that.name,_that.type,_that.date,_that.summary,_that.reliability,_that.citations,_that.review,_that.place,_that.participants);case _:
+return $default(_that.id,_that.name,_that.type,_that.date,_that.summary,_that.reliability,_that.citations,_that.review,_that.place,_that.participants,_that.placeIds,_that.context,_that.outcome);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -613,10 +640,10 @@ return $default(_that.id,_that.name,_that.type,_that.date,_that.summary,_that.re
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  LocalizedTextDto name,  EventType type,  HistoricalDateDto date,  LocalizedTextDto summary,  Reliability reliability,  List<CitationDto> citations,  ReviewDto review,  LocalizedTextDto? place,  List<PersonRefDto> participants)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  LocalizedTextDto name,  EventType type,  HistoricalDateDto date,  LocalizedTextDto summary,  Reliability reliability,  List<CitationDto> citations,  ReviewDto review,  LocalizedTextDto? place,  List<PersonRefDto> participants,  List<String> placeIds,  LocalizedTextDto? context,  LocalizedTextDto? outcome)?  $default,) {final _that = this;
 switch (_that) {
 case _HistoricalEventDto() when $default != null:
-return $default(_that.id,_that.name,_that.type,_that.date,_that.summary,_that.reliability,_that.citations,_that.review,_that.place,_that.participants);case _:
+return $default(_that.id,_that.name,_that.type,_that.date,_that.summary,_that.reliability,_that.citations,_that.review,_that.place,_that.participants,_that.placeIds,_that.context,_that.outcome);case _:
   return null;
 
 }
@@ -628,7 +655,7 @@ return $default(_that.id,_that.name,_that.type,_that.date,_that.summary,_that.re
 @JsonSerializable()
 
 class _HistoricalEventDto implements HistoricalEventDto {
-  const _HistoricalEventDto({required this.id, required this.name, required this.type, required this.date, required this.summary, required this.reliability, required final  List<CitationDto> citations, required this.review, this.place, final  List<PersonRefDto> participants = const <PersonRefDto>[]}): _citations = citations,_participants = participants;
+  const _HistoricalEventDto({required this.id, required this.name, required this.type, required this.date, required this.summary, required this.reliability, required final  List<CitationDto> citations, required this.review, this.place, final  List<PersonRefDto> participants = const <PersonRefDto>[], final  List<String> placeIds = const <String>[], this.context, this.outcome}): _citations = citations,_participants = participants,_placeIds = placeIds;
   factory _HistoricalEventDto.fromJson(Map<String, dynamic> json) => _$HistoricalEventDtoFromJson(json);
 
 @override final  String id;
@@ -653,6 +680,15 @@ class _HistoricalEventDto implements HistoricalEventDto {
   return EqualUnmodifiableListView(_participants);
 }
 
+ final  List<String> _placeIds;
+@override@JsonKey() List<String> get placeIds {
+  if (_placeIds is EqualUnmodifiableListView) return _placeIds;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_placeIds);
+}
+
+@override final  LocalizedTextDto? context;
+@override final  LocalizedTextDto? outcome;
 
 /// Create a copy of HistoricalEventDto
 /// with the given fields replaced by the non-null parameter values.
@@ -667,16 +703,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _HistoricalEventDto&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.type, type) || other.type == type)&&(identical(other.date, date) || other.date == date)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.reliability, reliability) || other.reliability == reliability)&&const DeepCollectionEquality().equals(other._citations, _citations)&&(identical(other.review, review) || other.review == review)&&(identical(other.place, place) || other.place == place)&&const DeepCollectionEquality().equals(other._participants, _participants));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _HistoricalEventDto&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.type, type) || other.type == type)&&(identical(other.date, date) || other.date == date)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.reliability, reliability) || other.reliability == reliability)&&const DeepCollectionEquality().equals(other._citations, _citations)&&(identical(other.review, review) || other.review == review)&&(identical(other.place, place) || other.place == place)&&const DeepCollectionEquality().equals(other._participants, _participants)&&const DeepCollectionEquality().equals(other._placeIds, _placeIds)&&(identical(other.context, context) || other.context == context)&&(identical(other.outcome, outcome) || other.outcome == outcome));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,type,date,summary,reliability,const DeepCollectionEquality().hash(_citations),review,place,const DeepCollectionEquality().hash(_participants));
+int get hashCode => Object.hash(runtimeType,id,name,type,date,summary,reliability,const DeepCollectionEquality().hash(_citations),review,place,const DeepCollectionEquality().hash(_participants),const DeepCollectionEquality().hash(_placeIds),context,outcome);
 
 @override
 String toString() {
-  return 'HistoricalEventDto(id: $id, name: $name, type: $type, date: $date, summary: $summary, reliability: $reliability, citations: $citations, review: $review, place: $place, participants: $participants)';
+  return 'HistoricalEventDto(id: $id, name: $name, type: $type, date: $date, summary: $summary, reliability: $reliability, citations: $citations, review: $review, place: $place, participants: $participants, placeIds: $placeIds, context: $context, outcome: $outcome)';
 }
 
 
@@ -687,11 +723,11 @@ abstract mixin class _$HistoricalEventDtoCopyWith<$Res> implements $HistoricalEv
   factory _$HistoricalEventDtoCopyWith(_HistoricalEventDto value, $Res Function(_HistoricalEventDto) _then) = __$HistoricalEventDtoCopyWithImpl;
 @override @useResult
 $Res call({
- String id, LocalizedTextDto name, EventType type, HistoricalDateDto date, LocalizedTextDto summary, Reliability reliability, List<CitationDto> citations, ReviewDto review, LocalizedTextDto? place, List<PersonRefDto> participants
+ String id, LocalizedTextDto name, EventType type, HistoricalDateDto date, LocalizedTextDto summary, Reliability reliability, List<CitationDto> citations, ReviewDto review, LocalizedTextDto? place, List<PersonRefDto> participants, List<String> placeIds, LocalizedTextDto? context, LocalizedTextDto? outcome
 });
 
 
-@override $LocalizedTextDtoCopyWith<$Res> get name;@override $HistoricalDateDtoCopyWith<$Res> get date;@override $LocalizedTextDtoCopyWith<$Res> get summary;@override $ReviewDtoCopyWith<$Res> get review;@override $LocalizedTextDtoCopyWith<$Res>? get place;
+@override $LocalizedTextDtoCopyWith<$Res> get name;@override $HistoricalDateDtoCopyWith<$Res> get date;@override $LocalizedTextDtoCopyWith<$Res> get summary;@override $ReviewDtoCopyWith<$Res> get review;@override $LocalizedTextDtoCopyWith<$Res>? get place;@override $LocalizedTextDtoCopyWith<$Res>? get context;@override $LocalizedTextDtoCopyWith<$Res>? get outcome;
 
 }
 /// @nodoc
@@ -704,7 +740,7 @@ class __$HistoricalEventDtoCopyWithImpl<$Res>
 
 /// Create a copy of HistoricalEventDto
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? type = null,Object? date = null,Object? summary = null,Object? reliability = null,Object? citations = null,Object? review = null,Object? place = freezed,Object? participants = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? type = null,Object? date = null,Object? summary = null,Object? reliability = null,Object? citations = null,Object? review = null,Object? place = freezed,Object? participants = null,Object? placeIds = null,Object? context = freezed,Object? outcome = freezed,}) {
   return _then(_HistoricalEventDto(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -716,7 +752,10 @@ as Reliability,citations: null == citations ? _self._citations : citations // ig
 as List<CitationDto>,review: null == review ? _self.review : review // ignore: cast_nullable_to_non_nullable
 as ReviewDto,place: freezed == place ? _self.place : place // ignore: cast_nullable_to_non_nullable
 as LocalizedTextDto?,participants: null == participants ? _self._participants : participants // ignore: cast_nullable_to_non_nullable
-as List<PersonRefDto>,
+as List<PersonRefDto>,placeIds: null == placeIds ? _self._placeIds : placeIds // ignore: cast_nullable_to_non_nullable
+as List<String>,context: freezed == context ? _self.context : context // ignore: cast_nullable_to_non_nullable
+as LocalizedTextDto?,outcome: freezed == outcome ? _self.outcome : outcome // ignore: cast_nullable_to_non_nullable
+as LocalizedTextDto?,
   ));
 }
 
@@ -767,6 +806,30 @@ $LocalizedTextDtoCopyWith<$Res>? get place {
 
   return $LocalizedTextDtoCopyWith<$Res>(_self.place!, (value) {
     return _then(_self.copyWith(place: value));
+  });
+}/// Create a copy of HistoricalEventDto
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$LocalizedTextDtoCopyWith<$Res>? get context {
+    if (_self.context == null) {
+    return null;
+  }
+
+  return $LocalizedTextDtoCopyWith<$Res>(_self.context!, (value) {
+    return _then(_self.copyWith(context: value));
+  });
+}/// Create a copy of HistoricalEventDto
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$LocalizedTextDtoCopyWith<$Res>? get outcome {
+    if (_self.outcome == null) {
+    return null;
+  }
+
+  return $LocalizedTextDtoCopyWith<$Res>(_self.outcome!, (value) {
+    return _then(_self.copyWith(outcome: value));
   });
 }
 }
@@ -2859,7 +2922,7 @@ as String,
 /// @nodoc
 mixin _$ManifestDto {
 
- int get schemaVersion; String get contentVersion; ContentChannel get channel; int get companionCount; int get storyCount; int get approvedCount; int get unapprovedCount;/// Published path → SHA-256 of its bytes.
+ int get schemaVersion; String get contentVersion; ContentChannel get channel; int get companionCount; int get storyCount; int get seerahChapterCount; int get seerahTopicCount; int get placeCount; int get visualCount; int get approvedCount; int get unapprovedCount;/// Published path → SHA-256 of its bytes.
  Map<String, String> get files;
 /// Create a copy of ManifestDto
 /// with the given fields replaced by the non-null parameter values.
@@ -2873,16 +2936,16 @@ $ManifestDtoCopyWith<ManifestDto> get copyWith => _$ManifestDtoCopyWithImpl<Mani
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ManifestDto&&(identical(other.schemaVersion, schemaVersion) || other.schemaVersion == schemaVersion)&&(identical(other.contentVersion, contentVersion) || other.contentVersion == contentVersion)&&(identical(other.channel, channel) || other.channel == channel)&&(identical(other.companionCount, companionCount) || other.companionCount == companionCount)&&(identical(other.storyCount, storyCount) || other.storyCount == storyCount)&&(identical(other.approvedCount, approvedCount) || other.approvedCount == approvedCount)&&(identical(other.unapprovedCount, unapprovedCount) || other.unapprovedCount == unapprovedCount)&&const DeepCollectionEquality().equals(other.files, files));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ManifestDto&&(identical(other.schemaVersion, schemaVersion) || other.schemaVersion == schemaVersion)&&(identical(other.contentVersion, contentVersion) || other.contentVersion == contentVersion)&&(identical(other.channel, channel) || other.channel == channel)&&(identical(other.companionCount, companionCount) || other.companionCount == companionCount)&&(identical(other.storyCount, storyCount) || other.storyCount == storyCount)&&(identical(other.seerahChapterCount, seerahChapterCount) || other.seerahChapterCount == seerahChapterCount)&&(identical(other.seerahTopicCount, seerahTopicCount) || other.seerahTopicCount == seerahTopicCount)&&(identical(other.placeCount, placeCount) || other.placeCount == placeCount)&&(identical(other.visualCount, visualCount) || other.visualCount == visualCount)&&(identical(other.approvedCount, approvedCount) || other.approvedCount == approvedCount)&&(identical(other.unapprovedCount, unapprovedCount) || other.unapprovedCount == unapprovedCount)&&const DeepCollectionEquality().equals(other.files, files));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,schemaVersion,contentVersion,channel,companionCount,storyCount,approvedCount,unapprovedCount,const DeepCollectionEquality().hash(files));
+int get hashCode => Object.hash(runtimeType,schemaVersion,contentVersion,channel,companionCount,storyCount,seerahChapterCount,seerahTopicCount,placeCount,visualCount,approvedCount,unapprovedCount,const DeepCollectionEquality().hash(files));
 
 @override
 String toString() {
-  return 'ManifestDto(schemaVersion: $schemaVersion, contentVersion: $contentVersion, channel: $channel, companionCount: $companionCount, storyCount: $storyCount, approvedCount: $approvedCount, unapprovedCount: $unapprovedCount, files: $files)';
+  return 'ManifestDto(schemaVersion: $schemaVersion, contentVersion: $contentVersion, channel: $channel, companionCount: $companionCount, storyCount: $storyCount, seerahChapterCount: $seerahChapterCount, seerahTopicCount: $seerahTopicCount, placeCount: $placeCount, visualCount: $visualCount, approvedCount: $approvedCount, unapprovedCount: $unapprovedCount, files: $files)';
 }
 
 
@@ -2893,7 +2956,7 @@ abstract mixin class $ManifestDtoCopyWith<$Res>  {
   factory $ManifestDtoCopyWith(ManifestDto value, $Res Function(ManifestDto) _then) = _$ManifestDtoCopyWithImpl;
 @useResult
 $Res call({
- int schemaVersion, String contentVersion, ContentChannel channel, int companionCount, int storyCount, int approvedCount, int unapprovedCount, Map<String, String> files
+ int schemaVersion, String contentVersion, ContentChannel channel, int companionCount, int storyCount, int seerahChapterCount, int seerahTopicCount, int placeCount, int visualCount, int approvedCount, int unapprovedCount, Map<String, String> files
 });
 
 
@@ -2910,13 +2973,17 @@ class _$ManifestDtoCopyWithImpl<$Res>
 
 /// Create a copy of ManifestDto
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? schemaVersion = null,Object? contentVersion = null,Object? channel = null,Object? companionCount = null,Object? storyCount = null,Object? approvedCount = null,Object? unapprovedCount = null,Object? files = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? schemaVersion = null,Object? contentVersion = null,Object? channel = null,Object? companionCount = null,Object? storyCount = null,Object? seerahChapterCount = null,Object? seerahTopicCount = null,Object? placeCount = null,Object? visualCount = null,Object? approvedCount = null,Object? unapprovedCount = null,Object? files = null,}) {
   return _then(_self.copyWith(
 schemaVersion: null == schemaVersion ? _self.schemaVersion : schemaVersion // ignore: cast_nullable_to_non_nullable
 as int,contentVersion: null == contentVersion ? _self.contentVersion : contentVersion // ignore: cast_nullable_to_non_nullable
 as String,channel: null == channel ? _self.channel : channel // ignore: cast_nullable_to_non_nullable
 as ContentChannel,companionCount: null == companionCount ? _self.companionCount : companionCount // ignore: cast_nullable_to_non_nullable
 as int,storyCount: null == storyCount ? _self.storyCount : storyCount // ignore: cast_nullable_to_non_nullable
+as int,seerahChapterCount: null == seerahChapterCount ? _self.seerahChapterCount : seerahChapterCount // ignore: cast_nullable_to_non_nullable
+as int,seerahTopicCount: null == seerahTopicCount ? _self.seerahTopicCount : seerahTopicCount // ignore: cast_nullable_to_non_nullable
+as int,placeCount: null == placeCount ? _self.placeCount : placeCount // ignore: cast_nullable_to_non_nullable
+as int,visualCount: null == visualCount ? _self.visualCount : visualCount // ignore: cast_nullable_to_non_nullable
 as int,approvedCount: null == approvedCount ? _self.approvedCount : approvedCount // ignore: cast_nullable_to_non_nullable
 as int,unapprovedCount: null == unapprovedCount ? _self.unapprovedCount : unapprovedCount // ignore: cast_nullable_to_non_nullable
 as int,files: null == files ? _self.files : files // ignore: cast_nullable_to_non_nullable
@@ -3005,10 +3072,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int schemaVersion,  String contentVersion,  ContentChannel channel,  int companionCount,  int storyCount,  int approvedCount,  int unapprovedCount,  Map<String, String> files)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int schemaVersion,  String contentVersion,  ContentChannel channel,  int companionCount,  int storyCount,  int seerahChapterCount,  int seerahTopicCount,  int placeCount,  int visualCount,  int approvedCount,  int unapprovedCount,  Map<String, String> files)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ManifestDto() when $default != null:
-return $default(_that.schemaVersion,_that.contentVersion,_that.channel,_that.companionCount,_that.storyCount,_that.approvedCount,_that.unapprovedCount,_that.files);case _:
+return $default(_that.schemaVersion,_that.contentVersion,_that.channel,_that.companionCount,_that.storyCount,_that.seerahChapterCount,_that.seerahTopicCount,_that.placeCount,_that.visualCount,_that.approvedCount,_that.unapprovedCount,_that.files);case _:
   return orElse();
 
 }
@@ -3026,10 +3093,10 @@ return $default(_that.schemaVersion,_that.contentVersion,_that.channel,_that.com
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int schemaVersion,  String contentVersion,  ContentChannel channel,  int companionCount,  int storyCount,  int approvedCount,  int unapprovedCount,  Map<String, String> files)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int schemaVersion,  String contentVersion,  ContentChannel channel,  int companionCount,  int storyCount,  int seerahChapterCount,  int seerahTopicCount,  int placeCount,  int visualCount,  int approvedCount,  int unapprovedCount,  Map<String, String> files)  $default,) {final _that = this;
 switch (_that) {
 case _ManifestDto():
-return $default(_that.schemaVersion,_that.contentVersion,_that.channel,_that.companionCount,_that.storyCount,_that.approvedCount,_that.unapprovedCount,_that.files);case _:
+return $default(_that.schemaVersion,_that.contentVersion,_that.channel,_that.companionCount,_that.storyCount,_that.seerahChapterCount,_that.seerahTopicCount,_that.placeCount,_that.visualCount,_that.approvedCount,_that.unapprovedCount,_that.files);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -3046,10 +3113,10 @@ return $default(_that.schemaVersion,_that.contentVersion,_that.channel,_that.com
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int schemaVersion,  String contentVersion,  ContentChannel channel,  int companionCount,  int storyCount,  int approvedCount,  int unapprovedCount,  Map<String, String> files)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int schemaVersion,  String contentVersion,  ContentChannel channel,  int companionCount,  int storyCount,  int seerahChapterCount,  int seerahTopicCount,  int placeCount,  int visualCount,  int approvedCount,  int unapprovedCount,  Map<String, String> files)?  $default,) {final _that = this;
 switch (_that) {
 case _ManifestDto() when $default != null:
-return $default(_that.schemaVersion,_that.contentVersion,_that.channel,_that.companionCount,_that.storyCount,_that.approvedCount,_that.unapprovedCount,_that.files);case _:
+return $default(_that.schemaVersion,_that.contentVersion,_that.channel,_that.companionCount,_that.storyCount,_that.seerahChapterCount,_that.seerahTopicCount,_that.placeCount,_that.visualCount,_that.approvedCount,_that.unapprovedCount,_that.files);case _:
   return null;
 
 }
@@ -3061,7 +3128,7 @@ return $default(_that.schemaVersion,_that.contentVersion,_that.channel,_that.com
 @JsonSerializable()
 
 class _ManifestDto implements ManifestDto {
-  const _ManifestDto({required this.schemaVersion, required this.contentVersion, required this.channel, required this.companionCount, required this.storyCount, required this.approvedCount, required this.unapprovedCount, required final  Map<String, String> files}): _files = files;
+  const _ManifestDto({required this.schemaVersion, required this.contentVersion, required this.channel, required this.companionCount, required this.storyCount, this.seerahChapterCount = 0, this.seerahTopicCount = 0, this.placeCount = 0, this.visualCount = 0, required this.approvedCount, required this.unapprovedCount, required final  Map<String, String> files}): _files = files;
   factory _ManifestDto.fromJson(Map<String, dynamic> json) => _$ManifestDtoFromJson(json);
 
 @override final  int schemaVersion;
@@ -3069,6 +3136,10 @@ class _ManifestDto implements ManifestDto {
 @override final  ContentChannel channel;
 @override final  int companionCount;
 @override final  int storyCount;
+@override@JsonKey() final  int seerahChapterCount;
+@override@JsonKey() final  int seerahTopicCount;
+@override@JsonKey() final  int placeCount;
+@override@JsonKey() final  int visualCount;
 @override final  int approvedCount;
 @override final  int unapprovedCount;
 /// Published path → SHA-256 of its bytes.
@@ -3094,16 +3165,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ManifestDto&&(identical(other.schemaVersion, schemaVersion) || other.schemaVersion == schemaVersion)&&(identical(other.contentVersion, contentVersion) || other.contentVersion == contentVersion)&&(identical(other.channel, channel) || other.channel == channel)&&(identical(other.companionCount, companionCount) || other.companionCount == companionCount)&&(identical(other.storyCount, storyCount) || other.storyCount == storyCount)&&(identical(other.approvedCount, approvedCount) || other.approvedCount == approvedCount)&&(identical(other.unapprovedCount, unapprovedCount) || other.unapprovedCount == unapprovedCount)&&const DeepCollectionEquality().equals(other._files, _files));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ManifestDto&&(identical(other.schemaVersion, schemaVersion) || other.schemaVersion == schemaVersion)&&(identical(other.contentVersion, contentVersion) || other.contentVersion == contentVersion)&&(identical(other.channel, channel) || other.channel == channel)&&(identical(other.companionCount, companionCount) || other.companionCount == companionCount)&&(identical(other.storyCount, storyCount) || other.storyCount == storyCount)&&(identical(other.seerahChapterCount, seerahChapterCount) || other.seerahChapterCount == seerahChapterCount)&&(identical(other.seerahTopicCount, seerahTopicCount) || other.seerahTopicCount == seerahTopicCount)&&(identical(other.placeCount, placeCount) || other.placeCount == placeCount)&&(identical(other.visualCount, visualCount) || other.visualCount == visualCount)&&(identical(other.approvedCount, approvedCount) || other.approvedCount == approvedCount)&&(identical(other.unapprovedCount, unapprovedCount) || other.unapprovedCount == unapprovedCount)&&const DeepCollectionEquality().equals(other._files, _files));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,schemaVersion,contentVersion,channel,companionCount,storyCount,approvedCount,unapprovedCount,const DeepCollectionEquality().hash(_files));
+int get hashCode => Object.hash(runtimeType,schemaVersion,contentVersion,channel,companionCount,storyCount,seerahChapterCount,seerahTopicCount,placeCount,visualCount,approvedCount,unapprovedCount,const DeepCollectionEquality().hash(_files));
 
 @override
 String toString() {
-  return 'ManifestDto(schemaVersion: $schemaVersion, contentVersion: $contentVersion, channel: $channel, companionCount: $companionCount, storyCount: $storyCount, approvedCount: $approvedCount, unapprovedCount: $unapprovedCount, files: $files)';
+  return 'ManifestDto(schemaVersion: $schemaVersion, contentVersion: $contentVersion, channel: $channel, companionCount: $companionCount, storyCount: $storyCount, seerahChapterCount: $seerahChapterCount, seerahTopicCount: $seerahTopicCount, placeCount: $placeCount, visualCount: $visualCount, approvedCount: $approvedCount, unapprovedCount: $unapprovedCount, files: $files)';
 }
 
 
@@ -3114,7 +3185,7 @@ abstract mixin class _$ManifestDtoCopyWith<$Res> implements $ManifestDtoCopyWith
   factory _$ManifestDtoCopyWith(_ManifestDto value, $Res Function(_ManifestDto) _then) = __$ManifestDtoCopyWithImpl;
 @override @useResult
 $Res call({
- int schemaVersion, String contentVersion, ContentChannel channel, int companionCount, int storyCount, int approvedCount, int unapprovedCount, Map<String, String> files
+ int schemaVersion, String contentVersion, ContentChannel channel, int companionCount, int storyCount, int seerahChapterCount, int seerahTopicCount, int placeCount, int visualCount, int approvedCount, int unapprovedCount, Map<String, String> files
 });
 
 
@@ -3131,13 +3202,17 @@ class __$ManifestDtoCopyWithImpl<$Res>
 
 /// Create a copy of ManifestDto
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? schemaVersion = null,Object? contentVersion = null,Object? channel = null,Object? companionCount = null,Object? storyCount = null,Object? approvedCount = null,Object? unapprovedCount = null,Object? files = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? schemaVersion = null,Object? contentVersion = null,Object? channel = null,Object? companionCount = null,Object? storyCount = null,Object? seerahChapterCount = null,Object? seerahTopicCount = null,Object? placeCount = null,Object? visualCount = null,Object? approvedCount = null,Object? unapprovedCount = null,Object? files = null,}) {
   return _then(_ManifestDto(
 schemaVersion: null == schemaVersion ? _self.schemaVersion : schemaVersion // ignore: cast_nullable_to_non_nullable
 as int,contentVersion: null == contentVersion ? _self.contentVersion : contentVersion // ignore: cast_nullable_to_non_nullable
 as String,channel: null == channel ? _self.channel : channel // ignore: cast_nullable_to_non_nullable
 as ContentChannel,companionCount: null == companionCount ? _self.companionCount : companionCount // ignore: cast_nullable_to_non_nullable
 as int,storyCount: null == storyCount ? _self.storyCount : storyCount // ignore: cast_nullable_to_non_nullable
+as int,seerahChapterCount: null == seerahChapterCount ? _self.seerahChapterCount : seerahChapterCount // ignore: cast_nullable_to_non_nullable
+as int,seerahTopicCount: null == seerahTopicCount ? _self.seerahTopicCount : seerahTopicCount // ignore: cast_nullable_to_non_nullable
+as int,placeCount: null == placeCount ? _self.placeCount : placeCount // ignore: cast_nullable_to_non_nullable
+as int,visualCount: null == visualCount ? _self.visualCount : visualCount // ignore: cast_nullable_to_non_nullable
 as int,approvedCount: null == approvedCount ? _self.approvedCount : approvedCount // ignore: cast_nullable_to_non_nullable
 as int,unapprovedCount: null == unapprovedCount ? _self.unapprovedCount : unapprovedCount // ignore: cast_nullable_to_non_nullable
 as int,files: null == files ? _self._files : files // ignore: cast_nullable_to_non_nullable
@@ -4272,6 +4347,1471 @@ $ApprovalChecklistDtoCopyWith<$Res> get checklist {
   
   return $ApprovalChecklistDtoCopyWith<$Res>(_self.checklist, (value) {
     return _then(_self.copyWith(checklist: value));
+  });
+}
+}
+
+
+/// @nodoc
+mixin _$EditionCompanionsDto {
+
+ String get categoryId; int get size; int get minWords; int get minSections; int get minTimeline; List<SectionKind> get requiredSectionKinds;
+/// Create a copy of EditionCompanionsDto
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$EditionCompanionsDtoCopyWith<EditionCompanionsDto> get copyWith => _$EditionCompanionsDtoCopyWithImpl<EditionCompanionsDto>(this as EditionCompanionsDto, _$identity);
+
+  /// Serializes this EditionCompanionsDto to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is EditionCompanionsDto&&(identical(other.categoryId, categoryId) || other.categoryId == categoryId)&&(identical(other.size, size) || other.size == size)&&(identical(other.minWords, minWords) || other.minWords == minWords)&&(identical(other.minSections, minSections) || other.minSections == minSections)&&(identical(other.minTimeline, minTimeline) || other.minTimeline == minTimeline)&&const DeepCollectionEquality().equals(other.requiredSectionKinds, requiredSectionKinds));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,categoryId,size,minWords,minSections,minTimeline,const DeepCollectionEquality().hash(requiredSectionKinds));
+
+@override
+String toString() {
+  return 'EditionCompanionsDto(categoryId: $categoryId, size: $size, minWords: $minWords, minSections: $minSections, minTimeline: $minTimeline, requiredSectionKinds: $requiredSectionKinds)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $EditionCompanionsDtoCopyWith<$Res>  {
+  factory $EditionCompanionsDtoCopyWith(EditionCompanionsDto value, $Res Function(EditionCompanionsDto) _then) = _$EditionCompanionsDtoCopyWithImpl;
+@useResult
+$Res call({
+ String categoryId, int size, int minWords, int minSections, int minTimeline, List<SectionKind> requiredSectionKinds
+});
+
+
+
+
+}
+/// @nodoc
+class _$EditionCompanionsDtoCopyWithImpl<$Res>
+    implements $EditionCompanionsDtoCopyWith<$Res> {
+  _$EditionCompanionsDtoCopyWithImpl(this._self, this._then);
+
+  final EditionCompanionsDto _self;
+  final $Res Function(EditionCompanionsDto) _then;
+
+/// Create a copy of EditionCompanionsDto
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? categoryId = null,Object? size = null,Object? minWords = null,Object? minSections = null,Object? minTimeline = null,Object? requiredSectionKinds = null,}) {
+  return _then(_self.copyWith(
+categoryId: null == categoryId ? _self.categoryId : categoryId // ignore: cast_nullable_to_non_nullable
+as String,size: null == size ? _self.size : size // ignore: cast_nullable_to_non_nullable
+as int,minWords: null == minWords ? _self.minWords : minWords // ignore: cast_nullable_to_non_nullable
+as int,minSections: null == minSections ? _self.minSections : minSections // ignore: cast_nullable_to_non_nullable
+as int,minTimeline: null == minTimeline ? _self.minTimeline : minTimeline // ignore: cast_nullable_to_non_nullable
+as int,requiredSectionKinds: null == requiredSectionKinds ? _self.requiredSectionKinds : requiredSectionKinds // ignore: cast_nullable_to_non_nullable
+as List<SectionKind>,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [EditionCompanionsDto].
+extension EditionCompanionsDtoPatterns on EditionCompanionsDto {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _EditionCompanionsDto value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _EditionCompanionsDto() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _EditionCompanionsDto value)  $default,){
+final _that = this;
+switch (_that) {
+case _EditionCompanionsDto():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _EditionCompanionsDto value)?  $default,){
+final _that = this;
+switch (_that) {
+case _EditionCompanionsDto() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String categoryId,  int size,  int minWords,  int minSections,  int minTimeline,  List<SectionKind> requiredSectionKinds)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _EditionCompanionsDto() when $default != null:
+return $default(_that.categoryId,_that.size,_that.minWords,_that.minSections,_that.minTimeline,_that.requiredSectionKinds);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String categoryId,  int size,  int minWords,  int minSections,  int minTimeline,  List<SectionKind> requiredSectionKinds)  $default,) {final _that = this;
+switch (_that) {
+case _EditionCompanionsDto():
+return $default(_that.categoryId,_that.size,_that.minWords,_that.minSections,_that.minTimeline,_that.requiredSectionKinds);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String categoryId,  int size,  int minWords,  int minSections,  int minTimeline,  List<SectionKind> requiredSectionKinds)?  $default,) {final _that = this;
+switch (_that) {
+case _EditionCompanionsDto() when $default != null:
+return $default(_that.categoryId,_that.size,_that.minWords,_that.minSections,_that.minTimeline,_that.requiredSectionKinds);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _EditionCompanionsDto implements EditionCompanionsDto {
+  const _EditionCompanionsDto({required this.categoryId, required this.size, required this.minWords, required this.minSections, required this.minTimeline, required final  List<SectionKind> requiredSectionKinds}): _requiredSectionKinds = requiredSectionKinds;
+  factory _EditionCompanionsDto.fromJson(Map<String, dynamic> json) => _$EditionCompanionsDtoFromJson(json);
+
+@override final  String categoryId;
+@override final  int size;
+@override final  int minWords;
+@override final  int minSections;
+@override final  int minTimeline;
+ final  List<SectionKind> _requiredSectionKinds;
+@override List<SectionKind> get requiredSectionKinds {
+  if (_requiredSectionKinds is EqualUnmodifiableListView) return _requiredSectionKinds;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_requiredSectionKinds);
+}
+
+
+/// Create a copy of EditionCompanionsDto
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$EditionCompanionsDtoCopyWith<_EditionCompanionsDto> get copyWith => __$EditionCompanionsDtoCopyWithImpl<_EditionCompanionsDto>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$EditionCompanionsDtoToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _EditionCompanionsDto&&(identical(other.categoryId, categoryId) || other.categoryId == categoryId)&&(identical(other.size, size) || other.size == size)&&(identical(other.minWords, minWords) || other.minWords == minWords)&&(identical(other.minSections, minSections) || other.minSections == minSections)&&(identical(other.minTimeline, minTimeline) || other.minTimeline == minTimeline)&&const DeepCollectionEquality().equals(other._requiredSectionKinds, _requiredSectionKinds));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,categoryId,size,minWords,minSections,minTimeline,const DeepCollectionEquality().hash(_requiredSectionKinds));
+
+@override
+String toString() {
+  return 'EditionCompanionsDto(categoryId: $categoryId, size: $size, minWords: $minWords, minSections: $minSections, minTimeline: $minTimeline, requiredSectionKinds: $requiredSectionKinds)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$EditionCompanionsDtoCopyWith<$Res> implements $EditionCompanionsDtoCopyWith<$Res> {
+  factory _$EditionCompanionsDtoCopyWith(_EditionCompanionsDto value, $Res Function(_EditionCompanionsDto) _then) = __$EditionCompanionsDtoCopyWithImpl;
+@override @useResult
+$Res call({
+ String categoryId, int size, int minWords, int minSections, int minTimeline, List<SectionKind> requiredSectionKinds
+});
+
+
+
+
+}
+/// @nodoc
+class __$EditionCompanionsDtoCopyWithImpl<$Res>
+    implements _$EditionCompanionsDtoCopyWith<$Res> {
+  __$EditionCompanionsDtoCopyWithImpl(this._self, this._then);
+
+  final _EditionCompanionsDto _self;
+  final $Res Function(_EditionCompanionsDto) _then;
+
+/// Create a copy of EditionCompanionsDto
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? categoryId = null,Object? size = null,Object? minWords = null,Object? minSections = null,Object? minTimeline = null,Object? requiredSectionKinds = null,}) {
+  return _then(_EditionCompanionsDto(
+categoryId: null == categoryId ? _self.categoryId : categoryId // ignore: cast_nullable_to_non_nullable
+as String,size: null == size ? _self.size : size // ignore: cast_nullable_to_non_nullable
+as int,minWords: null == minWords ? _self.minWords : minWords // ignore: cast_nullable_to_non_nullable
+as int,minSections: null == minSections ? _self.minSections : minSections // ignore: cast_nullable_to_non_nullable
+as int,minTimeline: null == minTimeline ? _self.minTimeline : minTimeline // ignore: cast_nullable_to_non_nullable
+as int,requiredSectionKinds: null == requiredSectionKinds ? _self._requiredSectionKinds : requiredSectionKinds // ignore: cast_nullable_to_non_nullable
+as List<SectionKind>,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$EditionSeerahDto {
+
+ int get chapters; int get topics; int get minChapterWords; int get minTopicWords;
+/// Create a copy of EditionSeerahDto
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$EditionSeerahDtoCopyWith<EditionSeerahDto> get copyWith => _$EditionSeerahDtoCopyWithImpl<EditionSeerahDto>(this as EditionSeerahDto, _$identity);
+
+  /// Serializes this EditionSeerahDto to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is EditionSeerahDto&&(identical(other.chapters, chapters) || other.chapters == chapters)&&(identical(other.topics, topics) || other.topics == topics)&&(identical(other.minChapterWords, minChapterWords) || other.minChapterWords == minChapterWords)&&(identical(other.minTopicWords, minTopicWords) || other.minTopicWords == minTopicWords));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,chapters,topics,minChapterWords,minTopicWords);
+
+@override
+String toString() {
+  return 'EditionSeerahDto(chapters: $chapters, topics: $topics, minChapterWords: $minChapterWords, minTopicWords: $minTopicWords)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $EditionSeerahDtoCopyWith<$Res>  {
+  factory $EditionSeerahDtoCopyWith(EditionSeerahDto value, $Res Function(EditionSeerahDto) _then) = _$EditionSeerahDtoCopyWithImpl;
+@useResult
+$Res call({
+ int chapters, int topics, int minChapterWords, int minTopicWords
+});
+
+
+
+
+}
+/// @nodoc
+class _$EditionSeerahDtoCopyWithImpl<$Res>
+    implements $EditionSeerahDtoCopyWith<$Res> {
+  _$EditionSeerahDtoCopyWithImpl(this._self, this._then);
+
+  final EditionSeerahDto _self;
+  final $Res Function(EditionSeerahDto) _then;
+
+/// Create a copy of EditionSeerahDto
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? chapters = null,Object? topics = null,Object? minChapterWords = null,Object? minTopicWords = null,}) {
+  return _then(_self.copyWith(
+chapters: null == chapters ? _self.chapters : chapters // ignore: cast_nullable_to_non_nullable
+as int,topics: null == topics ? _self.topics : topics // ignore: cast_nullable_to_non_nullable
+as int,minChapterWords: null == minChapterWords ? _self.minChapterWords : minChapterWords // ignore: cast_nullable_to_non_nullable
+as int,minTopicWords: null == minTopicWords ? _self.minTopicWords : minTopicWords // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [EditionSeerahDto].
+extension EditionSeerahDtoPatterns on EditionSeerahDto {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _EditionSeerahDto value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _EditionSeerahDto() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _EditionSeerahDto value)  $default,){
+final _that = this;
+switch (_that) {
+case _EditionSeerahDto():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _EditionSeerahDto value)?  $default,){
+final _that = this;
+switch (_that) {
+case _EditionSeerahDto() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int chapters,  int topics,  int minChapterWords,  int minTopicWords)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _EditionSeerahDto() when $default != null:
+return $default(_that.chapters,_that.topics,_that.minChapterWords,_that.minTopicWords);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int chapters,  int topics,  int minChapterWords,  int minTopicWords)  $default,) {final _that = this;
+switch (_that) {
+case _EditionSeerahDto():
+return $default(_that.chapters,_that.topics,_that.minChapterWords,_that.minTopicWords);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int chapters,  int topics,  int minChapterWords,  int minTopicWords)?  $default,) {final _that = this;
+switch (_that) {
+case _EditionSeerahDto() when $default != null:
+return $default(_that.chapters,_that.topics,_that.minChapterWords,_that.minTopicWords);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _EditionSeerahDto implements EditionSeerahDto {
+  const _EditionSeerahDto({required this.chapters, required this.topics, required this.minChapterWords, required this.minTopicWords});
+  factory _EditionSeerahDto.fromJson(Map<String, dynamic> json) => _$EditionSeerahDtoFromJson(json);
+
+@override final  int chapters;
+@override final  int topics;
+@override final  int minChapterWords;
+@override final  int minTopicWords;
+
+/// Create a copy of EditionSeerahDto
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$EditionSeerahDtoCopyWith<_EditionSeerahDto> get copyWith => __$EditionSeerahDtoCopyWithImpl<_EditionSeerahDto>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$EditionSeerahDtoToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _EditionSeerahDto&&(identical(other.chapters, chapters) || other.chapters == chapters)&&(identical(other.topics, topics) || other.topics == topics)&&(identical(other.minChapterWords, minChapterWords) || other.minChapterWords == minChapterWords)&&(identical(other.minTopicWords, minTopicWords) || other.minTopicWords == minTopicWords));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,chapters,topics,minChapterWords,minTopicWords);
+
+@override
+String toString() {
+  return 'EditionSeerahDto(chapters: $chapters, topics: $topics, minChapterWords: $minChapterWords, minTopicWords: $minTopicWords)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$EditionSeerahDtoCopyWith<$Res> implements $EditionSeerahDtoCopyWith<$Res> {
+  factory _$EditionSeerahDtoCopyWith(_EditionSeerahDto value, $Res Function(_EditionSeerahDto) _then) = __$EditionSeerahDtoCopyWithImpl;
+@override @useResult
+$Res call({
+ int chapters, int topics, int minChapterWords, int minTopicWords
+});
+
+
+
+
+}
+/// @nodoc
+class __$EditionSeerahDtoCopyWithImpl<$Res>
+    implements _$EditionSeerahDtoCopyWith<$Res> {
+  __$EditionSeerahDtoCopyWithImpl(this._self, this._then);
+
+  final _EditionSeerahDto _self;
+  final $Res Function(_EditionSeerahDto) _then;
+
+/// Create a copy of EditionSeerahDto
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? chapters = null,Object? topics = null,Object? minChapterWords = null,Object? minTopicWords = null,}) {
+  return _then(_EditionSeerahDto(
+chapters: null == chapters ? _self.chapters : chapters // ignore: cast_nullable_to_non_nullable
+as int,topics: null == topics ? _self.topics : topics // ignore: cast_nullable_to_non_nullable
+as int,minChapterWords: null == minChapterWords ? _self.minChapterWords : minChapterWords // ignore: cast_nullable_to_non_nullable
+as int,minTopicWords: null == minTopicWords ? _self.minTopicWords : minTopicWords // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$EditionCountDto {
+
+ int get count; int? get minWords;
+/// Create a copy of EditionCountDto
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$EditionCountDtoCopyWith<EditionCountDto> get copyWith => _$EditionCountDtoCopyWithImpl<EditionCountDto>(this as EditionCountDto, _$identity);
+
+  /// Serializes this EditionCountDto to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is EditionCountDto&&(identical(other.count, count) || other.count == count)&&(identical(other.minWords, minWords) || other.minWords == minWords));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,count,minWords);
+
+@override
+String toString() {
+  return 'EditionCountDto(count: $count, minWords: $minWords)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $EditionCountDtoCopyWith<$Res>  {
+  factory $EditionCountDtoCopyWith(EditionCountDto value, $Res Function(EditionCountDto) _then) = _$EditionCountDtoCopyWithImpl;
+@useResult
+$Res call({
+ int count, int? minWords
+});
+
+
+
+
+}
+/// @nodoc
+class _$EditionCountDtoCopyWithImpl<$Res>
+    implements $EditionCountDtoCopyWith<$Res> {
+  _$EditionCountDtoCopyWithImpl(this._self, this._then);
+
+  final EditionCountDto _self;
+  final $Res Function(EditionCountDto) _then;
+
+/// Create a copy of EditionCountDto
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? count = null,Object? minWords = freezed,}) {
+  return _then(_self.copyWith(
+count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
+as int,minWords: freezed == minWords ? _self.minWords : minWords // ignore: cast_nullable_to_non_nullable
+as int?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [EditionCountDto].
+extension EditionCountDtoPatterns on EditionCountDto {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _EditionCountDto value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _EditionCountDto() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _EditionCountDto value)  $default,){
+final _that = this;
+switch (_that) {
+case _EditionCountDto():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _EditionCountDto value)?  $default,){
+final _that = this;
+switch (_that) {
+case _EditionCountDto() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int count,  int? minWords)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _EditionCountDto() when $default != null:
+return $default(_that.count,_that.minWords);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int count,  int? minWords)  $default,) {final _that = this;
+switch (_that) {
+case _EditionCountDto():
+return $default(_that.count,_that.minWords);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int count,  int? minWords)?  $default,) {final _that = this;
+switch (_that) {
+case _EditionCountDto() when $default != null:
+return $default(_that.count,_that.minWords);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _EditionCountDto implements EditionCountDto {
+  const _EditionCountDto({required this.count, this.minWords});
+  factory _EditionCountDto.fromJson(Map<String, dynamic> json) => _$EditionCountDtoFromJson(json);
+
+@override final  int count;
+@override final  int? minWords;
+
+/// Create a copy of EditionCountDto
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$EditionCountDtoCopyWith<_EditionCountDto> get copyWith => __$EditionCountDtoCopyWithImpl<_EditionCountDto>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$EditionCountDtoToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _EditionCountDto&&(identical(other.count, count) || other.count == count)&&(identical(other.minWords, minWords) || other.minWords == minWords));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,count,minWords);
+
+@override
+String toString() {
+  return 'EditionCountDto(count: $count, minWords: $minWords)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$EditionCountDtoCopyWith<$Res> implements $EditionCountDtoCopyWith<$Res> {
+  factory _$EditionCountDtoCopyWith(_EditionCountDto value, $Res Function(_EditionCountDto) _then) = __$EditionCountDtoCopyWithImpl;
+@override @useResult
+$Res call({
+ int count, int? minWords
+});
+
+
+
+
+}
+/// @nodoc
+class __$EditionCountDtoCopyWithImpl<$Res>
+    implements _$EditionCountDtoCopyWith<$Res> {
+  __$EditionCountDtoCopyWithImpl(this._self, this._then);
+
+  final _EditionCountDto _self;
+  final $Res Function(_EditionCountDto) _then;
+
+/// Create a copy of EditionCountDto
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? count = null,Object? minWords = freezed,}) {
+  return _then(_EditionCountDto(
+count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
+as int,minWords: freezed == minWords ? _self.minWords : minWords // ignore: cast_nullable_to_non_nullable
+as int?,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$EditionVisualsDto {
+
+ int get count; List<InfographicType> get requiredTypes;
+/// Create a copy of EditionVisualsDto
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$EditionVisualsDtoCopyWith<EditionVisualsDto> get copyWith => _$EditionVisualsDtoCopyWithImpl<EditionVisualsDto>(this as EditionVisualsDto, _$identity);
+
+  /// Serializes this EditionVisualsDto to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is EditionVisualsDto&&(identical(other.count, count) || other.count == count)&&const DeepCollectionEquality().equals(other.requiredTypes, requiredTypes));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,count,const DeepCollectionEquality().hash(requiredTypes));
+
+@override
+String toString() {
+  return 'EditionVisualsDto(count: $count, requiredTypes: $requiredTypes)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $EditionVisualsDtoCopyWith<$Res>  {
+  factory $EditionVisualsDtoCopyWith(EditionVisualsDto value, $Res Function(EditionVisualsDto) _then) = _$EditionVisualsDtoCopyWithImpl;
+@useResult
+$Res call({
+ int count, List<InfographicType> requiredTypes
+});
+
+
+
+
+}
+/// @nodoc
+class _$EditionVisualsDtoCopyWithImpl<$Res>
+    implements $EditionVisualsDtoCopyWith<$Res> {
+  _$EditionVisualsDtoCopyWithImpl(this._self, this._then);
+
+  final EditionVisualsDto _self;
+  final $Res Function(EditionVisualsDto) _then;
+
+/// Create a copy of EditionVisualsDto
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? count = null,Object? requiredTypes = null,}) {
+  return _then(_self.copyWith(
+count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
+as int,requiredTypes: null == requiredTypes ? _self.requiredTypes : requiredTypes // ignore: cast_nullable_to_non_nullable
+as List<InfographicType>,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [EditionVisualsDto].
+extension EditionVisualsDtoPatterns on EditionVisualsDto {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _EditionVisualsDto value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _EditionVisualsDto() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _EditionVisualsDto value)  $default,){
+final _that = this;
+switch (_that) {
+case _EditionVisualsDto():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _EditionVisualsDto value)?  $default,){
+final _that = this;
+switch (_that) {
+case _EditionVisualsDto() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int count,  List<InfographicType> requiredTypes)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _EditionVisualsDto() when $default != null:
+return $default(_that.count,_that.requiredTypes);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int count,  List<InfographicType> requiredTypes)  $default,) {final _that = this;
+switch (_that) {
+case _EditionVisualsDto():
+return $default(_that.count,_that.requiredTypes);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int count,  List<InfographicType> requiredTypes)?  $default,) {final _that = this;
+switch (_that) {
+case _EditionVisualsDto() when $default != null:
+return $default(_that.count,_that.requiredTypes);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _EditionVisualsDto implements EditionVisualsDto {
+  const _EditionVisualsDto({required this.count, required final  List<InfographicType> requiredTypes}): _requiredTypes = requiredTypes;
+  factory _EditionVisualsDto.fromJson(Map<String, dynamic> json) => _$EditionVisualsDtoFromJson(json);
+
+@override final  int count;
+ final  List<InfographicType> _requiredTypes;
+@override List<InfographicType> get requiredTypes {
+  if (_requiredTypes is EqualUnmodifiableListView) return _requiredTypes;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_requiredTypes);
+}
+
+
+/// Create a copy of EditionVisualsDto
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$EditionVisualsDtoCopyWith<_EditionVisualsDto> get copyWith => __$EditionVisualsDtoCopyWithImpl<_EditionVisualsDto>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$EditionVisualsDtoToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _EditionVisualsDto&&(identical(other.count, count) || other.count == count)&&const DeepCollectionEquality().equals(other._requiredTypes, _requiredTypes));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,count,const DeepCollectionEquality().hash(_requiredTypes));
+
+@override
+String toString() {
+  return 'EditionVisualsDto(count: $count, requiredTypes: $requiredTypes)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$EditionVisualsDtoCopyWith<$Res> implements $EditionVisualsDtoCopyWith<$Res> {
+  factory _$EditionVisualsDtoCopyWith(_EditionVisualsDto value, $Res Function(_EditionVisualsDto) _then) = __$EditionVisualsDtoCopyWithImpl;
+@override @useResult
+$Res call({
+ int count, List<InfographicType> requiredTypes
+});
+
+
+
+
+}
+/// @nodoc
+class __$EditionVisualsDtoCopyWithImpl<$Res>
+    implements _$EditionVisualsDtoCopyWith<$Res> {
+  __$EditionVisualsDtoCopyWithImpl(this._self, this._then);
+
+  final _EditionVisualsDto _self;
+  final $Res Function(_EditionVisualsDto) _then;
+
+/// Create a copy of EditionVisualsDto
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? count = null,Object? requiredTypes = null,}) {
+  return _then(_EditionVisualsDto(
+count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
+as int,requiredTypes: null == requiredTypes ? _self._requiredTypes : requiredTypes // ignore: cast_nullable_to_non_nullable
+as List<InfographicType>,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
+mixin _$EditionDto {
+
+ int get schemaVersion; String get id; EditionCompanionsDto get companions; EditionSeerahDto get seerah; EditionCountDto get stories; EditionCountDto get events; EditionVisualsDto get visuals;
+/// Create a copy of EditionDto
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$EditionDtoCopyWith<EditionDto> get copyWith => _$EditionDtoCopyWithImpl<EditionDto>(this as EditionDto, _$identity);
+
+  /// Serializes this EditionDto to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is EditionDto&&(identical(other.schemaVersion, schemaVersion) || other.schemaVersion == schemaVersion)&&(identical(other.id, id) || other.id == id)&&(identical(other.companions, companions) || other.companions == companions)&&(identical(other.seerah, seerah) || other.seerah == seerah)&&(identical(other.stories, stories) || other.stories == stories)&&(identical(other.events, events) || other.events == events)&&(identical(other.visuals, visuals) || other.visuals == visuals));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,schemaVersion,id,companions,seerah,stories,events,visuals);
+
+@override
+String toString() {
+  return 'EditionDto(schemaVersion: $schemaVersion, id: $id, companions: $companions, seerah: $seerah, stories: $stories, events: $events, visuals: $visuals)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $EditionDtoCopyWith<$Res>  {
+  factory $EditionDtoCopyWith(EditionDto value, $Res Function(EditionDto) _then) = _$EditionDtoCopyWithImpl;
+@useResult
+$Res call({
+ int schemaVersion, String id, EditionCompanionsDto companions, EditionSeerahDto seerah, EditionCountDto stories, EditionCountDto events, EditionVisualsDto visuals
+});
+
+
+$EditionCompanionsDtoCopyWith<$Res> get companions;$EditionSeerahDtoCopyWith<$Res> get seerah;$EditionCountDtoCopyWith<$Res> get stories;$EditionCountDtoCopyWith<$Res> get events;$EditionVisualsDtoCopyWith<$Res> get visuals;
+
+}
+/// @nodoc
+class _$EditionDtoCopyWithImpl<$Res>
+    implements $EditionDtoCopyWith<$Res> {
+  _$EditionDtoCopyWithImpl(this._self, this._then);
+
+  final EditionDto _self;
+  final $Res Function(EditionDto) _then;
+
+/// Create a copy of EditionDto
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? schemaVersion = null,Object? id = null,Object? companions = null,Object? seerah = null,Object? stories = null,Object? events = null,Object? visuals = null,}) {
+  return _then(_self.copyWith(
+schemaVersion: null == schemaVersion ? _self.schemaVersion : schemaVersion // ignore: cast_nullable_to_non_nullable
+as int,id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,companions: null == companions ? _self.companions : companions // ignore: cast_nullable_to_non_nullable
+as EditionCompanionsDto,seerah: null == seerah ? _self.seerah : seerah // ignore: cast_nullable_to_non_nullable
+as EditionSeerahDto,stories: null == stories ? _self.stories : stories // ignore: cast_nullable_to_non_nullable
+as EditionCountDto,events: null == events ? _self.events : events // ignore: cast_nullable_to_non_nullable
+as EditionCountDto,visuals: null == visuals ? _self.visuals : visuals // ignore: cast_nullable_to_non_nullable
+as EditionVisualsDto,
+  ));
+}
+/// Create a copy of EditionDto
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$EditionCompanionsDtoCopyWith<$Res> get companions {
+  
+  return $EditionCompanionsDtoCopyWith<$Res>(_self.companions, (value) {
+    return _then(_self.copyWith(companions: value));
+  });
+}/// Create a copy of EditionDto
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$EditionSeerahDtoCopyWith<$Res> get seerah {
+  
+  return $EditionSeerahDtoCopyWith<$Res>(_self.seerah, (value) {
+    return _then(_self.copyWith(seerah: value));
+  });
+}/// Create a copy of EditionDto
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$EditionCountDtoCopyWith<$Res> get stories {
+  
+  return $EditionCountDtoCopyWith<$Res>(_self.stories, (value) {
+    return _then(_self.copyWith(stories: value));
+  });
+}/// Create a copy of EditionDto
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$EditionCountDtoCopyWith<$Res> get events {
+  
+  return $EditionCountDtoCopyWith<$Res>(_self.events, (value) {
+    return _then(_self.copyWith(events: value));
+  });
+}/// Create a copy of EditionDto
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$EditionVisualsDtoCopyWith<$Res> get visuals {
+  
+  return $EditionVisualsDtoCopyWith<$Res>(_self.visuals, (value) {
+    return _then(_self.copyWith(visuals: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [EditionDto].
+extension EditionDtoPatterns on EditionDto {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _EditionDto value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _EditionDto() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _EditionDto value)  $default,){
+final _that = this;
+switch (_that) {
+case _EditionDto():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _EditionDto value)?  $default,){
+final _that = this;
+switch (_that) {
+case _EditionDto() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int schemaVersion,  String id,  EditionCompanionsDto companions,  EditionSeerahDto seerah,  EditionCountDto stories,  EditionCountDto events,  EditionVisualsDto visuals)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _EditionDto() when $default != null:
+return $default(_that.schemaVersion,_that.id,_that.companions,_that.seerah,_that.stories,_that.events,_that.visuals);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int schemaVersion,  String id,  EditionCompanionsDto companions,  EditionSeerahDto seerah,  EditionCountDto stories,  EditionCountDto events,  EditionVisualsDto visuals)  $default,) {final _that = this;
+switch (_that) {
+case _EditionDto():
+return $default(_that.schemaVersion,_that.id,_that.companions,_that.seerah,_that.stories,_that.events,_that.visuals);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int schemaVersion,  String id,  EditionCompanionsDto companions,  EditionSeerahDto seerah,  EditionCountDto stories,  EditionCountDto events,  EditionVisualsDto visuals)?  $default,) {final _that = this;
+switch (_that) {
+case _EditionDto() when $default != null:
+return $default(_that.schemaVersion,_that.id,_that.companions,_that.seerah,_that.stories,_that.events,_that.visuals);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _EditionDto implements EditionDto {
+  const _EditionDto({required this.schemaVersion, required this.id, required this.companions, required this.seerah, required this.stories, required this.events, required this.visuals});
+  factory _EditionDto.fromJson(Map<String, dynamic> json) => _$EditionDtoFromJson(json);
+
+@override final  int schemaVersion;
+@override final  String id;
+@override final  EditionCompanionsDto companions;
+@override final  EditionSeerahDto seerah;
+@override final  EditionCountDto stories;
+@override final  EditionCountDto events;
+@override final  EditionVisualsDto visuals;
+
+/// Create a copy of EditionDto
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$EditionDtoCopyWith<_EditionDto> get copyWith => __$EditionDtoCopyWithImpl<_EditionDto>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$EditionDtoToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _EditionDto&&(identical(other.schemaVersion, schemaVersion) || other.schemaVersion == schemaVersion)&&(identical(other.id, id) || other.id == id)&&(identical(other.companions, companions) || other.companions == companions)&&(identical(other.seerah, seerah) || other.seerah == seerah)&&(identical(other.stories, stories) || other.stories == stories)&&(identical(other.events, events) || other.events == events)&&(identical(other.visuals, visuals) || other.visuals == visuals));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,schemaVersion,id,companions,seerah,stories,events,visuals);
+
+@override
+String toString() {
+  return 'EditionDto(schemaVersion: $schemaVersion, id: $id, companions: $companions, seerah: $seerah, stories: $stories, events: $events, visuals: $visuals)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$EditionDtoCopyWith<$Res> implements $EditionDtoCopyWith<$Res> {
+  factory _$EditionDtoCopyWith(_EditionDto value, $Res Function(_EditionDto) _then) = __$EditionDtoCopyWithImpl;
+@override @useResult
+$Res call({
+ int schemaVersion, String id, EditionCompanionsDto companions, EditionSeerahDto seerah, EditionCountDto stories, EditionCountDto events, EditionVisualsDto visuals
+});
+
+
+@override $EditionCompanionsDtoCopyWith<$Res> get companions;@override $EditionSeerahDtoCopyWith<$Res> get seerah;@override $EditionCountDtoCopyWith<$Res> get stories;@override $EditionCountDtoCopyWith<$Res> get events;@override $EditionVisualsDtoCopyWith<$Res> get visuals;
+
+}
+/// @nodoc
+class __$EditionDtoCopyWithImpl<$Res>
+    implements _$EditionDtoCopyWith<$Res> {
+  __$EditionDtoCopyWithImpl(this._self, this._then);
+
+  final _EditionDto _self;
+  final $Res Function(_EditionDto) _then;
+
+/// Create a copy of EditionDto
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? schemaVersion = null,Object? id = null,Object? companions = null,Object? seerah = null,Object? stories = null,Object? events = null,Object? visuals = null,}) {
+  return _then(_EditionDto(
+schemaVersion: null == schemaVersion ? _self.schemaVersion : schemaVersion // ignore: cast_nullable_to_non_nullable
+as int,id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,companions: null == companions ? _self.companions : companions // ignore: cast_nullable_to_non_nullable
+as EditionCompanionsDto,seerah: null == seerah ? _self.seerah : seerah // ignore: cast_nullable_to_non_nullable
+as EditionSeerahDto,stories: null == stories ? _self.stories : stories // ignore: cast_nullable_to_non_nullable
+as EditionCountDto,events: null == events ? _self.events : events // ignore: cast_nullable_to_non_nullable
+as EditionCountDto,visuals: null == visuals ? _self.visuals : visuals // ignore: cast_nullable_to_non_nullable
+as EditionVisualsDto,
+  ));
+}
+
+/// Create a copy of EditionDto
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$EditionCompanionsDtoCopyWith<$Res> get companions {
+  
+  return $EditionCompanionsDtoCopyWith<$Res>(_self.companions, (value) {
+    return _then(_self.copyWith(companions: value));
+  });
+}/// Create a copy of EditionDto
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$EditionSeerahDtoCopyWith<$Res> get seerah {
+  
+  return $EditionSeerahDtoCopyWith<$Res>(_self.seerah, (value) {
+    return _then(_self.copyWith(seerah: value));
+  });
+}/// Create a copy of EditionDto
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$EditionCountDtoCopyWith<$Res> get stories {
+  
+  return $EditionCountDtoCopyWith<$Res>(_self.stories, (value) {
+    return _then(_self.copyWith(stories: value));
+  });
+}/// Create a copy of EditionDto
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$EditionCountDtoCopyWith<$Res> get events {
+  
+  return $EditionCountDtoCopyWith<$Res>(_self.events, (value) {
+    return _then(_self.copyWith(events: value));
+  });
+}/// Create a copy of EditionDto
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$EditionVisualsDtoCopyWith<$Res> get visuals {
+  
+  return $EditionVisualsDtoCopyWith<$Res>(_self.visuals, (value) {
+    return _then(_self.copyWith(visuals: value));
   });
 }
 }

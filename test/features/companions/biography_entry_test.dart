@@ -41,7 +41,7 @@ void main() {
   testApp('nothing read: one tap starts the first section', (tester) async {
     tall(tester);
     await AppUnderTest(location: '/companions/abu-bakr').pump(tester);
-    expect(find.text('٧ أقسام'), findsOneWidget);
+    expect(find.text('٨ أقسام'), findsOneWidget);
     await tester.tap(find.text('ابدأ قراءة السيرة'));
     await tester.pumpAndSettle();
     expect(reader(tester).sectionId, 'abu-bakr.early-life');
@@ -68,6 +68,7 @@ void main() {
       'abu-bakr.conversion',
       'abu-bakr.hijrah',
       'abu-bakr.virtues',
+      'abu-bakr.character',
       'abu-bakr.caliphate',
       'abu-bakr.death',
       'abu-bakr.lessons',

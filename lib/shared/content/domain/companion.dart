@@ -31,6 +31,9 @@ enum RelationType {
   teacher,
   student,
   brotherhood,
+
+  /// Companionship (صحبة), e.g. the Prophet ﷺ and a Companion.
+  companion,
 }
 
 @freezed

@@ -339,7 +339,7 @@ extension ContentBlockPatterns on ContentBlock {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( ParagraphBlock value)?  paragraph,TResult Function( LessonBlock value)?  lesson,TResult Function( QuranQuoteBlock value)?  quranQuote,TResult Function( HadithQuoteBlock value)?  hadithQuote,TResult Function( ReportQuoteBlock value)?  reportQuote,TResult Function( DisputeNoteBlock value)?  disputeNote,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( ParagraphBlock value)?  paragraph,TResult Function( LessonBlock value)?  lesson,TResult Function( QuranQuoteBlock value)?  quranQuote,TResult Function( HadithQuoteBlock value)?  hadithQuote,TResult Function( ReportQuoteBlock value)?  reportQuote,TResult Function( DisputeNoteBlock value)?  disputeNote,TResult Function( HeadingBlock value)?  heading,TResult Function( InfographicBlock value)?  infographic,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case ParagraphBlock() when paragraph != null:
@@ -348,7 +348,9 @@ return lesson(_that);case QuranQuoteBlock() when quranQuote != null:
 return quranQuote(_that);case HadithQuoteBlock() when hadithQuote != null:
 return hadithQuote(_that);case ReportQuoteBlock() when reportQuote != null:
 return reportQuote(_that);case DisputeNoteBlock() when disputeNote != null:
-return disputeNote(_that);case _:
+return disputeNote(_that);case HeadingBlock() when heading != null:
+return heading(_that);case InfographicBlock() when infographic != null:
+return infographic(_that);case _:
   return orElse();
 
 }
@@ -366,7 +368,7 @@ return disputeNote(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( ParagraphBlock value)  paragraph,required TResult Function( LessonBlock value)  lesson,required TResult Function( QuranQuoteBlock value)  quranQuote,required TResult Function( HadithQuoteBlock value)  hadithQuote,required TResult Function( ReportQuoteBlock value)  reportQuote,required TResult Function( DisputeNoteBlock value)  disputeNote,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( ParagraphBlock value)  paragraph,required TResult Function( LessonBlock value)  lesson,required TResult Function( QuranQuoteBlock value)  quranQuote,required TResult Function( HadithQuoteBlock value)  hadithQuote,required TResult Function( ReportQuoteBlock value)  reportQuote,required TResult Function( DisputeNoteBlock value)  disputeNote,required TResult Function( HeadingBlock value)  heading,required TResult Function( InfographicBlock value)  infographic,}){
 final _that = this;
 switch (_that) {
 case ParagraphBlock():
@@ -375,7 +377,9 @@ return lesson(_that);case QuranQuoteBlock():
 return quranQuote(_that);case HadithQuoteBlock():
 return hadithQuote(_that);case ReportQuoteBlock():
 return reportQuote(_that);case DisputeNoteBlock():
-return disputeNote(_that);}
+return disputeNote(_that);case HeadingBlock():
+return heading(_that);case InfographicBlock():
+return infographic(_that);}
 }
 /// A variant of `map` that fallback to returning `null`.
 ///
@@ -389,7 +393,7 @@ return disputeNote(_that);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( ParagraphBlock value)?  paragraph,TResult? Function( LessonBlock value)?  lesson,TResult? Function( QuranQuoteBlock value)?  quranQuote,TResult? Function( HadithQuoteBlock value)?  hadithQuote,TResult? Function( ReportQuoteBlock value)?  reportQuote,TResult? Function( DisputeNoteBlock value)?  disputeNote,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( ParagraphBlock value)?  paragraph,TResult? Function( LessonBlock value)?  lesson,TResult? Function( QuranQuoteBlock value)?  quranQuote,TResult? Function( HadithQuoteBlock value)?  hadithQuote,TResult? Function( ReportQuoteBlock value)?  reportQuote,TResult? Function( DisputeNoteBlock value)?  disputeNote,TResult? Function( HeadingBlock value)?  heading,TResult? Function( InfographicBlock value)?  infographic,}){
 final _that = this;
 switch (_that) {
 case ParagraphBlock() when paragraph != null:
@@ -398,7 +402,9 @@ return lesson(_that);case QuranQuoteBlock() when quranQuote != null:
 return quranQuote(_that);case HadithQuoteBlock() when hadithQuote != null:
 return hadithQuote(_that);case ReportQuoteBlock() when reportQuote != null:
 return reportQuote(_that);case DisputeNoteBlock() when disputeNote != null:
-return disputeNote(_that);case _:
+return disputeNote(_that);case HeadingBlock() when heading != null:
+return heading(_that);case InfographicBlock() when infographic != null:
+return infographic(_that);case _:
   return null;
 
 }
@@ -415,7 +421,7 @@ return disputeNote(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( LocalizedText text,  Reliability reliability,  List<Citation> citations)?  paragraph,TResult Function( LocalizedText text)?  lesson,TResult Function( QuranRef ref,  LocalizedText? note)?  quranQuote,TResult Function( TextStatus textStatus,  Reliability reliability,  List<Citation> citations,  LocalizedText? text,  LocalizedText? summary)?  hadithQuote,TResult Function( TextStatus textStatus,  Reliability reliability,  List<Citation> citations,  LocalizedText? text,  LocalizedText? summary)?  reportQuote,TResult Function( LocalizedText text,  List<Opinion> opinions)?  disputeNote,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( LocalizedText text,  Reliability reliability,  List<Citation> citations)?  paragraph,TResult Function( LocalizedText text)?  lesson,TResult Function( QuranRef ref,  LocalizedText? note)?  quranQuote,TResult Function( TextStatus textStatus,  Reliability reliability,  List<Citation> citations,  LocalizedText? text,  LocalizedText? summary)?  hadithQuote,TResult Function( TextStatus textStatus,  Reliability reliability,  List<Citation> citations,  LocalizedText? text,  LocalizedText? summary)?  reportQuote,TResult Function( LocalizedText text,  List<Opinion> opinions)?  disputeNote,TResult Function( LocalizedText text)?  heading,TResult Function( String visualId,  LocalizedText? caption)?  infographic,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case ParagraphBlock() when paragraph != null:
 return paragraph(_that.text,_that.reliability,_that.citations);case LessonBlock() when lesson != null:
@@ -423,7 +429,9 @@ return lesson(_that.text);case QuranQuoteBlock() when quranQuote != null:
 return quranQuote(_that.ref,_that.note);case HadithQuoteBlock() when hadithQuote != null:
 return hadithQuote(_that.textStatus,_that.reliability,_that.citations,_that.text,_that.summary);case ReportQuoteBlock() when reportQuote != null:
 return reportQuote(_that.textStatus,_that.reliability,_that.citations,_that.text,_that.summary);case DisputeNoteBlock() when disputeNote != null:
-return disputeNote(_that.text,_that.opinions);case _:
+return disputeNote(_that.text,_that.opinions);case HeadingBlock() when heading != null:
+return heading(_that.text);case InfographicBlock() when infographic != null:
+return infographic(_that.visualId,_that.caption);case _:
   return orElse();
 
 }
@@ -441,7 +449,7 @@ return disputeNote(_that.text,_that.opinions);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( LocalizedText text,  Reliability reliability,  List<Citation> citations)  paragraph,required TResult Function( LocalizedText text)  lesson,required TResult Function( QuranRef ref,  LocalizedText? note)  quranQuote,required TResult Function( TextStatus textStatus,  Reliability reliability,  List<Citation> citations,  LocalizedText? text,  LocalizedText? summary)  hadithQuote,required TResult Function( TextStatus textStatus,  Reliability reliability,  List<Citation> citations,  LocalizedText? text,  LocalizedText? summary)  reportQuote,required TResult Function( LocalizedText text,  List<Opinion> opinions)  disputeNote,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( LocalizedText text,  Reliability reliability,  List<Citation> citations)  paragraph,required TResult Function( LocalizedText text)  lesson,required TResult Function( QuranRef ref,  LocalizedText? note)  quranQuote,required TResult Function( TextStatus textStatus,  Reliability reliability,  List<Citation> citations,  LocalizedText? text,  LocalizedText? summary)  hadithQuote,required TResult Function( TextStatus textStatus,  Reliability reliability,  List<Citation> citations,  LocalizedText? text,  LocalizedText? summary)  reportQuote,required TResult Function( LocalizedText text,  List<Opinion> opinions)  disputeNote,required TResult Function( LocalizedText text)  heading,required TResult Function( String visualId,  LocalizedText? caption)  infographic,}) {final _that = this;
 switch (_that) {
 case ParagraphBlock():
 return paragraph(_that.text,_that.reliability,_that.citations);case LessonBlock():
@@ -449,7 +457,9 @@ return lesson(_that.text);case QuranQuoteBlock():
 return quranQuote(_that.ref,_that.note);case HadithQuoteBlock():
 return hadithQuote(_that.textStatus,_that.reliability,_that.citations,_that.text,_that.summary);case ReportQuoteBlock():
 return reportQuote(_that.textStatus,_that.reliability,_that.citations,_that.text,_that.summary);case DisputeNoteBlock():
-return disputeNote(_that.text,_that.opinions);}
+return disputeNote(_that.text,_that.opinions);case HeadingBlock():
+return heading(_that.text);case InfographicBlock():
+return infographic(_that.visualId,_that.caption);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -463,7 +473,7 @@ return disputeNote(_that.text,_that.opinions);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( LocalizedText text,  Reliability reliability,  List<Citation> citations)?  paragraph,TResult? Function( LocalizedText text)?  lesson,TResult? Function( QuranRef ref,  LocalizedText? note)?  quranQuote,TResult? Function( TextStatus textStatus,  Reliability reliability,  List<Citation> citations,  LocalizedText? text,  LocalizedText? summary)?  hadithQuote,TResult? Function( TextStatus textStatus,  Reliability reliability,  List<Citation> citations,  LocalizedText? text,  LocalizedText? summary)?  reportQuote,TResult? Function( LocalizedText text,  List<Opinion> opinions)?  disputeNote,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( LocalizedText text,  Reliability reliability,  List<Citation> citations)?  paragraph,TResult? Function( LocalizedText text)?  lesson,TResult? Function( QuranRef ref,  LocalizedText? note)?  quranQuote,TResult? Function( TextStatus textStatus,  Reliability reliability,  List<Citation> citations,  LocalizedText? text,  LocalizedText? summary)?  hadithQuote,TResult? Function( TextStatus textStatus,  Reliability reliability,  List<Citation> citations,  LocalizedText? text,  LocalizedText? summary)?  reportQuote,TResult? Function( LocalizedText text,  List<Opinion> opinions)?  disputeNote,TResult? Function( LocalizedText text)?  heading,TResult? Function( String visualId,  LocalizedText? caption)?  infographic,}) {final _that = this;
 switch (_that) {
 case ParagraphBlock() when paragraph != null:
 return paragraph(_that.text,_that.reliability,_that.citations);case LessonBlock() when lesson != null:
@@ -471,7 +481,9 @@ return lesson(_that.text);case QuranQuoteBlock() when quranQuote != null:
 return quranQuote(_that.ref,_that.note);case HadithQuoteBlock() when hadithQuote != null:
 return hadithQuote(_that.textStatus,_that.reliability,_that.citations,_that.text,_that.summary);case ReportQuoteBlock() when reportQuote != null:
 return reportQuote(_that.textStatus,_that.reliability,_that.citations,_that.text,_that.summary);case DisputeNoteBlock() when disputeNote != null:
-return disputeNote(_that.text,_that.opinions);case _:
+return disputeNote(_that.text,_that.opinions);case HeadingBlock() when heading != null:
+return heading(_that.text);case InfographicBlock() when infographic != null:
+return infographic(_that.visualId,_that.caption);case _:
   return null;
 
 }
@@ -1006,6 +1018,161 @@ $LocalizedTextCopyWith<$Res> get text {
   
   return $LocalizedTextCopyWith<$Res>(_self.text, (value) {
     return _then(_self.copyWith(text: value));
+  });
+}
+}
+
+/// @nodoc
+
+
+class HeadingBlock implements ContentBlock {
+  const HeadingBlock({required this.text});
+  
+
+ final  LocalizedText text;
+
+/// Create a copy of ContentBlock
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$HeadingBlockCopyWith<HeadingBlock> get copyWith => _$HeadingBlockCopyWithImpl<HeadingBlock>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is HeadingBlock&&(identical(other.text, text) || other.text == text));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,text);
+
+@override
+String toString() {
+  return 'ContentBlock.heading(text: $text)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $HeadingBlockCopyWith<$Res> implements $ContentBlockCopyWith<$Res> {
+  factory $HeadingBlockCopyWith(HeadingBlock value, $Res Function(HeadingBlock) _then) = _$HeadingBlockCopyWithImpl;
+@useResult
+$Res call({
+ LocalizedText text
+});
+
+
+$LocalizedTextCopyWith<$Res> get text;
+
+}
+/// @nodoc
+class _$HeadingBlockCopyWithImpl<$Res>
+    implements $HeadingBlockCopyWith<$Res> {
+  _$HeadingBlockCopyWithImpl(this._self, this._then);
+
+  final HeadingBlock _self;
+  final $Res Function(HeadingBlock) _then;
+
+/// Create a copy of ContentBlock
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? text = null,}) {
+  return _then(HeadingBlock(
+text: null == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
+as LocalizedText,
+  ));
+}
+
+/// Create a copy of ContentBlock
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$LocalizedTextCopyWith<$Res> get text {
+  
+  return $LocalizedTextCopyWith<$Res>(_self.text, (value) {
+    return _then(_self.copyWith(text: value));
+  });
+}
+}
+
+/// @nodoc
+
+
+class InfographicBlock implements ContentBlock {
+  const InfographicBlock({required this.visualId, this.caption});
+  
+
+ final  String visualId;
+ final  LocalizedText? caption;
+
+/// Create a copy of ContentBlock
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$InfographicBlockCopyWith<InfographicBlock> get copyWith => _$InfographicBlockCopyWithImpl<InfographicBlock>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is InfographicBlock&&(identical(other.visualId, visualId) || other.visualId == visualId)&&(identical(other.caption, caption) || other.caption == caption));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,visualId,caption);
+
+@override
+String toString() {
+  return 'ContentBlock.infographic(visualId: $visualId, caption: $caption)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $InfographicBlockCopyWith<$Res> implements $ContentBlockCopyWith<$Res> {
+  factory $InfographicBlockCopyWith(InfographicBlock value, $Res Function(InfographicBlock) _then) = _$InfographicBlockCopyWithImpl;
+@useResult
+$Res call({
+ String visualId, LocalizedText? caption
+});
+
+
+$LocalizedTextCopyWith<$Res>? get caption;
+
+}
+/// @nodoc
+class _$InfographicBlockCopyWithImpl<$Res>
+    implements $InfographicBlockCopyWith<$Res> {
+  _$InfographicBlockCopyWithImpl(this._self, this._then);
+
+  final InfographicBlock _self;
+  final $Res Function(InfographicBlock) _then;
+
+/// Create a copy of ContentBlock
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? visualId = null,Object? caption = freezed,}) {
+  return _then(InfographicBlock(
+visualId: null == visualId ? _self.visualId : visualId // ignore: cast_nullable_to_non_nullable
+as String,caption: freezed == caption ? _self.caption : caption // ignore: cast_nullable_to_non_nullable
+as LocalizedText?,
+  ));
+}
+
+/// Create a copy of ContentBlock
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$LocalizedTextCopyWith<$Res>? get caption {
+    if (_self.caption == null) {
+    return null;
+  }
+
+  return $LocalizedTextCopyWith<$Res>(_self.caption!, (value) {
+    return _then(_self.copyWith(caption: value));
   });
 }
 }

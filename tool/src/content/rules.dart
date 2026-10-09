@@ -1,11 +1,14 @@
 import 'package:siyar_sahaba/core/domain/historical_date.dart';
 import 'package:siyar_sahaba/core/domain/quran_ref.dart';
 import 'package:siyar_sahaba/core/domain/reliability.dart';
+import 'package:siyar_sahaba/shared/content/data/dto/atlas_dto.dart';
 import 'package:siyar_sahaba/shared/content/data/dto/block_dto.dart';
 import 'package:siyar_sahaba/shared/content/data/dto/catalog_dto.dart';
 import 'package:siyar_sahaba/shared/content/data/dto/common_dto.dart';
 import 'package:siyar_sahaba/shared/content/data/dto/companion_dto.dart';
+import 'package:siyar_sahaba/shared/content/data/dto/seerah_dto.dart';
 import 'package:siyar_sahaba/shared/content/data/dto/story_dto.dart';
+import 'package:siyar_sahaba/shared/content/domain/atlas.dart';
 import 'package:siyar_sahaba/shared/content/domain/catalog.dart';
 import 'package:siyar_sahaba/shared/content/domain/citation.dart';
 import 'package:siyar_sahaba/shared/content/domain/content_block.dart';
@@ -15,7 +18,7 @@ import 'content_hash.dart';
 import 'content_tree.dart';
 import 'issues.dart';
 
-/// Runs rules V2–V12 over a parsed [tree]. Rules that only matter for a
+/// Runs rules V2–V13 over a parsed [tree]. Rules that only matter for a
 /// store release (V9 pending work, V11 closure) are errors on the published
 /// channel; on the draft channel pending work is counted instead, and the
 /// counts per item key are returned.
@@ -60,6 +63,19 @@ class _Rules {
     for (final item in tree.people) {
       _noHonorificInName(item, r'$.name', item.dto.name);
     }
+    for (final item in tree.places) {
+      _place(item);
+    }
+    if (tree.seerah case final seerah?) _seerah(seerah);
+    for (final item in tree.seerahChapters) {
+      _seerahChapter(item);
+    }
+    for (final item in tree.seerahTopics) {
+      _seerahTopic(item);
+    }
+    for (final item in tree.visuals) {
+      _visual(item);
+    }
     for (final item in tree.allItems) {
       _wording(item, item.raw, item.at(r'$'));
       _approval(item);
@@ -86,6 +102,10 @@ class _Rules {
     check(tree.events);
     check(tree.companions);
     check(tree.stories);
+    check(tree.places);
+    check(tree.seerahChapters);
+    check(tree.seerahTopics);
+    check(tree.visuals);
   }
 
   void _fileNameMatchesId(Item<Object> item, String folder) {
@@ -143,6 +163,18 @@ class _Rules {
     }
     if (ref.personId case final id?) {
       _ref(item, '$path.personId', id, tree.personById, ContentKind.person);
+    }
+  }
+
+  void _refs(
+    Item<Object> item,
+    String path,
+    List<String> ids,
+    Map<String, Object> pool,
+    ContentKind kind,
+  ) {
+    for (var i = 0; i < ids.length; i++) {
+      _ref(item, '$path[$i]', ids[i], pool, kind);
     }
   }
 
@@ -288,6 +320,7 @@ class _Rules {
   void _event(Item<HistoricalEventDto> item) {
     final e = item.dto;
     _needsCitations(item, r'$', e.citations, null);
+    _refs(item, r'$.placeIds', e.placeIds, tree.placeById, ContentKind.place);
     for (var i = 0; i < e.participants.length; i++) {
       _personRef(item, '\$.participants[$i]', e.participants[i]);
     }
@@ -304,6 +337,268 @@ class _Rules {
     if (basis == null) return;
     _block(item, r'$.basis', basis);
     _citations(item, _blockCitations(r'$.basis', basis));
+  }
+
+  void _place(Item<PlaceDto> item) {
+    final p = item.dto;
+    _noHonorificInName(item, r'$.name', p.name);
+    _needsCitations(item, r'$', p.citations, p.reliability);
+    _citations(item, _list(r'$', p.citations));
+  }
+
+  void _seerah(Item<SeerahDto> item) {
+    final s = item.dto;
+    if (item.file != 'seerah/seerah.json') {
+      sink.error('V2', item.file, '', 'The Seerah must be seerah/seerah.json.');
+    }
+    _refs(
+      item,
+      r'$.chapterIds',
+      s.chapterIds,
+      tree.seerahChapterById,
+      ContentKind.seerahChapter,
+    );
+    _refs(
+      item,
+      r'$.topicIds',
+      s.topicIds,
+      tree.seerahTopicById,
+      ContentKind.seerahTopic,
+    );
+    _refs(
+      item,
+      r'$.featuredEventIds',
+      s.featuredEventIds,
+      tree.eventById,
+      ContentKind.event,
+    );
+    _refs(
+      item,
+      r'$.featuredPlaceIds',
+      s.featuredPlaceIds,
+      tree.placeById,
+      ContentKind.place,
+    );
+    _refs(
+      item,
+      r'$.companionIds',
+      s.companionIds,
+      tree.companionById,
+      ContentKind.companion,
+    );
+    _refs(item, r'$.visualIds', s.visualIds, tree.visualById, ContentKind.visual);
+    _refs(
+      item,
+      r'$.references',
+      s.references,
+      tree.sourceById,
+      ContentKind.source,
+    );
+    // Every chapter and topic must be in the reading order, or no screen
+    // could reach it.
+    for (final (items, listed, what) in [
+      (tree.seerahChapters, s.chapterIds, 'chapterIds'),
+      (tree.seerahTopics, s.topicIds, 'topicIds'),
+    ]) {
+      for (final i in items) {
+        if (!listed.contains(i.id)) {
+          sink.error(
+            'V2',
+            i.file,
+            r'$.id',
+            '"${i.id}" is not in seerah/seerah.json $what, so nothing '
+                'links to it.',
+          );
+        }
+      }
+    }
+    for (var e = 0; e < s.eras.length; e++) {
+      final era = s.eras[e];
+      final path = '\$.eras[$e]';
+      for (var i = 0; i < era.chapterIds.length; i++) {
+        if (!s.chapterIds.contains(era.chapterIds[i])) {
+          sink.error(
+            'V2',
+            item.file,
+            '$path.chapterIds[$i]',
+            'Chapter "${era.chapterIds[i]}" is not in chapterIds.',
+          );
+        }
+      }
+      _needsCitations(item, path, era.citations, era.reliability);
+      _date(item, '$path.date', era.date);
+    }
+    for (var b = 0; b < s.introduction.length; b++) {
+      _block(item, '\$.introduction[$b]', s.introduction[b]);
+    }
+    _citations(item, _itemCitations(item));
+  }
+
+  void _seerahChapter(Item<SeerahChapterDto> item) {
+    final c = item.dto;
+    _fileNameMatchesId(item, 'seerah/chapters');
+    _workRefs(item, c.references);
+    _refs(item, r'$.eventIds', c.eventIds, tree.eventById, ContentKind.event);
+    _refs(item, r'$.placeIds', c.placeIds, tree.placeById, ContentKind.place);
+    _refs(
+      item,
+      r'$.companionIds',
+      c.companionIds,
+      tree.companionById,
+      ContentKind.companion,
+    );
+    _refs(item, r'$.visualIds', c.visualIds, tree.visualById, ContentKind.visual);
+    _date(item, r'$.date', c.date);
+    for (var b = 0; b < c.blocks.length; b++) {
+      _block(item, '\$.blocks[$b]', c.blocks[b]);
+    }
+    _citations(item, _itemCitations(item));
+  }
+
+  void _seerahTopic(Item<SeerahTopicDto> item) {
+    final t = item.dto;
+    _fileNameMatchesId(item, 'seerah/topics');
+    _workRefs(item, t.references);
+    _refs(
+      item,
+      r'$.chapterIds',
+      t.chapterIds,
+      tree.seerahChapterById,
+      ContentKind.seerahChapter,
+    );
+    _refs(
+      item,
+      r'$.companionIds',
+      t.companionIds,
+      tree.companionById,
+      ContentKind.companion,
+    );
+    for (var b = 0; b < t.blocks.length; b++) {
+      _block(item, '\$.blocks[$b]', t.blocks[b]);
+    }
+    _citations(item, _itemCitations(item));
+  }
+
+  /// A passage's work-level bibliography: at least one, all known.
+  void _workRefs(Item<Object> item, List<String> references) {
+    if (references.isEmpty) {
+      sink.error(
+        'V3',
+        item.file,
+        r'$.references',
+        'A passage needs at least one work-level reference.',
+      );
+    }
+    _refs(item, r'$.references', references, tree.sourceById, ContentKind.source);
+  }
+
+  // ── V13: visuals ────────────────────────────────────────────────────────
+
+  void _visual(Item<VisualDto> item) {
+    final v = item.dto;
+    _fileNameMatchesId(item, 'visuals');
+
+    // Only the data of the visual's own type may be filled in, so nothing
+    // is authored that the reader never sees.
+    final present = <String, bool>{
+      'companionId': v.companionId != null,
+      'route': v.route.isNotEmpty,
+      'edges': v.edges.isNotEmpty,
+      'steps': v.steps.isNotEmpty,
+      'bands': v.bands.isNotEmpty,
+      'placeId': v.placeId != null,
+      'callouts': v.callouts.isNotEmpty,
+      'placeIds': v.placeIds.isNotEmpty,
+      'eventIds': v.eventIds.isNotEmpty,
+    };
+    final allowed = switch (v.type) {
+      InfographicType.timeline => {'companionId', 'eventIds'},
+      InfographicType.map => {'placeIds', 'route'},
+      InfographicType.relationships => {'edges'},
+      InfographicType.sequence => {'steps', 'eventIds'},
+      InfographicType.periods => {'bands'},
+      InfographicType.placePanel => {'placeId', 'callouts'},
+    };
+    for (final MapEntry(:key, :value) in present.entries) {
+      if (value && !allowed.contains(key)) {
+        sink.error(
+          'V13',
+          item.file,
+          '\$.$key',
+          '"$key" does not apply to a ${v.type.name} visual.',
+        );
+      }
+    }
+
+    _refs(item, r'$.eventIds', v.eventIds, tree.eventById, ContentKind.event);
+    _refs(item, r'$.placeIds', v.placeIds, tree.placeById, ContentKind.place);
+    if (v.companionId case final id?) {
+      _ref(item, r'$.companionId', id, tree.companionById, ContentKind.companion);
+      final timeline = tree.companionById[id]?.dto.timeline;
+      if (timeline != null && timeline.isEmpty) {
+        sink.error(
+          'V13',
+          item.file,
+          r'$.companionId',
+          'Companion "$id" has no timeline entries to show.',
+        );
+      }
+    }
+    if (v.placeId case final id?) {
+      _ref(item, r'$.placeId', id, tree.placeById, ContentKind.place);
+    }
+    for (var i = 0; i < v.route.length; i++) {
+      final leg = v.route[i];
+      final path = '\$.route[$i]';
+      for (final (key, id) in [('from', leg.from), ('to', leg.to)]) {
+        if (!v.placeIds.contains(id)) {
+          sink.error(
+            'V13',
+            item.file,
+            '$path.$key',
+            'A journey can only join places shown on the map ("$id" is not '
+                'in placeIds).',
+          );
+        }
+      }
+      _needsCitations(item, path, leg.citations, leg.reliability);
+    }
+    for (var i = 0; i < v.edges.length; i++) {
+      final e = v.edges[i];
+      final path = '\$.edges[$i]';
+      _personRef(item, '$path.from', e.from);
+      _personRef(item, '$path.to', e.to);
+      _needsCitations(item, path, e.citations, e.reliability);
+    }
+    for (var i = 0; i < v.steps.length; i++) {
+      final s = v.steps[i];
+      final path = '\$.steps[$i]';
+      if (s.placeId case final id?) {
+        _ref(item, '$path.placeId', id, tree.placeById, ContentKind.place);
+      }
+      if (s.date case final d?) _date(item, '$path.date', d);
+      _needsCitations(item, path, s.citations, s.reliability);
+    }
+    for (var i = 0; i < v.bands.length; i++) {
+      final b = v.bands[i];
+      final path = '\$.bands[$i]';
+      if (b.date.precision == DatePrecision.unknown) {
+        sink.error(
+          'V13',
+          item.file,
+          '$path.date',
+          'A period with an unknown date cannot be drawn as a band; leave '
+              'it out and say so in the notes.',
+        );
+      }
+      _date(item, '$path.date', b.date);
+      _needsCitations(item, path, b.citations, b.reliability);
+    }
+    for (var i = 0; i < v.callouts.length; i++) {
+      final c = v.callouts[i];
+      _needsCitations(item, '\$.callouts[$i]', c.citations, c.reliability);
+    }
+    _citations(item, _itemCitations(item));
   }
 
   // ── V3 / V4 / V9 / V10: blocks ──────────────────────────────────────────
@@ -352,8 +647,16 @@ class _Rules {
         }
       case QuranQuoteBlockDto(:final ref):
         _quranRef(item, '$path.ref', ref);
-      case LessonBlockDto():
-        break; // Commentary; reviewed but not sourced claim by claim.
+      case LessonBlockDto() || HeadingBlockDto():
+        break; // Commentary or structure; reviewed, not sourced by claim.
+      case InfographicBlockDto(:final visualId):
+        _ref(
+          item,
+          '$path.visualId',
+          visualId,
+          tree.visualById,
+          ContentKind.visual,
+        );
     }
   }
 
@@ -686,7 +989,41 @@ class _Rules {
       for (final (_, c) in _itemCitations(item)) {
         needApproved(item, 'source', tree.sourceById[c.sourceId]);
       }
+      for (final id in _visualRefs(item)) {
+        needApproved(item, 'visual', tree.visualById[id]);
+      }
       final dto = item.dto;
+      switch (dto) {
+        case SeerahChapterDto():
+          for (final id in dto.eventIds) {
+            needApproved(item, 'event', tree.eventById[id]);
+          }
+          for (final id in dto.placeIds) {
+            needApproved(item, 'place', tree.placeById[id]);
+          }
+        case HistoricalEventDto():
+          for (final id in dto.placeIds) {
+            needApproved(item, 'place', tree.placeById[id]);
+          }
+        case VisualDto():
+          // A visual's marks are its records: each must be approved too.
+          for (final id in dto.eventIds) {
+            needApproved(item, 'event', tree.eventById[id]);
+          }
+          for (final id in [...dto.placeIds, ?dto.placeId]) {
+            needApproved(item, 'place', tree.placeById[id]);
+          }
+          if (dto.companionId case final id?) {
+            needApproved(item, 'companion', tree.companionById[id]);
+          }
+          for (final s in dto.steps) {
+            if (s.placeId case final id?) {
+              needApproved(item, 'place', tree.placeById[id]);
+            }
+          }
+        case _:
+          break;
+      }
       if (dto is CompanionDto) {
         for (final id in dto.references) {
           needApproved(item, 'source', tree.sourceById[id]);
@@ -701,6 +1038,30 @@ class _Rules {
         }
       }
     }
+  }
+
+  /// Visuals that [item] shows: in its blocks and its own visual list.
+  Iterable<String> _visualRefs(Item<Object> item) {
+    final dto = item.dto;
+    final blocks = switch (dto) {
+      CompanionDto(:final sections) => [
+        for (final s in sections) ...s.blocks,
+      ],
+      StoryDto(:final chapters) => [for (final c in chapters) ...c.blocks],
+      SeerahChapterDto(:final blocks) || SeerahTopicDto(:final blocks) =>
+        blocks,
+      SeerahDto(:final introduction) => introduction,
+      _ => const <ContentBlockDto>[],
+    };
+    return {
+      for (final b in blocks)
+        if (b case InfographicBlockDto(:final visualId)) visualId,
+      ...switch (dto) {
+        SeerahChapterDto(:final visualIds) ||
+        SeerahDto(:final visualIds) => visualIds,
+        _ => const <String>[],
+      },
+    };
   }
 
   Iterable<_Cited> _itemCitations(Item<Object> item) {
@@ -719,6 +1080,26 @@ class _Rules {
               '\$.chapters[$c].blocks[$b]',
               chapters[c].blocks[b],
             ),
+      ],
+      PlaceDto(:final citations) => _list(r'$', citations),
+      SeerahDto(:final eras, :final introduction) => [
+        for (var e = 0; e < eras.length; e++)
+          ..._list('\$.eras[$e]', eras[e].citations),
+        ..._blocksCitations(r'$.introduction', introduction),
+      ],
+      SeerahChapterDto(:final blocks) => _blocksCitations(r'$.blocks', blocks),
+      SeerahTopicDto(:final blocks) => _blocksCitations(r'$.blocks', blocks),
+      VisualDto() => [
+        for (var i = 0; i < dto.route.length; i++)
+          ..._list('\$.route[$i]', dto.route[i].citations),
+        for (var i = 0; i < dto.edges.length; i++)
+          ..._list('\$.edges[$i]', dto.edges[i].citations),
+        for (var i = 0; i < dto.steps.length; i++)
+          ..._list('\$.steps[$i]', dto.steps[i].citations),
+        for (var i = 0; i < dto.bands.length; i++)
+          ..._list('\$.bands[$i]', dto.bands[i].citations),
+        for (var i = 0; i < dto.callouts.length; i++)
+          ..._list('\$.callouts[$i]', dto.callouts[i].citations),
       ],
       _ => const <_Cited>[],
     };
@@ -826,8 +1207,26 @@ class _Rules {
         for (var i = 0; i < opinions.length; i++) {
           yield* list('$path.opinions[$i]', opinions[i].citations);
         }
-      case LessonBlockDto() || QuranQuoteBlockDto():
+      case LessonBlockDto() ||
+          QuranQuoteBlockDto() ||
+          HeadingBlockDto() ||
+          InfographicBlockDto():
         break;
+    }
+  }
+
+  Iterable<_Cited> _list(String path, List<CitationDto> cs) sync* {
+    for (var i = 0; i < cs.length; i++) {
+      yield ('$path.citations[$i]', cs[i]);
+    }
+  }
+
+  Iterable<_Cited> _blocksCitations(
+    String path,
+    List<ContentBlockDto> blocks,
+  ) sync* {
+    for (var b = 0; b < blocks.length; b++) {
+      yield* _blockCitations('$path[$b]', blocks[b]);
     }
   }
 }

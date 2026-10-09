@@ -27,6 +27,17 @@ void main() {
     'settings': '/settings',
     'about': '/settings/about',
     'sources': '/settings/sources',
+    'seerah hub': '/seerah',
+    'seerah chapter': '/seerah/chapters/hijrah-to-madinah',
+    'seerah topic': '/seerah/topics/mercy',
+    'seerah timeline': '/seerah/timeline',
+    'explore': '/explore',
+    'event': '/events/hijrah',
+    'place': '/places/makkah',
+    'visual (map)': '/visuals/hijrah-route',
+    'visual (relationships)': '/visuals/abu-bakr-family',
+    'visual (sequence)': '/visuals/hijrah-sequence',
+    'visual (place panel)': '/visuals/makkah-panel',
   };
 
   for (final brightness in Brightness.values) {

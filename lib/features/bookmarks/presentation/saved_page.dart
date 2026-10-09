@@ -16,7 +16,7 @@ import 'package:siyar_sahaba/features/bookmarks/presentation/bookmark_providers.
 import 'package:siyar_sahaba/features/reading_progress/presentation/continue_reading.dart';
 import 'package:siyar_sahaba/features/reading_progress/presentation/progress_providers.dart';
 import 'package:siyar_sahaba/shared/content/domain/content_target.dart';
-import 'package:siyar_sahaba/shared/content/presentation/content_text.dart';
+import 'package:siyar_sahaba/shared/content/presentation/target_description.dart';
 import 'package:siyar_sahaba/shared/content/providers.dart';
 
 /// Saved items and unfinished reading (S11). Loading, a failed load and an
@@ -86,6 +86,8 @@ class _SavedList extends StatelessWidget {
       BookmarkTarget.section => l10n.savedSections,
       BookmarkTarget.story => l10n.savedStories,
       BookmarkTarget.chapter => l10n.savedChapters,
+      BookmarkTarget.seerahChapter => l10n.savedSeerahChapters,
+      BookmarkTarget.seerahTopic => l10n.savedSeerahTopics,
     };
 
     return ListView(
@@ -178,12 +180,12 @@ class SavedTile extends ConsumerWidget {
           trailing: removeButton,
         );
       case AsyncData(:final value):
-        final (title, subtitle, route) = _describe(context, value);
+        final d = describeTarget(context, value)!;
         return ListTile(
           contentPadding: EdgeInsets.zero,
-          title: Text(title),
-          subtitle: subtitle == null ? null : dim(subtitle),
-          onTap: () => context.push(route),
+          title: Text(d.title),
+          subtitle: d.parent == null ? null : dim(d.parent!),
+          onTap: () => context.push(d.route),
           trailing: removeButton,
         );
       case AsyncError():
@@ -207,35 +209,6 @@ class SavedTile extends ConsumerWidget {
         );
     }
   }
-
-  /// Title, subtitle and route of a found item.
-  (String, String?, String) _describe(
-    BuildContext context,
-    TargetLookup found,
-  ) => switch (found) {
-    FoundCompanion(:final companion) => (
-      '${companion.name.of(context)} '
-          '${companionHonorific(companion.gender)}',
-      companion.kunya?.of(context),
-      AppRoutes.companion(companion.id),
-    ),
-    FoundSection(:final companion, :final section) => (
-      section.title.of(context),
-      companion.name.of(context),
-      AppRoutes.section(companion.id, section.id),
-    ),
-    FoundStory(:final story) => (
-      story.title.of(context),
-      story.synopsis.of(context),
-      AppRoutes.story(story.id),
-    ),
-    FoundChapter(:final story, :final chapter) => (
-      chapter.title.of(context),
-      story.title.of(context),
-      AppRoutes.chapter(story.id, chapter.id),
-    ),
-    TargetMissing() => throw StateError('not found'),
-  };
 
   /// Removes the item, offering to put it back exactly as it was.
   Future<void> _remove(BuildContext context, WidgetRef ref) async {

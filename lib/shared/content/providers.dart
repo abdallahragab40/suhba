@@ -2,11 +2,13 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:siyar_sahaba/shared/content/data/asset_content_repository.dart';
 import 'package:siyar_sahaba/shared/content/data/asset_content_source.dart';
+import 'package:siyar_sahaba/shared/content/domain/atlas.dart';
 import 'package:siyar_sahaba/shared/content/domain/catalog.dart';
 import 'package:siyar_sahaba/shared/content/domain/companion.dart';
 import 'package:siyar_sahaba/shared/content/domain/content_manifest.dart';
 import 'package:siyar_sahaba/shared/content/domain/content_repository.dart';
 import 'package:siyar_sahaba/shared/content/domain/content_target.dart';
+import 'package:siyar_sahaba/shared/content/domain/seerah.dart';
 import 'package:siyar_sahaba/shared/content/domain/story.dart';
 
 /// The asset bundle content is read from; overridden in tests.
@@ -58,6 +60,52 @@ final eventsProvider = FutureProvider<Map<String, HistoricalEvent>>(
   (ref) async =>
       (await ref.watch(contentRepositoryProvider).events()).getOrThrow(),
 );
+
+/// The Seerah section, with its chapter and topic summaries.
+final seerahIndexProvider = FutureProvider<SeerahIndex>(
+  (ref) async =>
+      (await ref.watch(contentRepositoryProvider).seerahIndex()).getOrThrow(),
+);
+
+final placesProvider = FutureProvider<Map<String, HistoricalPlace>>(
+  (ref) async =>
+      (await ref.watch(contentRepositoryProvider).places()).getOrThrow(),
+);
+
+final visualsProvider = FutureProvider<Map<String, Infographic>>(
+  (ref) async =>
+      (await ref.watch(contentRepositoryProvider).visuals()).getOrThrow(),
+);
+
+/// One full Seerah chapter; disposed when no screen shows it.
+final seerahChapterProvider = FutureProvider.autoDispose
+    .family<SeerahChapter, String>(
+      (ref, id) async =>
+          (await ref.watch(contentRepositoryProvider).seerahChapter(id))
+              .getOrThrow(),
+    );
+
+/// One thematic essay; disposed when no screen shows it.
+final seerahTopicProvider = FutureProvider.autoDispose
+    .family<SeerahTopic, String>(
+      (ref, id) async =>
+          (await ref.watch(contentRepositoryProvider).seerahTopic(id))
+              .getOrThrow(),
+    );
+
+/// Every Seerah chapter in full, in reading order (for cross-links such as
+/// "the chapter that tells this event"). Chapters that fail to load are
+/// left out.
+final allSeerahChaptersProvider = FutureProvider<List<SeerahChapter>>((
+  ref,
+) async {
+  final repo = ref.watch(contentRepositoryProvider);
+  final index = await ref.watch(seerahIndexProvider.future);
+  final loaded = await Future.wait(
+    index.chapters.map((c) => repo.seerahChapter(c.id)),
+  );
+  return [for (final r in loaded) ?r.valueOrNull];
+});
 
 /// One full companion; disposed when no screen shows it.
 final companionProvider = FutureProvider.autoDispose.family<Companion, String>(

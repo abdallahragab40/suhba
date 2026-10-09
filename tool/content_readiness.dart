@@ -1,10 +1,11 @@
 // Reports how close the content is to publication, item by item, and what
-// still blocks the first public release (the Ten in full, reviewed).
+// still blocks the next public edition (content/release/edition.json).
 //
 //   dart run tool/content_readiness.dart                   # Markdown
 //   dart run tool/content_readiness.dart --json            # JSON
-//   dart run tool/content_readiness.dart --require-public-v1
-//       # exits non-zero unless the content is the complete public release
+//   dart run tool/content_readiness.dart --require-edition
+//       # exits non-zero unless the content is the complete edition
+//       # (--require-public-v1 is the old name of this flag)
 //
 // It never approves anything: approvals come only from a registered
 // reviewer's record in content/reviews/.
@@ -26,7 +27,10 @@ void main(List<String> args) {
         ? '${report.toJsonString()}\n'
         : report.toMarkdown(),
   );
-  if (args.contains('--require-public-v1') && !report.publicV1Ready) {
-    fail('\nThe content is not the complete public release (see above).');
+  final require =
+      args.contains('--require-edition') ||
+      args.contains('--require-public-v1');
+  if (require && !report.editionReady) {
+    fail('\nThe content is not the complete edition (see above).');
   }
 }

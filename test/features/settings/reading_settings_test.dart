@@ -62,7 +62,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('حجم خط القراءة: 19'), findsOneWidget);
     // The page behind the sheet follows too.
-    expect(find.text('06'), findsOneWidget);
+    expect(find.text('07'), findsOneWidget);
   });
 
   testApp('dragging the slider changes the size', (tester) async {

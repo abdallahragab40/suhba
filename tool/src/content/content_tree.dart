@@ -1,9 +1,11 @@
 import 'dart:convert';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:siyar_sahaba/shared/content/data/dto/atlas_dto.dart';
 import 'package:siyar_sahaba/shared/content/data/dto/catalog_dto.dart';
 import 'package:siyar_sahaba/shared/content/data/dto/common_dto.dart';
 import 'package:siyar_sahaba/shared/content/data/dto/companion_dto.dart';
+import 'package:siyar_sahaba/shared/content/data/dto/seerah_dto.dart';
 import 'package:siyar_sahaba/shared/content/data/dto/story_dto.dart';
 import 'package:siyar_sahaba/shared/content/domain/review.dart';
 
@@ -58,7 +60,20 @@ class ContentTree {
   final events = <Item<HistoricalEventDto>>[];
   final companions = <Item<CompanionDto>>[];
   final stories = <Item<StoryDto>>[];
+  final places = <Item<PlaceDto>>[];
+  final seerahChapters = <Item<SeerahChapterDto>>[];
+  final seerahTopics = <Item<SeerahTopicDto>>[];
+  final visuals = <Item<VisualDto>>[];
+
+  /// The Seerah section (`seerah/seerah.json`), when present. Its id is
+  /// always [seerahId].
+  Item<SeerahDto>? seerah;
   final reviewers = <ReviewerDto>[];
+
+  /// The release checklist (`release/edition.json`), when present.
+  EditionDto? edition;
+
+  static const seerahId = 'seerah';
 
   /// Approval records by item key (`kind.id`).
   final approvals = <String, ApprovalRecord>{};
@@ -74,6 +89,11 @@ class ContentTree {
     ...events,
     ...companions,
     ...stories,
+    ...places,
+    ?seerah,
+    ...seerahChapters,
+    ...seerahTopics,
+    ...visuals,
   ];
 
   Map<String, Item<T>> _byId<T>(List<Item<T>> items) => {
@@ -86,6 +106,10 @@ class ContentTree {
   late final eventById = _byId(events);
   late final companionById = _byId(companions);
   late final storyById = _byId(stories);
+  late final placeById = _byId(places);
+  late final seerahChapterById = _byId(seerahChapters);
+  late final seerahTopicById = _byId(seerahTopics);
+  late final visualById = _byId(visuals);
 }
 
 /// Reads [files] into a [ContentTree], reporting JSON and schema problems
@@ -232,6 +256,69 @@ ContentTree parseContent(
           reviewOf: (d) => d.review,
           into: tree.events,
         );
+      case 'places.json':
+        list(
+          file: file,
+          def: 'placesFile',
+          key: 'places',
+          kind: ContentKind.place,
+          fromJson: PlacesFileDto.fromJson,
+          itemsOf: (f) => f.places,
+          idOf: (d) => d.id,
+          reviewOf: (d) => d.review,
+          into: tree.places,
+        );
+      case 'release/edition.json':
+        final json = load(file, 'editionFile');
+        if (json != null) {
+          tree.edition = parse(file, () => EditionDto.fromJson(json));
+        }
+      case 'seerah/seerah.json':
+        final json = load(file, 'seerahFile', kind: ContentKind.seerah);
+        final dto = json == null
+            ? null
+            : parse(file, () => SeerahDto.fromJson(json));
+        if (dto != null) {
+          tree.seerah = Item(
+            kind: ContentKind.seerah,
+            id: ContentTree.seerahId,
+            file: file,
+            path: '',
+            raw: json!,
+            dto: dto,
+            review: dto.review,
+          );
+        }
+      case _ when file.startsWith('seerah/chapters/'):
+        _file(
+          tree.seerahChapters,
+          load(file, 'seerahChapterFile', kind: ContentKind.seerahChapter),
+          (json) => parse(file, () => SeerahChapterDto.fromJson(json)),
+          kind: ContentKind.seerahChapter,
+          file: file,
+          idOf: (d) => d.id,
+          reviewOf: (d) => d.review,
+        );
+      case _ when file.startsWith('seerah/topics/'):
+        _file(
+          tree.seerahTopics,
+          load(file, 'seerahTopicFile', kind: ContentKind.seerahTopic),
+          (json) => parse(file, () => SeerahTopicDto.fromJson(json)),
+          kind: ContentKind.seerahTopic,
+          file: file,
+          idOf: (d) => d.id,
+          reviewOf: (d) => d.review,
+        );
+      case _ when file.startsWith('visuals/'):
+        _file(
+          tree.visuals,
+          load(file, 'visualFile', kind: ContentKind.visual),
+          (json) => parse(file, () => VisualDto.fromJson(json)),
+          kind: ContentKind.visual,
+          file: file,
+          idOf: (d) => d.id,
+          reviewOf: (d) => d.review,
+        );
       case _ when file.startsWith('companions/'):
         final json = load(file, 'companionFile', kind: ContentKind.companion);
         final dto = json == null
@@ -290,4 +377,31 @@ ContentTree parseContent(
     }
   }
   return tree;
+}
+
+/// Adds the one-item file [json] (already schema-checked; null if it
+/// failed) to [into].
+void _file<D>(
+  List<Item<D>> into,
+  Map<String, dynamic>? json,
+  D? Function(Map<String, dynamic>) parse, {
+  required ContentKind kind,
+  required String file,
+  required String Function(D) idOf,
+  required ReviewDto Function(D) reviewOf,
+}) {
+  if (json == null) return;
+  final dto = parse(json);
+  if (dto == null) return;
+  into.add(
+    Item(
+      kind: kind,
+      id: idOf(dto),
+      file: file,
+      path: '',
+      raw: json,
+      dto: dto,
+      review: reviewOf(dto),
+    ),
+  );
 }

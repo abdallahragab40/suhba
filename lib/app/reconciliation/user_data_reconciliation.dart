@@ -74,6 +74,8 @@ Future<ReconciliationReport> reconcileUserData({
         final revision = switch (value) {
           FoundSection(:final section) => section.revision,
           FoundChapter(:final chapter) => chapter.revision,
+          FoundSeerahChapter(:final chapter) => chapter.revision,
+          FoundSeerahTopic(:final topic) => topic.revision,
           _ => null,
         };
         if (revision == null) {

@@ -18,7 +18,8 @@
       "needsLocators",
       "fitnaAdjacent"
     ],
-    "authoredBy": "sample-content"
+    "authoredBy": "sample-content",
+    "coverage": "skeleton"
   },
   "references": [
     "isabah",

@@ -7,6 +7,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:siyar_sahaba/core/result/failure.dart';
 import 'package:siyar_sahaba/shared/content/data/asset_content_repository.dart';
 import 'package:siyar_sahaba/shared/content/data/asset_content_source.dart';
+import 'package:siyar_sahaba/shared/content/domain/atlas.dart';
+import 'package:siyar_sahaba/shared/content/domain/content_block.dart';
 import 'package:siyar_sahaba/shared/content/domain/content_format.dart';
 import 'package:siyar_sahaba/shared/content/domain/review.dart';
 
@@ -93,8 +95,27 @@ void main() {
     ]);
     final sources = (await repo.sources()).getOrThrow();
     expect(sources.keys, containsAll(['quran', 'bukhari', 'isabah']));
-    expect((await repo.events()).getOrThrow().keys, ['hijrah', 'badr']);
-    expect((await repo.people()).getOrThrow().keys, ['aisha', 'hafsa']);
+    final events = (await repo.events()).getOrThrow();
+    expect(events.keys, containsAll(['hijrah', 'badr', 'hudaybiyah']));
+    expect(events.keys.first, 'birth-of-the-prophet', reason: 'date order');
+    expect(
+      (await repo.people()).getOrThrow().keys,
+      containsAll(['aisha', 'hafsa', 'muhammad']),
+    );
+    final places = (await repo.places()).getOrThrow();
+    expect(places['makkah']!.location.precision, GeoPrecision.identified);
+    final visuals = (await repo.visuals()).getOrThrow();
+    expect(visuals['hijrah-route']!.type, InfographicType.map);
+    final seerah = (await repo.seerahIndex()).getOrThrow();
+    expect(seerah.chapters, hasLength(12));
+    expect(seerah.topics, hasLength(8));
+    final hijrah = (await repo.seerahChapter('hijrah-to-madinah')).getOrThrow();
+    expect(hijrah.number, 8, reason: 'numbered by the reading order');
+    expect(hijrah.blocks.whereType<InfographicBlock>(), hasLength(2));
+    expect(
+      (await repo.seerahChapter('not-a-chapter')).failureOrNull,
+      isA<NotFoundFailure>(),
+    );
     final stories = (await repo.storyIndex()).getOrThrow();
     expect(stories.map((s) => s.id), ['jam-al-quran', 'the-cave']);
     for (final s in stories) {

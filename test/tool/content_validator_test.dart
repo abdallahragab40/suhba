@@ -341,6 +341,185 @@ void main() {
     });
   });
 
+  group('Revision 4: the Seerah, places and visuals', () {
+    setUp(() => fx.addSeerah());
+
+    Map<String, dynamic> chapter() =>
+        fx.files['seerah/chapters/chapter-a.json']!;
+    Map<String, dynamic> visual() => fx.files['visuals/visual-a.json']!;
+
+    test('the Seerah fixture is valid, with pending work counted', () {
+      final report = validate();
+      expect(report.issues, isEmpty, reason: report.issues.join('\n'));
+      expect(report.pendingByItem.keys, contains('seerahChapter.chapter-a'));
+    });
+
+    test('a passage cannot show a visual that does not exist', () {
+      (chapter()['blocks'] as List).add({
+        'type': 'infographic',
+        'visualId': 'no-such-visual',
+      });
+      expectOnly('V2');
+    });
+
+    test('a chapter outside the reading order is unreachable', () {
+      fx.files['seerah/chapters/chapter-b.json'] =
+          (jsonDecode(jsonEncode(chapter())) as Map<String, dynamic>)
+            ..['id'] = 'chapter-b';
+      expectOnly('V2');
+    });
+
+    test('a chapter needs work-level references', () {
+      chapter()['references'] = <String>[];
+      expectOnly('V3');
+    });
+
+    test('unknown events, places and companions are reported', () {
+      chapter()['eventIds'] = ['no-event'];
+      chapter()['placeIds'] = ['no-place'];
+      chapter()['companionIds'] = ['no-companion'];
+      final report = validate();
+      expect(codes(report), {'V2'});
+      expect(report.issues.where((i) => i.rule == 'V2'), hasLength(3));
+    });
+
+    test('a visual only carries the data of its own type', () {
+      visual()['bands'] = [
+        {
+          'label': {'ar': 'مرحلة'},
+          'date': {'precision': 'year', 'hijriYear': 1},
+          'reliability': 'established',
+          'citations': [
+            {'sourceId': 'bio-a', 'locatorStatus': 'pending'},
+          ],
+        },
+      ];
+      expectOnly('V13');
+    });
+
+    test('a journey can only join places on its map', () {
+      ((visual()['route'] as List)[0] as Map)['to'] = 'place-c';
+      expectOnly('V13');
+    });
+
+    test('each journey leg is a sourced claim', () {
+      ((visual()['route'] as List)[0] as Map)['citations'] = <Object>[];
+      expectOnly('V3');
+    });
+
+    test('a companion timeline visual needs timeline entries', () {
+      fx.files['visuals/visual-b.json'] = {
+        'schemaVersion': 1,
+        'id': 'visual-b',
+        'type': 'timeline',
+        'title': {'ar': 'خط'},
+        'takeaway': {'ar': 'خلاصة'},
+        'review': {'status': 'draft'},
+        'companionId': 'comp-b',
+      };
+      expectOnly('V13');
+    });
+
+    test('a timeline visual names a companion or events (schema)', () {
+      fx.files['visuals/visual-b.json'] = {
+        'schemaVersion': 1,
+        'id': 'visual-b',
+        'type': 'timeline',
+        'title': {'ar': 'خط'},
+        'takeaway': {'ar': 'خلاصة'},
+        'review': {'status': 'draft'},
+      };
+      expectOnly('V1');
+    });
+
+    test('a place needs a citation', () {
+      ((fx.files['places.json']!['places'] as List)[0] as Map)['citations'] =
+          <Object>[];
+      expectOnly('V3');
+    });
+
+    test('an approved chapter may only show approved visuals and places', () {
+      fx.approve('seerahChapter', 'chapter-a', chapter());
+      final report = validate(channel: ContentChannel.published);
+      final v11 = [
+        for (final i in report.issues)
+          if (i.rule == 'V11') i.message,
+      ];
+      expect(v11.join('\n'), contains('visual "visual-a"'));
+      expect(v11.join('\n'), contains('place "place-a"'));
+    });
+
+    test('the draft build writes the Seerah index, chapters and visuals', () {
+      final result = buildContent(
+        fx.toFiles(),
+        schemas,
+        channel: ContentChannel.draft,
+      );
+      expect(
+        result.outputs.keys,
+        containsAll([
+          'seerah/index.json',
+          'seerah/chapters/chapter-a.json',
+          'seerah/topics/topic-a.json',
+          'places.json',
+          'visuals.json',
+        ]),
+      );
+      final index =
+          jsonDecode(result.outputs['seerah/index.json']!)
+              as Map<String, dynamic>;
+      final summary = (index['chapters'] as List).single as Map;
+      expect(summary['id'], 'chapter-a');
+      expect(summary['wordCount'], 1);
+      final manifest =
+          jsonDecode(result.outputs['manifest.json']!) as Map<String, dynamic>;
+      expect(manifest['seerahChapterCount'], 1);
+      expect(manifest['visualCount'], 1);
+    });
+
+    test('the published build leaves out unapproved chapters and links', () {
+      for (final id in ['quran', 'hadith-a', 'bio-a']) {
+        fx.approve('source', id, fx.source(id));
+      }
+      fx
+        ..approve(
+          'category',
+          'cat-a',
+          fx.list('categories.json', 'categories')[0] as Map<String, dynamic>,
+        )
+        ..approve(
+          'event',
+          'event-a',
+          fx.list('events.json', 'events')[0] as Map<String, dynamic>,
+        )
+        ..approve('companion', 'comp-a', fx.companionA)
+        ..approveSeerah();
+      // The essay goes back to draft: it must vanish, links and all.
+      fx.files['seerah/topics/topic-a.json']!['review'] = {'status': 'draft'};
+      fx.files.remove('reviews/seerahTopic.topic-a.json');
+      final result = buildContent(
+        fx.toFiles(),
+        schemas,
+        channel: ContentChannel.published,
+      );
+      expect(
+        result.report.hasErrors,
+        isFalse,
+        reason: result.report.issues.join('\n'),
+      );
+      expect(result.outputs.keys, contains('seerah/chapters/chapter-a.json'));
+      expect(
+        result.outputs.keys,
+        isNot(contains('seerah/topics/topic-a.json')),
+      );
+      final index =
+          jsonDecode(result.outputs['seerah/index.json']!)
+              as Map<String, dynamic>;
+      expect((index['seerah'] as Map)['topicIds'], isEmpty);
+      expect(index['topics'], isEmpty);
+    });
+  });
+
   group('publication', () {
     void approveAll() {
       for (final id in ['quran', 'hadith-a', 'bio-a']) {

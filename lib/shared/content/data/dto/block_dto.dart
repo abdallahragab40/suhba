@@ -55,6 +55,14 @@ sealed class ContentBlockDto with _$ContentBlockDto {
     required List<OpinionDto> opinions,
   }) = DisputeNoteBlockDto;
 
+  const factory ContentBlockDto.heading({required LocalizedTextDto text}) =
+      HeadingBlockDto;
+
+  const factory ContentBlockDto.infographic({
+    required String visualId,
+    LocalizedTextDto? caption,
+  }) = InfographicBlockDto;
+
   factory ContentBlockDto.fromJson(Map<String, dynamic> json) =>
       _$ContentBlockDtoFromJson(json);
 }

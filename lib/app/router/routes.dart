@@ -6,7 +6,9 @@
 abstract final class AppRoutes {
   // Tab roots.
   static const home = '/home';
+  static const seerah = '/seerah';
   static const companions = '/companions';
+  static const explore = '/explore';
   static const saved = '/saved';
 
   /// Finished reading, under Saved.
@@ -34,6 +36,16 @@ abstract final class AppRoutes {
   static String story(String id) => '$stories/${_id(id)}';
   static String chapter(String storyId, String chapterId) =>
       '${story(storyId)}/chapters/${_id(chapterId)}';
+
+  // The Seerah (Revision 4).
+  static String seerahChapter(String id) => '$seerah/chapters/${_id(id)}';
+  static String seerahTopic(String id) => '$seerah/topics/${_id(id)}';
+  static const seerahTimeline = '$seerah/timeline';
+
+  // Shared records, opened above the tabs so back returns to the origin.
+  static String event(String id) => '/events/${_id(id)}';
+  static String place(String id) => '/places/${_id(id)}';
+  static String visual(String id) => '/visuals/${_id(id)}';
 
   // Sources, search and settings pages (M2–M4).
   static String source(String id) => '/sources/${_id(id)}';

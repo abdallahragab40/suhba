@@ -4,7 +4,16 @@ import 'package:siyar_sahaba/shared/content/domain/content_target.dart';
 part 'bookmark.freezed.dart';
 
 /// What can be saved.
-enum BookmarkTarget { companion, section, story, chapter }
+///
+/// Stored by name: add values, never rename them.
+enum BookmarkTarget {
+  companion,
+  section,
+  story,
+  chapter,
+  seerahChapter,
+  seerahTopic,
+}
 
 @freezed
 abstract class Bookmark with _$Bookmark {
@@ -24,6 +33,8 @@ abstract class Bookmark with _$Bookmark {
   ContentTarget? get contentTarget => switch (target) {
     BookmarkTarget.companion => ContentTarget.companion(targetId),
     BookmarkTarget.story => ContentTarget.story(targetId),
+    BookmarkTarget.seerahChapter => ContentTarget.seerahChapter(targetId),
+    BookmarkTarget.seerahTopic => ContentTarget.seerahTopic(targetId),
     BookmarkTarget.section when parentId != null => ContentTarget.section(
       parentId!,
       targetId,

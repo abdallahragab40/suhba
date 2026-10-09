@@ -18,7 +18,8 @@
       "needsLocators",
       "needsSourceText"
     ],
-    "authoredBy": "sample-content"
+    "authoredBy": "sample-content",
+    "coverage": "sample"
   },
   "references": [
     "isabah",

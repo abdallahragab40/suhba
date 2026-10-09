@@ -8,6 +8,6 @@
 /// current models and a fixture that proves the migration; there is none
 /// today, so only the current version is accepted.
 abstract final class ContentFormat {
-  static const current = 1;
+  static const current = 2;
   static const supported = {current};
 }

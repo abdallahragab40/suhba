@@ -19,7 +19,8 @@
     "editorialFlags": [
       "needsLocators"
     ],
-    "authoredBy": "sample-content"
+    "authoredBy": "sample-content",
+    "coverage": "sample"
   },
   "chapters": [
     {

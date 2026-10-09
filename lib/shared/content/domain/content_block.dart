@@ -63,6 +63,17 @@ sealed class ContentBlock with _$ContentBlock {
     required LocalizedText text,
     required List<Opinion> opinions,
   }) = DisputeNoteBlock;
+
+  /// A subheading inside a long passage. Not a claim.
+  const factory ContentBlock.heading({required LocalizedText text}) =
+      HeadingBlock;
+
+  /// A visual shown inside the passage. Its facts are sourced in the
+  /// visual itself (see `Infographic`).
+  const factory ContentBlock.infographic({
+    required String visualId,
+    LocalizedText? caption,
+  }) = InfographicBlock;
 }
 
 extension ContentBlockCitations on ContentBlock {
@@ -74,6 +85,42 @@ extension ContentBlockCitations on ContentBlock {
     DisputeNoteBlock(:final opinions) => [
       for (final o in opinions) ...o.citations,
     ],
-    LessonBlock() || QuranQuoteBlock() => const [],
+    LessonBlock() ||
+    QuranQuoteBlock() ||
+    HeadingBlock() ||
+    InfographicBlock() => const [],
   };
 }
+
+/// The readable prose of [blocks], one string per piece: paragraphs,
+/// lessons, dispute notes and their opinions, and quotes whose text is
+/// complete. A quote still pending from its source contributes nothing:
+/// neither a placeholder nor its stand-in summary counts as the quote.
+/// Qur'anic verses are referenced, not stored, so they are not here.
+/// Headings are included only when [headings] is true.
+List<String> readableProse(
+  List<ContentBlock> blocks, {
+  bool headings = false,
+}) => [
+  for (final b in blocks)
+    ...switch (b) {
+      ParagraphBlock(:final text) || LessonBlock(:final text) => [text.ar],
+      HadithQuoteBlock(textStatus: TextStatus.complete, :final text?) ||
+      ReportQuoteBlock(
+        textStatus: TextStatus.complete,
+        :final text?,
+      ) => [text.ar],
+      DisputeNoteBlock(:final text, :final opinions) => [
+        text.ar,
+        for (final o in opinions) o.text.ar,
+      ],
+      HeadingBlock(:final text) when headings => [text.ar],
+      _ => const <String>[],
+    },
+];
+
+/// How many words of readable prose [blocks] hold (see [readableProse]).
+int proseWordCount(List<ContentBlock> blocks) => [
+  for (final text in readableProse(blocks))
+    ...text.split(RegExp(r'\s+')).where((w) => w.isNotEmpty),
+].length;

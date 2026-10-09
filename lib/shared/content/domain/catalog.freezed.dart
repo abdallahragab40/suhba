@@ -372,7 +372,9 @@ $ContentBlockCopyWith<$Res>? get basis {
 /// @nodoc
 mixin _$HistoricalEvent {
 
- String get id; LocalizedText get name; EventType get type; HistoricalDate get date; LocalizedText get summary; Reliability get reliability; List<Citation> get citations; ReviewInfo get review; LocalizedText? get place; List<PersonRef> get participants;
+ String get id; LocalizedText get name; EventType get type; HistoricalDate get date; LocalizedText get summary; Reliability get reliability; List<Citation> get citations; ReviewInfo get review; LocalizedText? get place; List<PersonRef> get participants;/// Where it happened (`HistoricalPlace` ids).
+ List<String> get placeIds;/// What led to it, and what came of it.
+ LocalizedText? get context; LocalizedText? get outcome;
 /// Create a copy of HistoricalEvent
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -383,16 +385,16 @@ $HistoricalEventCopyWith<HistoricalEvent> get copyWith => _$HistoricalEventCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is HistoricalEvent&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.type, type) || other.type == type)&&(identical(other.date, date) || other.date == date)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.reliability, reliability) || other.reliability == reliability)&&const DeepCollectionEquality().equals(other.citations, citations)&&(identical(other.review, review) || other.review == review)&&(identical(other.place, place) || other.place == place)&&const DeepCollectionEquality().equals(other.participants, participants));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is HistoricalEvent&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.type, type) || other.type == type)&&(identical(other.date, date) || other.date == date)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.reliability, reliability) || other.reliability == reliability)&&const DeepCollectionEquality().equals(other.citations, citations)&&(identical(other.review, review) || other.review == review)&&(identical(other.place, place) || other.place == place)&&const DeepCollectionEquality().equals(other.participants, participants)&&const DeepCollectionEquality().equals(other.placeIds, placeIds)&&(identical(other.context, context) || other.context == context)&&(identical(other.outcome, outcome) || other.outcome == outcome));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,id,name,type,date,summary,reliability,const DeepCollectionEquality().hash(citations),review,place,const DeepCollectionEquality().hash(participants));
+int get hashCode => Object.hash(runtimeType,id,name,type,date,summary,reliability,const DeepCollectionEquality().hash(citations),review,place,const DeepCollectionEquality().hash(participants),const DeepCollectionEquality().hash(placeIds),context,outcome);
 
 @override
 String toString() {
-  return 'HistoricalEvent(id: $id, name: $name, type: $type, date: $date, summary: $summary, reliability: $reliability, citations: $citations, review: $review, place: $place, participants: $participants)';
+  return 'HistoricalEvent(id: $id, name: $name, type: $type, date: $date, summary: $summary, reliability: $reliability, citations: $citations, review: $review, place: $place, participants: $participants, placeIds: $placeIds, context: $context, outcome: $outcome)';
 }
 
 
@@ -403,11 +405,11 @@ abstract mixin class $HistoricalEventCopyWith<$Res>  {
   factory $HistoricalEventCopyWith(HistoricalEvent value, $Res Function(HistoricalEvent) _then) = _$HistoricalEventCopyWithImpl;
 @useResult
 $Res call({
- String id, LocalizedText name, EventType type, HistoricalDate date, LocalizedText summary, Reliability reliability, List<Citation> citations, ReviewInfo review, LocalizedText? place, List<PersonRef> participants
+ String id, LocalizedText name, EventType type, HistoricalDate date, LocalizedText summary, Reliability reliability, List<Citation> citations, ReviewInfo review, LocalizedText? place, List<PersonRef> participants, List<String> placeIds, LocalizedText? context, LocalizedText? outcome
 });
 
 
-$LocalizedTextCopyWith<$Res> get name;$LocalizedTextCopyWith<$Res> get summary;$ReviewInfoCopyWith<$Res> get review;$LocalizedTextCopyWith<$Res>? get place;
+$LocalizedTextCopyWith<$Res> get name;$LocalizedTextCopyWith<$Res> get summary;$ReviewInfoCopyWith<$Res> get review;$LocalizedTextCopyWith<$Res>? get place;$LocalizedTextCopyWith<$Res>? get context;$LocalizedTextCopyWith<$Res>? get outcome;
 
 }
 /// @nodoc
@@ -420,7 +422,7 @@ class _$HistoricalEventCopyWithImpl<$Res>
 
 /// Create a copy of HistoricalEvent
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? type = null,Object? date = null,Object? summary = null,Object? reliability = null,Object? citations = null,Object? review = null,Object? place = freezed,Object? participants = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? type = null,Object? date = null,Object? summary = null,Object? reliability = null,Object? citations = null,Object? review = null,Object? place = freezed,Object? participants = null,Object? placeIds = null,Object? context = freezed,Object? outcome = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -432,7 +434,10 @@ as Reliability,citations: null == citations ? _self.citations : citations // ign
 as List<Citation>,review: null == review ? _self.review : review // ignore: cast_nullable_to_non_nullable
 as ReviewInfo,place: freezed == place ? _self.place : place // ignore: cast_nullable_to_non_nullable
 as LocalizedText?,participants: null == participants ? _self.participants : participants // ignore: cast_nullable_to_non_nullable
-as List<PersonRef>,
+as List<PersonRef>,placeIds: null == placeIds ? _self.placeIds : placeIds // ignore: cast_nullable_to_non_nullable
+as List<String>,context: freezed == context ? _self.context : context // ignore: cast_nullable_to_non_nullable
+as LocalizedText?,outcome: freezed == outcome ? _self.outcome : outcome // ignore: cast_nullable_to_non_nullable
+as LocalizedText?,
   ));
 }
 /// Create a copy of HistoricalEvent
@@ -473,6 +478,30 @@ $LocalizedTextCopyWith<$Res>? get place {
 
   return $LocalizedTextCopyWith<$Res>(_self.place!, (value) {
     return _then(_self.copyWith(place: value));
+  });
+}/// Create a copy of HistoricalEvent
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$LocalizedTextCopyWith<$Res>? get context {
+    if (_self.context == null) {
+    return null;
+  }
+
+  return $LocalizedTextCopyWith<$Res>(_self.context!, (value) {
+    return _then(_self.copyWith(context: value));
+  });
+}/// Create a copy of HistoricalEvent
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$LocalizedTextCopyWith<$Res>? get outcome {
+    if (_self.outcome == null) {
+    return null;
+  }
+
+  return $LocalizedTextCopyWith<$Res>(_self.outcome!, (value) {
+    return _then(_self.copyWith(outcome: value));
   });
 }
 }
@@ -556,10 +585,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  LocalizedText name,  EventType type,  HistoricalDate date,  LocalizedText summary,  Reliability reliability,  List<Citation> citations,  ReviewInfo review,  LocalizedText? place,  List<PersonRef> participants)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  LocalizedText name,  EventType type,  HistoricalDate date,  LocalizedText summary,  Reliability reliability,  List<Citation> citations,  ReviewInfo review,  LocalizedText? place,  List<PersonRef> participants,  List<String> placeIds,  LocalizedText? context,  LocalizedText? outcome)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _HistoricalEvent() when $default != null:
-return $default(_that.id,_that.name,_that.type,_that.date,_that.summary,_that.reliability,_that.citations,_that.review,_that.place,_that.participants);case _:
+return $default(_that.id,_that.name,_that.type,_that.date,_that.summary,_that.reliability,_that.citations,_that.review,_that.place,_that.participants,_that.placeIds,_that.context,_that.outcome);case _:
   return orElse();
 
 }
@@ -577,10 +606,10 @@ return $default(_that.id,_that.name,_that.type,_that.date,_that.summary,_that.re
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  LocalizedText name,  EventType type,  HistoricalDate date,  LocalizedText summary,  Reliability reliability,  List<Citation> citations,  ReviewInfo review,  LocalizedText? place,  List<PersonRef> participants)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  LocalizedText name,  EventType type,  HistoricalDate date,  LocalizedText summary,  Reliability reliability,  List<Citation> citations,  ReviewInfo review,  LocalizedText? place,  List<PersonRef> participants,  List<String> placeIds,  LocalizedText? context,  LocalizedText? outcome)  $default,) {final _that = this;
 switch (_that) {
 case _HistoricalEvent():
-return $default(_that.id,_that.name,_that.type,_that.date,_that.summary,_that.reliability,_that.citations,_that.review,_that.place,_that.participants);case _:
+return $default(_that.id,_that.name,_that.type,_that.date,_that.summary,_that.reliability,_that.citations,_that.review,_that.place,_that.participants,_that.placeIds,_that.context,_that.outcome);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -597,10 +626,10 @@ return $default(_that.id,_that.name,_that.type,_that.date,_that.summary,_that.re
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  LocalizedText name,  EventType type,  HistoricalDate date,  LocalizedText summary,  Reliability reliability,  List<Citation> citations,  ReviewInfo review,  LocalizedText? place,  List<PersonRef> participants)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  LocalizedText name,  EventType type,  HistoricalDate date,  LocalizedText summary,  Reliability reliability,  List<Citation> citations,  ReviewInfo review,  LocalizedText? place,  List<PersonRef> participants,  List<String> placeIds,  LocalizedText? context,  LocalizedText? outcome)?  $default,) {final _that = this;
 switch (_that) {
 case _HistoricalEvent() when $default != null:
-return $default(_that.id,_that.name,_that.type,_that.date,_that.summary,_that.reliability,_that.citations,_that.review,_that.place,_that.participants);case _:
+return $default(_that.id,_that.name,_that.type,_that.date,_that.summary,_that.reliability,_that.citations,_that.review,_that.place,_that.participants,_that.placeIds,_that.context,_that.outcome);case _:
   return null;
 
 }
@@ -612,7 +641,7 @@ return $default(_that.id,_that.name,_that.type,_that.date,_that.summary,_that.re
 
 
 class _HistoricalEvent implements HistoricalEvent {
-  const _HistoricalEvent({required this.id, required this.name, required this.type, required this.date, required this.summary, required this.reliability, required final  List<Citation> citations, required this.review, this.place, final  List<PersonRef> participants = const <PersonRef>[]}): _citations = citations,_participants = participants;
+  const _HistoricalEvent({required this.id, required this.name, required this.type, required this.date, required this.summary, required this.reliability, required final  List<Citation> citations, required this.review, this.place, final  List<PersonRef> participants = const <PersonRef>[], final  List<String> placeIds = const <String>[], this.context, this.outcome}): _citations = citations,_participants = participants,_placeIds = placeIds;
   
 
 @override final  String id;
@@ -637,6 +666,18 @@ class _HistoricalEvent implements HistoricalEvent {
   return EqualUnmodifiableListView(_participants);
 }
 
+/// Where it happened (`HistoricalPlace` ids).
+ final  List<String> _placeIds;
+/// Where it happened (`HistoricalPlace` ids).
+@override@JsonKey() List<String> get placeIds {
+  if (_placeIds is EqualUnmodifiableListView) return _placeIds;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_placeIds);
+}
+
+/// What led to it, and what came of it.
+@override final  LocalizedText? context;
+@override final  LocalizedText? outcome;
 
 /// Create a copy of HistoricalEvent
 /// with the given fields replaced by the non-null parameter values.
@@ -648,16 +689,16 @@ _$HistoricalEventCopyWith<_HistoricalEvent> get copyWith => __$HistoricalEventCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _HistoricalEvent&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.type, type) || other.type == type)&&(identical(other.date, date) || other.date == date)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.reliability, reliability) || other.reliability == reliability)&&const DeepCollectionEquality().equals(other._citations, _citations)&&(identical(other.review, review) || other.review == review)&&(identical(other.place, place) || other.place == place)&&const DeepCollectionEquality().equals(other._participants, _participants));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _HistoricalEvent&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.type, type) || other.type == type)&&(identical(other.date, date) || other.date == date)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.reliability, reliability) || other.reliability == reliability)&&const DeepCollectionEquality().equals(other._citations, _citations)&&(identical(other.review, review) || other.review == review)&&(identical(other.place, place) || other.place == place)&&const DeepCollectionEquality().equals(other._participants, _participants)&&const DeepCollectionEquality().equals(other._placeIds, _placeIds)&&(identical(other.context, context) || other.context == context)&&(identical(other.outcome, outcome) || other.outcome == outcome));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,id,name,type,date,summary,reliability,const DeepCollectionEquality().hash(_citations),review,place,const DeepCollectionEquality().hash(_participants));
+int get hashCode => Object.hash(runtimeType,id,name,type,date,summary,reliability,const DeepCollectionEquality().hash(_citations),review,place,const DeepCollectionEquality().hash(_participants),const DeepCollectionEquality().hash(_placeIds),context,outcome);
 
 @override
 String toString() {
-  return 'HistoricalEvent(id: $id, name: $name, type: $type, date: $date, summary: $summary, reliability: $reliability, citations: $citations, review: $review, place: $place, participants: $participants)';
+  return 'HistoricalEvent(id: $id, name: $name, type: $type, date: $date, summary: $summary, reliability: $reliability, citations: $citations, review: $review, place: $place, participants: $participants, placeIds: $placeIds, context: $context, outcome: $outcome)';
 }
 
 
@@ -668,11 +709,11 @@ abstract mixin class _$HistoricalEventCopyWith<$Res> implements $HistoricalEvent
   factory _$HistoricalEventCopyWith(_HistoricalEvent value, $Res Function(_HistoricalEvent) _then) = __$HistoricalEventCopyWithImpl;
 @override @useResult
 $Res call({
- String id, LocalizedText name, EventType type, HistoricalDate date, LocalizedText summary, Reliability reliability, List<Citation> citations, ReviewInfo review, LocalizedText? place, List<PersonRef> participants
+ String id, LocalizedText name, EventType type, HistoricalDate date, LocalizedText summary, Reliability reliability, List<Citation> citations, ReviewInfo review, LocalizedText? place, List<PersonRef> participants, List<String> placeIds, LocalizedText? context, LocalizedText? outcome
 });
 
 
-@override $LocalizedTextCopyWith<$Res> get name;@override $LocalizedTextCopyWith<$Res> get summary;@override $ReviewInfoCopyWith<$Res> get review;@override $LocalizedTextCopyWith<$Res>? get place;
+@override $LocalizedTextCopyWith<$Res> get name;@override $LocalizedTextCopyWith<$Res> get summary;@override $ReviewInfoCopyWith<$Res> get review;@override $LocalizedTextCopyWith<$Res>? get place;@override $LocalizedTextCopyWith<$Res>? get context;@override $LocalizedTextCopyWith<$Res>? get outcome;
 
 }
 /// @nodoc
@@ -685,7 +726,7 @@ class __$HistoricalEventCopyWithImpl<$Res>
 
 /// Create a copy of HistoricalEvent
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? type = null,Object? date = null,Object? summary = null,Object? reliability = null,Object? citations = null,Object? review = null,Object? place = freezed,Object? participants = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? type = null,Object? date = null,Object? summary = null,Object? reliability = null,Object? citations = null,Object? review = null,Object? place = freezed,Object? participants = null,Object? placeIds = null,Object? context = freezed,Object? outcome = freezed,}) {
   return _then(_HistoricalEvent(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -697,7 +738,10 @@ as Reliability,citations: null == citations ? _self._citations : citations // ig
 as List<Citation>,review: null == review ? _self.review : review // ignore: cast_nullable_to_non_nullable
 as ReviewInfo,place: freezed == place ? _self.place : place // ignore: cast_nullable_to_non_nullable
 as LocalizedText?,participants: null == participants ? _self._participants : participants // ignore: cast_nullable_to_non_nullable
-as List<PersonRef>,
+as List<PersonRef>,placeIds: null == placeIds ? _self._placeIds : placeIds // ignore: cast_nullable_to_non_nullable
+as List<String>,context: freezed == context ? _self.context : context // ignore: cast_nullable_to_non_nullable
+as LocalizedText?,outcome: freezed == outcome ? _self.outcome : outcome // ignore: cast_nullable_to_non_nullable
+as LocalizedText?,
   ));
 }
 
@@ -739,6 +783,30 @@ $LocalizedTextCopyWith<$Res>? get place {
 
   return $LocalizedTextCopyWith<$Res>(_self.place!, (value) {
     return _then(_self.copyWith(place: value));
+  });
+}/// Create a copy of HistoricalEvent
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$LocalizedTextCopyWith<$Res>? get context {
+    if (_self.context == null) {
+    return null;
+  }
+
+  return $LocalizedTextCopyWith<$Res>(_self.context!, (value) {
+    return _then(_self.copyWith(context: value));
+  });
+}/// Create a copy of HistoricalEvent
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$LocalizedTextCopyWith<$Res>? get outcome {
+    if (_self.outcome == null) {
+    return null;
+  }
+
+  return $LocalizedTextCopyWith<$Res>(_self.outcome!, (value) {
+    return _then(_self.copyWith(outcome: value));
   });
 }
 }

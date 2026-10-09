@@ -49,3 +49,7 @@ app.*.map.json
 
 # Golden-test failure output (regenerated on every failing run)
 **/failures/
+
+# Documentation and plans stay local (not committed)
+*.md
+/docs/

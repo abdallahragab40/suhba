@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "id": "mercy",
+  "title": {
+    "ar": "رحمته ﷺ"
+  },
+  "abstract": {
+    "ar": "رحمة النبي ﷺ بالناس جميعًا: بالصغير والضعيف، وبمن آذاه، كما وصفه القرآن."
+  },
+  "references": [
+    "quran",
+    "bukhari",
+    "muslim"
+  ],
+  "chapterIds": [
+    "taif-to-aqabah",
+    "hudaybiyah-conquest-delegations"
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وصف القرآن النبي ﷺ بأنه رحمة للعالمين، وبأنه حريص على الناس رؤوف رحيم بالمؤمنين."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 21,
+            "ayahFrom": 107
+          }
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 9,
+            "ayahFrom": 128
+          }
+        }
+      ]
+    },
+    {
+      "type": "quranQuote",
+      "ref": {
+        "surah": 21,
+        "ayahFrom": 107
+      }
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان يقبّل الحسن والحسين ويحملهما، ولما تعجّب رجل من ذلك أخبره أن من لا يرحم لا يُرحم."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان يخفّف الصلاة إذا سمع بكاء صبي رحمةً بأمه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وبعد أشد ما لقيه في الطائف لم يدعُ على أهلها، بل رجا أن يُخرج الله من ذرياتهم من يعبده."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "text": {
+        "ar": "رحمته ﷺ لم تكن عاطفة عابرة، بل منهجًا في التعليم والدعوة والحكم؛ وأولى الناس بها الضعفاء ومن يحتاجون إلى الصبر عليهم."
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators",
+      "needsSourceText"
+    ],
+    "authoredBy": "draft-revision-4",
+    "coverage": "sample"
+  }
+}

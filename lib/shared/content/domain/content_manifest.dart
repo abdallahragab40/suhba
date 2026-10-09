@@ -14,6 +14,10 @@ abstract class ContentManifest with _$ContentManifest {
     required int storyCount,
     required int approvedCount,
     required int unapprovedCount,
+    @Default(0) int seerahChapterCount,
+    @Default(0) int seerahTopicCount,
+    @Default(0) int placeCount,
+    @Default(0) int visualCount,
   }) = _ContentManifest;
 
   const ContentManifest._();

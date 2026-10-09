@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "id": "madinan-events",
+  "title": {
+    "ar": "أحداث العهد المدني"
+  },
+  "abstract": {
+    "ar": "حياة المدينة اليومية إلى جانب المواجهة مع قريش: بدر وأحد والخندق، وما نزل فيها من القرآن."
+  },
+  "era": "madinan",
+  "date": {
+    "precision": "range",
+    "era": "afterHijra",
+    "hijriYear": 2,
+    "gregorianYear": 624,
+    "hijriYearEnd": 5,
+    "gregorianYearEnd": 627
+  },
+  "references": [
+    "sirat-ibn-hisham",
+    "tarikh-al-tabari",
+    "bukhari",
+    "muslim"
+  ],
+  "eventIds": [
+    "badr",
+    "uhud",
+    "khandaq"
+  ],
+  "placeIds": [
+    "badr",
+    "uhud",
+    "madinah"
+  ],
+  "companionIds": [
+    "ali"
+  ],
+  "visualIds": [
+    "seerah-timeline"
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "لم تكن المدينة في هذه السنوات ساحة حرب فقط؛ فقد فُرض صيام رمضان، وشُرعت الزكاة، وتوسّع تعليم القرآن، وتزوّج علي بفاطمة بنت النبي ﷺ."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "text": {
+        "ar": "بدر"
+      }
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وفي رمضان من السنة الثانية خرج النبي ﷺ ومعه بضعة عشر وثلاثمائة رجل يريدون عير قريش، فنجت العير، وخرجت قريش في نحو ألف، فالتقوا عند بدر، فنصر الله المسلمين."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 3,
+            "ayahFrom": 123
+          }
+        }
+      ]
+    },
+    {
+      "type": "quranQuote",
+      "ref": {
+        "surah": 3,
+        "ayahFrom": 123
+      }
+    },
+    {
+      "type": "heading",
+      "text": {
+        "ar": "أحد"
+      }
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وفي السنة الثالثة جاءت قريش تطلب الثأر، فالتقوا عند جبل أحد. وكان النبي ﷺ قد أمر الرماة ألا يبرحوا مكانهم، فلما رأى أكثرهم انكشاف المشركين نزلوا، فالتفّ المشركون على المسلمين، وأصابهم ما أصابهم، واستُشهد حمزة وعدد من الصحابة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 3,
+            "ayahFrom": 152
+          }
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "text": {
+        "ar": "الخندق"
+      }
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ثم تحزّبت قريش وقبائل معها على المدينة، فحفر المسلمون خندقًا من جهتها المكشوفة، وعمل النبي ﷺ في الحفر بيده، وحوصرت المدينة مدة، ثم أرسل الله على الأحزاب ريحًا وجنودًا فانصرفوا."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 33,
+            "ayahFrom": 9,
+            "ayahTo": 10
+          }
+        }
+      ]
+    },
+    {
+      "type": "disputeNote",
+      "text": {
+        "ar": "في سنة غزوة الخندق قولان."
+      },
+      "opinions": [
+        {
+          "text": {
+            "ar": "أنها في شوال من السنة الخامسة، وهو قول ابن إسحاق وأكثر أهل السير."
+          },
+          "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "text": {
+            "ar": "أنها في السنة الرابعة، وهو قول موسى بن عقبة، ونقله البخاري."
+          },
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وتفاصيل هذه الأحداث، بتواريخها ومواضعها ومن شهدها، في سجل الأحداث."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "text": {
+        "ar": "وازن العهد المدني بين بناء الحياة اليومية والدفاع عن الجماعة؛ وفي أحد درس بليغ في أن مخالفة الأمر في لحظة قد تغيّر مسار يوم كامل."
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators",
+      "needsSourceText"
+    ],
+    "authoredBy": "draft-revision-4",
+    "coverage": "sample"
+  }
+}

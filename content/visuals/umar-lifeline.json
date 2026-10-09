@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "umar-lifeline",
+  "type": "timeline",
+  "title": {
+    "ar": "حياة عمر بن الخطاب على خط الزمن"
+  },
+  "takeaway": {
+    "ar": "تقع خلافة عمر بعد أبي بكر، وهي أطول خلافة بين الخلفاء الثلاثة الأوائل."
+  },
+  "notes": [
+    {
+      "ar": "هذه سيرة تجريبية قصيرة لم تكتمل بعد."
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators"
+    ],
+    "authoredBy": "draft-revision-4"
+  },
+  "companionId": "umar"
+}

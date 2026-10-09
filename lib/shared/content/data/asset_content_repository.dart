@@ -2,15 +2,20 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:siyar_sahaba/core/result/failure.dart';
 import 'package:siyar_sahaba/core/result/result.dart';
 import 'package:siyar_sahaba/shared/content/data/asset_content_source.dart';
+import 'package:siyar_sahaba/shared/content/data/dto/atlas_dto.dart';
 import 'package:siyar_sahaba/shared/content/data/dto/catalog_dto.dart';
 import 'package:siyar_sahaba/shared/content/data/dto/companion_dto.dart';
+import 'package:siyar_sahaba/shared/content/data/dto/seerah_dto.dart';
 import 'package:siyar_sahaba/shared/content/data/dto/story_dto.dart';
 import 'package:siyar_sahaba/shared/content/data/mappers/content_mappers.dart';
+import 'package:siyar_sahaba/shared/content/data/mappers/seerah_mappers.dart';
+import 'package:siyar_sahaba/shared/content/domain/atlas.dart';
 import 'package:siyar_sahaba/shared/content/domain/catalog.dart';
 import 'package:siyar_sahaba/shared/content/domain/companion.dart';
 import 'package:siyar_sahaba/shared/content/domain/content_format.dart';
 import 'package:siyar_sahaba/shared/content/domain/content_manifest.dart';
 import 'package:siyar_sahaba/shared/content/domain/content_repository.dart';
+import 'package:siyar_sahaba/shared/content/domain/seerah.dart';
 import 'package:siyar_sahaba/shared/content/domain/story.dart';
 
 /// [ContentRepository] over the bundled assets. Each file is read and parsed
@@ -88,6 +93,65 @@ class AssetContentRepository implements ContentRepository {
       for (final p in PeopleFileDto.fromJson(json).people) p.id: p.toDomain(),
     },
   );
+
+  @override
+  Future<Result<SeerahIndex>> seerahIndex() => _load(
+    'seerah/index.json',
+    (json) => SeerahIndexDto.fromJson(json).toDomain(),
+  );
+
+  @override
+  Future<Result<SeerahChapter>> seerahChapter(String id) => _numbered(
+    id,
+    'seerah/chapters/$id.json',
+    (index) => index.chapters.map((c) => c.id),
+    (json, number) => SeerahChapterDto.fromJson(json).toDomain(number: number),
+  );
+
+  @override
+  Future<Result<SeerahTopic>> seerahTopic(String id) => _numbered(
+    id,
+    'seerah/topics/$id.json',
+    (index) => index.topics.map((t) => t.id),
+    (json, number) => SeerahTopicDto.fromJson(json).toDomain(number: number),
+  );
+
+  @override
+  Future<Result<Map<String, HistoricalPlace>>> places() => _load(
+    'places.json',
+    (json) => {
+      for (final p in PlacesFileDto.fromJson(json).places) p.id: p.toDomain(),
+    },
+  );
+
+  @override
+  Future<Result<Map<String, Infographic>>> visuals() => _load(
+    'visuals.json',
+    (json) => {
+      for (final v in VisualsFileDto.fromJson(json).visuals) v.id: v.toDomain(),
+    },
+  );
+
+  /// A chapter or topic, numbered by its place in the Seerah index. One
+  /// that is not in the index is not part of the section: not found.
+  Future<Result<T>> _numbered<T>(
+    String id,
+    String path,
+    Iterable<String> Function(SeerahIndex) order,
+    T Function(Map<String, dynamic>, int number) parse,
+  ) async {
+    final index = await seerahIndex();
+    switch (index) {
+      case Err(:final failure):
+        return Err(failure);
+      case Ok(:final value):
+        final position = order(value).toList().indexOf(id);
+        if (position < 0) {
+          return Err(NotFoundFailure('"$id" is not in the Seerah index'));
+        }
+        return _byId(id, path, (json) => parse(json, position + 1));
+    }
+  }
 
   /// IDs come from routes and deep links: only well-formed slugs may become
   /// file paths.

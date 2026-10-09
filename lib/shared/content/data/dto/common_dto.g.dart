@@ -311,29 +311,36 @@ Map<String, dynamic> _$FactDtoToJson(_FactDto instance) => <String, dynamic>{
   'citations': instance.citations.map((e) => e.toJson()).toList(),
 };
 
-_ReviewDto _$ReviewDtoFromJson(Map<String, dynamic> json) =>
-    $checkedCreate('_ReviewDto', json, ($checkedConvert) {
-      $checkKeys(
-        json,
-        allowedKeys: const ['status', 'editorialFlags', 'authoredBy'],
-      );
-      final val = _ReviewDto(
-        status: $checkedConvert(
-          'status',
-          (v) => $enumDecode(_$ReviewStatusEnumMap, v),
-        ),
-        editorialFlags: $checkedConvert(
-          'editorialFlags',
-          (v) =>
-              (v as List<dynamic>?)
-                  ?.map((e) => $enumDecode(_$EditorialFlagEnumMap, e))
-                  .toList() ??
-              const <EditorialFlag>[],
-        ),
-        authoredBy: $checkedConvert('authoredBy', (v) => v as String?),
-      );
-      return val;
-    });
+_ReviewDto _$ReviewDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
+  '_ReviewDto',
+  json,
+  ($checkedConvert) {
+    $checkKeys(
+      json,
+      allowedKeys: const ['status', 'editorialFlags', 'coverage', 'authoredBy'],
+    );
+    final val = _ReviewDto(
+      status: $checkedConvert(
+        'status',
+        (v) => $enumDecode(_$ReviewStatusEnumMap, v),
+      ),
+      editorialFlags: $checkedConvert(
+        'editorialFlags',
+        (v) =>
+            (v as List<dynamic>?)
+                ?.map((e) => $enumDecode(_$EditorialFlagEnumMap, e))
+                .toList() ??
+            const <EditorialFlag>[],
+      ),
+      coverage: $checkedConvert(
+        'coverage',
+        (v) => $enumDecodeNullable(_$CoverageEnumMap, v),
+      ),
+      authoredBy: $checkedConvert('authoredBy', (v) => v as String?),
+    );
+    return val;
+  },
+);
 
 Map<String, dynamic> _$ReviewDtoToJson(_ReviewDto instance) =>
     <String, dynamic>{
@@ -341,6 +348,7 @@ Map<String, dynamic> _$ReviewDtoToJson(_ReviewDto instance) =>
       'editorialFlags': instance.editorialFlags
           .map((e) => _$EditorialFlagEnumMap[e]!)
           .toList(),
+      'coverage': ?_$CoverageEnumMap[instance.coverage],
       'authoredBy': ?instance.authoredBy,
     };
 
@@ -356,6 +364,12 @@ const _$EditorialFlagEnumMap = {
   EditorialFlag.fitnaAdjacent: 'fitnaAdjacent',
   EditorialFlag.needsLocators: 'needsLocators',
   EditorialFlag.needsSourceText: 'needsSourceText',
+};
+
+const _$CoverageEnumMap = {
+  Coverage.skeleton: 'skeleton',
+  Coverage.sample: 'sample',
+  Coverage.complete: 'complete',
 };
 
 _PersonRefDto _$PersonRefDtoFromJson(Map<String, dynamic> json) =>
@@ -423,6 +437,7 @@ const _$RelationTypeEnumMap = {
   RelationType.teacher: 'teacher',
   RelationType.student: 'student',
   RelationType.brotherhood: 'brotherhood',
+  RelationType.companion: 'companion',
 };
 
 _MembershipDto _$MembershipDtoFromJson(Map<String, dynamic> json) =>

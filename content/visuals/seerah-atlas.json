@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "seerah-atlas",
+  "type": "map",
+  "title": {
+    "ar": "أماكن السيرة"
+  },
+  "takeaway": {
+    "ar": "جرت أكثر أحداث السيرة في الحجاز: من مكة والطائف جنوبًا، إلى المدينة وخيبر، حتى تبوك في الشمال."
+  },
+  "notes": [
+    {
+      "ar": "الخريطة تخطيطية، والمواضع المعلَّمة بالتقريب لا يُعرف مكانها الدقيق."
+    },
+    {
+      "ar": "الحبشة وبيت المقدس خارج هذه الخريطة؛ ولكل منهما صفحته في الأطلس."
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators"
+    ],
+    "authoredBy": "draft-revision-4"
+  },
+  "placeIds": [
+    "makkah",
+    "taif",
+    "al-hudaybiyah",
+    "badr",
+    "madinah",
+    "khaybar",
+    "tabuk"
+  ]
+}

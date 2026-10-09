@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "id": "abu-bakr-family",
+  "type": "relationships",
+  "title": {
+    "ar": "أبو بكر وأهل بيته في الهجرة"
+  },
+  "takeaway": {
+    "ar": "كان بيت أبي بكر كله في خدمة الهجرة: ابنتاه عائشة وأسماء، وابنه عبد الله، إلى جانب صحبته للنبي ﷺ."
+  },
+  "notes": [
+    {
+      "ar": "الصلات هنا صلات نسب وزواج وصحبة ثابتة بمصادرها؛ ولا يُستنتج من مجرد الاشتراك في حدث صلة أخرى."
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators"
+    ],
+    "authoredBy": "draft-revision-4"
+  },
+  "edges": [
+    {
+      "from": {
+        "displayName": {
+          "ar": "محمد رسول الله"
+        },
+        "personId": "muhammad"
+      },
+      "to": {
+        "displayName": {
+          "ar": "أبو بكر الصديق"
+        },
+        "companionId": "abu-bakr"
+      },
+      "type": "companion",
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 9,
+            "ayahFrom": 40
+          }
+        }
+      ],
+      "note": {
+        "ar": "صاحبه في الغار."
+      }
+    },
+    {
+      "from": {
+        "displayName": {
+          "ar": "أبو بكر الصديق"
+        },
+        "companionId": "abu-bakr"
+      },
+      "to": {
+        "displayName": {
+          "ar": "عائشة بنت أبي بكر"
+        },
+        "personId": "aisha"
+      },
+      "type": "child",
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "from": {
+        "displayName": {
+          "ar": "أبو بكر الصديق"
+        },
+        "companionId": "abu-bakr"
+      },
+      "to": {
+        "displayName": {
+          "ar": "أسماء بنت أبي بكر"
+        },
+        "personId": "asma-bint-abi-bakr"
+      },
+      "type": "child",
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "from": {
+        "displayName": {
+          "ar": "أبو بكر الصديق"
+        },
+        "companionId": "abu-bakr"
+      },
+      "to": {
+        "displayName": {
+          "ar": "عبد الله بن أبي بكر"
+        },
+        "personId": "abdullah-ibn-abi-bakr"
+      },
+      "type": "child",
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "from": {
+        "displayName": {
+          "ar": "محمد رسول الله"
+        },
+        "personId": "muhammad"
+      },
+      "to": {
+        "displayName": {
+          "ar": "عائشة بنت أبي بكر"
+        },
+        "personId": "aisha"
+      },
+      "type": "spouse",
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "pending"
+        }
+      ]
+    }
+  ]
+}

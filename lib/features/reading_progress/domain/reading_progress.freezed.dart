@@ -14,7 +14,8 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ReadingProgress {
 
- ProgressTarget get target; String get targetId;/// The companion of a section, or the story of a chapter.
+ ProgressTarget get target; String get targetId;/// The companion of a section, the story of a chapter, or
+/// [seerahParentId] for the Seerah.
  String get parentId;/// 0–1, the share of the text scrolled through.
  double get fraction; bool get completed; String get contentVersion; DateTime get updatedAt;/// The passage's content revision when the position was recorded
 /// (`BiographySection.revision`, `StoryChapter.revision`). Null for
@@ -227,7 +228,8 @@ class _ReadingProgress extends ReadingProgress {
 
 @override final  ProgressTarget target;
 @override final  String targetId;
-/// The companion of a section, or the story of a chapter.
+/// The companion of a section, the story of a chapter, or
+/// [seerahParentId] for the Seerah.
 @override final  String parentId;
 /// 0–1, the share of the text scrolled through.
 @override final  double fraction;

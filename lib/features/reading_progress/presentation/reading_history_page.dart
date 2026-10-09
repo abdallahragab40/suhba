@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:siyar_sahaba/app/router/routes.dart';
 import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
 import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
 import 'package:siyar_sahaba/core/design_system/widgets/empty_state.dart';
@@ -13,7 +12,7 @@ import 'package:siyar_sahaba/features/reading_progress/domain/reading_progress.d
 import 'package:siyar_sahaba/features/reading_progress/presentation/continue_reading.dart';
 import 'package:siyar_sahaba/features/reading_progress/presentation/progress_providers.dart';
 import 'package:siyar_sahaba/shared/content/domain/content_target.dart';
-import 'package:siyar_sahaba/shared/content/presentation/content_text.dart';
+import 'package:siyar_sahaba/shared/content/presentation/target_description.dart';
 import 'package:siyar_sahaba/shared/content/providers.dart';
 
 /// Finished reading, most recent first (E10). Each passage opens again, or
@@ -66,19 +65,15 @@ class _HistoryTile extends ConsumerWidget {
     final p = progress;
     final lookup = ref.watch(targetLookupProvider(p.contentTarget));
 
-    final (String? title, String? parent, String? route) = switch (lookup) {
-      AsyncData(value: FoundSection(:final companion, :final section)) => (
-        section.title.of(context),
-        companion.name.of(context),
-        AppRoutes.section(companion.id, section.id),
-      ),
-      AsyncData(value: FoundChapter(:final story, :final chapter)) => (
-        chapter.title.of(context),
-        story.title.of(context),
-        AppRoutes.chapter(story.id, chapter.id),
-      ),
-      _ => (null, null, null),
+    final description = switch (lookup) {
+      AsyncData(:final value) => describeTarget(context, value),
+      _ => null,
     };
+    final (String? title, String? parent, String? route) = (
+      description?.title,
+      description?.parent,
+      description?.route,
+    );
     // Gone from the content: the content reconciliation removes it.
     if (lookup case AsyncData(value: TargetMissing())) {
       return const SizedBox.shrink();

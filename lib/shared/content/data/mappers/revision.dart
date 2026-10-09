@@ -12,5 +12,8 @@ String contentRevision(Map<String, Object?> json) {
   for (final byte in utf8.encode(jsonEncode(json))) {
     hash = (hash ^ byte) * 0x100000001b3;
   }
-  return hash.toUnsigned(64).toRadixString(16).padLeft(16, '0');
+  // Dart ints are signed: print the two 32-bit halves, so a hash with the
+  // top bit set is not written as a negative number.
+  String half(int bits) => bits.toRadixString(16).padLeft(8, '0');
+  return half(hash >>> 32) + half(hash & 0xffffffff);
 }

@@ -19,6 +19,19 @@ enum EditorialFlag {
   needsSourceText,
 }
 
+/// How complete the editor says a text is. It is a statement about the
+/// writing, not an approval: only a reviewer approves.
+enum Coverage {
+  /// Headings or a profile only.
+  skeleton,
+
+  /// A short pilot, not the full treatment.
+  sample,
+
+  /// Written to the editorial brief.
+  complete,
+}
+
 /// Which build of the content the app is running.
 enum ContentChannel {
   /// Development and internal previews: unreviewed items included and
@@ -35,6 +48,9 @@ abstract class ReviewInfo with _$ReviewInfo {
   const factory ReviewInfo({
     required ReviewStatus status,
     @Default(<EditorialFlag>{}) Set<EditorialFlag> editorialFlags,
+
+    /// The editor's coverage statement; null when none was made.
+    Coverage? coverage,
   }) = _ReviewInfo;
 
   const ReviewInfo._();

@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "id": "hudaybiyah-conquest-delegations",
+  "title": {
+    "ar": "الحديبية وفتح مكة والوفود"
+  },
+  "abstract": {
+    "ar": "صلح الحديبية وبيعة الرضوان، وكتب النبي ﷺ إلى الملوك، وخيبر، ثم فتح مكة والعفو عن أهلها، وتبوك، وعام الوفود."
+  },
+  "era": "madinan",
+  "date": {
+    "precision": "range",
+    "era": "afterHijra",
+    "hijriYear": 6,
+    "gregorianYear": 628,
+    "hijriYearEnd": 10,
+    "gregorianYearEnd": 631
+  },
+  "references": [
+    "sirat-ibn-hisham",
+    "tarikh-al-tabari",
+    "bukhari",
+    "muslim"
+  ],
+  "eventIds": [
+    "hudaybiyah",
+    "khaybar",
+    "conquest-of-makkah",
+    "tabuk",
+    "year-of-delegations"
+  ],
+  "placeIds": [
+    "al-hudaybiyah",
+    "khaybar",
+    "makkah",
+    "tabuk"
+  ],
+  "companionIds": [
+    "abu-bakr",
+    "umar",
+    "uthman",
+    "ali"
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "خرج النبي ﷺ في السنة السادسة معتمرًا ومعه نحو ألف وأربعمائة، فمنعتهم قريش، فنزلوا الحديبية، وبايعه أصحابه تحت الشجرة بيعة الرضوان."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 48,
+            "ayahFrom": 18
+          }
+        }
+      ]
+    },
+    {
+      "type": "quranQuote",
+      "ref": {
+        "surah": 48,
+        "ayahFrom": 18
+      }
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ثم عُقد الصلح على أن يرجع المسلمون عامهم ويعتمروا من قابل، وعلى هدنة بين الطرفين، وعلى شروط رآها بعض الصحابة شديدة، وسمّاه القرآن فتحًا مبينًا."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 48,
+            "ayahFrom": 1
+          }
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وفي ظل الهدنة كتب النبي ﷺ إلى الملوك والأمراء يدعوهم إلى الإسلام، ومنهم هرقل ملك الروم، وفتح خيبر في السنة السابعة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "text": {
+        "ar": "الفتح"
+      }
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ثم نقضت قريش العهد بإعانة حلفائها من بني بكر على خزاعة حلفاء النبي ﷺ، فسار إليها في رمضان من السنة الثامنة في عشرة آلاف، فدخل مكة دون قتال يُذكر إلا في ناحية منها."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وطاف بالبيت، وأزال الأصنام وهو يتلو قوله تعالى: وقل جاء الحق وزهق الباطل، وعفا عن أهل مكة الذين آذوه وأخرجوه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 17,
+            "ayahFrom": 81
+          }
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "quranQuote",
+      "ref": {
+        "surah": 110,
+        "ayahFrom": 1,
+        "ayahTo": 3
+      }
+    },
+    {
+      "type": "heading",
+      "text": {
+        "ar": "ما بعد الفتح"
+      }
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ثم كانت غزوة حنين، وفي السنة التاسعة خرج إلى تبوك في ساعة العسرة، وتوافدت القبائل على المدينة تعلن إسلامها حتى سُمّي ذلك العام عام الوفود."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 9,
+            "ayahFrom": 25
+          }
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 9,
+            "ayahFrom": 117
+          }
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "text": {
+        "ar": "رأى بعض الصحابة في شروط الحديبية غضاضة، فكانت أعظم فتحًا مما ظنّوا؛ وبعد الفتح كان العفو لا الانتقام. والنصر الحقيقي ما فتح القلوب قبل الأبواب."
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators",
+      "needsSourceText"
+    ],
+    "authoredBy": "draft-revision-4",
+    "coverage": "sample"
+  }
+}

@@ -68,8 +68,8 @@ void main() {
 
   testApp('says so when nothing matches', (tester) async {
     await open(tester);
-    await type(tester, 'زيد بن حارثة');
-    expect(find.text('لا نتائج لـ «زيد بن حارثة»'), findsOneWidget);
+    await type(tester, 'خالد بن سعيد');
+    expect(find.text('لا نتائج لـ «خالد بن سعيد»'), findsOneWidget);
   });
 
   testApp('reopening search keeps the last query and its results', (

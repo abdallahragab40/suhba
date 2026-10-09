@@ -42,7 +42,7 @@ void main() {
   testApp('the content version and channel are shown', (tester) async {
     tall(tester);
     await AppUnderTest(location: '/settings').pump(tester);
-    expect(find.text('إصدار المحتوى: 0.1.0'), findsOneWidget);
+    expect(find.text('إصدار المحتوى: 0.2.0'), findsOneWidget);
     expect(find.text('محتوى تجريبي (مسودة)'), findsOneWidget);
   });
 

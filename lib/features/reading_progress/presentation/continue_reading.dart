@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:siyar_sahaba/app/router/routes.dart';
 import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
 import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
 import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
@@ -11,7 +10,7 @@ import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
 import 'package:siyar_sahaba/features/reading_progress/domain/reading_progress.dart';
 import 'package:siyar_sahaba/features/reading_progress/presentation/progress_providers.dart';
 import 'package:siyar_sahaba/shared/content/domain/content_target.dart';
-import 'package:siyar_sahaba/shared/content/presentation/content_text.dart';
+import 'package:siyar_sahaba/shared/content/presentation/target_description.dart';
 import 'package:siyar_sahaba/shared/content/providers.dart';
 
 /// Unfinished sections and chapters, most recent first. Renders nothing
@@ -58,17 +57,10 @@ class ContinueReadingTile extends ConsumerWidget {
     final lookup = ref.watch(targetLookupProvider(p.contentTarget));
 
     final (String title, String parent, String route) = switch (lookup) {
-      AsyncData(value: FoundSection(:final companion, :final section)) => (
-        section.title.of(context),
-        companion.name.of(context),
-        AppRoutes.section(companion.id, section.id),
-      ),
-      AsyncData(value: FoundChapter(:final story, :final chapter)) => (
-        chapter.title.of(context),
-        story.title.of(context),
-        AppRoutes.chapter(story.id, chapter.id),
-      ),
-      AsyncData() => ('', '', ''),
+      AsyncData(:final value) => switch (describeTarget(context, value)) {
+        final d? => (d.title, d.parent ?? '', d.route),
+        null => ('', '', ''),
+      },
       AsyncError() => (l10n.savedItemLoadError, '', ''),
       _ => (l10n.savedItemLoading, '', ''),
     };

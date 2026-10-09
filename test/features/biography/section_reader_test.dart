@@ -39,10 +39,12 @@ void main() {
       tester,
       '/companions/abu-bakr/sections/abu-bakr.hijrah',
     );
+    await tester.ensureVisible(find.text('فضائله'));
     await tester.tap(find.text('فضائله'));
     await tester.pumpAndSettle();
     expect(app.location, '/companions/abu-bakr/sections/abu-bakr.virtues');
 
+    await tester.ensureVisible(find.text('صاحبه في الهجرة'));
     await tester.tap(find.text('صاحبه في الهجرة'));
     await tester.pumpAndSettle();
     expect(app.location, '/companions/abu-bakr/sections/abu-bakr.hijrah');

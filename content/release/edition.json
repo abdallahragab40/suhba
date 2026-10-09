@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "expanded-edition-1",
+  "companions": {
+    "categoryId": "ashara-mubashshara",
+    "size": 10,
+    "minWords": 1500,
+    "minSections": 6,
+    "minTimeline": 8,
+    "requiredSectionKinds": [
+      "earlyLife",
+      "conversion",
+      "withProphet",
+      "virtues",
+      "contributions",
+      "death",
+      "lessons"
+    ]
+  },
+  "seerah": {
+    "chapters": 12,
+    "topics": 8,
+    "minChapterWords": 500,
+    "minTopicWords": 300
+  },
+  "stories": {
+    "count": 20,
+    "minWords": 400
+  },
+  "events": {
+    "count": 30
+  },
+  "visuals": {
+    "count": 16,
+    "requiredTypes": [
+      "timeline",
+      "map",
+      "relationships",
+      "sequence",
+      "periods",
+      "placePanel"
+    ]
+  }
+}

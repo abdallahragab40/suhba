@@ -84,7 +84,9 @@ void main() {
       return app;
     }
 
-    testApp('Abu Bakr: four eras, eight entries, events named', (tester) async {
+    testApp('Abu Bakr: four eras, thirteen entries, events named', (
+      tester,
+    ) async {
       await open(tester, 'abu-bakr');
       for (final era in [
         'قبل الإسلام',
@@ -94,7 +96,7 @@ void main() {
       ]) {
         expect(find.text(era), findsOneWidget, reason: era);
       }
-      expect(find.byType(TimelineEntryTile), findsNWidgets(8));
+      expect(find.byType(TimelineEntryTile), findsNWidgets(13));
       expect(find.text('الحدث: غزوة بدر'), findsOneWidget);
       expect(find.text('الحدث: الهجرة النبوية'), findsOneWidget);
       // The disputed calendar date range is Umar's; Abu Bakr has a range too.
@@ -124,7 +126,7 @@ void main() {
         of: strip,
         matching: find.byType(InkWell),
       );
-      expect(markers, findsNWidgets(8));
+      expect(markers, findsNWidgets(13));
 
       final death = find.text('وفاته بالمدينة');
       final before = tester.getTopLeft(death).dy;

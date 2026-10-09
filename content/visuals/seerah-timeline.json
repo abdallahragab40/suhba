@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "seerah-timeline",
+  "type": "timeline",
+  "title": {
+    "ar": "أحداث السيرة على خط الزمن"
+  },
+  "takeaway": {
+    "ar": "تتقارب الأحداث في السنوات العشر الأخيرة بالمدينة، بعد ثلاث عشرة سنة من الدعوة في مكة."
+  },
+  "notes": [
+    {
+      "ar": "المسافات بين الأحداث تتبع التواريخ المسجّلة؛ والأحداث التي لا يُعرف تاريخها بدقة تُعرض بلا موضع على الخط مع بيان ذلك."
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators"
+    ],
+    "authoredBy": "draft-revision-4"
+  },
+  "eventIds": [
+    "birth-of-the-prophet",
+    "first-revelation",
+    "public-call",
+    "hijrah-to-abyssinia",
+    "boycott",
+    "year-of-sorrow",
+    "taif-journey",
+    "isra-and-miraj",
+    "first-aqabah",
+    "second-aqabah",
+    "hijrah",
+    "badr",
+    "uhud",
+    "khandaq",
+    "hudaybiyah",
+    "khaybar",
+    "conquest-of-makkah",
+    "tabuk",
+    "farewell-pilgrimage",
+    "death-of-the-prophet"
+  ]
+}

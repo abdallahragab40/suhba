@@ -14,7 +14,8 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ReviewInfo {
 
- ReviewStatus get status; Set<EditorialFlag> get editorialFlags;
+ ReviewStatus get status; Set<EditorialFlag> get editorialFlags;/// The editor's coverage statement; null when none was made.
+ Coverage? get coverage;
 /// Create a copy of ReviewInfo
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -25,16 +26,16 @@ $ReviewInfoCopyWith<ReviewInfo> get copyWith => _$ReviewInfoCopyWithImpl<ReviewI
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ReviewInfo&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other.editorialFlags, editorialFlags));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ReviewInfo&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other.editorialFlags, editorialFlags)&&(identical(other.coverage, coverage) || other.coverage == coverage));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,status,const DeepCollectionEquality().hash(editorialFlags));
+int get hashCode => Object.hash(runtimeType,status,const DeepCollectionEquality().hash(editorialFlags),coverage);
 
 @override
 String toString() {
-  return 'ReviewInfo(status: $status, editorialFlags: $editorialFlags)';
+  return 'ReviewInfo(status: $status, editorialFlags: $editorialFlags, coverage: $coverage)';
 }
 
 
@@ -45,7 +46,7 @@ abstract mixin class $ReviewInfoCopyWith<$Res>  {
   factory $ReviewInfoCopyWith(ReviewInfo value, $Res Function(ReviewInfo) _then) = _$ReviewInfoCopyWithImpl;
 @useResult
 $Res call({
- ReviewStatus status, Set<EditorialFlag> editorialFlags
+ ReviewStatus status, Set<EditorialFlag> editorialFlags, Coverage? coverage
 });
 
 
@@ -62,11 +63,12 @@ class _$ReviewInfoCopyWithImpl<$Res>
 
 /// Create a copy of ReviewInfo
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? editorialFlags = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? editorialFlags = null,Object? coverage = freezed,}) {
   return _then(_self.copyWith(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as ReviewStatus,editorialFlags: null == editorialFlags ? _self.editorialFlags : editorialFlags // ignore: cast_nullable_to_non_nullable
-as Set<EditorialFlag>,
+as Set<EditorialFlag>,coverage: freezed == coverage ? _self.coverage : coverage // ignore: cast_nullable_to_non_nullable
+as Coverage?,
   ));
 }
 
@@ -151,10 +153,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( ReviewStatus status,  Set<EditorialFlag> editorialFlags)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( ReviewStatus status,  Set<EditorialFlag> editorialFlags,  Coverage? coverage)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ReviewInfo() when $default != null:
-return $default(_that.status,_that.editorialFlags);case _:
+return $default(_that.status,_that.editorialFlags,_that.coverage);case _:
   return orElse();
 
 }
@@ -172,10 +174,10 @@ return $default(_that.status,_that.editorialFlags);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( ReviewStatus status,  Set<EditorialFlag> editorialFlags)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( ReviewStatus status,  Set<EditorialFlag> editorialFlags,  Coverage? coverage)  $default,) {final _that = this;
 switch (_that) {
 case _ReviewInfo():
-return $default(_that.status,_that.editorialFlags);case _:
+return $default(_that.status,_that.editorialFlags,_that.coverage);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -192,10 +194,10 @@ return $default(_that.status,_that.editorialFlags);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( ReviewStatus status,  Set<EditorialFlag> editorialFlags)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( ReviewStatus status,  Set<EditorialFlag> editorialFlags,  Coverage? coverage)?  $default,) {final _that = this;
 switch (_that) {
 case _ReviewInfo() when $default != null:
-return $default(_that.status,_that.editorialFlags);case _:
+return $default(_that.status,_that.editorialFlags,_that.coverage);case _:
   return null;
 
 }
@@ -207,7 +209,7 @@ return $default(_that.status,_that.editorialFlags);case _:
 
 
 class _ReviewInfo extends ReviewInfo {
-  const _ReviewInfo({required this.status, final  Set<EditorialFlag> editorialFlags = const <EditorialFlag>{}}): _editorialFlags = editorialFlags,super._();
+  const _ReviewInfo({required this.status, final  Set<EditorialFlag> editorialFlags = const <EditorialFlag>{}, this.coverage}): _editorialFlags = editorialFlags,super._();
   
 
 @override final  ReviewStatus status;
@@ -218,6 +220,8 @@ class _ReviewInfo extends ReviewInfo {
   return EqualUnmodifiableSetView(_editorialFlags);
 }
 
+/// The editor's coverage statement; null when none was made.
+@override final  Coverage? coverage;
 
 /// Create a copy of ReviewInfo
 /// with the given fields replaced by the non-null parameter values.
@@ -229,16 +233,16 @@ _$ReviewInfoCopyWith<_ReviewInfo> get copyWith => __$ReviewInfoCopyWithImpl<_Rev
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ReviewInfo&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other._editorialFlags, _editorialFlags));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ReviewInfo&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other._editorialFlags, _editorialFlags)&&(identical(other.coverage, coverage) || other.coverage == coverage));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,status,const DeepCollectionEquality().hash(_editorialFlags));
+int get hashCode => Object.hash(runtimeType,status,const DeepCollectionEquality().hash(_editorialFlags),coverage);
 
 @override
 String toString() {
-  return 'ReviewInfo(status: $status, editorialFlags: $editorialFlags)';
+  return 'ReviewInfo(status: $status, editorialFlags: $editorialFlags, coverage: $coverage)';
 }
 
 
@@ -249,7 +253,7 @@ abstract mixin class _$ReviewInfoCopyWith<$Res> implements $ReviewInfoCopyWith<$
   factory _$ReviewInfoCopyWith(_ReviewInfo value, $Res Function(_ReviewInfo) _then) = __$ReviewInfoCopyWithImpl;
 @override @useResult
 $Res call({
- ReviewStatus status, Set<EditorialFlag> editorialFlags
+ ReviewStatus status, Set<EditorialFlag> editorialFlags, Coverage? coverage
 });
 
 
@@ -266,11 +270,12 @@ class __$ReviewInfoCopyWithImpl<$Res>
 
 /// Create a copy of ReviewInfo
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? editorialFlags = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? editorialFlags = null,Object? coverage = freezed,}) {
   return _then(_ReviewInfo(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as ReviewStatus,editorialFlags: null == editorialFlags ? _self._editorialFlags : editorialFlags // ignore: cast_nullable_to_non_nullable
-as Set<EditorialFlag>,
+as Set<EditorialFlag>,coverage: freezed == coverage ? _self.coverage : coverage // ignore: cast_nullable_to_non_nullable
+as Coverage?,
   ));
 }
 

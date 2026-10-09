@@ -889,4 +889,432 @@ class AppLocalizationsEn extends AppLocalizations {
   String clearSavedMessage(String what) {
     return '$what will be deleted from Saved on this device. This cannot be undone. Reading history and settings are not affected.';
   }
+
+  @override
+  String get tabSeerah => 'Seerah';
+
+  @override
+  String get tabExplore => 'Explore';
+
+  @override
+  String get timelineHijrahMark => 'Hijrah';
+
+  @override
+  String get timelineUndated => 'No settled date';
+
+  @override
+  String mapSemantics(String count) {
+    return 'Schematic map of $count places, followed by a list of them';
+  }
+
+  @override
+  String get mapZoomIn => 'Zoom in';
+
+  @override
+  String get mapZoomOut => 'Zoom out';
+
+  @override
+  String get mapNorth => 'North';
+
+  @override
+  String get mapLegendIdentified => 'Known site';
+
+  @override
+  String get mapLegendApproximate => 'Approximate site';
+
+  @override
+  String get mapLegendUncertain => 'Disputed site';
+
+  @override
+  String get mapApproximatePath => 'Link between stops, not the actual path';
+
+  @override
+  String get mapSchematicNote =>
+      'A schematic map for orientation, not a survey.';
+
+  @override
+  String get relationCompanion => 'Companion of';
+
+  @override
+  String sequenceStep(String n) {
+    return 'Step $n';
+  }
+
+  @override
+  String get sequenceOrderUncertain => 'Its place in the order is not settled';
+
+  @override
+  String get sceneIllustration => 'Illustration';
+
+  @override
+  String get visualTypeTimeline => 'Timeline';
+
+  @override
+  String get visualTypeMap => 'Map';
+
+  @override
+  String get visualTypeRelationships => 'Relationships';
+
+  @override
+  String get visualTypeSequence => 'Sequence';
+
+  @override
+  String get visualTypePeriods => 'Periods';
+
+  @override
+  String get visualTypePlacePanel => 'Place panel';
+
+  @override
+  String get visualNotFound => 'This visual is not in this edition.';
+
+  @override
+  String get visualShowChart => 'Chart';
+
+  @override
+  String get visualShowList => 'List';
+
+  @override
+  String get visualNotes => 'Notes on accuracy';
+
+  @override
+  String get visualSources => 'Sources';
+
+  @override
+  String get visualOpen => 'Open';
+
+  @override
+  String get mapRouteTitle => 'Route';
+
+  @override
+  String mapRouteLeg(String from, String to) {
+    return 'From $from to $to';
+  }
+
+  @override
+  String visualRelationOf(String relation, String person) {
+    return '$relation · $person';
+  }
+
+  @override
+  String get seerahSectionName => 'The Prophetic Seerah';
+
+  @override
+  String get seerahUnavailable => 'The Seerah is not in this edition.';
+
+  @override
+  String get seerahJourneyKicker => 'Journey';
+
+  @override
+  String get seerahJourneyTitle => 'The chapters in order';
+
+  @override
+  String seerahJourneyNote(String n) {
+    return '$n chapters from birth to passing, by period.';
+  }
+
+  @override
+  String get seerahOpenTimeline => 'The Seerah on a timeline';
+
+  @override
+  String get seerahTopicsKicker => 'Themes';
+
+  @override
+  String get seerahTopicsTitle => 'His character and guidance ﷺ';
+
+  @override
+  String get seerahEventsKicker => 'Archive';
+
+  @override
+  String get seerahEventsTitle => 'Turning points';
+
+  @override
+  String get seerahPlacesKicker => 'Atlas';
+
+  @override
+  String get seerahPlacesTitle => 'Places of the Seerah';
+
+  @override
+  String get seerahCompanionsKicker => 'Companionship';
+
+  @override
+  String get seerahCompanionsTitle => 'Companions in this story';
+
+  @override
+  String get seerahMethodKicker => 'Method';
+
+  @override
+  String get seerahMethodTitle => 'How this Seerah is written';
+
+  @override
+  String get seerahAllSources => 'All sources';
+
+  @override
+  String seerahContinue(String title) {
+    return 'Continue: $title';
+  }
+
+  @override
+  String get seerahStart => 'Begin the Seerah';
+
+  @override
+  String get seerahOpenSection => 'Open the Seerah';
+
+  @override
+  String get seerahScrollHint => 'Twelve chapters';
+
+  @override
+  String seerahChapterLabel(String number, String date) {
+    return 'Chapter $number · $date';
+  }
+
+  @override
+  String seerahVisualCount(int count, String n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$n visuals',
+      one: '1 visual',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get coverageSample =>
+      'This is a short pilot text, not yet written in full.';
+
+  @override
+  String get coverageSkeleton => 'This text has not been written yet.';
+
+  @override
+  String get coverageSampleShort => 'Pilot text';
+
+  @override
+  String get seerahFeatureKicker => 'A turning point';
+
+  @override
+  String get seerahFeatureTitle => 'The Hijrah: Makkah to Madinah';
+
+  @override
+  String get seerahFeatureRead => 'Read the Hijrah chapter';
+
+  @override
+  String get seerahChapterNotFound => 'This chapter does not exist.';
+
+  @override
+  String get seerahTopicNotFound => 'This theme does not exist.';
+
+  @override
+  String seerahChapterOf(String number, String total, String date) {
+    return 'Chapter $number of $total · $date';
+  }
+
+  @override
+  String seerahTopicOf(String number, String total) {
+    return 'Theme $number of $total';
+  }
+
+  @override
+  String get seerahContents => 'Chapters';
+
+  @override
+  String get seerahPreviousChapter => 'Previous chapter';
+
+  @override
+  String get seerahNextChapter => 'Next chapter';
+
+  @override
+  String get seerahPreviousTopic => 'Previous theme';
+
+  @override
+  String get seerahNextTopic => 'Next theme';
+
+  @override
+  String get seerahTimelineTitle => 'The Seerah timeline';
+
+  @override
+  String get relatedEvents => 'Events in this chapter';
+
+  @override
+  String get relatedPlaces => 'Places';
+
+  @override
+  String get relatedCompanions => 'Related companions';
+
+  @override
+  String get relatedChapters => 'From the chapters';
+
+  @override
+  String get eventTypeHijrah => 'Hijrah';
+
+  @override
+  String get eventTypeBattle => 'Campaign';
+
+  @override
+  String get eventTypeTreaty => 'Treaty';
+
+  @override
+  String get eventTypePledge => 'Pledge';
+
+  @override
+  String get eventTypeAppointment => 'Appointment';
+
+  @override
+  String get eventTypeDeath => 'Death';
+
+  @override
+  String get eventTypeRevelation => 'Revelation';
+
+  @override
+  String get eventTypeMigration => 'Migration';
+
+  @override
+  String get eventTypeCommunity => 'Community';
+
+  @override
+  String get eventTypeOther => 'Event';
+
+  @override
+  String get eventPageTitle => 'Event';
+
+  @override
+  String get eventNotFound => 'This event does not exist.';
+
+  @override
+  String get eventContext => 'Context';
+
+  @override
+  String get eventOutcome => 'Outcome';
+
+  @override
+  String get eventParticipants => 'Who took part';
+
+  @override
+  String get eventInSeerah => 'In the Seerah';
+
+  @override
+  String get placePageTitle => 'Place';
+
+  @override
+  String get placeNotFound => 'This place does not exist.';
+
+  @override
+  String placeToday(String name) {
+    return 'Today: $name';
+  }
+
+  @override
+  String get placeOnMap => 'On the map';
+
+  @override
+  String get placeEvents => 'Events here';
+
+  @override
+  String get placeVisuals => 'Visuals showing this place';
+
+  @override
+  String get visualPageTitle => 'Visual';
+
+  @override
+  String get exploreAll => 'All';
+
+  @override
+  String get exploreEvents => 'Events';
+
+  @override
+  String get explorePlaces => 'Places';
+
+  @override
+  String get exploreVisuals => 'Visuals';
+
+  @override
+  String get exploreStories => 'Stories';
+
+  @override
+  String get exploreIntro =>
+      'The event archive, the places, the visuals and the stories: start anywhere.';
+
+  @override
+  String get exploreEventsKicker => 'Archive';
+
+  @override
+  String get exploreEventsTitle => 'Event archive';
+
+  @override
+  String get exploreEventsNote =>
+      'In date order, as precisely as the sources record them.';
+
+  @override
+  String get exploreBeforeHijrah => 'Before the Hijrah';
+
+  @override
+  String get exploreAfterHijrah => 'After the Hijrah';
+
+  @override
+  String get exploreVisualsKicker => 'Visuals';
+
+  @override
+  String get exploreVisualsTitle => 'Maps, timelines and relationships';
+
+  @override
+  String get explorePlacesKicker => 'Atlas';
+
+  @override
+  String get explorePlacesTitle => 'Places';
+
+  @override
+  String get exploreStoriesKicker => 'Stories';
+
+  @override
+  String get exploreStoriesTitle => 'Stories';
+
+  @override
+  String get savedSeerahChapters => 'Seerah chapters';
+
+  @override
+  String get savedSeerahTopics => 'Seerah themes';
+
+  @override
+  String get homeSeerahKicker => 'The Seerah';
+
+  @override
+  String get homeSeerahTitle => 'Next chapters';
+
+  @override
+  String get homeAllChapters => 'All chapters';
+
+  @override
+  String get homeDiscoverTitle => 'Meet a companion';
+
+  @override
+  String get homeAtlasKicker => 'Atlas';
+
+  @override
+  String get homeAtlasTitle => 'Where it happened';
+
+  @override
+  String get homeArchiveKicker => 'Archive';
+
+  @override
+  String get homeArchiveTitle => 'Selected events';
+
+  @override
+  String get homeAllEvents => 'The full archive';
+
+  @override
+  String get searchKindSeerahChapters => 'Seerah chapters';
+
+  @override
+  String get searchKindSeerahTopics => 'Seerah themes';
+
+  @override
+  String get searchKindEvents => 'Events';
+
+  @override
+  String get searchKindPlaces => 'Places';
+
+  @override
+  String get searchScopeSeerah => 'Seerah';
+
+  @override
+  String get searchScopeArchive => 'Events and places';
 }

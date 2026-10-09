@@ -2171,7 +2171,7 @@ $HistoricalDateDtoCopyWith<$Res>? get date {
 /// @nodoc
 mixin _$ReviewDto {
 
- ReviewStatus get status; List<EditorialFlag> get editorialFlags;/// Who drafted it (team member or "sample-content"); not shipped to UI.
+ ReviewStatus get status; List<EditorialFlag> get editorialFlags; Coverage? get coverage;/// Who drafted it (team member or "sample-content"); not shipped to UI.
  String? get authoredBy;
 /// Create a copy of ReviewDto
 /// with the given fields replaced by the non-null parameter values.
@@ -2185,16 +2185,16 @@ $ReviewDtoCopyWith<ReviewDto> get copyWith => _$ReviewDtoCopyWithImpl<ReviewDto>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ReviewDto&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other.editorialFlags, editorialFlags)&&(identical(other.authoredBy, authoredBy) || other.authoredBy == authoredBy));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ReviewDto&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other.editorialFlags, editorialFlags)&&(identical(other.coverage, coverage) || other.coverage == coverage)&&(identical(other.authoredBy, authoredBy) || other.authoredBy == authoredBy));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,status,const DeepCollectionEquality().hash(editorialFlags),authoredBy);
+int get hashCode => Object.hash(runtimeType,status,const DeepCollectionEquality().hash(editorialFlags),coverage,authoredBy);
 
 @override
 String toString() {
-  return 'ReviewDto(status: $status, editorialFlags: $editorialFlags, authoredBy: $authoredBy)';
+  return 'ReviewDto(status: $status, editorialFlags: $editorialFlags, coverage: $coverage, authoredBy: $authoredBy)';
 }
 
 
@@ -2205,7 +2205,7 @@ abstract mixin class $ReviewDtoCopyWith<$Res>  {
   factory $ReviewDtoCopyWith(ReviewDto value, $Res Function(ReviewDto) _then) = _$ReviewDtoCopyWithImpl;
 @useResult
 $Res call({
- ReviewStatus status, List<EditorialFlag> editorialFlags, String? authoredBy
+ ReviewStatus status, List<EditorialFlag> editorialFlags, Coverage? coverage, String? authoredBy
 });
 
 
@@ -2222,11 +2222,12 @@ class _$ReviewDtoCopyWithImpl<$Res>
 
 /// Create a copy of ReviewDto
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? editorialFlags = null,Object? authoredBy = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? editorialFlags = null,Object? coverage = freezed,Object? authoredBy = freezed,}) {
   return _then(_self.copyWith(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as ReviewStatus,editorialFlags: null == editorialFlags ? _self.editorialFlags : editorialFlags // ignore: cast_nullable_to_non_nullable
-as List<EditorialFlag>,authoredBy: freezed == authoredBy ? _self.authoredBy : authoredBy // ignore: cast_nullable_to_non_nullable
+as List<EditorialFlag>,coverage: freezed == coverage ? _self.coverage : coverage // ignore: cast_nullable_to_non_nullable
+as Coverage?,authoredBy: freezed == authoredBy ? _self.authoredBy : authoredBy // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }
@@ -2312,10 +2313,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( ReviewStatus status,  List<EditorialFlag> editorialFlags,  String? authoredBy)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( ReviewStatus status,  List<EditorialFlag> editorialFlags,  Coverage? coverage,  String? authoredBy)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ReviewDto() when $default != null:
-return $default(_that.status,_that.editorialFlags,_that.authoredBy);case _:
+return $default(_that.status,_that.editorialFlags,_that.coverage,_that.authoredBy);case _:
   return orElse();
 
 }
@@ -2333,10 +2334,10 @@ return $default(_that.status,_that.editorialFlags,_that.authoredBy);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( ReviewStatus status,  List<EditorialFlag> editorialFlags,  String? authoredBy)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( ReviewStatus status,  List<EditorialFlag> editorialFlags,  Coverage? coverage,  String? authoredBy)  $default,) {final _that = this;
 switch (_that) {
 case _ReviewDto():
-return $default(_that.status,_that.editorialFlags,_that.authoredBy);case _:
+return $default(_that.status,_that.editorialFlags,_that.coverage,_that.authoredBy);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -2353,10 +2354,10 @@ return $default(_that.status,_that.editorialFlags,_that.authoredBy);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( ReviewStatus status,  List<EditorialFlag> editorialFlags,  String? authoredBy)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( ReviewStatus status,  List<EditorialFlag> editorialFlags,  Coverage? coverage,  String? authoredBy)?  $default,) {final _that = this;
 switch (_that) {
 case _ReviewDto() when $default != null:
-return $default(_that.status,_that.editorialFlags,_that.authoredBy);case _:
+return $default(_that.status,_that.editorialFlags,_that.coverage,_that.authoredBy);case _:
   return null;
 
 }
@@ -2368,7 +2369,7 @@ return $default(_that.status,_that.editorialFlags,_that.authoredBy);case _:
 @JsonSerializable()
 
 class _ReviewDto implements ReviewDto {
-  const _ReviewDto({required this.status, final  List<EditorialFlag> editorialFlags = const <EditorialFlag>[], this.authoredBy}): _editorialFlags = editorialFlags;
+  const _ReviewDto({required this.status, final  List<EditorialFlag> editorialFlags = const <EditorialFlag>[], this.coverage, this.authoredBy}): _editorialFlags = editorialFlags;
   factory _ReviewDto.fromJson(Map<String, dynamic> json) => _$ReviewDtoFromJson(json);
 
 @override final  ReviewStatus status;
@@ -2379,6 +2380,7 @@ class _ReviewDto implements ReviewDto {
   return EqualUnmodifiableListView(_editorialFlags);
 }
 
+@override final  Coverage? coverage;
 /// Who drafted it (team member or "sample-content"); not shipped to UI.
 @override final  String? authoredBy;
 
@@ -2395,16 +2397,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ReviewDto&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other._editorialFlags, _editorialFlags)&&(identical(other.authoredBy, authoredBy) || other.authoredBy == authoredBy));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ReviewDto&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other._editorialFlags, _editorialFlags)&&(identical(other.coverage, coverage) || other.coverage == coverage)&&(identical(other.authoredBy, authoredBy) || other.authoredBy == authoredBy));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,status,const DeepCollectionEquality().hash(_editorialFlags),authoredBy);
+int get hashCode => Object.hash(runtimeType,status,const DeepCollectionEquality().hash(_editorialFlags),coverage,authoredBy);
 
 @override
 String toString() {
-  return 'ReviewDto(status: $status, editorialFlags: $editorialFlags, authoredBy: $authoredBy)';
+  return 'ReviewDto(status: $status, editorialFlags: $editorialFlags, coverage: $coverage, authoredBy: $authoredBy)';
 }
 
 
@@ -2415,7 +2417,7 @@ abstract mixin class _$ReviewDtoCopyWith<$Res> implements $ReviewDtoCopyWith<$Re
   factory _$ReviewDtoCopyWith(_ReviewDto value, $Res Function(_ReviewDto) _then) = __$ReviewDtoCopyWithImpl;
 @override @useResult
 $Res call({
- ReviewStatus status, List<EditorialFlag> editorialFlags, String? authoredBy
+ ReviewStatus status, List<EditorialFlag> editorialFlags, Coverage? coverage, String? authoredBy
 });
 
 
@@ -2432,11 +2434,12 @@ class __$ReviewDtoCopyWithImpl<$Res>
 
 /// Create a copy of ReviewDto
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? editorialFlags = null,Object? authoredBy = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? editorialFlags = null,Object? coverage = freezed,Object? authoredBy = freezed,}) {
   return _then(_ReviewDto(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as ReviewStatus,editorialFlags: null == editorialFlags ? _self._editorialFlags : editorialFlags // ignore: cast_nullable_to_non_nullable
-as List<EditorialFlag>,authoredBy: freezed == authoredBy ? _self.authoredBy : authoredBy // ignore: cast_nullable_to_non_nullable
+as List<EditorialFlag>,coverage: freezed == coverage ? _self.coverage : coverage // ignore: cast_nullable_to_non_nullable
+as Coverage?,authoredBy: freezed == authoredBy ? _self.authoredBy : authoredBy // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }

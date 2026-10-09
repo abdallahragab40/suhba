@@ -71,6 +71,9 @@ _HistoricalEventDto _$HistoricalEventDtoFromJson(Map<String, dynamic> json) =>
           'review',
           'place',
           'participants',
+          'placeIds',
+          'context',
+          'outcome',
         ],
       );
       final val = _HistoricalEventDto(
@@ -119,6 +122,24 @@ _HistoricalEventDto _$HistoricalEventDtoFromJson(Map<String, dynamic> json) =>
                   .toList() ??
               const <PersonRefDto>[],
         ),
+        placeIds: $checkedConvert(
+          'placeIds',
+          (v) =>
+              (v as List<dynamic>?)?.map((e) => e as String).toList() ??
+              const <String>[],
+        ),
+        context: $checkedConvert(
+          'context',
+          (v) => v == null
+              ? null
+              : LocalizedTextDto.fromJson(v as Map<String, dynamic>),
+        ),
+        outcome: $checkedConvert(
+          'outcome',
+          (v) => v == null
+              ? null
+              : LocalizedTextDto.fromJson(v as Map<String, dynamic>),
+        ),
       );
       return val;
     });
@@ -135,6 +156,9 @@ Map<String, dynamic> _$HistoricalEventDtoToJson(_HistoricalEventDto instance) =>
       'review': instance.review.toJson(),
       'place': ?instance.place?.toJson(),
       'participants': instance.participants.map((e) => e.toJson()).toList(),
+      'placeIds': instance.placeIds,
+      'context': ?instance.context?.toJson(),
+      'outcome': ?instance.outcome?.toJson(),
     };
 
 const _$EventTypeEnumMap = {
@@ -144,6 +168,9 @@ const _$EventTypeEnumMap = {
   EventType.pledge: 'pledge',
   EventType.appointment: 'appointment',
   EventType.death: 'death',
+  EventType.revelation: 'revelation',
+  EventType.migration: 'migration',
+  EventType.community: 'community',
   EventType.other: 'other',
 };
 
@@ -407,6 +434,10 @@ _ManifestDto _$ManifestDtoFromJson(
       'channel',
       'companionCount',
       'storyCount',
+      'seerahChapterCount',
+      'seerahTopicCount',
+      'placeCount',
+      'visualCount',
       'approvedCount',
       'unapprovedCount',
       'files',
@@ -424,6 +455,19 @@ _ManifestDto _$ManifestDtoFromJson(
       (v) => (v as num).toInt(),
     ),
     storyCount: $checkedConvert('storyCount', (v) => (v as num).toInt()),
+    seerahChapterCount: $checkedConvert(
+      'seerahChapterCount',
+      (v) => (v as num?)?.toInt() ?? 0,
+    ),
+    seerahTopicCount: $checkedConvert(
+      'seerahTopicCount',
+      (v) => (v as num?)?.toInt() ?? 0,
+    ),
+    placeCount: $checkedConvert('placeCount', (v) => (v as num?)?.toInt() ?? 0),
+    visualCount: $checkedConvert(
+      'visualCount',
+      (v) => (v as num?)?.toInt() ?? 0,
+    ),
     approvedCount: $checkedConvert('approvedCount', (v) => (v as num).toInt()),
     unapprovedCount: $checkedConvert(
       'unapprovedCount',
@@ -441,6 +485,10 @@ Map<String, dynamic> _$ManifestDtoToJson(_ManifestDto instance) =>
       'channel': _$ContentChannelEnumMap[instance.channel]!,
       'companionCount': instance.companionCount,
       'storyCount': instance.storyCount,
+      'seerahChapterCount': instance.seerahChapterCount,
+      'seerahTopicCount': instance.seerahTopicCount,
+      'placeCount': instance.placeCount,
+      'visualCount': instance.visualCount,
       'approvedCount': instance.approvedCount,
       'unapprovedCount': instance.unapprovedCount,
       'files': instance.files,
@@ -585,4 +633,198 @@ const _$ContentKindEnumMap = {
   ContentKind.category: 'category',
   ContentKind.source: 'source',
   ContentKind.person: 'person',
+  ContentKind.place: 'place',
+  ContentKind.seerah: 'seerah',
+  ContentKind.seerahChapter: 'seerahChapter',
+  ContentKind.seerahTopic: 'seerahTopic',
+  ContentKind.visual: 'visual',
 };
+
+_EditionCompanionsDto _$EditionCompanionsDtoFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate('_EditionCompanionsDto', json, ($checkedConvert) {
+  $checkKeys(
+    json,
+    allowedKeys: const [
+      'categoryId',
+      'size',
+      'minWords',
+      'minSections',
+      'minTimeline',
+      'requiredSectionKinds',
+    ],
+  );
+  final val = _EditionCompanionsDto(
+    categoryId: $checkedConvert('categoryId', (v) => v as String),
+    size: $checkedConvert('size', (v) => (v as num).toInt()),
+    minWords: $checkedConvert('minWords', (v) => (v as num).toInt()),
+    minSections: $checkedConvert('minSections', (v) => (v as num).toInt()),
+    minTimeline: $checkedConvert('minTimeline', (v) => (v as num).toInt()),
+    requiredSectionKinds: $checkedConvert(
+      'requiredSectionKinds',
+      (v) => (v as List<dynamic>)
+          .map((e) => $enumDecode(_$SectionKindEnumMap, e))
+          .toList(),
+    ),
+  );
+  return val;
+});
+
+Map<String, dynamic> _$EditionCompanionsDtoToJson(
+  _EditionCompanionsDto instance,
+) => <String, dynamic>{
+  'categoryId': instance.categoryId,
+  'size': instance.size,
+  'minWords': instance.minWords,
+  'minSections': instance.minSections,
+  'minTimeline': instance.minTimeline,
+  'requiredSectionKinds': instance.requiredSectionKinds
+      .map((e) => _$SectionKindEnumMap[e]!)
+      .toList(),
+};
+
+const _$SectionKindEnumMap = {
+  SectionKind.earlyLife: 'earlyLife',
+  SectionKind.conversion: 'conversion',
+  SectionKind.withProphet: 'withProphet',
+  SectionKind.virtues: 'virtues',
+  SectionKind.contributions: 'contributions',
+  SectionKind.character: 'character',
+  SectionKind.lessons: 'lessons',
+  SectionKind.death: 'death',
+  SectionKind.custom: 'custom',
+};
+
+_EditionSeerahDto _$EditionSeerahDtoFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('_EditionSeerahDto', json, ($checkedConvert) {
+      $checkKeys(
+        json,
+        allowedKeys: const [
+          'chapters',
+          'topics',
+          'minChapterWords',
+          'minTopicWords',
+        ],
+      );
+      final val = _EditionSeerahDto(
+        chapters: $checkedConvert('chapters', (v) => (v as num).toInt()),
+        topics: $checkedConvert('topics', (v) => (v as num).toInt()),
+        minChapterWords: $checkedConvert(
+          'minChapterWords',
+          (v) => (v as num).toInt(),
+        ),
+        minTopicWords: $checkedConvert(
+          'minTopicWords',
+          (v) => (v as num).toInt(),
+        ),
+      );
+      return val;
+    });
+
+Map<String, dynamic> _$EditionSeerahDtoToJson(_EditionSeerahDto instance) =>
+    <String, dynamic>{
+      'chapters': instance.chapters,
+      'topics': instance.topics,
+      'minChapterWords': instance.minChapterWords,
+      'minTopicWords': instance.minTopicWords,
+    };
+
+_EditionCountDto _$EditionCountDtoFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('_EditionCountDto', json, ($checkedConvert) {
+      $checkKeys(json, allowedKeys: const ['count', 'minWords']);
+      final val = _EditionCountDto(
+        count: $checkedConvert('count', (v) => (v as num).toInt()),
+        minWords: $checkedConvert('minWords', (v) => (v as num?)?.toInt()),
+      );
+      return val;
+    });
+
+Map<String, dynamic> _$EditionCountDtoToJson(_EditionCountDto instance) =>
+    <String, dynamic>{'count': instance.count, 'minWords': ?instance.minWords};
+
+_EditionVisualsDto _$EditionVisualsDtoFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('_EditionVisualsDto', json, ($checkedConvert) {
+      $checkKeys(json, allowedKeys: const ['count', 'requiredTypes']);
+      final val = _EditionVisualsDto(
+        count: $checkedConvert('count', (v) => (v as num).toInt()),
+        requiredTypes: $checkedConvert(
+          'requiredTypes',
+          (v) => (v as List<dynamic>)
+              .map((e) => $enumDecode(_$InfographicTypeEnumMap, e))
+              .toList(),
+        ),
+      );
+      return val;
+    });
+
+Map<String, dynamic> _$EditionVisualsDtoToJson(_EditionVisualsDto instance) =>
+    <String, dynamic>{
+      'count': instance.count,
+      'requiredTypes': instance.requiredTypes
+          .map((e) => _$InfographicTypeEnumMap[e]!)
+          .toList(),
+    };
+
+const _$InfographicTypeEnumMap = {
+  InfographicType.timeline: 'timeline',
+  InfographicType.map: 'map',
+  InfographicType.relationships: 'relationships',
+  InfographicType.sequence: 'sequence',
+  InfographicType.periods: 'periods',
+  InfographicType.placePanel: 'placePanel',
+};
+
+_EditionDto _$EditionDtoFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('_EditionDto', json, ($checkedConvert) {
+      $checkKeys(
+        json,
+        allowedKeys: const [
+          'schemaVersion',
+          'id',
+          'companions',
+          'seerah',
+          'stories',
+          'events',
+          'visuals',
+        ],
+      );
+      final val = _EditionDto(
+        schemaVersion: $checkedConvert(
+          'schemaVersion',
+          (v) => (v as num).toInt(),
+        ),
+        id: $checkedConvert('id', (v) => v as String),
+        companions: $checkedConvert(
+          'companions',
+          (v) => EditionCompanionsDto.fromJson(v as Map<String, dynamic>),
+        ),
+        seerah: $checkedConvert(
+          'seerah',
+          (v) => EditionSeerahDto.fromJson(v as Map<String, dynamic>),
+        ),
+        stories: $checkedConvert(
+          'stories',
+          (v) => EditionCountDto.fromJson(v as Map<String, dynamic>),
+        ),
+        events: $checkedConvert(
+          'events',
+          (v) => EditionCountDto.fromJson(v as Map<String, dynamic>),
+        ),
+        visuals: $checkedConvert(
+          'visuals',
+          (v) => EditionVisualsDto.fromJson(v as Map<String, dynamic>),
+        ),
+      );
+      return val;
+    });
+
+Map<String, dynamic> _$EditionDtoToJson(_EditionDto instance) =>
+    <String, dynamic>{
+      'schemaVersion': instance.schemaVersion,
+      'id': instance.id,
+      'companions': instance.companions.toJson(),
+      'seerah': instance.seerah.toJson(),
+      'stories': instance.stories.toJson(),
+      'events': instance.events.toJson(),
+      'visuals': instance.visuals.toJson(),
+    };

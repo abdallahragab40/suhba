@@ -1543,6 +1543,798 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'سيُحذف {what} من المحفوظات على هذا الجهاز، ولا يمكن التراجع عن ذلك. لن يتأثر سجل القراءة ولا الإعدادات.'**
   String clearSavedMessage(String what);
+
+  /// Navigation: the Prophetic Seerah section.
+  ///
+  /// In ar, this message translates to:
+  /// **'السيرة'**
+  String get tabSeerah;
+
+  /// Navigation: events, places, visuals and stories.
+  ///
+  /// In ar, this message translates to:
+  /// **'استكشف'**
+  String get tabExplore;
+
+  /// Marker for year 1 AH on a proportional time axis.
+  ///
+  /// In ar, this message translates to:
+  /// **'الهجرة'**
+  String get timelineHijrahMark;
+
+  /// Heading for timeline records whose date is not known; they are not placed on the axis.
+  ///
+  /// In ar, this message translates to:
+  /// **'بلا تاريخ محدد'**
+  String get timelineUndated;
+
+  /// Screen-reader label of a schematic map; count is the formatted number.
+  ///
+  /// In ar, this message translates to:
+  /// **'خريطة تخطيطية لـ{count} مواضع، وتليها قائمة بها'**
+  String mapSemantics(String count);
+
+  /// Map zoom-in button tooltip.
+  ///
+  /// In ar, this message translates to:
+  /// **'تكبير الخريطة'**
+  String get mapZoomIn;
+
+  /// Map zoom-out button tooltip.
+  ///
+  /// In ar, this message translates to:
+  /// **'تصغير الخريطة'**
+  String get mapZoomOut;
+
+  /// Small map badge, after a north arrow icon: north is up (maps are never mirrored).
+  ///
+  /// In ar, this message translates to:
+  /// **'الشمال'**
+  String get mapNorth;
+
+  /// Map legend: the site is identified today.
+  ///
+  /// In ar, this message translates to:
+  /// **'موضع معروف'**
+  String get mapLegendIdentified;
+
+  /// Map legend: only the area is known.
+  ///
+  /// In ar, this message translates to:
+  /// **'موضع تقريبي'**
+  String get mapLegendApproximate;
+
+  /// Map legend: scholars differ on where it was.
+  ///
+  /// In ar, this message translates to:
+  /// **'موضع مختلف فيه'**
+  String get mapLegendUncertain;
+
+  /// Map legend for dashed route legs.
+  ///
+  /// In ar, this message translates to:
+  /// **'صلة بين محطتين، لا الطريق الفعلي'**
+  String get mapApproximatePath;
+
+  /// Note under every map.
+  ///
+  /// In ar, this message translates to:
+  /// **'خريطة تخطيطية للتوضيح، وليست رسمًا مساحيًّا دقيقًا.'**
+  String get mapSchematicNote;
+
+  /// Relation type: companionship (e.g. the Prophet ﷺ and Abu Bakr).
+  ///
+  /// In ar, this message translates to:
+  /// **'صاحبه'**
+  String get relationCompanion;
+
+  /// Number of a step in a sequence explainer; n is the formatted number.
+  ///
+  /// In ar, this message translates to:
+  /// **'الخطوة {n}'**
+  String sequenceStep(String n);
+
+  /// Shown on a sequence step whose order the sources do not settle.
+  ///
+  /// In ar, this message translates to:
+  /// **'موضعها من الترتيب غير قطعي'**
+  String get sequenceOrderUncertain;
+
+  /// Label on a drawn landscape, so it is not taken for a photo of the place.
+  ///
+  /// In ar, this message translates to:
+  /// **'رسم توضيحي'**
+  String get sceneIllustration;
+
+  /// Infographic type.
+  ///
+  /// In ar, this message translates to:
+  /// **'خط زمني'**
+  String get visualTypeTimeline;
+
+  /// Infographic type.
+  ///
+  /// In ar, this message translates to:
+  /// **'خريطة'**
+  String get visualTypeMap;
+
+  /// Infographic type.
+  ///
+  /// In ar, this message translates to:
+  /// **'صلات'**
+  String get visualTypeRelationships;
+
+  /// Infographic type.
+  ///
+  /// In ar, this message translates to:
+  /// **'تسلسل الأحداث'**
+  String get visualTypeSequence;
+
+  /// Infographic type.
+  ///
+  /// In ar, this message translates to:
+  /// **'مراحل زمنية'**
+  String get visualTypePeriods;
+
+  /// Infographic type.
+  ///
+  /// In ar, this message translates to:
+  /// **'بطاقة مكان'**
+  String get visualTypePlacePanel;
+
+  /// Shown where a passage refers to a visual that is not bundled.
+  ///
+  /// In ar, this message translates to:
+  /// **'هذا الرسم غير متاح في هذا الإصدار.'**
+  String get visualNotFound;
+
+  /// Toggle: show the infographic as a chart.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرسم'**
+  String get visualShowChart;
+
+  /// Toggle: show the infographic as an equivalent text list.
+  ///
+  /// In ar, this message translates to:
+  /// **'قائمة'**
+  String get visualShowList;
+
+  /// Heading for an infographic's uncertainty notes.
+  ///
+  /// In ar, this message translates to:
+  /// **'ملاحظات على الدقة'**
+  String get visualNotes;
+
+  /// Label before the citation marker of an infographic.
+  ///
+  /// In ar, this message translates to:
+  /// **'مصادر الرسم'**
+  String get visualSources;
+
+  /// Opens an inline infographic on its own page.
+  ///
+  /// In ar, this message translates to:
+  /// **'عرض كامل'**
+  String get visualOpen;
+
+  /// Heading of a journey's legs in the map list view.
+  ///
+  /// In ar, this message translates to:
+  /// **'محطات الطريق'**
+  String get mapRouteTitle;
+
+  /// One leg of a journey.
+  ///
+  /// In ar, this message translates to:
+  /// **'من {from} إلى {to}'**
+  String mapRouteLeg(String from, String to);
+
+  /// Relation in list form: the relation label, then the other person; e.g. "من الأبناء · أبو بكر الصديق".
+  ///
+  /// In ar, this message translates to:
+  /// **'{relation} · {person}'**
+  String visualRelationOf(String relation, String person);
+
+  /// Name of the Seerah section (app bar).
+  ///
+  /// In ar, this message translates to:
+  /// **'السيرة النبوية'**
+  String get seerahSectionName;
+
+  /// Shown when the build has no Seerah section.
+  ///
+  /// In ar, this message translates to:
+  /// **'السيرة النبوية غير متاحة في هذا الإصدار.'**
+  String get seerahUnavailable;
+
+  /// Kicker above the Seerah chapter list.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرحلة'**
+  String get seerahJourneyKicker;
+
+  /// Title of the Seerah chapter journey.
+  ///
+  /// In ar, this message translates to:
+  /// **'فصول السيرة بالترتيب'**
+  String get seerahJourneyTitle;
+
+  /// Note under the journey title; n is the formatted chapter count.
+  ///
+  /// In ar, this message translates to:
+  /// **'{n} فصلًا من المولد إلى الوفاة، مقسّمة على مراحل الزمن.'**
+  String seerahJourneyNote(String n);
+
+  /// Button opening the Seerah timeline.
+  ///
+  /// In ar, this message translates to:
+  /// **'السيرة على خط الزمن'**
+  String get seerahOpenTimeline;
+
+  /// Kicker above the thematic essays.
+  ///
+  /// In ar, this message translates to:
+  /// **'موضوعات'**
+  String get seerahTopicsKicker;
+
+  /// Title of the thematic essays list.
+  ///
+  /// In ar, this message translates to:
+  /// **'من شمائله وهديه ﷺ'**
+  String get seerahTopicsTitle;
+
+  /// Kicker above the featured events.
+  ///
+  /// In ar, this message translates to:
+  /// **'الأرشيف'**
+  String get seerahEventsKicker;
+
+  /// Title of the featured events on the Seerah hub.
+  ///
+  /// In ar, this message translates to:
+  /// **'أحداث فارقة'**
+  String get seerahEventsTitle;
+
+  /// Kicker above the featured places.
+  ///
+  /// In ar, this message translates to:
+  /// **'الأطلس'**
+  String get seerahPlacesKicker;
+
+  /// Title of the featured places.
+  ///
+  /// In ar, this message translates to:
+  /// **'أماكن السيرة'**
+  String get seerahPlacesTitle;
+
+  /// Kicker above related companions.
+  ///
+  /// In ar, this message translates to:
+  /// **'الصحبة'**
+  String get seerahCompanionsKicker;
+
+  /// Title of the related companions on the Seerah hub.
+  ///
+  /// In ar, this message translates to:
+  /// **'صحابة في هذه السيرة'**
+  String get seerahCompanionsTitle;
+
+  /// Kicker above the methodology note.
+  ///
+  /// In ar, this message translates to:
+  /// **'المنهج'**
+  String get seerahMethodKicker;
+
+  /// Title of the methodology note.
+  ///
+  /// In ar, this message translates to:
+  /// **'كيف كُتبت هذه السيرة'**
+  String get seerahMethodTitle;
+
+  /// Link to the sources directory.
+  ///
+  /// In ar, this message translates to:
+  /// **'كل المصادر'**
+  String get seerahAllSources;
+
+  /// Button resuming the Seerah at a chapter; title is the chapter title.
+  ///
+  /// In ar, this message translates to:
+  /// **'تابع: {title}'**
+  String seerahContinue(String title);
+
+  /// Button starting the Seerah at chapter one.
+  ///
+  /// In ar, this message translates to:
+  /// **'ابدأ السيرة'**
+  String get seerahStart;
+
+  /// Button on Home opening the Seerah section.
+  ///
+  /// In ar, this message translates to:
+  /// **'افتح السيرة النبوية'**
+  String get seerahOpenSection;
+
+  /// Small hint under the Seerah opening that more follows below.
+  ///
+  /// In ar, this message translates to:
+  /// **'اثنا عشر فصلًا'**
+  String get seerahScrollHint;
+
+  /// Chapter number and time label in lists.
+  ///
+  /// In ar, this message translates to:
+  /// **'الفصل {number} · {date}'**
+  String seerahChapterLabel(String number, String date);
+
+  /// Number of visuals in a chapter; n is the formatted number.
+  ///
+  /// In ar, this message translates to:
+  /// **'{count, plural, =1{رسم توضيحي} =2{رسمان} few{{n} رسوم} other{{n} رسمًا}}'**
+  String seerahVisualCount(int count, String n);
+
+  /// Note on passages the editor marked as samples.
+  ///
+  /// In ar, this message translates to:
+  /// **'هذا نص تجريبي مختصر، ولم يُكتب بالتفصيل المقصود بعد.'**
+  String get coverageSample;
+
+  /// Note on skeleton items.
+  ///
+  /// In ar, this message translates to:
+  /// **'لم يُكتب هذا النص بعد.'**
+  String get coverageSkeleton;
+
+  /// Short label on sample passages in lists.
+  ///
+  /// In ar, this message translates to:
+  /// **'نص تجريبي'**
+  String get coverageSampleShort;
+
+  /// Kicker of the ink feature band.
+  ///
+  /// In ar, this message translates to:
+  /// **'حدث فارق'**
+  String get seerahFeatureKicker;
+
+  /// Title of the Hijrah feature band.
+  ///
+  /// In ar, this message translates to:
+  /// **'الهجرة: من مكة إلى المدينة'**
+  String get seerahFeatureTitle;
+
+  /// Button opening the Hijrah chapter.
+  ///
+  /// In ar, this message translates to:
+  /// **'اقرأ فصل الهجرة'**
+  String get seerahFeatureRead;
+
+  /// Seerah chapter not found.
+  ///
+  /// In ar, this message translates to:
+  /// **'هذا الفصل غير موجود.'**
+  String get seerahChapterNotFound;
+
+  /// Seerah topic not found.
+  ///
+  /// In ar, this message translates to:
+  /// **'هذا الموضوع غير موجود.'**
+  String get seerahTopicNotFound;
+
+  /// Kicker in the chapter reader.
+  ///
+  /// In ar, this message translates to:
+  /// **'الفصل {number} من {total} · {date}'**
+  String seerahChapterOf(String number, String total, String date);
+
+  /// Kicker in the topic reader.
+  ///
+  /// In ar, this message translates to:
+  /// **'موضوع {number} من {total}'**
+  String seerahTopicOf(String number, String total);
+
+  /// Contents sheet title in the Seerah chapter reader.
+  ///
+  /// In ar, this message translates to:
+  /// **'فصول السيرة'**
+  String get seerahContents;
+
+  /// Reader navigation.
+  ///
+  /// In ar, this message translates to:
+  /// **'الفصل السابق'**
+  String get seerahPreviousChapter;
+
+  /// Reader navigation.
+  ///
+  /// In ar, this message translates to:
+  /// **'الفصل التالي'**
+  String get seerahNextChapter;
+
+  /// Reader navigation.
+  ///
+  /// In ar, this message translates to:
+  /// **'الموضوع السابق'**
+  String get seerahPreviousTopic;
+
+  /// Reader navigation.
+  ///
+  /// In ar, this message translates to:
+  /// **'الموضوع التالي'**
+  String get seerahNextTopic;
+
+  /// Title of the Seerah timeline page.
+  ///
+  /// In ar, this message translates to:
+  /// **'السيرة على خط الزمن'**
+  String get seerahTimelineTitle;
+
+  /// Related events heading.
+  ///
+  /// In ar, this message translates to:
+  /// **'أحداث في هذا الفصل'**
+  String get relatedEvents;
+
+  /// Related places heading.
+  ///
+  /// In ar, this message translates to:
+  /// **'أماكن'**
+  String get relatedPlaces;
+
+  /// Related companions heading.
+  ///
+  /// In ar, this message translates to:
+  /// **'صحابة ذوو صلة'**
+  String get relatedCompanions;
+
+  /// Related Seerah chapters heading.
+  ///
+  /// In ar, this message translates to:
+  /// **'من فصول السيرة'**
+  String get relatedChapters;
+
+  /// Event type.
+  ///
+  /// In ar, this message translates to:
+  /// **'هجرة'**
+  String get eventTypeHijrah;
+
+  /// Event type.
+  ///
+  /// In ar, this message translates to:
+  /// **'غزوة'**
+  String get eventTypeBattle;
+
+  /// Event type.
+  ///
+  /// In ar, this message translates to:
+  /// **'صلح'**
+  String get eventTypeTreaty;
+
+  /// Event type.
+  ///
+  /// In ar, this message translates to:
+  /// **'بيعة'**
+  String get eventTypePledge;
+
+  /// Event type.
+  ///
+  /// In ar, this message translates to:
+  /// **'ولاية'**
+  String get eventTypeAppointment;
+
+  /// Event type.
+  ///
+  /// In ar, this message translates to:
+  /// **'وفاة'**
+  String get eventTypeDeath;
+
+  /// Event type.
+  ///
+  /// In ar, this message translates to:
+  /// **'وحي'**
+  String get eventTypeRevelation;
+
+  /// Event type (e.g. to Abyssinia).
+  ///
+  /// In ar, this message translates to:
+  /// **'هجرة جماعية'**
+  String get eventTypeMigration;
+
+  /// Event type (mosque, brotherhood, delegations).
+  ///
+  /// In ar, this message translates to:
+  /// **'بناء المجتمع'**
+  String get eventTypeCommunity;
+
+  /// Event type.
+  ///
+  /// In ar, this message translates to:
+  /// **'حدث'**
+  String get eventTypeOther;
+
+  /// App bar of the event page.
+  ///
+  /// In ar, this message translates to:
+  /// **'حدث من السيرة'**
+  String get eventPageTitle;
+
+  /// Event not found.
+  ///
+  /// In ar, this message translates to:
+  /// **'هذا الحدث غير موجود.'**
+  String get eventNotFound;
+
+  /// Heading: what led to the event.
+  ///
+  /// In ar, this message translates to:
+  /// **'ما قبله'**
+  String get eventContext;
+
+  /// Heading: what came of the event.
+  ///
+  /// In ar, this message translates to:
+  /// **'ما بعده'**
+  String get eventOutcome;
+
+  /// Heading: participants of an event.
+  ///
+  /// In ar, this message translates to:
+  /// **'ممن شهده'**
+  String get eventParticipants;
+
+  /// Heading: Seerah chapters that tell the event.
+  ///
+  /// In ar, this message translates to:
+  /// **'في السيرة النبوية'**
+  String get eventInSeerah;
+
+  /// App bar of the place page.
+  ///
+  /// In ar, this message translates to:
+  /// **'مكان من السيرة'**
+  String get placePageTitle;
+
+  /// Place not found.
+  ///
+  /// In ar, this message translates to:
+  /// **'هذا المكان غير موجود.'**
+  String get placeNotFound;
+
+  /// Modern name of a place.
+  ///
+  /// In ar, this message translates to:
+  /// **'اليوم: {name}'**
+  String placeToday(String name);
+
+  /// Heading of the place map.
+  ///
+  /// In ar, this message translates to:
+  /// **'على الخريطة'**
+  String get placeOnMap;
+
+  /// Heading of events at a place.
+  ///
+  /// In ar, this message translates to:
+  /// **'أحداث في هذا المكان'**
+  String get placeEvents;
+
+  /// Heading of visuals of a place.
+  ///
+  /// In ar, this message translates to:
+  /// **'رسوم تعرض هذا المكان'**
+  String get placeVisuals;
+
+  /// App bar of a visual page.
+  ///
+  /// In ar, this message translates to:
+  /// **'رسم توضيحي'**
+  String get visualPageTitle;
+
+  /// Explore filter.
+  ///
+  /// In ar, this message translates to:
+  /// **'الكل'**
+  String get exploreAll;
+
+  /// Explore filter.
+  ///
+  /// In ar, this message translates to:
+  /// **'الأحداث'**
+  String get exploreEvents;
+
+  /// Explore filter.
+  ///
+  /// In ar, this message translates to:
+  /// **'الأماكن'**
+  String get explorePlaces;
+
+  /// Explore filter.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرسوم'**
+  String get exploreVisuals;
+
+  /// Explore filter.
+  ///
+  /// In ar, this message translates to:
+  /// **'القصص'**
+  String get exploreStories;
+
+  /// Intro line on Explore.
+  ///
+  /// In ar, this message translates to:
+  /// **'أرشيف الأحداث، وأماكن السيرة، والرسوم التوضيحية، والقصص: ادخل من أيها شئت.'**
+  String get exploreIntro;
+
+  /// Explore section kicker.
+  ///
+  /// In ar, this message translates to:
+  /// **'الأرشيف'**
+  String get exploreEventsKicker;
+
+  /// Explore section title.
+  ///
+  /// In ar, this message translates to:
+  /// **'سجل الأحداث'**
+  String get exploreEventsTitle;
+
+  /// Note under the event archive.
+  ///
+  /// In ar, this message translates to:
+  /// **'مرتبة بتواريخها كما سجّلتها المصادر، بدقتها.'**
+  String get exploreEventsNote;
+
+  /// Event archive group.
+  ///
+  /// In ar, this message translates to:
+  /// **'قبل الهجرة'**
+  String get exploreBeforeHijrah;
+
+  /// Event archive group.
+  ///
+  /// In ar, this message translates to:
+  /// **'بعد الهجرة'**
+  String get exploreAfterHijrah;
+
+  /// Explore section kicker.
+  ///
+  /// In ar, this message translates to:
+  /// **'رسوم توضيحية'**
+  String get exploreVisualsKicker;
+
+  /// Explore section title.
+  ///
+  /// In ar, this message translates to:
+  /// **'خرائط وخطوط زمنية وصلات'**
+  String get exploreVisualsTitle;
+
+  /// Explore section kicker.
+  ///
+  /// In ar, this message translates to:
+  /// **'الأطلس'**
+  String get explorePlacesKicker;
+
+  /// Explore section title.
+  ///
+  /// In ar, this message translates to:
+  /// **'أماكن السيرة'**
+  String get explorePlacesTitle;
+
+  /// Explore section kicker.
+  ///
+  /// In ar, this message translates to:
+  /// **'حكايات'**
+  String get exploreStoriesKicker;
+
+  /// Explore section title.
+  ///
+  /// In ar, this message translates to:
+  /// **'قصص من السيرة'**
+  String get exploreStoriesTitle;
+
+  /// Saved group: Seerah chapters.
+  ///
+  /// In ar, this message translates to:
+  /// **'من فصول السيرة'**
+  String get savedSeerahChapters;
+
+  /// Saved group: Seerah themes.
+  ///
+  /// In ar, this message translates to:
+  /// **'من موضوعات السيرة'**
+  String get savedSeerahTopics;
+
+  /// Home section kicker.
+  ///
+  /// In ar, this message translates to:
+  /// **'السيرة النبوية'**
+  String get homeSeerahKicker;
+
+  /// Home: the next Seerah chapters to read.
+  ///
+  /// In ar, this message translates to:
+  /// **'الفصول القادمة'**
+  String get homeSeerahTitle;
+
+  /// Home link to the Seerah hub.
+  ///
+  /// In ar, this message translates to:
+  /// **'كل الفصول'**
+  String get homeAllChapters;
+
+  /// Home: the companion-of-the-day section title.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعرّف على صحابي'**
+  String get homeDiscoverTitle;
+
+  /// Home section kicker.
+  ///
+  /// In ar, this message translates to:
+  /// **'الأطلس'**
+  String get homeAtlasKicker;
+
+  /// Home: the atlas section title.
+  ///
+  /// In ar, this message translates to:
+  /// **'أين جرت الأحداث'**
+  String get homeAtlasTitle;
+
+  /// Home section kicker.
+  ///
+  /// In ar, this message translates to:
+  /// **'الأرشيف'**
+  String get homeArchiveKicker;
+
+  /// Home: selected events title.
+  ///
+  /// In ar, this message translates to:
+  /// **'أحداث مختارة'**
+  String get homeArchiveTitle;
+
+  /// Home link to the event archive.
+  ///
+  /// In ar, this message translates to:
+  /// **'سجل الأحداث كاملًا'**
+  String get homeAllEvents;
+
+  /// Search result group.
+  ///
+  /// In ar, this message translates to:
+  /// **'فصول السيرة النبوية'**
+  String get searchKindSeerahChapters;
+
+  /// Search result group.
+  ///
+  /// In ar, this message translates to:
+  /// **'موضوعات السيرة'**
+  String get searchKindSeerahTopics;
+
+  /// Search result group.
+  ///
+  /// In ar, this message translates to:
+  /// **'أحداث'**
+  String get searchKindEvents;
+
+  /// Search result group.
+  ///
+  /// In ar, this message translates to:
+  /// **'أماكن'**
+  String get searchKindPlaces;
+
+  /// Search scope filter.
+  ///
+  /// In ar, this message translates to:
+  /// **'السيرة النبوية'**
+  String get searchScopeSeerah;
+
+  /// Search scope filter.
+  ///
+  /// In ar, this message translates to:
+  /// **'الأحداث والأماكن'**
+  String get searchScopeArchive;
 }
 
 class _AppLocalizationsDelegate

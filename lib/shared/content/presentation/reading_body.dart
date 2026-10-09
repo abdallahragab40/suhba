@@ -12,12 +12,13 @@ import 'package:siyar_sahaba/shared/content/domain/citation.dart';
 import 'package:siyar_sahaba/shared/content/domain/content_block.dart';
 import 'package:siyar_sahaba/shared/content/presentation/content_text.dart';
 import 'package:siyar_sahaba/shared/content/presentation/reader_scaffold.dart';
+import 'package:siyar_sahaba/shared/visuals/presentation/infographic_view.dart';
 
 /// Opens the sources of one claim.
 typedef OpenCitations =
     void Function(List<Citation> citations, Reliability? reliability);
 
-/// Renders biography and story blocks for long-form reading.
+/// Renders biography, story and Seerah blocks for long-form reading.
 ///
 /// Every claim keeps its sources one tap away. A reliability badge is shown
 /// when a claim is not established (established is the quiet default).
@@ -137,6 +138,21 @@ class ReadingBody extends StatelessWidget {
       textStyle: _reading(context),
       provisional: provisional,
       onCitations: onCitations,
+    ),
+    HeadingBlock(:final text) => Padding(
+      padding: const EdgeInsetsDirectional.only(top: AppSpacing.sm),
+      child: Semantics(
+        header: true,
+        child: Text(
+          text.of(context),
+          style: Theme.of(context).textTheme.headlineSmall,
+        ),
+      ),
+    ),
+    InfographicBlock(:final visualId, :final caption) => InfographicView(
+      visualId: visualId,
+      inline: true,
+      caption: caption?.of(context),
     ),
   };
 }

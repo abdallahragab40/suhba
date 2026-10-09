@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "id": "madinah-panel",
+  "type": "placePanel",
+  "title": {
+    "ar": "المدينة: دار الهجرة"
+  },
+  "takeaway": {
+    "ar": "المدينة هي التي آوت النبي ﷺ وأصحابه، وفيها قام المسجد والمجتمع الأول، وفيها توفي ﷺ."
+  },
+  "notes": [
+    {
+      "ar": "المشهد المرسوم تكوين توضيحي غير تصويري، والمسجد النبوي اليوم بناء حديث موسّع."
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators"
+    ],
+    "authoredBy": "draft-revision-4"
+  },
+  "placeId": "madinah",
+  "callouts": [
+    {
+      "label": {
+        "ar": "يثرب"
+      },
+      "text": {
+        "ar": "كان اسمها يثرب، فسُمّيت المدينة بعد الهجرة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 33,
+            "ayahFrom": 13
+          }
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "label": {
+        "ar": "الأنصار"
+      },
+      "text": {
+        "ar": "أهلها من الأوس والخزرج بايعوا النبي ﷺ على النصرة وآووا المهاجرين."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 59,
+            "ayahFrom": 9
+          }
+        }
+      ]
+    },
+    {
+      "label": {
+        "ar": "المسجد"
+      },
+      "text": {
+        "ar": "بُني من اللبن والجذوع والجريد، وكان مركز العبادة والتعليم."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    }
+  ]
+}

@@ -69,11 +69,13 @@ void main() {
         SectionKind.conversion,
         SectionKind.withProphet,
         SectionKind.virtues,
+        SectionKind.character,
         SectionKind.contributions,
         SectionKind.death,
         SectionKind.lessons,
       ]);
-      expect(c.timeline, hasLength(8));
+      expect(c.timeline, hasLength(13));
+      expect(c.review.coverage, Coverage.complete);
       final hijrah = c.timeline.firstWhere((t) => t.id == 'abu-bakr.t.hijrah');
       expect(
         hijrah.citations.first.quranRef,

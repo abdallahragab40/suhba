@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 1,
+  "id": "family-before-prophethood",
+  "title": {
+    "ar": "الأسرة والحياة قبل البعثة"
+  },
+  "abstract": {
+    "ar": "تجارته لخديجة وزواجه بها، وأولاده منها، وكفالته عليًّا وزيدًا، وتحبُّب الخلوة إليه في غار حراء."
+  },
+  "era": "preIslam",
+  "date": {
+    "precision": "range",
+    "era": "beforeHijra",
+    "hijriYear": 28,
+    "gregorianYear": 595,
+    "hijriYearEnd": 13,
+    "gregorianYearEnd": 610
+  },
+  "references": [
+    "sirat-ibn-hisham",
+    "tabaqat-ibn-sad",
+    "bukhari",
+    "muslim",
+    "al-bidaya"
+  ],
+  "placeIds": [
+    "makkah",
+    "ghar-hira"
+  ],
+  "companionIds": [
+    "ali"
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "خرج النبي ﷺ في تجارة لخديجة بنت خويلد إلى الشام مع غلامها ميسرة، فرجعت التجارة بربح، ورأت خديجة من أمانته وخلقه ما رغّبها في الزواج به."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وتزوجها وهو ابن خمس وعشرين سنة على قول أهل السير، فكانت أول أزواجه، ولم يتزوج عليها حتى ماتت."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "disputeNote",
+      "text": {
+        "ar": "اختلفت الروايات في سنّ خديجة يوم زواجها."
+      },
+      "opinions": [
+        {
+          "text": {
+            "ar": "أنها كانت ابنة أربعين سنة، وهو المشهور عند ابن إسحاق وابن سعد."
+          },
+          "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "text": {
+            "ar": "وجاءت رواية أخرى بأقل من ذلك، ذكرها ابن كثير."
+          },
+          "citations": [
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "pending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وولدت له خديجة أولاده كلهم إلا إبراهيم: القاسم وبه كان يُكنى، وعبد الله، وزينب، ورقية، وأم كلثوم، وفاطمة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "hadithQuote",
+      "textStatus": "pendingFromSource",
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending",
+          "grading": {
+            "grade": "sahih",
+            "gradedBy": {
+              "ar": "البخاري، بإخراجه في صحيحه"
+            }
+          }
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending",
+          "grading": {
+            "grade": "sahih",
+            "gradedBy": {
+              "ar": "مسلم، بإخراجه في صحيحه"
+            }
+          }
+        }
+      ],
+      "summary": {
+        "ar": "حديث النبي ﷺ في فضل خديجة، وأنها خير نساء زمانها، وأن جبريل أبلغها السلام من ربها."
+      }
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وضمّ إليه عليَّ بن أبي طالب صغيرًا يخفّف عن عمه أبي طالب، فنشأ علي في بيته. وكان عنده زيد بن حارثة فأعتقه وتبنّاه، حتى نزل الأمر بدعاء الأبناء لآبائهم."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 33,
+            "ayahFrom": 5
+          }
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ولما قارب الأربعين حُبّب إليه الخلاء، فكان يخلو بغار حراء يتعبّد الليالي ذوات العدد، ثم يرجع إلى خديجة فيتزوّد لمثلها."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "text": {
+        "ar": "كان بيت النبي ﷺ قبل البعثة بيتَ وفاء وكفالة: زوجة تسانده، وأبناء ومكفولون يجدون فيه الرعاية؛ وهذا الاستقرار سبق الرسالة ومهّد لها."
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators",
+      "needsSourceText"
+    ],
+    "authoredBy": "draft-revision-4",
+    "coverage": "sample"
+  }
+}

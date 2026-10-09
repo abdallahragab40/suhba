@@ -17,7 +17,8 @@
     "editorialFlags": [
       "needsLocators"
     ],
-    "authoredBy": "sample-content"
+    "authoredBy": "sample-content",
+    "coverage": "skeleton"
   },
   "references": [
     "isabah",

@@ -25,7 +25,18 @@ abstract class CompanionCategory with _$CompanionCategory {
   }) = _CompanionCategory;
 }
 
-enum EventType { hijrah, battle, treaty, pledge, appointment, death, other }
+enum EventType {
+  hijrah,
+  battle,
+  treaty,
+  pledge,
+  appointment,
+  death,
+  revelation,
+  migration,
+  community,
+  other,
+}
 
 @freezed
 abstract class HistoricalEvent with _$HistoricalEvent {
@@ -40,6 +51,13 @@ abstract class HistoricalEvent with _$HistoricalEvent {
     required ReviewInfo review,
     LocalizedText? place,
     @Default(<PersonRef>[]) List<PersonRef> participants,
+
+    /// Where it happened (`HistoricalPlace` ids).
+    @Default(<String>[]) List<String> placeIds,
+
+    /// What led to it, and what came of it.
+    LocalizedText? context,
+    LocalizedText? outcome,
   }) = _HistoricalEvent;
 }
 

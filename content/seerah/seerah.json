@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "title": {
+    "ar": "محمد رسول الله ﷺ"
+  },
+  "subtitle": {
+    "ar": "السيرة النبوية"
+  },
+  "introduction": [
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "هذه سيرة النبي محمد ﷺ مرويّة على ترتيب الزمن: من مكة التي وُلد فيها، إلى الوحي في غار حراء، إلى ثلاث عشرة سنة من الدعوة والصبر، ثم الهجرة إلى المدينة وعشر سنين بُنيت فيها أول جماعة للمسلمين، حتى حجة الوداع والوفاة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وتُقرأ السيرة هنا فصلًا بعد فصل، أو موضوعًا بعد موضوع، ومع كل خبر مصدره ودرجته؛ فما ثبت يُذكر ثابتًا، وما اختُلف فيه يُعرض بأقواله."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    }
+  ],
+  "eras": [
+    {
+      "id": "before-prophethood",
+      "name": {
+        "ar": "قبل البعثة"
+      },
+      "date": {
+        "precision": "range",
+        "era": "beforeHijra",
+        "hijriYear": 53,
+        "gregorianYear": 570,
+        "hijriYearEnd": 13,
+        "gregorianYearEnd": 610
+      },
+      "summary": {
+        "ar": "من المولد في عام الفيل إلى بلوغ الأربعين: النشأة يتيمًا، والعمل، والزواج بخديجة، والخلوة في حراء."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ],
+      "chapterIds": [
+        "makkah-lineage-birth",
+        "childhood-youth",
+        "family-before-prophethood"
+      ]
+    },
+    {
+      "id": "makkan",
+      "name": {
+        "ar": "العهد المكي"
+      },
+      "date": {
+        "precision": "range",
+        "era": "beforeHijra",
+        "hijriYear": 13,
+        "gregorianYear": 610,
+        "endEra": "afterHijra",
+        "hijriYearEnd": 1,
+        "gregorianYearEnd": 622
+      },
+      "summary": {
+        "ar": "ثلاث عشرة سنة من الوحي والدعوة في مكة، فيها الصبر على الأذى، والهجرة إلى الحبشة، والحصار، ثم بيعتا العقبة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ],
+      "chapterIds": [
+        "beginning-of-revelation",
+        "dawah-in-makkah",
+        "patience-and-trial",
+        "taif-to-aqabah"
+      ]
+    },
+    {
+      "id": "madinan",
+      "name": {
+        "ar": "العهد المدني"
+      },
+      "date": {
+        "precision": "range",
+        "era": "afterHijra",
+        "hijriYear": 1,
+        "gregorianYear": 622,
+        "hijriYearEnd": 11,
+        "gregorianYearEnd": 632
+      },
+      "summary": {
+        "ar": "عشر سنين في المدينة من الهجرة إلى الوفاة: بناء المجتمع، والدفاع عنه، والصلح، والفتح، وحجة الوداع."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ],
+      "chapterIds": [
+        "hijrah-to-madinah",
+        "building-madinah",
+        "madinan-events",
+        "hudaybiyah-conquest-delegations",
+        "farewell-and-passing"
+      ]
+    }
+  ],
+  "chapterIds": [
+    "makkah-lineage-birth",
+    "childhood-youth",
+    "family-before-prophethood",
+    "beginning-of-revelation",
+    "dawah-in-makkah",
+    "patience-and-trial",
+    "taif-to-aqabah",
+    "hijrah-to-madinah",
+    "building-madinah",
+    "madinan-events",
+    "hudaybiyah-conquest-delegations",
+    "farewell-and-passing"
+  ],
+  "topicIds": [
+    "mercy",
+    "trustworthiness",
+    "worship",
+    "teaching",
+    "family-life",
+    "with-companions",
+    "justice-loyalty",
+    "daily-guidance"
+  ],
+  "featuredEventIds": [
+    "first-revelation",
+    "hijrah",
+    "badr",
+    "hudaybiyah",
+    "conquest-of-makkah",
+    "farewell-pilgrimage"
+  ],
+  "featuredPlaceIds": [
+    "makkah",
+    "ghar-hira",
+    "ghar-thawr",
+    "quba",
+    "madinah",
+    "taif"
+  ],
+  "companionIds": [
+    "abu-bakr",
+    "umar",
+    "uthman",
+    "ali"
+  ],
+  "visualIds": [
+    "seerah-periods",
+    "seerah-timeline",
+    "seerah-atlas",
+    "hijrah-route"
+  ],
+  "methodology": {
+    "ar": "تعتمد هذه السيرة على القرآن الكريم، وصحيحي البخاري ومسلم وكتب السنن، ثم كتب السيرة والتاريخ كسيرة ابن هشام وطبقات ابن سعد وتاريخ الطبري والبداية والنهاية. وكل خبر يُنسب إلى مصدره، ويُميَّز الثابت من المروي والمختلف فيه، والدروس المذكورة اجتهاد تحريري لا رواية. والنصوص كلها مسودة لم يراجعها مراجع مختص بعد."
+  },
+  "references": [
+    "sirat-ibn-hisham",
+    "tabaqat-ibn-sad",
+    "tarikh-al-tabari",
+    "al-bidaya",
+    "bukhari",
+    "muslim"
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators",
+      "needsSourceText"
+    ],
+    "authoredBy": "draft-revision-4",
+    "coverage": "sample"
+  }
+}

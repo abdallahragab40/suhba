@@ -8,15 +8,15 @@ import '../app_identity.dart';
 import '../content/readiness.dart';
 
 /// What must hold before a public artifact is built: the final identity,
-/// content that builds on the published channel, and the complete first
-/// release (the Ten in full, reviewed). Empty when all hold.
+/// content that builds on the published channel, and the complete edition
+/// (content/release/edition.json). Empty when all hold.
 List<String> preBuildProblems({
   required AppIdentity identity,
   required ReadinessReport readiness,
 }) => [
   for (final e in validateAppIdentity(identity, release: true)) 'Identity: $e',
   for (final e in readiness.publishedBuildErrors) 'Published content: $e',
-  for (final p in readiness.publicV1Problems) 'Public v1: $p',
+  for (final p in readiness.editionProblems) 'Edition: $p',
 ];
 
 /// Checks the content bundled inside a built artifact.

@@ -5,7 +5,9 @@ import 'package:siyar_sahaba/shared/content/domain/passage_position.dart';
 part 'reading_progress.freezed.dart';
 
 /// What has a reading position.
-enum ProgressTarget { section, chapter }
+///
+/// Stored by name: add values, never rename them.
+enum ProgressTarget { section, chapter, seerahChapter, seerahTopic }
 
 @freezed
 abstract class ReadingProgress with _$ReadingProgress {
@@ -13,7 +15,8 @@ abstract class ReadingProgress with _$ReadingProgress {
     required ProgressTarget target,
     required String targetId,
 
-    /// The companion of a section, or the story of a chapter.
+    /// The companion of a section, the story of a chapter, or
+    /// [seerahParentId] for the Seerah.
     required String parentId,
 
     /// 0–1, the share of the text scrolled through.
@@ -44,6 +47,8 @@ abstract class ReadingProgress with _$ReadingProgress {
   ContentTarget get contentTarget => switch (target) {
     ProgressTarget.section => ContentTarget.section(parentId, targetId),
     ProgressTarget.chapter => ContentTarget.chapter(parentId, targetId),
+    ProgressTarget.seerahChapter => ContentTarget.seerahChapter(targetId),
+    ProgressTarget.seerahTopic => ContentTarget.seerahTopic(targetId),
   };
 }
 

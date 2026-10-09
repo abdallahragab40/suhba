@@ -256,3 +256,43 @@ Map<String, dynamic> _$DisputeNoteBlockDtoToJson(
   'opinions': instance.opinions.map((e) => e.toJson()).toList(),
   'type': instance.$type,
 };
+
+HeadingBlockDto _$HeadingBlockDtoFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('HeadingBlockDto', json, ($checkedConvert) {
+      $checkKeys(json, allowedKeys: const ['text', 'type']);
+      final val = HeadingBlockDto(
+        text: $checkedConvert(
+          'text',
+          (v) => LocalizedTextDto.fromJson(v as Map<String, dynamic>),
+        ),
+        $type: $checkedConvert('type', (v) => v as String?),
+      );
+      return val;
+    }, fieldKeyMap: const {r'$type': 'type'});
+
+Map<String, dynamic> _$HeadingBlockDtoToJson(HeadingBlockDto instance) =>
+    <String, dynamic>{'text': instance.text.toJson(), 'type': instance.$type};
+
+InfographicBlockDto _$InfographicBlockDtoFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('InfographicBlockDto', json, ($checkedConvert) {
+      $checkKeys(json, allowedKeys: const ['visualId', 'caption', 'type']);
+      final val = InfographicBlockDto(
+        visualId: $checkedConvert('visualId', (v) => v as String),
+        caption: $checkedConvert(
+          'caption',
+          (v) => v == null
+              ? null
+              : LocalizedTextDto.fromJson(v as Map<String, dynamic>),
+        ),
+        $type: $checkedConvert('type', (v) => v as String?),
+      );
+      return val;
+    }, fieldKeyMap: const {r'$type': 'type'});
+
+Map<String, dynamic> _$InfographicBlockDtoToJson(
+  InfographicBlockDto instance,
+) => <String, dynamic>{
+  'visualId': instance.visualId,
+  'caption': ?instance.caption?.toJson(),
+  'type': instance.$type,
+};

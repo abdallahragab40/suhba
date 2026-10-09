@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "id": "teaching",
+  "title": {
+    "ar": "تعليمه وتربيته"
+  },
+  "abstract": {
+    "ar": "كيف كان النبي ﷺ يعلّم: بالرفق، والتكرار، والقدوة، ومراعاة حال المتعلم."
+  },
+  "references": [
+    "quran",
+    "bukhari",
+    "muslim"
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "جعل القرآن تعليم الكتاب والحكمة وتزكية النفوس من مهام النبي ﷺ."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 62,
+            "ayahFrom": 2
+          }
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وبال أعرابي في المسجد، فقام إليه الناس، فنهاهم النبي ﷺ عنه حتى فرغ، ثم أمر بماء فصُبّ عليه، وعلّم الأعرابي برفق."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وتكلّم معاوية بن الحكم في الصلاة جاهلًا، فلم يعنّفه النبي ﷺ، وذكر معاوية أنه لم يرَ معلّمًا قبله ولا بعده أحسن تعليمًا منه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان إذا تكلّم بكلمة أعادها ثلاثًا حتى تُفهم عنه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "text": {
+        "ar": "الرفق بالمتعلم، وتقديم الفهم على اللوم، وتكرار المهم؛ أصول في التعليم سبق إليها هديه ﷺ."
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators",
+      "needsSourceText"
+    ],
+    "authoredBy": "draft-revision-4",
+    "coverage": "sample"
+  }
+}

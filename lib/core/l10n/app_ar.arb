@@ -1238,5 +1238,609 @@
         "type": "String"
       }
     }
+  },
+  "tabSeerah": "السيرة",
+  "@tabSeerah": {
+    "description": "Navigation: the Prophetic Seerah section."
+  },
+  "tabExplore": "استكشف",
+  "@tabExplore": {
+    "description": "Navigation: events, places, visuals and stories."
+  },
+  "timelineHijrahMark": "الهجرة",
+  "@timelineHijrahMark": {
+    "description": "Marker for year 1 AH on a proportional time axis."
+  },
+  "timelineUndated": "بلا تاريخ محدد",
+  "@timelineUndated": {
+    "description": "Heading for timeline records whose date is not known; they are not placed on the axis."
+  },
+  "mapSemantics": "خريطة تخطيطية لـ{count} مواضع، وتليها قائمة بها",
+  "@mapSemantics": {
+    "description": "Screen-reader label of a schematic map; count is the formatted number.",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "mapZoomIn": "تكبير الخريطة",
+  "@mapZoomIn": {
+    "description": "Map zoom-in button tooltip."
+  },
+  "mapZoomOut": "تصغير الخريطة",
+  "@mapZoomOut": {
+    "description": "Map zoom-out button tooltip."
+  },
+  "mapNorth": "الشمال",
+  "@mapNorth": {
+    "description": "Small map badge, after a north arrow icon: north is up (maps are never mirrored)."
+  },
+  "mapLegendIdentified": "موضع معروف",
+  "@mapLegendIdentified": {
+    "description": "Map legend: the site is identified today."
+  },
+  "mapLegendApproximate": "موضع تقريبي",
+  "@mapLegendApproximate": {
+    "description": "Map legend: only the area is known."
+  },
+  "mapLegendUncertain": "موضع مختلف فيه",
+  "@mapLegendUncertain": {
+    "description": "Map legend: scholars differ on where it was."
+  },
+  "mapApproximatePath": "صلة بين محطتين، لا الطريق الفعلي",
+  "@mapApproximatePath": {
+    "description": "Map legend for dashed route legs."
+  },
+  "mapSchematicNote": "خريطة تخطيطية للتوضيح، وليست رسمًا مساحيًّا دقيقًا.",
+  "@mapSchematicNote": {
+    "description": "Note under every map."
+  },
+  "relationCompanion": "صاحبه",
+  "@relationCompanion": {
+    "description": "Relation type: companionship (e.g. the Prophet ﷺ and Abu Bakr)."
+  },
+  "sequenceStep": "الخطوة {n}",
+  "@sequenceStep": {
+    "description": "Number of a step in a sequence explainer; n is the formatted number.",
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "sequenceOrderUncertain": "موضعها من الترتيب غير قطعي",
+  "@sequenceOrderUncertain": {
+    "description": "Shown on a sequence step whose order the sources do not settle."
+  },
+  "sceneIllustration": "رسم توضيحي",
+  "@sceneIllustration": {
+    "description": "Label on a drawn landscape, so it is not taken for a photo of the place."
+  },
+  "visualTypeTimeline": "خط زمني",
+  "@visualTypeTimeline": {
+    "description": "Infographic type."
+  },
+  "visualTypeMap": "خريطة",
+  "@visualTypeMap": {
+    "description": "Infographic type."
+  },
+  "visualTypeRelationships": "صلات",
+  "@visualTypeRelationships": {
+    "description": "Infographic type."
+  },
+  "visualTypeSequence": "تسلسل الأحداث",
+  "@visualTypeSequence": {
+    "description": "Infographic type."
+  },
+  "visualTypePeriods": "مراحل زمنية",
+  "@visualTypePeriods": {
+    "description": "Infographic type."
+  },
+  "visualTypePlacePanel": "بطاقة مكان",
+  "@visualTypePlacePanel": {
+    "description": "Infographic type."
+  },
+  "visualNotFound": "هذا الرسم غير متاح في هذا الإصدار.",
+  "@visualNotFound": {
+    "description": "Shown where a passage refers to a visual that is not bundled."
+  },
+  "visualShowChart": "الرسم",
+  "@visualShowChart": {
+    "description": "Toggle: show the infographic as a chart."
+  },
+  "visualShowList": "قائمة",
+  "@visualShowList": {
+    "description": "Toggle: show the infographic as an equivalent text list."
+  },
+  "visualNotes": "ملاحظات على الدقة",
+  "@visualNotes": {
+    "description": "Heading for an infographic's uncertainty notes."
+  },
+  "visualSources": "مصادر الرسم",
+  "@visualSources": {
+    "description": "Label before the citation marker of an infographic."
+  },
+  "visualOpen": "عرض كامل",
+  "@visualOpen": {
+    "description": "Opens an inline infographic on its own page."
+  },
+  "mapRouteTitle": "محطات الطريق",
+  "@mapRouteTitle": {
+    "description": "Heading of a journey's legs in the map list view."
+  },
+  "mapRouteLeg": "من {from} إلى {to}",
+  "@mapRouteLeg": {
+    "description": "One leg of a journey.",
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  },
+  "visualRelationOf": "{relation} · {person}",
+  "@visualRelationOf": {
+    "description": "Relation in list form: the relation label, then the other person; e.g. \"من الأبناء · أبو بكر الصديق\".",
+    "placeholders": {
+      "relation": {
+        "type": "String"
+      },
+      "person": {
+        "type": "String"
+      }
+    }
+  },
+  "seerahSectionName": "السيرة النبوية",
+  "@seerahSectionName": {
+    "description": "Name of the Seerah section (app bar)."
+  },
+  "seerahUnavailable": "السيرة النبوية غير متاحة في هذا الإصدار.",
+  "@seerahUnavailable": {
+    "description": "Shown when the build has no Seerah section."
+  },
+  "seerahJourneyKicker": "الرحلة",
+  "@seerahJourneyKicker": {
+    "description": "Kicker above the Seerah chapter list."
+  },
+  "seerahJourneyTitle": "فصول السيرة بالترتيب",
+  "@seerahJourneyTitle": {
+    "description": "Title of the Seerah chapter journey."
+  },
+  "seerahJourneyNote": "{n} فصلًا من المولد إلى الوفاة، مقسّمة على مراحل الزمن.",
+  "@seerahJourneyNote": {
+    "description": "Note under the journey title; n is the formatted chapter count.",
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "seerahOpenTimeline": "السيرة على خط الزمن",
+  "@seerahOpenTimeline": {
+    "description": "Button opening the Seerah timeline."
+  },
+  "seerahTopicsKicker": "موضوعات",
+  "@seerahTopicsKicker": {
+    "description": "Kicker above the thematic essays."
+  },
+  "seerahTopicsTitle": "من شمائله وهديه ﷺ",
+  "@seerahTopicsTitle": {
+    "description": "Title of the thematic essays list."
+  },
+  "seerahEventsKicker": "الأرشيف",
+  "@seerahEventsKicker": {
+    "description": "Kicker above the featured events."
+  },
+  "seerahEventsTitle": "أحداث فارقة",
+  "@seerahEventsTitle": {
+    "description": "Title of the featured events on the Seerah hub."
+  },
+  "seerahPlacesKicker": "الأطلس",
+  "@seerahPlacesKicker": {
+    "description": "Kicker above the featured places."
+  },
+  "seerahPlacesTitle": "أماكن السيرة",
+  "@seerahPlacesTitle": {
+    "description": "Title of the featured places."
+  },
+  "seerahCompanionsKicker": "الصحبة",
+  "@seerahCompanionsKicker": {
+    "description": "Kicker above related companions."
+  },
+  "seerahCompanionsTitle": "صحابة في هذه السيرة",
+  "@seerahCompanionsTitle": {
+    "description": "Title of the related companions on the Seerah hub."
+  },
+  "seerahMethodKicker": "المنهج",
+  "@seerahMethodKicker": {
+    "description": "Kicker above the methodology note."
+  },
+  "seerahMethodTitle": "كيف كُتبت هذه السيرة",
+  "@seerahMethodTitle": {
+    "description": "Title of the methodology note."
+  },
+  "seerahAllSources": "كل المصادر",
+  "@seerahAllSources": {
+    "description": "Link to the sources directory."
+  },
+  "seerahContinue": "تابع: {title}",
+  "@seerahContinue": {
+    "description": "Button resuming the Seerah at a chapter; title is the chapter title.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "seerahStart": "ابدأ السيرة",
+  "@seerahStart": {
+    "description": "Button starting the Seerah at chapter one."
+  },
+  "seerahOpenSection": "افتح السيرة النبوية",
+  "@seerahOpenSection": {
+    "description": "Button on Home opening the Seerah section."
+  },
+  "seerahScrollHint": "اثنا عشر فصلًا",
+  "@seerahScrollHint": {
+    "description": "Small hint under the Seerah opening that more follows below."
+  },
+  "seerahChapterLabel": "الفصل {number} · {date}",
+  "@seerahChapterLabel": {
+    "description": "Chapter number and time label in lists.",
+    "placeholders": {
+      "number": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "seerahVisualCount": "{count, plural, =1{رسم توضيحي} =2{رسمان} few{{n} رسوم} other{{n} رسمًا}}",
+  "@seerahVisualCount": {
+    "description": "Number of visuals in a chapter; n is the formatted number.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "coverageSample": "هذا نص تجريبي مختصر، ولم يُكتب بالتفصيل المقصود بعد.",
+  "@coverageSample": {
+    "description": "Note on passages the editor marked as samples."
+  },
+  "coverageSkeleton": "لم يُكتب هذا النص بعد.",
+  "@coverageSkeleton": {
+    "description": "Note on skeleton items."
+  },
+  "coverageSampleShort": "نص تجريبي",
+  "@coverageSampleShort": {
+    "description": "Short label on sample passages in lists."
+  },
+  "seerahFeatureKicker": "حدث فارق",
+  "@seerahFeatureKicker": {
+    "description": "Kicker of the ink feature band."
+  },
+  "seerahFeatureTitle": "الهجرة: من مكة إلى المدينة",
+  "@seerahFeatureTitle": {
+    "description": "Title of the Hijrah feature band."
+  },
+  "seerahFeatureRead": "اقرأ فصل الهجرة",
+  "@seerahFeatureRead": {
+    "description": "Button opening the Hijrah chapter."
+  },
+  "seerahChapterNotFound": "هذا الفصل غير موجود.",
+  "@seerahChapterNotFound": {
+    "description": "Seerah chapter not found."
+  },
+  "seerahTopicNotFound": "هذا الموضوع غير موجود.",
+  "@seerahTopicNotFound": {
+    "description": "Seerah topic not found."
+  },
+  "seerahChapterOf": "الفصل {number} من {total} · {date}",
+  "@seerahChapterOf": {
+    "description": "Kicker in the chapter reader.",
+    "placeholders": {
+      "number": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "seerahTopicOf": "موضوع {number} من {total}",
+  "@seerahTopicOf": {
+    "description": "Kicker in the topic reader.",
+    "placeholders": {
+      "number": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "seerahContents": "فصول السيرة",
+  "@seerahContents": {
+    "description": "Contents sheet title in the Seerah chapter reader."
+  },
+  "seerahPreviousChapter": "الفصل السابق",
+  "@seerahPreviousChapter": {
+    "description": "Reader navigation."
+  },
+  "seerahNextChapter": "الفصل التالي",
+  "@seerahNextChapter": {
+    "description": "Reader navigation."
+  },
+  "seerahPreviousTopic": "الموضوع السابق",
+  "@seerahPreviousTopic": {
+    "description": "Reader navigation."
+  },
+  "seerahNextTopic": "الموضوع التالي",
+  "@seerahNextTopic": {
+    "description": "Reader navigation."
+  },
+  "seerahTimelineTitle": "السيرة على خط الزمن",
+  "@seerahTimelineTitle": {
+    "description": "Title of the Seerah timeline page."
+  },
+  "relatedEvents": "أحداث في هذا الفصل",
+  "@relatedEvents": {
+    "description": "Related events heading."
+  },
+  "relatedPlaces": "أماكن",
+  "@relatedPlaces": {
+    "description": "Related places heading."
+  },
+  "relatedCompanions": "صحابة ذوو صلة",
+  "@relatedCompanions": {
+    "description": "Related companions heading."
+  },
+  "relatedChapters": "من فصول السيرة",
+  "@relatedChapters": {
+    "description": "Related Seerah chapters heading."
+  },
+  "eventTypeHijrah": "هجرة",
+  "@eventTypeHijrah": {
+    "description": "Event type."
+  },
+  "eventTypeBattle": "غزوة",
+  "@eventTypeBattle": {
+    "description": "Event type."
+  },
+  "eventTypeTreaty": "صلح",
+  "@eventTypeTreaty": {
+    "description": "Event type."
+  },
+  "eventTypePledge": "بيعة",
+  "@eventTypePledge": {
+    "description": "Event type."
+  },
+  "eventTypeAppointment": "ولاية",
+  "@eventTypeAppointment": {
+    "description": "Event type."
+  },
+  "eventTypeDeath": "وفاة",
+  "@eventTypeDeath": {
+    "description": "Event type."
+  },
+  "eventTypeRevelation": "وحي",
+  "@eventTypeRevelation": {
+    "description": "Event type."
+  },
+  "eventTypeMigration": "هجرة جماعية",
+  "@eventTypeMigration": {
+    "description": "Event type (e.g. to Abyssinia)."
+  },
+  "eventTypeCommunity": "بناء المجتمع",
+  "@eventTypeCommunity": {
+    "description": "Event type (mosque, brotherhood, delegations)."
+  },
+  "eventTypeOther": "حدث",
+  "@eventTypeOther": {
+    "description": "Event type."
+  },
+  "eventPageTitle": "حدث من السيرة",
+  "@eventPageTitle": {
+    "description": "App bar of the event page."
+  },
+  "eventNotFound": "هذا الحدث غير موجود.",
+  "@eventNotFound": {
+    "description": "Event not found."
+  },
+  "eventContext": "ما قبله",
+  "@eventContext": {
+    "description": "Heading: what led to the event."
+  },
+  "eventOutcome": "ما بعده",
+  "@eventOutcome": {
+    "description": "Heading: what came of the event."
+  },
+  "eventParticipants": "ممن شهده",
+  "@eventParticipants": {
+    "description": "Heading: participants of an event."
+  },
+  "eventInSeerah": "في السيرة النبوية",
+  "@eventInSeerah": {
+    "description": "Heading: Seerah chapters that tell the event."
+  },
+  "placePageTitle": "مكان من السيرة",
+  "@placePageTitle": {
+    "description": "App bar of the place page."
+  },
+  "placeNotFound": "هذا المكان غير موجود.",
+  "@placeNotFound": {
+    "description": "Place not found."
+  },
+  "placeToday": "اليوم: {name}",
+  "@placeToday": {
+    "description": "Modern name of a place.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "placeOnMap": "على الخريطة",
+  "@placeOnMap": {
+    "description": "Heading of the place map."
+  },
+  "placeEvents": "أحداث في هذا المكان",
+  "@placeEvents": {
+    "description": "Heading of events at a place."
+  },
+  "placeVisuals": "رسوم تعرض هذا المكان",
+  "@placeVisuals": {
+    "description": "Heading of visuals of a place."
+  },
+  "visualPageTitle": "رسم توضيحي",
+  "@visualPageTitle": {
+    "description": "App bar of a visual page."
+  },
+  "exploreAll": "الكل",
+  "@exploreAll": {
+    "description": "Explore filter."
+  },
+  "exploreEvents": "الأحداث",
+  "@exploreEvents": {
+    "description": "Explore filter."
+  },
+  "explorePlaces": "الأماكن",
+  "@explorePlaces": {
+    "description": "Explore filter."
+  },
+  "exploreVisuals": "الرسوم",
+  "@exploreVisuals": {
+    "description": "Explore filter."
+  },
+  "exploreStories": "القصص",
+  "@exploreStories": {
+    "description": "Explore filter."
+  },
+  "exploreIntro": "أرشيف الأحداث، وأماكن السيرة، والرسوم التوضيحية، والقصص: ادخل من أيها شئت.",
+  "@exploreIntro": {
+    "description": "Intro line on Explore."
+  },
+  "exploreEventsKicker": "الأرشيف",
+  "@exploreEventsKicker": {
+    "description": "Explore section kicker."
+  },
+  "exploreEventsTitle": "سجل الأحداث",
+  "@exploreEventsTitle": {
+    "description": "Explore section title."
+  },
+  "exploreEventsNote": "مرتبة بتواريخها كما سجّلتها المصادر، بدقتها.",
+  "@exploreEventsNote": {
+    "description": "Note under the event archive."
+  },
+  "exploreBeforeHijrah": "قبل الهجرة",
+  "@exploreBeforeHijrah": {
+    "description": "Event archive group."
+  },
+  "exploreAfterHijrah": "بعد الهجرة",
+  "@exploreAfterHijrah": {
+    "description": "Event archive group."
+  },
+  "exploreVisualsKicker": "رسوم توضيحية",
+  "@exploreVisualsKicker": {
+    "description": "Explore section kicker."
+  },
+  "exploreVisualsTitle": "خرائط وخطوط زمنية وصلات",
+  "@exploreVisualsTitle": {
+    "description": "Explore section title."
+  },
+  "explorePlacesKicker": "الأطلس",
+  "@explorePlacesKicker": {
+    "description": "Explore section kicker."
+  },
+  "explorePlacesTitle": "أماكن السيرة",
+  "@explorePlacesTitle": {
+    "description": "Explore section title."
+  },
+  "exploreStoriesKicker": "حكايات",
+  "@exploreStoriesKicker": {
+    "description": "Explore section kicker."
+  },
+  "exploreStoriesTitle": "قصص من السيرة",
+  "@exploreStoriesTitle": {
+    "description": "Explore section title."
+  },
+  "savedSeerahChapters": "من فصول السيرة",
+  "@savedSeerahChapters": {
+    "description": "Saved group: Seerah chapters."
+  },
+  "savedSeerahTopics": "من موضوعات السيرة",
+  "@savedSeerahTopics": {
+    "description": "Saved group: Seerah themes."
+  },
+  "homeSeerahKicker": "السيرة النبوية",
+  "@homeSeerahKicker": {
+    "description": "Home section kicker."
+  },
+  "homeSeerahTitle": "الفصول القادمة",
+  "@homeSeerahTitle": {
+    "description": "Home: the next Seerah chapters to read."
+  },
+  "homeAllChapters": "كل الفصول",
+  "@homeAllChapters": {
+    "description": "Home link to the Seerah hub."
+  },
+  "homeDiscoverTitle": "تعرّف على صحابي",
+  "@homeDiscoverTitle": {
+    "description": "Home: the companion-of-the-day section title."
+  },
+  "homeAtlasKicker": "الأطلس",
+  "@homeAtlasKicker": {
+    "description": "Home section kicker."
+  },
+  "homeAtlasTitle": "أين جرت الأحداث",
+  "@homeAtlasTitle": {
+    "description": "Home: the atlas section title."
+  },
+  "homeArchiveKicker": "الأرشيف",
+  "@homeArchiveKicker": {
+    "description": "Home section kicker."
+  },
+  "homeArchiveTitle": "أحداث مختارة",
+  "@homeArchiveTitle": {
+    "description": "Home: selected events title."
+  },
+  "homeAllEvents": "سجل الأحداث كاملًا",
+  "@homeAllEvents": {
+    "description": "Home link to the event archive."
+  },
+  "searchKindSeerahChapters": "فصول السيرة النبوية",
+  "@searchKindSeerahChapters": {
+    "description": "Search result group."
+  },
+  "searchKindSeerahTopics": "موضوعات السيرة",
+  "@searchKindSeerahTopics": {
+    "description": "Search result group."
+  },
+  "searchKindEvents": "أحداث",
+  "@searchKindEvents": {
+    "description": "Search result group."
+  },
+  "searchKindPlaces": "أماكن",
+  "@searchKindPlaces": {
+    "description": "Search result group."
+  },
+  "searchScopeSeerah": "السيرة النبوية",
+  "@searchScopeSeerah": {
+    "description": "Search scope filter."
+  },
+  "searchScopeArchive": "الأحداث والأماكن",
+  "@searchScopeArchive": {
+    "description": "Search scope filter."
   }
 }

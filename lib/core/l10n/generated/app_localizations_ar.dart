@@ -893,4 +893,434 @@ class AppLocalizationsAr extends AppLocalizations {
   String clearSavedMessage(String what) {
     return 'سيُحذف $what من المحفوظات على هذا الجهاز، ولا يمكن التراجع عن ذلك. لن يتأثر سجل القراءة ولا الإعدادات.';
   }
+
+  @override
+  String get tabSeerah => 'السيرة';
+
+  @override
+  String get tabExplore => 'استكشف';
+
+  @override
+  String get timelineHijrahMark => 'الهجرة';
+
+  @override
+  String get timelineUndated => 'بلا تاريخ محدد';
+
+  @override
+  String mapSemantics(String count) {
+    return 'خريطة تخطيطية لـ$count مواضع، وتليها قائمة بها';
+  }
+
+  @override
+  String get mapZoomIn => 'تكبير الخريطة';
+
+  @override
+  String get mapZoomOut => 'تصغير الخريطة';
+
+  @override
+  String get mapNorth => 'الشمال';
+
+  @override
+  String get mapLegendIdentified => 'موضع معروف';
+
+  @override
+  String get mapLegendApproximate => 'موضع تقريبي';
+
+  @override
+  String get mapLegendUncertain => 'موضع مختلف فيه';
+
+  @override
+  String get mapApproximatePath => 'صلة بين محطتين، لا الطريق الفعلي';
+
+  @override
+  String get mapSchematicNote =>
+      'خريطة تخطيطية للتوضيح، وليست رسمًا مساحيًّا دقيقًا.';
+
+  @override
+  String get relationCompanion => 'صاحبه';
+
+  @override
+  String sequenceStep(String n) {
+    return 'الخطوة $n';
+  }
+
+  @override
+  String get sequenceOrderUncertain => 'موضعها من الترتيب غير قطعي';
+
+  @override
+  String get sceneIllustration => 'رسم توضيحي';
+
+  @override
+  String get visualTypeTimeline => 'خط زمني';
+
+  @override
+  String get visualTypeMap => 'خريطة';
+
+  @override
+  String get visualTypeRelationships => 'صلات';
+
+  @override
+  String get visualTypeSequence => 'تسلسل الأحداث';
+
+  @override
+  String get visualTypePeriods => 'مراحل زمنية';
+
+  @override
+  String get visualTypePlacePanel => 'بطاقة مكان';
+
+  @override
+  String get visualNotFound => 'هذا الرسم غير متاح في هذا الإصدار.';
+
+  @override
+  String get visualShowChart => 'الرسم';
+
+  @override
+  String get visualShowList => 'قائمة';
+
+  @override
+  String get visualNotes => 'ملاحظات على الدقة';
+
+  @override
+  String get visualSources => 'مصادر الرسم';
+
+  @override
+  String get visualOpen => 'عرض كامل';
+
+  @override
+  String get mapRouteTitle => 'محطات الطريق';
+
+  @override
+  String mapRouteLeg(String from, String to) {
+    return 'من $from إلى $to';
+  }
+
+  @override
+  String visualRelationOf(String relation, String person) {
+    return '$relation · $person';
+  }
+
+  @override
+  String get seerahSectionName => 'السيرة النبوية';
+
+  @override
+  String get seerahUnavailable => 'السيرة النبوية غير متاحة في هذا الإصدار.';
+
+  @override
+  String get seerahJourneyKicker => 'الرحلة';
+
+  @override
+  String get seerahJourneyTitle => 'فصول السيرة بالترتيب';
+
+  @override
+  String seerahJourneyNote(String n) {
+    return '$n فصلًا من المولد إلى الوفاة، مقسّمة على مراحل الزمن.';
+  }
+
+  @override
+  String get seerahOpenTimeline => 'السيرة على خط الزمن';
+
+  @override
+  String get seerahTopicsKicker => 'موضوعات';
+
+  @override
+  String get seerahTopicsTitle => 'من شمائله وهديه ﷺ';
+
+  @override
+  String get seerahEventsKicker => 'الأرشيف';
+
+  @override
+  String get seerahEventsTitle => 'أحداث فارقة';
+
+  @override
+  String get seerahPlacesKicker => 'الأطلس';
+
+  @override
+  String get seerahPlacesTitle => 'أماكن السيرة';
+
+  @override
+  String get seerahCompanionsKicker => 'الصحبة';
+
+  @override
+  String get seerahCompanionsTitle => 'صحابة في هذه السيرة';
+
+  @override
+  String get seerahMethodKicker => 'المنهج';
+
+  @override
+  String get seerahMethodTitle => 'كيف كُتبت هذه السيرة';
+
+  @override
+  String get seerahAllSources => 'كل المصادر';
+
+  @override
+  String seerahContinue(String title) {
+    return 'تابع: $title';
+  }
+
+  @override
+  String get seerahStart => 'ابدأ السيرة';
+
+  @override
+  String get seerahOpenSection => 'افتح السيرة النبوية';
+
+  @override
+  String get seerahScrollHint => 'اثنا عشر فصلًا';
+
+  @override
+  String seerahChapterLabel(String number, String date) {
+    return 'الفصل $number · $date';
+  }
+
+  @override
+  String seerahVisualCount(int count, String n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$n رسمًا',
+      few: '$n رسوم',
+      two: 'رسمان',
+      one: 'رسم توضيحي',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get coverageSample =>
+      'هذا نص تجريبي مختصر، ولم يُكتب بالتفصيل المقصود بعد.';
+
+  @override
+  String get coverageSkeleton => 'لم يُكتب هذا النص بعد.';
+
+  @override
+  String get coverageSampleShort => 'نص تجريبي';
+
+  @override
+  String get seerahFeatureKicker => 'حدث فارق';
+
+  @override
+  String get seerahFeatureTitle => 'الهجرة: من مكة إلى المدينة';
+
+  @override
+  String get seerahFeatureRead => 'اقرأ فصل الهجرة';
+
+  @override
+  String get seerahChapterNotFound => 'هذا الفصل غير موجود.';
+
+  @override
+  String get seerahTopicNotFound => 'هذا الموضوع غير موجود.';
+
+  @override
+  String seerahChapterOf(String number, String total, String date) {
+    return 'الفصل $number من $total · $date';
+  }
+
+  @override
+  String seerahTopicOf(String number, String total) {
+    return 'موضوع $number من $total';
+  }
+
+  @override
+  String get seerahContents => 'فصول السيرة';
+
+  @override
+  String get seerahPreviousChapter => 'الفصل السابق';
+
+  @override
+  String get seerahNextChapter => 'الفصل التالي';
+
+  @override
+  String get seerahPreviousTopic => 'الموضوع السابق';
+
+  @override
+  String get seerahNextTopic => 'الموضوع التالي';
+
+  @override
+  String get seerahTimelineTitle => 'السيرة على خط الزمن';
+
+  @override
+  String get relatedEvents => 'أحداث في هذا الفصل';
+
+  @override
+  String get relatedPlaces => 'أماكن';
+
+  @override
+  String get relatedCompanions => 'صحابة ذوو صلة';
+
+  @override
+  String get relatedChapters => 'من فصول السيرة';
+
+  @override
+  String get eventTypeHijrah => 'هجرة';
+
+  @override
+  String get eventTypeBattle => 'غزوة';
+
+  @override
+  String get eventTypeTreaty => 'صلح';
+
+  @override
+  String get eventTypePledge => 'بيعة';
+
+  @override
+  String get eventTypeAppointment => 'ولاية';
+
+  @override
+  String get eventTypeDeath => 'وفاة';
+
+  @override
+  String get eventTypeRevelation => 'وحي';
+
+  @override
+  String get eventTypeMigration => 'هجرة جماعية';
+
+  @override
+  String get eventTypeCommunity => 'بناء المجتمع';
+
+  @override
+  String get eventTypeOther => 'حدث';
+
+  @override
+  String get eventPageTitle => 'حدث من السيرة';
+
+  @override
+  String get eventNotFound => 'هذا الحدث غير موجود.';
+
+  @override
+  String get eventContext => 'ما قبله';
+
+  @override
+  String get eventOutcome => 'ما بعده';
+
+  @override
+  String get eventParticipants => 'ممن شهده';
+
+  @override
+  String get eventInSeerah => 'في السيرة النبوية';
+
+  @override
+  String get placePageTitle => 'مكان من السيرة';
+
+  @override
+  String get placeNotFound => 'هذا المكان غير موجود.';
+
+  @override
+  String placeToday(String name) {
+    return 'اليوم: $name';
+  }
+
+  @override
+  String get placeOnMap => 'على الخريطة';
+
+  @override
+  String get placeEvents => 'أحداث في هذا المكان';
+
+  @override
+  String get placeVisuals => 'رسوم تعرض هذا المكان';
+
+  @override
+  String get visualPageTitle => 'رسم توضيحي';
+
+  @override
+  String get exploreAll => 'الكل';
+
+  @override
+  String get exploreEvents => 'الأحداث';
+
+  @override
+  String get explorePlaces => 'الأماكن';
+
+  @override
+  String get exploreVisuals => 'الرسوم';
+
+  @override
+  String get exploreStories => 'القصص';
+
+  @override
+  String get exploreIntro =>
+      'أرشيف الأحداث، وأماكن السيرة، والرسوم التوضيحية، والقصص: ادخل من أيها شئت.';
+
+  @override
+  String get exploreEventsKicker => 'الأرشيف';
+
+  @override
+  String get exploreEventsTitle => 'سجل الأحداث';
+
+  @override
+  String get exploreEventsNote =>
+      'مرتبة بتواريخها كما سجّلتها المصادر، بدقتها.';
+
+  @override
+  String get exploreBeforeHijrah => 'قبل الهجرة';
+
+  @override
+  String get exploreAfterHijrah => 'بعد الهجرة';
+
+  @override
+  String get exploreVisualsKicker => 'رسوم توضيحية';
+
+  @override
+  String get exploreVisualsTitle => 'خرائط وخطوط زمنية وصلات';
+
+  @override
+  String get explorePlacesKicker => 'الأطلس';
+
+  @override
+  String get explorePlacesTitle => 'أماكن السيرة';
+
+  @override
+  String get exploreStoriesKicker => 'حكايات';
+
+  @override
+  String get exploreStoriesTitle => 'قصص من السيرة';
+
+  @override
+  String get savedSeerahChapters => 'من فصول السيرة';
+
+  @override
+  String get savedSeerahTopics => 'من موضوعات السيرة';
+
+  @override
+  String get homeSeerahKicker => 'السيرة النبوية';
+
+  @override
+  String get homeSeerahTitle => 'الفصول القادمة';
+
+  @override
+  String get homeAllChapters => 'كل الفصول';
+
+  @override
+  String get homeDiscoverTitle => 'تعرّف على صحابي';
+
+  @override
+  String get homeAtlasKicker => 'الأطلس';
+
+  @override
+  String get homeAtlasTitle => 'أين جرت الأحداث';
+
+  @override
+  String get homeArchiveKicker => 'الأرشيف';
+
+  @override
+  String get homeArchiveTitle => 'أحداث مختارة';
+
+  @override
+  String get homeAllEvents => 'سجل الأحداث كاملًا';
+
+  @override
+  String get searchKindSeerahChapters => 'فصول السيرة النبوية';
+
+  @override
+  String get searchKindSeerahTopics => 'موضوعات السيرة';
+
+  @override
+  String get searchKindEvents => 'أحداث';
+
+  @override
+  String get searchKindPlaces => 'أماكن';
+
+  @override
+  String get searchScopeSeerah => 'السيرة النبوية';
+
+  @override
+  String get searchScopeArchive => 'الأحداث والأماكن';
 }

@@ -110,6 +110,7 @@ abstract class ReviewDto with _$ReviewDto {
   const factory ReviewDto({
     required ReviewStatus status,
     @Default(<EditorialFlag>[]) List<EditorialFlag> editorialFlags,
+    Coverage? coverage,
 
     /// Who drafted it (team member or "sample-content"); not shipped to UI.
     String? authoredBy,

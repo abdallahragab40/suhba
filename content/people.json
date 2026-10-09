@@ -24,6 +24,110 @@
         "status": "draft",
         "authoredBy": "sample-content"
       }
+    },
+    {
+      "id": "muhammad",
+      "name": {
+        "ar": "محمد رسول الله"
+      },
+      "honorific": "prophet",
+      "review": {
+        "status": "draft",
+        "editorialFlags": [],
+        "authoredBy": "draft-revision-4"
+      },
+      "gender": "male"
+    },
+    {
+      "id": "khadijah",
+      "name": {
+        "ar": "خديجة بنت خويلد"
+      },
+      "honorific": "sahabi",
+      "review": {
+        "status": "draft",
+        "editorialFlags": [],
+        "authoredBy": "draft-revision-4"
+      },
+      "gender": "female"
+    },
+    {
+      "id": "asma-bint-abi-bakr",
+      "name": {
+        "ar": "أسماء بنت أبي بكر"
+      },
+      "honorific": "sahabi",
+      "review": {
+        "status": "draft",
+        "editorialFlags": [],
+        "authoredBy": "draft-revision-4"
+      },
+      "gender": "female"
+    },
+    {
+      "id": "abdullah-ibn-abi-bakr",
+      "name": {
+        "ar": "عبد الله بن أبي بكر"
+      },
+      "honorific": "sahabi",
+      "review": {
+        "status": "draft",
+        "editorialFlags": [],
+        "authoredBy": "draft-revision-4"
+      },
+      "gender": "male"
+    },
+    {
+      "id": "amir-ibn-fuhayrah",
+      "name": {
+        "ar": "عامر بن فهيرة"
+      },
+      "honorific": "sahabi",
+      "review": {
+        "status": "draft",
+        "editorialFlags": [],
+        "authoredBy": "draft-revision-4"
+      },
+      "gender": "male"
+    },
+    {
+      "id": "abdullah-ibn-uraiqit",
+      "name": {
+        "ar": "عبد الله بن أريقط"
+      },
+      "honorific": "none",
+      "review": {
+        "status": "draft",
+        "editorialFlags": [],
+        "authoredBy": "draft-revision-4"
+      },
+      "gender": "male"
+    },
+    {
+      "id": "suraqah-ibn-malik",
+      "name": {
+        "ar": "سراقة بن مالك"
+      },
+      "honorific": "sahabi",
+      "review": {
+        "status": "draft",
+        "editorialFlags": [],
+        "authoredBy": "draft-revision-4"
+      },
+      "gender": "male"
+    },
+    {
+      "id": "abu-talib",
+      "name": {
+        "ar": "أبو طالب بن عبد المطلب"
+      },
+      "honorific": "none",
+      "review": {
+        "status": "draft",
+        "editorialFlags": [],
+        "authoredBy": "draft-revision-4"
+      },
+      "gender": "male"
     }
   ]
 }

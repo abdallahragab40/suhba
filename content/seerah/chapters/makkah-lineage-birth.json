@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 1,
+  "id": "makkah-lineage-birth",
+  "title": {
+    "ar": "مكة والنسب والمولد"
+  },
+  "abstract": {
+    "ar": "وادي مكة وقريش التي تلي البيت، ونسب النبي ﷺ في بني هاشم، ومولده يتيمًا في عام الفيل، مع بيان ما اختُلف فيه من تاريخه."
+  },
+  "era": "preIslam",
+  "date": {
+    "precision": "approx",
+    "era": "beforeHijra",
+    "hijriYear": 53,
+    "gregorianYear": 570
+  },
+  "references": [
+    "sirat-ibn-hisham",
+    "tabaqat-ibn-sad",
+    "bukhari",
+    "muslim",
+    "al-bidaya"
+  ],
+  "eventIds": [
+    "birth-of-the-prophet"
+  ],
+  "placeIds": [
+    "makkah"
+  ],
+  "visualIds": [
+    "makkah-panel"
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "text": {
+        "ar": "وادٍ غير ذي زرع"
+      }
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "مكة وادٍ تحيط به الجبال، قليل الماء والزرع، وفيه الكعبة التي رفع قواعدها إبراهيم وإسماعيل عليهما السلام. وحول البيت قامت حياة قريش: تلي أمره، وتسقي الحجيج، وتعيش على التجارة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 2,
+            "ayahFrom": 127
+          }
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 14,
+            "ayahFrom": 37
+          }
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "quranQuote",
+      "ref": {
+        "surah": 14,
+        "ayahFrom": 37
+      },
+      "note": {
+        "ar": "دعاء إبراهيم عليه السلام لمّا أسكن ذريته عند البيت."
+      }
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكانت لقريش رحلتان للتجارة: رحلة الشتاء إلى اليمن، ورحلة الصيف إلى الشام، وبهما وبأمن الحرم عرفت مكة مكانتها بين العرب."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 106,
+            "ayahFrom": 1,
+            "ayahTo": 4
+          }
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "text": {
+        "ar": "النسب"
+      }
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "هو محمد بن عبد الله بن عبد المطلب بن هاشم بن عبد مناف بن قصي بن كلاب، من قريش، وينتهي نسبه إلى عدنان من ولد إسماعيل عليه السلام. وأمه آمنة بنت وهب من بني زهرة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وتوفي أبوه عبد الله قبل مولده على المشهور عند أهل السير، فوُلد يتيمًا، وقيل في ذلك غير هذا."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "text": {
+        "ar": "المولد"
+      }
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ووُلد بمكة في العام الذي قصد فيه أبرهة الكعبة بجيشه ومعه الفيل، فردّه الله، ويُعرف ذلك العام بعام الفيل، وفيه نزلت سورة الفيل."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 105,
+            "ayahFrom": 1,
+            "ayahTo": 5
+          }
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "hadithQuote",
+      "textStatus": "pendingFromSource",
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending",
+          "grading": {
+            "grade": "sahih",
+            "gradedBy": {
+              "ar": "مسلم، بإخراجه في صحيحه"
+            }
+          }
+        }
+      ],
+      "summary": {
+        "ar": "حديث النبي ﷺ لمّا سُئل عن صوم يوم الاثنين، فذكر أنه اليوم الذي وُلد فيه، واليوم الذي أُنزل عليه فيه."
+      }
+    },
+    {
+      "type": "disputeNote",
+      "text": {
+        "ar": "اتفقت الروايات على أنه وُلد يوم الاثنين، والمشهور أنه في شهر ربيع الأول، واختلفوا في اليوم من الشهر وفي السنة الميلادية الموافقة."
+      },
+      "opinions": [
+        {
+          "text": {
+            "ar": "أنه الثاني عشر من ربيع الأول، وهو قول ابن إسحاق."
+          },
+          "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "text": {
+            "ar": "أيام أخرى من الشهر نفسه، ذكرها ابن كثير وغيره مع أدلتها."
+          },
+          "citations": [
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "text": {
+            "ar": "وأما السنة الميلادية فيذكرها المؤرخون المتأخرون بين ٥٧٠ و٥٧١ تقريبًا، وهي موافقة تقريبية لا رواية."
+          },
+          "citations": [
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "pending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "text": {
+        "ar": "وُلد ﷺ يتيمًا في وادٍ قليل الموارد، ومن هذا المبدأ المتواضع جاءت رسالة غيّرت حياة الناس؛ فقيمة الإنسان لا تُقاس بما وُلد فيه من سعة."
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators",
+      "needsSourceText"
+    ],
+    "authoredBy": "draft-revision-4",
+    "coverage": "sample"
+  }
+}

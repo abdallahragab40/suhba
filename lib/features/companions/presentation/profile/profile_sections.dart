@@ -239,6 +239,7 @@ class RelatedPeople extends ConsumerWidget {
       RelationType.teacher => l10n.relationTeacher,
       RelationType.student => l10n.relationStudent,
       RelationType.brotherhood => l10n.relationBrotherhood,
+      RelationType.companion => l10n.relationCompanion,
     };
 
     return Column(

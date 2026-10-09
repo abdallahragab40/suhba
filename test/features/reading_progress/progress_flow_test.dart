@@ -50,7 +50,7 @@ void main() {
     expect(p!.fraction, greaterThan(0));
     expect(p.completed, isFalse);
     expect(p.parentId, 'abu-bakr');
-    expect(p.contentVersion, '0.1.0');
+    expect(p.contentVersion, '0.2.0');
   });
 
   testApp('reaching the end completes the passage', (tester) async {
@@ -96,7 +96,7 @@ void main() {
             parentId: 'abu-bakr',
             fraction: 0.6,
             completed: false,
-            contentVersion: '0.1.0',
+            contentVersion: '0.2.0',
             updatedAt: DateTime(2026, 10, 9),
           ),
         );
@@ -127,7 +127,7 @@ void main() {
             parentId: 'the-cave',
             fraction: 0.42,
             completed: false,
-            contentVersion: '0.1.0',
+            contentVersion: '0.2.0',
             updatedAt: DateTime(2026, 10, 9),
           ),
         );
@@ -182,7 +182,7 @@ void main() {
               parentId: 'abu-bakr',
               fraction: 0.6,
               completed: false,
-              contentVersion: '0.1.0',
+              contentVersion: '0.2.0',
               updatedAt: DateTime(2026, 10, 9),
               targetRevision: revision(current),
             ),

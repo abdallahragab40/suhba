@@ -57,8 +57,9 @@ void main() {
     addTearDown(tester.view.reset);
     await pumpApp(tester);
 
-    await tester.tap(find.text('الإعدادات'));
+    await tester.tap(find.byTooltip('الإعدادات'));
     await tester.pumpAndSettle();
+    await tester.ensureVisible(find.text('معرض نظام التصميم'));
     await tester.tap(find.text('معرض نظام التصميم'));
     // The gallery contains a pulsing skeleton, so pump past the page
     // transition rather than settling.

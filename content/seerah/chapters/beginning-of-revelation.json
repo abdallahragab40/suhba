@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 1,
+  "id": "beginning-of-revelation",
+  "title": {
+    "ar": "بدء الوحي"
+  },
+  "abstract": {
+    "ar": "الرؤيا الصادقة، ونزول أوائل سورة العلق في غار حراء، وتثبيت خديجة، وشهادة ورقة، ثم فترة الوحي وأوائل سورة المدثر."
+  },
+  "era": "makkan",
+  "date": {
+    "precision": "approx",
+    "era": "beforeHijra",
+    "hijriYear": 13,
+    "gregorianYear": 610
+  },
+  "references": [
+    "sirat-ibn-hisham",
+    "bukhari",
+    "muslim",
+    "al-bidaya"
+  ],
+  "eventIds": [
+    "first-revelation"
+  ],
+  "placeIds": [
+    "ghar-hira",
+    "makkah"
+  ],
+  "visualIds": [
+    "seerah-periods"
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "بُعث النبي ﷺ وهو ابن أربعين سنة. وكان أول ما بُدئ به من الوحي الرؤيا الصادقة في النوم، فكان لا يرى رؤيا إلا جاءت مثل فلق الصبح."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ثم جاءه الملك وهو في غار حراء فأمره بالقراءة، فأخبره النبي ﷺ أنه ليس بقارئ، فضمّه الملك ضمًّا شديدًا ثلاث مرات، ثم قرأ عليه أوائل سورة العلق."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "quranQuote",
+      "ref": {
+        "surah": 96,
+        "ayahFrom": 1,
+        "ayahTo": 5
+      },
+      "note": {
+        "ar": "أول ما نزل من القرآن على الصحيح."
+      }
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ورجع بها النبي ﷺ يرجف فؤاده، فدخل على خديجة وطلب أن يُغطّى، فغطّوه حتى ذهب عنه الروع، وأخبرها الخبر."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "hadithQuote",
+      "textStatus": "pendingFromSource",
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending",
+          "grading": {
+            "grade": "sahih",
+            "gradedBy": {
+              "ar": "البخاري، بإخراجه في صحيحه"
+            }
+          }
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending",
+          "grading": {
+            "grade": "sahih",
+            "gradedBy": {
+              "ar": "مسلم، بإخراجه في صحيحه"
+            }
+          }
+        }
+      ],
+      "summary": {
+        "ar": "حديث عائشة في بدء الوحي، وفيه أن خديجة طمأنت النبي ﷺ بأن الله لن يخذله، واستدلّت على ذلك بصلته الرحم، وإعانته الضعيف والمحتاج، وإكرامه الضيف، ونصرته أهل الحق في الشدائد."
+      }
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وانطلقت به خديجة إلى ابن عمها ورقة بن نوفل، وكان قد تنصّر في الجاهلية وقرأ الكتب، فأخبره أن الذي جاءه هو الناموس الذي نزل على موسى، وتمنّى أن يكون حيًّا حين يُخرجه قومه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ثم فتر الوحي مدة، ثم تتابع بنزول أوائل سورة المدثر، وفيها الأمر بالإنذار."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 74,
+            "ayahFrom": 1,
+            "ayahTo": 5
+          }
+        }
+      ]
+    },
+    {
+      "type": "quranQuote",
+      "ref": {
+        "surah": 74,
+        "ayahFrom": 1,
+        "ayahTo": 5
+      }
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان نزول القرآن في شهر رمضان، كما دلّ عليه القرآن نفسه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 2,
+            "ayahFrom": 185
+          }
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 97,
+            "ayahFrom": 1
+          }
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "text": {
+        "ar": "جاءت أول كلمة من الوحي أمرًا بالقراءة باسم الله؛ فالعلم في هذا الدين يبدأ من الله ويعود إليه. ووقفت خديجة إلى جانب النبي ﷺ بكلمات استدلّت فيها بأخلاقه، فكان خلقه أول شاهد على صدقه."
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators",
+      "needsSourceText"
+    ],
+    "authoredBy": "draft-revision-4",
+    "coverage": "sample"
+  }
+}

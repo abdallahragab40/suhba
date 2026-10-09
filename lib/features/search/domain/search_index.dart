@@ -1,7 +1,16 @@
 import 'package:siyar_sahaba/core/text/arabic_normalizer.dart';
 
 /// What a search result points to, in display order.
-enum SearchKind { companion, story, section, chapter }
+enum SearchKind {
+  companion,
+  story,
+  section,
+  chapter,
+  seerahChapter,
+  seerahTopic,
+  event,
+  place,
+}
 
 /// One searchable text of a document and how much a match in it counts.
 class SearchField {
@@ -47,7 +56,8 @@ class SearchDocument {
   final SearchKind kind;
   final String id;
 
-  /// The companion of a section, or the story of a chapter.
+  /// The companion of a section, or the story of a chapter; null for
+  /// everything else.
   final String? parentId;
   final String title;
   final String? subtitle;

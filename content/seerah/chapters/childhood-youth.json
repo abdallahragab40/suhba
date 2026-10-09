@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "id": "childhood-youth",
+  "title": {
+    "ar": "النشأة والشباب"
+  },
+  "abstract": {
+    "ar": "من البادية في بني سعد إلى كفالة الجد ثم العم، ورعي الغنم، وشهود بناء الكعبة، وما عُرف به من الأمانة قبل البعثة."
+  },
+  "era": "preIslam",
+  "date": {
+    "precision": "range",
+    "era": "beforeHijra",
+    "hijriYear": 53,
+    "gregorianYear": 570,
+    "hijriYearEnd": 15,
+    "gregorianYearEnd": 608
+  },
+  "references": [
+    "sirat-ibn-hisham",
+    "tabaqat-ibn-sad",
+    "bukhari",
+    "muslim",
+    "al-bidaya"
+  ],
+  "placeIds": [
+    "makkah"
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "دُفع النبي ﷺ رضيعًا إلى البادية في بني سعد بن بكر على عادة أهل مكة، وأرضعته حليمة السعدية، فنشأ في صفاء البادية وفصاحتها."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "hadithQuote",
+      "textStatus": "pendingFromSource",
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending",
+          "grading": {
+            "grade": "sahih",
+            "gradedBy": {
+              "ar": "مسلم، بإخراجه في صحيحه"
+            }
+          }
+        }
+      ],
+      "summary": {
+        "ar": "حديث أنس في أن جبريل أتى النبي ﷺ وهو يلعب مع الغلمان في صغره، فشقّ صدره وغسله ثم أعاده."
+      }
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وتوفيت أمه آمنة وهو ابن ست سنين بالأبواء بين مكة والمدينة، فكفله جده عبد المطلب، فلما مات وهو ابن ثماني سنين كفله عمه أبو طالب."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "hadithQuote",
+      "textStatus": "pendingFromSource",
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending",
+          "grading": {
+            "grade": "sahih",
+            "gradedBy": {
+              "ar": "البخاري، بإخراجه في صحيحه"
+            }
+          }
+        }
+      ],
+      "summary": {
+        "ar": "حديث النبي ﷺ أن ما من نبي إلا رعى الغنم، وأنه كان يرعاها لأهل مكة على قراريط."
+      }
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ورعي الغنم عمل متواضع يعلّم الصبر والرفق والحراسة، وقد ذكره النبي ﷺ عن نفسه ولم يستنكف منه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وشارك قريشًا في إعادة بناء الكعبة، وكان ينقل الحجارة مع عمه العباس. ولما اختلفت القبائل في وضع الحجر الأسود في موضعه حكّموه، فجعله في ثوب وأمر كل قبيلة أن تأخذ بطرفه، ثم وضعه بيده."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وعُرف في قومه بالصدق والأمانة حتى كانوا يسمّونه الأمين، وهذا ما شهد به خصومه أنفسهم بعد البعثة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وتُروى في سيرة هذه المرحلة أخبار كثيرة تتفاوت في ثبوتها؛ فما صحّ إسناده يُذكر على أنه خبر ثابت، وما لم يصحّ يُذكر على أنه رواية لأهل السير، ولا يُبنى عليه حكم."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "al-bidaya",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "text": {
+        "ar": "تتابع على النبي ﷺ فقد الأب والأم والجد في طفولته، فنشأ على الاعتماد على الله ثم على عمله، وعُرف بخلقه قبل أن يُعرف بأي منصب."
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators",
+      "needsSourceText"
+    ],
+    "authoredBy": "draft-revision-4",
+    "coverage": "sample"
+  }
+}

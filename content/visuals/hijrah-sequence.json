@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "id": "hijrah-sequence",
+  "type": "sequence",
+  "title": {
+    "ar": "الهجرة خطوة بخطوة"
+  },
+  "takeaway": {
+    "ar": "لم تكن الهجرة خروجًا مفاجئًا: سبقها إعداد طويل، ثم خطة محكمة للخروج والاختباء والطريق، حتى الوصول وبناء المسجد."
+  },
+  "notes": [
+    {
+      "ar": "ترتيب الخطوات من روايات الصحيح وكتب السيرة؛ وما لم يُعرف موضعه من الترتيب بدقة مُعلَّم بذلك."
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators"
+    ],
+    "authoredBy": "draft-revision-4"
+  },
+  "eventIds": [
+    "second-aqabah",
+    "hijrah",
+    "quba-mosque",
+    "prophets-mosque"
+  ],
+  "steps": [
+    {
+      "title": {
+        "ar": "هجرة الصحابة وإعداد الراحلتين"
+      },
+      "text": {
+        "ar": "هاجر المسلمون إلى المدينة أرسالًا، وأعدّ أبو بكر راحلتين أربعة أشهر ينتظر الإذن."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ],
+      "placeId": "makkah"
+    },
+    {
+      "title": {
+        "ar": "مكر قريش"
+      },
+      "text": {
+        "ar": "اجتمعت قريش في دار الندوة وأجمعت على قتل النبي ﷺ."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 8,
+            "ayahFrom": 30
+          }
+        }
+      ],
+      "placeId": "makkah"
+    },
+    {
+      "title": {
+        "ar": "الخروج من بيت أبي بكر"
+      },
+      "text": {
+        "ar": "جاء النبي ﷺ أبا بكر في الظهيرة وأخبره بالإذن، فخرجا ليلًا إلى غار ثور، وبات علي في فراشه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ],
+      "placeId": "makkah"
+    },
+    {
+      "title": {
+        "ar": "ثلاث ليال في الغار"
+      },
+      "text": {
+        "ar": "عبد الله بن أبي بكر يأتي بالأخبار، وعامر بن فهيرة يأتي باللبن ويعفّي الأثر، والطلب يبلغ باب الغار."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 9,
+            "ayahFrom": 40
+          }
+        }
+      ],
+      "placeId": "ghar-thawr"
+    },
+    {
+      "title": {
+        "ar": "الطريق وخبر سراقة"
+      },
+      "text": {
+        "ar": "سار بهم الدليل في طريق غير معتاد، وأدركهم سراقة فساخت قوائم فرسه فطلب الأمان."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ],
+      "placeId": "ghar-thawr"
+    },
+    {
+      "title": {
+        "ar": "قباء"
+      },
+      "text": {
+        "ar": "نزل النبي ﷺ في بني عمرو بن عوف وأسّس مسجد قباء."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ],
+      "placeId": "quba",
+      "date": {
+        "precision": "month",
+        "era": "afterHijra",
+        "hijriYear": 1,
+        "hijriMonth": 3,
+        "gregorianYear": 622
+      }
+    },
+    {
+      "title": {
+        "ar": "دخول المدينة"
+      },
+      "text": {
+        "ar": "بركت الناقة في موضع المسجد، فاشتراه النبي ﷺ من غلامين يتيمين وبناه مع أصحابه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ],
+      "placeId": "madinah",
+      "date": {
+        "precision": "month",
+        "era": "afterHijra",
+        "hijriYear": 1,
+        "hijriMonth": 3,
+        "gregorianYear": 622
+      }
+    }
+  ]
+}

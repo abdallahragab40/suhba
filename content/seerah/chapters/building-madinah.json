@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "id": "building-madinah",
+  "title": {
+    "ar": "بناء المجتمع في المدينة"
+  },
+  "abstract": {
+    "ar": "المسجد النبوي، والمؤاخاة بين المهاجرين والأنصار، وتنظيم العلاقات في المدينة، والأذان، وتحويل القبلة."
+  },
+  "era": "madinan",
+  "date": {
+    "precision": "range",
+    "era": "afterHijra",
+    "hijriYear": 1,
+    "gregorianYear": 622,
+    "hijriYearEnd": 2,
+    "gregorianYearEnd": 624
+  },
+  "references": [
+    "sirat-ibn-hisham",
+    "tabaqat-ibn-sad",
+    "bukhari",
+    "muslim"
+  ],
+  "eventIds": [
+    "prophets-mosque",
+    "brotherhood"
+  ],
+  "placeIds": [
+    "madinah",
+    "quba"
+  ],
+  "companionIds": [
+    "abd-al-rahman-ibn-awf"
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "بدأ النبي ﷺ في المدينة ببناء المسجد، وعمل فيه بيده مع أصحابه ينقل اللّبِن، وكان بناؤه من اللبن، وسقفه من الجريد، وعُمُده من جذوع النخل."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان المسجد مكان الصلاة والتعليم والشورى واستقبال الوفود، وفي مؤخرته الصُّفّة يأوي إليها فقراء المهاجرين ومن لا أهل له."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ثم آخى بين المهاجرين والأنصار، فكان الأنصاري يقاسم أخاه المهاجر داره وماله، ومن أمثلة ذلك عرض سعد بن الربيع على عبد الرحمن بن عوف أن يقاسمه ماله، فشكره عبد الرحمن وطلب أن يُدلّ على السوق."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ونُظّمت العلاقات بين سكان المدينة من المسلمين واليهود في كتاب يذكره أهل السير، يحدد الحقوق والواجبات والدفاع المشترك عن المدينة."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وشُرع الأذان للإعلام بالصلاة، وتُذكر في ذلك رؤيا عبد الله بن زيد وإقرار النبي ﷺ لها."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "abu-dawud",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وصلّى المسلمون إلى بيت المقدس ستة عشر شهرًا أو سبعة عشر، ثم أُمروا بالتوجه إلى الكعبة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 2,
+            "ayahFrom": 144
+          }
+        }
+      ]
+    },
+    {
+      "type": "quranQuote",
+      "ref": {
+        "surah": 2,
+        "ayahFrom": 144
+      }
+    },
+    {
+      "type": "lesson",
+      "text": {
+        "ar": "بدأ بناء المجتمع الجديد بالمسجد والأخوّة: مكان يجمع الناس على العبادة والعلم، ورابطة تقدّم المواساة على المصلحة؛ وبهذين يُبنى الأمن قبل أي شيء آخر."
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators",
+      "needsSourceText"
+    ],
+    "authoredBy": "draft-revision-4",
+    "coverage": "sample"
+  }
+}

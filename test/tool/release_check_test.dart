@@ -7,6 +7,7 @@ import '../../tool/src/content/readiness.dart';
 import '../../tool/src/content/schema_set.dart';
 import '../../tool/src/release/release_checks.dart';
 import 'content_fixture.dart';
+import 'content_readiness_test.dart' show fixtureEdition;
 
 void main() {
   final schemas = SchemaSet.fromFile(SchemaSet.defaultPath);
@@ -43,9 +44,12 @@ void main() {
   }
 
   ReadinessReport readiness() =>
-      contentReadiness(fx.toFiles(), schemas, category: 'cat-a', size: 1);
+      contentReadiness(fx.toFiles(), schemas, edition: fixtureEdition());
 
-  setUp(() => fx = ContentFixture());
+  setUp(() {
+    fx = ContentFixture();
+    (fx.companionA['review'] as Map<String, dynamic>)['coverage'] = 'complete';
+  });
 
   group('before the build', () {
     test('draft content cannot produce a public artifact', () {

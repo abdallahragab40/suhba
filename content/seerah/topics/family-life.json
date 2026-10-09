@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "id": "family-life",
+  "title": {
+    "ar": "حياته مع أهله"
+  },
+  "abstract": {
+    "ar": "النبي ﷺ في بيته: يخدم أهله، ويحسن العشرة، ويفي لذكرى خديجة."
+  },
+  "references": [
+    "bukhari",
+    "muslim",
+    "tirmidhi"
+  ],
+  "chapterIds": [
+    "family-before-prophethood"
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "سُئلت عائشة عمّا كان النبي ﷺ يصنع في بيته، فذكرت أنه كان في خدمة أهله، فإذا حضرت الصلاة خرج إليها."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وجعل خير الناس خيرهم لأهله، وذكر أنه خيرهم لأهله."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tirmidhi",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وبقي وفيًّا لخديجة بعد موتها، يكثر ذكرها، ويكرم صديقاتها."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "text": {
+        "ar": "عظمة الرسالة لم تُبعده عن تفاصيل البيت؛ فحسن العشرة جزء من الدين لا هامش له."
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators",
+      "needsSourceText"
+    ],
+    "authoredBy": "draft-revision-4",
+    "coverage": "sample"
+  }
+}

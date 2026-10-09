@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "id": "daily-guidance",
+  "title": {
+    "ar": "هديه في الحياة اليومية"
+  },
+  "abstract": {
+    "ar": "البساطة في المأكل والفراش، والتبسّم، وآداب الطعام، من هديه ﷺ في يومه."
+  },
+  "references": [
+    "bukhari",
+    "muslim",
+    "tirmidhi"
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ما عاب النبي ﷺ طعامًا قط؛ إن اشتهاه أكله، وإلا تركه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وعلّم غلامًا كان يأكل معه أن يسمّي الله، ويأكل بيمينه، ومما يليه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان فراشه من أدَم حشوه ليف."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ووصفه بعض أصحابه بكثرة التبسّم."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tirmidhi",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "text": {
+        "ar": "البساطة والرضا وحسن الأدب في التفاصيل الصغيرة صورة من صور الاقتداء الممكنة لكل أحد؛ وما يُذكر هنا وصف لهديه لا تفصيل لأحكام."
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators",
+      "needsSourceText"
+    ],
+    "authoredBy": "draft-revision-4",
+    "coverage": "sample"
+  }
+}

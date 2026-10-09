@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "abu-bakr-lifeline",
+  "type": "timeline",
+  "title": {
+    "ar": "حياة أبي بكر الصديق على خط الزمن"
+  },
+  "takeaway": {
+    "ar": "أكثر ما في سيرة أبي بكر المعروفة يقع في ثلاثة عقود: من إسلامه إلى وفاته بعد النبي ﷺ بنحو سنتين."
+  },
+  "notes": [
+    {
+      "ar": "تاريخ مولده تقريبي."
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators"
+    ],
+    "authoredBy": "draft-revision-4"
+  },
+  "companionId": "abu-bakr"
+}

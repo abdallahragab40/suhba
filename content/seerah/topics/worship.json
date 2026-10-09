@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "id": "worship",
+  "title": {
+    "ar": "عبادته"
+  },
+  "abstract": {
+    "ar": "قيام الليل والذكر والاستغفار والاعتكاف: كيف كانت العبادة في يومه ﷺ."
+  },
+  "references": [
+    "quran",
+    "bukhari",
+    "muslim"
+  ],
+  "chapterIds": [
+    "beginning-of-revelation"
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "كان النبي ﷺ يقوم من الليل حتى تتفطّر قدماه، فلما سُئل عن ذلك وقد غُفر له، ذكر أنه يحب أن يكون عبدًا شكورًا."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "quranQuote",
+      "ref": {
+        "surah": 73,
+        "ayahFrom": 1,
+        "ayahTo": 4
+      },
+      "note": {
+        "ar": "أمر قيام الليل في أوائل سورة المزمل."
+      }
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان يكثر من الاستغفار والتوبة في اليوم أكثر من سبعين مرة، كما أخبر عن نفسه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان يعتكف العشر الأواخر من رمضان، ويجتهد فيها ما لا يجتهد في غيرها."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "text": {
+        "ar": "كانت عبادته ﷺ صلةً دائمة بالله في الليل والنهار، لا تنفصل عن عمله بين الناس؛ وما يُذكر هنا وصف لهديه، والأحكام التفصيلية تؤخذ من أهل العلم."
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators",
+      "needsSourceText"
+    ],
+    "authoredBy": "draft-revision-4",
+    "coverage": "sample"
+  }
+}

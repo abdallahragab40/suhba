@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:siyar_sahaba/core/domain/reliability.dart';
 import 'package:siyar_sahaba/shared/content/data/dto/block_dto.dart';
 import 'package:siyar_sahaba/shared/content/data/dto/common_dto.dart';
+import 'package:siyar_sahaba/shared/content/domain/atlas.dart';
 import 'package:siyar_sahaba/shared/content/domain/catalog.dart';
 import 'package:siyar_sahaba/shared/content/domain/companion.dart';
 import 'package:siyar_sahaba/shared/content/domain/review.dart';
@@ -37,6 +38,9 @@ abstract class HistoricalEventDto with _$HistoricalEventDto {
     required ReviewDto review,
     LocalizedTextDto? place,
     @Default(<PersonRefDto>[]) List<PersonRefDto> participants,
+    @Default(<String>[]) List<String> placeIds,
+    LocalizedTextDto? context,
+    LocalizedTextDto? outcome,
   }) = _HistoricalEventDto;
 
   factory HistoricalEventDto.fromJson(Map<String, dynamic> json) =>
@@ -144,6 +148,10 @@ abstract class ManifestDto with _$ManifestDto {
     required ContentChannel channel,
     required int companionCount,
     required int storyCount,
+    @Default(0) int seerahChapterCount,
+    @Default(0) int seerahTopicCount,
+    @Default(0) int placeCount,
+    @Default(0) int visualCount,
     required int approvedCount,
     required int unapprovedCount,
 
@@ -181,7 +189,19 @@ abstract class ReviewersFileDto with _$ReviewersFileDto {
 }
 
 /// The kinds of reviewable content items.
-enum ContentKind { companion, story, event, category, source, person }
+enum ContentKind {
+  companion,
+  story,
+  event,
+  category,
+  source,
+  person,
+  place,
+  seerah,
+  seerahChapter,
+  seerahTopic,
+  visual,
+}
 
 @freezed
 abstract class ApprovalChecklistDto with _$ApprovalChecklistDto {
@@ -218,4 +238,70 @@ abstract class ApprovalDto with _$ApprovalDto {
 
   factory ApprovalDto.fromJson(Map<String, dynamic> json) =>
       _$ApprovalDtoFromJson(json);
+}
+
+@freezed
+abstract class EditionCompanionsDto with _$EditionCompanionsDto {
+  const factory EditionCompanionsDto({
+    required String categoryId,
+    required int size,
+    required int minWords,
+    required int minSections,
+    required int minTimeline,
+    required List<SectionKind> requiredSectionKinds,
+  }) = _EditionCompanionsDto;
+
+  factory EditionCompanionsDto.fromJson(Map<String, dynamic> json) =>
+      _$EditionCompanionsDtoFromJson(json);
+}
+
+@freezed
+abstract class EditionSeerahDto with _$EditionSeerahDto {
+  const factory EditionSeerahDto({
+    required int chapters,
+    required int topics,
+    required int minChapterWords,
+    required int minTopicWords,
+  }) = _EditionSeerahDto;
+
+  factory EditionSeerahDto.fromJson(Map<String, dynamic> json) =>
+      _$EditionSeerahDtoFromJson(json);
+}
+
+@freezed
+abstract class EditionCountDto with _$EditionCountDto {
+  const factory EditionCountDto({required int count, int? minWords}) =
+      _EditionCountDto;
+
+  factory EditionCountDto.fromJson(Map<String, dynamic> json) =>
+      _$EditionCountDtoFromJson(json);
+}
+
+@freezed
+abstract class EditionVisualsDto with _$EditionVisualsDto {
+  const factory EditionVisualsDto({
+    required int count,
+    required List<InfographicType> requiredTypes,
+  }) = _EditionVisualsDto;
+
+  factory EditionVisualsDto.fromJson(Map<String, dynamic> json) =>
+      _$EditionVisualsDtoFromJson(json);
+}
+
+/// `content/release/edition.json` (tooling only; never shipped): what the
+/// next public edition must contain.
+@freezed
+abstract class EditionDto with _$EditionDto {
+  const factory EditionDto({
+    required int schemaVersion,
+    required String id,
+    required EditionCompanionsDto companions,
+    required EditionSeerahDto seerah,
+    required EditionCountDto stories,
+    required EditionCountDto events,
+    required EditionVisualsDto visuals,
+  }) = _EditionDto;
+
+  factory EditionDto.fromJson(Map<String, dynamic> json) =>
+      _$EditionDtoFromJson(json);
 }

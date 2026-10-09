@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "hijrah-route",
+  "type": "map",
+  "title": {
+    "ar": "طريق الهجرة: المحطات المعروفة"
+  },
+  "takeaway": {
+    "ar": "خرج النبي ﷺ وأبو بكر جنوبًا إلى غار ثور، على غير وجهة المدينة، ثم سلكا مع الدليل طريقًا غير معتاد حتى بلغا قباء ثم المدينة."
+  },
+  "notes": [
+    {
+      "ar": "الخريطة تخطيطية: الخطوط تصل بين المحطات المعروفة ولا ترسم الطريق الفعلي الذي سلكوه، فتفاصيله في كتب السيرة غير قطعية."
+    },
+    {
+      "ar": "الشمال إلى الأعلى دائمًا، ولا تنعكس الخريطة مع اتجاه الكتابة."
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators"
+    ],
+    "authoredBy": "draft-revision-4"
+  },
+  "placeIds": [
+    "makkah",
+    "ghar-thawr",
+    "quba",
+    "madinah"
+  ],
+  "route": [
+    {
+      "from": "makkah",
+      "to": "ghar-thawr",
+      "approximate": true,
+      "note": {
+        "ar": "من بيت أبي بكر إلى غار في جبل ثور جنوب مكة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "from": "ghar-thawr",
+      "to": "quba",
+      "approximate": true,
+      "note": {
+        "ar": "بعد ثلاث ليال، مع الدليل وعامر بن فهيرة، في طريق غير معتاد نحو الساحل."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "from": "quba",
+      "to": "madinah",
+      "approximate": true,
+      "note": {
+        "ar": "من قباء إلى موضع المسجد في المدينة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    }
+  ]
+}
