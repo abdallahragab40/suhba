@@ -15,9 +15,18 @@ import 'package:siyar_sahaba/shared/content/domain/story.dart';
 /// The asset bundle content is read from; overridden in tests.
 final assetBundleProvider = Provider<AssetBundle>((ref) => rootBundle);
 
+/// From what length a content file is decoded off the UI thread; null
+/// decodes in place. Overridden in widget tests.
+final contentIsolateThresholdProvider = Provider<int?>(
+  (ref) => AssetContentSource.defaultIsolateThreshold,
+);
+
 final contentRepositoryProvider = Provider<ContentRepository>(
   (ref) => AssetContentRepository(
-    AssetContentSource(ref.watch(assetBundleProvider)),
+    AssetContentSource(
+      ref.watch(assetBundleProvider),
+      isolateThreshold: ref.watch(contentIsolateThresholdProvider),
+    ),
   ),
 );
 

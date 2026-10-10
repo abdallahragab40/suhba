@@ -16,14 +16,23 @@ class ContentFileNotFound implements Exception {
 
 /// Reads the bundled content JSON from `assets/content/`.
 class AssetContentSource {
-  AssetContentSource(this._bundle, {this.root = 'assets/content'});
+  AssetContentSource(
+    this._bundle, {
+    this.root = 'assets/content',
+    this.isolateThreshold = defaultIsolateThreshold,
+  });
 
   final AssetBundle _bundle;
   final String root;
 
   /// Files at least this long are decoded on a background isolate so large
   /// biographies never stall a frame.
-  static const isolateThreshold = 32 * 1024;
+  static const defaultIsolateThreshold = 32 * 1024;
+
+  /// The length from which a file is decoded on a background isolate; null
+  /// decodes every file in place (widget tests, whose fake clock never
+  /// delivers an isolate's result).
+  final int? isolateThreshold;
 
   Future<Map<String, dynamic>> readJson(String path) async {
     final String text;
@@ -33,7 +42,8 @@ class AssetContentSource {
     } on FlutterError {
       throw ContentFileNotFound(path);
     }
-    if (text.length < isolateThreshold) {
+    final threshold = isolateThreshold;
+    if (threshold == null || text.length < threshold) {
       return jsonDecode(text) as Map<String, dynamic>;
     }
     return Isolate.run(() => jsonDecode(text) as Map<String, dynamic>);

@@ -235,12 +235,12 @@ void main() {
         jsonDecode(bundle.files['assets/content/companions/abu-bakr.json']!)
             as Map<String, dynamic>;
     // Pad a field until the file crosses the isolate threshold.
-    big['summary'] = {'ar': 'نص ' * (AssetContentSource.isolateThreshold ~/ 2)};
+    big['summary'] = {'ar': 'نص ' * (AssetContentSource.defaultIsolateThreshold ~/ 2)};
     bundle.files['assets/content/companions/abu-bakr.json'] = jsonEncode(big);
     final companion = (await repo.companion('abu-bakr')).getOrThrow();
     expect(
       companion.summary.ar.length,
-      greaterThan(AssetContentSource.isolateThreshold),
+      greaterThan(AssetContentSource.defaultIsolateThreshold),
     );
   });
 

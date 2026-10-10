@@ -40,6 +40,8 @@ class AppUnderTest {
       overrides: [
         appRouterProvider.overrideWithValue(router),
         assetBundleProvider.overrideWithValue(this.bundle),
+        // The fake clock never delivers a background isolate's result.
+        contentIsolateThresholdProvider.overrideWithValue(null),
         appDatabaseProvider.overrideWithValue(this.database),
         if (settings != null) settingsStoreProvider.overrideWithValue(settings),
         // A fixed day, so the companion of the day is predictable.
