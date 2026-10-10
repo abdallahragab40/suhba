@@ -138,6 +138,15 @@ class _Profile extends ConsumerWidget {
             if (c.relations.isNotEmpty) ...[
               header(l10n.profileRelatedKicker, l10n.profileRelatedTitle),
               RelatedPeople(relations: c.relations),
+              Align(
+                alignment: AlignmentDirectional.centerStart,
+                child: TextButton.icon(
+                  icon: const Icon(Icons.account_tree_outlined),
+                  label: Text(l10n.profileAllRelations),
+                  onPressed: () =>
+                      context.push(AppRoutes.relations(companionId: c.id)),
+                ),
+              ),
             ],
             header(l10n.profileReferencesKicker, l10n.profileReferencesTitle),
             ReferenceList(sourceIds: c.references),

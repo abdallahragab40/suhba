@@ -47,6 +47,20 @@ abstract final class AppRoutes {
   static String place(String id) => '/places/${_id(id)}';
   static String visual(String id) => '/visuals/${_id(id)}';
 
+  /// The relationship explorer, optionally showing one companion's or one
+  /// person's relations.
+  static const relationsRoot = '/relations';
+  static String relations({String? companionId, String? personId}) =>
+      companionId == null && personId == null
+      ? relationsRoot
+      : Uri(
+          path: relationsRoot,
+          queryParameters: {
+            if (companionId != null) 'companion': _id(companionId),
+            if (personId != null) 'person': _id(personId),
+          },
+        ).toString();
+
   // Sources, search and settings pages (M2–M4).
   static String source(String id) => '/sources/${_id(id)}';
   static const search = '/search';

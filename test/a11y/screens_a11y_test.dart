@@ -41,6 +41,8 @@ void main() {
     'visual (relationships)': '/visuals/abu-bakr-family',
     'visual (sequence)': '/visuals/hijrah-sequence',
     'visual (place panel)': '/visuals/makkah-panel',
+    'relations': '/relations',
+    'relations (one companion)': '/relations?companion=zubayr',
   };
 
   for (final brightness in Brightness.values) {

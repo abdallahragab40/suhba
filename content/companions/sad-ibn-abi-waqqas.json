@@ -165,6 +165,24 @@
       ]
     }
   ],
+  "relations": [
+    {
+      "type": "relative",
+      "person": {
+        "displayName": {
+          "ar": "محمد رسول الله"
+        },
+        "personId": "muhammad"
+      },
+      "citations": [
+        {
+          "sourceId": "tirmidhi",
+          "locatorStatus": "complete",
+          "hadithNumber": "3752"
+        }
+      ]
+    }
+  ],
   "sections": [
     {
       "id": "sad-ibn-abi-waqqas.early-life",

@@ -16,6 +16,7 @@ import 'package:siyar_sahaba/features/companions/presentation/profile/companion_
 import 'package:siyar_sahaba/features/explore/presentation/explore_page.dart';
 import 'package:siyar_sahaba/features/home/presentation/home_page.dart';
 import 'package:siyar_sahaba/features/reading_progress/presentation/reading_history_page.dart';
+import 'package:siyar_sahaba/features/relations/presentation/relations_page.dart';
 import 'package:siyar_sahaba/features/search/presentation/search_page.dart';
 import 'package:siyar_sahaba/features/seerah/presentation/seerah_chapter_page.dart';
 import 'package:siyar_sahaba/features/seerah/presentation/seerah_hub_page.dart';
@@ -87,6 +88,17 @@ GoRouter buildAppRouter({String initialLocation = AppRoutes.home}) {
           context,
           state,
           PlacePage(placeId: state.pathParameters['pid']!),
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.relationsRoot,
+        pageBuilder: (context, state) => fadeThroughPage(
+          context,
+          state,
+          RelationsPage(
+            companionId: state.uri.queryParameters['companion'],
+            personId: state.uri.queryParameters['person'],
+          ),
         ),
       ),
       GoRoute(

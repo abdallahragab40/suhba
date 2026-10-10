@@ -2383,6 +2383,96 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'نص الترخيص'**
   String get sourcesQuranNotice;
+
+  /// Title of the relationship explorer.
+  ///
+  /// In ar, this message translates to:
+  /// **'الصلات والأنساب'**
+  String get relationsTitle;
+
+  /// Intro of the relationship explorer.
+  ///
+  /// In ar, this message translates to:
+  /// **'من يتصل بمن من أهل السيرة: النسب والمصاهرة والصحبة والمؤاخاة، ومع كل صلة مصدرها. تظهر كل صلة عند الطرفين.'**
+  String get relationsIntro;
+
+  /// Explorer title when showing one person.
+  ///
+  /// In ar, this message translates to:
+  /// **'صلات {name}'**
+  String relationsFilteredTitle(String name);
+
+  /// Clears the person filter in the relationship explorer.
+  ///
+  /// In ar, this message translates to:
+  /// **'عرض صلات الجميع'**
+  String get relationsShowEveryone;
+
+  /// Shown when some companion files failed to load.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذّر تحميل بعض الملفات، فقد تكون هذه القائمة ناقصة.'**
+  String get relationsIncomplete;
+
+  /// Empty state of the relationship explorer.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا صلات مسجّلة هنا بعد.'**
+  String get relationsEmpty;
+
+  /// Relation group.
+  ///
+  /// In ar, this message translates to:
+  /// **'النسب والقرابة'**
+  String get relationCategoryKinship;
+
+  /// Relation group.
+  ///
+  /// In ar, this message translates to:
+  /// **'الزواج'**
+  String get relationCategoryMarriage;
+
+  /// Relation group.
+  ///
+  /// In ar, this message translates to:
+  /// **'الصحبة والمؤاخاة'**
+  String get relationCategoryCompanionship;
+
+  /// Relation group.
+  ///
+  /// In ar, this message translates to:
+  /// **'العلم والرواية'**
+  String get relationCategoryLearning;
+
+  /// Semantic hint for a person heading that opens a profile.
+  ///
+  /// In ar, this message translates to:
+  /// **'فتح صفحة {name}'**
+  String relationsOpenProfile(String name);
+
+  /// Explore: kicker above the relations entry.
+  ///
+  /// In ar, this message translates to:
+  /// **'صلات'**
+  String get exploreRelationsKicker;
+
+  /// Explore: title of the relations entry.
+  ///
+  /// In ar, this message translates to:
+  /// **'الأنساب والمصاهرات والصحبة'**
+  String get exploreRelationsTitle;
+
+  /// Explore: body of the relations entry.
+  ///
+  /// In ar, this message translates to:
+  /// **'تصفّح صلات أهل السيرة بعضهم ببعض، مجمّعة بحسب نوعها، ومع كل صلة مصدرها.'**
+  String get exploreRelationsBody;
+
+  /// Profile: link to the relationship explorer filtered to this companion.
+  ///
+  /// In ar, this message translates to:
+  /// **'كل صلاته في مستكشف الصلات'**
+  String get profileAllRelations;
 }
 
 class _AppLocalizationsDelegate

@@ -1343,4 +1343,56 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get sourcesQuranNotice => 'Licence notice';
+
+  @override
+  String get relationsTitle => 'Relations and lineage';
+
+  @override
+  String get relationsIntro =>
+      'Who is related to whom in the Seerah: lineage, marriage, companionship and brotherhood, each with its source. Every relation appears under both people.';
+
+  @override
+  String relationsFilteredTitle(String name) {
+    return 'Relations of $name';
+  }
+
+  @override
+  String get relationsShowEveryone => 'Show everyone\'s relations';
+
+  @override
+  String get relationsIncomplete =>
+      'Some files could not be loaded, so this list may be incomplete.';
+
+  @override
+  String get relationsEmpty => 'No relations are recorded here yet.';
+
+  @override
+  String get relationCategoryKinship => 'Lineage and kin';
+
+  @override
+  String get relationCategoryMarriage => 'Marriage';
+
+  @override
+  String get relationCategoryCompanionship => 'Companionship and brotherhood';
+
+  @override
+  String get relationCategoryLearning => 'Learning and narration';
+
+  @override
+  String relationsOpenProfile(String name) {
+    return 'Open the page of $name';
+  }
+
+  @override
+  String get exploreRelationsKicker => 'Relations';
+
+  @override
+  String get exploreRelationsTitle => 'Lineage, marriage and companionship';
+
+  @override
+  String get exploreRelationsBody =>
+      'Browse how the people of the Seerah are related, grouped by kind, each relation with its source.';
+
+  @override
+  String get profileAllRelations => 'All relations in the explorer';
 }

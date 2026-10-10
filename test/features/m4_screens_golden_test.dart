@@ -70,6 +70,20 @@ void main() {
     await snapshot('search_light');
   });
 
+  for (final brightness in Brightness.values) {
+    testApp('relationship explorer, ${brightness.name}', (tester) async {
+      frame(tester, brightness);
+      await AppUnderTest(location: '/relations').pump(tester);
+      await snapshot('relations_${brightness.name}');
+    });
+  }
+
+  testApp('relationship explorer for one companion, light', (tester) async {
+    frame(tester, Brightness.light);
+    await AppUnderTest(location: '/relations?companion=zubayr').pump(tester);
+    await snapshot('relations_zubayr_light');
+  });
+
   testApp('settings, light', (tester) async {
     frame(tester, Brightness.light);
     await AppUnderTest(location: '/settings').pump(tester);

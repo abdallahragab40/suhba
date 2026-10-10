@@ -380,5 +380,20 @@
   "quranTextSource": "Uthmani text from the Tanzil Project",
   "sourcesQuranTextTitle": "The Qur'an text",
   "sourcesQuranTextBody": "Verses are shown in the Uthmani script from the Tanzil Project ({url}), unchanged, under the Creative Commons Attribution 3.0 licence. The app stores only the quoted verses and does not go online.",
-  "sourcesQuranNotice": "Licence notice"
+  "sourcesQuranNotice": "Licence notice",
+  "relationsTitle": "Relations and lineage",
+  "relationsIntro": "Who is related to whom in the Seerah: lineage, marriage, companionship and brotherhood, each with its source. Every relation appears under both people.",
+  "relationsFilteredTitle": "Relations of {name}",
+  "relationsShowEveryone": "Show everyone's relations",
+  "relationsIncomplete": "Some files could not be loaded, so this list may be incomplete.",
+  "relationsEmpty": "No relations are recorded here yet.",
+  "relationCategoryKinship": "Lineage and kin",
+  "relationCategoryMarriage": "Marriage",
+  "relationCategoryCompanionship": "Companionship and brotherhood",
+  "relationCategoryLearning": "Learning and narration",
+  "relationsOpenProfile": "Open the page of {name}",
+  "exploreRelationsKicker": "Relations",
+  "exploreRelationsTitle": "Lineage, marriage and companionship",
+  "exploreRelationsBody": "Browse how the people of the Seerah are related, grouped by kind, each relation with its source.",
+  "profileAllRelations": "All relations in the explorer"
 }

@@ -183,6 +183,40 @@
           "page": "90"
         }
       ]
+    },
+    {
+      "type": "mother",
+      "person": {
+        "displayName": {
+          "ar": "صفية بنت عبد المطلب"
+        },
+        "personId": "safiyyah-bint-abd-al-muttalib"
+      },
+      "citations": [
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "553"
+        }
+      ]
+    },
+    {
+      "type": "relative",
+      "person": {
+        "displayName": {
+          "ar": "محمد رسول الله"
+        },
+        "personId": "muhammad"
+      },
+      "citations": [
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "553"
+        }
+      ]
     }
   ],
   "sections": [

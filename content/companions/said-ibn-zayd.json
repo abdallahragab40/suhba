@@ -147,6 +147,25 @@
       ]
     }
   ],
+  "relations": [
+    {
+      "type": "father",
+      "person": {
+        "displayName": {
+          "ar": "زيد بن عمرو بن نفيل"
+        },
+        "personId": "zayd-ibn-amr"
+      },
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "253"
+        }
+      ]
+    }
+  ],
   "sections": [
     {
       "id": "said-ibn-zayd.early-life",

@@ -178,6 +178,10 @@ class _ExploreState extends State<_Explore> {
           if (undated.isNotEmpty) group(l10n.timelineUndated),
           for (final e in undated) EventRow(event: e),
         ],
+        if (_filter == ExploreFilter.all) ...[
+          header(l10n.exploreRelationsKicker, l10n.exploreRelationsTitle),
+          const _RelationsTile(),
+        ],
         if (show(ExploreFilter.visuals)) ...[
           header(l10n.exploreVisualsKicker, l10n.exploreVisualsTitle),
           for (final v in widget.visuals) _VisualTile(visual: v),
@@ -267,6 +271,50 @@ class _PlaceTile extends StatelessWidget {
         overflow: TextOverflow.ellipsis,
       ),
       onTap: () => context.push(AppRoutes.place(p.id)),
+    );
+  }
+}
+
+class _RelationsTile extends StatelessWidget {
+  const _RelationsTile();
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final colors = SahabaColors.of(context);
+    return Card(
+      margin: EdgeInsets.zero,
+      clipBehavior: Clip.antiAlias,
+      child: InkWell(
+        onTap: () => context.push(AppRoutes.relations()),
+        child: Padding(
+          padding: const EdgeInsets.all(AppSpacing.md),
+          child: Row(
+            children: [
+              Icon(Icons.account_tree_outlined, color: colors.accentText),
+              const SizedBox(width: AppSpacing.sm),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      l10n.relationsTitle,
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                    Text(
+                      l10n.exploreRelationsBody,
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: colors.onSurfaceDim,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const Icon(Icons.chevron_right),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

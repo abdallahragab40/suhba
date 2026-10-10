@@ -1348,4 +1348,56 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get sourcesQuranNotice => 'نص الترخيص';
+
+  @override
+  String get relationsTitle => 'الصلات والأنساب';
+
+  @override
+  String get relationsIntro =>
+      'من يتصل بمن من أهل السيرة: النسب والمصاهرة والصحبة والمؤاخاة، ومع كل صلة مصدرها. تظهر كل صلة عند الطرفين.';
+
+  @override
+  String relationsFilteredTitle(String name) {
+    return 'صلات $name';
+  }
+
+  @override
+  String get relationsShowEveryone => 'عرض صلات الجميع';
+
+  @override
+  String get relationsIncomplete =>
+      'تعذّر تحميل بعض الملفات، فقد تكون هذه القائمة ناقصة.';
+
+  @override
+  String get relationsEmpty => 'لا صلات مسجّلة هنا بعد.';
+
+  @override
+  String get relationCategoryKinship => 'النسب والقرابة';
+
+  @override
+  String get relationCategoryMarriage => 'الزواج';
+
+  @override
+  String get relationCategoryCompanionship => 'الصحبة والمؤاخاة';
+
+  @override
+  String get relationCategoryLearning => 'العلم والرواية';
+
+  @override
+  String relationsOpenProfile(String name) {
+    return 'فتح صفحة $name';
+  }
+
+  @override
+  String get exploreRelationsKicker => 'صلات';
+
+  @override
+  String get exploreRelationsTitle => 'الأنساب والمصاهرات والصحبة';
+
+  @override
+  String get exploreRelationsBody =>
+      'تصفّح صلات أهل السيرة بعضهم ببعض، مجمّعة بحسب نوعها، ومع كل صلة مصدرها.';
+
+  @override
+  String get profileAllRelations => 'كل صلاته في مستكشف الصلات';
 }

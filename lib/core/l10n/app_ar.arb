@@ -1879,5 +1879,75 @@
   "sourcesQuranNotice": "نص الترخيص",
   "@sourcesQuranNotice": {
     "description": "Expands the Tanzil copyright notice."
+  },
+  "relationsTitle": "الصلات والأنساب",
+  "@relationsTitle": {
+    "description": "Title of the relationship explorer."
+  },
+  "relationsIntro": "من يتصل بمن من أهل السيرة: النسب والمصاهرة والصحبة والمؤاخاة، ومع كل صلة مصدرها. تظهر كل صلة عند الطرفين.",
+  "@relationsIntro": {
+    "description": "Intro of the relationship explorer."
+  },
+  "relationsFilteredTitle": "صلات {name}",
+  "@relationsFilteredTitle": {
+    "description": "Explorer title when showing one person.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "relationsShowEveryone": "عرض صلات الجميع",
+  "@relationsShowEveryone": {
+    "description": "Clears the person filter in the relationship explorer."
+  },
+  "relationsIncomplete": "تعذّر تحميل بعض الملفات، فقد تكون هذه القائمة ناقصة.",
+  "@relationsIncomplete": {
+    "description": "Shown when some companion files failed to load."
+  },
+  "relationsEmpty": "لا صلات مسجّلة هنا بعد.",
+  "@relationsEmpty": {
+    "description": "Empty state of the relationship explorer."
+  },
+  "relationCategoryKinship": "النسب والقرابة",
+  "@relationCategoryKinship": {
+    "description": "Relation group."
+  },
+  "relationCategoryMarriage": "الزواج",
+  "@relationCategoryMarriage": {
+    "description": "Relation group."
+  },
+  "relationCategoryCompanionship": "الصحبة والمؤاخاة",
+  "@relationCategoryCompanionship": {
+    "description": "Relation group."
+  },
+  "relationCategoryLearning": "العلم والرواية",
+  "@relationCategoryLearning": {
+    "description": "Relation group."
+  },
+  "relationsOpenProfile": "فتح صفحة {name}",
+  "@relationsOpenProfile": {
+    "description": "Semantic hint for a person heading that opens a profile.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "exploreRelationsKicker": "صلات",
+  "@exploreRelationsKicker": {
+    "description": "Explore: kicker above the relations entry."
+  },
+  "exploreRelationsTitle": "الأنساب والمصاهرات والصحبة",
+  "@exploreRelationsTitle": {
+    "description": "Explore: title of the relations entry."
+  },
+  "exploreRelationsBody": "تصفّح صلات أهل السيرة بعضهم ببعض، مجمّعة بحسب نوعها، ومع كل صلة مصدرها.",
+  "@exploreRelationsBody": {
+    "description": "Explore: body of the relations entry."
+  },
+  "profileAllRelations": "كل صلاته في مستكشف الصلات",
+  "@profileAllRelations": {
+    "description": "Profile: link to the relationship explorer filtered to this companion."
   }
 }

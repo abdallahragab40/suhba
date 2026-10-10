@@ -193,6 +193,54 @@
         "authoredBy": "draft-revision-4"
       },
       "gender": "male"
+    },
+    {
+      "id": "fatimah-bint-al-khattab",
+      "name": {
+        "ar": "فاطمة بنت الخطاب"
+      },
+      "honorific": "sahabi",
+      "gender": "female",
+      "review": {
+        "status": "draft",
+        "authoredBy": "draft-revision-4"
+      }
+    },
+    {
+      "id": "zayd-ibn-amr",
+      "name": {
+        "ar": "زيد بن عمرو بن نفيل"
+      },
+      "honorific": "none",
+      "gender": "male",
+      "review": {
+        "status": "draft",
+        "authoredBy": "draft-revision-4"
+      }
+    },
+    {
+      "id": "safiyyah-bint-abd-al-muttalib",
+      "name": {
+        "ar": "صفية بنت عبد المطلب"
+      },
+      "honorific": "sahabi",
+      "gender": "female",
+      "review": {
+        "status": "draft",
+        "authoredBy": "draft-revision-4"
+      }
+    },
+    {
+      "id": "sad-ibn-al-rabi",
+      "name": {
+        "ar": "سعد بن الربيع"
+      },
+      "honorific": "sahabi",
+      "gender": "male",
+      "review": {
+        "status": "draft",
+        "authoredBy": "draft-revision-4"
+      }
     }
   ]
 }

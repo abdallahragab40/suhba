@@ -149,6 +149,30 @@
       ]
     }
   ],
+  "relations": [
+    {
+      "type": "brotherhood",
+      "person": {
+        "displayName": {
+          "ar": "سعد بن الربيع"
+        },
+        "personId": "sad-ibn-al-rabi"
+      },
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "2049"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "91"
+        }
+      ]
+    }
+  ],
   "sections": [
     {
       "id": "abd-al-rahman-ibn-awf.early-life",
