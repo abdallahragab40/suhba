@@ -28,7 +28,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3826"
             }
           ]
         },
@@ -41,7 +42,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3826"
             }
           ]
         },
@@ -54,7 +56,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3827"
             }
           ]
         },
@@ -67,7 +70,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3828"
             }
           ]
         },
@@ -122,7 +126,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3862"
             }
           ]
         }
@@ -179,7 +184,8 @@
               "citations": [
                 {
                   "sourceId": "bukhari",
-                  "locatorStatus": "pending"
+                  "locatorStatus": "complete",
+                  "hadithNumber": "3863"
                 }
               ]
             }
@@ -194,7 +200,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3863"
             }
           ]
         }
@@ -215,11 +222,13 @@
           "citations": [
             {
               "sourceId": "abu-dawud",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "4649"
             },
             {
               "sourceId": "tirmidhi",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3757"
             }
           ]
         },
@@ -232,7 +241,8 @@
           "citations": [
             {
               "sourceId": "muslim",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "1610"
             }
           ]
         },
@@ -245,7 +255,8 @@
           "citations": [
             {
               "sourceId": "muslim",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "1610"
             }
           ]
         },

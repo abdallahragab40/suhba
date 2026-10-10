@@ -27,7 +27,10 @@
       "author": {
         "ar": "محمد بن إسماعيل البخاري"
       },
-      "authorDeathAH": 256
+      "authorDeathAH": 256,
+      "numberingScheme": {
+        "ar": "ترقيم فتح الباري المتداول (١–٧٥٦٣)"
+      }
     },
     {
       "id": "muslim",
@@ -43,7 +46,10 @@
       "author": {
         "ar": "مسلم بن الحجاج النيسابوري"
       },
-      "authorDeathAH": 261
+      "authorDeathAH": 261,
+      "numberingScheme": {
+        "ar": "ترقيم محمد فؤاد عبد الباقي"
+      }
     },
     {
       "id": "abu-dawud",
@@ -59,7 +65,10 @@
       "author": {
         "ar": "أبو داود سليمان بن الأشعث السجستاني"
       },
-      "authorDeathAH": 275
+      "authorDeathAH": 275,
+      "numberingScheme": {
+        "ar": "ترقيم محمد محيي الدين عبد الحميد"
+      }
     },
     {
       "id": "tirmidhi",
@@ -75,7 +84,10 @@
       "author": {
         "ar": "أبو عيسى محمد بن عيسى الترمذي"
       },
-      "authorDeathAH": 279
+      "authorDeathAH": 279,
+      "numberingScheme": {
+        "ar": "ترقيم أحمد محمد شاكر المتداول"
+      }
     },
     {
       "id": "sirat-ibn-hisham",

@@ -27,11 +27,13 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "1590"
             },
             {
               "sourceId": "muslim",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "1314"
             }
           ]
         },
@@ -137,11 +139,13 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3884"
             },
             {
               "sourceId": "muslim",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "24"
             }
           ]
         },
@@ -162,7 +166,8 @@
             },
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "4772"
             }
           ]
         },
@@ -175,11 +180,13 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3818"
             },
             {
               "sourceId": "muslim",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "2435"
             }
           ]
         },
@@ -190,7 +197,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending",
+              "locatorStatus": "complete",
+              "hadithNumber": "3820",
               "grading": {
                 "grade": "sahih",
                 "gradedBy": {
@@ -200,7 +208,8 @@
             },
             {
               "sourceId": "muslim",
-              "locatorStatus": "pending",
+              "locatorStatus": "complete",
+              "hadithNumber": "2432",
               "grading": {
                 "grade": "sahih",
                 "gradedBy": {
@@ -247,11 +256,13 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3231"
             },
             {
               "sourceId": "muslim",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "1795"
             }
           ]
         },
@@ -264,11 +275,13 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3231"
             },
             {
               "sourceId": "muslim",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "1795"
             }
           ]
         },
@@ -281,7 +294,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3139"
             },
             {
               "sourceId": "sirat-ibn-hisham",

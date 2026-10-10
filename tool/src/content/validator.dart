@@ -2,6 +2,7 @@ import 'package:siyar_sahaba/shared/content/domain/review.dart';
 
 import 'content_files.dart';
 import 'content_tree.dart';
+import 'hadith_dataset.dart';
 import 'issues.dart';
 import 'rules.dart';
 import 'schema_set.dart';
@@ -45,7 +46,7 @@ class ValidationReport {
   }
 }
 
-/// Validates [files] for [channel]: schema (V1) and rules V2–V12.
+/// Validates [files] for [channel]: schema (V1) and rules V2–V14.
 ValidationReport validateContent(
   ContentFiles files,
   SchemaSet schemas, {
@@ -54,6 +55,7 @@ ValidationReport validateContent(
   final sink = IssueSink();
   final tree = parseContent(files, schemas, sink);
   final pending = checkRules(tree, channel, sink);
+  checkCitedHadith(files, sink);
   return ValidationReport(
     tree: tree,
     issues: sink.issues,

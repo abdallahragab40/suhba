@@ -30,7 +30,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "4154"
             }
           ]
         },
@@ -43,7 +44,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "2731"
             }
           ]
         },
@@ -56,7 +58,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "2731"
             }
           ]
         }
@@ -81,7 +84,8 @@
             },
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3698"
             }
           ]
         },
@@ -94,7 +98,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3698"
             },
             {
               "sourceId": "quran",
@@ -122,7 +127,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "2731"
             },
             {
               "sourceId": "sirat-ibn-hisham",
@@ -147,11 +153,13 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "2731"
             },
             {
               "sourceId": "muslim",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "1784"
             }
           ]
         },
@@ -164,7 +172,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "2731"
             }
           ]
         },
@@ -177,20 +186,22 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "2731"
             }
           ]
         },
         {
           "type": "paragraph",
           "text": {
-            "ar": "وجاء عمر إلى النبي ﷺ يسأله: ألسنا على الحق؟ فلمَ نقبل الدنيّة في ديننا؟ فأجابه النبي ﷺ بأنه رسول الله ولن يعصيه، وأن الله ناصره. ثم سأل عمر أبا بكر بمثل ذلك، فأجابه أبو بكر بمثل جواب النبي ﷺ، وأوصاه أن يلزم أمره."
+            "ar": "وجاء عمر إلى النبي ﷺ يسأله أليسوا على الحق وعدوّهم على الباطل، فعلامَ يعطون الدنيّة في دينهم، فأجابه النبي ﷺ بأنه رسول الله ولا يعصيه، وأن الله ناصره. ثم سأل عمر أبا بكر بمثل ذلك، فأجابه أبو بكر بمثل جواب النبي ﷺ، وأوصاه أن يلزم أمره."
           },
           "reliability": "established",
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "2731"
             }
           ]
         },
@@ -211,7 +222,8 @@
                 },
                 {
                   "sourceId": "abu-dawud",
-                  "locatorStatus": "pending"
+                  "locatorStatus": "complete",
+                  "hadithNumber": "2766"
                 }
               ]
             },
@@ -222,7 +234,8 @@
               "citations": [
                 {
                   "sourceId": "bukhari",
-                  "locatorStatus": "pending"
+                  "locatorStatus": "complete",
+                  "hadithNumber": "2731"
                 }
               ]
             }
@@ -245,7 +258,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "2731"
             }
           ]
         },
@@ -258,11 +272,13 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3182"
             },
             {
               "sourceId": "muslim",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "1785"
             },
             {
               "sourceId": "quran",
@@ -307,7 +323,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "2731"
             }
           ]
         },

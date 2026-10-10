@@ -38,7 +38,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3905"
             }
           ]
         },
@@ -51,7 +52,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3905"
             }
           ]
         },
@@ -64,7 +66,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "2979"
             }
           ]
         },
@@ -77,7 +80,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3905"
             }
           ]
         },
@@ -107,7 +111,8 @@
             },
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3905"
             }
           ]
         }
@@ -128,7 +133,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3905"
             }
           ]
         },
@@ -141,7 +147,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3905"
             }
           ]
         },
@@ -159,7 +166,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending",
+              "locatorStatus": "complete",
+              "hadithNumber": "3653",
               "grading": {
                 "grade": "sahih",
                 "gradedBy": {
@@ -169,7 +177,8 @@
             },
             {
               "sourceId": "muslim",
-              "locatorStatus": "pending",
+              "locatorStatus": "complete",
+              "hadithNumber": "2381",
               "grading": {
                 "grade": "sahih",
                 "gradedBy": {
@@ -191,23 +200,35 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3906"
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "3653"
             },
             {
               "sourceId": "muslim",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "2381"
             }
           ]
         },
         {
           "type": "paragraph",
           "text": {
-            "ar": "وكان عامر بن فهيرة يرعى الغنم على آثار عبد الله بن أبي بكر إذا رجع إلى مكة، ليعفّي أثر قدميه، فلا يهتدي أحد إلى موضع الغار."
+            "ar": "ويذكر ابن إسحاق أن عامر بن فهيرة كان يرعى الغنم على آثار عبد الله بن أبي بكر إذا رجع إلى مكة، ليعفّي أثر قدميه، والثابت في البخاري أنه كان يرعى عليهما غنمًا يريحها عليهما فيشربان من لبنها."
           },
-          "reliability": "established",
+          "reliability": "reported",
           "citations": [
             {
               "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "3905"
+            },
+            {
+              "sourceId": "sirat-ibn-hisham",
               "locatorStatus": "pending"
             }
           ]
@@ -229,7 +250,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3905"
             }
           ]
         },
@@ -242,7 +264,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3906"
             }
           ]
         },
@@ -255,7 +278,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3906"
             }
           ]
         },
@@ -268,7 +292,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3906"
             }
           ]
         },
@@ -281,7 +306,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3906"
             }
           ]
         },
@@ -294,7 +320,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3906"
             },
             {
               "sourceId": "quran",
@@ -315,7 +342,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3906"
             }
           ]
         },

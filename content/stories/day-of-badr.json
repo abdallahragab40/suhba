@@ -31,7 +31,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3957"
             },
             {
               "sourceId": "sirat-ibn-hisham",
@@ -71,7 +72,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3130"
             }
           ]
         }
@@ -92,14 +94,15 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3952"
             }
           ]
         },
         {
           "type": "paragraph",
           "text": {
-            "ar": "وكان النبي ﷺ يريد أن يسمع من الأنصار، لأن بيعتهم كانت على أن يمنعوه في ديارهم، فتكلّم سعد بن معاذ فأعلن أنهم ماضون معه حيث سار."
+            "ar": "وكان النبي ﷺ يريد أن يسمع من الأنصار، لأن بيعتهم كانت على أن يمنعوه في ديارهم، فقام سيد منهم فأعلن أنهم ماضون معه ولو أمرهم أن يخوضوا البحر: هو سعد بن عبادة في رواية مسلم، ويسمّيه ابن إسحاق سعد بن معاذ."
           },
           "reliability": "reported",
           "citations": [
@@ -109,7 +112,8 @@
             },
             {
               "sourceId": "muslim",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "1779"
             }
           ]
         }
@@ -130,7 +134,8 @@
           "citations": [
             {
               "sourceId": "muslim",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "1763"
             }
           ]
         },
@@ -188,7 +193,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3965"
             }
           ]
         },
@@ -201,7 +207,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3141"
             },
             {
               "sourceId": "quran",
@@ -226,7 +233,8 @@
             },
             {
               "sourceId": "muslim",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "1763"
             }
           ]
         },
@@ -239,7 +247,8 @@
           "citations": [
             {
               "sourceId": "muslim",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "1763"
             },
             {
               "sourceId": "quran",
@@ -261,7 +270,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3976"
             },
             {
               "sourceId": "sirat-ibn-hisham",
