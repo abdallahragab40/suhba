@@ -1279,5 +1279,13 @@
       ],
       "sectionId": "abu-ubaydah.death"
     }
+  ],
+  "storyIds": [
+    "brotherhood-of-the-ansar",
+    "the-archers-of-uhud",
+    "the-coastal-expedition",
+    "the-conquest-of-makkah",
+    "the-day-of-saqifah",
+    "the-plague-at-sargh"
   ]
 }

@@ -63,7 +63,12 @@ void main() {
     // Stories, with draft badges and Arabic reading time.
     expect(find.text('ثاني اثنين'), findsOneWidget);
     expect(find.text('جمع القرآن في الصحف'), findsOneWidget);
-    expect(find.text('٣ دقائق قراءة'), findsNWidgets(2));
+    // Ten stories, three-minute ones among them; in the order of events.
+    expect(find.text('٣ دقائق قراءة'), findsNWidgets(7));
+    expect(
+      tester.getTopLeft(find.text('إسلام أبي ذر')).dy,
+      lessThan(tester.getTopLeft(find.text('يوم السقيفة')).dy),
+    );
 
     // Related person from people.json, with her honorific; not a link.
     expect(find.text('عائشة أم المؤمنين رضي الله عنها'), findsOneWidget);

@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "id": "the-plague-at-sargh",
+  "title": {
+    "ar": "الطاعون عند سَرْغ"
+  },
+  "synopsis": {
+    "ar": "خرج عمر إلى الشام، فبلغه عند سرغ أن الطاعون وقع بها، فاستشار الصحابة ثم رجع بالناس، وجاء عبد الرحمن بن عوف بحديث يحسم الأمر، ثم مات أبو عبيدة في الطاعون."
+  },
+  "companionIds": [
+    "umar",
+    "abu-ubaydah",
+    "abd-al-rahman-ibn-awf"
+  ],
+  "readingMinutes": 3,
+  "chapters": [
+    {
+      "id": "the-plague-at-sargh.1",
+      "title": {
+        "ar": "الخبر عند سرغ"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "خرج عمر بن الخطاب إلى الشام، حتى إذا كان بسرغ، وهي قرية في طرف الشام، لقيه أمراء الأجناد أبو عبيدة بن الجراح وأصحابه، فأخبروه أن الوباء قد وقع بأرض الشام، كما روى عبد الله بن عباس."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويذكر المؤرخون أن ذلك كان في السنة الثامنة عشرة، وهو طاعون عمواس الذي سُمّي باسم قرية في فلسطين."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "pending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "the-plague-at-sargh.2",
+      "title": {
+        "ar": "الشورى"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "فأمر عمر ابن عباس أن يدعو له المهاجرين الأولين، فاستشارهم، فاختلفوا: فقال بعضهم إنه خرج لأمر ولا يرون أن يرجع عنه، وقال بعضهم إن معه بقية الناس وأصحاب النبي ﷺ، ولا يرون أن يقدمهم على هذا الوباء."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ثم دعا الأنصار فاستشارهم، فسلكوا سبيل المهاجرين واختلفوا كاختلافهم، ثم دعا من كان هناك من مشيخة قريش من مهاجرة الفتح، فلم يختلف منهم رجلان، ورأوا أن يرجع بالناس."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "فنادى عمر في الناس أنه مصبح على ظهر، فأصبحوا عليه."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "the-plague-at-sargh.3",
+      "title": {
+        "ar": "من قدر الله إلى قدر الله"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "فسأله أبو عبيدة أفرارًا من قدر الله، فأجابه عمر بأنه لو غيره قالها، ثم ذكر أنهم يفرّون من قدر الله إلى قدر الله."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وضرب له مثلًا: رجلًا له إبل هبطت واديًا له عدوتان، إحداهما خصبة والأخرى جدبة، فإن رعى الخصبة رعاها بقدر الله، وإن رعى الجدبة رعاها بقدر الله."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "فجاء عبد الرحمن بن عوف، وكان متغيّبًا في بعض حاجته، فذكر أن عنده في هذا علمًا: سمع النبي ﷺ يأمر إذا سمعوا بالطاعون بأرض ألّا يقدموا عليها، وإذا وقع بأرض وهم بها ألّا يخرجوا فرارًا منه، فحمد عمر الله ثم انصرف."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "hadithQuote",
+          "textStatus": "pendingFromSource",
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending",
+              "grading": {
+                "grade": "sahih",
+                "gradedBy": {
+                  "ar": "البخاري، بإخراجه في صحيحه"
+                }
+              }
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending",
+              "grading": {
+                "grade": "sahih",
+                "gradedBy": {
+                  "ar": "مسلم، بإخراجه في صحيحه"
+                }
+              }
+            }
+          ],
+          "summary": {
+            "ar": "يخبر عبد الرحمن بن عوف عن النبي ﷺ: إذا سمعتم بالطاعون بأرض فلا تقدموا عليها، وإذا وقع بأرض وأنتم بها فلا تخرجوا فرارًا منه."
+          }
+        }
+      ]
+    },
+    {
+      "id": "the-plague-at-sargh.4",
+      "title": {
+        "ar": "أمين الأمة في الطاعون"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وبقي أبو عبيدة مع جنده بالشام، ويروي الطبري أن عمر كتب إليه يستقدمه لحاجة، فعرف أبو عبيدة أنه يريد أن يستبقيه، فاعتذر بأنه في جند من المسلمين لا يجد بنفسه رغبة عنهم."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ومات أبو عبيدة في ذلك الطاعون، ومات فيه معاذ بن جبل وكثير من الصحابة والتابعين، وكان عمر يُروى عنه أنه لو كان أبو عبيدة حيًّا لاستخلفه، وهي رواية في المسند وكتب التراجم."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكانت عائشة قد سألت النبي ﷺ عن الطاعون، فأخبرها أنه كان عذابًا يبعثه الله على من يشاء، فجعله رحمة للمؤمنين، فليس من عبد يقع الطاعون فيمكث في بلده صابرًا محتسبًا، يعلم أنه لن يصيبه إلا ما كتب الله له، إلا كان له مثل أجر الشهيد."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وأخبر النبي ﷺ كذلك أن الطاعون شهادة لكل مسلم، كما روى أنس بن مالك، فكان من مات فيه من الصحابة بالشام على هذا الرجاء."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وصار حديث عبد الرحمن بن عوف أصلًا عند الفقهاء في الأوبئة: لا يُقدم على أرض وقع بها، ولا يُخرج منها فرارًا، جمعًا بين حفظ النفس والصبر على القدر."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "في القصة أن الشورى منهج في الأزمات، يُستمع فيه إلى أهل السابقة وأهل الخبرة، ثم يعزم صاحب الأمر."
+          }
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "وفيها أن الأخذ بالأسباب لا ينافي الإيمان بالقدر، وأن حديثًا واحدًا يحفظه صحابي قد يحسم خلاف الكبار، وأن النبي ﷺ سبق إلى أصل الحجر الصحي."
+          }
+        }
+      ]
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators",
+      "needsSourceText"
+    ],
+    "authoredBy": "draft-revision-4",
+    "coverage": "complete"
+  },
+  "eventIds": []
+}

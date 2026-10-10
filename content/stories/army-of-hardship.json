@@ -1,0 +1,266 @@
+{
+  "schemaVersion": 1,
+  "id": "army-of-hardship",
+  "title": {
+    "ar": "جيش العسرة"
+  },
+  "synopsis": {
+    "ar": "في حرّ شديد وسفر بعيد، دعا النبي ﷺ إلى غزوة تبوك، فتسابق الصحابة في البذل، وتخلّف قوم، فكان صدق كعب بن مالك وصاحبيه درسًا في التوبة."
+  },
+  "companionIds": [
+    "uthman",
+    "abu-bakr",
+    "umar",
+    "ali",
+    "talha"
+  ],
+  "readingMinutes": 3,
+  "chapters": [
+    {
+      "id": "army-of-hardship.1",
+      "title": {
+        "ar": "الدعوة إلى تبوك"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "في السنة التاسعة دعا النبي ﷺ الناس إلى غزو الروم نحو تبوك، في حرّ شديد وحين طابت الثمار، وسفر بعيد وعدو كثير، فجلّى للمسلمين أمرهم ليتأهّبوا، على خلاف عادته أن يورّي بغيرها، كما يذكر كعب بن مالك."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وسُمّي جيش تبوك جيش العسرة لشدّة ما أصاب الناس فيه من الحرّ وقلّة الظهر والزاد، وذكر القرآن ساعة العسرة وتوبة الله على المهاجرين والأنصار الذين اتبعوا النبي ﷺ فيها."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "quran",
+              "locatorStatus": "complete",
+              "quranRef": {
+                "surah": 9,
+                "ayahFrom": 117
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "army-of-hardship.2",
+      "title": {
+        "ar": "السباق في البذل"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكان عثمان بن عفان يذكّر الناس يوم حوصر بأنهم يعلمون أن النبي ﷺ قال: من جهّز جيش العسرة فله الجنة، فجهّزه عثمان، كما في صحيح البخاري."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وروى الترمذي عن عبد الرحمن بن سمرة أن عثمان جاء بألف دينار في كمّه فنثرها في حجر النبي ﷺ، فجعل يقلّبها ويذكر أنه ما ضرّ عثمان ما عمل بعد اليوم، وحسّنه الترمذي."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tirmidhi",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وروى أبو داود والترمذي عن عمر أنه جاء في صدقة دعا إليها النبي ﷺ بنصف ماله، وظنّ أنه سيسبق أبا بكر يومئذ، فجاء أبو بكر بكل ما عنده، وسأله النبي ﷺ ما أبقى لأهله فذكر أنه أبقى لهم الله ورسوله، فعلم عمر أنه لا يسبقه إلى شيء أبدًا، ويذكر أهل السير هذه الصدقة في جيش العسرة."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "abu-dawud",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "tirmidhi",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وجاء نفر من الفقراء يطلبون ما يحملهم، فلم يجد النبي ﷺ ما يحملهم عليه، فتولّوا وأعينهم تفيض من الدمع حزنًا ألّا يجدوا ما ينفقون، فنزل فيهم القرآن يعذرهم."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "quran",
+              "locatorStatus": "complete",
+              "quranRef": {
+                "surah": 9,
+                "ayahFrom": 92
+              }
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وخلّف النبي ﷺ علي بن أبي طالب في أهله بالمدينة، فسأله علي أيخلّفه في النساء والصبيان، فأجابه بأن يرضى أن يكون منه بمنزلة هارون من موسى، إلا أنه لا نبي بعده."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "army-of-hardship.3",
+      "title": {
+        "ar": "صدق كعب"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وتخلّف كعب بن مالك، وكان يحدّث أنه لم يكن قط أقوى ولا أيسر منه حين تخلّف، وأنه كان يقول في نفسه إنه سيلحق بهم غدًا، حتى أسرعوا وتفارط الغزو."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "فلما رجع النبي ﷺ جاءه المتخلّفون يعتذرون ويحلفون، وكانوا بضعة وثمانين رجلًا، فقبل منهم علانيتهم ووكل سرائرهم إلى الله، وجاء كعب فصدقه أنه لم يكن له عذر."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "فنهى النبي ﷺ عن كلامه وكلام صاحبيه مرارة بن الربيع وهلال بن أمية خمسين ليلة، حتى ضاقت عليهم الأرض بما رحبت، وأُمروا باعتزال نسائهم في الأربعين الأخيرة."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "quran",
+              "locatorStatus": "complete",
+              "quranRef": {
+                "surah": 9,
+                "ayahFrom": 118
+              }
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ثم نزلت توبتهم، فصاح صارخ من على جبل سلع يبشّر كعبًا، وجاءه الناس يهنّئونه، فقام إليه طلحة بن عبيد الله يهرول حتى صافحه وهنّأه، وكان كعب يذكر أنه لم يقم إليه رجل من المهاجرين غيره، ولا ينساها لطلحة."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "quranQuote",
+          "ref": {
+            "surah": 9,
+            "ayahFrom": 117,
+            "ayahTo": 118
+          },
+          "note": {
+            "ar": "في توبة الله على أهل ساعة العسرة، وعلى الثلاثة الذين خُلّفوا."
+          }
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "في القصة أن البذل وقت الشدّة هو الذي يُذكر، وأن لكل صحابي بابه: هذا بماله، وهذا بنفسه، وهذا بقيامه على الأهل."
+          }
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "وفيها أن الصدق ولو كلّف صاحبه خمسين ليلة من الوحشة أنجى من عذر كاذب يُقبل في الظاهر، وأن فرحة الأخ بتوبة أخيه من شيم الصالحين."
+          }
+        }
+      ]
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators",
+      "needsSourceText"
+    ],
+    "authoredBy": "draft-revision-4",
+    "coverage": "complete"
+  },
+  "eventIds": [
+    "tabuk"
+  ]
+}

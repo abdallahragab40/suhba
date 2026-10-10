@@ -83,11 +83,18 @@ void main() {
       );
       expect(hijrah.eventId, 'hijrah');
       expect(hijrah.sectionId, 'abu-bakr.hijrah');
+      // In the order of events, not the order of writing.
       expect(c.storyIds, [
-        'jam-al-quran',
+        'islam-of-abu-dharr',
+        'protection-of-ibn-al-daghinah',
         'the-cave',
-        'treaty-of-hudaybiyah',
         'day-of-badr',
+        'treaty-of-hudaybiyah',
+        'hunayn-and-the-ansar',
+        'army-of-hardship',
+        'the-farewell-pilgrimage',
+        'the-day-of-saqifah',
+        'jam-al-quran',
       ]);
       expect(c.review.editorialFlags, {
         EditorialFlag.needsLocators,

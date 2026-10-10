@@ -191,8 +191,12 @@ class StoryList extends ConsumerWidget {
                       ],
                       Text(s.title.of(context), style: textTheme.titleLarge),
                       const SizedBox(height: AppSpacing.xxs),
+                      // Some companions have a dozen stories: keep each card
+                      // short; the story's own page has the whole synopsis.
                       Text(
                         s.synopsis.of(context),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
                         style: textTheme.bodyMedium?.copyWith(
                           color: colors.onSurfaceDim,
                         ),

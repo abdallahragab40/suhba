@@ -1,0 +1,287 @@
+{
+  "schemaVersion": 1,
+  "id": "the-trench",
+  "title": {
+    "ar": "يوم الخندق"
+  },
+  "synopsis": {
+    "ar": "تحزّبت القبائل على المدينة، فحفر المسلمون خندقًا في البرد والجوع، وصبروا على حصار طويل، حتى أرسل الله عليهم ريحًا وجنودًا لم يروها."
+  },
+  "companionIds": [
+    "zubayr",
+    "umar",
+    "ali"
+  ],
+  "readingMinutes": 3,
+  "chapters": [
+    {
+      "id": "the-trench.1",
+      "title": {
+        "ar": "الأحزاب"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "في السنة الخامسة اجتمعت قريش وغطفان ومن معهما من القبائل على حرب المدينة، في جيش يذكر أهل السير أنه بلغ نحو عشرة آلاف، فسُمّيت الغزوة الأحزاب."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويذكر أهل السير أن سلمان الفارسي أشار بحفر الخندق، وكانت حيلة لا تعرفها العرب، فأخذ بها النبي ﷺ، والإشارة مذكورة في كتب المغازي لا في الصحيحين."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ووصف القرآن تلك الأيام وصفًا بليغًا: جاءهم العدو من فوقهم ومن أسفل منهم، وزاغت الأبصار، وبلغت القلوب الحناجر، وابتُلي المؤمنون وزُلزلوا زلزالًا شديدًا."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "quran",
+              "locatorStatus": "complete",
+              "quranRef": {
+                "surah": 33,
+                "ayahFrom": 10,
+                "ayahTo": 11
+              }
+            }
+          ]
+        },
+        {
+          "type": "quranQuote",
+          "ref": {
+            "surah": 33,
+            "ayahFrom": 9,
+            "ayahTo": 11
+          },
+          "note": {
+            "ar": "في وصف حصار الأحزاب ونعمة الله على المؤمنين."
+          }
+        }
+      ]
+    },
+    {
+      "id": "the-trench.2",
+      "title": {
+        "ar": "الحفر في البرد"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وخرج النبي ﷺ إلى الخندق في غداة باردة، فإذا المهاجرون والأنصار يحفرون بأيديهم، لم يكن لهم عبيد يكفونهم ذلك، فلما رأى ما بهم من النصب والجوع دعا بأن العيش الحق عيش الآخرة، وسأل المغفرة للأنصار والمهاجرة، فأجابوه بأنهم بايعوه على الجهاد ما بقوا، كما روى أنس."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وروى البراء أنه رأى النبي ﷺ ينقل التراب حتى وارى التراب جلد بطنه، وهو يرتجز بأبيات لعبد الله بن رواحة، يذكر فيها أنه لولا الله ما اهتدوا ولا تصدّقوا ولا صلّوا، ويسأله السكينة والثبات."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وعرضت لهم كدية شديدة لم يقدروا عليها، فجاؤوا النبي ﷺ، فقام وبطنه معصوب بحجر من الجوع، وقد لبثوا ثلاثة أيام لا يذوقون طعامًا، فأخذ المعول فضرب، فعادت كثيبًا أهيل، كما روى جابر بن عبد الله."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ورأى جابر ما بالنبي ﷺ من الجوع، فذبح عناقًا وطحنت امرأته صاعًا من شعير، ودعاه إلى طعام يسير، فدعا النبي ﷺ أهل الخندق جميعًا، فأكلوا وانصرفوا والطعام على حاله، وكانوا ألفًا."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "the-trench.3",
+      "title": {
+        "ar": "أيام الحصار"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وطال الحصار، فسأل النبي ﷺ يوم الأحزاب من يأتيه بخبر القوم، فقال الزبير أنا، ثم سأل فقال الزبير أنا، ثم سأل فقال الزبير أنا، فذكر النبي ﷺ أن لكل نبي حواريًّا، وأن حواريّه الزبير."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وجاء عمر يوم الخندق بعدما غربت الشمس يسبّ كفار قريش، ويذكر أنه ما كاد يصلّي العصر حتى كادت الشمس تغرب، فأخبره النبي ﷺ أنه هو أيضًا لم يصلّها، فتوضؤوا فصلّى العصر بعد الغروب ثم المغرب."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وروى علي أن النبي ﷺ دعا يومئذ على الأحزاب، بأن يملأ الله بيوتهم وقبورهم نارًا كما شغلوهم عن الصلاة الوسطى حتى غابت الشمس."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويذكر أهل السير مبارزة علي لعمرو بن عبد ودّ حين اقتحم الخندق بفرسه، وقتل علي إياه، وهي رواية في المغازي يتناقلها أهل السير."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "pending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "the-trench.4",
+      "title": {
+        "ar": "الريح"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ثم كانت ليلة شديدة البرد والريح، فبعث النبي ﷺ حذيفة بن اليمان ليأتيه بخبر القوم، فدخل معسكرهم، ورآهم يتهيّؤون للرحيل، كما في صحيح مسلم."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "فرجعت الأحزاب بغير قتال كبير، وذكر النبي ﷺ أنهم لن يغزوهم بعد ذلك، بل يغزوهم المسلمون، فكان الخندق آخر هجوم لقريش على المدينة."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "في القصة أن القائد يحمل التراب مع أصحابه ويجوع معهم، وأن الأخذ بالأسباب الجديدة والرأي النافع من حكمة الإسلام."
+          }
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "وفيها أن البلاء قد يبلغ القلوب الحناجر، ثم يأتي الفرج من حيث لا يحتسب الناس، وأن الصلاة ظلت في قلب المعركة همًّا يُدعى على من شغل عنها."
+          }
+        }
+      ]
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators",
+      "needsSourceText"
+    ],
+    "authoredBy": "draft-revision-4",
+    "coverage": "complete"
+  },
+  "eventIds": [
+    "khandaq"
+  ]
+}

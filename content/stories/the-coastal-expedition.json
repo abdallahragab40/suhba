@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "id": "the-coastal-expedition",
+  "title": {
+    "ar": "جيش الخبط"
+  },
+  "synopsis": {
+    "ar": "بعث النبي ﷺ ثلاثمئة رجل إلى الساحل بإمرة أبي عبيدة، ففني زادهم حتى أكلوا ورق الشجر، ثم ألقى لهم البحر حوتًا عظيمًا أكلوا منه أيامًا."
+  },
+  "companionIds": [
+    "abu-ubaydah"
+  ],
+  "readingMinutes": 3,
+  "chapters": [
+    {
+      "id": "the-coastal-expedition.1",
+      "title": {
+        "ar": "البعث إلى الساحل"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "بعث النبي ﷺ بعثًا قبل الساحل، وأمّر عليهم أبا عبيدة بن الجراح، وكانوا ثلاثمئة يرصدون عيرًا لقريش، كما يروي جابر بن عبد الله وكان فيهم."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويذكر ابن سعد أن ذلك كان في رجب من السنة الثامنة، والتاريخ عند أهل الطبقات لا في الصحيحين."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "فلما كانوا ببعض الطريق فني الزاد، فأمر أبو عبيدة بأزواد الجيش فجُمعت، فكان مزودي تمر، فكان يقوتهم كل يوم قليلًا قليلًا، حتى صار لكل رجل تمرة واحدة."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وسأل وهب بن كيسان جابرًا ما تغني عنهم تمرة، فذكر أنهم وجدوا فقدها حين فنيت، وكانوا يمصّونها كما يمصّ الصبي ثم يشربون عليها الماء."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "the-coastal-expedition.2",
+      "title": {
+        "ar": "الخبط"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ثم فنيت التمرات، فكانوا يضربون ورق الشجر بعصيّهم ثم يبلّونه بالماء فيأكلونه، حتى سُمّي ذلك الجيش جيش الخبط."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكان قيس بن سعد بن عبادة في الجيش، فنحر ثلاث جزائر ثم ثلاثًا ثم ثلاثًا، ثم نهاه أبو عبيدة، حرصًا على ظهر الجيش في طريقهم الطويل."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "the-coastal-expedition.3",
+      "title": {
+        "ar": "حوت البحر"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ثم ألقى لهم البحر دابّة عظيمة يُقال لها العنبر، فتوقّف أبو عبيدة أول الأمر لأنها ميتة، ثم ذكر أنهم رسل رسول الله ﷺ وفي سبيل الله، وأنهم مضطرون، فأذن لهم في الأكل، كما في رواية مسلم."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "فأكلوا منه ثماني عشرة ليلة، وادّهنوا من ودكه حتى ثابت إليهم أجسامهم، وأخذ أبو عبيدة ضلعين من أضلاعه فنصبهما، ثم أمر بأطول رجل على أطول بعير فمرّ تحتهما."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويذكر جابر في رواية مسلم أن أبا عبيدة أقعد ثلاثة عشر رجلًا في وقب عين الحوت، وأنهم كانوا يغترفون الدهن من عينه بالقلال، وتزوّدوا من لحمه قطعًا مجفّفة حملوها إلى المدينة."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "فلما قدموا المدينة ذكروا ذلك للنبي ﷺ، فأخبرهم أنه رزق أخرجه الله لهم، وسألهم هل معهم من لحمه شيء، فأرسلوا إليه منه فأكله."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "the-coastal-expedition.4",
+      "title": {
+        "ar": "أمين هذه الأمة"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكان أبو عبيدة أهلًا لهذه الإمرة؛ فقد جاء أهل نجران يسألون النبي ﷺ أن يبعث معهم رجلًا أمينًا، فوعدهم أن يبعث معهم أمينًا حق أمين، فاستشرف لها الصحابة، فبعث أبا عبيدة."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وذكر النبي ﷺ أن لكل أمة أمينًا، وأن أمين هذه الأمة أبو عبيدة بن الجراح، كما روى أنس بن مالك."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويذكر أهل التراجم أن عمر دخل عليه أميرًا على الشام فلم يجد في بيته إلا سيفه وترسه ورحله، والخبر في كتب التراجم لا في الصحيحين."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "واستدلّ أهل العلم بهذه القصة على حلّ ميتة البحر، مع حديث النبي ﷺ في البحر أنه الطهور ماؤه الحلّ ميتته، وهو عند أبي داود والترمذي، وصحّحه الترمذي."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "abu-dawud",
+              "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "tirmidhi",
+              "locatorStatus": "pending"
+            }
+          ]
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "في القصة أن القائد الأمين يقسم الضيق بالعدل حتى التمرة الواحدة، وأن الرخصة عند الضرورة من رحمة الشريعة، يتثبّت فيها القائد ولا يتشدّد."
+          }
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "وفيها أن الصبر على الجوع في سبيل الله قد يعقبه رزق لم يكن في الحسبان، وأن الأمانة رأس الصفات في من يتولّى أمر الناس."
+          }
+        }
+      ]
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "needsLocators",
+      "needsSourceText"
+    ],
+    "authoredBy": "draft-revision-4",
+    "coverage": "complete"
+  },
+  "eventIds": []
+}
