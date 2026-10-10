@@ -80,7 +80,9 @@
           "citations": [
             {
               "sourceId": "sirat-ibn-hisham",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "315"
             },
             {
               "sourceId": "bukhari",
@@ -132,7 +134,9 @@
             },
             {
               "sourceId": "sirat-ibn-hisham",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "316"
             }
           ]
         }
@@ -218,7 +222,9 @@
               "citations": [
                 {
                   "sourceId": "sirat-ibn-hisham",
-                  "locatorStatus": "pending"
+                  "locatorStatus": "complete",
+                  "volume": 2,
+                  "page": "317"
                 },
                 {
                   "sourceId": "abu-dawud",
@@ -306,11 +312,15 @@
           "citations": [
             {
               "sourceId": "sirat-ibn-hisham",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "322"
             },
             {
               "sourceId": "al-bidaya",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 6,
+              "page": "221"
             }
           ]
         },
