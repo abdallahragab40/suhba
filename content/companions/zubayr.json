@@ -16,7 +16,6 @@
     "status": "draft",
     "editorialFlags": [
       "needsLocators",
-      "needsSourceText",
       "fitnaAdjacent"
     ],
     "coverage": "complete",
@@ -643,7 +642,7 @@
       "blocks": [
         {
           "type": "hadithQuote",
-          "textStatus": "pendingFromSource",
+          "textStatus": "complete",
           "reliability": "established",
           "citations": [
             {
@@ -669,13 +668,16 @@
               }
             }
           ],
+          "text": {
+            "ar": "إِنَّ لِكُلِّ نَبِيٍّ حَوَارِيًّا، وَحَوَارِيَّ الزُّبَيْرُ"
+          },
           "summary": {
             "ar": "حديث جابر في أن النبي ﷺ ذكر أن لكل نبي حواريًّا، وأن حواريّه الزبير."
           }
         },
         {
           "type": "hadithQuote",
-          "textStatus": "pendingFromSource",
+          "textStatus": "complete",
           "reliability": "established",
           "citations": [
             {
@@ -690,6 +692,9 @@
               }
             }
           ],
+          "text": {
+            "ar": "كَانَ عَلَى حِرَاءٍ هُوَ وَأَبُو بَكْرٍ وَعُمَرُ وَعُثْمَانُ وَعَلِيٌّ وَطَلْحَةُ وَالزُّبَيْرُ فَتَحَرَّكَتِ الصَّخْرَةُ فَقَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏ \"‏ اهْدَأْ فَمَا عَلَيْكَ إِلاَّ نَبِيٌّ أَوْ صِدِّيقٌ أَوْ شَهِيدٌ"
+          },
           "summary": {
             "ar": "حديث أبي هريرة في أن النبي ﷺ كان على حراء ومعه أبو بكر وعمر وعثمان وعلي وطلحة والزبير، فتحرّكت الصخرة، فأمرها أن تهدأ، فما عليها إلا نبي أو صدّيق أو شهيد."
           }

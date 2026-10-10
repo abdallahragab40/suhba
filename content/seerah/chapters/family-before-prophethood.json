@@ -91,7 +91,8 @@
         },
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "2436"
         }
       ]
     },
@@ -115,17 +116,19 @@
     {
       "type": "paragraph",
       "text": {
-        "ar": "وكانت خديجة تبذل مالها في بيتها وفي حاجات زوجها، وذكر النبي ﷺ بعد ذلك أنه رُزق حبها، وأنها آمنت به حين كذّبه الناس وواسته بمالها."
+        "ar": "وكانت خديجة تبذل مالها في بيتها وفي حاجات زوجها، وذكر النبي ﷺ بعد ذلك أنه رُزق حبها، وكان يثني عليها إذا ذكرها فيذكر أنها كانت وكانت، وأنه كان له منها الولد."
       },
       "reliability": "established",
       "citations": [
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "2435"
         },
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3818"
         }
       ]
     },
@@ -159,7 +162,8 @@
         },
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "2436"
         }
       ]
     },
@@ -172,11 +176,13 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3818"
         },
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "2435"
         }
       ]
     },
@@ -265,18 +271,31 @@
         },
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3729"
         }
       ]
     },
     {
       "type": "hadithQuote",
-      "textStatus": "pendingFromSource",
+      "textStatus": "complete",
       "reliability": "established",
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending",
+          "locatorStatus": "complete",
+          "hadithNumber": "3815",
+          "grading": {
+            "grade": "sahih",
+            "gradedBy": {
+              "ar": "البخاري، بإخراجه في صحيحه"
+            }
+          }
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3820",
           "grading": {
             "grade": "sahih",
             "gradedBy": {
@@ -286,7 +305,19 @@
         },
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending",
+          "locatorStatus": "complete",
+          "hadithNumber": "2430",
+          "grading": {
+            "grade": "sahih",
+            "gradedBy": {
+              "ar": "مسلم، بإخراجه في صحيحه"
+            }
+          }
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "complete",
+          "hadithNumber": "2432",
           "grading": {
             "grade": "sahih",
             "gradedBy": {
@@ -295,6 +326,9 @@
           }
         }
       ],
+      "text": {
+        "ar": "خَيْرُ نِسَائِهَا مَرْيَمُ، وَخَيْرُ نِسَائِهَا خَدِيجَةُ"
+      },
       "summary": {
         "ar": "حديث النبي ﷺ في فضل خديجة، وأنها خير نساء زمانها، وأن جبريل أبلغها السلام من ربها."
       }
@@ -312,7 +346,8 @@
         },
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "4782"
         },
         {
           "sourceId": "quran",
@@ -358,7 +393,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3"
         }
       ]
     },
@@ -378,7 +414,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3"
         },
         {
           "sourceId": "sirat-ibn-hisham",
@@ -395,7 +432,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3"
         }
       ]
     },
@@ -408,7 +446,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3"
         }
       ]
     },
@@ -428,8 +467,7 @@
   "review": {
     "status": "draft",
     "editorialFlags": [
-      "needsLocators",
-      "needsSourceText"
+      "needsLocators"
     ],
     "authoredBy": "draft-revision-4",
     "coverage": "complete"

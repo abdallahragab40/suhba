@@ -15,8 +15,7 @@
   "review": {
     "status": "draft",
     "editorialFlags": [
-      "needsLocators",
-      "needsSourceText"
+      "needsLocators"
     ],
     "coverage": "complete",
     "authoredBy": "draft-revision-4"
@@ -503,7 +502,7 @@
       "blocks": [
         {
           "type": "hadithQuote",
-          "textStatus": "pendingFromSource",
+          "textStatus": "complete",
           "reliability": "established",
           "citations": [
             {
@@ -529,6 +528,9 @@
               }
             }
           ],
+          "text": {
+            "ar": "لِكُلِّ أُمَّةٍ أَمِينٌ، وَأَمِينُ هَذِهِ الأُمَّةِ أَبُو عُبَيْدَةَ بْنُ الْجَرَّاحِ"
+          },
           "summary": {
             "ar": "حديث أنس في أن النبي ﷺ ذكر أن لكل أمة أمينًا، وأن أمين هذه الأمة أبو عبيدة بن الجراح."
           }

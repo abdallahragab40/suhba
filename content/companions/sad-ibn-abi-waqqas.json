@@ -15,8 +15,7 @@
   "review": {
     "status": "draft",
     "editorialFlags": [
-      "needsLocators",
-      "needsSourceText"
+      "needsLocators"
     ],
     "coverage": "complete",
     "authoredBy": "draft-revision-4"

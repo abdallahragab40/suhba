@@ -96,18 +96,20 @@
         },
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3139"
         }
       ]
     },
     {
       "type": "hadithQuote",
-      "textStatus": "pendingFromSource",
+      "textStatus": "complete",
       "reliability": "established",
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending",
+          "locatorStatus": "complete",
+          "hadithNumber": "3231",
           "grading": {
             "grade": "sahih",
             "gradedBy": {
@@ -117,7 +119,8 @@
         },
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending",
+          "locatorStatus": "complete",
+          "hadithNumber": "1795",
           "grading": {
             "grade": "sahih",
             "gradedBy": {
@@ -126,6 +129,9 @@
           }
         }
       ],
+      "text": {
+        "ar": "لَقَدْ لَقِيتُ مِنْ قَوْمِكِ مَا لَقِيتُ، وَكَانَ أَشَدُّ مَا لَقِيتُ مِنْهُمْ يَوْمَ الْعَقَبَةِ، إِذْ عَرَضْتُ نَفْسِي عَلَى ابْنِ عَبْدِ يَالِيلَ بْنِ عَبْدِ كُلاَلٍ، فَلَمْ يُجِبْنِي إِلَى مَا أَرَدْتُ، فَانْطَلَقْتُ وَأَنَا مَهْمُومٌ عَلَى وَجْهِي، فَلَمْ أَسْتَفِقْ إِلاَّ وَأَنَا بِقَرْنِ الثَّعَالِبِ، فَرَفَعْتُ رَأْسِي، فَإِذَا أَنَا بِسَحَابَةٍ قَدْ أَظَلَّتْنِي، فَنَظَرْتُ فَإِذَا فِيهَا جِبْرِيلُ فَنَادَانِي فَقَالَ إِنَّ اللَّهَ قَدْ سَمِعَ قَوْلَ قَوْمِكَ لَكَ وَمَا رَدُّوا عَلَيْكَ، وَقَدْ بَعَثَ إِلَيْكَ مَلَكَ الْجِبَالِ لِتَأْمُرَهُ بِمَا شِئْتَ فِيهِمْ، فَنَادَانِي مَلَكُ الْجِبَالِ، فَسَلَّمَ عَلَىَّ ثُمَّ قَالَ يَا مُحَمَّدُ، فَقَالَ ذَلِكَ فِيمَا شِئْتَ، إِنْ شِئْتَ أَنْ أُطْبِقَ عَلَيْهِمِ الأَخْشَبَيْنِ، فَقَالَ النَّبِيُّ صلى الله عليه وسلم بَلْ أَرْجُو أَنْ يُخْرِجَ اللَّهُ مِنْ أَصْلاَبِهِمْ مَنْ يَعْبُدُ اللَّهَ وَحْدَهُ لاَ يُشْرِكُ بِهِ شَيْئًا"
+      },
       "summary": {
         "ar": "حديث عائشة لما سألت النبي ﷺ: هل أتى عليك يوم أشد من يوم أحد؟ فذكر يوم عرضه نفسه على أهل الطائف، وأن ملك الجبال استأذنه في إهلاكهم، فأبى ورجا أن يُخرج الله من ذرياتهم من يعبده وحده."
       }
@@ -153,11 +159,13 @@
         },
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3887"
         },
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "162"
         }
       ]
     },
@@ -170,11 +178,13 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3886"
         },
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "170"
         }
       ]
     },
@@ -187,11 +197,13 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3887"
         },
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "162"
         },
         {
           "sourceId": "quran",
@@ -299,7 +311,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3893"
         },
         {
           "sourceId": "sirat-ibn-hisham",
@@ -337,7 +350,8 @@
         },
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3891"
         }
       ]
     },
@@ -390,8 +404,7 @@
   "review": {
     "status": "draft",
     "editorialFlags": [
-      "needsLocators",
-      "needsSourceText"
+      "needsLocators"
     ],
     "authoredBy": "draft-revision-4",
     "coverage": "complete"

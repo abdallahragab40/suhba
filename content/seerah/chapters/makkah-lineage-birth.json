@@ -143,7 +143,8 @@
       "citations": [
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "2276"
         }
       ]
     },
@@ -194,12 +195,13 @@
     },
     {
       "type": "hadithQuote",
-      "textStatus": "pendingFromSource",
+      "textStatus": "complete",
       "reliability": "established",
       "citations": [
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending",
+          "locatorStatus": "complete",
+          "hadithNumber": "1162",
           "grading": {
             "grade": "sahih",
             "gradedBy": {
@@ -208,6 +210,9 @@
           }
         }
       ],
+      "text": {
+        "ar": "ذَاكَ يَوْمٌ وُلِدْتُ فِيهِ وَيَوْمٌ بُعِثْتُ أَوْ أُنْزِلَ عَلَىَّ فِيهِ"
+      },
       "summary": {
         "ar": "حديث النبي ﷺ لمّا سُئل عن صوم يوم الاثنين، فذكر أنه اليوم الذي وُلد فيه، واليوم الذي أُنزل عليه فيه."
       }
@@ -339,7 +344,13 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3520"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3828"
         },
         {
           "sourceId": "sirat-ibn-hisham",
@@ -395,11 +406,18 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "5101"
         },
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "1449"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "complete",
+          "hadithNumber": "1771"
         }
       ]
     },
@@ -413,8 +431,7 @@
   "review": {
     "status": "draft",
     "editorialFlags": [
-      "needsLocators",
-      "needsSourceText"
+      "needsLocators"
     ],
     "authoredBy": "draft-revision-4",
     "coverage": "complete"

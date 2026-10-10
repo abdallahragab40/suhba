@@ -45,6 +45,9 @@ abstract final class HadithDataset {
     // Ka'b ibn Malik on Tabuk (Abu al-Tahir's chain); between 2768 and
     // 2769.04, its own continuation. 7018 duplicates it and is left out.
     7017: '2769',
+    // Buraydah on the commander's instructions (Sufyan's chain); between
+    // 1730.02 and 1731.03, which refers back to it. 4522 duplicates it.
+    4521: '1731',
   };
 
   static String editionUrl(String edition) =>

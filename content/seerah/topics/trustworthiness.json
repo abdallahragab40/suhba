@@ -39,18 +39,20 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "4770"
         }
       ]
     },
     {
       "type": "hadithQuote",
-      "textStatus": "pendingFromSource",
+      "textStatus": "complete",
       "reliability": "established",
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending",
+          "locatorStatus": "complete",
+          "hadithNumber": "7",
           "grading": {
             "grade": "sahih",
             "gradedBy": {
@@ -59,6 +61,9 @@
           }
         }
       ],
+      "text": {
+        "ar": "فَهَلْ كُنْتُمْ تَتَّهِمُونَهُ بِالْكَذِبِ قَبْلَ أَنْ يَقُولَ مَا قَالَ قُلْتُ لاَ"
+      },
       "summary": {
         "ar": "حديث أبي سفيان حين سأله هرقل عن النبي ﷺ: هل كانوا يتهمونه بالكذب قبل أن يقول ما قال؟ فأجاب بالنفي، وكان يومئذ على الشرك."
       }
@@ -85,7 +90,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "7"
         }
       ]
     },
@@ -111,7 +117,8 @@
       "citations": [
         {
           "sourceId": "tirmidhi",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "1990"
         }
       ]
     },
@@ -124,11 +131,13 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "6094"
         },
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "2607"
         }
       ]
     },
@@ -141,11 +150,13 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "33"
         },
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "59"
         }
       ]
     },
@@ -179,7 +190,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "2731"
         }
       ]
     },
@@ -203,13 +215,14 @@
     {
       "type": "paragraph",
       "text": {
-        "ar": "وأدّى أمانة الرسالة كاملة؛ فسأل الناس في حجة الوداع: هل بلّغت؟ فشهدوا أنه قد بلّغ وأدّى ونصح، فرفع إصبعه إلى السماء يُشهد الله عليهم."
+        "ar": "وأدّى أمانة الرسالة كاملة؛ فسأل الناس في حجة الوداع عمّا هم قائلون إذا سُئلوا عنه، فشهدوا أنه قد بلّغ وأدّى ونصح، فرفع إصبعه إلى السماء يُشهد الله عليهم."
       },
       "reliability": "established",
       "citations": [
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "1218"
         },
         {
           "sourceId": "quran",
@@ -230,7 +243,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "2916"
         }
       ]
     },
@@ -243,11 +257,13 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "2432"
         },
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "1070"
         }
       ]
     },
@@ -260,7 +276,8 @@
       "citations": [
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "102"
         }
       ]
     },
@@ -274,8 +291,7 @@
   "review": {
     "status": "draft",
     "editorialFlags": [
-      "needsLocators",
-      "needsSourceText"
+      "needsLocators"
     ],
     "authoredBy": "draft-revision-4",
     "coverage": "complete"

@@ -76,12 +76,13 @@
     },
     {
       "type": "hadithQuote",
-      "textStatus": "pendingFromSource",
+      "textStatus": "complete",
       "reliability": "established",
       "citations": [
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending",
+          "locatorStatus": "complete",
+          "hadithNumber": "162",
           "grading": {
             "grade": "sahih",
             "gradedBy": {
@@ -90,6 +91,9 @@
           }
         }
       ],
+      "text": {
+        "ar": "أَتَاهُ جِبْرِيلُ صلى الله عليه وسلم وَهُوَ يَلْعَبُ مَعَ الْغِلْمَانِ فَأَخَذَهُ فَصَرَعَهُ فَشَقَّ عَنْ قَلْبِهِ فَاسْتَخْرَجَ الْقَلْبَ فَاسْتَخْرَجَ مِنْهُ عَلَقَةً فَقَالَ هَذَا حَظُّ الشَّيْطَانِ مِنْكَ ‏.‏ ثُمَّ غَسَلَهُ فِي طَسْتٍ مِنْ ذَهَبٍ بِمَاءِ زَمْزَمَ ثُمَّ لأَمَهُ ثُمَّ أَعَادَهُ فِي مَكَانِهِ"
+      },
       "summary": {
         "ar": "حديث أنس في أن جبريل أتى النبي ﷺ وهو يلعب مع الغلمان في صغره، فشقّ صدره وغسله ثم أعاده."
       }
@@ -124,18 +128,20 @@
         },
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "1771"
         }
       ]
     },
     {
       "type": "hadithQuote",
-      "textStatus": "pendingFromSource",
+      "textStatus": "complete",
       "reliability": "established",
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending",
+          "locatorStatus": "complete",
+          "hadithNumber": "2262",
           "grading": {
             "grade": "sahih",
             "gradedBy": {
@@ -144,6 +150,9 @@
           }
         }
       ],
+      "text": {
+        "ar": "مَا بَعَثَ اللَّهُ نَبِيًّا إِلاَّ رَعَى الْغَنَمَ ‏\"‏‏.‏ فَقَالَ أَصْحَابُهُ وَأَنْتَ فَقَالَ ‏\"‏ نَعَمْ كُنْتُ أَرْعَاهَا عَلَى قَرَارِيطَ لأَهْلِ مَكَّةَ"
+      },
       "summary": {
         "ar": "حديث النبي ﷺ أن ما من نبي إلا رعى الغنم، وأنه كان يرعاها لأهل مكة على قراريط."
       }
@@ -157,7 +166,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "2262"
         }
       ]
     },
@@ -170,7 +180,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "2072"
         }
       ]
     },
@@ -183,7 +194,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "1582"
         },
         {
           "sourceId": "sirat-ibn-hisham",
@@ -200,7 +212,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "1584"
         },
         {
           "sourceId": "sirat-ibn-hisham",
@@ -230,7 +243,8 @@
       "citations": [
         {
           "sourceId": "tirmidhi",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3620"
         },
         {
           "sourceId": "sirat-ibn-hisham",
@@ -294,7 +308,13 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "4770"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "7"
         },
         {
           "sourceId": "sirat-ibn-hisham",
@@ -325,10 +345,6 @@
         {
           "sourceId": "sirat-ibn-hisham",
           "locatorStatus": "pending"
-        },
-        {
-          "sourceId": "tirmidhi",
-          "locatorStatus": "pending"
         }
       ]
     },
@@ -355,8 +371,7 @@
   "review": {
     "status": "draft",
     "editorialFlags": [
-      "needsLocators",
-      "needsSourceText"
+      "needsLocators"
     ],
     "authoredBy": "draft-revision-4",
     "coverage": "complete"

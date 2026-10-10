@@ -15,8 +15,7 @@
   "review": {
     "status": "draft",
     "editorialFlags": [
-      "needsLocators",
-      "needsSourceText"
+      "needsLocators"
     ],
     "authoredBy": "draft-revision-4",
     "coverage": "complete"
@@ -698,7 +697,7 @@
         },
         {
           "type": "hadithQuote",
-          "textStatus": "pendingFromSource",
+          "textStatus": "complete",
           "reliability": "established",
           "citations": [
             {
@@ -713,6 +712,9 @@
               }
             }
           ],
+          "text": {
+            "ar": "إِنَّ اللَّهَ بَعَثَنِي إِلَيْكُمْ فَقُلْتُمْ كَذَبْتَ‏.‏ وَقَالَ أَبُو بَكْرٍ صَدَقَ‏.‏ وَوَاسَانِي بِنَفْسِهِ وَمَالِهِ، فَهَلْ أَنْتُمْ تَارِكُو لِي صَاحِبِي"
+          },
           "summary": {
             "ar": "حديث أبي الدرداء في خصومة بين أبي بكر وعمر، وفيه أن النبي ﷺ ذكر أن الناس كذّبوه أول ما بُعث وصدّقه أبو بكر، وواساه بنفسه وماله."
           }
@@ -919,7 +921,7 @@
         },
         {
           "type": "hadithQuote",
-          "textStatus": "pendingFromSource",
+          "textStatus": "complete",
           "reliability": "established",
           "citations": [
             {
@@ -945,6 +947,9 @@
               }
             }
           ],
+          "text": {
+            "ar": "مَا ظَنُّكَ يَا أَبَا بَكْرٍ بِاثْنَيْنِ اللَّهُ ثَالِثُهُمَا"
+          },
           "summary": {
             "ar": "حديث أبي بكر عمّا قاله للنبي ﷺ وهما في الغار، وما طمأنه به النبي ﷺ من معيّة الله لهما."
           }
@@ -1125,7 +1130,7 @@
         },
         {
           "type": "hadithQuote",
-          "textStatus": "pendingFromSource",
+          "textStatus": "complete",
           "reliability": "established",
           "citations": [
             {
@@ -1140,13 +1145,16 @@
               }
             }
           ],
+          "text": {
+            "ar": "اثْبُتْ أُحُدُ فَإِنَّمَا عَلَيْكَ نَبِيٌّ وَصِدِّيقٌ وَشَهِيدَانِ"
+          },
           "summary": {
             "ar": "حديث أنس في صعود النبي ﷺ جبل أحد ومعه أبو بكر وعمر وعثمان، فرجف بهم، فأمره النبي ﷺ أن يثبت، فإنما عليه نبي وصدّيق وشهيدان."
           }
         },
         {
           "type": "hadithQuote",
-          "textStatus": "pendingFromSource",
+          "textStatus": "complete",
           "reliability": "established",
           "citations": [
             {
@@ -1172,13 +1180,16 @@
               }
             }
           ],
+          "text": {
+            "ar": "لَوْ كُنْتُ مُتَّخِذًا خَلِيلاً غَيْرَ رَبِّي لاَتَّخَذْتُ أَبَا بَكْرٍ، وَلَكِنْ أُخُوَّةُ الإِسْلاَمِ وَمَوَدَّتُهُ"
+          },
           "summary": {
             "ar": "حديث النبي ﷺ في منزلة أبي بكر عنده، وأنه لو كان متخذًا خليلًا من أمته لاتخذ أبا بكر."
           }
         },
         {
           "type": "hadithQuote",
-          "textStatus": "pendingFromSource",
+          "textStatus": "complete",
           "reliability": "established",
           "citations": [
             {
@@ -1204,6 +1215,9 @@
               }
             }
           ],
+          "text": {
+            "ar": "أَىُّ النَّاسِ أَحَبُّ إِلَيْكَ قَالَ ‏\"‏ عَائِشَةُ ‏\"‏‏.‏ فَقُلْتُ مِنَ الرِّجَالِ فَقَالَ ‏\"‏ أَبُوهَا ‏\"‏‏.‏ قُلْتُ ثُمَّ مَنْ قَالَ ‏\"‏ ثُمَّ عُمَرُ بْنُ الْخَطَّابِ"
+          },
           "summary": {
             "ar": "حديث عمرو بن العاص لما سأل النبي ﷺ: أي الناس أحب إليك؟ فذكر عائشة، فلما سأله: من الرجال؟ ذكر أباها."
           }

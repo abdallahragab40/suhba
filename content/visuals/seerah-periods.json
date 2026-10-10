@@ -40,7 +40,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3851"
         },
         {
           "sourceId": "sirat-ibn-hisham",
@@ -68,7 +69,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3902"
         }
       ],
       "note": {
@@ -91,7 +93,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3902"
         }
       ],
       "note": {

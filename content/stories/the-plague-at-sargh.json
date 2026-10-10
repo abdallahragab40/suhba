@@ -183,7 +183,7 @@
         },
         {
           "type": "hadithQuote",
-          "textStatus": "pendingFromSource",
+          "textStatus": "complete",
           "reliability": "established",
           "citations": [
             {
@@ -209,6 +209,9 @@
               }
             }
           ],
+          "text": {
+            "ar": "إِذَا سَمِعْتُمْ بِهِ بِأَرْضٍ فَلاَ تَقْدَمُوا عَلَيْهِ، وَإِذَا وَقَعَ بِأَرْضٍ وَأَنْتُمْ بِهَا فَلاَ تَخْرُجُوا فِرَارًا مِنْهُ"
+          },
           "summary": {
             "ar": "يخبر عبد الرحمن بن عوف عن النبي ﷺ: إذا سمعتم بالطاعون بأرض فلا تقدموا عليها، وإذا وقع بأرض وأنتم بها فلا تخرجوا فرارًا منه."
           }
@@ -316,8 +319,7 @@
   "review": {
     "status": "draft",
     "editorialFlags": [
-      "needsLocators",
-      "needsSourceText"
+      "needsLocators"
     ],
     "authoredBy": "draft-revision-4",
     "coverage": "complete"

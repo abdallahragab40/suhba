@@ -40,11 +40,23 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3851"
         },
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "160"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "complete",
+          "hadithNumber": "2347"
         }
       ]
     },
@@ -57,7 +69,8 @@
       "citations": [
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "2277"
         }
       ]
     },
@@ -70,11 +83,13 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3"
         },
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "160"
         }
       ]
     },
@@ -98,18 +113,20 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3"
         }
       ]
     },
     {
       "type": "hadithQuote",
-      "textStatus": "pendingFromSource",
+      "textStatus": "complete",
       "reliability": "established",
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending",
+          "locatorStatus": "complete",
+          "hadithNumber": "3",
           "grading": {
             "grade": "sahih",
             "gradedBy": {
@@ -119,7 +136,8 @@
         },
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending",
+          "locatorStatus": "complete",
+          "hadithNumber": "160",
           "grading": {
             "grade": "sahih",
             "gradedBy": {
@@ -128,6 +146,9 @@
           }
         }
       ],
+      "text": {
+        "ar": "كَلاَّ وَاللَّهِ مَا يُخْزِيكَ اللَّهُ أَبَدًا، إِنَّكَ لَتَصِلُ الرَّحِمَ، وَتَحْمِلُ الْكَلَّ، وَتَكْسِبُ الْمَعْدُومَ، وَتَقْرِي الضَّيْفَ، وَتُعِينُ عَلَى نَوَائِبِ الْحَقِّ"
+      },
       "summary": {
         "ar": "حديث عائشة في بدء الوحي، وفيه أن خديجة طمأنت النبي ﷺ بأن الله لن يخذله، واستدلّت على ذلك بصلته الرحم، وإعانته الضعيف والمحتاج، وإكرامه الضيف، ونصرته أهل الحق في الشدائد."
       }
@@ -141,7 +162,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3"
         }
       ]
     },
@@ -154,7 +176,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "4"
         },
         {
           "sourceId": "quran",
@@ -210,11 +233,13 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "4"
         },
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "161"
         }
       ]
     },
@@ -278,7 +303,8 @@
       "citations": [
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "1162"
         }
       ]
     },
@@ -297,7 +323,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "2"
         }
       ]
     },
@@ -310,7 +337,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "2"
         },
         {
           "sourceId": "quran",
@@ -331,7 +359,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "5"
         },
         {
           "sourceId": "quran",
@@ -370,7 +399,8 @@
         },
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "746"
         }
       ]
     },
@@ -406,7 +436,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3"
         }
       ]
     },
@@ -468,8 +499,7 @@
   "review": {
     "status": "draft",
     "editorialFlags": [
-      "needsLocators",
-      "needsSourceText"
+      "needsLocators"
     ],
     "authoredBy": "draft-revision-4",
     "coverage": "complete"

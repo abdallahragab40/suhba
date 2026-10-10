@@ -48,7 +48,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3957"
         },
         {
           "sourceId": "quran",

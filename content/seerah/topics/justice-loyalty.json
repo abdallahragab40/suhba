@@ -35,12 +35,13 @@
     },
     {
       "type": "hadithQuote",
-      "textStatus": "pendingFromSource",
+      "textStatus": "complete",
       "reliability": "established",
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending",
+          "locatorStatus": "complete",
+          "hadithNumber": "3475",
           "grading": {
             "grade": "sahih",
             "gradedBy": {
@@ -50,7 +51,8 @@
         },
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending",
+          "locatorStatus": "complete",
+          "hadithNumber": "1688",
           "grading": {
             "grade": "sahih",
             "gradedBy": {
@@ -59,6 +61,9 @@
           }
         }
       ],
+      "text": {
+        "ar": "إِنَّمَا أَهْلَكَ الَّذِينَ قَبْلَكُمْ أَنَّهُمْ كَانُوا إِذَا سَرَقَ فِيهِمُ الشَّرِيفُ تَرَكُوهُ، وَإِذَا سَرَقَ فِيهِمُ الضَّعِيفُ أَقَامُوا عَلَيْهِ الْحَدَّ، وَايْمُ اللَّهِ، لَوْ أَنَّ فَاطِمَةَ ابْنَةَ مُحَمَّدٍ سَرَقَتْ لَقَطَعْتُ يَدَهَا"
+      },
       "summary": {
         "ar": "حديث المرأة المخزومية التي سرقت، وفيه أن النبي ﷺ أنكر الشفاعة في حدّ من حدود الله، وبيّن أن الأمم قبلنا هلكت حين كانوا يقيمون الحدّ على الضعيف ويتركون الشريف، وأقسم أنه لا يحابي في ذلك أحدًا ولو كانت ابنته."
       }
@@ -72,7 +77,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "2731"
         }
       ]
     },
@@ -111,7 +117,8 @@
         },
         {
           "sourceId": "tirmidhi",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3036"
         }
       ]
     },
@@ -124,7 +131,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3139"
         }
       ]
     },
@@ -137,7 +145,8 @@
       "citations": [
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "1780"
         }
       ]
     },
@@ -150,11 +159,13 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "2306"
         },
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "1601"
         }
       ]
     },
@@ -167,11 +178,13 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3560"
         },
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "2327"
         }
       ]
     },
@@ -184,11 +197,13 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "2680"
         },
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "1713"
         }
       ]
     },
@@ -201,7 +216,8 @@
       "citations": [
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "1787"
         }
       ]
     },
@@ -214,7 +230,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3661"
         }
       ]
     },
@@ -227,11 +244,13 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "6100"
         },
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "1062"
         }
       ]
     },
@@ -251,8 +270,7 @@
   "review": {
     "status": "draft",
     "editorialFlags": [
-      "needsLocators",
-      "needsSourceText"
+      "needsLocators"
     ],
     "authoredBy": "draft-revision-4",
     "coverage": "complete"

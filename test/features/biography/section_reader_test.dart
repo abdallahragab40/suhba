@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:siyar_sahaba/core/design_system/widgets/citation_marker.dart';
@@ -28,7 +31,15 @@ void main() {
     expect(find.text('٠٣'), findsOneWidget); // third section
     expect(find.byType(DraftBadge), findsOneWidget);
     expect(find.text('قال الله تعالى — التوبة: ٤٠'), findsOneWidget);
-    expect(find.text('النص بانتظار نقله من المصدر المعتمد.'), findsOneWidget);
+    // The cave hadith in its verbatim wording (from the pinned dataset).
+    final abuBakr =
+        jsonDecode(File('content/companions/abu-bakr.json').readAsStringSync())
+            as Map<String, dynamic>;
+    final hijrah = (abuBakr['sections'] as List)[2] as Map<String, dynamic>;
+    final quote = (hijrah['blocks'] as List)[5] as Map<String, dynamic>;
+    final cave = (quote['text'] as Map<String, dynamic>)['ar'] as String;
+    expect(find.text('«$cave»'), findsOneWidget);
+    expect(find.text('النص بانتظار نقله من المصدر المعتمد.'), findsNothing);
     expect(find.text('مصادر هذا القسم'), findsOneWidget);
     expect(find.textContaining('الجامع الصحيح (صحيح البخاري)'), findsOneWidget);
     expect(find.byType(ReadingProgressBar), findsOneWidget);

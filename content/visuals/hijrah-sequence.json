@@ -38,7 +38,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3905"
         }
       ],
       "placeId": "makkah"
@@ -78,7 +79,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3905"
         },
         {
           "sourceId": "sirat-ibn-hisham",
@@ -92,13 +94,14 @@
         "ar": "ثلاث ليال في الغار"
       },
       "text": {
-        "ar": "عبد الله بن أبي بكر يأتي بالأخبار، وعامر بن فهيرة يأتي باللبن ويعفّي الأثر، والطلب يبلغ باب الغار."
+        "ar": "عبد الله بن أبي بكر يأتي بالأخبار، وعامر بن فهيرة يرعى عليهما الغنم فيأتيهما باللبن، والطلب يبلغ باب الغار."
       },
       "reliability": "established",
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3905"
         },
         {
           "sourceId": "quran",
@@ -122,7 +125,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3906"
         }
       ],
       "placeId": "ghar-thawr"
@@ -138,7 +142,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3906"
         }
       ],
       "placeId": "quba",
@@ -161,7 +166,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3906"
         }
       ],
       "placeId": "madinah",

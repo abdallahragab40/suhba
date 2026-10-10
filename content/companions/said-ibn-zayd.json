@@ -15,8 +15,7 @@
   "review": {
     "status": "draft",
     "editorialFlags": [
-      "needsLocators",
-      "needsSourceText"
+      "needsLocators"
     ],
     "coverage": "complete",
     "authoredBy": "draft-revision-4"
@@ -576,15 +575,24 @@
         },
         {
           "type": "hadithQuote",
-          "textStatus": "pendingFromSource",
+          "textStatus": "complete",
           "reliability": "established",
           "citations": [
             {
               "sourceId": "tirmidhi",
               "locatorStatus": "complete",
-              "hadithNumber": "3757"
+              "hadithNumber": "3757",
+              "grading": {
+                "grade": "sahih",
+                "gradedBy": {
+                  "ar": "الترمذي، وقال: حسن صحيح"
+                }
+              }
             }
           ],
+          "text": {
+            "ar": "اثْبُتْ حِرَاءُ فَإِنَّهُ لَيْسَ عَلَيْكَ إِلاَّ نَبِيٌّ أَوْ صِدِّيقٌ أَوْ شَهِيدٌ"
+          },
           "summary": {
             "ar": "حديث في أن النبي ﷺ كان على حراء ومعه أبو بكر وعمر وعثمان وعلي وطلحة والزبير وعبد الرحمن وسعد وسعيد بن زيد، فتحرّك الجبل، فأمره أن يسكن."
           }

@@ -16,7 +16,6 @@
     "status": "draft",
     "editorialFlags": [
       "needsLocators",
-      "needsSourceText",
       "fitnaAdjacent"
     ],
     "authoredBy": "draft-revision-4",
@@ -672,7 +671,7 @@
       "blocks": [
         {
           "type": "hadithQuote",
-          "textStatus": "pendingFromSource",
+          "textStatus": "complete",
           "reliability": "established",
           "citations": [
             {
@@ -687,13 +686,16 @@
               }
             }
           ],
+          "text": {
+            "ar": "أَلاَ أَسْتَحِي مِنْ رَجُلٍ تَسْتَحِي مِنْهُ الْمَلاَئِكَةُ"
+          },
           "summary": {
             "ar": "حديث عائشة في أن النبي ﷺ سوّى ثيابه حين دخل عثمان، وذكر أنه يستحيي من رجل تستحيي منه الملائكة."
           }
         },
         {
           "type": "hadithQuote",
-          "textStatus": "pendingFromSource",
+          "textStatus": "complete",
           "reliability": "established",
           "citations": [
             {
@@ -708,13 +710,16 @@
               }
             }
           ],
+          "text": {
+            "ar": "اثْبُتْ أُحُدُ فَإِنَّمَا عَلَيْكَ نَبِيٌّ وَصِدِّيقٌ وَشَهِيدَانِ"
+          },
           "summary": {
             "ar": "حديث أنس في صعود النبي ﷺ أحدًا ومعه أبو بكر وعمر وعثمان، فرجف بهم، فأمره أن يثبت، فإنما عليه نبي وصدّيق وشهيدان."
           }
         },
         {
           "type": "hadithQuote",
-          "textStatus": "pendingFromSource",
+          "textStatus": "complete",
           "reliability": "established",
           "citations": [
             {
@@ -740,6 +745,9 @@
               }
             }
           ],
+          "text": {
+            "ar": "افْتَحْ لَهُ وَبَشِّرْهُ بِالْجَنَّةِ عَلَى بَلْوَى تُصِيبُهُ ‏\"‏‏.‏ فَإِذَا عُثْمَانُ"
+          },
           "summary": {
             "ar": "حديث أبي موسى الأشعري في استئذان عثمان على النبي ﷺ، وأمره أن يُفتح له ويُبشَّر بالجنة على بلوى تصيبه."
           }

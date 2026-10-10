@@ -15,8 +15,7 @@
   "review": {
     "status": "draft",
     "editorialFlags": [
-      "needsLocators",
-      "needsSourceText"
+      "needsLocators"
     ],
     "authoredBy": "draft-revision-4",
     "coverage": "complete"
@@ -311,15 +310,24 @@
         },
         {
           "type": "hadithQuote",
-          "textStatus": "pendingFromSource",
+          "textStatus": "complete",
           "reliability": "established",
           "citations": [
             {
               "sourceId": "tirmidhi",
               "locatorStatus": "complete",
-              "hadithNumber": "3681"
+              "hadithNumber": "3681",
+              "grading": {
+                "grade": "sahih",
+                "gradedBy": {
+                  "ar": "الترمذي، وقال: حسن صحيح غريب"
+                }
+              }
             }
           ],
+          "text": {
+            "ar": "اللَّهُمَّ أَعِزَّ الإِسْلاَمَ بِأَحَبِّ هَذَيْنِ الرَّجُلَيْنِ إِلَيْكَ بِأَبِي جَهْلٍ أَوْ بِعُمَرَ بْنِ الْخَطَّابِ"
+          },
           "summary": {
             "ar": "حديث في دعاء النبي ﷺ أن يعزّ الله الإسلام بأحب الرجلين إليه: عمر بن الخطاب أو أبي جهل، فكان أحبهما إلى الله عمر."
           }
@@ -392,7 +400,7 @@
         },
         {
           "type": "reportQuote",
-          "textStatus": "pendingFromSource",
+          "textStatus": "complete",
           "reliability": "established",
           "citations": [
             {
@@ -401,6 +409,9 @@
               "hadithNumber": "3863"
             }
           ],
+          "text": {
+            "ar": "مَا زِلْنَا أَعِزَّةً مُنْذُ أَسْلَمَ عُمَرُ"
+          },
           "summary": {
             "ar": "قول عبد الله بن مسعود في أثر إسلام عمر في عزّة المسلمين."
           }
@@ -684,7 +695,7 @@
         },
         {
           "type": "hadithQuote",
-          "textStatus": "pendingFromSource",
+          "textStatus": "complete",
           "reliability": "established",
           "citations": [
             {
@@ -710,13 +721,16 @@
               }
             }
           ],
+          "text": {
+            "ar": "مَا لَقِيَكَ الشَّيْطَانُ سَالِكًا فَجًّا قَطُّ إِلاَّ سَلَكَ فَجًّا غَيْرَ فَجِّكَ"
+          },
           "summary": {
             "ar": "حديث النبي ﷺ لعمر أن الشيطان ما لقيه سالكًا طريقًا إلا سلك طريقًا غير طريقه."
           }
         },
         {
           "type": "hadithQuote",
-          "textStatus": "pendingFromSource",
+          "textStatus": "complete",
           "reliability": "established",
           "citations": [
             {
@@ -742,13 +756,16 @@
               }
             }
           ],
+          "text": {
+            "ar": "بَيْنَا أَنَا نَائِمٌ أُتِيتُ بِقَدَحِ لَبَنٍ، فَشَرِبْتُ حَتَّى إِنِّي لأَرَى الرِّيَّ يَخْرُجُ فِي أَظْفَارِي، ثُمَّ أَعْطَيْتُ فَضْلِي عُمَرَ بْنَ الْخَطَّابِ ‏\"‏‏.‏ قَالُوا فَمَا أَوَّلْتَهُ يَا رَسُولَ اللَّهِ قَالَ ‏\"‏ الْعِلْمَ"
+          },
           "summary": {
             "ar": "حديث النبي ﷺ في رؤيا اللبن الذي شرب منه ثم أعطى فضله عمر، وتأويله ذلك بالعلم."
           }
         },
         {
           "type": "hadithQuote",
-          "textStatus": "pendingFromSource",
+          "textStatus": "complete",
           "reliability": "established",
           "citations": [
             {
@@ -774,13 +791,16 @@
               }
             }
           ],
+          "text": {
+            "ar": "بَيْنَا أَنَا نَائِمٌ رَأَيْتُنِي فِي الْجَنَّةِ، فَإِذَا امْرَأَةٌ تَتَوَضَّأُ إِلَى جَانِبِ قَصْرٍ، فَقُلْتُ لِمَنْ هَذَا الْقَصْرُ قَالُوا لِعُمَرَ فَذَكَرْتُ غَيْرَتَهُ فَوَلَّيْتُ مُدْبِرًا ‏\"‏‏.‏ فَبَكَى وَقَالَ أَعَلَيْكَ أَغَارُ يَا رَسُولَ اللَّهِ"
+          },
           "summary": {
             "ar": "حديث النبي ﷺ في رؤياه قصرًا في الجنة لعمر، وذكره غيرة عمر."
           }
         },
         {
           "type": "hadithQuote",
-          "textStatus": "pendingFromSource",
+          "textStatus": "complete",
           "reliability": "established",
           "citations": [
             {
@@ -795,13 +815,16 @@
               }
             }
           ],
+          "text": {
+            "ar": "لَقَدْ كَانَ فِيمَا قَبْلَكُمْ مِنَ الأُمَمِ مُحَدَّثُونَ، فَإِنْ يَكُ فِي أُمَّتِي أَحَدٌ فَإِنَّهُ عُمَرُ"
+          },
           "summary": {
             "ar": "حديث النبي ﷺ في أنه إن كان في هذه الأمة مُحدَّثون فعمر منهم."
           }
         },
         {
           "type": "reportQuote",
-          "textStatus": "pendingFromSource",
+          "textStatus": "complete",
           "reliability": "established",
           "citations": [
             {
@@ -810,6 +833,9 @@
               "hadithNumber": "402"
             }
           ],
+          "text": {
+            "ar": "وَافَقْتُ رَبِّي فِي ثَلاَثٍ"
+          },
           "summary": {
             "ar": "قول عمر إنه وافق ربه في مواضع نزل فيها القرآن موافقًا لرأيه."
           }

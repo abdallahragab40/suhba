@@ -88,7 +88,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3"
         },
         {
           "sourceId": "sirat-ibn-hisham",
@@ -107,7 +108,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "4280"
         },
         {
           "sourceId": "quran",

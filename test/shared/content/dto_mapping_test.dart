@@ -96,16 +96,19 @@ void main() {
         'the-day-of-saqifah',
         'jam-al-quran',
       ]);
-      expect(c.review.editorialFlags, {
-        EditorialFlag.needsLocators,
-        EditorialFlag.needsSourceText,
-      });
-      // Hadith appear by description only until copied from the edition.
+      // Hadith wording is copied from the pinned dataset (V14 checks it);
+      // only the printed works' page locators remain.
+      expect(c.review.editorialFlags, {EditorialFlag.needsLocators});
       final quotes = c.sections
           .expand((x) => x.blocks)
           .whereType<HadithQuoteBlock>();
       expect(quotes, isNotEmpty);
-      expect(quotes.every((q) => q.text == null), isTrue);
+      expect(
+        quotes.every(
+          (q) => q.textStatus == TextStatus.complete && q.text != null,
+        ),
+        isTrue,
+      );
     });
 
     test('fitna-adjacent companions are flagged', () {

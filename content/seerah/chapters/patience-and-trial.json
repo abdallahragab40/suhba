@@ -62,7 +62,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3612"
         }
       ]
     },
@@ -79,7 +80,8 @@
         },
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3754"
         }
       ]
     },
@@ -106,12 +108,13 @@
     },
     {
       "type": "hadithQuote",
-      "textStatus": "pendingFromSource",
+      "textStatus": "complete",
       "reliability": "established",
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending",
+          "locatorStatus": "complete",
+          "hadithNumber": "3854",
           "grading": {
             "grade": "sahih",
             "gradedBy": {
@@ -121,7 +124,8 @@
         },
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending",
+          "locatorStatus": "complete",
+          "hadithNumber": "1794",
           "grading": {
             "grade": "sahih",
             "gradedBy": {
@@ -130,6 +134,9 @@
           }
         }
       ],
+      "text": {
+        "ar": "جَاءَ عُقْبَةُ بْنُ أَبِي مُعَيْطٍ بِسَلَى جَزُورٍ، فَقَذَفَهُ عَلَى ظَهْرِ النَّبِيِّ صلى الله عليه وسلم، فَلَمْ يَرْفَعْ رَأْسَهُ فَجَاءَتْ فَاطِمَةُ ـ عَلَيْهَا السَّلاَمُ ـ فَأَخَذَتْهُ مِنْ ظَهْرِهِ، وَدَعَتْ عَلَى مَنْ صَنَعَ"
+      },
       "summary": {
         "ar": "حديث ابن مسعود في أن عقبة بن أبي معيط ألقى سلى الجزور على ظهر النبي ﷺ وهو ساجد عند الكعبة، فجاءت فاطمة فطرحته عنه."
       }
@@ -153,7 +160,8 @@
         },
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3872"
         }
       ]
     },
@@ -215,7 +223,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3863"
         },
         {
           "sourceId": "sirat-ibn-hisham",
@@ -249,7 +258,8 @@
         },
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "1590"
         }
       ]
     },
@@ -285,7 +295,8 @@
         },
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3884"
         }
       ]
     },
@@ -298,7 +309,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3884"
         },
         {
           "sourceId": "quran",
@@ -319,7 +331,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3896"
         },
         {
           "sourceId": "sirat-ibn-hisham",
@@ -344,8 +357,7 @@
   "review": {
     "status": "draft",
     "editorialFlags": [
-      "needsLocators",
-      "needsSourceText"
+      "needsLocators"
     ],
     "authoredBy": "draft-revision-4",
     "coverage": "complete"

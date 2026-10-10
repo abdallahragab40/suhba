@@ -54,7 +54,8 @@
         },
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3091"
         }
       ]
     },
@@ -73,7 +74,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3957"
         },
         {
           "sourceId": "quran",
@@ -98,7 +100,8 @@
         },
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "1763"
         }
       ]
     },
@@ -137,7 +140,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3039"
         },
         {
           "sourceId": "quran",
@@ -158,7 +162,13 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "4050"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3039"
         },
         {
           "sourceId": "sirat-ibn-hisham",
@@ -175,7 +185,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "4072"
         },
         {
           "sourceId": "quran",
@@ -202,11 +213,18 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3045"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4090"
         },
         {
           "sourceId": "muslim",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "677"
         }
       ]
     },
@@ -227,7 +245,8 @@
         },
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "4882"
         }
       ]
     },
@@ -248,7 +267,8 @@
         },
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "4077"
         },
         {
           "sourceId": "sirat-ibn-hisham",
@@ -271,7 +291,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "2834"
         },
         {
           "sourceId": "quran",
@@ -297,7 +318,8 @@
         },
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "2837"
         }
       ]
     },
@@ -331,7 +353,8 @@
         },
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "4129"
         }
       ]
     },
@@ -344,7 +367,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "4121"
         },
         {
           "sourceId": "quran",
@@ -369,7 +393,8 @@
         },
         {
           "sourceId": "abu-dawud",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3931"
         }
       ]
     },
@@ -382,7 +407,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "4005"
         },
         {
           "sourceId": "sirat-ibn-hisham",
@@ -423,13 +449,14 @@
     {
       "type": "paragraph",
       "text": {
-        "ar": "وتفاصيل هذه الأحداث، بتواريخها ومواضعها ومن شهدها، في سجل الأحداث."
+        "ar": "وذكر النبي ﷺ بعد انصراف الأحزاب أن المسلمين يغزون قريشًا بعد ذلك ولا تغزوهم قريش، فكان ذلك إيذانًا بتحوّل ميزان القوة في الجزيرة."
       },
       "reliability": "established",
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "4109"
         }
       ]
     },
@@ -447,8 +474,7 @@
   "review": {
     "status": "draft",
     "editorialFlags": [
-      "needsLocators",
-      "needsSourceText"
+      "needsLocators"
     ],
     "authoredBy": "draft-revision-4",
     "coverage": "complete"

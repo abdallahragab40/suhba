@@ -26,11 +26,13 @@
         "citations": [
           {
             "sourceId": "tirmidhi",
-            "locatorStatus": "pending"
+            "locatorStatus": "complete",
+            "hadithNumber": "3747"
           },
           {
             "sourceId": "abu-dawud",
-            "locatorStatus": "pending"
+            "locatorStatus": "complete",
+            "hadithNumber": "4649"
           }
         ]
       }

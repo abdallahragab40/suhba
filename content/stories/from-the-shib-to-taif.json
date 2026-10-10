@@ -192,7 +192,7 @@
         },
         {
           "type": "hadithQuote",
-          "textStatus": "pendingFromSource",
+          "textStatus": "complete",
           "reliability": "established",
           "citations": [
             {
@@ -218,6 +218,9 @@
               }
             }
           ],
+          "text": {
+            "ar": "فَاقْرَأْ عَلَيْهَا السَّلاَمَ مِنْ رَبِّهَا وَمِنِّي، وَبَشِّرْهَا بِبَيْتٍ فِي الْجَنَّةِ مِنْ قَصَبٍ، لاَ صَخَبَ فِيهِ وَلاَ نَصَبَ"
+          },
           "summary": {
             "ar": "يخبر أن جبريل أتى النبي ﷺ فأمره أن يقرئ خديجة السلام من ربها ومنه، ويبشّرها ببيت في الجنة من قصب، لا صخب فيه ولا نصب."
           }
@@ -321,8 +324,7 @@
   "review": {
     "status": "draft",
     "editorialFlags": [
-      "needsLocators",
-      "needsSourceText"
+      "needsLocators"
     ],
     "authoredBy": "draft-revision-4",
     "coverage": "complete"

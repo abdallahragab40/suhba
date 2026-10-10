@@ -367,9 +367,20 @@ class _Quote extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          if (text != null)
-            Text('«$text»', style: textStyle)
-          else ...[
+          if (text != null) ...[
+            // The summary stays as a lead-in: it names who said what, and
+            // when, which an excerpt of the wording may not.
+            if (summary != null) ...[
+              Text(
+                summary,
+                style: textTheme.bodySmall?.copyWith(
+                  color: colors.onSurfaceDim,
+                ),
+              ),
+              const SizedBox(height: AppSpacing.xxs),
+            ],
+            Text('«$text»', style: textStyle),
+          ] else ...[
             if (summary != null) Text(summary, style: summaryStyle),
             const SizedBox(height: AppSpacing.xxs),
             Text(
