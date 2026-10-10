@@ -353,10 +353,6 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "sirat-ibn-hisham",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "tabaqat-ibn-sad",
               "locatorStatus": "complete",
               "volume": 3,
@@ -389,8 +385,10 @@
               }
             },
             {
-              "sourceId": "al-bidaya",
-              "locatorStatus": "pending"
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "8"
             }
           ]
         },
@@ -656,10 +654,6 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "al-bidaya",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "siyar",
               "locatorStatus": "complete",
               "volume": 1,
@@ -717,10 +711,6 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "siyar",
               "locatorStatus": "complete",
               "volume": 1,
@@ -731,17 +721,15 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وكان متواضعًا يمشي بين جنده كواحد منهم، ويعيش على ما يعيشون عليه، ويستشيرهم ويقبل النصح، فأحبّه الناس وأطاعوه."
+            "ar": "وكان يسير في العسكر يعظ جنده ويحذّرهم من الاغترار بالمظاهر وإهمال الدين، على ما يرويه الذهبي، فأحبّه الناس وأطاعوه."
           },
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "pending"
-            },
-            {
-              "sourceId": "al-bidaya",
-              "locatorStatus": "pending"
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "18"
             }
           ]
         },
@@ -1084,10 +1072,6 @@
           },
           "reliability": "reported",
           "citations": [
-            {
-              "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "pending"
-            },
             {
               "sourceId": "siyar",
               "locatorStatus": "complete",

@@ -200,8 +200,10 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "al-bidaya",
-              "locatorStatus": "pending"
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "488"
             }
           ]
         }

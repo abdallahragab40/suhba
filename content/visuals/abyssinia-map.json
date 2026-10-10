@@ -38,10 +38,6 @@
       "reliability": "established",
       "citations": [
         {
-          "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "pending"
-        },
-        {
           "sourceId": "bukhari",
           "locatorStatus": "complete",
           "hadithNumber": "3872"

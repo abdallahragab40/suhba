@@ -401,17 +401,10 @@
       ]
     },
     {
-      "type": "paragraph",
+      "type": "lesson",
       "text": {
         "ar": "وتُروى في سيرة هذه المرحلة أخبار كثيرة تتفاوت في ثبوتها؛ فما صحّ إسناده يُذكر على أنه خبر ثابت، وما لم يصحّ يُذكر على أنه رواية لأهل السير، ولا يُبنى عليه حكم."
-      },
-      "reliability": "established",
-      "citations": [
-        {
-          "sourceId": "al-bidaya",
-          "locatorStatus": "pending"
-        }
-      ]
+      }
     },
     {
       "type": "lesson",

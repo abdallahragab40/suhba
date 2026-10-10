@@ -97,10 +97,6 @@
     "reliability": "reported",
     "citations": [
       {
-        "sourceId": "siyar",
-        "locatorStatus": "pending"
-      },
-      {
         "sourceId": "tabaqat-ibn-sad",
         "locatorStatus": "complete",
         "volume": 3,
@@ -194,10 +190,6 @@
           "reliability": "established",
           "citations": [
             {
-              "sourceId": "isabah",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "sirat-ibn-hisham",
               "locatorStatus": "complete",
               "volume": 1,
@@ -212,10 +204,6 @@
           },
           "reliability": "reported",
           "citations": [
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            },
             {
               "sourceId": "tabaqat-ibn-sad",
               "locatorStatus": "complete",
@@ -562,23 +550,21 @@
               "sourceId": "bukhari",
               "locatorStatus": "complete",
               "hadithNumber": "4154"
-            },
-            {
-              "sourceId": "istiab",
-              "locatorStatus": "pending"
             }
           ]
         },
         {
           "type": "paragraph",
           "text": {
-            "ar": "وكان من الصحابة الذين لزموا النبي ﷺ في المدينة، يسمعون منه ويروون عنه، وإن كانت روايته عن النبي ﷺ قليلة بالنسبة إلى طول صحبته."
+            "ar": "وكان من الصحابة الذين لزموا النبي ﷺ في المدينة، وروايته عنه قليلة؛ فيذكر الذهبي أن له أحاديث يسيرة، منها حديثان في الصحيحين."
           },
           "reliability": "reported",
           "citations": [
             {
               "sourceId": "siyar",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "125"
             }
           ]
         }
@@ -748,10 +734,6 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "al-bidaya",
               "locatorStatus": "complete",
               "volume": 9,
@@ -867,10 +849,6 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "al-bidaya",
               "locatorStatus": "complete",
               "volume": 9,
@@ -881,17 +859,15 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وكان يرافق أبا عبيدة بن الجراح في الشام، ويجمعهما الزهد في الدنيا والسابقة في الإسلام والبشارة بالجنة."
+            "ar": "وكان مع أبي عبيدة بن الجراح في فتوح الشام حتى ولّاه دمشق، ويجمعهما السبق إلى الإسلام والبشارة بالجنة."
           },
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "pending"
-            },
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
+              "sourceId": "al-bidaya",
+              "locatorStatus": "complete",
+              "volume": 9,
+              "page": "655"
             }
           ]
         },
@@ -902,10 +878,6 @@
           },
           "reliability": "reported",
           "citations": [
-            {
-              "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "pending"
-            },
             {
               "sourceId": "al-bidaya",
               "locatorStatus": "complete",
@@ -1265,7 +1237,9 @@
       "citations": [
         {
           "sourceId": "tabaqat-ibn-sad",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "293"
         }
       ],
       "eventId": "hudaybiyah",
@@ -1306,10 +1280,6 @@
       },
       "reliability": "reported",
       "citations": [
-        {
-          "sourceId": "tarikh-al-tabari",
-          "locatorStatus": "pending"
-        },
         {
           "sourceId": "al-bidaya",
           "locatorStatus": "complete",

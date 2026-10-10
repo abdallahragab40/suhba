@@ -128,7 +128,9 @@
       },
       {
         "sourceId": "tabaqat-ibn-sad",
-        "locatorStatus": "pending"
+        "locatorStatus": "complete",
+        "volume": 3,
+        "page": "57"
       }
     ]
   },
@@ -683,12 +685,19 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "tabaqat-ibn-sad",
+              "sourceId": "siyar",
               "locatorStatus": "pending"
             },
             {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
+              "sourceId": "al-bidaya",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "321"
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "446"
             }
           ]
         },
@@ -1366,10 +1375,6 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "bukhari",
               "locatorStatus": "complete",
               "hadithNumber": "3693"
@@ -1603,7 +1608,9 @@
         },
         {
           "sourceId": "tabaqat-ibn-sad",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "57"
         }
       ],
       "sectionId": "uthman.early-life"

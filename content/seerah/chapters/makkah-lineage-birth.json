@@ -116,8 +116,10 @@
       "reliability": "reported",
       "citations": [
         {
-          "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "pending"
+          "sourceId": "al-bidaya",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "397"
         }
       ]
     },
@@ -414,17 +416,15 @@
     {
       "type": "paragraph",
       "text": {
-        "ar": "وسمّاه جدّه عبد المطلب محمدًا، وهو اسم لم يكن شائعًا في العرب، على ما يذكره أهل السير."
+        "ar": "ويذكر ابن إسحاق أن أمه آمنة أُمرت وهي حامل به أن تسمّيه محمدًا."
       },
       "reliability": "reported",
       "citations": [
         {
           "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "pending"
-        },
-        {
-          "sourceId": "tabaqat-ibn-sad",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "158"
         }
       ]
     },

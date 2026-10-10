@@ -350,14 +350,10 @@
     {
       "type": "paragraph",
       "text": {
-        "ar": "وأقام للمسلمين سوقًا في المدينة على ما يذكره أهل السير، ونظّم المعاملات فيها، ونهى عن الغش والاحتكار."
+        "ar": "ونظّم النبي ﷺ المعاملات في أسواق المدينة، فنهى عن الغش والاحتكار."
       },
       "reliability": "reported",
       "citations": [
-        {
-          "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "pending"
-        },
         {
           "sourceId": "muslim",
           "locatorStatus": "complete",

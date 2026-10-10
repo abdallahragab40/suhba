@@ -103,10 +103,6 @@
     "reliability": "reported",
     "citations": [
       {
-        "sourceId": "siyar",
-        "locatorStatus": "pending"
-      },
-      {
         "sourceId": "tabaqat-ibn-sad",
         "locatorStatus": "complete",
         "volume": 3,
@@ -152,10 +148,6 @@
           "locatorStatus": "complete",
           "volume": 3,
           "page": "168"
-        },
-        {
-          "sourceId": "siyar",
-          "locatorStatus": "pending"
         }
       ]
     }
@@ -205,10 +197,6 @@
           },
           "reliability": "reported",
           "citations": [
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            },
             {
               "sourceId": "tabaqat-ibn-sad",
               "locatorStatus": "complete",
@@ -549,10 +537,6 @@
               "locatorStatus": "complete",
               "volume": 3,
               "page": "163"
-            },
-            {
-              "sourceId": "al-bidaya",
-              "locatorStatus": "pending"
             }
           ]
         },
@@ -610,10 +594,6 @@
               "locatorStatus": "complete",
               "volume": 3,
               "page": "530"
-            },
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
             }
           ]
         }
@@ -924,10 +904,6 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "tarikh-al-tabari",
               "locatorStatus": "complete",
               "volume": 3,
@@ -1187,12 +1163,14 @@
             },
             {
               "text": {
-                "ar": "أقوال أخرى بين الستين والخامسة والسبعين، ذكرها الذهبي."
+                "ar": "أنه قُتل ابن ستين سنة، على قول ذكره ابن كثير."
               },
               "citations": [
                 {
-                  "sourceId": "siyar",
-                  "locatorStatus": "pending"
+                  "sourceId": "al-bidaya",
+                  "locatorStatus": "complete",
+                  "volume": 10,
+                  "page": "476"
                 }
               ]
             }
@@ -1291,10 +1269,6 @@
       },
       "reliability": "reported",
       "citations": [
-        {
-          "sourceId": "siyar",
-          "locatorStatus": "pending"
-        },
         {
           "sourceId": "tabaqat-ibn-sad",
           "locatorStatus": "complete",

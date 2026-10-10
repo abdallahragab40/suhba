@@ -122,27 +122,25 @@
           "locatorStatus": "complete",
           "volume": 1,
           "page": "250"
-        },
-        {
-          "sourceId": "tabaqat-ibn-sad",
-          "locatorStatus": "pending"
         }
       ]
     },
     {
       "type": "paragraph",
       "text": {
-        "ar": "وكانت الصلاة في أول الأمر ركعتين بالغداة وركعتين بالعشي على ما يذكره أهل السير، قبل أن تُفرض الصلوات الخمس ليلة الإسراء."
+        "ar": "وكانت الصلاة أول ما فُرضت ركعتين ركعتين، ثم زيد في صلاة الحضر بعد الهجرة وأُقرّت صلاة السفر على حالها، كما تروي عائشة."
       },
       "reliability": "reported",
       "citations": [
         {
-          "sourceId": "tabaqat-ibn-sad",
-          "locatorStatus": "pending"
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3935"
         },
         {
-          "sourceId": "al-bidaya",
-          "locatorStatus": "pending"
+          "sourceId": "muslim",
+          "locatorStatus": "complete",
+          "hadithNumber": "685"
         }
       ]
     },

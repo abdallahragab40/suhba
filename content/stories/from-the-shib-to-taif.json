@@ -61,13 +61,21 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وكان علي بن أبي طالب يومئذ فتى في بيت أبيه، فعاش في الشعب مع بني هاشم أيام الحصار."
+            "ar": "وكان علي بن أبي طالب يومئذ فتى في كفالة النبي ﷺ، وقد دخل بنو هاشم وبنو المطلب الشعب جميعًا أيام الحصار."
           },
           "reliability": "reported",
           "citations": [
             {
               "sourceId": "sirat-ibn-hisham",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "350"
+            },
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "246"
             }
           ]
         }

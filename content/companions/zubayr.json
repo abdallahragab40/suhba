@@ -270,10 +270,6 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "siyar",
               "locatorStatus": "complete",
               "volume": 1,
@@ -290,7 +286,9 @@
           "citations": [
             {
               "sourceId": "isabah",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "553"
             }
           ]
         }
@@ -382,14 +380,10 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "ويذكر ابن سعد أنه كان أول من سلّ سيفًا في سبيل الله؛ إذ بلغه وهو بمكة أن النبي ﷺ قد أُخذ، فخرج يشقّ الناس بسيفه، فلقيه النبي ﷺ فسأله عن شأنه، فأخبره، فدعا له."
+            "ar": "ويذكر أهل السير أنه كان أول من سلّ سيفًا في سبيل الله؛ إذ بلغه وهو بمكة أن النبي ﷺ قد أُخذ، فخرج يشقّ الناس بسيفه، فلقيه النبي ﷺ فسأله عن شأنه، فأخبره، فدعا له."
           },
           "reliability": "reported",
           "citations": [
-            {
-              "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
-            },
             {
               "sourceId": "siyar",
               "locatorStatus": "complete",
@@ -513,13 +507,21 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "sirat-ibn-hisham",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "bukhari",
               "locatorStatus": "complete",
               "hadithNumber": "3998"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "46"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "76"
             }
           ]
         },
@@ -661,10 +663,6 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "isabah",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "tabaqat-ibn-sad",
               "locatorStatus": "complete",
               "volume": 3,
@@ -684,10 +682,6 @@
               "locatorStatus": "complete",
               "volume": 3,
               "page": "77"
-            },
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
             }
           ]
         }
@@ -795,13 +789,19 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "ويروي الإمام أحمد أن النبي ﷺ وصفه بأنه ابن عمته وحواريّه من أمته."
+            "ar": "وفي الصحيحين أن النبي ﷺ أخبر أن لكل نبي حواريًّا، وأن حواريّه الزبير."
           },
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "al-bidaya",
-              "locatorStatus": "pending"
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "2846"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "2415"
             }
           ]
         }
@@ -856,10 +856,6 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "siyar",
               "locatorStatus": "complete",
               "volume": 1,
@@ -909,10 +905,6 @@
           },
           "reliability": "reported",
           "citations": [
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            },
             {
               "sourceId": "tabaqat-ibn-sad",
               "locatorStatus": "complete",
@@ -997,17 +989,14 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وكان في خلافة عثمان من أهل الرأي والوجاهة في المدينة، يقوم على أمواله وأرضه، ويذكر المؤرخون أنه لم يتولّ ولاية في عهده."
+            "ar": "وكان له مال كثير من الأرض والدور؛ ففي البخاري أنه لم يدع دينارًا ولا درهمًا إلا أرضين، منها الغابة، وإحدى عشرة دارًا بالمدينة، ودارين بالبصرة، ودارًا بالكوفة، ودارًا بمصر."
           },
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "pending"
-            },
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "3129"
             }
           ]
         }
@@ -1146,13 +1135,9 @@
             },
             {
               "text": {
-                "ar": "أقوال أخرى ذكرها الذهبي وابن حجر."
+                "ar": "أقوال أخرى ذكرها ابن حجر."
               },
               "citations": [
-                {
-                  "sourceId": "siyar",
-                  "locatorStatus": "pending"
-                },
                 {
                   "sourceId": "isabah",
                   "locatorStatus": "complete",

@@ -418,17 +418,10 @@
       ]
     },
     {
-      "type": "paragraph",
+      "type": "lesson",
       "text": {
         "ar": "وكانت المدينة التي فتحت أبوابها للنبي ﷺ أبعد ما تكون عن أن تتوقعها قريش، فجاءت النصرة من حيث لم يحتسب الناس."
-      },
-      "reliability": "reported",
-      "citations": [
-        {
-          "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "pending"
-        }
-      ]
+      }
     },
     {
       "type": "lesson",

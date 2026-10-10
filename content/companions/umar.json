@@ -49,12 +49,14 @@
     "reliability": "established",
     "citations": [
       {
-        "sourceId": "isabah",
+        "sourceId": "siyar",
         "locatorStatus": "pending"
       },
       {
-        "sourceId": "siyar",
-        "locatorStatus": "pending"
+        "sourceId": "tabaqat-ibn-sad",
+        "locatorStatus": "complete",
+        "volume": 3,
+        "page": "251"
       }
     ]
   },
@@ -92,8 +94,10 @@
       "categoryId": "muhajirun",
       "citations": [
         {
-          "sourceId": "isabah",
-          "locatorStatus": "pending"
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "474"
         }
       ]
     }
@@ -541,14 +545,16 @@
           "reliability": "established",
           "citations": [
             {
-              "sourceId": "isabah",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "sirat-ibn-hisham",
               "locatorStatus": "complete",
               "volume": 2,
               "page": "93"
+            },
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "683"
             }
           ]
         },
@@ -934,8 +940,10 @@
               "locatorStatus": "pending"
             },
             {
-              "sourceId": "isabah",
-              "locatorStatus": "pending"
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "256"
             }
           ]
         },
@@ -1828,8 +1836,10 @@
       "reliability": "established",
       "citations": [
         {
-          "sourceId": "isabah",
-          "locatorStatus": "pending"
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "683"
         }
       ],
       "eventId": "badr"

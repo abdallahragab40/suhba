@@ -91,8 +91,10 @@
       "categoryId": "muhajirun",
       "citations": [
         {
-          "sourceId": "isabah",
-          "locatorStatus": "pending"
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "15"
         }
       ]
     }
@@ -1023,7 +1025,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وكان من الصحابة الذين جمعوا القرآن حفظًا، ومن أفصح الناس بيانًا، ويُنسب إليه كلام كثير في الحكمة، منه ما يثبت ومنه ما لا تصح نسبته إليه."
+            "ar": "وكان من أعلم الصحابة بكتاب الله، ويروي ابن سعد عنه أنه ما نزلت آية إلا وقد علم فيم نزلت وأين نزلت، وكان من أفصح الناس بيانًا، ويُنسب إليه كلام كثير في الحكمة، منه ما يثبت ومنه ما لا تصح نسبته إليه."
           },
           "reliability": "reported",
           "citations": [
@@ -1032,8 +1034,10 @@
               "locatorStatus": "pending"
             },
             {
-              "sourceId": "al-bidaya",
-              "locatorStatus": "pending"
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "257"
             }
           ]
         }
@@ -1054,12 +1058,14 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "tabaqat-ibn-sad",
+              "sourceId": "siyar",
               "locatorStatus": "pending"
             },
             {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "19"
             }
           ]
         },

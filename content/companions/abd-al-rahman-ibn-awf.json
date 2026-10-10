@@ -43,10 +43,6 @@
     "reliability": "reported",
     "citations": [
       {
-        "sourceId": "isabah",
-        "locatorStatus": "pending"
-      },
-      {
         "sourceId": "siyar",
         "locatorStatus": "complete",
         "volume": 1,
@@ -299,10 +295,6 @@
               "locatorStatus": "complete",
               "volume": 3,
               "page": "94"
-            },
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
             }
           ]
         }
@@ -665,8 +657,10 @@
               "hadithNumber": "3750"
             },
             {
-              "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "90"
             }
           ]
         },
@@ -713,10 +707,6 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "siyar",
               "locatorStatus": "complete",
               "volume": 1,
@@ -727,17 +717,14 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "ويروي أهل التراجم أنه كان يخاف أن يحبسه غناه عن اللحاق بأصحابه السابقين، فيكثر من الصدقة والعتق، ويستعين بماله على قضاء حاجات الناس."
+            "ar": "ويروي البخاري أنه أُتي بطعام وهو صائم، فذكر مصعب بن عمير وحمزة وأنهما خير منه، وخشي أن تكون حسناتهم قد عُجّلت لهم بما بُسط لهم من الدنيا، فجعل يبكي حتى ترك الطعام."
           },
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            },
-            {
-              "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "1275"
             }
           ]
         }
@@ -937,12 +924,20 @@
             },
             {
               "text": {
-                "ar": "أنه توفي ابن اثنتين وسبعين، وقيل غير ذلك، وأن الذي صلّى عليه الزبير بن العوام، على أقوال نقلها الذهبي."
+                "ar": "أنه توفي ابن اثنتين وسبعين، وقيل غير ذلك، وأن الذي صلّى عليه الزبير بن العوام، على أقوال نقلها ابن عبد البر وابن حجر."
               },
               "citations": [
                 {
-                  "sourceId": "siyar",
-                  "locatorStatus": "pending"
+                  "sourceId": "istiab",
+                  "locatorStatus": "complete",
+                  "volume": 2,
+                  "page": "850"
+                },
+                {
+                  "sourceId": "isabah",
+                  "locatorStatus": "complete",
+                  "volume": 4,
+                  "page": "350"
                 }
               ]
             }
@@ -1199,8 +1194,10 @@
       "reliability": "reported",
       "citations": [
         {
-          "sourceId": "tabaqat-ibn-sad",
-          "locatorStatus": "pending"
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "75"
         }
       ],
       "eventId": "uhud",
