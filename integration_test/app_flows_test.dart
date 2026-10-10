@@ -11,7 +11,10 @@ import 'package:siyar_sahaba/app/provider_retry.dart';
 import 'package:siyar_sahaba/core/database/app_database.dart';
 import 'package:siyar_sahaba/core/database/database_provider.dart';
 import 'package:siyar_sahaba/core/storage/settings_store.dart';
+import 'package:siyar_sahaba/features/atlas/presentation/visual_page.dart';
 import 'package:siyar_sahaba/features/companions/presentation/profile/companion_profile_page.dart';
+import 'package:siyar_sahaba/features/seerah/presentation/seerah_chapter_page.dart';
+import 'package:siyar_sahaba/features/seerah/presentation/seerah_hub_page.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
@@ -136,6 +139,84 @@ void main() {
     await close(tester, app);
   });
 
+  testWidgets('the Seerah journey, offline, resumes after a restart', (
+    tester,
+  ) async {
+    var app = await launch(tester);
+
+    /// The vertical list of the page of type [page].
+    Finder listOf(Type page) => find
+        .descendant(
+          of: find.byType(page),
+          matching: find.byWidgetPredicate(
+            (w) => w is Scrollable && w.axisDirection == AxisDirection.down,
+          ),
+        )
+        .first;
+
+    await tab(tester, 'السيرة');
+    expect(find.byType(SeerahHubPage), findsOneWidget);
+    final chapterTitle = find.descendant(
+      of: find.byType(SeerahHubPage),
+      matching: find.text('الهجرة إلى المدينة'),
+    );
+    await tester.scrollUntilVisible(
+      chapterTitle,
+      300,
+      scrollable: listOf(SeerahHubPage),
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(chapterTitle);
+    await tester.pumpAndSettle();
+    expect(find.byType(SeerahChapterPage), findsOneWidget);
+
+    // The route graphic opens in full, from bundled data only.
+    final fullView = find.descendant(
+      of: find.byType(SeerahChapterPage),
+      matching: find.text('عرض كامل'),
+    );
+    await tester.scrollUntilVisible(
+      fullView.first,
+      300,
+      scrollable: listOf(SeerahChapterPage),
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(fullView.first);
+    await tester.pumpAndSettle();
+    expect(find.byType(VisualPage), findsOneWidget);
+    // The system back gesture.
+    await tester.binding.handlePopRoute();
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.byTooltip('حفظ'));
+    await tester.pumpAndSettle();
+    // Read on, short of the end, and let the batched progress save.
+    final list = listOf(SeerahChapterPage);
+    final position = tester.state<ScrollableState>(list).position;
+    await tester.drag(
+      list,
+      Offset(0, -(position.maxScrollExtent / 2 - position.pixels)),
+    );
+    await wait(tester, const Duration(seconds: 2));
+
+    await close(tester, app);
+    app = await launch(tester);
+
+    // Home offers the chapter again, and it opens where it was left.
+    expect(find.text('تابع: الهجرة إلى المدينة'), findsOneWidget);
+    await tester.tap(find.text('تابع: الهجرة إلى المدينة'));
+    await tester.pumpAndSettle();
+    expect(find.byType(SeerahChapterPage), findsOneWidget);
+    expect(
+      tester.state<ScrollableState>(listOf(SeerahChapterPage)).position.pixels,
+      greaterThan(0),
+    );
+
+    await tab(tester, 'المحفوظات');
+    expect(find.text('من فصول السيرة'), findsOneWidget);
+    await close(tester, app);
+  });
+
   testWidgets('search finds a companion by title and opens the profile', (
     tester,
   ) async {
@@ -162,7 +243,9 @@ void main() {
     tester,
   ) async {
     var app = await launch(tester);
-    await tab(tester, 'الإعدادات');
+    // Settings is an app-bar action, above the tabs.
+    await tester.tap(find.byTooltip('الإعدادات'));
+    await tester.pumpAndSettle();
     await tester.tap(find.text('غربية (123)'));
     await tester.pumpAndSettle();
     await close(tester, app);

@@ -27,6 +27,15 @@ void main() {
     'directory': '/companions',
     'profile': '/companions/abu-bakr',
     'reader': '/companions/abu-bakr/sections/abu-bakr.hijrah',
+    // Revision 4: the richest new screens.
+    'home': '/home',
+    'seerah hub': '/seerah',
+    'seerah chapter': '/seerah/chapters/hijrah-to-madinah',
+    'seerah timeline': '/seerah/timeline',
+    'map': '/visuals/hijrah-route',
+    'explore': '/explore',
+    'story chapter':
+        '/stories/the-archers-of-uhud/chapters/the-archers-of-uhud.3',
   };
 
   for (final MapEntry(key: name, value: location) in screens.entries) {
