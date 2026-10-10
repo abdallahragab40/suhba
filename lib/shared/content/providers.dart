@@ -8,6 +8,7 @@ import 'package:siyar_sahaba/shared/content/domain/companion.dart';
 import 'package:siyar_sahaba/shared/content/domain/content_manifest.dart';
 import 'package:siyar_sahaba/shared/content/domain/content_repository.dart';
 import 'package:siyar_sahaba/shared/content/domain/content_target.dart';
+import 'package:siyar_sahaba/shared/content/domain/quran_verses.dart';
 import 'package:siyar_sahaba/shared/content/domain/seerah.dart';
 import 'package:siyar_sahaba/shared/content/domain/story.dart';
 
@@ -70,6 +71,12 @@ final seerahIndexProvider = FutureProvider<SeerahIndex>(
 final placesProvider = FutureProvider<Map<String, HistoricalPlace>>(
   (ref) async =>
       (await ref.watch(contentRepositoryProvider).places()).getOrThrow(),
+);
+
+/// The verified text of the quoted ayahs.
+final quranVersesProvider = FutureProvider<QuranVerses>(
+  (ref) async =>
+      (await ref.watch(contentRepositoryProvider).quranVerses()).getOrThrow(),
 );
 
 final visualsProvider = FutureProvider<Map<String, Infographic>>(

@@ -2,12 +2,15 @@
 library;
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:siyar_sahaba/core/design_system/theme/app_theme.dart';
 import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
 import 'package:siyar_sahaba/shared/content/presentation/reading_body.dart';
+import 'package:siyar_sahaba/shared/content/providers.dart';
 
 import '../helpers/app_harness.dart';
+import '../helpers/content_bundle.dart';
 import '../helpers/pump_app.dart';
 import '../helpers/specimen_blocks.dart';
 
@@ -28,21 +31,30 @@ void main() {
     testApp('reading body, every block type, $name', (tester) async {
       sized(tester, const Size(400, 1500));
       await tester.pumpWidget(
-        testHarness(
-          theme: theme,
-          disableAnimations: true,
-          child: Scaffold(
-            body: SingleChildScrollView(
-              padding: const EdgeInsets.all(AppSpacing.gutter),
-              child: ReadingBody(
-                blocks: specimenBlocks,
-                provisional: true,
-                onCitations: (_, _) {},
+        ProviderScope(
+          overrides: [
+            assetBundleProvider.overrideWithValue(
+              MemoryAssetBundle.builtContent(),
+            ),
+          ],
+          child: testHarness(
+            theme: theme,
+            disableAnimations: true,
+            child: Scaffold(
+              body: SingleChildScrollView(
+                padding: const EdgeInsets.all(AppSpacing.gutter),
+                child: ReadingBody(
+                  blocks: specimenBlocks,
+                  provisional: true,
+                  onCitations: (_, _) {},
+                ),
               ),
             ),
           ),
         ),
       );
+      // The verse text loads from the bundled assets.
+      await tester.pumpAndSettle();
       await expectLater(
         find.byType(Scaffold),
         matchesGoldenFile('goldens/reading_body_$name.png'),

@@ -78,5 +78,21 @@ void main() {
     }
     expect(find.text('سير أعلام النبلاء'), findsOneWidget);
     expect(find.text('شمس الدين الذهبي (ت ٧٤٨ هـ)'), findsOneWidget);
+
+    // The verse text's source, licence and notice (O3).
+    await tester.scrollUntilVisible(
+      find.text('نص الترخيص'),
+      300,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.pumpAndSettle();
+    expect(
+      find.text('Tanzil Quran Text (Uthmani, Version 1.1)'),
+      findsOneWidget,
+    );
+    expect(find.textContaining('tanzil.net'), findsOneWidget);
+    await tester.tap(find.text('نص الترخيص'));
+    await tester.pumpAndSettle();
+    expect(find.textContaining('CHANGING IT IS NOT ALLOWED'), findsOneWidget);
   });
 }

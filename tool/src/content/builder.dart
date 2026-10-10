@@ -6,6 +6,7 @@ import 'package:siyar_sahaba/shared/content/data/dto/atlas_dto.dart';
 import 'package:siyar_sahaba/shared/content/data/dto/catalog_dto.dart';
 import 'package:siyar_sahaba/shared/content/data/dto/common_dto.dart';
 import 'package:siyar_sahaba/shared/content/data/dto/companion_dto.dart';
+import 'package:siyar_sahaba/shared/content/data/dto/quran_dto.dart';
 import 'package:siyar_sahaba/shared/content/data/dto/seerah_dto.dart';
 import 'package:siyar_sahaba/shared/content/data/dto/story_dto.dart';
 import 'package:siyar_sahaba/shared/content/data/mappers/content_mappers.dart';
@@ -15,6 +16,7 @@ import 'package:siyar_sahaba/shared/content/domain/review.dart';
 
 import 'content_files.dart';
 import 'content_tree.dart';
+import 'quran_text.dart';
 import 'schema_set.dart';
 import 'validator.dart';
 
@@ -228,6 +230,13 @@ BuildResult buildContent(
     ).toJson(),
   );
 
+  // The verified text of every ayah the shipped content quotes.
+  if (files.quranText case final text?) {
+    outputs['quran.json'] = encode(
+      _quranFile(QuranText.parse(text), outputs.values).toJson(),
+    );
+  }
+
   final included = tree.allItems.where(include).toList();
   final approved = included.where((i) => i.isApproved).length;
   outputs['manifest.json'] = encode(
@@ -250,6 +259,58 @@ BuildResult buildContent(
     ).toJson(),
   );
   return BuildResult(report, outputs);
+}
+
+/// The ayahs quoted (`quranQuote` blocks) anywhere in [outputs].
+QuranFileDto _quranFile(QuranText quran, Iterable<String> outputs) {
+  final ayahs = SplayTreeMap<String, String>(_byAyah);
+  final basmalas = SplayTreeMap<String, String>(_byNumber);
+  void walk(Object? node) {
+    switch (node) {
+      case {'type': 'quranQuote', 'ref': final Map<String, dynamic> ref}:
+        final surah = ref['surah'] as int;
+        final from = ref['ayahFrom'] as int;
+        final to = (ref['ayahTo'] as int?) ?? from;
+        for (var a = from; a <= to; a++) {
+          ayahs['$surah:$a'] = quran.ayah(surah, a);
+        }
+        if (from == 1) {
+          if (quran.basmalaOf(surah) case final basmala?) {
+            basmalas['$surah'] = basmala;
+          }
+        }
+      case final Map<String, dynamic> map:
+        map.values.forEach(walk);
+      case final List<dynamic> list:
+        list.forEach(walk);
+    }
+  }
+
+  outputs.map(jsonDecode).forEach(walk);
+  return QuranFileDto(
+    schemaVersion: outputSchemaVersion,
+    source: QuranSourceDto(
+      name: quranTextSourceName,
+      url: quranTextSourceUrl,
+      notice: quran.notice,
+    ),
+    basmalas: basmalas,
+    ayahs: ayahs,
+  );
+}
+
+int _byNumber(String a, String b) => int.parse(a).compareTo(int.parse(b));
+
+/// `surah:ayah` keys in mushaf order.
+int _byAyah(String a, String b) {
+  final (sa, aa) = _split(a);
+  final (sb, ab) = _split(b);
+  return sa != sb ? sa.compareTo(sb) : aa.compareTo(ab);
+}
+
+(int, int) _split(String key) {
+  final [s, a] = key.split(':');
+  return (int.parse(s), int.parse(a));
 }
 
 /// By `order` (missing last), then Arabic name, then id.

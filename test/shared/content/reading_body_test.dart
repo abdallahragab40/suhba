@@ -1,13 +1,22 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/misc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:siyar_sahaba/core/design_system/theme/app_theme.dart';
 import 'package:siyar_sahaba/core/design_system/widgets/citation_marker.dart';
 import 'package:siyar_sahaba/core/design_system/widgets/reliability_badge.dart';
+import 'package:siyar_sahaba/core/domain/quran_ref.dart';
 import 'package:siyar_sahaba/core/domain/reliability.dart';
 import 'package:siyar_sahaba/shared/content/domain/citation.dart';
 import 'package:siyar_sahaba/shared/content/domain/content_block.dart';
+import 'package:siyar_sahaba/shared/content/domain/quran_verses.dart';
 import 'package:siyar_sahaba/shared/content/presentation/reading_body.dart';
+import 'package:siyar_sahaba/shared/content/providers.dart';
 
+import '../../helpers/content_bundle.dart';
 import '../../helpers/pump_app.dart';
 import '../../helpers/specimen_blocks.dart';
 
@@ -19,27 +28,38 @@ void main() {
     List<ContentBlock>? blocks,
     bool provisional = true,
     double? textSize,
+    List<Override> overrides = const [],
   }) async {
     opened = [];
     tester.view
       ..devicePixelRatio = 1
       ..physicalSize = const Size(500, 2400);
     addTearDown(tester.view.reset);
+    // The real bundled assets: verses come from assets/content/quran.json.
     await tester.pumpWidget(
-      testHarness(
-        theme: AppTheme.light,
-        child: Scaffold(
-          body: SingleChildScrollView(
-            child: ReadingBody(
-              blocks: blocks ?? specimenBlocks,
-              provisional: provisional,
-              textSize: textSize,
-              onCitations: (c, r) => opened.add((c, r)),
+      ProviderScope(
+        overrides: [
+          assetBundleProvider.overrideWithValue(
+            MemoryAssetBundle.builtContent(),
+          ),
+          ...overrides,
+        ],
+        child: testHarness(
+          theme: AppTheme.light,
+          child: Scaffold(
+            body: SingleChildScrollView(
+              child: ReadingBody(
+                blocks: blocks ?? specimenBlocks,
+                provisional: provisional,
+                textSize: textSize,
+                onCitations: (c, r) => opened.add((c, r)),
+              ),
             ),
           ),
         ),
       ),
     );
+    await tester.pumpAndSettle();
   }
 
   testWidgets('paragraphs: badge only when not established', (tester) async {
@@ -59,12 +79,9 @@ void main() {
     expect(opened.single.$2, Reliability.established);
   });
 
-  testWidgets('a Qur\'an quote shows its reference, never typed text', (
-    tester,
-  ) async {
+  testWidgets('a Qur\'an quote is headed by its reference', (tester) async {
     await pump(tester, blocks: [specimenBlocks[2]]);
     expect(find.text('قال الله تعالى — التوبة: ٤٠'), findsOneWidget);
-    expect(find.textContaining('مصحف رقمي معتمد'), findsOneWidget);
   });
 
   testWidgets('a pending hadith shows its description, status and grading', (
@@ -118,4 +135,76 @@ void main() {
     await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
     handle.dispose();
   });
+
+  group('Qur\'an quotations', () {
+    Future<void> quote(
+      WidgetTester tester,
+      QuranRef ref, {
+      List<Override> overrides = const [],
+    }) async {
+      await pump(
+        tester,
+        blocks: [ContentBlock.quranQuote(ref: ref)],
+        overrides: overrides,
+      );
+      await tester.pumpAndSettle();
+    }
+
+    // Compared with the bundled text, never with hand-typed Arabic: the
+    // order of combining marks matters.
+    final bundled =
+        jsonDecode(File('assets/content/quran.json').readAsStringSync())
+            as Map<String, dynamic>;
+    final ayahs = (bundled['ayahs'] as Map).cast<String, String>();
+    final basmalas = (bundled['basmalas'] as Map).cast<String, String>();
+
+    String verseText(WidgetTester tester) => tester
+        .widgetList<RichText>(find.byType(RichText))
+        .map((t) => t.text.toPlainText())
+        .join('\n');
+
+    testWidgets('show the verified text, numbered, with its source', (
+      tester,
+    ) async {
+      await quote(tester, const QuranRef(surah: 9, ayahFrom: 40));
+      // Exactly the bundled Tanzil text of at-Tawbah 40.
+      expect(verseText(tester), contains(ayahs['9:40']));
+      expect(verseText(tester), contains('\uFD3F٤٠\uFD3E'));
+      expect(find.text('الرسم العثماني من مشروع تنزيل'), findsOneWidget);
+      expect(find.text(quranPendingAr), findsNothing);
+      // Not a surah opening: no basmala.
+      expect(find.text(basmalas['96']!), findsNothing);
+    });
+
+    testWidgets('a quotation that opens a surah has the basmala above', (
+      tester,
+    ) async {
+      await quote(tester, const QuranRef(surah: 96, ayahFrom: 1, ayahTo: 5));
+      final text = verseText(tester);
+      expect(find.text(basmalas['96']!), findsOneWidget);
+      expect(text, contains(ayahs['96:1']));
+      expect(text, contains(ayahs['96:5']));
+      for (final n in ['١', '٢', '٣', '٤', '٥']) {
+        expect(text, contains('\uFD3F$n\uFD3E'));
+      }
+    });
+
+    testWidgets('fall back to the reference if the text cannot load', (
+      tester,
+    ) async {
+      await quote(
+        tester,
+        const QuranRef(surah: 9, ayahFrom: 40),
+        overrides: [
+          quranVersesProvider.overrideWith(
+            (ref) => Future<QuranVerses>.error(StateError('missing')),
+          ),
+        ],
+      );
+      expect(find.text(quranPendingAr), findsOneWidget);
+      expect(find.text('الرسم العثماني من مشروع تنزيل'), findsNothing);
+    });
+  });
 }
+
+const quranPendingAr = 'تعذّر عرض نص الآية الآن، والمرجع أعلاه.';

@@ -1,0 +1,2 @@
+# The Tanzil Qur'an text is distributed verbatim: never convert its bytes.
+content/quran/*.txt -text

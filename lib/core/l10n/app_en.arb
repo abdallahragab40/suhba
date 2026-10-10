@@ -101,7 +101,7 @@
   "digitsArabicIndic": "Arabic (١٢٣)",
   "digitsWestern": "Western (123)",
   "quranReference": "Allah the Exalted said — {ref}",
-  "quranTextPending": "The verse text will be shown here from a certified digital mushaf once it is added.",
+  "quranTextPending": "The verse text could not be shown just now; the reference is above.",
   "hadithLabel": "Hadith",
   "reportLabel": "Report",
   "quoteTextPending": "The text is awaiting transcription from the cited edition.",
@@ -376,5 +376,9 @@
   "profileConnectionsKicker": "In the Seerah",
   "profileConnectionsTitle": "In the chapters and events",
   "profileEvents": "Shared events",
-  "profileVisuals": "Visuals"
+  "profileVisuals": "Visuals",
+  "quranTextSource": "Uthmani text from the Tanzil Project",
+  "sourcesQuranTextTitle": "The Qur'an text",
+  "sourcesQuranTextBody": "Verses are shown in the Uthmani script from the Tanzil Project ({url}), unchanged, under the Creative Commons Attribution 3.0 licence. The app stores only the quoted verses and does not go online.",
+  "sourcesQuranNotice": "Licence notice"
 }

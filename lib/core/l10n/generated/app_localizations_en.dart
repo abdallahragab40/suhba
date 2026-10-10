@@ -393,7 +393,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get quranTextPending =>
-      'The verse text will be shown here from a certified digital mushaf once it is added.';
+      'The verse text could not be shown just now; the reference is above.';
 
   @override
   String get hadithLabel => 'Hadith';
@@ -1329,4 +1329,18 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get profileVisuals => 'Visuals';
+
+  @override
+  String get quranTextSource => 'Uthmani text from the Tanzil Project';
+
+  @override
+  String get sourcesQuranTextTitle => 'The Qur\'an text';
+
+  @override
+  String sourcesQuranTextBody(String url) {
+    return 'Verses are shown in the Uthmani script from the Tanzil Project ($url), unchanged, under the Creative Commons Attribution 3.0 licence. The app stores only the quoted verses and does not go online.';
+  }
+
+  @override
+  String get sourcesQuranNotice => 'Licence notice';
 }

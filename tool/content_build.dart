@@ -13,6 +13,7 @@ import 'package:siyar_sahaba/shared/content/domain/review.dart';
 import 'src/cli_args.dart';
 import 'src/content/builder.dart';
 import 'src/content/content_files.dart';
+import 'src/content/quran_text.dart';
 import 'src/content/schema_set.dart';
 
 const outDir = 'assets/content';
@@ -22,8 +23,12 @@ void main(List<String> args) {
   final channel = channelOption(args);
   final check = args.contains('--check');
 
+  final files = ContentFiles.fromDirectory(Directory('content'));
+  if (files.quranText == null) {
+    fail('Missing content/$quranTextPath: the verified Qur\'an text.');
+  }
   final result = buildContent(
-    ContentFiles.fromDirectory(Directory('content')),
+    files,
     SchemaSet.fromFile(SchemaSet.defaultPath),
     channel: channel,
   );

@@ -571,9 +571,9 @@
       }
     }
   },
-  "quranTextPending": "يُعرض نص الآية هنا من مصحف رقمي معتمد عند إضافته.",
+  "quranTextPending": "تعذّر عرض نص الآية الآن، والمرجع أعلاه.",
   "@quranTextPending": {
-    "description": "Shown until a verified Qur'an dataset is bundled."
+    "description": "Shown only if the bundled Qur'an text cannot be loaded."
   },
   "hadithLabel": "حديث",
   "@hadithLabel": {
@@ -1858,5 +1858,26 @@
   "profileVisuals": "رسوم توضيحية",
   "@profileVisuals": {
     "description": "Profile: visuals that show the companion."
+  },
+  "quranTextSource": "الرسم العثماني من مشروع تنزيل",
+  "@quranTextSource": {
+    "description": "Small source line under a quoted Qur'an passage."
+  },
+  "sourcesQuranTextTitle": "نص القرآن الكريم",
+  "@sourcesQuranTextTitle": {
+    "description": "Heading of the Qur'an text credit on the sources page."
+  },
+  "sourcesQuranTextBody": "تُعرض الآيات بالرسم العثماني من مشروع تنزيل ({url})، كما هي دون أي تغيير، برخصة المشاع الإبداعي: نسب المصنَّف ٣٫٠. يحفظ التطبيق الآيات المقتبسة فقط، ولا يتصل بالإنترنت.",
+  "@sourcesQuranTextBody": {
+    "description": "Credit for the bundled Qur'an text; url is tanzil.net.",
+    "placeholders": {
+      "url": {
+        "type": "String"
+      }
+    }
+  },
+  "sourcesQuranNotice": "نص الترخيص",
+  "@sourcesQuranNotice": {
+    "description": "Expands the Tanzil copyright notice."
   }
 }

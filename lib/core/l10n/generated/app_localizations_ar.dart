@@ -391,8 +391,7 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get quranTextPending =>
-      'يُعرض نص الآية هنا من مصحف رقمي معتمد عند إضافته.';
+  String get quranTextPending => 'تعذّر عرض نص الآية الآن، والمرجع أعلاه.';
 
   @override
   String get hadithLabel => 'حديث';
@@ -1335,4 +1334,18 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get profileVisuals => 'رسوم توضيحية';
+
+  @override
+  String get quranTextSource => 'الرسم العثماني من مشروع تنزيل';
+
+  @override
+  String get sourcesQuranTextTitle => 'نص القرآن الكريم';
+
+  @override
+  String sourcesQuranTextBody(String url) {
+    return 'تُعرض الآيات بالرسم العثماني من مشروع تنزيل ($url)، كما هي دون أي تغيير، برخصة المشاع الإبداعي: نسب المصنَّف ٣٫٠. يحفظ التطبيق الآيات المقتبسة فقط، ولا يتصل بالإنترنت.';
+  }
+
+  @override
+  String get sourcesQuranNotice => 'نص الترخيص';
 }

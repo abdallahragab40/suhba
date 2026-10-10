@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:siyar_sahaba/core/design_system/tokens/radii.dart';
 import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
 import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
 import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
 import 'package:siyar_sahaba/core/design_system/widgets/citation_marker.dart';
 import 'package:siyar_sahaba/core/design_system/widgets/reliability_badge.dart';
+import 'package:siyar_sahaba/core/domain/quran_ref.dart';
 import 'package:siyar_sahaba/core/domain/reliability.dart';
 import 'package:siyar_sahaba/core/format/display_formatter.dart';
 import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
@@ -12,6 +14,7 @@ import 'package:siyar_sahaba/shared/content/domain/citation.dart';
 import 'package:siyar_sahaba/shared/content/domain/content_block.dart';
 import 'package:siyar_sahaba/shared/content/presentation/content_text.dart';
 import 'package:siyar_sahaba/shared/content/presentation/reader_scaffold.dart';
+import 'package:siyar_sahaba/shared/content/providers.dart';
 import 'package:siyar_sahaba/shared/visuals/presentation/infographic_view.dart';
 
 /// Opens the sources of one claim.
@@ -22,8 +25,8 @@ typedef OpenCitations =
 ///
 /// Every claim keeps its sources one tap away. A reliability badge is shown
 /// when a claim is not established (established is the quiet default).
-/// Qur'anic text is never typed by hand: verses appear by reference until a
-/// verified mushaf dataset is bundled.
+/// Qur'anic text is never typed by hand: verses come from the bundled,
+/// verified Tanzil text, and show by reference alone if it cannot load.
 class ReadingBody extends StatelessWidget {
   const ReadingBody({
     required this.blocks,
@@ -86,8 +89,9 @@ class ReadingBody extends StatelessWidget {
       child: Text(text.of(context), style: _reading(context)),
     ),
     QuranQuoteBlock(:final ref, :final note) => _QuranQuote(
-      reference: DisplayFormatter.of(context).quranRef(ref),
+      quranRef: ref,
       note: note?.of(context),
+      textSize: textSize,
     ),
     HadithQuoteBlock(
       :final textStatus,
@@ -260,29 +264,63 @@ class _Callout extends StatelessWidget {
   }
 }
 
-class _QuranQuote extends StatelessWidget {
-  const _QuranQuote({required this.reference, this.note});
+class _QuranQuote extends ConsumerWidget {
+  const _QuranQuote({required this.quranRef, this.note, this.textSize});
 
-  final String reference;
+  final QuranRef quranRef;
   final String? note;
 
+  /// The reader's chosen body size; verses are drawn a little larger.
+  final double? textSize;
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
+    final format = DisplayFormatter.of(context);
     final colors = SahabaColors.of(context);
     final textTheme = Theme.of(context).textTheme;
+    final base = SahabaTextStyles.of(context).quran;
+    final style = textSize == null
+        ? base
+        : base.copyWith(fontSize: textSize! * 21 / 19);
     final note = this.note;
+    final verses = ref.watch(quranVersesProvider);
+    final passage = verses.value?.passage(quranRef);
     return _Callout(
-      kicker: l10n.quranReference(reference),
+      kicker: l10n.quranReference(format.quranRef(quranRef)),
       icon: Icons.menu_book_outlined,
       accent: colors.accent,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(
-            l10n.quranTextPending,
-            style: textTheme.bodySmall?.copyWith(color: colors.onSurfaceDim),
-          ),
+          if (passage != null) ...[
+            if (verses.requireValue.basmalaAbove(quranRef) case final b?)
+              Text(b, style: style, textAlign: TextAlign.center),
+            Text.rich(
+              TextSpan(
+                children: [
+                  for (final (ayah: number, :text) in passage) ...[
+                    TextSpan(text: '$text '),
+                    // An ornate bracket pair around the ayah's number.
+                    TextSpan(
+                      text: '\uFD3F${format.integer(number)}\uFD3E ',
+                      style: TextStyle(color: colors.accentText),
+                    ),
+                  ],
+                ],
+              ),
+              style: style,
+            ),
+            const SizedBox(height: AppSpacing.xxs),
+            Text(
+              l10n.quranTextSource,
+              style: textTheme.bodySmall?.copyWith(color: colors.onSurfaceDim),
+            ),
+          ] else if (!verses.isLoading)
+            Text(
+              l10n.quranTextPending,
+              style: textTheme.bodySmall?.copyWith(color: colors.onSurfaceDim),
+            ),
           if (note != null) ...[
             const SizedBox(height: AppSpacing.xs),
             Text(note, style: textTheme.bodyMedium),

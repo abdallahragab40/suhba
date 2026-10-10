@@ -5,6 +5,7 @@ import 'package:siyar_sahaba/shared/content/data/asset_content_source.dart';
 import 'package:siyar_sahaba/shared/content/data/dto/atlas_dto.dart';
 import 'package:siyar_sahaba/shared/content/data/dto/catalog_dto.dart';
 import 'package:siyar_sahaba/shared/content/data/dto/companion_dto.dart';
+import 'package:siyar_sahaba/shared/content/data/dto/quran_dto.dart';
 import 'package:siyar_sahaba/shared/content/data/dto/seerah_dto.dart';
 import 'package:siyar_sahaba/shared/content/data/dto/story_dto.dart';
 import 'package:siyar_sahaba/shared/content/data/mappers/content_mappers.dart';
@@ -15,6 +16,7 @@ import 'package:siyar_sahaba/shared/content/domain/companion.dart';
 import 'package:siyar_sahaba/shared/content/domain/content_format.dart';
 import 'package:siyar_sahaba/shared/content/domain/content_manifest.dart';
 import 'package:siyar_sahaba/shared/content/domain/content_repository.dart';
+import 'package:siyar_sahaba/shared/content/domain/quran_verses.dart';
 import 'package:siyar_sahaba/shared/content/domain/seerah.dart';
 import 'package:siyar_sahaba/shared/content/domain/story.dart';
 
@@ -123,6 +125,10 @@ class AssetContentRepository implements ContentRepository {
       for (final p in PlacesFileDto.fromJson(json).places) p.id: p.toDomain(),
     },
   );
+
+  @override
+  Future<Result<QuranVerses>> quranVerses() =>
+      _load('quran.json', (json) => QuranFileDto.fromJson(json).toDomain());
 
   @override
   Future<Result<Map<String, Infographic>>> visuals() => _load(

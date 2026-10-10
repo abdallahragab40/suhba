@@ -704,10 +704,10 @@ abstract class AppLocalizations {
   /// **'قال الله تعالى — {ref}'**
   String quranReference(String ref);
 
-  /// Shown until a verified Qur'an dataset is bundled.
+  /// Shown only if the bundled Qur'an text cannot be loaded.
   ///
   /// In ar, this message translates to:
-  /// **'يُعرض نص الآية هنا من مصحف رقمي معتمد عند إضافته.'**
+  /// **'تعذّر عرض نص الآية الآن، والمرجع أعلاه.'**
   String get quranTextPending;
 
   /// Kicker of a hadith quotation.
@@ -2359,6 +2359,30 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'رسوم توضيحية'**
   String get profileVisuals;
+
+  /// Small source line under a quoted Qur'an passage.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرسم العثماني من مشروع تنزيل'**
+  String get quranTextSource;
+
+  /// Heading of the Qur'an text credit on the sources page.
+  ///
+  /// In ar, this message translates to:
+  /// **'نص القرآن الكريم'**
+  String get sourcesQuranTextTitle;
+
+  /// Credit for the bundled Qur'an text; url is tanzil.net.
+  ///
+  /// In ar, this message translates to:
+  /// **'تُعرض الآيات بالرسم العثماني من مشروع تنزيل ({url})، كما هي دون أي تغيير، برخصة المشاع الإبداعي: نسب المصنَّف ٣٫٠. يحفظ التطبيق الآيات المقتبسة فقط، ولا يتصل بالإنترنت.'**
+  String sourcesQuranTextBody(String url);
+
+  /// Expands the Tanzil copyright notice.
+  ///
+  /// In ar, this message translates to:
+  /// **'نص الترخيص'**
+  String get sourcesQuranNotice;
 }
 
 class _AppLocalizationsDelegate

@@ -60,6 +60,7 @@ class SourcesPage extends ConsumerWidget {
                 ),
                 for (final s in group) _SourceTile(source: s),
               ],
+            const _QuranTextCredit(),
           ],
         ),
         AsyncError(:final error) => ErrorView(
@@ -112,6 +113,65 @@ class _SourceTile extends StatelessWidget {
           ],
         ],
       ),
+    );
+  }
+}
+
+/// Where the verse text comes from, with the licence notice its terms ask
+/// to be reproduced. Shown only once the text has loaded.
+class _QuranTextCredit extends ConsumerWidget {
+  const _QuranTextCredit();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final verses = ref.watch(quranVersesProvider).value;
+    if (verses == null) return const SizedBox.shrink();
+    final l10n = AppLocalizations.of(context);
+    final colors = SahabaColors.of(context);
+    final textTheme = Theme.of(context).textTheme;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsetsDirectional.only(
+            top: AppSpacing.lg,
+            bottom: AppSpacing.xs,
+          ),
+          child: Semantics(
+            header: true,
+            child: Text(
+              l10n.sourcesQuranTextTitle,
+              style: SahabaTextStyles.of(context).kicker,
+            ),
+          ),
+        ),
+        Text(verses.sourceName, style: textTheme.titleSmall),
+        const SizedBox(height: AppSpacing.xxs),
+        SelectableText(
+          l10n.sourcesQuranTextBody(verses.sourceUrl),
+          style: textTheme.bodyMedium,
+        ),
+        Theme(
+          data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
+          child: ExpansionTile(
+            tilePadding: EdgeInsets.zero,
+            childrenPadding: const EdgeInsets.only(bottom: AppSpacing.md),
+            title: Text(l10n.sourcesQuranNotice, style: textTheme.titleSmall),
+            children: [
+              // The notice is in English, as Tanzil publishes it.
+              Directionality(
+                textDirection: TextDirection.ltr,
+                child: SelectableText(
+                  verses.notice,
+                  style: textTheme.bodySmall?.copyWith(
+                    color: colors.onSurfaceDim,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
