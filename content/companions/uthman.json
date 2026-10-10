@@ -52,7 +52,9 @@
     "citations": [
       {
         "sourceId": "isabah",
-        "locatorStatus": "pending"
+        "locatorStatus": "complete",
+        "volume": 4,
+        "page": "458"
       },
       {
         "sourceId": "siyar",
@@ -84,7 +86,9 @@
       "citations": [
         {
           "sourceId": "tarikh-al-tabari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "232"
         }
       ]
     },
@@ -93,7 +97,9 @@
       "citations": [
         {
           "sourceId": "isabah",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "457"
         }
       ]
     }
@@ -143,7 +149,9 @@
       "citations": [
         {
           "sourceId": "tarikh-al-tabari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "415"
         }
       ]
     },
@@ -158,7 +166,9 @@
       "citations": [
         {
           "sourceId": "tabaqat-ibn-sad",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "56"
         },
         {
           "sourceId": "siyar",
@@ -184,7 +194,9 @@
         },
         {
           "sourceId": "isabah",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "456"
         }
       ]
     },
@@ -199,11 +211,15 @@
       "citations": [
         {
           "sourceId": "tabaqat-ibn-sad",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "41"
         },
         {
           "sourceId": "isabah",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "456"
         }
       ]
     }
@@ -225,7 +241,9 @@
           "citations": [
             {
               "sourceId": "isabah",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "456"
             },
             {
               "sourceId": "siyar",
@@ -233,7 +251,9 @@
             },
             {
               "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "39"
             }
           ]
         },
@@ -246,11 +266,15 @@
           "citations": [
             {
               "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "39"
             },
             {
               "sourceId": "isabah",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "456"
             }
           ]
         },
@@ -267,7 +291,9 @@
             },
             {
               "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "44"
             }
           ]
         },
@@ -297,7 +323,9 @@
           "citations": [
             {
               "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "44"
             },
             {
               "sourceId": "siyar",
@@ -314,7 +342,9 @@
           "citations": [
             {
               "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "42"
             },
             {
               "sourceId": "siyar",
@@ -340,11 +370,15 @@
           "citations": [
             {
               "sourceId": "sirat-ibn-hisham",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "250"
             },
             {
               "sourceId": "isabah",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "456"
             }
           ]
         },
@@ -357,7 +391,9 @@
           "citations": [
             {
               "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "40"
             }
           ]
         },
@@ -370,11 +406,15 @@
           "citations": [
             {
               "sourceId": "sirat-ibn-hisham",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "322"
             },
             {
               "sourceId": "isabah",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "457"
             },
             {
               "sourceId": "bukhari",
@@ -392,11 +432,15 @@
           "citations": [
             {
               "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "39"
             },
             {
               "sourceId": "isabah",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "456"
             }
           ]
         },
@@ -409,7 +453,9 @@
           "citations": [
             {
               "sourceId": "sirat-ibn-hisham",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "364"
             }
           ]
         },
@@ -422,11 +468,15 @@
           "citations": [
             {
               "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "41"
             },
             {
               "sourceId": "isabah",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "457"
             }
           ]
         },
@@ -439,7 +489,9 @@
           "citations": [
             {
               "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "41"
             }
           ]
         }
@@ -475,11 +527,15 @@
           "citations": [
             {
               "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "41"
             },
             {
               "sourceId": "isabah",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "456"
             }
           ]
         },
@@ -514,7 +570,9 @@
           "citations": [
             {
               "sourceId": "sirat-ibn-hisham",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "315"
             }
           ]
         },
@@ -573,7 +631,9 @@
             },
             {
               "sourceId": "al-bidaya",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 10,
+              "page": "287"
             }
           ]
         },
@@ -639,7 +699,9 @@
           "citations": [
             {
               "sourceId": "sirat-ibn-hisham",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "46"
             }
           ]
         },
@@ -652,7 +714,9 @@
           "citations": [
             {
               "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "429"
             },
             {
               "sourceId": "tabaqat-ibn-sad",
@@ -799,7 +863,9 @@
           "citations": [
             {
               "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "55"
             },
             {
               "sourceId": "siyar",
@@ -888,7 +954,9 @@
             },
             {
               "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "55"
             }
           ]
         },
@@ -901,7 +969,9 @@
           "citations": [
             {
               "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "44"
             }
           ]
         },
@@ -965,7 +1035,9 @@
             },
             {
               "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "232"
             }
           ]
         },
@@ -992,7 +1064,9 @@
           "citations": [
             {
               "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "289"
             }
           ]
         },
@@ -1005,11 +1079,27 @@
           "citations": [
             {
               "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "250"
+            },
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "257"
             },
             {
               "sourceId": "al-bidaya",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 10,
+              "page": "223"
+            },
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "complete",
+              "volume": 10,
+              "page": "227"
             }
           ]
         },
@@ -1022,11 +1112,27 @@
           "citations": [
             {
               "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "250"
+            },
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "257"
             },
             {
               "sourceId": "al-bidaya",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 10,
+              "page": "223"
+            },
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "complete",
+              "volume": 10,
+              "page": "227"
             }
           ]
         },
@@ -1072,7 +1178,9 @@
             },
             {
               "sourceId": "al-bidaya",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 10,
+              "page": "393"
             }
           ]
         },
@@ -1085,7 +1193,9 @@
           "citations": [
             {
               "sourceId": "al-bidaya",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 10,
+              "page": "395"
             }
           ]
         },
@@ -1102,7 +1212,9 @@
               "citations": [
                 {
                   "sourceId": "al-bidaya",
-                  "locatorStatus": "pending"
+                  "locatorStatus": "complete",
+                  "volume": 10,
+                  "page": "394"
                 }
               ]
             },
@@ -1113,7 +1225,9 @@
               "citations": [
                 {
                   "sourceId": "al-bidaya",
-                  "locatorStatus": "pending"
+                  "locatorStatus": "complete",
+                  "volume": 10,
+                  "page": "394"
                 }
               ]
             }
@@ -1128,11 +1242,15 @@
           "citations": [
             {
               "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "251"
             },
             {
               "sourceId": "al-bidaya",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 10,
+              "page": "224"
             }
           ]
         },
@@ -1150,7 +1268,9 @@
             },
             {
               "sourceId": "al-bidaya",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 10,
+              "page": "393"
             }
           ]
         },
@@ -1191,11 +1311,15 @@
           "citations": [
             {
               "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "353"
             },
             {
               "sourceId": "al-bidaya",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 10,
+              "page": "300"
             }
           ]
         },
@@ -1208,11 +1332,15 @@
           "citations": [
             {
               "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "370"
             },
             {
               "sourceId": "al-bidaya",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 10,
+              "page": "385"
             }
           ]
         },
@@ -1261,11 +1389,15 @@
           "citations": [
             {
               "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "391"
             },
             {
               "sourceId": "al-bidaya",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 10,
+              "page": "314"
             }
           ]
         },
@@ -1278,11 +1410,15 @@
           "citations": [
             {
               "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "416"
             },
             {
               "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "55"
             },
             {
               "sourceId": "siyar",
@@ -1299,11 +1435,15 @@
           "citations": [
             {
               "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "55"
             },
             {
               "sourceId": "al-bidaya",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 10,
+              "page": "301"
             }
           ]
         },
@@ -1316,7 +1456,9 @@
           "citations": [
             {
               "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "431"
             },
             {
               "sourceId": "bukhari",
@@ -1334,11 +1476,15 @@
           "citations": [
             {
               "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "415"
             },
             {
               "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "57"
             }
           ]
         },
@@ -1355,7 +1501,9 @@
               "citations": [
                 {
                   "sourceId": "tabaqat-ibn-sad",
-                  "locatorStatus": "pending"
+                  "locatorStatus": "complete",
+                  "volume": 3,
+                  "page": "57"
                 }
               ]
             },
@@ -1474,7 +1622,9 @@
       "citations": [
         {
           "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "250"
         }
       ],
       "sectionId": "uthman.conversion"
@@ -1495,7 +1645,9 @@
       "citations": [
         {
           "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "322"
         },
         {
           "sourceId": "bukhari",
@@ -1522,7 +1674,9 @@
       "citations": [
         {
           "sourceId": "isabah",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "457"
         }
       ],
       "eventId": "hijrah",
@@ -1622,7 +1776,9 @@
         },
         {
           "sourceId": "tarikh-al-tabari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "232"
         }
       ],
       "sectionId": "uthman.caliphate"
@@ -1666,7 +1822,9 @@
       "citations": [
         {
           "sourceId": "tarikh-al-tabari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "353"
         },
         {
           "sourceId": "siyar",

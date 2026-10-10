@@ -53,11 +53,18 @@ void main() {
         ),
       );
       expect(c.death!.reliability, Reliability.established);
+      // al-Isabah is located in the printed edition; the Siyar's caliphs'
+      // volume is unpaginated in the digital text, so it is left pending.
+      final isabah = c.death!.citations.firstWhere(
+        (x) => x.sourceId == 'isabah',
+      );
+      expect(isabah.locatorStatus, LocatorStatus.complete);
+      expect((isabah.volume, isabah.page), (4, '174'));
       expect(
-        c.death!.citations.every(
-          (x) => x.locatorStatus == LocatorStatus.pending,
-        ),
-        isTrue,
+        c.death!.citations
+            .firstWhere((x) => x.sourceId == 'siyar')
+            .locatorStatus,
+        LocatorStatus.pending,
       );
       expect(c.memberships.map((m) => m.categoryId), [
         'ashara-mubashshara',
