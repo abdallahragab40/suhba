@@ -216,13 +216,9 @@
       "opinions": [
         {
           "text": {
-            "ar": "أنها كانت ابنة أربعين سنة، وهو المشهور عند ابن إسحاق وابن سعد."
+            "ar": "أنها كانت ابنة أربعين سنة، وهو المشهور عند ابن سعد."
           },
           "citations": [
-            {
-              "sourceId": "sirat-ibn-hisham",
-              "locatorStatus": "pending"
-            },
             {
               "sourceId": "tabaqat-ibn-sad",
               "locatorStatus": "complete",

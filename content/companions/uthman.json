@@ -310,7 +310,9 @@
             },
             {
               "sourceId": "istiab",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "16"
             }
           ]
         },
@@ -717,10 +719,6 @@
               "locatorStatus": "complete",
               "volume": 3,
               "page": "429"
-            },
-            {
-              "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
             }
           ]
         }
@@ -1003,7 +1001,9 @@
           "citations": [
             {
               "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "44"
             }
           ]
         }
@@ -1366,10 +1366,6 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "tarikh-al-tabari",
               "locatorStatus": "pending"
             },
@@ -1377,6 +1373,12 @@
               "sourceId": "bukhari",
               "locatorStatus": "complete",
               "hadithNumber": "3693"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "51"
             }
           ]
         },

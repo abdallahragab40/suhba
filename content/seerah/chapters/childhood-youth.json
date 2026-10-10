@@ -312,7 +312,15 @@
       "citations": [
         {
           "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "133"
+        },
+        {
+          "sourceId": "al-bidaya",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "456"
         }
       ]
     },

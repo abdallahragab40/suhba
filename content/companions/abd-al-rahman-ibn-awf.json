@@ -98,14 +98,16 @@
     "reliability": "reported",
     "citations": [
       {
-        "sourceId": "siyar",
-        "locatorStatus": "pending"
-      },
-      {
         "sourceId": "tabaqat-ibn-sad",
         "locatorStatus": "complete",
         "volume": 3,
         "page": "92"
+      },
+      {
+        "sourceId": "siyar",
+        "locatorStatus": "complete",
+        "volume": 1,
+        "page": "74"
       }
     ]
   },
@@ -143,8 +145,10 @@
       "reliability": "reported",
       "citations": [
         {
-          "sourceId": "tabaqat-ibn-sad",
-          "locatorStatus": "pending"
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "92"
         }
       ]
     }
@@ -220,7 +224,9 @@
             },
             {
               "sourceId": "siyar",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "74"
             }
           ]
         },
@@ -416,10 +422,6 @@
               "locatorStatus": "complete",
               "volume": 3,
               "page": "93"
-            },
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
             }
           ]
         }
@@ -472,10 +474,6 @@
           },
           "reliability": "reported",
           "citations": [
-            {
-              "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
-            },
             {
               "sourceId": "siyar",
               "locatorStatus": "complete",
@@ -687,7 +685,9 @@
             },
             {
               "sourceId": "siyar",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "76"
             }
           ]
         },

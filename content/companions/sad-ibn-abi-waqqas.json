@@ -996,14 +996,16 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "siyar",
               "locatorStatus": "complete",
               "volume": 1,
               "page": "119"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "106"
             }
           ]
         },
@@ -1105,7 +1107,9 @@
             },
             {
               "sourceId": "siyar",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "123"
             }
           ]
         }

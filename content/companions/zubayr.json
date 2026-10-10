@@ -111,7 +111,9 @@
       },
       {
         "sourceId": "tabaqat-ibn-sad",
-        "locatorStatus": "pending"
+        "locatorStatus": "complete",
+        "volume": 3,
+        "page": "83"
       }
     ]
   },
@@ -247,14 +249,16 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "siyar",
               "locatorStatus": "complete",
               "volume": 1,
               "page": "44"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "83"
             }
           ]
         },
@@ -328,12 +332,14 @@
           "opinions": [
             {
               "text": {
-                "ar": "ثماني سنين، على رواية ذكرها ابن سعد."
+                "ar": "ثماني سنين، على رواية عروة التي ذكرها الذهبي."
               },
               "citations": [
                 {
-                  "sourceId": "tabaqat-ibn-sad",
-                  "locatorStatus": "pending"
+                  "sourceId": "siyar",
+                  "locatorStatus": "complete",
+                  "volume": 1,
+                  "page": "41"
                 }
               ]
             },
@@ -366,12 +372,10 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
-            },
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
+              "sourceId": "isabah",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "554"
             }
           ]
         },
@@ -885,14 +889,16 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "siyar",
               "locatorStatus": "complete",
               "volume": 1,
               "page": "55"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "119"
             }
           ]
         },
@@ -1042,10 +1048,6 @@
           },
           "reliability": "reported",
           "citations": [
-            {
-              "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "pending"
-            },
             {
               "sourceId": "al-bidaya",
               "locatorStatus": "complete",
@@ -1272,7 +1274,9 @@
         },
         {
           "sourceId": "tabaqat-ibn-sad",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "83"
         }
       ],
       "sectionId": "zubayr.early-life"

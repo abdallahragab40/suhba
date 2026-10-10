@@ -102,7 +102,9 @@
       },
       {
         "sourceId": "tabaqat-ibn-sad",
-        "locatorStatus": "pending"
+        "locatorStatus": "complete",
+        "volume": 3,
+        "page": "294"
       }
     ]
   },
@@ -211,12 +213,14 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "tabaqat-ibn-sad",
+              "sourceId": "siyar",
               "locatorStatus": "pending"
             },
             {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "294"
             }
           ]
         },
@@ -413,7 +417,9 @@
             },
             {
               "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "209"
             }
           ]
         },
@@ -524,14 +530,16 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "isabah",
               "locatorStatus": "complete",
               "volume": 3,
               "page": "103"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "293"
             }
           ]
         },
@@ -1029,14 +1037,10 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وكان من آخر العشرة موتًا، فلم يبق بعده منهم إلا سعد بن أبي وقاص الذي غسّله على ما يذكره ابن سعد، ثم لحق به بعد سنوات."
+            "ar": "وكان من آخر العشرة موتًا، فلم يبق بعده منهم إلا سعد بن أبي وقاص الذي غسّله على ما يذكره أهل التراجم، ثم لحق به بعد سنوات."
           },
           "reliability": "reported",
           "citations": [
-            {
-              "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
-            },
             {
               "sourceId": "siyar",
               "locatorStatus": "complete",
@@ -1140,7 +1144,9 @@
       "citations": [
         {
           "sourceId": "tabaqat-ibn-sad",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "294"
         }
       ],
       "sectionId": "said-ibn-zayd.early-life"
@@ -1234,7 +1240,9 @@
       "citations": [
         {
           "sourceId": "tabaqat-ibn-sad",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "293"
         }
       ],
       "eventId": "uhud",

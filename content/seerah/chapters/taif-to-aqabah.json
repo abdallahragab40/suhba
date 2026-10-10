@@ -247,14 +247,16 @@
           },
           "citations": [
             {
-              "sourceId": "al-bidaya",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "tabaqat-ibn-sad",
               "locatorStatus": "complete",
               "volume": 1,
               "page": "166"
+            },
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "269"
             }
           ]
         },

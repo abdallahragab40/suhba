@@ -375,10 +375,6 @@
           "sourceId": "bukhari",
           "locatorStatus": "complete",
           "hadithNumber": "4986"
-        },
-        {
-          "sourceId": "tarikh-al-tabari",
-          "locatorStatus": "pending"
         }
       ],
       "sectionId": "abu-bakr.caliphate"
