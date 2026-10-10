@@ -74,6 +74,230 @@
       ]
     },
     {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان ينام على شقّه الأيمن، ويذكر الله عند نومه واستيقاظه بأدعية علّمها أصحابه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وأمر بإفشاء السلام، وجعله من أسباب المحبة بين المؤمنين، وجعل من حق المسلم على المسلم أن يردّ السلام ويعود المريض ويتبع الجنازة ويجيب الدعوة ويشمّت العاطس."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وأوصى بالجار، وذكر أن جبريل ما زال يوصيه به حتى ظن أنه سيورّثه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان يحب السواك ويكثر منه، ويحرص على الطهارة، ويستاك عند الوضوء والصلاة والقيام من الليل."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان يمر الهلال ثم الهلال ثم الهلال ثلاثة أهلّة في شهرين، وما أوقد في بيوته نار، وإنما كان طعامهم التمر والماء، كما ذكرت عائشة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وأخبر أن الله رفيق يحب الرفق في الأمر كله، وأن الرفق ما كان في شيء إلا زانه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وجاء في السنن الحثّ على الاعتدال في الطعام، وأن حسب ابن آدم لقيمات يقمن صلبه."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tirmidhi",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان يحب التيامن في شأنه كله: في تنعّله وترجّله وطهوره."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ونهى عن النفخ في الإناء، وكان يتنفّس في الشراب ثلاثًا خارج الإناء."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان يكره النوم قبل العشاء والحديث بعدها، ويحب أن يبكّر إلى عمله، وكان يحب أن يخرج في سفره يوم الخميس."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وأمر من كان يؤمن بالله واليوم الآخر أن يقول خيرًا أو ليصمت، وأن يكرم جاره وضيفه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان إذا عطس وضع يده أو ثوبه على فيه وخفض صوته، وإذا تثاءب كظم ما استطاع، وكان يحب أن يُرى أثر النعمة على العبد في هيئته دون إسراف."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "abu-dawud",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "tirmidhi",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان يمشي متواضعًا، ويجلس حيث ينتهي به المجلس، ولا يحب أن يُقام له."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tirmidhi",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان يدعو عند خروجه من بيته وعند دخوله، ويبدأ بالسلام على أهله."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "abu-dawud",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "text": {
+        "ar": "هديه في يومه يجعل التفاصيل الصغيرة عبادة إذا صحبتها النية، ويجعل الأدب مع الناس جزءًا من الدين لا زينة له."
+      }
+    },
+    {
       "type": "lesson",
       "text": {
         "ar": "البساطة والرضا وحسن الأدب في التفاصيل الصغيرة صورة من صور الاقتداء الممكنة لكل أحد؛ وما يُذكر هنا وصف لهديه لا تفصيل لأحكام."
@@ -87,6 +311,6 @@
       "needsSourceText"
     ],
     "authoredBy": "draft-revision-4",
-    "coverage": "sample"
+    "coverage": "complete"
   }
 }

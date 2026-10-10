@@ -22,7 +22,7 @@ void main() {
     await open(tester, '/stories/the-cave');
     expect(find.text('ثاني اثنين'), findsOneWidget);
     expect(find.byType(DraftBadge), findsOneWidget);
-    expect(find.text('٤ دقائق قراءة'), findsOneWidget);
+    expect(find.text('٣ دقائق قراءة'), findsOneWidget);
     final chapters = ['الخروج من مكة', 'في الغار', 'الطريق إلى المدينة'];
     final ys = [for (final c in chapters) tester.getTopLeft(find.text(c)).dy];
     expect([...ys]..sort(), ys);

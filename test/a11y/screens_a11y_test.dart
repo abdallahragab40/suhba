@@ -6,6 +6,7 @@ import 'package:siyar_sahaba/features/reading_progress/domain/reading_progress.d
 import 'package:siyar_sahaba/features/reading_progress/presentation/progress_providers.dart';
 
 import '../helpers/app_harness.dart';
+import '../helpers/content_bundle.dart';
 
 /// T5.1: every screen, in both themes, against Flutter's accessibility
 /// guidelines: tap targets (Android 48 dp, iOS 44 pt), labelled tappables,
@@ -51,7 +52,13 @@ void main() {
         addTearDown(tester.platformDispatcher.clearPlatformBrightnessTestValue);
         final handle = tester.ensureSemantics();
 
-        final app = AppUnderTest(location: location);
+        final app = AppUnderTest(
+          location: location,
+          // No companion is a skeleton any more; strip one for this screen.
+          bundle: name == 'profile (skeleton)'
+              ? MemoryAssetBundle.withSkeleton('talha')
+              : null,
+        );
         if (name == 'reading history') {
           await app.container
               .read(readingProgressRepositoryProvider)

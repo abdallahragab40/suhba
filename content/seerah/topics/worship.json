@@ -75,6 +75,157 @@
       ]
     },
     {
+      "type": "paragraph",
+      "text": {
+        "ar": "وصلّى معه حذيفة ليلة فقرأ في ركعة واحدة سورة البقرة ثم النساء ثم آل عمران، يقرأ مترسّلًا، إذا مرّ بآية فيها تسبيح سبّح، وإذا مرّ بسؤال سأل، وإذا مرّ بتعوّذ تعوّذ."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وأخبر أن أقرب ما يكون العبد من ربه وهو ساجد، فأمر بالإكثار من الدعاء في السجود."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكانت عائشة تذكر أنه كان يذكر الله على كل أحيانه، فلم يكن الذكر عنده مقصورًا على الصلاة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان جبريل يلقاه في كل ليلة من رمضان فيدارسه القرآن، وعارضه به مرتين في العام الذي قُبض فيه، وكان أجود ما يكون في رمضان، أجود بالخير من الريح المرسلة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ونهى أصحابه عن الوصال في الصيام رحمة بهم، وأنكر على ثلاثة نفر أراد أحدهم أن يقوم الليل أبدًا، والآخر أن يصوم الدهر، والثالث أن يعتزل النساء، وأخبرهم أنه يصوم ويفطر ويصلي وينام ويتزوج النساء، وأن من رغب عن سنته فليس منه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان يتحرّى صيام الاثنين والخميس على ما في روايات السنن، ويذكر أن الأعمال تُعرض فيهما."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tirmidhi",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكانت صلاته بالليل إحدى عشرة ركعة في رمضان وغيره، لا يُسأل عن حسنهن وطولهن، كما وصفت عائشة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وعلّم أصحابه الاستخارة في الأمور كلها كما يعلّمهم السورة من القرآن، فلا يقطعون أمرًا مهمًّا دون أن يكلوا الاختيار إلى الله."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان يحافظ على سنن قبل الصلوات وبعدها، ويحثّ عليها، ويذكر ثواب من ثابر على اثنتي عشرة ركعة في اليوم والليلة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكانت عبادته مع ذلك مقرونة بخدمة الناس؛ فلم تمنعه صلاته من حاجات أهله وأصحابه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان إذا حزبه أمر فزع إلى الصلاة، كما في رواية أبي داود."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "abu-dawud",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
       "type": "lesson",
       "text": {
         "ar": "كانت عبادته ﷺ صلةً دائمة بالله في الليل والنهار، لا تنفصل عن عمله بين الناس؛ وما يُذكر هنا وصف لهديه، والأحكام التفصيلية تؤخذ من أهل العلم."
@@ -88,6 +239,6 @@
       "needsSourceText"
     ],
     "authoredBy": "draft-revision-4",
-    "coverage": "sample"
+    "coverage": "complete"
   }
 }

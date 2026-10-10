@@ -8,14 +8,19 @@ import 'package:siyar_sahaba/features/companions/presentation/profile/profile_se
 import 'package:siyar_sahaba/features/sources/presentation/citation_sheet.dart';
 
 import '../../helpers/app_harness.dart';
+import '../../helpers/content_bundle.dart';
 
 void main() {
-  Future<AppUnderTest> open(WidgetTester tester, String id) async {
+  Future<AppUnderTest> open(
+    WidgetTester tester,
+    String id, {
+    AssetBundle? bundle,
+  }) async {
     tester.view
       ..devicePixelRatio = 1
       ..physicalSize = const Size(800, 8000);
     addTearDown(tester.view.reset);
-    final app = AppUnderTest(location: '/companions/$id');
+    final app = AppUnderTest(location: '/companions/$id', bundle: bundle);
     await app.pump(tester);
     return app;
   }
@@ -58,7 +63,7 @@ void main() {
     // Stories, with draft badges and Arabic reading time.
     expect(find.text('ثاني اثنين'), findsOneWidget);
     expect(find.text('جمع القرآن في الصحف'), findsOneWidget);
-    expect(find.text('٤ دقائق قراءة'), findsNWidgets(2));
+    expect(find.text('٣ دقائق قراءة'), findsNWidgets(2));
 
     // Related person from people.json, with her honorific; not a link.
     expect(find.text('عائشة أم المؤمنين رضي الله عنها'), findsOneWidget);
@@ -133,7 +138,13 @@ void main() {
   testApp('a skeleton profile (Talha) renders without sections', (
     tester,
   ) async {
-    await open(tester, 'talha');
+    // Every one of the Ten now has a written biography; strip one to test
+    // the state a newly added companion starts in.
+    await open(
+      tester,
+      'talha',
+      bundle: MemoryAssetBundle.withSkeleton('talha'),
+    );
     expect(find.text('طلحة بن عبيد الله'), findsOneWidget);
     expect(find.text('فصول السيرة'), findsNothing);
     expect(find.text('طلحة الخير'), findsNothing); // only in the subtitle

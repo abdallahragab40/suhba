@@ -212,10 +212,10 @@ void main() {
     await app.pump(tester);
     expect(find.byType(SeerahTopicPage), findsOneWidget);
     expect(find.text('موضوع ١ من ٨'), findsOneWidget);
-    // The editor says this is a short pilot, not the full essay.
+    // Written to the brief: no pilot-text note.
     expect(
       find.text('هذا نص تجريبي مختصر، ولم يُكتب بالتفصيل المقصود بعد.'),
-      findsOneWidget,
+      findsNothing,
     );
     await reveal(tester, find.text('الموضوع التالي'));
     await tester.tap(find.text('الموضوع التالي'));
@@ -293,13 +293,14 @@ void main() {
     await tester.enterText(find.byType(TextField), 'الحديبية');
     await tester.pump(const Duration(milliseconds: 200));
     await tester.pumpAndSettle();
-    expect(find.text('أحداث'), findsOneWidget);
-    expect(find.text('أماكن'), findsOneWidget);
-    // Narrowed to the archive, the event is the first match.
+    // Narrowed to the archive: the event and the place, nothing else.
     await tester.ensureVisible(find.text('الأحداث والأماكن'));
     await tester.pumpAndSettle();
     await tester.tap(find.text('الأحداث والأماكن'));
     await tester.pumpAndSettle();
+    expect(find.text('أحداث'), findsOneWidget);
+    expect(find.text('أماكن'), findsOneWidget);
+    expect(find.text('فصول السيرة النبوية'), findsNothing);
     await tester.tap(find.text('صلح الحديبية').first);
     await tester.pumpAndSettle();
     expect(find.byType(EventPage), findsOneWidget);

@@ -5,6 +5,7 @@ import 'package:siyar_sahaba/features/reading_progress/domain/reading_progress.d
 import 'package:siyar_sahaba/features/reading_progress/presentation/progress_providers.dart';
 
 import '../../helpers/app_harness.dart';
+import '../../helpers/content_bundle.dart';
 
 /// E07: one tap into a biography, progress on the profile, and contents
 /// inside the reader.
@@ -84,7 +85,10 @@ void main() {
 
   testApp('a profile without a written biography says so', (tester) async {
     tall(tester);
-    await AppUnderTest(location: '/companions/talha').pump(tester);
+    await AppUnderTest(
+      location: '/companions/talha',
+      bundle: MemoryAssetBundle.withSkeleton('talha'),
+    ).pump(tester);
     expect(find.textContaining('لم تُكتب سيرته المفصّلة بعد'), findsOneWidget);
     expect(find.text('ابدأ قراءة السيرة'), findsNothing);
   });

@@ -19,6 +19,17 @@ class MemoryAssetBundle extends CachingAssetBundle {
       f.path: f.readAsStringSync(),
   });
 
+  /// The committed build with [companionId]'s written biography removed
+  /// (no sections or timeline), as for a companion whose biography has not
+  /// been written yet.
+  factory MemoryAssetBundle.withSkeleton(String companionId) =>
+      MemoryAssetBundle.builtContent()..editJson(
+        'assets/content/companions/$companionId.json',
+        (json) => json
+          ..['sections'] = <Object>[]
+          ..['timeline'] = <Object>[],
+      );
+
   final Map<String, String> files;
 
   /// Edits one JSON file in place (e.g. to approve an item in a test).

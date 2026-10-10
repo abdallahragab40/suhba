@@ -77,6 +77,171 @@
       ]
     },
     {
+      "type": "paragraph",
+      "text": {
+        "ar": "وأمر القرآن بالقيام بالقسط والشهادة لله ولو على النفس أو الوالدين والأقربين."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 4,
+            "ayahFrom": 135
+          }
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ويذكر أهل التفسير أن آيات من سورة النساء نزلت في براءة يهودي اتُّهم ظلمًا بسرقة، وفي إدانة من رماه بها من أهل الإسلام، فكان العدل فوق الانتماء."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 4,
+            "ayahFrom": 105,
+            "ayahTo": 107
+          }
+        },
+        {
+          "sourceId": "tirmidhi",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ولم ينسَ الجميل لمن أحسن إليه وهو على غير دينه؛ فذكر يوم بدر أن المطعم بن عدي لو كان حيًّا ثم كلّمه في هؤلاء الأسرى لتركهم له."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وطمأن الأنصار يوم الفتح حين خشوا أن يقيم بمكة، فذكر أن المحيا محياهم والممات مماتهم، فعاد معهم إلى المدينة وبها دُفن."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "واقترض بعيرًا فردّ خيرًا منه، وذكر أن خير الناس أحسنهم قضاءً، ولما أغلظ له صاحب الدين أمر أصحابه أن يدعوه، فإن لصاحب الحق مقالًا."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ولم يعاقب بغير حق ولا انتقم لنفسه قط، إلا أن تُنتهك حرمة الله فينتقم لله، كما ذكرت عائشة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وكان يقضي بين الناس بالبيّنة، وذكر أنه بشر، وأن بعض الخصوم قد يكون ألحن بحجته من بعض، فمن قُضي له بحق أخيه فإنما يُقطع له قطعة من النار."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ووفى بالعهد حتى في أشدّ الأوقات؛ فقد أخذت قريش حذيفة بن اليمان وأباه وهما في طريقهما إلى بدر، فعاهداها ألا يقاتلا مع النبي ﷺ، فأمرهما النبي ﷺ أن يفيا بعهدهما."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ووفى لأصحابه؛ فلما وقع خلاف بين أبي بكر وبعض الصحابة سألهم أن يتركوا له صاحبه، وذكّرهم بأنه صدّقه حين كذّبه الناس."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ولما قال له رجل في قسمة قسمها إنها قسمة ما أُريد بها وجه الله، احتمل ذلك وذكر أن موسى أوذي بأكثر من ذلك فصبر."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "pending"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "pending"
+        }
+      ]
+    },
+    {
+      "type": "lesson",
+      "text": {
+        "ar": "العدل في سيرته لم يكن شعارًا، بل كان سلوكًا: يقيمه على القريب والبعيد، ويقضي بالبيّنة، ويفي بالعهد ولو كان على نفسه؛ وبهذا تُبنى الثقة في المجتمعات."
+      }
+    },
+    {
       "type": "lesson",
       "text": {
         "ar": "العدل الذي لا يفرّق بين قريب وبعيد، والوفاء الذي يصمد أمام الحرج، كانا من أسس الثقة بالدولة الناشئة في المدينة."
@@ -90,6 +255,6 @@
       "needsSourceText"
     ],
     "authoredBy": "draft-revision-4",
-    "coverage": "sample"
+    "coverage": "complete"
   }
 }
