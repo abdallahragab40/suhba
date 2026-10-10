@@ -65,11 +65,13 @@
       "citations": [
         {
           "sourceId": "tirmidhi",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3747"
         },
         {
           "sourceId": "abu-dawud",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "4649"
         }
       ]
     },
@@ -365,7 +367,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3906"
             },
             {
               "sourceId": "tabaqat-ibn-sad",
@@ -438,7 +441,8 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "4063"
             }
           ]
         },
@@ -451,7 +455,8 @@
           "citations": [
             {
               "sourceId": "tirmidhi",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "1692"
             }
           ]
         },
@@ -464,7 +469,8 @@
           "citations": [
             {
               "sourceId": "tirmidhi",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "1692"
             }
           ]
         },
@@ -554,11 +560,13 @@
           "citations": [
             {
               "sourceId": "tirmidhi",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3747"
             },
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3700"
             }
           ]
         },
@@ -569,7 +577,8 @@
           "citations": [
             {
               "sourceId": "muslim",
-              "locatorStatus": "pending",
+              "locatorStatus": "complete",
+              "hadithNumber": "2417",
               "grading": {
                 "grade": "sahih",
                 "gradedBy": {
@@ -591,7 +600,8 @@
           "citations": [
             {
               "sourceId": "tirmidhi",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3739"
             },
             {
               "sourceId": "quran",
@@ -612,11 +622,13 @@
           "citations": [
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "46"
             },
             {
               "sourceId": "muslim",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "11"
             }
           ]
         },
@@ -629,20 +641,27 @@
           "citations": [
             {
               "sourceId": "muslim",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "499"
             }
           ]
         },
         {
           "type": "paragraph",
           "text": {
-            "ar": "ويروى عنه كذلك حديث في تعليم الصحابة صفة الصلاة على النبي ﷺ، على ما في روايات السنن."
+            "ar": "ويروي عنه الترمذي دعاء النبي ﷺ إذا رأى الهلال، يسأل الله أن يُهلّه عليهم باليمن والإيمان والسلامة والإسلام، وحسّنه الترمذي، ويروي عنه أبو داود حديث السترة كذلك."
           },
           "reliability": "reported",
           "citations": [
             {
               "sourceId": "abu-dawud",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "685"
+            },
+            {
+              "sourceId": "tirmidhi",
+              "locatorStatus": "complete",
+              "hadithNumber": "3451"
             }
           ]
         }
@@ -775,7 +794,8 @@
             },
             {
               "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "locatorStatus": "complete",
+              "hadithNumber": "3700"
             }
           ]
         },
@@ -1221,7 +1241,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "4063"
         }
       ],
       "eventId": "uhud",
@@ -1267,7 +1288,8 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3700"
         }
       ],
       "sectionId": "talha.contributions"
