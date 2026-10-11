@@ -2647,6 +2647,96 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'مراجعة أولية — لم يعتمدها مختص'**
   String get draftBadgePreliminary;
+
+  /// No description provided for @welcomeSkip.
+  ///
+  /// In ar, this message translates to:
+  /// **'تخطَّ'**
+  String get welcomeSkip;
+
+  /// No description provided for @welcomeNext.
+  ///
+  /// In ar, this message translates to:
+  /// **'التالي'**
+  String get welcomeNext;
+
+  /// No description provided for @welcomeStart.
+  ///
+  /// In ar, this message translates to:
+  /// **'ابدأ'**
+  String get welcomeStart;
+
+  /// No description provided for @welcomePageLabel.
+  ///
+  /// In ar, this message translates to:
+  /// **'الصفحة {current} من {total}'**
+  String welcomePageLabel(String current, String total);
+
+  /// No description provided for @welcome1Kicker.
+  ///
+  /// In ar, this message translates to:
+  /// **'مرحبًا بك'**
+  String get welcome1Kicker;
+
+  /// No description provided for @welcome1Body.
+  ///
+  /// In ar, this message translates to:
+  /// **'سيرة النبي ﷺ وسِيَر أصحابه وقصصهم، مرويّةً على ترتيب الزمن، ومعزوّةً كلّها إلى مصادرها.'**
+  String get welcome1Body;
+
+  /// No description provided for @welcome2Kicker.
+  ///
+  /// In ar, this message translates to:
+  /// **'السيرة النبوية'**
+  String get welcome2Kicker;
+
+  /// No description provided for @welcome2Title.
+  ///
+  /// In ar, this message translates to:
+  /// **'من مكة إلى المدينة'**
+  String get welcome2Title;
+
+  /// No description provided for @welcome2Body.
+  ///
+  /// In ar, this message translates to:
+  /// **'فصول السيرة على ترتيب الزمن، مع خطّ زمني للأحداث، وأطلس للأماكن، ورسوم توضيحية تقرّب المشاهد.'**
+  String get welcome2Body;
+
+  /// No description provided for @welcome3Kicker.
+  ///
+  /// In ar, this message translates to:
+  /// **'الصحابة'**
+  String get welcome3Kicker;
+
+  /// No description provided for @welcome3Title.
+  ///
+  /// In ar, this message translates to:
+  /// **'سِيَر أصحابه وقصصهم'**
+  String get welcome3Title;
+
+  /// No description provided for @welcome3Body.
+  ///
+  /// In ar, this message translates to:
+  /// **'العشرة المبشّرون بالجنة بسير كاملة، ونخبة من الصحابة والصحابيات بملفات مختصرة، وقصص من السيرة تُقرأ في جلسة.'**
+  String get welcome3Body;
+
+  /// No description provided for @welcome4Kicker.
+  ///
+  /// In ar, this message translates to:
+  /// **'المنهج'**
+  String get welcome4Kicker;
+
+  /// No description provided for @welcome4Title.
+  ///
+  /// In ar, this message translates to:
+  /// **'كلّ خبر بمصدره'**
+  String get welcome4Title;
+
+  /// No description provided for @welcome4Body.
+  ///
+  /// In ar, this message translates to:
+  /// **'تُعزى الأخبار إلى كتب الحديث والسيرة، وتُبيَّن درجتها: ثابت، أو رواية تاريخية، أو مختلف فيه. والمحتوى في مراجعة أولية، ولا يُعتمد قبل أن يعتمده عالم مختص. ويعمل التطبيق كلّه دون اتصال.'**
+  String get welcome4Body;
 }
 
 class _AppLocalizationsDelegate

@@ -1500,4 +1500,55 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get draftBadgePreliminary => 'Preliminary review — not yet approved';
+
+  @override
+  String get welcomeSkip => 'Skip';
+
+  @override
+  String get welcomeNext => 'Next';
+
+  @override
+  String get welcomeStart => 'Start';
+
+  @override
+  String welcomePageLabel(String current, String total) {
+    return 'Page $current of $total';
+  }
+
+  @override
+  String get welcome1Kicker => 'Welcome';
+
+  @override
+  String get welcome1Body =>
+      'The life of the Prophet ﷺ and the lives and stories of his Companions, told in order of time, every report attributed to its sources.';
+
+  @override
+  String get welcome2Kicker => 'The Seerah';
+
+  @override
+  String get welcome2Title => 'From Makkah to Madinah';
+
+  @override
+  String get welcome2Body =>
+      'The Seerah\'s chapters in order of time, with a timeline of events, an atlas of places and illustrations that bring the scenes closer.';
+
+  @override
+  String get welcome3Kicker => 'The Companions';
+
+  @override
+  String get welcome3Title => 'The lives of his Companions';
+
+  @override
+  String get welcome3Body =>
+      'The Ten promised Paradise in full biographies, many other Companions in short profiles, and stories from the Seerah to read in one sitting.';
+
+  @override
+  String get welcome4Kicker => 'The method';
+
+  @override
+  String get welcome4Title => 'Every report with its source';
+
+  @override
+  String get welcome4Body =>
+      'Reports are attributed to the books of hadith and Seerah, and their standing is shown: established, historical report or disputed. The content has had a preliminary review and is not final until a qualified scholar approves it. The whole app works offline.';
 }

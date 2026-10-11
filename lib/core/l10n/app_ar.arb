@@ -2093,5 +2093,21 @@
   "draftBadgePreliminary": "مراجعة أولية — لم يعتمدها مختص",
   "@draftBadgePreliminary": {
     "description": "Badge on items that had a preliminary review but no scholar approval."
-  }
+  },
+  "welcomeSkip": "تخطَّ",
+  "welcomeNext": "التالي",
+  "welcomeStart": "ابدأ",
+  "welcomePageLabel": "الصفحة {current} من {total}",
+  "@welcomePageLabel": {"placeholders": {"current": {"type": "String"}, "total": {"type": "String"}}},
+  "welcome1Kicker": "مرحبًا بك",
+  "welcome1Body": "سيرة النبي ﷺ وسِيَر أصحابه وقصصهم، مرويّةً على ترتيب الزمن، ومعزوّةً كلّها إلى مصادرها.",
+  "welcome2Kicker": "السيرة النبوية",
+  "welcome2Title": "من مكة إلى المدينة",
+  "welcome2Body": "فصول السيرة على ترتيب الزمن، مع خطّ زمني للأحداث، وأطلس للأماكن، ورسوم توضيحية تقرّب المشاهد.",
+  "welcome3Kicker": "الصحابة",
+  "welcome3Title": "سِيَر أصحابه وقصصهم",
+  "welcome3Body": "العشرة المبشّرون بالجنة بسير كاملة، ونخبة من الصحابة والصحابيات بملفات مختصرة، وقصص من السيرة تُقرأ في جلسة.",
+  "welcome4Kicker": "المنهج",
+  "welcome4Title": "كلّ خبر بمصدره",
+  "welcome4Body": "تُعزى الأخبار إلى كتب الحديث والسيرة، وتُبيَّن درجتها: ثابت، أو رواية تاريخية، أو مختلف فيه. والمحتوى في مراجعة أولية، ولا يُعتمد قبل أن يعتمده عالم مختص. ويعمل التطبيق كلّه دون اتصال."
 }

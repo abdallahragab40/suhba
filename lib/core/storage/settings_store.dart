@@ -26,11 +26,15 @@ abstract final class SettingsKeys {
   /// against (see `reconcileUserData`).
   static const reconciledContent = 'reconciledContent';
 
+  /// Set once the welcome screens have been seen (or skipped).
+  static const welcomeSeen = 'welcomeSeen';
+
   static const all = {
     themeMode,
     digitStyle,
     readingTextSize,
     reconciledContent,
+    welcomeSeen,
   };
 }
 

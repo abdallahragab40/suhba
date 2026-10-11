@@ -75,6 +75,8 @@ class SahabaColors extends ThemeExtension<SahabaColors> {
     surfaceAlt: Palette.greenAlt,
     onSurfaceDim: Palette.paperDimOnGreen,
     line: Palette.lineOnGreen,
+    draft: Palette.draftOnGreen,
+    draftSurface: Palette.draftWashOnGreen,
   );
 
   static SahabaColors of(BuildContext context) =>

@@ -1505,4 +1505,55 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get draftBadgePreliminary => 'مراجعة أولية — لم يعتمدها مختص';
+
+  @override
+  String get welcomeSkip => 'تخطَّ';
+
+  @override
+  String get welcomeNext => 'التالي';
+
+  @override
+  String get welcomeStart => 'ابدأ';
+
+  @override
+  String welcomePageLabel(String current, String total) {
+    return 'الصفحة $current من $total';
+  }
+
+  @override
+  String get welcome1Kicker => 'مرحبًا بك';
+
+  @override
+  String get welcome1Body =>
+      'سيرة النبي ﷺ وسِيَر أصحابه وقصصهم، مرويّةً على ترتيب الزمن، ومعزوّةً كلّها إلى مصادرها.';
+
+  @override
+  String get welcome2Kicker => 'السيرة النبوية';
+
+  @override
+  String get welcome2Title => 'من مكة إلى المدينة';
+
+  @override
+  String get welcome2Body =>
+      'فصول السيرة على ترتيب الزمن، مع خطّ زمني للأحداث، وأطلس للأماكن، ورسوم توضيحية تقرّب المشاهد.';
+
+  @override
+  String get welcome3Kicker => 'الصحابة';
+
+  @override
+  String get welcome3Title => 'سِيَر أصحابه وقصصهم';
+
+  @override
+  String get welcome3Body =>
+      'العشرة المبشّرون بالجنة بسير كاملة، ونخبة من الصحابة والصحابيات بملفات مختصرة، وقصص من السيرة تُقرأ في جلسة.';
+
+  @override
+  String get welcome4Kicker => 'المنهج';
+
+  @override
+  String get welcome4Title => 'كلّ خبر بمصدره';
+
+  @override
+  String get welcome4Body =>
+      'تُعزى الأخبار إلى كتب الحديث والسيرة، وتُبيَّن درجتها: ثابت، أو رواية تاريخية، أو مختلف فيه. والمحتوى في مراجعة أولية، ولا يُعتمد قبل أن يعتمده عالم مختص. ويعمل التطبيق كلّه دون اتصال.';
 }

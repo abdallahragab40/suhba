@@ -424,5 +424,20 @@
   "themeShortLight": "Light",
   "themeShortDark": "Dark",
   "aboutLicensesLink": "Open-source licences",
-  "draftBadgePreliminary": "Preliminary review — not yet approved"
+  "draftBadgePreliminary": "Preliminary review — not yet approved",
+  "welcomeSkip": "Skip",
+  "welcomeNext": "Next",
+  "welcomeStart": "Start",
+  "welcomePageLabel": "Page {current} of {total}",
+  "welcome1Kicker": "Welcome",
+  "welcome1Body": "The life of the Prophet ﷺ and the lives and stories of his Companions, told in order of time, every report attributed to its sources.",
+  "welcome2Kicker": "The Seerah",
+  "welcome2Title": "From Makkah to Madinah",
+  "welcome2Body": "The Seerah's chapters in order of time, with a timeline of events, an atlas of places and illustrations that bring the scenes closer.",
+  "welcome3Kicker": "The Companions",
+  "welcome3Title": "The lives of his Companions",
+  "welcome3Body": "The Ten promised Paradise in full biographies, many other Companions in short profiles, and stories from the Seerah to read in one sitting.",
+  "welcome4Kicker": "The method",
+  "welcome4Title": "Every report with its source",
+  "welcome4Body": "Reports are attributed to the books of hadith and Seerah, and their standing is shown: established, historical report or disputed. The content has had a preliminary review and is not final until a qualified scholar approves it. The whole app works offline."
 }
