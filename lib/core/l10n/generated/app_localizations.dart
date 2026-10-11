@@ -2503,6 +2503,120 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'من تطبيق {appName}'**
   String shareFromApp(String appName);
+
+  /// Settings: export saved items and positions to a file.
+  ///
+  /// In ar, this message translates to:
+  /// **'تصدير بيانات القراءة'**
+  String get settingsExport;
+
+  /// Settings: export subtitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'ملف بالمحفوظات ومواضع القراءة، تحفظه أو تنقله إلى جهاز آخر.'**
+  String get settingsExportSubtitle;
+
+  /// Settings: import a reading-data file.
+  ///
+  /// In ar, this message translates to:
+  /// **'استيراد بيانات القراءة'**
+  String get settingsImport;
+
+  /// Settings: import subtitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'يضيف ما في الملف إلى ما على هذا الجهاز، ولا يحذف شيئًا.'**
+  String get settingsImportSubtitle;
+
+  /// Share subject of the export file.
+  ///
+  /// In ar, this message translates to:
+  /// **'بيانات القراءة من {appName}'**
+  String exportSubject(String appName);
+
+  /// Import confirmation title.
+  ///
+  /// In ar, this message translates to:
+  /// **'استيراد بيانات القراءة'**
+  String get importConfirmTitle;
+
+  /// Import confirmation: what will change.
+  ///
+  /// In ar, this message translates to:
+  /// **'سيُضاف من المحفوظات: {items}، ومن مواضع القراءة: {texts}. ويبقى ما سواه على هذا الجهاز كما هو، ولا يُحذف شيء.'**
+  String importConfirmMessage(String items, String texts);
+
+  /// Import confirmation button.
+  ///
+  /// In ar, this message translates to:
+  /// **'استيراد'**
+  String get importConfirm;
+
+  /// Import: the file adds nothing.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا جديد في هذا الملف؛ كل ما فيه موجود على هذا الجهاز.'**
+  String get importNothingNew;
+
+  /// Import finished.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم الاستيراد.'**
+  String get importDone;
+
+  /// Import failed while writing.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذّر إكمال الاستيراد. ما أُضيف قبل الخطأ باقٍ، ولم يُحذف شيء.'**
+  String get importFailed;
+
+  /// Export failed.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذّر تصدير البيانات.'**
+  String get exportFailed;
+
+  /// Import refused: dialog title.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذّر استيراد الملف'**
+  String get importRefusedTitle;
+
+  /// Import refused: not JSON or too large.
+  ///
+  /// In ar, this message translates to:
+  /// **'هذا ليس ملف بيانات صالحًا، أو أنه أكبر مما يُقبل.'**
+  String get importRefusedNotJson;
+
+  /// Import refused: not an export.
+  ///
+  /// In ar, this message translates to:
+  /// **'هذا الملف ليس تصديرًا لبيانات القراءة من هذا التطبيق.'**
+  String get importRefusedNotAnExport;
+
+  /// Import refused: newer version.
+  ///
+  /// In ar, this message translates to:
+  /// **'صُدّر هذا الملف من إصدار أحدث من التطبيق؛ حدّث التطبيق ثم أعد المحاولة.'**
+  String get importRefusedNewer;
+
+  /// Import refused: an invalid record; {where} is a technical path.
+  ///
+  /// In ar, this message translates to:
+  /// **'في الملف سجل غير صالح ({where})، فلم يُستورد شيء.'**
+  String importRefusedInvalid(String where);
+
+  /// Dismisses an information dialog.
+  ///
+  /// In ar, this message translates to:
+  /// **'حسنًا'**
+  String get dialogOk;
+
+  /// Import: the chosen file could not be read.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذّر فتح الملف، ولم يتغير شيء.'**
+  String get importReadFailed;
 }
 
 class _AppLocalizationsDelegate

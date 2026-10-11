@@ -1415,4 +1415,75 @@ class AppLocalizationsEn extends AppLocalizations {
   String shareFromApp(String appName) {
     return 'From the $appName app';
   }
+
+  @override
+  String get settingsExport => 'Export reading data';
+
+  @override
+  String get settingsExportSubtitle =>
+      'A file with your saved items and reading positions, to keep or move to another device.';
+
+  @override
+  String get settingsImport => 'Import reading data';
+
+  @override
+  String get settingsImportSubtitle =>
+      'Adds what the file holds to what is on this device; nothing is deleted.';
+
+  @override
+  String exportSubject(String appName) {
+    return 'Reading data from $appName';
+  }
+
+  @override
+  String get importConfirmTitle => 'Import reading data';
+
+  @override
+  String importConfirmMessage(String items, String texts) {
+    return 'Saved items to add: $items. Reading positions to add or advance: $texts. Everything else on this device stays as it is; nothing is deleted.';
+  }
+
+  @override
+  String get importConfirm => 'Import';
+
+  @override
+  String get importNothingNew =>
+      'Nothing new in this file; everything in it is already on this device.';
+
+  @override
+  String get importDone => 'Imported.';
+
+  @override
+  String get importFailed =>
+      'The import could not be completed. Anything added before the error remains; nothing was deleted.';
+
+  @override
+  String get exportFailed => 'The data could not be exported.';
+
+  @override
+  String get importRefusedTitle => 'The file cannot be imported';
+
+  @override
+  String get importRefusedNotJson =>
+      'This is not a valid data file, or it is too large.';
+
+  @override
+  String get importRefusedNotAnExport =>
+      'This file is not a reading-data export from this app.';
+
+  @override
+  String get importRefusedNewer =>
+      'This file was exported by a newer version of the app; update the app and try again.';
+
+  @override
+  String importRefusedInvalid(String where) {
+    return 'The file has an invalid record ($where), so nothing was imported.';
+  }
+
+  @override
+  String get dialogOk => 'OK';
+
+  @override
+  String get importReadFailed =>
+      'The file could not be opened; nothing changed.';
 }

@@ -6,15 +6,7 @@ import 'package:siyar_sahaba/features/sources/presentation/citation_sheet.dart';
 import 'package:siyar_sahaba/features/sources/presentation/passage_share.dart';
 
 import '../../helpers/app_harness.dart';
-
-class _RecordingShare implements ShareService {
-  final shared = <(String, String?)>[];
-
-  @override
-  Future<void> shareText(String text, {String? subject, Rect? origin}) async {
-    shared.add((text, subject));
-  }
-}
+import '../../helpers/recording_share.dart';
 
 /// F19: sharing a passage with its sources.
 void main() {
@@ -69,7 +61,7 @@ void main() {
       ..devicePixelRatio = 1
       ..physicalSize = const Size(600, 2400);
     addTearDown(tester.view.reset);
-    final share = _RecordingShare();
+    final share = RecordingShare();
     await AppUnderTest(
       location: '/companions/abu-bakr/sections/abu-bakr.hijrah',
       overrides: [shareServiceProvider.overrideWithValue(share)],
@@ -81,7 +73,7 @@ void main() {
     await tester.tap(find.text('مشاركة المقطع مع مصادره'));
     await tester.pumpAndSettle();
 
-    final (text, subject) = share.shared.single;
+    final (text, subject) = share.texts.single;
     expect(subject, 'أبو بكر الصديق — صاحبه في الهجرة');
     final lines = text.split('\n');
     expect(lines.first, startsWith('«صحب النبيَّ ﷺ في هجرته'));

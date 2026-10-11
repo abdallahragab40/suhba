@@ -1979,5 +1979,99 @@
         "type": "String"
       }
     }
+  },
+  "settingsExport": "تصدير بيانات القراءة",
+  "@settingsExport": {
+    "description": "Settings: export saved items and positions to a file."
+  },
+  "settingsExportSubtitle": "ملف بالمحفوظات ومواضع القراءة، تحفظه أو تنقله إلى جهاز آخر.",
+  "@settingsExportSubtitle": {
+    "description": "Settings: export subtitle."
+  },
+  "settingsImport": "استيراد بيانات القراءة",
+  "@settingsImport": {
+    "description": "Settings: import a reading-data file."
+  },
+  "settingsImportSubtitle": "يضيف ما في الملف إلى ما على هذا الجهاز، ولا يحذف شيئًا.",
+  "@settingsImportSubtitle": {
+    "description": "Settings: import subtitle."
+  },
+  "exportSubject": "بيانات القراءة من {appName}",
+  "@exportSubject": {
+    "description": "Share subject of the export file.",
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "importConfirmTitle": "استيراد بيانات القراءة",
+  "@importConfirmTitle": {
+    "description": "Import confirmation title."
+  },
+  "importConfirmMessage": "سيُضاف من المحفوظات: {items}، ومن مواضع القراءة: {texts}. ويبقى ما سواه على هذا الجهاز كما هو، ولا يُحذف شيء.",
+  "@importConfirmMessage": {
+    "description": "Import confirmation: what will change.",
+    "placeholders": {
+      "items": {
+        "type": "String"
+      },
+      "texts": {
+        "type": "String"
+      }
+    }
+  },
+  "importConfirm": "استيراد",
+  "@importConfirm": {
+    "description": "Import confirmation button."
+  },
+  "importNothingNew": "لا جديد في هذا الملف؛ كل ما فيه موجود على هذا الجهاز.",
+  "@importNothingNew": {
+    "description": "Import: the file adds nothing."
+  },
+  "importDone": "تم الاستيراد.",
+  "@importDone": {
+    "description": "Import finished."
+  },
+  "importFailed": "تعذّر إكمال الاستيراد. ما أُضيف قبل الخطأ باقٍ، ولم يُحذف شيء.",
+  "@importFailed": {
+    "description": "Import failed while writing."
+  },
+  "exportFailed": "تعذّر تصدير البيانات.",
+  "@exportFailed": {
+    "description": "Export failed."
+  },
+  "importRefusedTitle": "تعذّر استيراد الملف",
+  "@importRefusedTitle": {
+    "description": "Import refused: dialog title."
+  },
+  "importRefusedNotJson": "هذا ليس ملف بيانات صالحًا، أو أنه أكبر مما يُقبل.",
+  "@importRefusedNotJson": {
+    "description": "Import refused: not JSON or too large."
+  },
+  "importRefusedNotAnExport": "هذا الملف ليس تصديرًا لبيانات القراءة من هذا التطبيق.",
+  "@importRefusedNotAnExport": {
+    "description": "Import refused: not an export."
+  },
+  "importRefusedNewer": "صُدّر هذا الملف من إصدار أحدث من التطبيق؛ حدّث التطبيق ثم أعد المحاولة.",
+  "@importRefusedNewer": {
+    "description": "Import refused: newer version."
+  },
+  "importRefusedInvalid": "في الملف سجل غير صالح ({where})، فلم يُستورد شيء.",
+  "@importRefusedInvalid": {
+    "description": "Import refused: an invalid record; {where} is a technical path.",
+    "placeholders": {
+      "where": {
+        "type": "String"
+      }
+    }
+  },
+  "dialogOk": "حسنًا",
+  "@dialogOk": {
+    "description": "Dismisses an information dialog."
+  },
+  "importReadFailed": "تعذّر فتح الملف، ولم يتغير شيء.",
+  "@importReadFailed": {
+    "description": "Import: the chosen file could not be read."
   }
 }

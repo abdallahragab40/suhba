@@ -1420,4 +1420,74 @@ class AppLocalizationsAr extends AppLocalizations {
   String shareFromApp(String appName) {
     return 'من تطبيق $appName';
   }
+
+  @override
+  String get settingsExport => 'تصدير بيانات القراءة';
+
+  @override
+  String get settingsExportSubtitle =>
+      'ملف بالمحفوظات ومواضع القراءة، تحفظه أو تنقله إلى جهاز آخر.';
+
+  @override
+  String get settingsImport => 'استيراد بيانات القراءة';
+
+  @override
+  String get settingsImportSubtitle =>
+      'يضيف ما في الملف إلى ما على هذا الجهاز، ولا يحذف شيئًا.';
+
+  @override
+  String exportSubject(String appName) {
+    return 'بيانات القراءة من $appName';
+  }
+
+  @override
+  String get importConfirmTitle => 'استيراد بيانات القراءة';
+
+  @override
+  String importConfirmMessage(String items, String texts) {
+    return 'سيُضاف من المحفوظات: $items، ومن مواضع القراءة: $texts. ويبقى ما سواه على هذا الجهاز كما هو، ولا يُحذف شيء.';
+  }
+
+  @override
+  String get importConfirm => 'استيراد';
+
+  @override
+  String get importNothingNew =>
+      'لا جديد في هذا الملف؛ كل ما فيه موجود على هذا الجهاز.';
+
+  @override
+  String get importDone => 'تم الاستيراد.';
+
+  @override
+  String get importFailed =>
+      'تعذّر إكمال الاستيراد. ما أُضيف قبل الخطأ باقٍ، ولم يُحذف شيء.';
+
+  @override
+  String get exportFailed => 'تعذّر تصدير البيانات.';
+
+  @override
+  String get importRefusedTitle => 'تعذّر استيراد الملف';
+
+  @override
+  String get importRefusedNotJson =>
+      'هذا ليس ملف بيانات صالحًا، أو أنه أكبر مما يُقبل.';
+
+  @override
+  String get importRefusedNotAnExport =>
+      'هذا الملف ليس تصديرًا لبيانات القراءة من هذا التطبيق.';
+
+  @override
+  String get importRefusedNewer =>
+      'صُدّر هذا الملف من إصدار أحدث من التطبيق؛ حدّث التطبيق ثم أعد المحاولة.';
+
+  @override
+  String importRefusedInvalid(String where) {
+    return 'في الملف سجل غير صالح ($where)، فلم يُستورد شيء.';
+  }
+
+  @override
+  String get dialogOk => 'حسنًا';
+
+  @override
+  String get importReadFailed => 'تعذّر فتح الملف، ولم يتغير شيء.';
 }
