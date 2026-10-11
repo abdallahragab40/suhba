@@ -1400,4 +1400,24 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get profileAllRelations => 'كل صلاته في مستكشف الصلات';
+
+  @override
+  String get citationShareAction => 'مشاركة المقطع مع مصادره';
+
+  @override
+  String get shareSourcesHeading => 'المصادر:';
+
+  @override
+  String shareReliability(String label) {
+    return 'درجة الخبر: $label';
+  }
+
+  @override
+  String get shareDraftNotice =>
+      'تنبيه: نص تجريبي لم يراجعه مختص بعد، والمصادر ومواضعها مبدئية.';
+
+  @override
+  String shareFromApp(String appName) {
+    return 'من تطبيق $appName';
+  }
 }

@@ -22,6 +22,7 @@ import '../../helpers/specimen_blocks.dart';
 
 void main() {
   late List<(List<Citation>, Reliability?)> opened;
+  late List<String?> passages;
 
   Future<void> pump(
     WidgetTester tester, {
@@ -31,6 +32,7 @@ void main() {
     List<Override> overrides = const [],
   }) async {
     opened = [];
+    passages = [];
     tester.view
       ..devicePixelRatio = 1
       ..physicalSize = const Size(500, 2400);
@@ -52,7 +54,10 @@ void main() {
                 blocks: blocks ?? specimenBlocks,
                 provisional: provisional,
                 textSize: textSize,
-                onCitations: (c, r) => opened.add((c, r)),
+                onCitations: (c, r, {passage}) {
+                  opened.add((c, r));
+                  passages.add(passage);
+                },
               ),
             ),
           ),
@@ -77,6 +82,16 @@ void main() {
     await tester.tap(find.byType(CitationMarker));
     expect(opened.single.$1, hasLength(2));
     expect(opened.single.$2, Reliability.established);
+    // The claim's own text goes with it, for sharing.
+    expect(passages.single, 'فقرة ثابتة بلا شارة ظاهرة.');
+  });
+
+  testWidgets('only complete wording is offered for sharing', (tester) async {
+    await pump(tester, blocks: [specimenBlocks[3], specimenBlocks[4]]);
+    await tester.tap(find.byType(CitationMarker).first);
+    await tester.tap(find.byType(CitationMarker).last);
+    // A pending hadith shares nothing, not even its summary.
+    expect(passages, [null, 'نص الرواية']);
   });
 
   testWidgets('a Qur\'an quote is headed by its reference', (tester) async {
@@ -113,6 +128,7 @@ void main() {
     expect(find.text('القول الثاني.'), findsOneWidget);
     await tester.tap(find.byType(CitationMarker).last);
     expect(opened.single.$2, Reliability.disputed);
+    expect(passages.single, 'اختُلف في هذه المسألة.\nالقول الثاني.');
   });
 
   testWidgets('a lesson is a labelled callout', (tester) async {

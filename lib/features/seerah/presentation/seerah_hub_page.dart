@@ -25,6 +25,7 @@ import 'package:siyar_sahaba/features/reading_progress/presentation/passage_cont
 import 'package:siyar_sahaba/features/reading_progress/presentation/progress_providers.dart';
 import 'package:siyar_sahaba/features/settings/presentation/reading_settings.dart';
 import 'package:siyar_sahaba/features/sources/presentation/citation_sheet.dart';
+import 'package:siyar_sahaba/features/sources/presentation/passage_share.dart';
 import 'package:siyar_sahaba/shared/content/domain/content_block.dart';
 import 'package:siyar_sahaba/shared/content/domain/content_target.dart';
 import 'package:siyar_sahaba/shared/content/domain/review.dart';
@@ -152,11 +153,14 @@ class _Hub extends ConsumerWidget {
               blocks: s.introduction.skip(1).toList(),
               provisional: !s.review.isApproved,
               textSize: ref.watch(readingTextSizeProvider),
-              onCitations: (c, r) => showCitationSheet(
+              onCitations: (c, r, {passage}) => showCitationSheet(
                 context,
                 citations: c,
                 reliability: r,
                 provisional: !s.review.isApproved,
+                share: passage == null
+                    ? null
+                    : PassageShare(text: passage, origin: s.title.of(context)),
               ),
             ),
             header(

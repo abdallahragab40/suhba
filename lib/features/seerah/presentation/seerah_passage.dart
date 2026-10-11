@@ -12,6 +12,7 @@ import 'package:siyar_sahaba/features/reading_progress/presentation/passage_cont
 import 'package:siyar_sahaba/features/reading_progress/presentation/progress_providers.dart';
 import 'package:siyar_sahaba/features/settings/presentation/reading_settings.dart';
 import 'package:siyar_sahaba/features/sources/presentation/citation_sheet.dart';
+import 'package:siyar_sahaba/features/sources/presentation/passage_share.dart';
 import 'package:siyar_sahaba/shared/content/domain/content_block.dart';
 import 'package:siyar_sahaba/shared/content/domain/content_target.dart';
 import 'package:siyar_sahaba/shared/content/domain/review.dart';
@@ -127,11 +128,14 @@ class SeerahPassageReader extends ConsumerWidget {
           blocks: blocks,
           provisional: provisional,
           textSize: ref.watch(readingTextSizeProvider),
-          onCitations: (cites, reliability) => showCitationSheet(
+          onCitations: (cites, reliability, {passage}) => showCitationSheet(
             context,
             citations: cites,
             reliability: reliability,
             provisional: provisional,
+            share: passage == null
+                ? null
+                : PassageShare(text: passage, origin: '$appBarTitle — $title'),
           ),
         ),
         const PassageCompletion(),

@@ -17,9 +17,15 @@ import 'package:siyar_sahaba/shared/content/presentation/reader_scaffold.dart';
 import 'package:siyar_sahaba/shared/content/providers.dart';
 import 'package:siyar_sahaba/shared/visuals/presentation/infographic_view.dart';
 
-/// Opens the sources of one claim.
+/// Opens the sources of one claim. [passage] is the claim's own text when
+/// it can be shared with them: paragraphs, dispute opinions, and quotes
+/// whose wording is complete (never a stand-in summary).
 typedef OpenCitations =
-    void Function(List<Citation> citations, Reliability? reliability);
+    void Function(
+      List<Citation> citations,
+      Reliability? reliability, {
+      String? passage,
+    });
 
 /// Renders biography, story and Seerah blocks for long-form reading.
 ///
@@ -79,6 +85,7 @@ class ReadingBody extends StatelessWidget {
           citations: citations,
           provisional: provisional,
           showBadge: reliability != Reliability.established,
+          passage: text.of(context),
           onCitations: onCitations,
         ),
       ],
@@ -111,6 +118,7 @@ class ReadingBody extends StatelessWidget {
           citations: citations,
           provisional: provisional,
           showBadge: true,
+          passage: textStatus == TextStatus.complete ? text?.of(context) : null,
           onCitations: onCitations,
         ),
         grading: citations.map((c) => c.grading).nonNulls.firstOrNull,
@@ -133,6 +141,7 @@ class ReadingBody extends StatelessWidget {
           citations: citations,
           provisional: provisional,
           showBadge: true,
+          passage: textStatus == TextStatus.complete ? text?.of(context) : null,
           onCitations: onCitations,
         ),
       ),
@@ -169,6 +178,7 @@ class _ClaimFooter extends StatelessWidget {
     required this.provisional,
     required this.showBadge,
     required this.onCitations,
+    this.passage,
   });
 
   final Reliability reliability;
@@ -176,6 +186,7 @@ class _ClaimFooter extends StatelessWidget {
   final bool provisional;
   final bool showBadge;
   final OpenCitations onCitations;
+  final String? passage;
 
   @override
   Widget build(BuildContext context) {
@@ -189,7 +200,8 @@ class _ClaimFooter extends StatelessWidget {
         if (citations.isNotEmpty)
           CitationMarker(
             count: citations.length,
-            onPressed: () => onCitations(citations, reliability),
+            onPressed: () =>
+                onCitations(citations, reliability, passage: passage),
           ),
       ],
     );
@@ -463,6 +475,9 @@ class _DisputeNote extends StatelessWidget {
                             onPressed: () => onCitations(
                               opinions[i].citations,
                               Reliability.disputed,
+                              passage:
+                                  '$intro\n'
+                                  '${opinions[i].text.of(context)}',
                             ),
                           ),
                       ],

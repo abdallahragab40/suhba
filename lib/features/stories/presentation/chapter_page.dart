@@ -20,6 +20,7 @@ import 'package:siyar_sahaba/features/reading_progress/presentation/passage_cont
 import 'package:siyar_sahaba/features/reading_progress/presentation/progress_providers.dart';
 import 'package:siyar_sahaba/features/settings/presentation/reading_settings.dart';
 import 'package:siyar_sahaba/features/sources/presentation/citation_sheet.dart';
+import 'package:siyar_sahaba/features/sources/presentation/passage_share.dart';
 import 'package:siyar_sahaba/features/stories/presentation/story_page.dart';
 import 'package:siyar_sahaba/shared/content/domain/content_block.dart';
 import 'package:siyar_sahaba/shared/content/domain/story.dart';
@@ -156,11 +157,18 @@ class _Chapter extends ConsumerWidget {
           blocks: chapter.blocks,
           provisional: provisional,
           textSize: ref.watch(readingTextSizeProvider),
-          onCitations: (cites, reliability) => showCitationSheet(
+          onCitations: (cites, reliability, {passage}) => showCitationSheet(
             context,
             citations: cites,
             reliability: reliability,
             provisional: provisional,
+            share: passage == null
+                ? null
+                : PassageShare(
+                    text: passage,
+                    origin:
+                        '${s.title.of(context)} — ${chapter.title.of(context)}',
+                  ),
           ),
         ),
         const PassageCompletion(),

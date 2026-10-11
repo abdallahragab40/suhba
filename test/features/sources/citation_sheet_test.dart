@@ -7,6 +7,7 @@ import 'package:siyar_sahaba/core/design_system/widgets/reliability_badge.dart';
 import 'package:siyar_sahaba/core/domain/quran_ref.dart';
 import 'package:siyar_sahaba/core/domain/reliability.dart';
 import 'package:siyar_sahaba/features/sources/presentation/citation_sheet.dart';
+import 'package:siyar_sahaba/features/sources/presentation/passage_share.dart';
 import 'package:siyar_sahaba/shared/content/domain/citation.dart';
 import 'package:siyar_sahaba/shared/content/domain/localized_text.dart';
 import 'package:siyar_sahaba/shared/content/providers.dart';
@@ -20,6 +21,7 @@ void main() {
     List<Citation> citations, {
     bool provisional = false,
     Reliability? reliability,
+    PassageShare? share,
   }) async {
     await tester.pumpWidget(
       ProviderScope(
@@ -36,6 +38,7 @@ void main() {
               citations: citations,
               provisional: provisional,
               reliability: reliability,
+              share: share,
             ),
           ),
         ),
@@ -121,5 +124,30 @@ void main() {
       Citation(sourceId: 'siyar', locatorStatus: LocatorStatus.pending),
     ]);
     expect(find.textContaining('مسودة'), findsNothing);
+  });
+
+  testWidgets('the share action meets the accessibility guidelines', (
+    tester,
+  ) async {
+    final handle = tester.ensureSemantics();
+    await pumpSheet(
+      tester,
+      [
+        const Citation(
+          sourceId: 'bukhari',
+          locatorStatus: LocatorStatus.complete,
+          hadithNumber: '3905',
+        ),
+      ],
+      provisional: true,
+      reliability: Reliability.established,
+      share: const PassageShare(text: 'نص', origin: 'أصل'),
+    );
+    expect(find.text('مشاركة المقطع مع مصادره'), findsOneWidget);
+    await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
+    await expectLater(tester, meetsGuideline(iOSTapTargetGuideline));
+    await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
+    await expectLater(tester, meetsGuideline(textContrastGuideline));
+    handle.dispose();
   });
 }

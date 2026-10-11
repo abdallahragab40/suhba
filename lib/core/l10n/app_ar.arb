@@ -1949,5 +1949,35 @@
   "profileAllRelations": "كل صلاته في مستكشف الصلات",
   "@profileAllRelations": {
     "description": "Profile: link to the relationship explorer filtered to this companion."
+  },
+  "citationShareAction": "مشاركة المقطع مع مصادره",
+  "@citationShareAction": {
+    "description": "Citation sheet: shares the passage as text with its sources."
+  },
+  "shareSourcesHeading": "المصادر:",
+  "@shareSourcesHeading": {
+    "description": "Shared text: heading of the source list."
+  },
+  "shareReliability": "درجة الخبر: {label}",
+  "@shareReliability": {
+    "description": "Shared text: the claim's reliability.",
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "shareDraftNotice": "تنبيه: نص تجريبي لم يراجعه مختص بعد، والمصادر ومواضعها مبدئية.",
+  "@shareDraftNotice": {
+    "description": "Shared text: draft warning; always included for unreviewed content."
+  },
+  "shareFromApp": "من تطبيق {appName}",
+  "@shareFromApp": {
+    "description": "Shared text: last line.",
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
   }
 }

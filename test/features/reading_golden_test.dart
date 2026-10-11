@@ -46,7 +46,7 @@ void main() {
                 child: ReadingBody(
                   blocks: specimenBlocks,
                   provisional: true,
-                  onCitations: (_, _) {},
+                  onCitations: (_, _, {passage}) {},
                 ),
               ),
             ),

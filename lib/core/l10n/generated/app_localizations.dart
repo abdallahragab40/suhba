@@ -2473,6 +2473,36 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'كل صلاته في مستكشف الصلات'**
   String get profileAllRelations;
+
+  /// Citation sheet: shares the passage as text with its sources.
+  ///
+  /// In ar, this message translates to:
+  /// **'مشاركة المقطع مع مصادره'**
+  String get citationShareAction;
+
+  /// Shared text: heading of the source list.
+  ///
+  /// In ar, this message translates to:
+  /// **'المصادر:'**
+  String get shareSourcesHeading;
+
+  /// Shared text: the claim's reliability.
+  ///
+  /// In ar, this message translates to:
+  /// **'درجة الخبر: {label}'**
+  String shareReliability(String label);
+
+  /// Shared text: draft warning; always included for unreviewed content.
+  ///
+  /// In ar, this message translates to:
+  /// **'تنبيه: نص تجريبي لم يراجعه مختص بعد، والمصادر ومواضعها مبدئية.'**
+  String get shareDraftNotice;
+
+  /// Shared text: last line.
+  ///
+  /// In ar, this message translates to:
+  /// **'من تطبيق {appName}'**
+  String shareFromApp(String appName);
 }
 
 class _AppLocalizationsDelegate

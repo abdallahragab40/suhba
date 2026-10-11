@@ -1395,4 +1395,24 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get profileAllRelations => 'All relations in the explorer';
+
+  @override
+  String get citationShareAction => 'Share this passage with its sources';
+
+  @override
+  String get shareSourcesHeading => 'Sources:';
+
+  @override
+  String shareReliability(String label) {
+    return 'Reliability: $label';
+  }
+
+  @override
+  String get shareDraftNotice =>
+      'Note: draft text not yet reviewed by a specialist; sources and locations are provisional.';
+
+  @override
+  String shareFromApp(String appName) {
+    return 'From the $appName app';
+  }
 }

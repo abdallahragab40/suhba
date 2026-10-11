@@ -395,5 +395,10 @@
   "exploreRelationsKicker": "Relations",
   "exploreRelationsTitle": "Lineage, marriage and companionship",
   "exploreRelationsBody": "Browse how the people of the Seerah are related, grouped by kind, each relation with its source.",
-  "profileAllRelations": "All relations in the explorer"
+  "profileAllRelations": "All relations in the explorer",
+  "citationShareAction": "Share this passage with its sources",
+  "shareSourcesHeading": "Sources:",
+  "shareReliability": "Reliability: {label}",
+  "shareDraftNotice": "Note: draft text not yet reviewed by a specialist; sources and locations are provisional.",
+  "shareFromApp": "From the {appName} app"
 }
