@@ -148,8 +148,19 @@ void paintBrandMark(
   )..layout();
   final probe = word(100);
   final name = word(100 * 56 / probe.width);
-  // Amiri's line box has room above the letters; place by eye.
-  name.paint(canvas, Offset(50 - name.width / 2, 46 - name.height / 2));
+  // Centred on the book: the letters' ink sits over the spine and rests
+  // just above the pages. Measured in Amiri Bold: the ink's centre is 0.85
+  // units left of the line box's, and its foot is at 0.87 of the box.
+  const inkCentreShift = 0.85;
+  const inkFoot = 0.87; // the ink's lowest point, as a share of the box
+  const rest = 69.0; // where the ink's foot rests, above the pages
+  name.paint(
+    canvas,
+    Offset(
+      50 - name.width / 2 + inkCentreShift,
+      rest - name.height * inkFoot,
+    ),
+  );
   probe.dispose();
   name.dispose();
 

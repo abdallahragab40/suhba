@@ -20,6 +20,7 @@ abstract final class AppTheme {
       surfaceContainerHighest: Palette.greenHighest,
       onSurfaceVariant: Palette.paperDimOnGreen,
       onPrimary: Palette.green,
+      secondaryContainer: Palette.greenHighest,
       outline: Palette.outlineOnGreen,
       outlineVariant: Palette.lineOnGreen,
     ),
@@ -52,7 +53,8 @@ abstract final class AppTheme {
     surfaceContainerHighest: Palette.paperHighest,
     outline: Palette.outlineOnPaper,
     outlineVariant: Palette.lineOnPaper,
-    inverseSurface: Palette.ink,
+    // Snack bars: paper text and a gold action on Madinah green.
+    inverseSurface: Palette.green,
     onInverseSurface: Palette.paper,
     inversePrimary: Palette.goldOnInk,
     shadow: Palette.ink,
@@ -62,7 +64,9 @@ abstract final class AppTheme {
 
   static const _darkScheme = ColorScheme(
     brightness: Brightness.dark,
-    primary: Palette.paper,
+    // Gold is the dark-mode accent: it belongs with the green-black and
+    // stays distinct from the green of the "established" label.
+    primary: Palette.goldOnInk,
     onPrimary: Palette.ink,
     primaryContainer: Palette.inkHighest,
     onPrimaryContainer: Palette.paper,

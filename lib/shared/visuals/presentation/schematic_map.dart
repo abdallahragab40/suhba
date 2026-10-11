@@ -177,7 +177,7 @@ class _SchematicMapState extends State<SchematicMap> {
                         vertical: AppSpacing.xxs,
                       ),
                       decoration: BoxDecoration(
-                        color: Palette.ink.withValues(alpha: 0.7),
+                        color: Palette.green.withValues(alpha: 0.7),
                         borderRadius: const BorderRadius.all(AppRadii.sm),
                       ),
                       child: Row(
@@ -418,10 +418,10 @@ class _MapPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final rect = Offset.zero & size;
-    canvas.drawRect(rect, Paint()..color = Palette.inkAlt);
+    canvas.drawRect(rect, Paint()..color = Palette.greenAlt);
     // A faint graticule, so the map reads as a map.
     final grid = Paint()
-      ..color = Palette.lineOnInk
+      ..color = Palette.lineOnGreen
       ..strokeWidth = 1;
     for (var x = 0.0; x < size.width; x += 48) {
       canvas.drawLine(Offset(x, 0), Offset(x, size.height), grid);
@@ -486,7 +486,7 @@ class _MapPainter extends CustomPainter {
       );
       canvas.drawRRect(
         bg,
-        Paint()..color = Palette.ink.withValues(alpha: 0.75),
+        Paint()..color = Palette.green.withValues(alpha: 0.75),
       );
       painter.paint(canvas, at);
     }
