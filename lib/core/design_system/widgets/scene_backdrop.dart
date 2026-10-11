@@ -20,7 +20,8 @@ enum SceneKind {
   sea,
 }
 
-/// An illustrative landscape on ink, drawn in gold and ink tones.
+/// An illustrative landscape on Madinah green, drawn in gold and green
+/// tones.
 ///
 /// Decorative only (no semantics); its meaning is always carried by the
 /// text laid over or beside it. It scales to any size and is drawn at most
@@ -62,7 +63,7 @@ class _ScenePainter extends CustomPainter {
         ..shader = const LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [Palette.inkLowest, Palette.inkHigh],
+          colors: [Palette.greenLowest, Palette.greenHigh],
         ).createShader(rect),
     );
     if (glow) {
@@ -205,7 +206,11 @@ class _ScenePainter extends CustomPainter {
         ..lineTo(size.width, points.last.dy)
         ..lineTo(size.width, size.height)
         ..close();
-      final colour = Color.lerp(Palette.inkHighest, Palette.inkLowest, depth)!;
+      final colour = Color.lerp(
+        Palette.greenHighest,
+        Palette.greenLowest,
+        depth,
+      )!;
       canvas.drawPath(path, Paint()..color = colour);
       // A thin gold rim light on each crest.
       canvas.drawPath(
@@ -220,7 +225,7 @@ class _ScenePainter extends CustomPainter {
 
   void _palm(Canvas canvas, Offset foot, double height) {
     final trunk = Paint()
-      ..color = Palette.inkLowest
+      ..color = Palette.greenLowest
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round
       ..strokeWidth = math.max(2, height * 0.05);
@@ -236,7 +241,7 @@ class _ScenePainter extends CustomPainter {
         ),
       trunk,
     );
-    final frond = Paint()..color = Palette.inkLowest;
+    final frond = Paint()..color = Palette.greenLowest;
     for (var i = 0; i < 7; i++) {
       final angle = -math.pi / 2 + (i - 3) * 0.48;
       final tip =
@@ -257,7 +262,7 @@ class _ScenePainter extends CustomPainter {
     final horizon = size.height * 0.62;
     canvas.drawRect(
       Rect.fromLTWH(0, horizon, size.width, size.height - horizon),
-      Paint()..color = Palette.inkAlt,
+      Paint()..color = Palette.greenAlt,
     );
     final line = Paint()
       ..style = PaintingStyle.stroke

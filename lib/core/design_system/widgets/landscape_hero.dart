@@ -33,12 +33,12 @@ class LandscapeHero extends StatelessWidget {
       position: DecorationPosition.foreground,
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(AppRadii.lg),
-        border: Border.all(color: Palette.lineOnInk),
+        border: Border.all(color: Palette.lineOnGreen),
       ),
       child: ClipRRect(
         borderRadius: const BorderRadius.all(AppRadii.lg),
         child: ColoredBox(
-          color: Palette.ink,
+          color: Palette.green,
           child: ConstrainedBox(
             constraints: BoxConstraints(minHeight: minHeight),
             child: Stack(
@@ -51,7 +51,7 @@ class LandscapeHero extends StatelessWidget {
                   ),
                   Positioned.fill(
                     child: ColoredBox(
-                      color: Palette.ink.withValues(alpha: 0.55),
+                      color: Palette.green.withValues(alpha: 0.55),
                     ),
                   ),
                 ] else
@@ -68,15 +68,15 @@ class LandscapeHero extends StatelessWidget {
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [
-                          Palette.ink.withValues(alpha: 0),
-                          Palette.ink.withValues(alpha: 0.85),
+                          Palette.green.withValues(alpha: 0),
+                          Palette.green.withValues(alpha: 0.85),
                         ],
                       ),
                     ),
                   ),
                 ),
                 Theme(
-                  data: AppTheme.dark,
+                  data: AppTheme.feature,
                   child: Builder(
                     builder: (context) => DefaultTextStyle.merge(
                       style: TextStyle(

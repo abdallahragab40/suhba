@@ -386,7 +386,13 @@ class _Rules {
       tree.companionById,
       ContentKind.companion,
     );
-    _refs(item, r'$.visualIds', s.visualIds, tree.visualById, ContentKind.visual);
+    _refs(
+      item,
+      r'$.visualIds',
+      s.visualIds,
+      tree.visualById,
+      ContentKind.visual,
+    );
     _refs(
       item,
       r'$.references',
@@ -447,7 +453,13 @@ class _Rules {
       tree.companionById,
       ContentKind.companion,
     );
-    _refs(item, r'$.visualIds', c.visualIds, tree.visualById, ContentKind.visual);
+    _refs(
+      item,
+      r'$.visualIds',
+      c.visualIds,
+      tree.visualById,
+      ContentKind.visual,
+    );
     _date(item, r'$.date', c.date);
     for (var b = 0; b < c.blocks.length; b++) {
       _block(item, '\$.blocks[$b]', c.blocks[b]);
@@ -489,7 +501,13 @@ class _Rules {
         'A passage needs at least one work-level reference.',
       );
     }
-    _refs(item, r'$.references', references, tree.sourceById, ContentKind.source);
+    _refs(
+      item,
+      r'$.references',
+      references,
+      tree.sourceById,
+      ContentKind.source,
+    );
   }
 
   // ── V13: visuals ────────────────────────────────────────────────────────
@@ -533,7 +551,13 @@ class _Rules {
     _refs(item, r'$.eventIds', v.eventIds, tree.eventById, ContentKind.event);
     _refs(item, r'$.placeIds', v.placeIds, tree.placeById, ContentKind.place);
     if (v.companionId case final id?) {
-      _ref(item, r'$.companionId', id, tree.companionById, ContentKind.companion);
+      _ref(
+        item,
+        r'$.companionId',
+        id,
+        tree.companionById,
+        ContentKind.companion,
+      );
       final timeline = tree.companionById[id]?.dto.timeline;
       if (timeline != null && timeline.isEmpty) {
         sink.error(
@@ -1044,12 +1068,10 @@ class _Rules {
   Iterable<String> _visualRefs(Item<Object> item) {
     final dto = item.dto;
     final blocks = switch (dto) {
-      CompanionDto(:final sections) => [
-        for (final s in sections) ...s.blocks,
-      ],
+      CompanionDto(:final sections) => [for (final s in sections) ...s.blocks],
       StoryDto(:final chapters) => [for (final c in chapters) ...c.blocks],
-      SeerahChapterDto(:final blocks) || SeerahTopicDto(:final blocks) =>
-        blocks,
+      SeerahChapterDto(:final blocks) ||
+      SeerahTopicDto(:final blocks) => blocks,
       SeerahDto(:final introduction) => introduction,
       _ => const <ContentBlockDto>[],
     };

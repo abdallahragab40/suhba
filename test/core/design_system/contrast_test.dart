@@ -16,6 +16,7 @@ void main() {
   for (final (name, theme) in [
     ('light', AppTheme.light),
     ('dark', AppTheme.dark),
+    ('feature', AppTheme.feature),
   ]) {
     group('$name theme', () {
       final s = theme.colorScheme;

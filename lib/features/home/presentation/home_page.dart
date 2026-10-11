@@ -272,10 +272,10 @@ class _InkEpisode extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     return Theme(
-      data: AppTheme.dark,
+      data: AppTheme.feature,
       child: Builder(
         builder: (context) => Material(
-          color: Palette.ink,
+          color: Palette.green,
           child: Padding(
             padding: const EdgeInsets.all(AppSpacing.gutter),
             child: Center(
@@ -410,14 +410,14 @@ class _CategoryBand extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     return Theme(
-      data: AppTheme.dark,
+      data: AppTheme.feature,
       child: Builder(
         builder: (context) {
           final format = DisplayFormatter.of(context);
           final colors = SahabaColors.of(context);
           final textTheme = Theme.of(context).textTheme;
           return Material(
-            color: Palette.ink,
+            color: Palette.green,
             child: Padding(
               padding: const EdgeInsets.all(AppSpacing.gutter),
               child: Column(

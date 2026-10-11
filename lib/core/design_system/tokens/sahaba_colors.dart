@@ -70,6 +70,13 @@ class SahabaColors extends ThemeExtension<SahabaColors> {
     draftSurface: Palette.draftWashOnInk,
   );
 
+  /// The feature sections: dark text roles on Madinah green.
+  static final feature = dark.copyWith(
+    surfaceAlt: Palette.greenAlt,
+    onSurfaceDim: Palette.paperDimOnGreen,
+    line: Palette.lineOnGreen,
+  );
+
   static SahabaColors of(BuildContext context) =>
       Theme.of(context).extension<SahabaColors>()!;
 

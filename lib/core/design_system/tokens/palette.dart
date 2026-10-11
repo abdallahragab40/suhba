@@ -38,6 +38,21 @@ abstract final class Palette {
   static const goldWashOnInk = Color(0xFF3A2E12);
   static const goldDeep = Color(0xFF4A3608);
 
+  // Madinah green: the brand colour. [green] is the ground of the icon and
+  // of the app's feature sections (the Seerah hero, the night scenes);
+  // the light theme's primary actions use it on paper. Its steps mirror
+  // the ink surfaces, lightest last.
+  static const greenLowest = Color(0xFF07211A);
+  static const green = Color(0xFF0E3A2C);
+  static const greenLow = Color(0xFF113F31);
+  static const greenAlt = Color(0xFF154736);
+  static const greenHigh = Color(0xFF1A513F);
+  static const greenHighest = Color(0xFF205B48);
+  static const greenWash = Color(0xFFDDE8E1);
+  static const lineOnGreen = Color(0xFF2D5E4D);
+  static const paperDimOnGreen = Color(0xFFB4C3BB);
+  static const outlineOnGreen = Color(0xFF7F988D);
+
   // Reliability and review states.
   static const establishedOnPaper = Color(0xFF265C44);
   static const establishedOnInk = Color(0xFF7BC4A0);

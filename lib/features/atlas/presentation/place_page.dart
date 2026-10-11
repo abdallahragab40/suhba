@@ -101,7 +101,7 @@ class _Place extends ConsumerWidget {
       padding: EdgeInsets.zero,
       children: [
         Theme(
-          data: AppTheme.dark,
+          data: AppTheme.feature,
           child: SizedBox(
             height: 220,
             child: Stack(

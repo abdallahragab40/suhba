@@ -25,27 +25,29 @@ enum BrandMarkLayout {
 /// The name صحبة within a pointed arch, above an open book: a doorway
 /// into the Seerah and the lives of the Companions, read from its sources.
 /// The arch carries the eight-pointed star (khatam) of the app's lattice
-/// at its crown. Only the app's ink and gold, with no figurative imagery
-/// (D5); the gold deepens slightly towards the foot, and the ink glows
-/// faintly behind the name. The monochrome (themed) icon is flat, in one
+/// at its crown. Gold on the app's Madinah green, with no figurative
+/// imagery (D5); the gold deepens slightly towards the foot, and the green
+/// glows faintly behind the name. The monochrome (themed) icon is flat, in one
 /// colour, so Android can tint it.
 void paintBrandMark(
   Canvas canvas,
   Size size,
   BrandMarkLayout layout, {
   String fontFamily = AppFonts.amiri,
+  Color groundColor = Palette.green,
+  Color markColor = Palette.goldOnInk,
 }) {
   final s = size.shortestSide;
   final centre = size.center(Offset.zero);
   final flat = layout == BrandMarkLayout.monochrome;
-  final gold = flat ? const Color(0xFFFFFFFF) : Palette.goldOnInk;
+  final gold = flat ? const Color(0xFFFFFFFF) : markColor;
 
   // The ink ground, lit faintly from behind the name.
   Paint ground(Rect bounds) => Paint()
     ..shader = RadialGradient(
       center: const Alignment(0, -0.15),
       radius: 0.75,
-      colors: [Color.lerp(Palette.ink, Palette.goldOnInk, 0.09)!, Palette.ink],
+      colors: [Color.lerp(groundColor, markColor, 0.09)!, groundColor],
     ).createShader(bounds);
 
   switch (layout) {

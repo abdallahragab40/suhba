@@ -260,7 +260,7 @@ class SeerahOpening extends ConsumerWidget {
     };
 
     return Theme(
-      data: AppTheme.dark,
+      data: AppTheme.feature,
       child: Builder(
         builder: (context) {
           final textTheme = Theme.of(context).textTheme;
@@ -575,10 +575,10 @@ class _InkFeature extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     return Theme(
-      data: AppTheme.dark,
+      data: AppTheme.feature,
       child: Builder(
         builder: (context) => Material(
-          color: Palette.ink,
+          color: Palette.green,
           child: Padding(
             padding: const EdgeInsets.all(AppSpacing.gutter),
             child: Center(

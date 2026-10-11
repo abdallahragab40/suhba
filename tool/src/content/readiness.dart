@@ -141,7 +141,9 @@ class ReadinessReport {
     }
     b
       ..writeln('## Items\n')
-      ..writeln('| Item | Approval | Pending checks | Coverage | Words | Gaps |')
+      ..writeln(
+        '| Item | Approval | Pending checks | Coverage | Words | Gaps |',
+      )
       ..writeln('|---|---|---|---|---|---|');
     for (final i in items) {
       b.writeln(
@@ -197,8 +199,8 @@ ReadinessReport contentReadiness(
     StoryDto(:final chapters) => wordsOf([
       for (final c in chapters) ...c.blocks,
     ]),
-    SeerahChapterDto(:final blocks) || SeerahTopicDto(:final blocks) =>
-      wordsOf(blocks),
+    SeerahChapterDto(:final blocks) ||
+    SeerahTopicDto(:final blocks) => wordsOf(blocks),
     _ => null,
   };
 
@@ -414,7 +416,11 @@ ReadinessReport contentReadiness(
 /// The records a visual's marks resolve to, as item keys.
 List<String> _visualDependencies(ContentTree tree, VisualDto v) => [
   for (final id in v.eventIds) 'event.$id',
-  for (final id in {...v.placeIds, ?v.placeId, ...v.steps.map((s) => s.placeId).nonNulls})
+  for (final id in {
+    ...v.placeIds,
+    ?v.placeId,
+    ...v.steps.map((s) => s.placeId).nonNulls,
+  })
     'place.$id',
   if (v.companionId case final id?) 'companion.$id',
   if (v.type == InfographicType.relationships)

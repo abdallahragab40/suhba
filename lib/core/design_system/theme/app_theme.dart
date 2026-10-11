@@ -5,17 +5,33 @@ import 'package:siyar_sahaba/core/design_system/tokens/radii.dart';
 import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
 import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
 
-/// Light (paper) and dark (ink) Material 3 themes.
+/// Light (paper) and dark (ink) Material 3 themes, and the feature theme:
+/// the dark roles on Madinah green, for the app's showcase sections.
 abstract final class AppTheme {
   static final ThemeData light = _build(_lightScheme, SahabaColors.light);
   static final ThemeData dark = _build(_darkScheme, SahabaColors.dark);
+  static final ThemeData feature = _build(
+    _darkScheme.copyWith(
+      surface: Palette.green,
+      surfaceContainerLowest: Palette.greenLowest,
+      surfaceContainerLow: Palette.greenLow,
+      surfaceContainer: Palette.greenAlt,
+      surfaceContainerHigh: Palette.greenHigh,
+      surfaceContainerHighest: Palette.greenHighest,
+      onSurfaceVariant: Palette.paperDimOnGreen,
+      onPrimary: Palette.green,
+      outline: Palette.outlineOnGreen,
+      outlineVariant: Palette.lineOnGreen,
+    ),
+    SahabaColors.feature,
+  );
 
   static const _lightScheme = ColorScheme(
     brightness: Brightness.light,
-    primary: Palette.ink,
+    primary: Palette.green,
     onPrimary: Palette.paper,
-    primaryContainer: Palette.paperHigh,
-    onPrimaryContainer: Palette.ink,
+    primaryContainer: Palette.greenWash,
+    onPrimaryContainer: Palette.green,
     secondary: Palette.goldText,
     onSecondary: Palette.paper,
     secondaryContainer: Palette.goldWash,
