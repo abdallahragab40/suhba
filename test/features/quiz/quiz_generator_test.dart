@@ -151,6 +151,16 @@ void main() {
     }
   });
 
+  test('a title is never asked when it gives the name away', () {
+    final generator = QuizGenerator(content, random: Random(2));
+    final titles = {
+      for (final q in generator.questionsOf(QuizKind.companionByTitle))
+        q.subject!.ar,
+    };
+    expect(titles, isNot(contains('طلحة الخير')));
+    expect(titles, contains('الفاروق'));
+  });
+
   test('rounds differ, mix kinds and keep to their mode', () {
     final a = QuizGenerator(content, random: Random(3)).round(QuizMode.mixed);
     final b = QuizGenerator(content, random: Random(4)).round(QuizMode.mixed);

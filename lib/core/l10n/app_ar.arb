@@ -2163,7 +2163,7 @@
   "@quizQDeathMale": {"placeholders": {"subject": {"type": "String"}}},
   "quizQDeathFemale": "أين توفيت {subject}؟",
   "@quizQDeathFemale": {"placeholders": {"subject": {"type": "String"}}},
-  "quizQMember": "أيّ هؤلاء من {subject}؟",
+  "quizQMember": "أيّ هؤلاء يُعدّ في «{subject}»؟",
   "@quizQMember": {"placeholders": {"subject": {"type": "String"}}},
   "quizQFather": "مَن والد {subject}؟",
   "@quizQFather": {"placeholders": {"subject": {"type": "String"}}},

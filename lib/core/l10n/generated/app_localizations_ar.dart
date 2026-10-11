@@ -1707,7 +1707,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String quizQMember(String subject) {
-    return 'أيّ هؤلاء من $subject؟';
+    return 'أيّ هؤلاء يُعدّ في «$subject»؟';
   }
 
   @override

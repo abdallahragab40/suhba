@@ -2981,7 +2981,7 @@ abstract class AppLocalizations {
   /// No description provided for @quizQMember.
   ///
   /// In ar, this message translates to:
-  /// **'أيّ هؤلاء من {subject}؟'**
+  /// **'أيّ هؤلاء يُعدّ في «{subject}»؟'**
   String quizQMember(String subject);
 
   /// No description provided for @quizQFather.

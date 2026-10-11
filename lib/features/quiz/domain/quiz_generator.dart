@@ -224,10 +224,12 @@ class QuizGenerator {
     return [
       for (final c in content.companions)
         for (final t in c.titles)
-          // One holder, short, and not a family tie ("عم رسول الله ﷺ").
+          // One holder, short, not a family tie ("عم رسول الله ﷺ"), and
+          // not carrying the name itself ("طلحة الخير").
           if (holders[t.ar] == 1 &&
               t.ar.split(' ').length <= 4 &&
-              !t.ar.startsWith('عم '))
+              !t.ar.startsWith('عم ') &&
+              !t.ar.contains(c.name.ar.split(' ').first))
             ?_build(
               key: 'title:${c.id}:${t.ar}',
               kind: QuizKind.companionByTitle,
