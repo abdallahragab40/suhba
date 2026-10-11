@@ -37,7 +37,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -95,7 +95,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -160,7 +160,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -209,7 +209,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -269,7 +269,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -331,7 +331,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -397,7 +397,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -453,7 +453,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -502,7 +502,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -564,7 +564,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -630,7 +630,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -673,7 +673,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -725,7 +725,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -779,7 +779,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -829,10 +829,18 @@
           "locatorStatus": "complete",
           "volume": 2,
           "page": "418"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 8,
+            "ayahFrom": 41
+          }
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -907,7 +915,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -960,7 +968,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -1033,7 +1041,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -1099,7 +1107,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -1169,7 +1177,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -1232,7 +1240,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -1282,7 +1290,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -1357,7 +1365,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -1416,7 +1424,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -1471,7 +1479,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -1529,7 +1537,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -1551,7 +1559,7 @@
         "madinah"
       ],
       "context": {
-        "ar": "تجهّز لها المسلمون في شدة، وأنفق فيها عثمان وأبو بكر وغيرهما."
+        "ar": "تجهّز لها المسلمون في شدة، وأنفق فيها عثمان نفقة عظيمة وأنفق غيره من الصحابة."
       },
       "outcome": {
         "ar": "رجع النبي ﷺ إلى المدينة، ونزلت آيات من سورة التوبة."
@@ -1607,7 +1615,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -1674,7 +1682,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -1738,7 +1746,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -1826,7 +1834,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -1843,7 +1851,7 @@
         "ar": "وقع في المرحلة المكية قبل الهجرة، والخلاف في تحديد سنته وشهره كبير."
       },
       "outcome": {
-        "ar": "فُرضت الصلوات الخمس، وصدّق أبو بكر الخبر."
+        "ar": "فُرضت الصلوات الخمس، ويذكر أهل السير أن أبا بكر صدّق الخبر حين كذّبه المشركون."
       }
     }
   ]

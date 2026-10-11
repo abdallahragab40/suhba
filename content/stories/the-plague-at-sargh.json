@@ -42,7 +42,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "ويذكر المؤرخون أن ذلك كان في السنة الثامنة عشرة، وهو طاعون عمواس الذي سُمّي باسم قرية في فلسطين."
+            "ar": "ويروي الطبري عن ابن إسحاق أن خروج عمر حتى بلغ سرغ كان في سنة سبع عشرة، وأن الطاعون اشتدّ في سنة ثماني عشرة، وهو طاعون عمواس الذي سُمّي باسم قرية في فلسطين."
           },
           "reliability": "reported",
           "citations": [
@@ -57,6 +57,12 @@
               "locatorStatus": "complete",
               "volume": 10,
               "page": "40"
+            },
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "57"
             }
           ]
         }
@@ -327,7 +333,7 @@
     }
   ],
   "review": {
-    "status": "draft",
+    "status": "preliminaryReview",
     "editorialFlags": [
       "needsLocators"
     ],

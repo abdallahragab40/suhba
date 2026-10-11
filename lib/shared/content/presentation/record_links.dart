@@ -95,11 +95,13 @@ class EventRow extends StatelessWidget {
                         color: colors.onSurfaceDim,
                       ),
                     ),
+                  if (!e.review.isApproved) ...[
+                    const SizedBox(height: AppSpacing.xs),
+                    DraftBadge(preliminary: e.review.isPreliminary),
+                  ],
                 ],
               ),
             ),
-            if (!e.review.isApproved)
-              DraftBadge(preliminary: e.review.isPreliminary),
           ],
         ),
       ),

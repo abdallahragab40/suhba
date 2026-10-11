@@ -501,7 +501,7 @@
     }
   ],
   "review": {
-    "status": "draft",
+    "status": "preliminaryReview",
     "editorialFlags": [
       "needsLocators"
     ],

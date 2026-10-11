@@ -160,6 +160,11 @@
           "sourceId": "muslim",
           "locatorStatus": "complete",
           "hadithNumber": "2244"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "complete",
+          "hadithNumber": "1957"
         }
       ]
     },
@@ -333,7 +338,7 @@
     }
   ],
   "review": {
-    "status": "draft",
+    "status": "preliminaryReview",
     "editorialFlags": [
       "needsLocators"
     ],

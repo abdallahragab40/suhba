@@ -92,6 +92,11 @@
                 "surah": 6,
                 "ayahFrom": 52
               }
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "2413"
             }
           ]
         }
@@ -237,7 +242,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وعزل عمر سعدًا مع ذلك احتياطًا لأمر الناس، ثم جعله في أهل الشورى الستة عند وفاته، وأوصى إن أصابته الإمرة فذاك، وإلا فليستعن به من وليها، فإنه لم يعزله عن عجز ولا خيانة."
+            "ar": "وكان عمر قد عزل سعدًا عن الكوفة واستعمل عليها عمار بن ياسر، ثم جعله في أهل الشورى الستة عند وفاته، وأوصى إن أصابته الإمرة فذاك، وإلا فليستعن به من وليها، فإنه لم يعزله عن عجز ولا خيانة."
           },
           "reliability": "established",
           "citations": [
@@ -245,6 +250,11 @@
               "sourceId": "bukhari",
               "locatorStatus": "complete",
               "hadithNumber": "3700"
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "755"
             }
           ]
         },
@@ -264,7 +274,7 @@
     }
   ],
   "review": {
-    "status": "draft",
+    "status": "preliminaryReview",
     "editorialFlags": [
       "needsLocators"
     ],

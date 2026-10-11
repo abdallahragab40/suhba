@@ -245,6 +245,11 @@
               "sourceId": "tirmidhi",
               "locatorStatus": "complete",
               "hadithNumber": "3757"
+            },
+            {
+              "sourceId": "tirmidhi",
+              "locatorStatus": "complete",
+              "hadithNumber": "3748"
             }
           ]
         },
@@ -292,7 +297,7 @@
     }
   ],
   "review": {
-    "status": "draft",
+    "status": "preliminaryReview",
     "editorialFlags": [
       "needsLocators"
     ],

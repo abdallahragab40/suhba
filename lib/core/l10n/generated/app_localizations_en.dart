@@ -628,7 +628,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutReviewDraft =>
-      'The content has not been reviewed yet. The current texts are for development and review, and will not be published until a qualified reviewer has checked them.';
+      'No qualified specialist has approved the content yet. Texts that have had a preliminary review, in which every report was checked against its source and errors were corrected, are marked \"preliminary review\"; texts that have not yet had one are marked \"draft\". Nothing will be published until a qualified specialist approves it.';
 
   @override
   String get aboutReviewPublished =>

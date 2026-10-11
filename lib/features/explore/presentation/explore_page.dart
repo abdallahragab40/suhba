@@ -243,7 +243,9 @@ class _VisualTile extends StatelessWidget {
                 ),
               ),
               if (!v.review.isApproved)
-                DraftBadge(preliminary: v.review.isPreliminary),
+                Flexible(
+                  child: DraftBadge(preliminary: v.review.isPreliminary),
+                ),
             ],
           ),
         ),

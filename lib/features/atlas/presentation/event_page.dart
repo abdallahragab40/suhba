@@ -128,7 +128,9 @@ class _Event extends ConsumerWidget {
                       ),
                     ),
                     if (provisional)
-                      DraftBadge(preliminary: e.review.isPreliminary),
+                      Flexible(
+                        child: DraftBadge(preliminary: e.review.isPreliminary),
+                      ),
                   ],
                 ),
                 Semantics(

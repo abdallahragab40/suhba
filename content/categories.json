@@ -8,7 +8,7 @@
       },
       "order": 1,
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -44,7 +44,7 @@
       },
       "order": 2,
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -118,7 +118,7 @@
       },
       "order": 3,
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [],
         "authoredBy": "sample-content"
       },

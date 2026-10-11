@@ -56,7 +56,7 @@ void main() {
     expect(find.byType(AboutPage), findsOneWidget);
     expect(find.textContaining('أهل السنة والجماعة'), findsOneWidget);
     expect(find.textContaining('ولا تتناول تفاصيل الفتنة'), findsOneWidget);
-    expect(find.textContaining('لم يُراجَع المحتوى بعد'), findsOneWidget);
+    expect(find.textContaining('لم يعتمد المحتوى مختص مؤهل بعد'), findsOneWidget);
     expect(find.textContaining('لا يتضمن التطبيق صورًا'), findsOneWidget);
     for (final level in ['ثابت', 'رواية تاريخية', 'مختلف فيه', 'غير معروف']) {
       expect(find.text(level), findsOneWidget, reason: level);

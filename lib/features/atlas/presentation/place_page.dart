@@ -159,7 +159,11 @@ class _Place extends ConsumerWidget {
                         ),
                       ),
                       if (provisional)
-                        DraftBadge(preliminary: p.review.isPreliminary),
+                        Flexible(
+                          child: DraftBadge(
+                            preliminary: p.review.isPreliminary,
+                          ),
+                        ),
                     ],
                   ),
                   const SizedBox(height: AppSpacing.sm),

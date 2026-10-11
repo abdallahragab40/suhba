@@ -9,7 +9,7 @@
       "honorific": "sahabi",
       "gender": "female",
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "authoredBy": "sample-content"
       }
     },
@@ -21,7 +21,7 @@
       "honorific": "sahabi",
       "gender": "female",
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "authoredBy": "sample-content"
       }
     },
@@ -32,7 +32,7 @@
       },
       "honorific": "prophet",
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [],
         "authoredBy": "draft-revision-4"
       },
@@ -45,7 +45,7 @@
       },
       "honorific": "sahabi",
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [],
         "authoredBy": "draft-revision-4"
       },
@@ -58,7 +58,7 @@
       },
       "honorific": "sahabi",
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [],
         "authoredBy": "draft-revision-4"
       },
@@ -71,7 +71,7 @@
       },
       "honorific": "sahabi",
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [],
         "authoredBy": "draft-revision-4"
       },
@@ -84,7 +84,7 @@
       },
       "honorific": "sahabi",
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [],
         "authoredBy": "draft-revision-4"
       },
@@ -97,7 +97,7 @@
       },
       "honorific": "none",
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [],
         "authoredBy": "draft-revision-4"
       },
@@ -110,7 +110,7 @@
       },
       "honorific": "sahabi",
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [],
         "authoredBy": "draft-revision-4"
       },
@@ -123,7 +123,7 @@
       },
       "honorific": "none",
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [],
         "authoredBy": "draft-revision-4"
       },
@@ -136,7 +136,7 @@
       },
       "honorific": "sahabi",
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [],
         "authoredBy": "draft-revision-4"
       },
@@ -149,7 +149,7 @@
       },
       "honorific": "sahabi",
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [],
         "authoredBy": "draft-revision-4"
       },
@@ -162,7 +162,7 @@
       },
       "honorific": "sahabi",
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [],
         "authoredBy": "draft-revision-4"
       },
@@ -175,7 +175,7 @@
       },
       "honorific": "sahabi",
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [],
         "authoredBy": "draft-revision-4"
       },
@@ -188,7 +188,7 @@
       },
       "honorific": "sahabi",
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [],
         "authoredBy": "draft-revision-4"
       },
@@ -202,7 +202,7 @@
       "honorific": "sahabi",
       "gender": "female",
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "authoredBy": "draft-revision-4"
       }
     },
@@ -214,7 +214,7 @@
       "honorific": "none",
       "gender": "male",
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "authoredBy": "draft-revision-4"
       }
     },
@@ -226,7 +226,7 @@
       "honorific": "sahabi",
       "gender": "female",
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "authoredBy": "draft-revision-4"
       }
     },
@@ -238,7 +238,7 @@
       "honorific": "sahabi",
       "gender": "male",
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "authoredBy": "draft-revision-4"
       }
     }

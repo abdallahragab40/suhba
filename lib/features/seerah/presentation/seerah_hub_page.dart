@@ -293,7 +293,11 @@ class SeerahOpening extends ConsumerWidget {
                               ),
                             ),
                             if (!s.review.isApproved)
-                              DraftBadge(preliminary: s.review.isPreliminary),
+                              Flexible(
+                                child: DraftBadge(
+                                  preliminary: s.review.isPreliminary,
+                                ),
+                              ),
                           ],
                         ),
                         const SizedBox(height: AppSpacing.sm),

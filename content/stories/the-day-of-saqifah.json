@@ -32,6 +32,11 @@
               "sourceId": "bukhari",
               "locatorStatus": "complete",
               "hadithNumber": "3667"
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "1241"
             }
           ]
         },
@@ -54,6 +59,11 @@
                 "surah": 3,
                 "ayahFrom": 144
               }
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "1241"
             }
           ]
         },
@@ -251,7 +261,7 @@
     }
   ],
   "review": {
-    "status": "draft",
+    "status": "preliminaryReview",
     "editorialFlags": [
       "needsLocators"
     ],

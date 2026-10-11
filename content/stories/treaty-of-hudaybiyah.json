@@ -272,7 +272,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وفي طريق العودة نزلت سورة الفتح، فسأل عمر: أفتح هو؟ فأخبره النبي ﷺ بأنه فتح."
+            "ar": "وفي طريق العودة نزلت سورة الفتح، فسأل عمر النبي ﷺ أهو فتح، فأخبره بأنه فتح."
           },
           "reliability": "established",
           "citations": [
@@ -348,7 +348,7 @@
     }
   ],
   "review": {
-    "status": "draft",
+    "status": "preliminaryReview",
     "editorialFlags": [
       "needsLocators"
     ],

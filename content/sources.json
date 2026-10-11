@@ -8,7 +8,7 @@
         "ar": "القرآن الكريم"
       },
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [],
         "authoredBy": "sample-content"
       }
@@ -20,7 +20,7 @@
         "ar": "الجامع الصحيح (صحيح البخاري)"
       },
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [],
         "authoredBy": "sample-content"
       },
@@ -39,7 +39,7 @@
         "ar": "المسند الصحيح (صحيح مسلم)"
       },
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [],
         "authoredBy": "sample-content"
       },
@@ -58,7 +58,7 @@
         "ar": "سنن أبي داود"
       },
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [],
         "authoredBy": "sample-content"
       },
@@ -77,7 +77,7 @@
         "ar": "سنن الترمذي"
       },
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [],
         "authoredBy": "sample-content"
       },
@@ -96,7 +96,7 @@
         "ar": "السيرة النبوية"
       },
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "authoredBy": "sample-content"
       },
       "author": {
@@ -116,7 +116,7 @@
         "ar": "الطبقات الكبرى"
       },
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [],
         "authoredBy": "sample-content"
       },
@@ -138,7 +138,7 @@
         "ar": "تاريخ الرسل والملوك"
       },
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [],
         "authoredBy": "sample-content"
       },
@@ -160,7 +160,7 @@
         "ar": "الاستيعاب في معرفة الأصحاب"
       },
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [],
         "authoredBy": "sample-content"
       },
@@ -182,7 +182,7 @@
         "ar": "أسد الغابة في معرفة الصحابة"
       },
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [],
         "authoredBy": "sample-content"
       },
@@ -198,7 +198,7 @@
         "ar": "سير أعلام النبلاء"
       },
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [],
         "authoredBy": "sample-content"
       },
@@ -220,7 +220,7 @@
         "ar": "البداية والنهاية"
       },
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [],
         "authoredBy": "sample-content"
       },
@@ -242,7 +242,7 @@
         "ar": "الإصابة في تمييز الصحابة"
       },
       "review": {
-        "status": "draft",
+        "status": "preliminaryReview",
         "editorialFlags": [],
         "authoredBy": "sample-content"
       },

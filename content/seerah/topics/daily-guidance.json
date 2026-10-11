@@ -285,7 +285,7 @@
     {
       "type": "paragraph",
       "text": {
-        "ar": "وكان إذا عطس وضع يده أو ثوبه على فيه وخفض صوته، وإذا تثاءب كظم ما استطاع، وكان يحب أن يُرى أثر النعمة على العبد في هيئته دون إسراف."
+        "ar": "وكان إذا عطس غطّى وجهه بيده أو بثوبه وغضّ بها صوته، وأمر من تثاءب أن يردّه ما استطاع، وأخبر أن الله يحب أن يُرى أثر نعمته على عبده."
       },
       "reliability": "reported",
       "citations": [
@@ -298,13 +298,23 @@
           "sourceId": "tirmidhi",
           "locatorStatus": "complete",
           "hadithNumber": "2745"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3289"
+        },
+        {
+          "sourceId": "tirmidhi",
+          "locatorStatus": "complete",
+          "hadithNumber": "2819"
         }
       ]
     },
     {
       "type": "paragraph",
       "text": {
-        "ar": "وكان يمشي متواضعًا، ويجلس حيث ينتهي به المجلس، ولا يحب أن يُقام له."
+        "ar": "وكان متواضعًا يكره أن يُقام له، حتى إن أصحابه كانوا إذا رأوه لم يقوموا، مع أنه لم يكن أحد أحب إليهم منه، كما يذكر أنس."
       },
       "reliability": "reported",
       "citations": [
@@ -318,14 +328,14 @@
     {
       "type": "paragraph",
       "text": {
-        "ar": "وكان يدعو عند خروجه من بيته وعند دخوله، ويبدأ بالسلام على أهله."
+        "ar": "وكان إذا خرج من بيته رفع طرفه إلى السماء، واستعاذ بالله من أن يَضلّ أو يُضَلّ، أو يَظلم أو يُظلَم، أو يَجهل أو يُجهَل عليه، كما تروي أم سلمة."
       },
       "reliability": "reported",
       "citations": [
         {
           "sourceId": "abu-dawud",
           "locatorStatus": "complete",
-          "hadithNumber": "5095"
+          "hadithNumber": "5094"
         }
       ]
     },
@@ -343,7 +353,7 @@
     }
   ],
   "review": {
-    "status": "draft",
+    "status": "preliminaryReview",
     "editorialFlags": [
       "needsLocators"
     ],
