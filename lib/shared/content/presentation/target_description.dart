@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
-import 'package:siyar_sahaba/app/router/routes.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_target.dart';
-import 'package:siyar_sahaba/shared/content/presentation/content_text.dart';
+import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/shared/content/domain/content_target.dart';
+import 'package:suhba/shared/content/presentation/content_text.dart';
 
 /// How a found saved item or reading position is shown: its title, what
 /// it belongs to, and where it opens.

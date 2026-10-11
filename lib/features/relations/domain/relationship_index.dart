@@ -1,10 +1,10 @@
 import 'package:flutter/foundation.dart';
-import 'package:siyar_sahaba/core/domain/reliability.dart';
-import 'package:siyar_sahaba/shared/content/domain/atlas.dart';
-import 'package:siyar_sahaba/shared/content/domain/citation.dart';
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
-import 'package:siyar_sahaba/shared/content/domain/localized_text.dart';
-import 'package:siyar_sahaba/shared/content/domain/review.dart';
+import 'package:suhba/core/domain/reliability.dart';
+import 'package:suhba/shared/content/domain/atlas.dart';
+import 'package:suhba/shared/content/domain/citation.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
+import 'package:suhba/shared/content/domain/localized_text.dart';
+import 'package:suhba/shared/content/domain/review.dart';
 
 /// How the explorer groups relations.
 enum RelationCategory { kinship, marriage, companionship, learning }

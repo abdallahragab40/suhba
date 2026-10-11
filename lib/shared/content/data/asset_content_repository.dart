@@ -1,24 +1,24 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:siyar_sahaba/core/result/failure.dart';
-import 'package:siyar_sahaba/core/result/result.dart';
-import 'package:siyar_sahaba/shared/content/data/asset_content_source.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/atlas_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/catalog_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/companion_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/quran_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/seerah_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/story_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/mappers/content_mappers.dart';
-import 'package:siyar_sahaba/shared/content/data/mappers/seerah_mappers.dart';
-import 'package:siyar_sahaba/shared/content/domain/atlas.dart';
-import 'package:siyar_sahaba/shared/content/domain/catalog.dart';
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_format.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_manifest.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_repository.dart';
-import 'package:siyar_sahaba/shared/content/domain/quran_verses.dart';
-import 'package:siyar_sahaba/shared/content/domain/seerah.dart';
-import 'package:siyar_sahaba/shared/content/domain/story.dart';
+import 'package:suhba/core/result/failure.dart';
+import 'package:suhba/core/result/result.dart';
+import 'package:suhba/shared/content/data/asset_content_source.dart';
+import 'package:suhba/shared/content/data/dto/atlas_dto.dart';
+import 'package:suhba/shared/content/data/dto/catalog_dto.dart';
+import 'package:suhba/shared/content/data/dto/companion_dto.dart';
+import 'package:suhba/shared/content/data/dto/quran_dto.dart';
+import 'package:suhba/shared/content/data/dto/seerah_dto.dart';
+import 'package:suhba/shared/content/data/dto/story_dto.dart';
+import 'package:suhba/shared/content/data/mappers/content_mappers.dart';
+import 'package:suhba/shared/content/data/mappers/seerah_mappers.dart';
+import 'package:suhba/shared/content/domain/atlas.dart';
+import 'package:suhba/shared/content/domain/catalog.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
+import 'package:suhba/shared/content/domain/content_format.dart';
+import 'package:suhba/shared/content/domain/content_manifest.dart';
+import 'package:suhba/shared/content/domain/content_repository.dart';
+import 'package:suhba/shared/content/domain/quran_verses.dart';
+import 'package:suhba/shared/content/domain/seerah.dart';
+import 'package:suhba/shared/content/domain/story.dart';
 
 /// [ContentRepository] over the bundled assets. Each file is read and parsed
 /// once per session; failures are not cached, so a retry can succeed.

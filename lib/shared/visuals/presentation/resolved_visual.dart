@@ -1,13 +1,13 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:siyar_sahaba/core/domain/historical_date.dart';
-import 'package:siyar_sahaba/core/domain/reliability.dart';
-import 'package:siyar_sahaba/core/result/failure.dart';
-import 'package:siyar_sahaba/shared/content/domain/atlas.dart';
-import 'package:siyar_sahaba/shared/content/domain/catalog.dart';
-import 'package:siyar_sahaba/shared/content/domain/citation.dart';
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
-import 'package:siyar_sahaba/shared/content/domain/localized_text.dart';
-import 'package:siyar_sahaba/shared/content/providers.dart';
+import 'package:suhba/core/domain/historical_date.dart';
+import 'package:suhba/core/domain/reliability.dart';
+import 'package:suhba/core/result/failure.dart';
+import 'package:suhba/shared/content/domain/atlas.dart';
+import 'package:suhba/shared/content/domain/catalog.dart';
+import 'package:suhba/shared/content/domain/citation.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
+import 'package:suhba/shared/content/domain/localized_text.dart';
+import 'package:suhba/shared/content/providers.dart';
 
 /// One mark on a timeline, resolved to the record it stands for: a shared
 /// event or a companion's timeline entry. Its label, date and sources all

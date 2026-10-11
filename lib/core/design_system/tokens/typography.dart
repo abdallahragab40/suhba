@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/fonts.dart';
+import 'package:suhba/core/design_system/tokens/fonts.dart';
 
 // Every style sets letterSpacing to 0: Material's defaults add tracking,
 // which pulls connected Arabic letters apart. Even leading keeps Arabic
@@ -47,10 +47,10 @@ abstract final class AppTypography {
 /// Text styles outside the Material type scale: long-form reading, Qur'anic
 /// verses, section kickers and large numerals.
 ///
-/// Read with `SahabaTextStyles.of(context)`.
+/// Read with `SuhbaTextStyles.of(context)`.
 @immutable
-class SahabaTextStyles extends ThemeExtension<SahabaTextStyles> {
-  const SahabaTextStyles({
+class SuhbaTextStyles extends ThemeExtension<SuhbaTextStyles> {
+  const SuhbaTextStyles({
     required this.reading,
     required this.readingStrong,
     required this.quran,
@@ -58,11 +58,11 @@ class SahabaTextStyles extends ThemeExtension<SahabaTextStyles> {
     required this.numeral,
   });
 
-  factory SahabaTextStyles.forColors({
+  factory SuhbaTextStyles.forColors({
     required Color text,
     required Color dimText,
   }) {
-    return SahabaTextStyles(
+    return SuhbaTextStyles(
       reading: _style(
         AppFonts.amiri,
         19,
@@ -109,18 +109,18 @@ class SahabaTextStyles extends ThemeExtension<SahabaTextStyles> {
   /// Large decorative numerals (years, chapter ordinals).
   final TextStyle numeral;
 
-  static SahabaTextStyles of(BuildContext context) =>
-      Theme.of(context).extension<SahabaTextStyles>()!;
+  static SuhbaTextStyles of(BuildContext context) =>
+      Theme.of(context).extension<SuhbaTextStyles>()!;
 
   @override
-  SahabaTextStyles copyWith({
+  SuhbaTextStyles copyWith({
     TextStyle? reading,
     TextStyle? readingStrong,
     TextStyle? quran,
     TextStyle? kicker,
     TextStyle? numeral,
   }) {
-    return SahabaTextStyles(
+    return SuhbaTextStyles(
       reading: reading ?? this.reading,
       readingStrong: readingStrong ?? this.readingStrong,
       quran: quran ?? this.quran,
@@ -130,9 +130,9 @@ class SahabaTextStyles extends ThemeExtension<SahabaTextStyles> {
   }
 
   @override
-  SahabaTextStyles lerp(SahabaTextStyles? other, double t) {
+  SuhbaTextStyles lerp(SuhbaTextStyles? other, double t) {
     if (other == null) return this;
-    return SahabaTextStyles(
+    return SuhbaTextStyles(
       reading: TextStyle.lerp(reading, other.reading, t)!,
       readingStrong: TextStyle.lerp(readingStrong, other.readingStrong, t)!,
       quran: TextStyle.lerp(quran, other.quran, t)!,

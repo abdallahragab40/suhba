@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/design_system/theme/app_theme.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/fonts.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
+import 'package:suhba/core/design_system/theme/app_theme.dart';
+import 'package:suhba/core/design_system/tokens/fonts.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/design_system/tokens/typography.dart';
 
 import '../../helpers/pump_app.dart';
 
@@ -40,8 +40,8 @@ void main() {
       });
 
       test('registers both theme extensions', () {
-        expect(theme.extension<SahabaColors>(), isNotNull);
-        expect(theme.extension<SahabaTextStyles>(), isNotNull);
+        expect(theme.extension<SuhbaColors>(), isNotNull);
+        expect(theme.extension<SuhbaTextStyles>(), isNotNull);
       });
 
       test('display roles use Amiri; all other roles use Cairo', () {
@@ -61,7 +61,7 @@ void main() {
       });
 
       test('reading text uses Amiri and verses use Amiri Quran', () {
-        final styles = theme.extension<SahabaTextStyles>()!;
+        final styles = theme.extension<SuhbaTextStyles>()!;
         expect(styles.reading.fontFamily, AppFonts.amiri);
         expect(styles.readingStrong.fontFamily, AppFonts.amiri);
         expect(styles.quran.fontFamily, AppFonts.amiriQuran);

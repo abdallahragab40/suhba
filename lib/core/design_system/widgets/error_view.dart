@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/empty_state.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/core/result/failure.dart';
+import 'package:suhba/core/design_system/widgets/empty_state.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/core/result/failure.dart';
 
 /// The standard "could not show this" state, with an optional retry.
 ///

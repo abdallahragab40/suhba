@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:siyar_sahaba/app/router/routes.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/companion_card.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/draft_badge.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/landscape_hero.dart';
-import 'package:siyar_sahaba/core/format/display_formatter.dart';
-import 'package:siyar_sahaba/features/companions/presentation/directory/directory_page.dart';
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
-import 'package:siyar_sahaba/shared/content/presentation/content_text.dart';
-import 'package:siyar_sahaba/shared/content/providers.dart';
+import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/typography.dart';
+import 'package:suhba/core/design_system/widgets/companion_card.dart';
+import 'package:suhba/core/design_system/widgets/draft_badge.dart';
+import 'package:suhba/core/design_system/widgets/landscape_hero.dart';
+import 'package:suhba/core/format/display_formatter.dart';
+import 'package:suhba/features/companions/presentation/directory/directory_page.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
+import 'package:suhba/shared/content/presentation/content_text.dart';
+import 'package:suhba/shared/content/providers.dart';
 
 /// The profile hero: name (shared with the directory card), honorific,
 /// kunya and titles, death place and date, and categories.
@@ -66,7 +66,7 @@ class ProfileHeader extends ConsumerWidget {
                   ),
                   Text(
                     companionHonorific(c.gender),
-                    style: SahabaTextStyles.of(context).kicker,
+                    style: SuhbaTextStyles.of(context).kicker,
                   ),
                   if (subtitle.isNotEmpty) ...[
                     const SizedBox(height: AppSpacing.xxs),

@@ -1,33 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:siyar_sahaba/app/router/routes.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/radii.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/draft_badge.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/empty_state.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/error_view.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/loading_skeleton.dart';
-import 'package:siyar_sahaba/core/format/display_formatter.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/core/result/failure.dart';
-import 'package:siyar_sahaba/features/bookmarks/domain/bookmark.dart';
-import 'package:siyar_sahaba/features/bookmarks/presentation/bookmark_providers.dart';
-import 'package:siyar_sahaba/features/reading_progress/domain/reading_progress.dart';
-import 'package:siyar_sahaba/features/reading_progress/presentation/passage_contents.dart';
-import 'package:siyar_sahaba/features/reading_progress/presentation/progress_providers.dart';
-import 'package:siyar_sahaba/features/settings/presentation/reading_settings.dart';
-import 'package:siyar_sahaba/features/sources/presentation/citation_sheet.dart';
-import 'package:siyar_sahaba/features/sources/presentation/passage_share.dart';
-import 'package:siyar_sahaba/features/stories/presentation/story_page.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_block.dart';
-import 'package:siyar_sahaba/shared/content/domain/story.dart';
-import 'package:siyar_sahaba/shared/content/presentation/content_text.dart';
-import 'package:siyar_sahaba/shared/content/presentation/reader_navigation.dart';
-import 'package:siyar_sahaba/shared/content/presentation/reading_body.dart';
-import 'package:siyar_sahaba/shared/content/providers.dart';
+import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/design_system/tokens/radii.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/design_system/tokens/typography.dart';
+import 'package:suhba/core/design_system/widgets/draft_badge.dart';
+import 'package:suhba/core/design_system/widgets/empty_state.dart';
+import 'package:suhba/core/design_system/widgets/error_view.dart';
+import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
+import 'package:suhba/core/format/display_formatter.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/core/result/failure.dart';
+import 'package:suhba/features/bookmarks/domain/bookmark.dart';
+import 'package:suhba/features/bookmarks/presentation/bookmark_providers.dart';
+import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
+import 'package:suhba/features/reading_progress/presentation/passage_contents.dart';
+import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
+import 'package:suhba/features/settings/presentation/reading_settings.dart';
+import 'package:suhba/features/sources/presentation/citation_sheet.dart';
+import 'package:suhba/features/sources/presentation/passage_share.dart';
+import 'package:suhba/features/stories/presentation/story_page.dart';
+import 'package:suhba/shared/content/domain/content_block.dart';
+import 'package:suhba/shared/content/domain/story.dart';
+import 'package:suhba/shared/content/presentation/content_text.dart';
+import 'package:suhba/shared/content/presentation/reader_navigation.dart';
+import 'package:suhba/shared/content/presentation/reading_body.dart';
+import 'package:suhba/shared/content/providers.dart';
 
 /// One chapter of a story (S08). The last chapter ends with the companions
 /// the story is about.
@@ -92,7 +92,7 @@ class _Chapter extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
     final format = DisplayFormatter.of(context);
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final s = story;
     final chapter = s.chapters[index];
     final provisional = !s.review.isApproved;
@@ -143,7 +143,7 @@ class _Chapter extends ConsumerWidget {
             format.integer(index + 1),
             format.integer(s.chapters.length),
           ),
-          style: SahabaTextStyles.of(context).kicker,
+          style: SuhbaTextStyles.of(context).kicker,
         ),
         Semantics(
           header: true,

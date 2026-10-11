@@ -2,15 +2,15 @@ import 'dart:math';
 
 import 'package:meta/meta.dart';
 
-import 'package:siyar_sahaba/core/domain/historical_date.dart';
-import 'package:siyar_sahaba/features/quiz/domain/quiz_question.dart';
-import 'package:siyar_sahaba/features/search/domain/search_documents.dart';
-import 'package:siyar_sahaba/shared/content/domain/atlas.dart';
-import 'package:siyar_sahaba/shared/content/domain/catalog.dart';
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
-import 'package:siyar_sahaba/shared/content/domain/localized_text.dart';
-import 'package:siyar_sahaba/shared/content/domain/seerah.dart';
-import 'package:siyar_sahaba/shared/content/domain/story.dart';
+import 'package:suhba/core/domain/historical_date.dart';
+import 'package:suhba/features/quiz/domain/quiz_question.dart';
+import 'package:suhba/features/search/domain/search_documents.dart';
+import 'package:suhba/shared/content/domain/atlas.dart';
+import 'package:suhba/shared/content/domain/catalog.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
+import 'package:suhba/shared/content/domain/localized_text.dart';
+import 'package:suhba/shared/content/domain/seerah.dart';
+import 'package:suhba/shared/content/domain/story.dart';
 
 /// Everything the generator draws on.
 class QuizContent {

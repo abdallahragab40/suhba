@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:siyar_sahaba/app/router/routes.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/empty_state.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/error_view.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/loading_skeleton.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/features/search/domain/search_index.dart';
-import 'package:siyar_sahaba/features/search/presentation/search_providers.dart';
+import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/design_system/tokens/typography.dart';
+import 'package:suhba/core/design_system/widgets/empty_state.dart';
+import 'package:suhba/core/design_system/widgets/error_view.dart';
+import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/features/search/domain/search_index.dart';
+import 'package:suhba/features/search/presentation/search_providers.dart';
 
 /// Global search (S10).
 class SearchPage extends ConsumerStatefulWidget {
@@ -139,7 +139,7 @@ class _StartState extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.all(AppSpacing.gutter),
       children: [
-        Text(l10n.searchRecent, style: SahabaTextStyles.of(context).kicker),
+        Text(l10n.searchRecent, style: SuhbaTextStyles.of(context).kicker),
         for (final q in recent)
           ListTile(
             contentPadding: EdgeInsets.zero,
@@ -174,7 +174,7 @@ class _ResultsView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final (scope, parentId) = ref.watch(searchFilterProvider);
     final filters = ref.read(searchFilterProvider.notifier);
 
@@ -293,7 +293,7 @@ class _Results extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final groups = [
       for (final kind in SearchKind.values)
         (
@@ -332,7 +332,7 @@ class _Results extends StatelessWidget {
               header: true,
               child: Text(
                 label(kind),
-                style: SahabaTextStyles.of(context).kicker,
+                style: SuhbaTextStyles.of(context).kicker,
               ),
             ),
           ),
@@ -348,7 +348,7 @@ class _Results extends StatelessWidget {
     );
   }
 
-  Widget? _subtitle(SearchHit hit, TextStyle dim, SahabaColors colors) {
+  Widget? _subtitle(SearchHit hit, TextStyle dim, SuhbaColors colors) {
     final doc = hit.document;
     final context = doc.subtitle == null || doc.subtitle!.isEmpty
         ? null

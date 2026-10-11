@@ -1,15 +1,15 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:siyar_sahaba/app/app.dart';
-import 'package:siyar_sahaba/app/provider_retry.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/fonts.dart';
-import 'package:siyar_sahaba/core/error/app_error_widget.dart';
-import 'package:siyar_sahaba/core/error/error_reporter.dart';
-import 'package:siyar_sahaba/core/storage/settings_store.dart';
+import 'package:suhba/app/app.dart';
+import 'package:suhba/app/provider_retry.dart';
+import 'package:suhba/core/design_system/tokens/fonts.dart';
+import 'package:suhba/core/error/app_error_widget.dart';
+import 'package:suhba/core/error/error_reporter.dart';
+import 'package:suhba/core/storage/settings_store.dart';
 
 /// Starts the app: installs the global error handlers, registers licences
-/// and runs [SiyarApp] in a [ProviderScope].
+/// and runs [SuhbaApp] in a [ProviderScope].
 ///
 /// Settings are loaded before the first frame (so the theme never flashes);
 /// the database opens lazily on first use.
@@ -26,7 +26,7 @@ Future<void> bootstrap({
     ProviderScope(
       retry: noAutomaticRetry,
       overrides: [settingsStoreProvider.overrideWithValue(settings)],
-      child: const SiyarApp(),
+      child: const SuhbaApp(),
     ),
   );
 }

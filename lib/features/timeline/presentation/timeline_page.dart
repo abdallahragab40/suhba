@@ -3,26 +3,26 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:siyar_sahaba/app/router/routes.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/motion.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/citation_marker.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/draft_badge.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/empty_state.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/error_view.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/loading_skeleton.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/reliability_badge.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/section_header.dart';
-import 'package:siyar_sahaba/core/format/display_formatter.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/core/result/failure.dart';
-import 'package:siyar_sahaba/features/sources/presentation/citation_sheet.dart';
-import 'package:siyar_sahaba/features/timeline/domain/timeline_grouping.dart';
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
-import 'package:siyar_sahaba/shared/content/presentation/content_text.dart';
-import 'package:siyar_sahaba/shared/content/providers.dart';
+import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/design_system/tokens/motion.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/design_system/tokens/typography.dart';
+import 'package:suhba/core/design_system/widgets/citation_marker.dart';
+import 'package:suhba/core/design_system/widgets/draft_badge.dart';
+import 'package:suhba/core/design_system/widgets/empty_state.dart';
+import 'package:suhba/core/design_system/widgets/error_view.dart';
+import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
+import 'package:suhba/core/design_system/widgets/reliability_badge.dart';
+import 'package:suhba/core/design_system/widgets/section_header.dart';
+import 'package:suhba/core/format/display_formatter.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/core/result/failure.dart';
+import 'package:suhba/features/sources/presentation/citation_sheet.dart';
+import 'package:suhba/features/timeline/domain/timeline_grouping.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
+import 'package:suhba/shared/content/presentation/content_text.dart';
+import 'package:suhba/shared/content/providers.dart';
 
 /// A companion's full timeline (S06): an era strip to jump through the
 /// years, then the entries grouped by era, each linked to its biography
@@ -184,7 +184,7 @@ class TimelineEntryTile extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
     final format = DisplayFormatter.of(context);
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final textTheme = Theme.of(context).textTheme;
     final t = entry;
     final event = t.eventId == null
@@ -217,7 +217,7 @@ class TimelineEntryTile extends ConsumerWidget {
           if (greg != null && t.date.hijriYear != null)
             Text(
               l10n.dateGregorianYear(format.integer(greg)),
-              style: SahabaTextStyles.of(context).kicker,
+              style: SuhbaTextStyles.of(context).kicker,
             ),
           const SizedBox(height: AppSpacing.xxs),
           Text(t.title.of(context), style: textTheme.titleMedium),
@@ -229,7 +229,7 @@ class TimelineEntryTile extends ConsumerWidget {
           if (event != null)
             Text(
               l10n.timelineEvent(event.name.of(context)),
-              style: SahabaTextStyles.of(context).kicker,
+              style: SuhbaTextStyles.of(context).kicker,
             ),
           Row(
             children: [
@@ -277,7 +277,7 @@ class EraStrip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final format = DisplayFormatter.of(context);
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       padding: const EdgeInsets.symmetric(
@@ -319,7 +319,7 @@ class EraStrip extends StatelessWidget {
                         const SizedBox(height: AppSpacing.xxs),
                         Text(
                           format.historicalDate(e.date, withGregorian: false),
-                          style: SahabaTextStyles.of(context).kicker,
+                          style: SuhbaTextStyles.of(context).kicker,
                         ),
                       ],
                     ),

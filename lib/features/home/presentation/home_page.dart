@@ -1,41 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:siyar_sahaba/app/router/app_shell.dart';
-import 'package:siyar_sahaba/app/router/routes.dart';
-import 'package:siyar_sahaba/core/database/database_provider.dart';
-import 'package:siyar_sahaba/core/design_system/theme/app_theme.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/palette.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/companion_card.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/draft_badge.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/draft_banner.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/error_view.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/loading_skeleton.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/section_header.dart';
-import 'package:siyar_sahaba/core/format/display_formatter.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/features/companions/presentation/directory/directory_page.dart';
-import 'package:siyar_sahaba/features/home/domain/daily_featured.dart';
-import 'package:siyar_sahaba/features/quiz/presentation/quiz_banner.dart';
-import 'package:siyar_sahaba/features/reading_progress/domain/reading_progress.dart';
-import 'package:siyar_sahaba/features/reading_progress/presentation/continue_reading.dart';
-import 'package:siyar_sahaba/features/reading_progress/presentation/progress_providers.dart';
-import 'package:siyar_sahaba/features/seerah/presentation/seerah_hub_page.dart';
-import 'package:siyar_sahaba/features/stories/presentation/story_card.dart';
-import 'package:siyar_sahaba/shared/content/domain/catalog.dart';
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_block.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_manifest.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_target.dart';
-import 'package:siyar_sahaba/shared/content/domain/seerah.dart';
-import 'package:siyar_sahaba/shared/content/domain/story.dart';
-import 'package:siyar_sahaba/shared/content/presentation/content_text.dart';
-import 'package:siyar_sahaba/shared/content/presentation/record_links.dart';
-import 'package:siyar_sahaba/shared/content/providers.dart';
-import 'package:siyar_sahaba/shared/visuals/presentation/infographic_view.dart';
+import 'package:suhba/app/router/app_shell.dart';
+import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/database/database_provider.dart';
+import 'package:suhba/core/design_system/theme/app_theme.dart';
+import 'package:suhba/core/design_system/tokens/palette.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/design_system/tokens/typography.dart';
+import 'package:suhba/core/design_system/widgets/companion_card.dart';
+import 'package:suhba/core/design_system/widgets/draft_badge.dart';
+import 'package:suhba/core/design_system/widgets/draft_banner.dart';
+import 'package:suhba/core/design_system/widgets/error_view.dart';
+import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
+import 'package:suhba/core/design_system/widgets/section_header.dart';
+import 'package:suhba/core/format/display_formatter.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/features/companions/presentation/directory/directory_page.dart';
+import 'package:suhba/features/home/domain/daily_featured.dart';
+import 'package:suhba/features/quiz/presentation/quiz_banner.dart';
+import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
+import 'package:suhba/features/reading_progress/presentation/continue_reading.dart';
+import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
+import 'package:suhba/features/seerah/presentation/seerah_hub_page.dart';
+import 'package:suhba/features/stories/presentation/story_card.dart';
+import 'package:suhba/shared/content/domain/catalog.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
+import 'package:suhba/shared/content/domain/content_block.dart';
+import 'package:suhba/shared/content/domain/content_manifest.dart';
+import 'package:suhba/shared/content/domain/content_target.dart';
+import 'package:suhba/shared/content/domain/seerah.dart';
+import 'package:suhba/shared/content/domain/story.dart';
+import 'package:suhba/shared/content/presentation/content_text.dart';
+import 'package:suhba/shared/content/presentation/record_links.dart';
+import 'package:suhba/shared/content/providers.dart';
+import 'package:suhba/shared/visuals/presentation/infographic_view.dart';
 
 /// Home (S02), an editorial front page. In order: the Seerah's opening
 /// scene with begin/continue; the reader's unfinished reading; the next
@@ -328,7 +328,7 @@ class _FeaturedCompanion extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final c = companion;
     final full = ref.watch(companionProvider(c.id)).value;
     final excerpt = full == null
@@ -363,7 +363,7 @@ class _FeaturedCompanion extends ConsumerWidget {
         ),
         Text(
           companionHonorific(c.gender),
-          style: SahabaTextStyles.of(context).kicker,
+          style: SuhbaTextStyles.of(context).kicker,
         ),
         const SizedBox(height: AppSpacing.xs),
         Text(
@@ -384,7 +384,7 @@ class _FeaturedCompanion extends ConsumerWidget {
                 excerpt,
                 maxLines: 5,
                 overflow: TextOverflow.ellipsis,
-                style: SahabaTextStyles.of(context).reading,
+                style: SuhbaTextStyles.of(context).reading,
               ),
             ),
           ),
@@ -417,7 +417,7 @@ class _CategoryBand extends StatelessWidget {
       child: Builder(
         builder: (context) {
           final format = DisplayFormatter.of(context);
-          final colors = SahabaColors.of(context);
+          final colors = SuhbaColors.of(context);
           final textTheme = Theme.of(context).textTheme;
           return Material(
             color: Palette.green,
@@ -478,7 +478,7 @@ class _CategoryBand extends StatelessWidget {
                                         n,
                                         format.integer(n),
                                       ),
-                                      style: SahabaTextStyles.of(context).kicker
+                                      style: SuhbaTextStyles.of(context).kicker
                                           .copyWith(color: colors.accentText),
                                     );
                                   },

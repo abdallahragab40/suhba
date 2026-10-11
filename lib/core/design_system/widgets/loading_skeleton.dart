@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/motion.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/radii.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/core/design_system/tokens/motion.dart';
+import 'package:suhba/core/design_system/tokens/radii.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
 
 /// Placeholder bars shown while content loads: a title bar and [lines] text
 /// bars. Pulses gently, or stays still when the user asks to reduce motion.

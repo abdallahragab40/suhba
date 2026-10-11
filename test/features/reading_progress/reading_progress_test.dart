@@ -2,11 +2,11 @@ import 'package:drift/drift.dart' show driftRuntimeOptions;
 import 'package:drift/native.dart';
 import 'package:fake_async/fake_async.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/database/app_database.dart';
-import 'package:siyar_sahaba/features/reading_progress/data/drift_reading_progress_repository.dart';
-import 'package:siyar_sahaba/features/reading_progress/domain/progress_recorder.dart';
-import 'package:siyar_sahaba/features/reading_progress/domain/reading_progress.dart';
-import 'package:siyar_sahaba/shared/content/domain/passage_position.dart';
+import 'package:suhba/core/database/app_database.dart';
+import 'package:suhba/features/reading_progress/data/drift_reading_progress_repository.dart';
+import 'package:suhba/features/reading_progress/domain/progress_recorder.dart';
+import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
+import 'package:suhba/shared/content/domain/passage_position.dart';
 
 PassagePosition _at(double fraction) => PassagePosition(fraction: fraction);
 

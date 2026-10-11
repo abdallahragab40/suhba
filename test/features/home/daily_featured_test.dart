@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/features/home/domain/daily_featured.dart';
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
-import 'package:siyar_sahaba/shared/content/domain/localized_text.dart';
-import 'package:siyar_sahaba/shared/content/domain/review.dart';
+import 'package:suhba/features/home/domain/daily_featured.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
+import 'package:suhba/shared/content/domain/localized_text.dart';
+import 'package:suhba/shared/content/domain/review.dart';
 
 CompanionSummary _c(String id, {bool approved = false}) => CompanionSummary(
   id: id,

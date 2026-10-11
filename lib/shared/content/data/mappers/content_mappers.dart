@@ -1,19 +1,19 @@
-import 'package:siyar_sahaba/core/domain/historical_date.dart';
-import 'package:siyar_sahaba/core/domain/quran_ref.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/block_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/catalog_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/common_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/companion_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/story_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/mappers/revision.dart';
-import 'package:siyar_sahaba/shared/content/domain/catalog.dart';
-import 'package:siyar_sahaba/shared/content/domain/citation.dart';
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_block.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_manifest.dart';
-import 'package:siyar_sahaba/shared/content/domain/localized_text.dart';
-import 'package:siyar_sahaba/shared/content/domain/review.dart';
-import 'package:siyar_sahaba/shared/content/domain/story.dart';
+import 'package:suhba/core/domain/historical_date.dart';
+import 'package:suhba/core/domain/quran_ref.dart';
+import 'package:suhba/shared/content/data/dto/block_dto.dart';
+import 'package:suhba/shared/content/data/dto/catalog_dto.dart';
+import 'package:suhba/shared/content/data/dto/common_dto.dart';
+import 'package:suhba/shared/content/data/dto/companion_dto.dart';
+import 'package:suhba/shared/content/data/dto/story_dto.dart';
+import 'package:suhba/shared/content/data/mappers/revision.dart';
+import 'package:suhba/shared/content/domain/catalog.dart';
+import 'package:suhba/shared/content/domain/citation.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
+import 'package:suhba/shared/content/domain/content_block.dart';
+import 'package:suhba/shared/content/domain/content_manifest.dart';
+import 'package:suhba/shared/content/domain/localized_text.dart';
+import 'package:suhba/shared/content/domain/review.dart';
+import 'package:suhba/shared/content/domain/story.dart';
 
 // DTO → domain. One extension per DTO; nested values map recursively.
 

@@ -1,10 +1,10 @@
-import 'package:siyar_sahaba/shared/content/data/dto/atlas_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/seerah_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/mappers/content_mappers.dart';
-import 'package:siyar_sahaba/shared/content/data/mappers/revision.dart';
-import 'package:siyar_sahaba/shared/content/domain/atlas.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_block.dart';
-import 'package:siyar_sahaba/shared/content/domain/seerah.dart';
+import 'package:suhba/shared/content/data/dto/atlas_dto.dart';
+import 'package:suhba/shared/content/data/dto/seerah_dto.dart';
+import 'package:suhba/shared/content/data/mappers/content_mappers.dart';
+import 'package:suhba/shared/content/data/mappers/revision.dart';
+import 'package:suhba/shared/content/domain/atlas.dart';
+import 'package:suhba/shared/content/domain/content_block.dart';
+import 'package:suhba/shared/content/domain/seerah.dart';
 
 // DTO → domain for the Seerah, places and visuals.
 

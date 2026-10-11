@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:siyar_sahaba/core/storage/settings_store.dart';
+import 'package:suhba/core/storage/settings_store.dart';
 
 /// The selected theme mode, saved on the device.
 final themeModeProvider = NotifierProvider<ThemeModeController, ThemeMode>(

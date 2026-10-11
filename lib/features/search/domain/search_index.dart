@@ -1,4 +1,4 @@
-import 'package:siyar_sahaba/core/text/arabic_normalizer.dart';
+import 'package:suhba/core/text/arabic_normalizer.dart';
 
 /// What a search result points to, in display order.
 enum SearchKind {

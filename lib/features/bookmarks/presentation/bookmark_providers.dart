@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:siyar_sahaba/core/database/database_provider.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/features/bookmarks/data/drift_bookmark_repository.dart';
-import 'package:siyar_sahaba/features/bookmarks/domain/bookmark.dart';
+import 'package:suhba/core/database/database_provider.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/features/bookmarks/data/drift_bookmark_repository.dart';
+import 'package:suhba/features/bookmarks/domain/bookmark.dart';
 
 final bookmarkRepositoryProvider = Provider<BookmarkRepository>(
   (ref) => DriftBookmarkRepository(

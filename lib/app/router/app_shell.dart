@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:siyar_sahaba/app/router/routes.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
 
 /// The navigation shell: a bottom bar on phones and a rail on wide screens.
 /// In RTL the first destination (home) sits on the right (or the top of the

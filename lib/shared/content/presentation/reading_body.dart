@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/radii.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/citation_marker.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/reliability_badge.dart';
-import 'package:siyar_sahaba/core/domain/quran_ref.dart';
-import 'package:siyar_sahaba/core/domain/reliability.dart';
-import 'package:siyar_sahaba/core/format/display_formatter.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/shared/content/domain/citation.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_block.dart';
-import 'package:siyar_sahaba/shared/content/presentation/content_text.dart';
-import 'package:siyar_sahaba/shared/content/presentation/reader_scaffold.dart';
-import 'package:siyar_sahaba/shared/content/providers.dart';
-import 'package:siyar_sahaba/shared/visuals/presentation/infographic_view.dart';
+import 'package:suhba/core/design_system/tokens/radii.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/design_system/tokens/typography.dart';
+import 'package:suhba/core/design_system/widgets/citation_marker.dart';
+import 'package:suhba/core/design_system/widgets/reliability_badge.dart';
+import 'package:suhba/core/domain/quran_ref.dart';
+import 'package:suhba/core/domain/reliability.dart';
+import 'package:suhba/core/format/display_formatter.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/shared/content/domain/citation.dart';
+import 'package:suhba/shared/content/domain/content_block.dart';
+import 'package:suhba/shared/content/presentation/content_text.dart';
+import 'package:suhba/shared/content/presentation/reader_scaffold.dart';
+import 'package:suhba/shared/content/providers.dart';
+import 'package:suhba/shared/visuals/presentation/infographic_view.dart';
 
 /// Opens the sources of one claim. [passage] is the claim's own text when
 /// it can be shared with them: paragraphs, dispute opinions, and quotes
@@ -70,7 +70,7 @@ class ReadingBody extends StatelessWidget {
   }
 
   TextStyle _reading(BuildContext context, {bool strong = false}) {
-    final styles = SahabaTextStyles.of(context);
+    final styles = SuhbaTextStyles.of(context);
     final base = strong ? styles.readingStrong : styles.reading;
     return textSize == null ? base : base.copyWith(fontSize: textSize);
   }
@@ -226,7 +226,7 @@ class _Callout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final icon = this.icon;
     // A Material (not a plain coloured box) so ink from the markers and the
     // dispute's expansion tile shows. The start-edge rule is a positioned
@@ -260,7 +260,7 @@ class _Callout extends StatelessWidget {
                     Flexible(
                       child: Text(
                         kicker,
-                        style: SahabaTextStyles.of(context).kicker,
+                        style: SuhbaTextStyles.of(context).kicker,
                       ),
                     ),
                   ],
@@ -289,9 +289,9 @@ class _QuranQuote extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
     final format = DisplayFormatter.of(context);
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final textTheme = Theme.of(context).textTheme;
-    final base = SahabaTextStyles.of(context).quran;
+    final base = SuhbaTextStyles.of(context).quran;
     final style = textSize == null
         ? base
         : base.copyWith(fontSize: textSize! * 21 / 19);
@@ -367,7 +367,7 @@ class _Quote extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final textTheme = Theme.of(context).textTheme;
     final text = this.text;
     final summary = this.summary;
@@ -435,7 +435,7 @@ class _DisputeNote extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final format = DisplayFormatter.of(context);
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     return _Callout(
       kicker: l10n.disputeLabel,
       icon: Icons.call_split,
@@ -466,7 +466,7 @@ class _DisputeNote extends StatelessWidget {
                       children: [
                         Text(
                           l10n.disputeOpinion(format.integer(i + 1)),
-                          style: SahabaTextStyles.of(context).kicker,
+                          style: SuhbaTextStyles.of(context).kicker,
                         ),
                         Text(opinions[i].text.of(context), style: textStyle),
                         if (opinions[i].citations.isNotEmpty)

@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_target.dart';
-import 'package:siyar_sahaba/shared/content/domain/passage_position.dart';
+import 'package:suhba/shared/content/domain/content_target.dart';
+import 'package:suhba/shared/content/domain/passage_position.dart';
 
 part 'reading_progress.freezed.dart';
 

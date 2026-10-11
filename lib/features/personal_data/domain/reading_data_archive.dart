@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
-import 'package:siyar_sahaba/features/bookmarks/domain/bookmark.dart';
-import 'package:siyar_sahaba/features/reading_progress/domain/reading_progress.dart';
+import 'package:suhba/features/bookmarks/domain/bookmark.dart';
+import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
 
 /// A reader's saved items and reading positions, as exported to a file and
 /// imported back (E10). Settings are not part of it: importing must never
@@ -12,7 +12,7 @@ import 'package:siyar_sahaba/features/reading_progress/domain/reading_progress.d
 ///
 /// ```json
 /// {
-///   "format": "siyar-sahaba.reading-data",
+///   "format": "suhba.reading-data",
 ///   "version": 1,
 ///   "exportedAt": "2026-10-11T09:30:00.000Z",
 ///   "contentVersion": "0.2.0",
@@ -40,7 +40,10 @@ class ReadingDataArchive {
     this.contentVersion,
   });
 
-  static const format = 'siyar-sahaba.reading-data';
+  static const format = 'suhba.reading-data';
+
+  /// Files exported before the app was renamed; still imported.
+  static const legacyFormats = {'siyar-sahaba.reading-data'};
   static const version = 1;
 
   /// Files larger than this are refused before parsing.
@@ -139,7 +142,8 @@ ArchiveDecoding decodeArchive(String text) {
     return const ArchiveRejected(ArchiveProblem.notJson);
   }
   if (json is! Map<String, Object?> ||
-      json['format'] != ReadingDataArchive.format) {
+      !(json['format'] == ReadingDataArchive.format ||
+          ReadingDataArchive.legacyFormats.contains(json['format']))) {
     return const ArchiveRejected(ArchiveProblem.notAnExport);
   }
   final version = json['version'];

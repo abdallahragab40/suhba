@@ -1,11 +1,11 @@
-import 'package:siyar_sahaba/core/result/result.dart';
-import 'package:siyar_sahaba/shared/content/domain/atlas.dart';
-import 'package:siyar_sahaba/shared/content/domain/catalog.dart';
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_manifest.dart';
-import 'package:siyar_sahaba/shared/content/domain/quran_verses.dart';
-import 'package:siyar_sahaba/shared/content/domain/seerah.dart';
-import 'package:siyar_sahaba/shared/content/domain/story.dart';
+import 'package:suhba/core/result/result.dart';
+import 'package:suhba/shared/content/domain/atlas.dart';
+import 'package:suhba/shared/content/domain/catalog.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
+import 'package:suhba/shared/content/domain/content_manifest.dart';
+import 'package:suhba/shared/content/domain/quran_verses.dart';
+import 'package:suhba/shared/content/domain/seerah.dart';
+import 'package:suhba/shared/content/domain/story.dart';
 
 /// Read access to the content. Today it reads bundled assets; a remote
 /// content-pack source can implement it later without UI changes.

@@ -1,11 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:siyar_sahaba/core/domain/reliability.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/block_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/common_dto.dart';
-import 'package:siyar_sahaba/shared/content/domain/atlas.dart';
-import 'package:siyar_sahaba/shared/content/domain/catalog.dart';
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
-import 'package:siyar_sahaba/shared/content/domain/review.dart';
+import 'package:suhba/core/domain/reliability.dart';
+import 'package:suhba/shared/content/data/dto/block_dto.dart';
+import 'package:suhba/shared/content/data/dto/common_dto.dart';
+import 'package:suhba/shared/content/domain/atlas.dart';
+import 'package:suhba/shared/content/domain/catalog.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
+import 'package:suhba/shared/content/domain/review.dart';
 
 part 'catalog_dto.freezed.dart';
 part 'catalog_dto.g.dart';

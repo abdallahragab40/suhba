@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/format/digits.dart';
+import 'package:suhba/core/format/digits.dart';
 
 void main() {
   group('Digits.apply', () {

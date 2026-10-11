@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
-import 'package:siyar_sahaba/core/format/display_formatter.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/design_system/tokens/typography.dart';
+import 'package:suhba/core/format/display_formatter.dart';
 
 /// A large stroked numeral (a Hijri year or an ordinal) used as ornament.
 ///
@@ -25,12 +25,12 @@ class OutlinedNumeral extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final numeral = SahabaTextStyles.of(context).numeral;
+    final numeral = SuhbaTextStyles.of(context).numeral;
     final paint = Paint()
       ..style = PaintingStyle.stroke
       ..strokeWidth = strokeWidth
       ..strokeJoin = StrokeJoin.round
-      ..color = color ?? SahabaColors.of(context).accent;
+      ..color = color ?? SuhbaColors.of(context).accent;
 
     return ExcludeSemantics(
       child: Text(

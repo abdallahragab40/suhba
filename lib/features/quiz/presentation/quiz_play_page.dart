@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:siyar_sahaba/core/design_system/theme/app_theme.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/motion.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/palette.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/radii.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/error_view.dart';
-import 'package:siyar_sahaba/core/format/display_formatter.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/features/quiz/domain/quiz_generator.dart';
-import 'package:siyar_sahaba/features/quiz/domain/quiz_question.dart';
-import 'package:siyar_sahaba/features/quiz/presentation/quiz_providers.dart';
-import 'package:siyar_sahaba/features/quiz/presentation/quiz_widgets.dart';
+import 'package:suhba/core/design_system/theme/app_theme.dart';
+import 'package:suhba/core/design_system/tokens/motion.dart';
+import 'package:suhba/core/design_system/tokens/palette.dart';
+import 'package:suhba/core/design_system/tokens/radii.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/typography.dart';
+import 'package:suhba/core/design_system/widgets/error_view.dart';
+import 'package:suhba/core/format/display_formatter.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/features/quiz/domain/quiz_generator.dart';
+import 'package:suhba/features/quiz/domain/quiz_question.dart';
+import 'package:suhba/features/quiz/presentation/quiz_providers.dart';
+import 'package:suhba/features/quiz/presentation/quiz_widgets.dart';
 
 /// A round of the quiz in [mode]: ten questions generated from the content,
 /// one at a time, with feedback and a link to the passage after each, then
@@ -225,7 +225,7 @@ class _QuizStepState extends State<_QuizStep>
     final l10n = AppLocalizations.of(context);
     final format = DisplayFormatter.of(context);
     final textTheme = Theme.of(context).textTheme;
-    final styles = SahabaTextStyles.of(context);
+    final styles = SuhbaTextStyles.of(context);
     final q = widget.question;
     final picked = widget.picked;
     final answered = picked != null;

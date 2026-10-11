@@ -1,39 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:siyar_sahaba/app/router/app_shell.dart';
-import 'package:siyar_sahaba/app/router/routes.dart';
-import 'package:siyar_sahaba/core/design_system/theme/app_theme.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/palette.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/radii.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/draft_badge.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/draft_banner.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/empty_state.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/error_view.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/loading_skeleton.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/scene_backdrop.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/section_header.dart';
-import 'package:siyar_sahaba/core/format/display_formatter.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/core/result/failure.dart';
-import 'package:siyar_sahaba/features/reading_progress/domain/reading_progress.dart';
-import 'package:siyar_sahaba/features/reading_progress/presentation/passage_contents.dart';
-import 'package:siyar_sahaba/features/reading_progress/presentation/progress_providers.dart';
-import 'package:siyar_sahaba/features/settings/presentation/reading_settings.dart';
-import 'package:siyar_sahaba/features/sources/presentation/citation_sheet.dart';
-import 'package:siyar_sahaba/features/sources/presentation/passage_share.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_block.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_target.dart';
-import 'package:siyar_sahaba/shared/content/domain/review.dart';
-import 'package:siyar_sahaba/shared/content/domain/seerah.dart';
-import 'package:siyar_sahaba/shared/content/presentation/content_text.dart';
-import 'package:siyar_sahaba/shared/content/presentation/reading_body.dart';
-import 'package:siyar_sahaba/shared/content/presentation/record_links.dart';
-import 'package:siyar_sahaba/shared/content/providers.dart';
-import 'package:siyar_sahaba/shared/visuals/presentation/infographic_view.dart';
+import 'package:suhba/app/router/app_shell.dart';
+import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/design_system/theme/app_theme.dart';
+import 'package:suhba/core/design_system/tokens/palette.dart';
+import 'package:suhba/core/design_system/tokens/radii.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/design_system/tokens/typography.dart';
+import 'package:suhba/core/design_system/widgets/draft_badge.dart';
+import 'package:suhba/core/design_system/widgets/draft_banner.dart';
+import 'package:suhba/core/design_system/widgets/empty_state.dart';
+import 'package:suhba/core/design_system/widgets/error_view.dart';
+import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
+import 'package:suhba/core/design_system/widgets/scene_backdrop.dart';
+import 'package:suhba/core/design_system/widgets/section_header.dart';
+import 'package:suhba/core/format/display_formatter.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/core/result/failure.dart';
+import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
+import 'package:suhba/features/reading_progress/presentation/passage_contents.dart';
+import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
+import 'package:suhba/features/settings/presentation/reading_settings.dart';
+import 'package:suhba/features/sources/presentation/citation_sheet.dart';
+import 'package:suhba/features/sources/presentation/passage_share.dart';
+import 'package:suhba/shared/content/domain/content_block.dart';
+import 'package:suhba/shared/content/domain/content_target.dart';
+import 'package:suhba/shared/content/domain/review.dart';
+import 'package:suhba/shared/content/domain/seerah.dart';
+import 'package:suhba/shared/content/presentation/content_text.dart';
+import 'package:suhba/shared/content/presentation/reading_body.dart';
+import 'package:suhba/shared/content/presentation/record_links.dart';
+import 'package:suhba/shared/content/providers.dart';
+import 'package:suhba/shared/visuals/presentation/infographic_view.dart';
 
 /// The Seerah hub (S15): محمد رسول الله ﷺ. An opening scene with a way to
 /// start or continue; the chapter journey grouped by period; an ink band
@@ -287,7 +287,7 @@ class SeerahOpening extends ConsumerWidget {
                             Expanded(
                               child: Text(
                                 s.subtitle.of(context),
-                                style: SahabaTextStyles.of(
+                                style: SuhbaTextStyles.of(
                                   context,
                                 ).kicker.copyWith(color: Palette.goldOnInk),
                               ),
@@ -319,7 +319,7 @@ class SeerahOpening extends ConsumerWidget {
                             introText,
                             maxLines: compact ? 4 : null,
                             overflow: compact ? TextOverflow.ellipsis : null,
-                            style: SahabaTextStyles.of(
+                            style: SuhbaTextStyles.of(
                               context,
                             ).reading.copyWith(color: Palette.paper),
                           ),
@@ -356,7 +356,7 @@ class SeerahOpening extends ConsumerWidget {
                                 Flexible(
                                   child: Text(
                                     l10n.seerahScrollHint,
-                                    style: SahabaTextStyles.of(context).kicker
+                                    style: SuhbaTextStyles.of(context).kicker
                                         .copyWith(
                                           color: Palette.paperDimOnGreen,
                                         ),
@@ -391,7 +391,7 @@ class _PeriodHeading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final format = DisplayFormatter.of(context);
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     return Padding(
       padding: const EdgeInsetsDirectional.only(
         top: AppSpacing.lg,
@@ -408,7 +408,7 @@ class _PeriodHeading extends StatelessWidget {
           children: [
             Text(
               format.historicalDate(period.date),
-              style: SahabaTextStyles.of(
+              style: SuhbaTextStyles.of(
                 context,
               ).kicker.copyWith(color: colors.accentText),
             ),
@@ -449,7 +449,7 @@ class ChapterJourneyTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final format = DisplayFormatter.of(context);
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final textTheme = Theme.of(context).textTheme;
     final c = chapter;
     return InkWell(
@@ -506,7 +506,7 @@ class ChapterJourneyTile extends StatelessWidget {
                               format.integer(c.number),
                               format.historicalDate(c.date),
                             ),
-                            style: SahabaTextStyles.of(
+                            style: SuhbaTextStyles.of(
                               context,
                             ).kicker.copyWith(color: colors.accentText),
                           ),
@@ -532,7 +532,7 @@ class ChapterJourneyTile extends StatelessWidget {
                             readingMinutes(c.wordCount),
                             format.integer(readingMinutes(c.wordCount)),
                           ),
-                          style: SahabaTextStyles.of(context).kicker,
+                          style: SuhbaTextStyles.of(context).kicker,
                         ),
                         if (c.visualIds.isNotEmpty)
                           Text(
@@ -540,12 +540,12 @@ class ChapterJourneyTile extends StatelessWidget {
                               c.visualIds.length,
                               format.integer(c.visualIds.length),
                             ),
-                            style: SahabaTextStyles.of(context).kicker,
+                            style: SuhbaTextStyles.of(context).kicker,
                           ),
                         if (c.review.coverage == Coverage.sample)
                           Text(
                             l10n.coverageSampleShort,
-                            style: SahabaTextStyles.of(
+                            style: SuhbaTextStyles.of(
                               context,
                             ).kicker.copyWith(color: colors.draft),
                           ),
@@ -623,7 +623,7 @@ class _TopicGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final textTheme = Theme.of(context).textTheme;
     return LayoutBuilder(
       builder: (context, constraints) {

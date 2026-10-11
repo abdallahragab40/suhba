@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/error_view.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/loading_skeleton.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/shared/content/providers.dart';
-import 'package:siyar_sahaba/shared/visuals/presentation/infographic_view.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/widgets/error_view.dart';
+import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/shared/content/providers.dart';
+import 'package:suhba/shared/visuals/presentation/infographic_view.dart';
 
 /// The Seerah on one time line (S18): the periods at a glance, then every
 /// event of the archive at its date. Each opens its event page.

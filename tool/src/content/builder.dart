@@ -2,17 +2,17 @@ import 'dart:collection';
 import 'dart:convert';
 
 import 'package:crypto/crypto.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/atlas_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/catalog_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/common_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/companion_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/quran_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/seerah_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/story_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/mappers/content_mappers.dart';
-import 'package:siyar_sahaba/shared/content/data/mappers/seerah_mappers.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_format.dart';
-import 'package:siyar_sahaba/shared/content/domain/review.dart';
+import 'package:suhba/shared/content/data/dto/atlas_dto.dart';
+import 'package:suhba/shared/content/data/dto/catalog_dto.dart';
+import 'package:suhba/shared/content/data/dto/common_dto.dart';
+import 'package:suhba/shared/content/data/dto/companion_dto.dart';
+import 'package:suhba/shared/content/data/dto/quran_dto.dart';
+import 'package:suhba/shared/content/data/dto/seerah_dto.dart';
+import 'package:suhba/shared/content/data/dto/story_dto.dart';
+import 'package:suhba/shared/content/data/mappers/content_mappers.dart';
+import 'package:suhba/shared/content/data/mappers/seerah_mappers.dart';
+import 'package:suhba/shared/content/domain/content_format.dart';
+import 'package:suhba/shared/content/domain/review.dart';
 
 import 'content_files.dart';
 import 'content_tree.dart';

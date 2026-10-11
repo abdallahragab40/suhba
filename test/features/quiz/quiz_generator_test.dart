@@ -1,10 +1,10 @@
 import 'dart:math';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/features/quiz/domain/quiz_generator.dart';
-import 'package:siyar_sahaba/features/quiz/domain/quiz_question.dart';
-import 'package:siyar_sahaba/features/quiz/presentation/quiz_providers.dart';
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
+import 'package:suhba/features/quiz/domain/quiz_generator.dart';
+import 'package:suhba/features/quiz/domain/quiz_question.dart';
+import 'package:suhba/features/quiz/presentation/quiz_providers.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
 
 import '../../helpers/app_harness.dart';
 

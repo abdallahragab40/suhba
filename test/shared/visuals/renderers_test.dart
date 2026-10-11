@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/design_system/theme/app_theme.dart';
-import 'package:siyar_sahaba/core/domain/historical_date.dart';
-import 'package:siyar_sahaba/core/domain/reliability.dart';
-import 'package:siyar_sahaba/shared/content/domain/atlas.dart';
-import 'package:siyar_sahaba/shared/content/domain/localized_text.dart';
-import 'package:siyar_sahaba/shared/content/domain/review.dart';
-import 'package:siyar_sahaba/shared/visuals/presentation/period_bands.dart';
-import 'package:siyar_sahaba/shared/visuals/presentation/resolved_visual.dart';
-import 'package:siyar_sahaba/shared/visuals/presentation/schematic_map.dart';
-import 'package:siyar_sahaba/shared/visuals/presentation/timeline_chart.dart';
+import 'package:suhba/core/design_system/theme/app_theme.dart';
+import 'package:suhba/core/domain/historical_date.dart';
+import 'package:suhba/core/domain/reliability.dart';
+import 'package:suhba/shared/content/domain/atlas.dart';
+import 'package:suhba/shared/content/domain/localized_text.dart';
+import 'package:suhba/shared/content/domain/review.dart';
+import 'package:suhba/shared/visuals/presentation/period_bands.dart';
+import 'package:suhba/shared/visuals/presentation/resolved_visual.dart';
+import 'package:suhba/shared/visuals/presentation/schematic_map.dart';
+import 'package:suhba/shared/visuals/presentation/timeline_chart.dart';
 
 import '../../helpers/pump_app.dart';
 

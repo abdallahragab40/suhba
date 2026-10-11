@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/radii.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/draft_badge.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/outlined_numeral.dart';
+import 'package:suhba/core/design_system/tokens/radii.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/design_system/tokens/typography.dart';
+import 'package:suhba/core/design_system/widgets/draft_badge.dart';
+import 'package:suhba/core/design_system/widgets/outlined_numeral.dart';
 
 /// A companion in a list: the name in the calligraphic face, the honorific,
 /// kunya and titles, category tags, and an outlined ordinal as ornament.
@@ -49,7 +49,7 @@ class CompanionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final textTheme = Theme.of(context).textTheme;
     final subtitle = this.subtitle;
     final ordinal = this.ordinal;
@@ -90,7 +90,7 @@ class CompanionCard extends StatelessWidget {
                       const SizedBox(height: AppSpacing.xs),
                     ],
                     nameText,
-                    Text(honorific, style: SahabaTextStyles.of(context).kicker),
+                    Text(honorific, style: SuhbaTextStyles.of(context).kicker),
                     if (subtitle != null && subtitle.isNotEmpty) ...[
                       const SizedBox(height: AppSpacing.xxs),
                       Text(
@@ -126,7 +126,7 @@ class _Tag extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 1),
       decoration: BoxDecoration(

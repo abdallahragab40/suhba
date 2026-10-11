@@ -1,16 +1,16 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:siyar_sahaba/shared/content/data/asset_content_repository.dart';
-import 'package:siyar_sahaba/shared/content/data/asset_content_source.dart';
-import 'package:siyar_sahaba/shared/content/domain/atlas.dart';
-import 'package:siyar_sahaba/shared/content/domain/catalog.dart';
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_manifest.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_repository.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_target.dart';
-import 'package:siyar_sahaba/shared/content/domain/quran_verses.dart';
-import 'package:siyar_sahaba/shared/content/domain/seerah.dart';
-import 'package:siyar_sahaba/shared/content/domain/story.dart';
+import 'package:suhba/shared/content/data/asset_content_repository.dart';
+import 'package:suhba/shared/content/data/asset_content_source.dart';
+import 'package:suhba/shared/content/domain/atlas.dart';
+import 'package:suhba/shared/content/domain/catalog.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
+import 'package:suhba/shared/content/domain/content_manifest.dart';
+import 'package:suhba/shared/content/domain/content_repository.dart';
+import 'package:suhba/shared/content/domain/content_target.dart';
+import 'package:suhba/shared/content/domain/quran_verses.dart';
+import 'package:suhba/shared/content/domain/seerah.dart';
+import 'package:suhba/shared/content/domain/story.dart';
 
 /// The asset bundle content is read from; overridden in tests.
 final assetBundleProvider = Provider<AssetBundle>((ref) => rootBundle);

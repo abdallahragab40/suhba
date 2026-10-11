@@ -3,7 +3,7 @@
 import 'package:drift/drift.dart';
 import 'package:drift_dev/api/migrations_native.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/database/app_database.dart';
+import 'package:suhba/core/database/app_database.dart';
 import 'generated/schema.dart';
 
 import 'generated/schema_v1.dart' as v1;

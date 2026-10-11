@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/geometric_pattern.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/design_system/widgets/geometric_pattern.dart';
 
 /// A calm, centred message for empty lists and screens, with an icon set in
 /// a small medallion of the geometric pattern.
@@ -24,7 +24,7 @@ class EmptyState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final icon = this.icon;
     final message = this.message;
     final action = this.action;

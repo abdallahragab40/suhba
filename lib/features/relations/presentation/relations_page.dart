@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:siyar_sahaba/app/router/routes.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/citation_marker.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/draft_banner.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/empty_state.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/error_view.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/loading_skeleton.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/reliability_badge.dart';
-import 'package:siyar_sahaba/core/domain/reliability.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/features/relations/domain/relationship_index.dart';
-import 'package:siyar_sahaba/features/relations/presentation/relationship_providers.dart';
-import 'package:siyar_sahaba/features/sources/presentation/citation_sheet.dart';
-import 'package:siyar_sahaba/shared/content/domain/catalog.dart';
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
-import 'package:siyar_sahaba/shared/content/presentation/content_text.dart';
-import 'package:siyar_sahaba/shared/content/providers.dart';
+import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/design_system/widgets/citation_marker.dart';
+import 'package:suhba/core/design_system/widgets/draft_banner.dart';
+import 'package:suhba/core/design_system/widgets/empty_state.dart';
+import 'package:suhba/core/design_system/widgets/error_view.dart';
+import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
+import 'package:suhba/core/design_system/widgets/reliability_badge.dart';
+import 'package:suhba/core/domain/reliability.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/features/relations/domain/relationship_index.dart';
+import 'package:suhba/features/relations/presentation/relationship_providers.dart';
+import 'package:suhba/features/sources/presentation/citation_sheet.dart';
+import 'package:suhba/shared/content/domain/catalog.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
+import 'package:suhba/shared/content/presentation/content_text.dart';
+import 'package:suhba/shared/content/providers.dart';
 
 /// The label for what [other] is to the subject (e.g. "من الأبناء").
 String relationLabel(AppLocalizations l10n, RelationType t) => switch (t) {
@@ -103,7 +103,7 @@ class _RelationsState extends ConsumerState<_Relations> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final textTheme = Theme.of(context).textTheme;
     final names = _Names(
       ref.watch(companionIndexProvider).value ?? const [],
@@ -224,7 +224,7 @@ class _SubjectHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final textTheme = Theme.of(context).textTheme;
     final name = names.of(context, subject);
     final companion = names.companion(subject);
@@ -271,7 +271,7 @@ class _RelationRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final e = entry;
     final provisional = !e.review.isApproved;
     final companion = names.companion(e.other);

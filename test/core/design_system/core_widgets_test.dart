@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/design_system/theme/app_theme.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/empty_state.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/error_view.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/geometric_pattern.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/loading_skeleton.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/outlined_numeral.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/reliability_badge.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/section_header.dart';
-import 'package:siyar_sahaba/core/domain/reliability.dart';
-import 'package:siyar_sahaba/core/format/digits.dart';
-import 'package:siyar_sahaba/core/result/failure.dart';
+import 'package:suhba/core/design_system/theme/app_theme.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/design_system/widgets/empty_state.dart';
+import 'package:suhba/core/design_system/widgets/error_view.dart';
+import 'package:suhba/core/design_system/widgets/geometric_pattern.dart';
+import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
+import 'package:suhba/core/design_system/widgets/outlined_numeral.dart';
+import 'package:suhba/core/design_system/widgets/reliability_badge.dart';
+import 'package:suhba/core/design_system/widgets/section_header.dart';
+import 'package:suhba/core/domain/reliability.dart';
+import 'package:suhba/core/format/digits.dart';
+import 'package:suhba/core/result/failure.dart';
 
 import '../../helpers/pump_app.dart';
 import 'contrast_test.dart' show contrast;
@@ -130,7 +130,7 @@ void main() {
       ('dark', AppTheme.dark),
     ]) {
       test('$name: badge text meets 4.5:1 on its tint over every surface', () {
-        final colors = theme.extension<SahabaColors>()!;
+        final colors = theme.extension<SuhbaColors>()!;
         final surfaces = [theme.colorScheme.surface, colors.surfaceAlt];
         for (final level in Reliability.values) {
           final color = ReliabilityBadge.colorFor(level, colors);

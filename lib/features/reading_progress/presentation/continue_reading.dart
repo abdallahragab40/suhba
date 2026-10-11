@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/undo_snack_bar.dart';
-import 'package:siyar_sahaba/core/format/display_formatter.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/features/reading_progress/domain/reading_progress.dart';
-import 'package:siyar_sahaba/features/reading_progress/presentation/progress_providers.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_target.dart';
-import 'package:siyar_sahaba/shared/content/presentation/target_description.dart';
-import 'package:siyar_sahaba/shared/content/providers.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/design_system/tokens/typography.dart';
+import 'package:suhba/core/design_system/widgets/undo_snack_bar.dart';
+import 'package:suhba/core/format/display_formatter.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
+import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
+import 'package:suhba/shared/content/domain/content_target.dart';
+import 'package:suhba/shared/content/presentation/target_description.dart';
+import 'package:suhba/shared/content/providers.dart';
 
 /// Unfinished sections and chapters, most recent first. Renders nothing
 /// when there are none.
@@ -52,7 +52,7 @@ class ContinueReadingTile extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
     final format = DisplayFormatter.of(context);
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final p = progress;
     final lookup = ref.watch(targetLookupProvider(p.contentTarget));
 
@@ -101,10 +101,7 @@ class ContinueReadingTile extends ConsumerWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          parent,
-                          style: SahabaTextStyles.of(context).kicker,
-                        ),
+                        Text(parent, style: SuhbaTextStyles.of(context).kicker),
                         Text(
                           title,
                           style: Theme.of(context).textTheme.titleMedium,
@@ -136,7 +133,7 @@ class ContinueReadingTile extends ConsumerWidget {
                     l10n.progressRead(
                       format.percent((p.fraction * 100).round()),
                     ),
-                    style: SahabaTextStyles.of(context).kicker,
+                    style: SuhbaTextStyles.of(context).kicker,
                   ),
                 ],
               ),

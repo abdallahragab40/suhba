@@ -4,10 +4,10 @@ library;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/design_system/theme/app_theme.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/shared/content/presentation/reading_body.dart';
-import 'package:siyar_sahaba/shared/content/providers.dart';
+import 'package:suhba/core/design_system/theme/app_theme.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/shared/content/presentation/reading_body.dart';
+import 'package:suhba/shared/content/providers.dart';
 
 import '../helpers/app_harness.dart';
 import '../helpers/content_bundle.dart';

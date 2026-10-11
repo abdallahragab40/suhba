@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/features/settings/presentation/reading_settings.dart';
+import 'package:suhba/features/settings/presentation/reading_settings.dart';
 
 import '../../helpers/app_harness.dart';
 

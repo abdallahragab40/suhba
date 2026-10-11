@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/motion.dart';
+import 'package:suhba/core/design_system/tokens/motion.dart';
 
 /// A fade-through page: the new page fades in while scaling up slightly.
 /// Instant when the user has asked to reduce motion.

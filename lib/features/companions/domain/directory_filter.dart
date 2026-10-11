@@ -1,5 +1,5 @@
-import 'package:siyar_sahaba/shared/content/domain/catalog.dart';
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
+import 'package:suhba/shared/content/domain/catalog.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
 
 /// The category to filter by, or null for all. A category id that does not
 /// exist (e.g. from an outdated link) means all.

@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:siyar_sahaba/core/domain/reliability.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/block_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/common_dto.dart';
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
+import 'package:suhba/core/domain/reliability.dart';
+import 'package:suhba/shared/content/data/dto/block_dto.dart';
+import 'package:suhba/shared/content/data/dto/common_dto.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
 
 part 'companion_dto.freezed.dart';
 part 'companion_dto.g.dart';

@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/draft_badge.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/features/bookmarks/domain/bookmark.dart';
-import 'package:siyar_sahaba/features/bookmarks/presentation/bookmark_providers.dart';
-import 'package:siyar_sahaba/features/reading_progress/domain/reading_progress.dart';
-import 'package:siyar_sahaba/features/reading_progress/presentation/passage_contents.dart';
-import 'package:siyar_sahaba/features/reading_progress/presentation/progress_providers.dart';
-import 'package:siyar_sahaba/features/settings/presentation/reading_settings.dart';
-import 'package:siyar_sahaba/features/sources/presentation/citation_sheet.dart';
-import 'package:siyar_sahaba/features/sources/presentation/passage_share.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_block.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_target.dart';
-import 'package:siyar_sahaba/shared/content/domain/review.dart';
-import 'package:siyar_sahaba/shared/content/presentation/reader_navigation.dart';
-import 'package:siyar_sahaba/shared/content/presentation/reading_body.dart';
-import 'package:siyar_sahaba/shared/content/presentation/record_links.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/design_system/tokens/typography.dart';
+import 'package:suhba/core/design_system/widgets/draft_badge.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/features/bookmarks/domain/bookmark.dart';
+import 'package:suhba/features/bookmarks/presentation/bookmark_providers.dart';
+import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
+import 'package:suhba/features/reading_progress/presentation/passage_contents.dart';
+import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
+import 'package:suhba/features/settings/presentation/reading_settings.dart';
+import 'package:suhba/features/sources/presentation/citation_sheet.dart';
+import 'package:suhba/features/sources/presentation/passage_share.dart';
+import 'package:suhba/shared/content/domain/content_block.dart';
+import 'package:suhba/shared/content/domain/content_target.dart';
+import 'package:suhba/shared/content/domain/review.dart';
+import 'package:suhba/shared/content/presentation/reader_navigation.dart';
+import 'package:suhba/shared/content/presentation/reading_body.dart';
+import 'package:suhba/shared/content/presentation/record_links.dart';
 
 /// A previous or next passage.
 typedef PassageLink = ({String label, String title, VoidCallback open});
@@ -68,7 +68,7 @@ class SeerahPassageReader extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final provisional = !review.isApproved;
     final citations = [for (final b in blocks) ...b.allCitations];
     final previous = this.previous;
@@ -101,7 +101,7 @@ class SeerahPassageReader extends ConsumerWidget {
             Expanded(
               child: Text(
                 kicker,
-                style: SahabaTextStyles.of(
+                style: SuhbaTextStyles.of(
                   context,
                 ).kicker.copyWith(color: colors.accentText),
               ),

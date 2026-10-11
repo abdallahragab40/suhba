@@ -1,19 +1,19 @@
 import 'package:drift/native.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/app/provider_retry.dart';
-import 'package:siyar_sahaba/app/reconciliation/user_data_reconciliation.dart';
-import 'package:siyar_sahaba/core/database/app_database.dart';
-import 'package:siyar_sahaba/core/database/database_provider.dart';
-import 'package:siyar_sahaba/core/storage/settings_store.dart';
-import 'package:siyar_sahaba/features/bookmarks/data/drift_bookmark_repository.dart';
-import 'package:siyar_sahaba/features/bookmarks/domain/bookmark.dart';
-import 'package:siyar_sahaba/features/reading_progress/data/drift_reading_progress_repository.dart';
-import 'package:siyar_sahaba/features/reading_progress/domain/reading_progress.dart';
-import 'package:siyar_sahaba/shared/content/data/asset_content_repository.dart';
-import 'package:siyar_sahaba/shared/content/data/asset_content_source.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_target.dart';
-import 'package:siyar_sahaba/shared/content/providers.dart';
+import 'package:suhba/app/provider_retry.dart';
+import 'package:suhba/app/reconciliation/user_data_reconciliation.dart';
+import 'package:suhba/core/database/app_database.dart';
+import 'package:suhba/core/database/database_provider.dart';
+import 'package:suhba/core/storage/settings_store.dart';
+import 'package:suhba/features/bookmarks/data/drift_bookmark_repository.dart';
+import 'package:suhba/features/bookmarks/domain/bookmark.dart';
+import 'package:suhba/features/reading_progress/data/drift_reading_progress_repository.dart';
+import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
+import 'package:suhba/shared/content/data/asset_content_repository.dart';
+import 'package:suhba/shared/content/data/asset_content_source.dart';
+import 'package:suhba/shared/content/domain/content_target.dart';
+import 'package:suhba/shared/content/providers.dart';
 
 import '../helpers/content_bundle.dart';
 

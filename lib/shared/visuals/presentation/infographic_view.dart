@@ -1,30 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:siyar_sahaba/app/router/routes.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/radii.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/citation_marker.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/draft_badge.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/error_view.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/loading_skeleton.dart';
-import 'package:siyar_sahaba/core/domain/reliability.dart';
-import 'package:siyar_sahaba/core/format/display_formatter.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/core/result/failure.dart';
-import 'package:siyar_sahaba/features/sources/presentation/citation_sheet.dart';
-import 'package:siyar_sahaba/shared/content/domain/atlas.dart';
-import 'package:siyar_sahaba/shared/content/domain/citation.dart';
-import 'package:siyar_sahaba/shared/content/presentation/content_text.dart';
-import 'package:siyar_sahaba/shared/visuals/presentation/period_bands.dart';
-import 'package:siyar_sahaba/shared/visuals/presentation/place_panel.dart';
-import 'package:siyar_sahaba/shared/visuals/presentation/relationship_diagram.dart';
-import 'package:siyar_sahaba/shared/visuals/presentation/resolved_visual.dart';
-import 'package:siyar_sahaba/shared/visuals/presentation/schematic_map.dart';
-import 'package:siyar_sahaba/shared/visuals/presentation/sequence_explainer.dart';
-import 'package:siyar_sahaba/shared/visuals/presentation/timeline_chart.dart';
+import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/design_system/tokens/radii.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/design_system/tokens/typography.dart';
+import 'package:suhba/core/design_system/widgets/citation_marker.dart';
+import 'package:suhba/core/design_system/widgets/draft_badge.dart';
+import 'package:suhba/core/design_system/widgets/error_view.dart';
+import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
+import 'package:suhba/core/domain/reliability.dart';
+import 'package:suhba/core/format/display_formatter.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/core/result/failure.dart';
+import 'package:suhba/features/sources/presentation/citation_sheet.dart';
+import 'package:suhba/shared/content/domain/atlas.dart';
+import 'package:suhba/shared/content/domain/citation.dart';
+import 'package:suhba/shared/content/presentation/content_text.dart';
+import 'package:suhba/shared/visuals/presentation/period_bands.dart';
+import 'package:suhba/shared/visuals/presentation/place_panel.dart';
+import 'package:suhba/shared/visuals/presentation/relationship_diagram.dart';
+import 'package:suhba/shared/visuals/presentation/resolved_visual.dart';
+import 'package:suhba/shared/visuals/presentation/schematic_map.dart';
+import 'package:suhba/shared/visuals/presentation/sequence_explainer.dart';
+import 'package:suhba/shared/visuals/presentation/timeline_chart.dart';
 
 /// The display name of an infographic type.
 String infographicTypeLabel(AppLocalizations l10n, InfographicType type) =>
@@ -116,7 +116,7 @@ class _InfographicViewState extends ConsumerState<InfographicView> {
 
   Widget _frame(BuildContext context, ResolvedVisual r) {
     final l10n = AppLocalizations.of(context);
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final textTheme = Theme.of(context).textTheme;
     final v = r.visual;
     final provisional = !v.review.isApproved;
@@ -136,7 +136,7 @@ class _InfographicViewState extends ConsumerState<InfographicView> {
             Expanded(
               child: Text(
                 infographicTypeLabel(l10n, v.type),
-                style: SahabaTextStyles.of(context).kicker,
+                style: SuhbaTextStyles.of(context).kicker,
               ),
             ),
             if (provisional)
@@ -187,7 +187,7 @@ class _InfographicViewState extends ConsumerState<InfographicView> {
         ],
         if (v.notes.isNotEmpty) ...[
           const SizedBox(height: AppSpacing.md),
-          Text(l10n.visualNotes, style: SahabaTextStyles.of(context).kicker),
+          Text(l10n.visualNotes, style: SuhbaTextStyles.of(context).kicker),
           for (final n in v.notes)
             Padding(
               padding: const EdgeInsets.only(top: AppSpacing.xxs),
@@ -287,7 +287,7 @@ class _InfographicViewState extends ConsumerState<InfographicView> {
     final l10n = AppLocalizations.of(context);
     final format = DisplayFormatter.of(context);
     final textTheme = Theme.of(context).textTheme;
-    final kicker = SahabaTextStyles.of(context).kicker;
+    final kicker = SuhbaTextStyles.of(context).kicker;
     final provisional = !r.visual.review.isApproved;
 
     Widget row(

@@ -8,16 +8,16 @@ import 'package:flutter_riverpod/misc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:meta/meta.dart';
-import 'package:siyar_sahaba/app/app.dart';
-import 'package:siyar_sahaba/app/provider_retry.dart';
-import 'package:siyar_sahaba/app/router/app_router.dart';
-import 'package:siyar_sahaba/app/router/routes.dart';
-import 'package:siyar_sahaba/core/database/app_database.dart';
-import 'package:siyar_sahaba/core/database/database_provider.dart';
-import 'package:siyar_sahaba/core/storage/settings_store.dart';
-import 'package:siyar_sahaba/features/search/presentation/search_providers.dart';
-import 'package:siyar_sahaba/features/welcome/presentation/welcome_controller.dart';
-import 'package:siyar_sahaba/shared/content/providers.dart';
+import 'package:suhba/app/app.dart';
+import 'package:suhba/app/provider_retry.dart';
+import 'package:suhba/app/router/app_router.dart';
+import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/database/app_database.dart';
+import 'package:suhba/core/database/database_provider.dart';
+import 'package:suhba/core/storage/settings_store.dart';
+import 'package:suhba/features/search/presentation/search_providers.dart';
+import 'package:suhba/features/welcome/presentation/welcome_controller.dart';
+import 'package:suhba/shared/content/providers.dart';
 
 import 'content_bundle.dart';
 
@@ -66,7 +66,7 @@ class AppUnderTest {
   late final ProviderContainer container;
 
   Widget get widget =>
-      UncontrolledProviderScope(container: container, child: const SiyarApp());
+      UncontrolledProviderScope(container: container, child: const SuhbaApp());
 
   /// Pumps the app and lets content load. Use inside [testApp], which
   /// disposes the app and closes its database when the test ends.

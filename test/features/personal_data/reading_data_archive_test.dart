@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/features/bookmarks/domain/bookmark.dart';
-import 'package:siyar_sahaba/features/personal_data/domain/reading_data_archive.dart';
-import 'package:siyar_sahaba/features/reading_progress/domain/reading_progress.dart';
+import 'package:suhba/features/bookmarks/domain/bookmark.dart';
+import 'package:suhba/features/personal_data/domain/reading_data_archive.dart';
+import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
 
 Bookmark _b(
   String id, {
@@ -131,6 +131,11 @@ void main() {
         decodeArchive(jsonEncode({'format': 'other', 'version': 1})),
         ArchiveProblem.notAnExport,
       );
+    });
+
+    test('a file exported before the rename is still read', () {
+      final legacy = {..._json(), 'format': 'siyar-sahaba.reading-data'};
+      expect(decodeArchive(jsonEncode(legacy)), isNot(isA<ArchiveRejected>()));
     });
 
     test('a newer format version', () {

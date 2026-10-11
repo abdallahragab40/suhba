@@ -1,4 +1,4 @@
-import 'package:siyar_sahaba/core/format/digits.dart';
+import 'package:suhba/core/format/digits.dart';
 
 /// Folds Arabic text to a canonical form for search, so that spelling
 /// variants match: أبو بكرٍ, ابو بكر and أبو بَكر all become "ابو بكر".

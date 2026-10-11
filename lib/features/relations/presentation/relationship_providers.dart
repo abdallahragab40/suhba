@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:siyar_sahaba/features/relations/domain/relationship_index.dart';
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
-import 'package:siyar_sahaba/shared/content/providers.dart';
+import 'package:suhba/features/relations/domain/relationship_index.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
+import 'package:suhba/shared/content/providers.dart';
 
 /// Every sourced relation, from all companion files and the relationship
 /// visuals. Companion files that fail to load are counted, not hidden, so

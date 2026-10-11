@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/features/biography/presentation/section_reader_page.dart';
-import 'package:siyar_sahaba/features/companions/presentation/profile/companion_profile_page.dart';
-import 'package:siyar_sahaba/features/stories/presentation/chapter_page.dart';
+import 'package:suhba/features/biography/presentation/section_reader_page.dart';
+import 'package:suhba/features/companions/presentation/profile/companion_profile_page.dart';
+import 'package:suhba/features/stories/presentation/chapter_page.dart';
 
 import '../../helpers/app_harness.dart';
 

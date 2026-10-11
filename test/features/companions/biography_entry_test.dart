@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/features/biography/presentation/section_reader_page.dart';
-import 'package:siyar_sahaba/features/reading_progress/domain/reading_progress.dart';
-import 'package:siyar_sahaba/features/reading_progress/presentation/progress_providers.dart';
+import 'package:suhba/features/biography/presentation/section_reader_page.dart';
+import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
+import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
 
 import '../../helpers/app_harness.dart';
 import '../../helpers/content_bundle.dart';

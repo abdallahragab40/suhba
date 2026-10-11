@@ -1,11 +1,11 @@
 // JSON shapes of the content files. They mirror content/schema/; enum
 // values are the Dart enum names.
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:siyar_sahaba/core/domain/historical_date.dart';
-import 'package:siyar_sahaba/core/domain/reliability.dart';
-import 'package:siyar_sahaba/shared/content/domain/citation.dart';
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
-import 'package:siyar_sahaba/shared/content/domain/review.dart';
+import 'package:suhba/core/domain/historical_date.dart';
+import 'package:suhba/core/domain/reliability.dart';
+import 'package:suhba/shared/content/domain/citation.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
+import 'package:suhba/shared/content/domain/review.dart';
 
 part 'common_dto.freezed.dart';
 part 'common_dto.g.dart';

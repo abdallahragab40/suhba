@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/result/failure.dart';
-import 'package:siyar_sahaba/features/biography/presentation/section_reader_page.dart';
-import 'package:siyar_sahaba/features/bookmarks/domain/bookmark.dart';
-import 'package:siyar_sahaba/features/bookmarks/presentation/bookmark_providers.dart';
-import 'package:siyar_sahaba/features/bookmarks/presentation/saved_page.dart';
+import 'package:suhba/core/result/failure.dart';
+import 'package:suhba/features/biography/presentation/section_reader_page.dart';
+import 'package:suhba/features/bookmarks/domain/bookmark.dart';
+import 'package:suhba/features/bookmarks/presentation/bookmark_providers.dart';
+import 'package:suhba/features/bookmarks/presentation/saved_page.dart';
 
 import '../../helpers/app_harness.dart';
 import '../../helpers/content_bundle.dart';

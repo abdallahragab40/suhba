@@ -3,17 +3,17 @@ import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:siyar_sahaba/core/domain/historical_date.dart';
-import 'package:siyar_sahaba/core/domain/quran_ref.dart';
-import 'package:siyar_sahaba/core/domain/reliability.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/block_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/common_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/companion_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/mappers/content_mappers.dart';
-import 'package:siyar_sahaba/shared/content/domain/citation.dart';
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_block.dart';
-import 'package:siyar_sahaba/shared/content/domain/review.dart';
+import 'package:suhba/core/domain/historical_date.dart';
+import 'package:suhba/core/domain/quran_ref.dart';
+import 'package:suhba/core/domain/reliability.dart';
+import 'package:suhba/shared/content/data/dto/block_dto.dart';
+import 'package:suhba/shared/content/data/dto/common_dto.dart';
+import 'package:suhba/shared/content/data/dto/companion_dto.dart';
+import 'package:suhba/shared/content/data/mappers/content_mappers.dart';
+import 'package:suhba/shared/content/domain/citation.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
+import 'package:suhba/shared/content/domain/content_block.dart';
+import 'package:suhba/shared/content/domain/review.dart';
 
 Map<String, dynamic> _readJson(String path) =>
     jsonDecode(File(path).readAsStringSync()) as Map<String, dynamic>;

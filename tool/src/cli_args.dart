@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:siyar_sahaba/shared/content/domain/review.dart';
+import 'package:suhba/shared/content/domain/review.dart';
 
 /// `--name=value` → value, or null.
 String? option(List<String> args, String name) {

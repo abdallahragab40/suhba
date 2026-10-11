@@ -1,6 +1,6 @@
 import 'package:file_selector/file_selector.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:siyar_sahaba/features/personal_data/domain/reading_data_archive.dart';
+import 'package:suhba/features/personal_data/domain/reading_data_archive.dart';
 
 /// Lets the reader choose a file from the device; nothing is downloaded.
 abstract interface class FileOpener {

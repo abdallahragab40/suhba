@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/app/provider_retry.dart';
-import 'package:siyar_sahaba/core/domain/reliability.dart';
-import 'package:siyar_sahaba/core/text/arabic_normalizer.dart';
-import 'package:siyar_sahaba/features/search/domain/search_documents.dart';
-import 'package:siyar_sahaba/features/search/domain/search_index.dart';
-import 'package:siyar_sahaba/features/search/presentation/search_providers.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_block.dart';
-import 'package:siyar_sahaba/shared/content/domain/localized_text.dart';
-import 'package:siyar_sahaba/shared/content/providers.dart';
+import 'package:suhba/app/provider_retry.dart';
+import 'package:suhba/core/domain/reliability.dart';
+import 'package:suhba/core/text/arabic_normalizer.dart';
+import 'package:suhba/features/search/domain/search_documents.dart';
+import 'package:suhba/features/search/domain/search_index.dart';
+import 'package:suhba/features/search/presentation/search_providers.dart';
+import 'package:suhba/shared/content/domain/content_block.dart';
+import 'package:suhba/shared/content/domain/localized_text.dart';
+import 'package:suhba/shared/content/providers.dart';
 
 import '../../helpers/app_harness.dart';
 import '../../helpers/content_bundle.dart';

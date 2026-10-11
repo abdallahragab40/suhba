@@ -1,9 +1,9 @@
 import 'package:drift/drift.dart';
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/database/app_database.dart';
-import 'package:siyar_sahaba/features/bookmarks/data/drift_bookmark_repository.dart';
-import 'package:siyar_sahaba/features/bookmarks/domain/bookmark.dart';
+import 'package:suhba/core/database/app_database.dart';
+import 'package:suhba/features/bookmarks/data/drift_bookmark_repository.dart';
+import 'package:suhba/features/bookmarks/domain/bookmark.dart';
 
 void main() {
   late AppDatabase db;

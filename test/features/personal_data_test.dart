@@ -2,15 +2,15 @@ import 'package:drift/drift.dart' show driftRuntimeOptions;
 import 'package:drift/native.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/database/app_database.dart';
-import 'package:siyar_sahaba/core/storage/settings_store.dart';
-import 'package:siyar_sahaba/features/bookmarks/data/drift_bookmark_repository.dart';
-import 'package:siyar_sahaba/features/bookmarks/domain/bookmark.dart';
-import 'package:siyar_sahaba/features/bookmarks/presentation/bookmark_providers.dart';
-import 'package:siyar_sahaba/features/reading_progress/data/drift_reading_progress_repository.dart';
-import 'package:siyar_sahaba/features/reading_progress/domain/reading_progress.dart';
-import 'package:siyar_sahaba/features/reading_progress/presentation/progress_providers.dart';
-import 'package:siyar_sahaba/features/reading_progress/presentation/reading_history_page.dart';
+import 'package:suhba/core/database/app_database.dart';
+import 'package:suhba/core/storage/settings_store.dart';
+import 'package:suhba/features/bookmarks/data/drift_bookmark_repository.dart';
+import 'package:suhba/features/bookmarks/domain/bookmark.dart';
+import 'package:suhba/features/bookmarks/presentation/bookmark_providers.dart';
+import 'package:suhba/features/reading_progress/data/drift_reading_progress_repository.dart';
+import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
+import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
+import 'package:suhba/features/reading_progress/presentation/reading_history_page.dart';
 
 import '../helpers/app_harness.dart';
 

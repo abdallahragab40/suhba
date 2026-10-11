@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
-import 'package:siyar_sahaba/core/text/honorifics.dart';
-import 'package:siyar_sahaba/shared/content/domain/catalog.dart';
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
-import 'package:siyar_sahaba/shared/content/domain/localized_text.dart';
+import 'package:suhba/core/text/honorifics.dart';
+import 'package:suhba/shared/content/domain/catalog.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
+import 'package:suhba/shared/content/domain/localized_text.dart';
 
 extension LocalizedTextInContext on LocalizedText {
   /// The text in the app's current language.

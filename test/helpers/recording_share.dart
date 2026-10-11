@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 import 'dart:ui';
 
-import 'package:siyar_sahaba/core/share/share_service.dart';
+import 'package:suhba/core/share/share_service.dart';
 
 /// Captures what the app would hand to the share sheet.
 class RecordingShare implements ShareService {

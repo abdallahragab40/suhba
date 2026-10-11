@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:siyar_sahaba/app/router/routes.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/radii.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/draft_badge.dart';
-import 'package:siyar_sahaba/core/format/display_formatter.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/shared/content/domain/story.dart';
-import 'package:siyar_sahaba/shared/content/presentation/content_text.dart';
+import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/design_system/tokens/radii.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/design_system/tokens/typography.dart';
+import 'package:suhba/core/design_system/widgets/draft_badge.dart';
+import 'package:suhba/core/format/display_formatter.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/shared/content/domain/story.dart';
+import 'package:suhba/shared/content/presentation/content_text.dart';
 
 /// A story in a list: title, synopsis and reading time. Opens the story.
 class StoryCard extends StatelessWidget {
@@ -21,7 +21,7 @@ class StoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final format = DisplayFormatter.of(context);
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final s = story;
     return Card(
       margin: const EdgeInsetsDirectional.only(bottom: AppSpacing.sm),
@@ -56,7 +56,7 @@ class StoryCard extends StatelessWidget {
                   s.readingMinutes,
                   format.integer(s.readingMinutes),
                 ),
-                style: SahabaTextStyles.of(context).kicker,
+                style: SuhbaTextStyles.of(context).kicker,
               ),
             ],
           ),

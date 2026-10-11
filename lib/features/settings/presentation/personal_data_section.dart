@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:siyar_sahaba/app/router/routes.dart';
-import 'package:siyar_sahaba/core/format/display_formatter.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/core/share/share_service.dart';
-import 'package:siyar_sahaba/features/bookmarks/presentation/bookmark_providers.dart';
-import 'package:siyar_sahaba/features/personal_data/domain/reading_data_archive.dart';
-import 'package:siyar_sahaba/features/personal_data/presentation/reading_data_transfer.dart';
-import 'package:siyar_sahaba/features/reading_progress/presentation/progress_providers.dart';
+import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/format/display_formatter.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/core/share/share_service.dart';
+import 'package:suhba/features/bookmarks/presentation/bookmark_providers.dart';
+import 'package:suhba/features/personal_data/domain/reading_data_archive.dart';
+import 'package:suhba/features/personal_data/presentation/reading_data_transfer.dart';
+import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
 
 /// The reader's own data on this device (E10): the reading history, export
 /// and import of saved items and positions, and separate controls to clear

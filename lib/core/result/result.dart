@@ -1,4 +1,4 @@
-import 'package:siyar_sahaba/core/result/failure.dart';
+import 'package:suhba/core/result/failure.dart';
 
 /// The outcome of an operation that can fail in an expected way: either
 /// [Ok] with a value or [Err] with a [Failure]. Use a `switch` to handle

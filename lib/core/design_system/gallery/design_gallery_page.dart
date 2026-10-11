@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:siyar_sahaba/core/design_system/gallery/color_swatches.dart';
-import 'package:siyar_sahaba/core/design_system/gallery/core_widgets_specimen.dart';
-import 'package:siyar_sahaba/core/design_system/gallery/typography_specimen.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/features/settings/presentation/theme_mode_controller.dart';
+import 'package:suhba/core/design_system/gallery/color_swatches.dart';
+import 'package:suhba/core/design_system/gallery/core_widgets_specimen.dart';
+import 'package:suhba/core/design_system/gallery/typography_specimen.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/features/settings/presentation/theme_mode_controller.dart';
 
 /// A developer-facing view of the design system in the current theme.
 /// Reachable from Settings in debug builds only.

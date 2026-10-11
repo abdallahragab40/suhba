@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/fonts.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/palette.dart';
+import 'package:suhba/core/design_system/tokens/fonts.dart';
+import 'package:suhba/core/design_system/tokens/palette.dart';
 
 /// How the mark is laid out on its canvas.
 enum BrandMarkLayout {

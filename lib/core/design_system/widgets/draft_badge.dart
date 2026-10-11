@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/radii.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/core/design_system/tokens/radii.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
 
 /// Shown on every item whose content a qualified reviewer has not
 /// approved, so it is never presented as authenticated: "مسودة — لم
@@ -15,7 +15,7 @@ class DraftBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final l10n = AppLocalizations.of(context);
     final label = preliminary ? l10n.draftBadgePreliminary : l10n.draftBadge;
     return Semantics(

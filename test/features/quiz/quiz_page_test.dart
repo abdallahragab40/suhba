@@ -2,14 +2,14 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/format/display_formatter.dart';
-import 'package:siyar_sahaba/core/storage/settings_store.dart';
-import 'package:siyar_sahaba/features/quiz/domain/quiz_generator.dart';
-import 'package:siyar_sahaba/features/quiz/domain/quiz_question.dart';
-import 'package:siyar_sahaba/features/quiz/presentation/quiz_home_page.dart';
-import 'package:siyar_sahaba/features/quiz/presentation/quiz_play_page.dart';
-import 'package:siyar_sahaba/features/quiz/presentation/quiz_providers.dart';
-import 'package:siyar_sahaba/features/quiz/presentation/quiz_widgets.dart';
+import 'package:suhba/core/format/display_formatter.dart';
+import 'package:suhba/core/storage/settings_store.dart';
+import 'package:suhba/features/quiz/domain/quiz_generator.dart';
+import 'package:suhba/features/quiz/domain/quiz_question.dart';
+import 'package:suhba/features/quiz/presentation/quiz_home_page.dart';
+import 'package:suhba/features/quiz/presentation/quiz_play_page.dart';
+import 'package:suhba/features/quiz/presentation/quiz_providers.dart';
+import 'package:suhba/features/quiz/presentation/quiz_widgets.dart';
 
 import '../../helpers/app_harness.dart';
 import '../../helpers/pump_app.dart';

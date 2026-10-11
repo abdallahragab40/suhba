@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/app/bootstrap.dart';
-import 'package:siyar_sahaba/core/error/error_reporter.dart';
+import 'package:suhba/app/bootstrap.dart';
+import 'package:suhba/core/error/error_reporter.dart';
 
 class _RecordingReporter implements ErrorReporter {
   final reports = <(Object, String?)>[];

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:siyar_sahaba/app/router/routes.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/empty_state.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/design_system/widgets/empty_state.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
 
 /// Shown for an unknown route or an outdated deep link.
 class NotFoundPage extends StatelessWidget {

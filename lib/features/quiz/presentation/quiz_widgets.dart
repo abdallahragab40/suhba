@@ -1,14 +1,14 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/motion.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/palette.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/radii.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/format/display_formatter.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/features/quiz/domain/quiz_question.dart';
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
+import 'package:suhba/core/design_system/tokens/motion.dart';
+import 'package:suhba/core/design_system/tokens/palette.dart';
+import 'package:suhba/core/design_system/tokens/radii.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/format/display_formatter.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/features/quiz/domain/quiz_question.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
 
 /// The question as the player reads it.
 String quizPrompt(AppLocalizations l10n, QuizQuestion q) {

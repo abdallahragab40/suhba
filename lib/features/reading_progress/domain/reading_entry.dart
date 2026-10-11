@@ -1,4 +1,4 @@
-import 'package:siyar_sahaba/features/reading_progress/domain/reading_progress.dart';
+import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
 
 /// Where a reader should go into a work (a biography's sections, a story's
 /// chapters), given their progress in it.

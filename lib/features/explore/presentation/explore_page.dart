@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:siyar_sahaba/app/router/app_shell.dart';
-import 'package:siyar_sahaba/app/router/routes.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/draft_badge.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/error_view.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/loading_skeleton.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/section_header.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/features/atlas/presentation/place_page.dart';
-import 'package:siyar_sahaba/features/quiz/presentation/quiz_banner.dart';
-import 'package:siyar_sahaba/features/stories/presentation/story_card.dart';
-import 'package:siyar_sahaba/shared/content/domain/atlas.dart';
-import 'package:siyar_sahaba/shared/content/domain/catalog.dart';
-import 'package:siyar_sahaba/shared/content/domain/story.dart';
-import 'package:siyar_sahaba/shared/content/presentation/content_text.dart';
-import 'package:siyar_sahaba/shared/content/presentation/record_links.dart';
-import 'package:siyar_sahaba/shared/content/providers.dart';
-import 'package:siyar_sahaba/shared/visuals/presentation/infographic_view.dart';
+import 'package:suhba/app/router/app_shell.dart';
+import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/design_system/tokens/typography.dart';
+import 'package:suhba/core/design_system/widgets/draft_badge.dart';
+import 'package:suhba/core/design_system/widgets/error_view.dart';
+import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
+import 'package:suhba/core/design_system/widgets/section_header.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/features/atlas/presentation/place_page.dart';
+import 'package:suhba/features/quiz/presentation/quiz_banner.dart';
+import 'package:suhba/features/stories/presentation/story_card.dart';
+import 'package:suhba/shared/content/domain/atlas.dart';
+import 'package:suhba/shared/content/domain/catalog.dart';
+import 'package:suhba/shared/content/domain/story.dart';
+import 'package:suhba/shared/content/presentation/content_text.dart';
+import 'package:suhba/shared/content/presentation/record_links.dart';
+import 'package:suhba/shared/content/providers.dart';
+import 'package:suhba/shared/visuals/presentation/infographic_view.dart';
 
 /// What Explore shows; its name is the `show` query parameter.
 enum ExploreFilter { all, events, places, visuals, stories }
@@ -141,7 +141,7 @@ class _ExploreState extends State<_Explore> {
     );
     Widget group(String label) => Padding(
       padding: const EdgeInsetsDirectional.only(top: AppSpacing.md),
-      child: Text(label, style: SahabaTextStyles.of(context).kicker),
+      child: Text(label, style: SuhbaTextStyles.of(context).kicker),
     );
 
     return ListView(
@@ -212,7 +212,7 @@ class _VisualTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final v = visual;
     return Card(
       margin: const EdgeInsetsDirectional.only(bottom: AppSpacing.sm),
@@ -232,7 +232,7 @@ class _VisualTile extends StatelessWidget {
                   children: [
                     Text(
                       infographicTypeLabel(l10n, v.type),
-                      style: SahabaTextStyles.of(context).kicker,
+                      style: SuhbaTextStyles.of(context).kicker,
                     ),
                     Text(
                       v.title.of(context),
@@ -289,7 +289,7 @@ class _RelationsTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     return Card(
       margin: EdgeInsets.zero,
       clipBehavior: Clip.antiAlias,

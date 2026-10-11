@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 /// Raw color values. Widgets never use these directly: they read the
-/// semantic roles from `Theme.of(context).colorScheme` or [SahabaColors].
+/// semantic roles from `Theme.of(context).colorScheme` or [SuhbaColors].
 ///
 /// Paper, ink and gold come from the reference site. The text variants were
 /// tuned so every text/background pair meets WCAG AA (see contrast_test.dart).

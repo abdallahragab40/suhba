@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:siyar_sahaba/shared/content/domain/passage_position.dart';
+import 'package:suhba/shared/content/domain/passage_position.dart';
 
 /// Batches reading positions so storage sees at most one write per
 /// [interval]: the first report starts the interval, later reports replace

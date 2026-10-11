@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/citation_marker.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/fact_tile.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/reliability_badge.dart';
-import 'package:siyar_sahaba/core/domain/reliability.dart';
-import 'package:siyar_sahaba/core/format/display_formatter.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/features/sources/presentation/citation_sheet.dart';
-import 'package:siyar_sahaba/shared/content/domain/citation.dart';
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
-import 'package:siyar_sahaba/shared/content/presentation/content_text.dart';
+import 'package:suhba/core/design_system/widgets/citation_marker.dart';
+import 'package:suhba/core/design_system/widgets/fact_tile.dart';
+import 'package:suhba/core/design_system/widgets/reliability_badge.dart';
+import 'package:suhba/core/domain/reliability.dart';
+import 'package:suhba/core/format/display_formatter.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/features/sources/presentation/citation_sheet.dart';
+import 'package:suhba/shared/content/domain/citation.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
+import 'package:suhba/shared/content/presentation/content_text.dart';
 
 /// "في سطور": birth, death and the companion's at-a-glance facts, each with
 /// its reliability and sources.

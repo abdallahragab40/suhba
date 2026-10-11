@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/domain/historical_date.dart';
-import 'package:siyar_sahaba/core/domain/quran_ref.dart';
-import 'package:siyar_sahaba/core/domain/quran_surahs.dart';
+import 'package:suhba/core/domain/historical_date.dart';
+import 'package:suhba/core/domain/quran_ref.dart';
+import 'package:suhba/core/domain/quran_surahs.dart';
 
 void main() {
   group('quranSurahs', () {

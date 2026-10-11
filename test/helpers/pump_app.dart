@@ -3,10 +3,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/app/app.dart';
-import 'package:siyar_sahaba/core/format/digits.dart';
-import 'package:siyar_sahaba/core/format/display_formatter.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/app/app.dart';
+import 'package:suhba/core/format/digits.dart';
+import 'package:suhba/core/format/display_formatter.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
 
 /// Loads every font declared in pubspec.yaml so text renders with the real
 /// Cairo and Amiri glyphs instead of the test font. Needed for goldens.

@@ -3,11 +3,11 @@ import 'dart:async';
 import 'package:drift/native.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/database/app_database.dart';
-import 'package:siyar_sahaba/core/storage/settings_store.dart';
-import 'package:siyar_sahaba/features/reading_progress/presentation/progress_providers.dart';
-import 'package:siyar_sahaba/features/settings/presentation/reading_settings.dart';
-import 'package:siyar_sahaba/shared/content/presentation/reader_scaffold.dart';
+import 'package:suhba/core/database/app_database.dart';
+import 'package:suhba/core/storage/settings_store.dart';
+import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
+import 'package:suhba/features/settings/presentation/reading_settings.dart';
+import 'package:suhba/shared/content/presentation/reader_scaffold.dart';
 
 import '../../helpers/app_harness.dart';
 

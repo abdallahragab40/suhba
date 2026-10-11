@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/result/failure.dart';
-import 'package:siyar_sahaba/core/result/result.dart';
+import 'package:suhba/core/result/failure.dart';
+import 'package:suhba/core/result/result.dart';
 
 void main() {
   const failure = NotFoundFailure('missing');

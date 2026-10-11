@@ -1,5 +1,5 @@
 import 'package:meta/meta.dart';
-import 'package:siyar_sahaba/core/domain/quran_ref.dart';
+import 'package:suhba/core/domain/quran_ref.dart';
 
 /// The verified Qur'an text of the ayahs the content quotes.
 @immutable

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/fonts.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/palette.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/radii.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
+import 'package:suhba/core/design_system/tokens/fonts.dart';
+import 'package:suhba/core/design_system/tokens/palette.dart';
+import 'package:suhba/core/design_system/tokens/radii.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/design_system/tokens/typography.dart';
 
 /// Light (paper) and dark (ink) Material 3 themes, and the feature theme:
 /// the dark roles on Madinah green, for the app's showcase sections.
 abstract final class AppTheme {
-  static final ThemeData light = _build(_lightScheme, SahabaColors.light);
-  static final ThemeData dark = _build(_darkScheme, SahabaColors.dark);
+  static final ThemeData light = _build(_lightScheme, SuhbaColors.light);
+  static final ThemeData dark = _build(_darkScheme, SuhbaColors.dark);
   static final ThemeData feature = _build(
     _darkScheme.copyWith(
       surface: Palette.green,
@@ -24,7 +24,7 @@ abstract final class AppTheme {
       outline: Palette.outlineOnGreen,
       outlineVariant: Palette.lineOnGreen,
     ),
-    SahabaColors.feature,
+    SuhbaColors.feature,
   );
 
   static const _lightScheme = ColorScheme(
@@ -98,7 +98,7 @@ abstract final class AppTheme {
     surfaceTint: Colors.transparent,
   );
 
-  static ThemeData _build(ColorScheme scheme, SahabaColors colors) {
+  static ThemeData _build(ColorScheme scheme, SuhbaColors colors) {
     final textTheme = AppTypography.textTheme(scheme.onSurface);
     const pill = RoundedRectangleBorder(
       borderRadius: BorderRadius.all(AppRadii.pill),
@@ -177,7 +177,7 @@ abstract final class AppTheme {
       ),
       extensions: [
         colors,
-        SahabaTextStyles.forColors(
+        SuhbaTextStyles.forColors(
           text: scheme.onSurface,
           dimText: colors.onSurfaceDim,
         ),

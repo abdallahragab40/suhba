@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:siyar_sahaba/app/router/routes.dart';
-import 'package:siyar_sahaba/core/design_system/theme/app_theme.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/palette.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/citation_marker.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/draft_badge.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/empty_state.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/error_view.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/loading_skeleton.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/scene_backdrop.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/features/sources/presentation/citation_sheet.dart';
-import 'package:siyar_sahaba/shared/content/domain/atlas.dart';
-import 'package:siyar_sahaba/shared/content/presentation/content_text.dart';
-import 'package:siyar_sahaba/shared/content/presentation/record_links.dart';
-import 'package:siyar_sahaba/shared/content/providers.dart';
-import 'package:siyar_sahaba/shared/visuals/presentation/infographic_view.dart';
-import 'package:siyar_sahaba/shared/visuals/presentation/place_panel.dart';
-import 'package:siyar_sahaba/shared/visuals/presentation/schematic_map.dart';
+import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/design_system/theme/app_theme.dart';
+import 'package:suhba/core/design_system/tokens/palette.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/design_system/tokens/typography.dart';
+import 'package:suhba/core/design_system/widgets/citation_marker.dart';
+import 'package:suhba/core/design_system/widgets/draft_badge.dart';
+import 'package:suhba/core/design_system/widgets/empty_state.dart';
+import 'package:suhba/core/design_system/widgets/error_view.dart';
+import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
+import 'package:suhba/core/design_system/widgets/scene_backdrop.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/features/sources/presentation/citation_sheet.dart';
+import 'package:suhba/shared/content/domain/atlas.dart';
+import 'package:suhba/shared/content/presentation/content_text.dart';
+import 'package:suhba/shared/content/presentation/record_links.dart';
+import 'package:suhba/shared/content/providers.dart';
+import 'package:suhba/shared/visuals/presentation/infographic_view.dart';
+import 'package:suhba/shared/visuals/presentation/place_panel.dart';
+import 'package:suhba/shared/visuals/presentation/schematic_map.dart';
 
 /// How well a place's location is known, in words.
 String geoPrecisionLabel(AppLocalizations l10n, GeoPrecision p) => switch (p) {
@@ -74,7 +74,7 @@ class _Place extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final textTheme = Theme.of(context).textTheme;
     final p = place;
     final provisional = !p.review.isApproved;
@@ -116,7 +116,7 @@ class _Place extends ConsumerWidget {
                     children: [
                       Text(
                         l10n.sceneIllustration,
-                        style: SahabaTextStyles.of(
+                        style: SuhbaTextStyles.of(
                           context,
                         ).kicker.copyWith(color: Palette.goldOnInk),
                       ),
@@ -153,7 +153,7 @@ class _Place extends ConsumerWidget {
                             if (p.modernName case final m?)
                               l10n.placeToday(m.of(context)),
                           ].join(' · '),
-                          style: SahabaTextStyles.of(
+                          style: SuhbaTextStyles.of(
                             context,
                           ).kicker.copyWith(color: colors.accentText),
                         ),
@@ -169,7 +169,7 @@ class _Place extends ConsumerWidget {
                   const SizedBox(height: AppSpacing.sm),
                   Text(
                     p.summary.of(context),
-                    style: SahabaTextStyles.of(context).reading,
+                    style: SuhbaTextStyles.of(context).reading,
                   ),
                   Align(
                     alignment: AlignmentDirectional.centerStart,

@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:siyar_sahaba/core/format/digits.dart';
-import 'package:siyar_sahaba/core/storage/settings_store.dart';
+import 'package:suhba/core/format/digits.dart';
+import 'package:suhba/core/storage/settings_store.dart';
 
 /// The digit style for the UI; Arabic-Indic by default. Saved on the device.
 final digitStyleProvider = NotifierProvider<DigitStyleController, DigitStyle>(

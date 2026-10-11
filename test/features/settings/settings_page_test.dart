@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/palette.dart';
-import 'package:siyar_sahaba/core/storage/settings_store.dart';
-import 'package:siyar_sahaba/features/home/presentation/home_page.dart';
-import 'package:siyar_sahaba/features/reading_progress/presentation/reading_history_page.dart';
-import 'package:siyar_sahaba/features/settings/presentation/settings_page.dart';
-import 'package:siyar_sahaba/features/sources/presentation/about_page.dart';
-import 'package:siyar_sahaba/features/sources/presentation/sources_page.dart';
+import 'package:suhba/core/design_system/tokens/palette.dart';
+import 'package:suhba/core/storage/settings_store.dart';
+import 'package:suhba/features/home/presentation/home_page.dart';
+import 'package:suhba/features/reading_progress/presentation/reading_history_page.dart';
+import 'package:suhba/features/settings/presentation/settings_page.dart';
+import 'package:suhba/features/sources/presentation/about_page.dart';
+import 'package:suhba/features/sources/presentation/sources_page.dart';
 
 import '../../helpers/app_harness.dart';
 
@@ -87,7 +87,10 @@ void main() {
     expect(find.byType(AboutPage), findsOneWidget);
     expect(find.textContaining('أهل السنة والجماعة'), findsOneWidget);
     expect(find.textContaining('ولا تتناول تفاصيل الفتنة'), findsOneWidget);
-    expect(find.textContaining('لم يعتمد المحتوى مختص مؤهل بعد'), findsOneWidget);
+    expect(
+      find.textContaining('لم يعتمد المحتوى مختص مؤهل بعد'),
+      findsOneWidget,
+    );
     expect(find.textContaining('لا يتضمن التطبيق صورًا'), findsOneWidget);
     for (final level in ['ثابت', 'رواية تاريخية', 'مختلف فيه', 'غير معروف']) {
       expect(find.text(level), findsOneWidget, reason: level);

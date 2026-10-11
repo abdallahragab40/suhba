@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:drift/drift.dart' show driftRuntimeOptions;
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/database/app_database.dart';
+import 'package:suhba/core/database/app_database.dart';
 
 /// Guards the database schema. Changing a table means bumping
 /// `schemaVersion`, adding a migration step, and exporting the new schema

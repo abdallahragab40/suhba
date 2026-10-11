@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:crypto/crypto.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_format.dart';
-import 'package:siyar_sahaba/shared/content/domain/review.dart';
+import 'package:suhba/shared/content/domain/content_format.dart';
+import 'package:suhba/shared/content/domain/review.dart';
 
 import '../app_identity.dart';
 import '../content/readiness.dart';

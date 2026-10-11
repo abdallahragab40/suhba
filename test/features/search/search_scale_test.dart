@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/app/provider_retry.dart';
-import 'package:siyar_sahaba/features/search/presentation/search_providers.dart';
-import 'package:siyar_sahaba/shared/content/providers.dart';
+import 'package:suhba/app/provider_retry.dart';
+import 'package:suhba/features/search/presentation/search_providers.dart';
+import 'package:suhba/shared/content/providers.dart';
 
 import '../../helpers/content_bundle.dart';
 import '../../helpers/scale_fixture.dart';

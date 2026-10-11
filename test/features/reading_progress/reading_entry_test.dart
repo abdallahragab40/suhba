@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/features/reading_progress/domain/reading_entry.dart';
-import 'package:siyar_sahaba/features/reading_progress/domain/reading_progress.dart';
+import 'package:suhba/features/reading_progress/domain/reading_entry.dart';
+import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
 
 ReadingProgress _p(
   String id, {

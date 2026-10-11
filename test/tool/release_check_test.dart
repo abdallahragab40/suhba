@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/shared/content/domain/review.dart';
+import 'package:suhba/shared/content/domain/review.dart';
 
 import '../../tool/src/app_identity.dart';
 import '../../tool/src/content/builder.dart';
@@ -15,13 +15,13 @@ void main() {
 
   const finalIdentity = AppIdentity(
     displayName: 'سِيَر الصحابة',
-    androidApplicationId: 'org.publisher.siyar',
-    iosBundleId: 'org.publisher.siyar',
+    androidApplicationId: 'org.publisher.suhba',
+    iosBundleId: 'org.publisher.suhba',
   );
   const placeholderIdentity = AppIdentity(
     displayName: 'سِيَر الصحابة',
-    androidApplicationId: 'com.example.siyarsahaba',
-    iosBundleId: 'com.example.siyarsahaba',
+    androidApplicationId: 'com.example.suhba',
+    iosBundleId: 'com.example.suhba',
   );
 
   void approveAll() {

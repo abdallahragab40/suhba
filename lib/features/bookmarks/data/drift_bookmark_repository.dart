@@ -1,6 +1,6 @@
 import 'package:drift/drift.dart';
-import 'package:siyar_sahaba/core/database/app_database.dart';
-import 'package:siyar_sahaba/features/bookmarks/domain/bookmark.dart';
+import 'package:suhba/core/database/app_database.dart';
+import 'package:suhba/features/bookmarks/domain/bookmark.dart';
 
 class DriftBookmarkRepository implements BookmarkRepository {
   DriftBookmarkRepository(this._db, {DateTime Function()? clock})

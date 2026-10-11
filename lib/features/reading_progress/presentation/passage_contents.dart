@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
-import 'package:siyar_sahaba/core/format/display_formatter.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/features/reading_progress/domain/reading_progress.dart';
-import 'package:siyar_sahaba/features/reading_progress/presentation/progress_providers.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/design_system/tokens/typography.dart';
+import 'package:suhba/core/format/display_formatter.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
+import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
 
 /// How far a reader got in one passage: a check when finished, the share
 /// read when started, nothing otherwise. Spoken as such.
@@ -19,7 +19,7 @@ class PassageProgressMarker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final p = progress;
     if (p == null) return const SizedBox.shrink();
     if (p.completed) {
@@ -39,7 +39,7 @@ class PassageProgressMarker extends StatelessWidget {
       excludeSemantics: true,
       child: Text(
         percent,
-        style: SahabaTextStyles.of(
+        style: SuhbaTextStyles.of(
           context,
         ).kicker.copyWith(color: colors.accentText),
       ),
@@ -114,7 +114,7 @@ class _ContentsSheet extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
     final format = DisplayFormatter.of(context);
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final progress =
         ref.watch(workProgressProvider((target, parentId))).value ?? const {};
 

@@ -1,9 +1,9 @@
 import 'package:flutter/widgets.dart';
-import 'package:siyar_sahaba/core/domain/historical_date.dart';
-import 'package:siyar_sahaba/core/domain/quran_ref.dart';
-import 'package:siyar_sahaba/core/domain/quran_surahs.dart';
-import 'package:siyar_sahaba/core/format/digits.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/core/domain/historical_date.dart';
+import 'package:suhba/core/domain/quran_ref.dart';
+import 'package:suhba/core/domain/quran_surahs.dart';
+import 'package:suhba/core/format/digits.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
 
 /// Turns raw values into display strings: numbers in the chosen digit
 /// style, Hijri dates at their recorded precision, and Qur'an references.

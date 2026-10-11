@@ -6,15 +6,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
-import 'package:siyar_sahaba/app/app.dart';
-import 'package:siyar_sahaba/app/provider_retry.dart';
-import 'package:siyar_sahaba/core/database/app_database.dart';
-import 'package:siyar_sahaba/core/database/database_provider.dart';
-import 'package:siyar_sahaba/core/storage/settings_store.dart';
-import 'package:siyar_sahaba/features/atlas/presentation/visual_page.dart';
-import 'package:siyar_sahaba/features/companions/presentation/profile/companion_profile_page.dart';
-import 'package:siyar_sahaba/features/seerah/presentation/seerah_chapter_page.dart';
-import 'package:siyar_sahaba/features/seerah/presentation/seerah_hub_page.dart';
+import 'package:suhba/app/app.dart';
+import 'package:suhba/app/provider_retry.dart';
+import 'package:suhba/core/database/app_database.dart';
+import 'package:suhba/core/database/database_provider.dart';
+import 'package:suhba/core/storage/settings_store.dart';
+import 'package:suhba/features/atlas/presentation/visual_page.dart';
+import 'package:suhba/features/companions/presentation/profile/companion_profile_page.dart';
+import 'package:suhba/features/seerah/presentation/seerah_chapter_page.dart';
+import 'package:suhba/features/seerah/presentation/seerah_hub_page.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +24,7 @@ void main() {
 
   setUpAll(() async {
     // A separate database file, so the tests never touch real user data.
-    db = AppDatabase(driftDatabase(name: 'siyar_sahaba_e2e'));
+    db = AppDatabase(driftDatabase(name: 'suhba_e2e'));
     settings = await PrefsSettingsStore.open();
   });
 
@@ -49,7 +49,7 @@ void main() {
       ],
     );
     await tester.pumpWidget(
-      UncontrolledProviderScope(container: container, child: const SiyarApp()),
+      UncontrolledProviderScope(container: container, child: const SuhbaApp()),
     );
     await tester.pumpAndSettle();
     return container;

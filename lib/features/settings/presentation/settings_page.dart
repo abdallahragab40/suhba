@@ -2,17 +2,17 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:siyar_sahaba/app/router/routes.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
-import 'package:siyar_sahaba/core/format/digits.dart';
-import 'package:siyar_sahaba/core/format/display_formatter.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/features/settings/presentation/digit_style_controller.dart';
-import 'package:siyar_sahaba/features/settings/presentation/personal_data_section.dart';
-import 'package:siyar_sahaba/features/settings/presentation/reading_settings.dart';
-import 'package:siyar_sahaba/features/settings/presentation/theme_mode_controller.dart';
-import 'package:siyar_sahaba/shared/content/providers.dart';
+import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/typography.dart';
+import 'package:suhba/core/format/digits.dart';
+import 'package:suhba/core/format/display_formatter.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/features/settings/presentation/digit_style_controller.dart';
+import 'package:suhba/features/settings/presentation/personal_data_section.dart';
+import 'package:suhba/features/settings/presentation/reading_settings.dart';
+import 'package:suhba/features/settings/presentation/theme_mode_controller.dart';
+import 'package:suhba/shared/content/providers.dart';
 
 /// Settings (S12): appearance, reading, and about the content. Everything is
 /// saved on the device.
@@ -35,7 +35,7 @@ class SettingsPage extends ConsumerWidget {
       ),
       child: Semantics(
         header: true,
-        child: Text(title, style: SahabaTextStyles.of(context).kicker),
+        child: Text(title, style: SuhbaTextStyles.of(context).kicker),
       ),
     );
 
@@ -97,9 +97,7 @@ class SettingsPage extends ConsumerWidget {
           ),
           Text(
             l10n.readerTextSample,
-            style: SahabaTextStyles.of(
-              context,
-            ).reading.copyWith(fontSize: size),
+            style: SuhbaTextStyles.of(context).reading.copyWith(fontSize: size),
           ),
           const SizedBox(height: AppSpacing.md),
           Text(l10n.readerDigits),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/format/display_formatter.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/format/display_formatter.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
 
 /// A small numbered marker after a claim that opens its sources. The
 /// visible circle is small; the tap target is the full 48 × 48.
@@ -18,7 +18,7 @@ class CitationMarker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final formatted = DisplayFormatter.of(context).integer(count);
     final size = MediaQuery.textScalerOf(context).scale(22);
     return Semantics(

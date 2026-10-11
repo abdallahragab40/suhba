@@ -11,13 +11,13 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
-import 'package:siyar_sahaba/app/app.dart';
-import 'package:siyar_sahaba/app/provider_retry.dart';
-import 'package:siyar_sahaba/app/router/app_router.dart';
-import 'package:siyar_sahaba/core/database/app_database.dart';
-import 'package:siyar_sahaba/core/database/database_provider.dart';
-import 'package:siyar_sahaba/features/search/presentation/search_providers.dart';
-import 'package:siyar_sahaba/shared/content/providers.dart';
+import 'package:suhba/app/app.dart';
+import 'package:suhba/app/provider_retry.dart';
+import 'package:suhba/app/router/app_router.dart';
+import 'package:suhba/core/database/app_database.dart';
+import 'package:suhba/core/database/database_provider.dart';
+import 'package:suhba/features/search/presentation/search_providers.dart';
+import 'package:suhba/shared/content/providers.dart';
 
 import '../test/helpers/content_bundle.dart';
 import '../test/helpers/scale_fixture.dart';
@@ -57,7 +57,7 @@ void main() {
       ],
     );
     await tester.pumpWidget(
-      UncontrolledProviderScope(container: container, child: const SiyarApp()),
+      UncontrolledProviderScope(container: container, child: const SuhbaApp()),
     );
     await tester.pumpAndSettle();
     return container;

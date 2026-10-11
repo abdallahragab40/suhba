@@ -1,6 +1,6 @@
 import 'package:drift/drift.dart';
-import 'package:siyar_sahaba/core/database/app_database.dart';
-import 'package:siyar_sahaba/features/reading_progress/domain/reading_progress.dart';
+import 'package:suhba/core/database/app_database.dart';
+import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
 
 class DriftReadingProgressRepository implements ReadingProgressRepository {
   DriftReadingProgressRepository(this._db);

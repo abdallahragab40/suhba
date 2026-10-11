@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:siyar_sahaba/app/reconciliation/user_data_reconciliation.dart';
-import 'package:siyar_sahaba/app/router/app_router.dart';
-import 'package:siyar_sahaba/core/design_system/theme/app_theme.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/motion.dart';
-import 'package:siyar_sahaba/core/format/display_formatter.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/features/settings/presentation/digit_style_controller.dart';
-import 'package:siyar_sahaba/features/settings/presentation/theme_mode_controller.dart';
-import 'package:siyar_sahaba/features/welcome/presentation/welcome_controller.dart';
-import 'package:siyar_sahaba/features/welcome/presentation/welcome_page.dart';
+import 'package:suhba/app/reconciliation/user_data_reconciliation.dart';
+import 'package:suhba/app/router/app_router.dart';
+import 'package:suhba/core/design_system/theme/app_theme.dart';
+import 'package:suhba/core/design_system/tokens/motion.dart';
+import 'package:suhba/core/format/display_formatter.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/features/settings/presentation/digit_style_controller.dart';
+import 'package:suhba/features/settings/presentation/theme_mode_controller.dart';
+import 'package:suhba/features/welcome/presentation/welcome_controller.dart';
+import 'package:suhba/features/welcome/presentation/welcome_page.dart';
 
 /// The app is Arabic-first: the locale is fixed to Arabic (and so RTL)
 /// whatever the device language. English strings exist for later use.
 const appLocale = Locale('ar');
 
-class SiyarApp extends ConsumerWidget {
-  const SiyarApp({super.key});
+class SuhbaApp extends ConsumerWidget {
+  const SuhbaApp({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

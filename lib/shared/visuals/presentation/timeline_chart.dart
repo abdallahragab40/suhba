@@ -1,14 +1,14 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
-import 'package:siyar_sahaba/core/domain/historical_date.dart';
-import 'package:siyar_sahaba/core/format/display_formatter.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/shared/content/presentation/content_text.dart';
-import 'package:siyar_sahaba/shared/visuals/presentation/resolved_visual.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/design_system/tokens/typography.dart';
+import 'package:suhba/core/domain/historical_date.dart';
+import 'package:suhba/core/format/display_formatter.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/shared/content/presentation/content_text.dart';
+import 'package:suhba/shared/visuals/presentation/resolved_visual.dart';
 
 /// Where [date] ends on the Hijri time line (see `HistoricalDate.sortKey`):
 /// the end of a range, otherwise the date itself.
@@ -44,9 +44,9 @@ class TimelineChart extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final format = DisplayFormatter.of(context);
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final textTheme = Theme.of(context).textTheme;
-    final kicker = SahabaTextStyles.of(context).kicker;
+    final kicker = SuhbaTextStyles.of(context).kicker;
     final scaler = MediaQuery.textScalerOf(context);
     final rtl = Directionality.of(context) == TextDirection.rtl;
 
@@ -206,7 +206,7 @@ class _MarkLabel extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(date, style: SahabaTextStyles.of(context).kicker),
+              Text(date, style: SuhbaTextStyles.of(context).kicker),
               Text(title, style: Theme.of(context).textTheme.titleSmall),
             ],
           ),
@@ -230,10 +230,7 @@ class _Undated extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(
-            l10n.timelineUndated,
-            style: SahabaTextStyles.of(context).kicker,
-          ),
+          Text(l10n.timelineUndated, style: SuhbaTextStyles.of(context).kicker),
           for (final m in marks)
             ListTile(
               contentPadding: EdgeInsets.zero,

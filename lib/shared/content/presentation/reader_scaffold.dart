@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/shared/content/domain/passage_position.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/shared/content/domain/passage_position.dart';
 
 /// The frame shared by the section and chapter readers: a quiet app bar
 /// (with [actions], e.g. reading settings), a thin gold progress line that
@@ -334,7 +334,7 @@ class ReadingProgressBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     return ExcludeSemantics(
       child: ListenableBuilder(
         listenable: controller,

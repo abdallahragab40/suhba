@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
 
 /// Says what was just removed and offers to put it back ("تراجع"). The
 /// snack bar stays long enough to reach the button with a screen reader.

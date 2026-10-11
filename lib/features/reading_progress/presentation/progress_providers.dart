@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:siyar_sahaba/core/database/database_provider.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/features/reading_progress/data/drift_reading_progress_repository.dart';
-import 'package:siyar_sahaba/features/reading_progress/domain/progress_recorder.dart';
-import 'package:siyar_sahaba/features/reading_progress/domain/reading_progress.dart';
-import 'package:siyar_sahaba/shared/content/domain/passage_position.dart';
-import 'package:siyar_sahaba/shared/content/presentation/reader_scaffold.dart';
-import 'package:siyar_sahaba/shared/content/providers.dart';
+import 'package:suhba/core/database/database_provider.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/features/reading_progress/data/drift_reading_progress_repository.dart';
+import 'package:suhba/features/reading_progress/domain/progress_recorder.dart';
+import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
+import 'package:suhba/shared/content/domain/passage_position.dart';
+import 'package:suhba/shared/content/presentation/reader_scaffold.dart';
+import 'package:suhba/shared/content/providers.dart';
 
 final readingProgressRepositoryProvider = Provider<ReadingProgressRepository>(
   (ref) => DriftReadingProgressRepository(ref.watch(appDatabaseProvider)),
@@ -272,7 +272,7 @@ class PassageCompletion extends ConsumerWidget {
     final reader = context.dependOnInheritedWidgetOfExactType<_TrackedReader>();
     if (reader == null) return const SizedBox.shrink();
     final l10n = AppLocalizations.of(context);
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final completed =
         ref
             .watch(progressProvider((reader.target, reader.targetId)))

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/design_system/gallery/design_gallery_page.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/palette.dart';
-import 'package:siyar_sahaba/core/format/digits.dart';
-import 'package:siyar_sahaba/core/format/display_formatter.dart';
-import 'package:siyar_sahaba/features/home/presentation/home_page.dart';
+import 'package:suhba/core/design_system/gallery/design_gallery_page.dart';
+import 'package:suhba/core/design_system/tokens/palette.dart';
+import 'package:suhba/core/format/digits.dart';
+import 'package:suhba/core/format/display_formatter.dart';
+import 'package:suhba/features/home/presentation/home_page.dart';
 
 import '../helpers/app_harness.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/design_system/tokens/typography.dart';
 
 /// Every text role rendered with sample text, for the design gallery and the
 /// golden tests.
@@ -24,8 +24,8 @@ class TypographySpecimen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final text = Theme.of(context).textTheme;
-    final styles = SahabaTextStyles.of(context);
-    final colors = SahabaColors.of(context);
+    final styles = SuhbaTextStyles.of(context);
+    final colors = SuhbaColors.of(context);
 
     final rows = <(String, TextStyle?, String)>[
       ('displaySmall · Amiri 700', text.displaySmall, 'سِيَر الصحابة'),

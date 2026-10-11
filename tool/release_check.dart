@@ -12,7 +12,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:siyar_sahaba/shared/content/domain/review.dart';
+import 'package:suhba/shared/content/domain/review.dart';
 
 import 'src/app_identity.dart';
 import 'src/cli_args.dart';

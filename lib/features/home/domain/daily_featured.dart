@@ -1,5 +1,5 @@
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
-import 'package:siyar_sahaba/shared/content/domain/review.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
+import 'package:suhba/shared/content/domain/review.dart';
 
 /// The companion featured on [date]: the same all day, a different one the
 /// next day, cycling through everyone in order. Works offline (it depends

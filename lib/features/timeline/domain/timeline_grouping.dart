@@ -1,5 +1,5 @@
-import 'package:siyar_sahaba/core/domain/historical_date.dart';
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
+import 'package:suhba/core/domain/historical_date.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
 
 /// Timeline entries grouped by era (in historical order), each group sorted
 /// by date. Entries with equal dates keep their authored order.

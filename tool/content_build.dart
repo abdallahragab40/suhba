@@ -8,7 +8,7 @@
 // intended gate until a qualified reviewer approves content.
 import 'dart:io';
 
-import 'package:siyar_sahaba/shared/content/domain/review.dart';
+import 'package:suhba/shared/content/domain/review.dart';
 
 import 'src/cli_args.dart';
 import 'src/content/builder.dart';

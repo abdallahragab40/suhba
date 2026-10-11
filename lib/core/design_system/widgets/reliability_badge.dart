@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/radii.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/domain/reliability.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/core/design_system/tokens/radii.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/domain/reliability.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
 
 /// A pill showing how well a claim is established: icon and text, never
 /// color alone.
@@ -23,7 +23,7 @@ class ReliabilityBadge extends StatelessWidget {
   /// Background tint behind the label of a non-provisional badge.
   static const tintAlpha = 0.10;
 
-  static Color colorFor(Reliability reliability, SahabaColors colors) =>
+  static Color colorFor(Reliability reliability, SuhbaColors colors) =>
       switch (reliability) {
         Reliability.established => colors.established,
         Reliability.disputed => colors.disputed,
@@ -33,7 +33,7 @@ class ReliabilityBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final color = colorFor(reliability, SahabaColors.of(context));
+    final color = colorFor(reliability, SuhbaColors.of(context));
     final (label, icon) = switch (reliability) {
       Reliability.established => (
         l10n.reliabilityEstablished,

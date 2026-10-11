@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:siyar_sahaba/core/storage/settings_store.dart';
+import 'package:suhba/core/storage/settings_store.dart';
 
 /// Whether the app shows its welcome screens at all. Tests turn them off
 /// unless they are about them.

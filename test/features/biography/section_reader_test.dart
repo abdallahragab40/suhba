@@ -3,12 +3,12 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/citation_marker.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/draft_badge.dart';
-import 'package:siyar_sahaba/features/biography/presentation/section_reader_page.dart';
-import 'package:siyar_sahaba/features/companions/presentation/profile/companion_profile_page.dart';
-import 'package:siyar_sahaba/features/sources/presentation/citation_sheet.dart';
-import 'package:siyar_sahaba/shared/content/presentation/reader_scaffold.dart';
+import 'package:suhba/core/design_system/widgets/citation_marker.dart';
+import 'package:suhba/core/design_system/widgets/draft_badge.dart';
+import 'package:suhba/features/biography/presentation/section_reader_page.dart';
+import 'package:suhba/features/companions/presentation/profile/companion_profile_page.dart';
+import 'package:suhba/features/sources/presentation/citation_sheet.dart';
+import 'package:suhba/shared/content/presentation/reader_scaffold.dart';
 
 import '../../helpers/app_harness.dart';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/radii.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/core/design_system/tokens/radii.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
 
 /// Shown on list screens while the app runs on the draft content channel.
 class DraftBanner extends StatelessWidget {
@@ -10,7 +10,7 @@ class DraftBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final l10n = AppLocalizations.of(context);
     final textTheme = Theme.of(context).textTheme;
     return Container(

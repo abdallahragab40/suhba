@@ -3,14 +3,14 @@ import 'dart:typed_data';
 import 'dart:ui';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:siyar_sahaba/app/reconciliation/user_data_reconciliation.dart';
-import 'package:siyar_sahaba/core/database/database_provider.dart';
-import 'package:siyar_sahaba/core/share/share_service.dart';
-import 'package:siyar_sahaba/features/bookmarks/presentation/bookmark_providers.dart';
-import 'package:siyar_sahaba/features/personal_data/data/file_opener.dart';
-import 'package:siyar_sahaba/features/personal_data/domain/reading_data_archive.dart';
-import 'package:siyar_sahaba/features/reading_progress/presentation/progress_providers.dart';
-import 'package:siyar_sahaba/shared/content/providers.dart';
+import 'package:suhba/app/reconciliation/user_data_reconciliation.dart';
+import 'package:suhba/core/database/database_provider.dart';
+import 'package:suhba/core/share/share_service.dart';
+import 'package:suhba/features/bookmarks/presentation/bookmark_providers.dart';
+import 'package:suhba/features/personal_data/data/file_opener.dart';
+import 'package:suhba/features/personal_data/domain/reading_data_archive.dart';
+import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
+import 'package:suhba/shared/content/providers.dart';
 
 /// What choosing a file to import produced.
 sealed class ImportChoice {
@@ -52,7 +52,7 @@ class ReadingDataTransfer {
   /// The export's file name, dated by the device's local day.
   String fileName(DateTime when) {
     String two(int n) => n.toString().padLeft(2, '0');
-    return 'siyar-sahaba-reading-data-'
+    return 'suhba-reading-data-'
         '${when.year}-${two(when.month)}-${two(when.day)}.json';
   }
 

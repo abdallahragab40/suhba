@@ -22,9 +22,9 @@ val keystore = Properties().apply {
 }
 val hasReleaseKey = keystoreFile.exists()
 
-// A public build (SIYAR_PUBLIC_BUILD=true, set by the release pipeline) must
+// A public build (SUHBA_PUBLIC_BUILD=true, set by the release pipeline) must
 // never fall back to the debug key.
-if (System.getenv("SIYAR_PUBLIC_BUILD") == "true" && !hasReleaseKey) {
+if (System.getenv("SUHBA_PUBLIC_BUILD") == "true" && !hasReleaseKey) {
     throw GradleException(
         "Public build without android/key.properties: refusing to sign with the debug key.",
     )
@@ -32,7 +32,7 @@ if (System.getenv("SIYAR_PUBLIC_BUILD") == "true" && !hasReleaseKey) {
 
 android {
     // Code namespace only; independent of the published application ID.
-    namespace = "app.siyarsahaba"
+    namespace = "com.abdallahragab.suhba"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 

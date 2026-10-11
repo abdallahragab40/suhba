@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/citation_marker.dart';
-import 'package:siyar_sahaba/core/share/share_service.dart';
-import 'package:siyar_sahaba/features/sources/presentation/citation_sheet.dart';
-import 'package:siyar_sahaba/features/sources/presentation/passage_share.dart';
+import 'package:suhba/core/design_system/widgets/citation_marker.dart';
+import 'package:suhba/core/share/share_service.dart';
+import 'package:suhba/features/sources/presentation/citation_sheet.dart';
+import 'package:suhba/features/sources/presentation/passage_share.dart';
 
 import '../../helpers/app_harness.dart';
 import '../../helpers/recording_share.dart';
@@ -84,9 +84,7 @@ void main() {
     // Draft content never leaves the app without saying so.
     expect(
       lines,
-      contains(
-        'تنبيه: نص لم يعتمده مختص بعد، والمصادر ومواضعها مبدئية.',
-      ),
+      contains('تنبيه: نص لم يعتمده مختص بعد، والمصادر ومواضعها مبدئية.'),
     );
     expect(lines.last, 'من تطبيق صُحبة');
   });

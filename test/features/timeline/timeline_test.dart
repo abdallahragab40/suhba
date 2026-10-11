@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/domain/historical_date.dart';
-import 'package:siyar_sahaba/core/domain/reliability.dart';
-import 'package:siyar_sahaba/features/biography/presentation/section_reader_page.dart';
-import 'package:siyar_sahaba/features/timeline/domain/timeline_grouping.dart';
-import 'package:siyar_sahaba/features/timeline/presentation/timeline_page.dart';
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
-import 'package:siyar_sahaba/shared/content/domain/localized_text.dart';
+import 'package:suhba/core/domain/historical_date.dart';
+import 'package:suhba/core/domain/reliability.dart';
+import 'package:suhba/features/biography/presentation/section_reader_page.dart';
+import 'package:suhba/features/timeline/domain/timeline_grouping.dart';
+import 'package:suhba/features/timeline/presentation/timeline_page.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
+import 'package:suhba/shared/content/domain/localized_text.dart';
 
 import '../../helpers/app_harness.dart';
 

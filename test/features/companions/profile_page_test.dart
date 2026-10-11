@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/citation_marker.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/draft_badge.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/reliability_badge.dart';
-import 'package:siyar_sahaba/features/companions/presentation/directory/directory_page.dart';
-import 'package:siyar_sahaba/features/companions/presentation/profile/profile_sections.dart';
-import 'package:siyar_sahaba/features/sources/presentation/citation_sheet.dart';
+import 'package:suhba/core/design_system/widgets/citation_marker.dart';
+import 'package:suhba/core/design_system/widgets/draft_badge.dart';
+import 'package:suhba/core/design_system/widgets/reliability_badge.dart';
+import 'package:suhba/features/companions/presentation/directory/directory_page.dart';
+import 'package:suhba/features/companions/presentation/profile/profile_sections.dart';
+import 'package:suhba/features/sources/presentation/citation_sheet.dart';
 
 import '../../helpers/app_harness.dart';
 import '../../helpers/content_bundle.dart';

@@ -4,13 +4,13 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/result/failure.dart';
-import 'package:siyar_sahaba/shared/content/data/asset_content_repository.dart';
-import 'package:siyar_sahaba/shared/content/data/asset_content_source.dart';
-import 'package:siyar_sahaba/shared/content/domain/atlas.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_block.dart';
-import 'package:siyar_sahaba/shared/content/domain/content_format.dart';
-import 'package:siyar_sahaba/shared/content/domain/review.dart';
+import 'package:suhba/core/result/failure.dart';
+import 'package:suhba/shared/content/data/asset_content_repository.dart';
+import 'package:suhba/shared/content/data/asset_content_source.dart';
+import 'package:suhba/shared/content/domain/atlas.dart';
+import 'package:suhba/shared/content/domain/content_block.dart';
+import 'package:suhba/shared/content/domain/content_format.dart';
+import 'package:suhba/shared/content/domain/review.dart';
 
 /// An asset bundle over an in-memory map that counts loads.
 class _MapBundle extends CachingAssetBundle {

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/companion_card.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/draft_badge.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/draft_banner.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/error_view.dart';
-import 'package:siyar_sahaba/features/companions/domain/directory_filter.dart';
-import 'package:siyar_sahaba/features/companions/presentation/profile/companion_profile_page.dart';
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
-import 'package:siyar_sahaba/shared/content/domain/localized_text.dart';
-import 'package:siyar_sahaba/shared/content/domain/review.dart';
+import 'package:suhba/core/design_system/widgets/companion_card.dart';
+import 'package:suhba/core/design_system/widgets/draft_badge.dart';
+import 'package:suhba/core/design_system/widgets/draft_banner.dart';
+import 'package:suhba/core/design_system/widgets/error_view.dart';
+import 'package:suhba/features/companions/domain/directory_filter.dart';
+import 'package:suhba/features/companions/presentation/profile/companion_profile_page.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
+import 'package:suhba/shared/content/domain/localized_text.dart';
+import 'package:suhba/shared/content/domain/review.dart';
 
 import '../../helpers/app_harness.dart';
 import '../../helpers/content_bundle.dart';

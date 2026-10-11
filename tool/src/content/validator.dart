@@ -1,4 +1,4 @@
-import 'package:siyar_sahaba/shared/content/domain/review.dart';
+import 'package:suhba/shared/content/domain/review.dart';
 
 import 'content_files.dart';
 import 'content_tree.dart';

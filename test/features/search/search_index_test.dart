@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/features/search/domain/search_index.dart';
+import 'package:suhba/features/search/domain/search_index.dart';
 
 SearchDocument _doc(
   SearchKind kind,

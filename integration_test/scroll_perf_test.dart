@@ -8,18 +8,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
-import 'package:siyar_sahaba/app/app.dart';
-import 'package:siyar_sahaba/app/provider_retry.dart';
-import 'package:siyar_sahaba/app/router/app_router.dart';
-import 'package:siyar_sahaba/core/database/app_database.dart';
-import 'package:siyar_sahaba/core/database/database_provider.dart';
+import 'package:suhba/app/app.dart';
+import 'package:suhba/app/provider_retry.dart';
+import 'package:suhba/app/router/app_router.dart';
+import 'package:suhba/core/database/app_database.dart';
+import 'package:suhba/core/database/database_provider.dart';
 
 void main() {
   final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized()
     ..framePolicy = LiveTestWidgetsFlutterBindingFramePolicy.fullyLive;
 
   late AppDatabase db;
-  setUpAll(() => db = AppDatabase(driftDatabase(name: 'siyar_sahaba_perf')));
+  setUpAll(() => db = AppDatabase(driftDatabase(name: 'suhba_perf')));
 
   const screens = {
     // A plain list: the device's own floor for comparison.
@@ -52,7 +52,7 @@ void main() {
       await tester.pumpWidget(
         UncontrolledProviderScope(
           container: container,
-          child: const SiyarApp(),
+          child: const SuhbaApp(),
         ),
       );
       await tester.pumpAndSettle();

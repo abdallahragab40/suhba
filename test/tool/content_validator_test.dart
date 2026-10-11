@@ -4,7 +4,7 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/shared/content/domain/review.dart';
+import 'package:suhba/shared/content/domain/review.dart';
 
 import '../../tool/src/content/builder.dart';
 import '../../tool/src/content/content_files.dart';

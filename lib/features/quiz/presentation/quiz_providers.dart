@@ -2,10 +2,10 @@ import 'dart:convert';
 import 'dart:math';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:siyar_sahaba/core/storage/settings_store.dart';
-import 'package:siyar_sahaba/features/quiz/domain/quiz_generator.dart';
-import 'package:siyar_sahaba/features/quiz/domain/quiz_question.dart';
-import 'package:siyar_sahaba/shared/content/providers.dart';
+import 'package:suhba/core/storage/settings_store.dart';
+import 'package:suhba/features/quiz/domain/quiz_generator.dart';
+import 'package:suhba/features/quiz/domain/quiz_question.dart';
+import 'package:suhba/shared/content/providers.dart';
 
 /// The content the quiz draws on: every companion and story in full, the
 /// events, places, people, categories and Seerah chapters. Anything that

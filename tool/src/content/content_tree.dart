@@ -1,13 +1,13 @@
 import 'dart:convert';
 
 import 'package:json_annotation/json_annotation.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/atlas_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/catalog_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/common_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/companion_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/seerah_dto.dart';
-import 'package:siyar_sahaba/shared/content/data/dto/story_dto.dart';
-import 'package:siyar_sahaba/shared/content/domain/review.dart';
+import 'package:suhba/shared/content/data/dto/atlas_dto.dart';
+import 'package:suhba/shared/content/data/dto/catalog_dto.dart';
+import 'package:suhba/shared/content/data/dto/common_dto.dart';
+import 'package:suhba/shared/content/data/dto/companion_dto.dart';
+import 'package:suhba/shared/content/data/dto/seerah_dto.dart';
+import 'package:suhba/shared/content/data/dto/story_dto.dart';
+import 'package:suhba/shared/content/domain/review.dart';
 
 import 'content_files.dart';
 import 'issues.dart';

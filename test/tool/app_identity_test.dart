@@ -7,8 +7,8 @@ import '../../tool/src/app_identity.dart';
 void main() {
   const valid = AppIdentity(
     displayName: 'سِيَر الصحابة',
-    androidApplicationId: 'org.publisher.siyar',
-    iosBundleId: 'org.publisher.siyar',
+    androidApplicationId: 'org.publisher.suhba',
+    iosBundleId: 'org.publisher.suhba',
   );
 
   AppIdentity withIds({String? android, String? ios, String? name}) {
@@ -23,12 +23,12 @@ void main() {
     test('reads all keys and trims them', () {
       final identity = parseAppIdentity('''
 displayName: " سِيَر الصحابة "
-androidApplicationId: org.publisher.siyar
-iosBundleId: org.publisher.siyar
+androidApplicationId: org.publisher.suhba
+iosBundleId: org.publisher.suhba
 ''');
       expect(identity.displayName, 'سِيَر الصحابة');
-      expect(identity.androidApplicationId, 'org.publisher.siyar');
-      expect(identity.iosBundleId, 'org.publisher.siyar');
+      expect(identity.androidApplicationId, 'org.publisher.suhba');
+      expect(identity.iosBundleId, 'org.publisher.suhba');
     });
 
     test('rejects a missing key', () {
@@ -59,8 +59,8 @@ iosBundleId: org.publisher.siyar
     test('rejects malformed Android IDs', () {
       for (final id in [
         'siyar',
-        'org.1publisher.siyar',
-        'org..siyar',
+        'org.1publisher.suhba',
+        'org..suhba',
         'a-b.c',
       ]) {
         expect(
@@ -72,7 +72,7 @@ iosBundleId: org.publisher.siyar
     });
 
     test('rejects malformed iOS IDs, including underscores', () {
-      for (final id in ['siyar', 'org.publisher_x.siyar', 'org.pub lisher']) {
+      for (final id in ['siyar', 'org.publisher_x.suhba', 'org.pub lisher']) {
         expect(validateAppIdentity(withIds(ios: id)), hasLength(1), reason: id);
       }
     });
@@ -89,8 +89,8 @@ iosBundleId: org.publisher.siyar
 
     test('placeholders pass in development and fail for release', () {
       final placeholder = withIds(
-        android: 'com.example.siyarsahaba',
-        ios: 'com.example.siyarsahaba',
+        android: 'com.example.suhba',
+        ios: 'com.example.suhba',
       );
       expect(validateAppIdentity(placeholder), isEmpty);
       expect(validateAppIdentity(placeholder, release: true), hasLength(2));
@@ -98,8 +98,8 @@ iosBundleId: org.publisher.siyar
 
     test('a prefix that only looks like the placeholder is fine', () {
       final id = withIds(
-        android: 'com.examples.siyar',
-        ios: 'com.examples.siyar',
+        android: 'com.examples.suhba',
+        ios: 'com.examples.suhba',
       );
       expect(validateAppIdentity(id, release: true), isEmpty);
     });
@@ -108,14 +108,14 @@ iosBundleId: org.publisher.siyar
   group('rendering', () {
     test('Android properties carry the ID and the Arabic name', () {
       final out = renderAndroidProperties(valid);
-      expect(out, contains('applicationId=org.publisher.siyar\n'));
+      expect(out, contains('applicationId=org.publisher.suhba\n'));
       expect(out, contains('appName=سِيَر الصحابة\n'));
       expect(out, startsWith('# GENERATED'));
     });
 
     test('iOS xcconfig carries the ID and the Arabic name', () {
       final out = renderIosXcconfig(valid);
-      expect(out, contains('APP_BUNDLE_ID = org.publisher.siyar\n'));
+      expect(out, contains('APP_BUNDLE_ID = org.publisher.suhba\n'));
       expect(out, contains('APP_DISPLAY_NAME = سِيَر الصحابة\n'));
       expect(out, startsWith('// GENERATED'));
     });

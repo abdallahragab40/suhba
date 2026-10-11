@@ -1,6 +1,6 @@
 import 'package:drift/drift.dart';
 import 'package:drift_flutter/drift_flutter.dart';
-import 'package:siyar_sahaba/core/database/app_database.steps.dart';
+import 'package:suhba/core/database/app_database.steps.dart';
 
 part 'app_database.g.dart';
 
@@ -59,8 +59,7 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase(super.executor);
 
   /// The on-device database file.
-  factory AppDatabase.open() =>
-      AppDatabase(driftDatabase(name: 'siyar_sahaba'));
+  factory AppDatabase.open() => AppDatabase(driftDatabase(name: 'suhba'));
 
   @override
   int get schemaVersion => 3;

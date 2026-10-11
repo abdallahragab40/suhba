@@ -2,12 +2,12 @@ import 'dart:async';
 import 'dart:isolate';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:siyar_sahaba/features/search/domain/search_documents.dart';
-import 'package:siyar_sahaba/features/search/domain/search_index.dart';
-import 'package:siyar_sahaba/shared/content/domain/companion.dart';
-import 'package:siyar_sahaba/shared/content/domain/seerah.dart';
-import 'package:siyar_sahaba/shared/content/domain/story.dart';
-import 'package:siyar_sahaba/shared/content/providers.dart';
+import 'package:suhba/features/search/domain/search_documents.dart';
+import 'package:suhba/features/search/domain/search_index.dart';
+import 'package:suhba/shared/content/domain/companion.dart';
+import 'package:suhba/shared/content/domain/seerah.dart';
+import 'package:suhba/shared/content/domain/story.dart';
+import 'package:suhba/shared/content/providers.dart';
 
 /// Above this many documents the index is built on a background isolate;
 /// null builds it in place (tests, where isolate results never arrive under

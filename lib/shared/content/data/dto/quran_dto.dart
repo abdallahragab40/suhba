@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:siyar_sahaba/shared/content/domain/quran_verses.dart';
+import 'package:suhba/shared/content/domain/quran_verses.dart';
 
 part 'quran_dto.freezed.dart';
 part 'quran_dto.g.dart';

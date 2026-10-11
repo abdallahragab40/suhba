@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/share/share_service.dart';
-import 'package:siyar_sahaba/features/bookmarks/domain/bookmark.dart';
-import 'package:siyar_sahaba/features/bookmarks/presentation/bookmark_providers.dart';
-import 'package:siyar_sahaba/features/personal_data/data/file_opener.dart';
-import 'package:siyar_sahaba/features/personal_data/domain/reading_data_archive.dart';
-import 'package:siyar_sahaba/features/reading_progress/domain/reading_progress.dart';
-import 'package:siyar_sahaba/features/reading_progress/presentation/progress_providers.dart';
+import 'package:suhba/core/share/share_service.dart';
+import 'package:suhba/features/bookmarks/domain/bookmark.dart';
+import 'package:suhba/features/bookmarks/presentation/bookmark_providers.dart';
+import 'package:suhba/features/personal_data/data/file_opener.dart';
+import 'package:suhba/features/personal_data/domain/reading_data_archive.dart';
+import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
+import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
 
 import '../../helpers/app_harness.dart';
 import '../../helpers/recording_share.dart';
@@ -104,7 +104,7 @@ void main() {
     await tester.pumpAndSettle();
 
     final file = share.files.single;
-    expect(file.name, 'siyar-sahaba-reading-data-2026-10-09.json');
+    expect(file.name, 'suhba-reading-data-2026-10-09.json');
     expect(file.mimeType, 'application/json');
     final archive = (decodeArchive(file.content) as ArchiveDecoded).archive;
     expect(archive.bookmarks.single.targetId, 'umar');

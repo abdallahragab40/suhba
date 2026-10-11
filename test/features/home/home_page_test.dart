@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/draft_banner.dart';
-import 'package:siyar_sahaba/features/companions/presentation/directory/directory_page.dart';
-import 'package:siyar_sahaba/features/companions/presentation/profile/companion_profile_page.dart';
-import 'package:siyar_sahaba/features/search/presentation/search_page.dart';
-import 'package:siyar_sahaba/features/seerah/presentation/seerah_chapter_page.dart';
-import 'package:siyar_sahaba/features/stories/presentation/story_page.dart';
+import 'package:suhba/core/design_system/widgets/draft_banner.dart';
+import 'package:suhba/features/companions/presentation/directory/directory_page.dart';
+import 'package:suhba/features/companions/presentation/profile/companion_profile_page.dart';
+import 'package:suhba/features/search/presentation/search_page.dart';
+import 'package:suhba/features/seerah/presentation/seerah_chapter_page.dart';
+import 'package:suhba/features/stories/presentation/story_page.dart';
 
 import '../../helpers/app_harness.dart';
 

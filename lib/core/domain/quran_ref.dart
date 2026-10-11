@@ -1,5 +1,5 @@
 import 'package:meta/meta.dart';
-import 'package:siyar_sahaba/core/domain/quran_surahs.dart';
+import 'package:suhba/core/domain/quran_surahs.dart';
 
 /// A reference to one ayah or a run of ayahs in one surah. Only the
 /// reference is stored; verse text comes from a verified dataset.

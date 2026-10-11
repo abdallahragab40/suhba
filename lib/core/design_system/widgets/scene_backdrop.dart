@@ -1,7 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/palette.dart';
+import 'package:suhba/core/design_system/tokens/palette.dart';
 
 /// The kinds of landscape the app draws. All are original vector
 /// compositions: land, sky and plants only, never people or buildings

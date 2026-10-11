@@ -1,4 +1,4 @@
-package app.siyarsahaba
+package com.abdallahragab.suhba
 
 import io.flutter.embedding.android.FlutterActivity
 

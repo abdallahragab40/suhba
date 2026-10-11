@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/palette.dart';
+import 'package:suhba/core/design_system/tokens/palette.dart';
 
 /// Semantic colors that Material's [ColorScheme] has no role for.
 ///
-/// Read with `SahabaColors.of(context)`.
+/// Read with `SuhbaColors.of(context)`.
 @immutable
-class SahabaColors extends ThemeExtension<SahabaColors> {
-  const SahabaColors({
+class SuhbaColors extends ThemeExtension<SuhbaColors> {
+  const SuhbaColors({
     required this.surfaceAlt,
     required this.onSurfaceDim,
     required this.line,
@@ -46,7 +46,7 @@ class SahabaColors extends ThemeExtension<SahabaColors> {
   /// Draft label and banner background.
   final Color draftSurface;
 
-  static const light = SahabaColors(
+  static const light = SuhbaColors(
     surfaceAlt: Palette.paperAlt,
     onSurfaceDim: Palette.inkDim,
     line: Palette.lineOnPaper,
@@ -58,7 +58,7 @@ class SahabaColors extends ThemeExtension<SahabaColors> {
     draftSurface: Palette.draftWash,
   );
 
-  static const dark = SahabaColors(
+  static const dark = SuhbaColors(
     surfaceAlt: Palette.inkAlt,
     onSurfaceDim: Palette.paperDim,
     line: Palette.lineOnInk,
@@ -79,11 +79,11 @@ class SahabaColors extends ThemeExtension<SahabaColors> {
     draftSurface: Palette.draftWashOnGreen,
   );
 
-  static SahabaColors of(BuildContext context) =>
-      Theme.of(context).extension<SahabaColors>()!;
+  static SuhbaColors of(BuildContext context) =>
+      Theme.of(context).extension<SuhbaColors>()!;
 
   @override
-  SahabaColors copyWith({
+  SuhbaColors copyWith({
     Color? surfaceAlt,
     Color? onSurfaceDim,
     Color? line,
@@ -94,7 +94,7 @@ class SahabaColors extends ThemeExtension<SahabaColors> {
     Color? draft,
     Color? draftSurface,
   }) {
-    return SahabaColors(
+    return SuhbaColors(
       surfaceAlt: surfaceAlt ?? this.surfaceAlt,
       onSurfaceDim: onSurfaceDim ?? this.onSurfaceDim,
       line: line ?? this.line,
@@ -108,9 +108,9 @@ class SahabaColors extends ThemeExtension<SahabaColors> {
   }
 
   @override
-  SahabaColors lerp(SahabaColors? other, double t) {
+  SuhbaColors lerp(SuhbaColors? other, double t) {
     if (other == null) return this;
-    return SahabaColors(
+    return SuhbaColors(
       surfaceAlt: Color.lerp(surfaceAlt, other.surfaceAlt, t)!,
       onSurfaceDim: Color.lerp(onSurfaceDim, other.onSurfaceDim, t)!,
       line: Color.lerp(line, other.line, t)!,

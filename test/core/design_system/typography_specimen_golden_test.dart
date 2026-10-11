@@ -3,9 +3,9 @@ library;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/design_system/gallery/typography_specimen.dart';
-import 'package:siyar_sahaba/core/design_system/theme/app_theme.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/gallery/typography_specimen.dart';
+import 'package:suhba/core/design_system/theme/app_theme.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
 
 import '../../helpers/pump_app.dart';
 

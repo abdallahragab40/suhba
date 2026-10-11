@@ -2,15 +2,15 @@ import 'dart:math' as math;
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/palette.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/radii.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/spacing.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
-import 'package:siyar_sahaba/core/format/display_formatter.dart';
-import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
-import 'package:siyar_sahaba/shared/content/domain/atlas.dart';
-import 'package:siyar_sahaba/shared/content/presentation/content_text.dart';
+import 'package:suhba/core/design_system/tokens/palette.dart';
+import 'package:suhba/core/design_system/tokens/radii.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/design_system/tokens/typography.dart';
+import 'package:suhba/core/format/display_formatter.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/shared/content/domain/atlas.dart';
+import 'package:suhba/shared/content/presentation/content_text.dart';
 
 /// A schematic map of [places], with an optional journey ([route]).
 ///
@@ -70,7 +70,7 @@ class _SchematicMapState extends State<SchematicMap> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final format = DisplayFormatter.of(context);
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     final byId = {for (final p in widget.places) p.id: p};
     final route = [
       for (final leg in widget.route)
@@ -108,7 +108,7 @@ class _SchematicMapState extends State<SchematicMap> {
                                     places: widget.places,
                                     route: route,
                                     projection: projection,
-                                    textStyle: SahabaTextStyles.of(
+                                    textStyle: SuhbaTextStyles.of(
                                       context,
                                     ).kicker.copyWith(color: Palette.paper),
                                     textScaler: MediaQuery.textScalerOf(
@@ -190,7 +190,7 @@ class _SchematicMapState extends State<SchematicMap> {
                           ),
                           Text(
                             l10n.mapNorth,
-                            style: SahabaTextStyles.of(
+                            style: SuhbaTextStyles.of(
                               context,
                             ).kicker.copyWith(color: Palette.goldOnInk),
                           ),
@@ -269,7 +269,7 @@ class _Legend extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = SahabaColors.of(context);
+    final colors = SuhbaColors.of(context);
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [

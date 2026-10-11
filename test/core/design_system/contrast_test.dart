@@ -2,8 +2,8 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/design_system/theme/app_theme.dart';
-import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
+import 'package:suhba/core/design_system/theme/app_theme.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
 
 /// WCAG 2.1 contrast ratio.
 double contrast(Color a, Color b) {
@@ -20,7 +20,7 @@ void main() {
   ]) {
     group('$name theme', () {
       final s = theme.colorScheme;
-      final c = theme.extension<SahabaColors>()!;
+      final c = theme.extension<SuhbaColors>()!;
 
       // Text on its background: WCAG AA for normal text.
       final textPairs = <String, (Color, Color)>{
@@ -78,8 +78,8 @@ void main() {
   test('decorative gold is only text-safe on ink', () {
     final light = AppTheme.light;
     final dark = AppTheme.dark;
-    final lightGold = light.extension<SahabaColors>()!.accent;
-    final darkGold = dark.extension<SahabaColors>()!.accent;
+    final lightGold = light.extension<SuhbaColors>()!.accent;
+    final darkGold = dark.extension<SuhbaColors>()!.accent;
     // Documents why accentText exists: gold fails on paper...
     expect(contrast(lightGold, light.colorScheme.surface), lessThan(3));
     // ...and passes on ink.

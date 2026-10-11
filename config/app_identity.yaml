@@ -3,10 +3,10 @@
 # After editing, regenerate the platform files:
 #   dart run tool/set_app_identity.dart
 #
-# The IDs below are placeholders until the publisher domain is confirmed.
-# Release builds are rejected while a placeholder is present:
+# The final IDs (the store listings depend on them; never change after the first upload).
+# The release gate checks they are not placeholders:
 #   dart run tool/set_app_identity.dart --check --release
 
 displayName: "صُحبة"
-androidApplicationId: "com.example.siyarsahaba"
-iosBundleId: "com.example.siyarsahaba"
+androidApplicationId: "com.abdallahragab.suhba"
+iosBundleId: "com.abdallahragab.suhba"

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:siyar_sahaba/core/storage/settings_store.dart';
-import 'package:siyar_sahaba/features/home/presentation/home_page.dart';
-import 'package:siyar_sahaba/features/welcome/presentation/welcome_page.dart';
+import 'package:suhba/core/storage/settings_store.dart';
+import 'package:suhba/features/home/presentation/home_page.dart';
+import 'package:suhba/features/welcome/presentation/welcome_page.dart';
 
 import '../../helpers/app_harness.dart';
 import '../../helpers/pump_app.dart';
