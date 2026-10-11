@@ -2,30 +2,6 @@
   "schemaVersion": 1,
   "people": [
     {
-      "id": "aisha",
-      "name": {
-        "ar": "عائشة بنت أبي بكر"
-      },
-      "honorific": "sahabi",
-      "gender": "female",
-      "review": {
-        "status": "preliminaryReview",
-        "authoredBy": "sample-content"
-      }
-    },
-    {
-      "id": "hafsa",
-      "name": {
-        "ar": "حفصة بنت عمر"
-      },
-      "honorific": "sahabi",
-      "gender": "female",
-      "review": {
-        "status": "preliminaryReview",
-        "authoredBy": "sample-content"
-      }
-    },
-    {
       "id": "muhammad",
       "name": {
         "ar": "محمد رسول الله"
@@ -37,32 +13,6 @@
         "authoredBy": "draft-revision-4"
       },
       "gender": "male"
-    },
-    {
-      "id": "khadijah",
-      "name": {
-        "ar": "خديجة بنت خويلد"
-      },
-      "honorific": "sahabi",
-      "review": {
-        "status": "preliminaryReview",
-        "editorialFlags": [],
-        "authoredBy": "draft-revision-4"
-      },
-      "gender": "female"
-    },
-    {
-      "id": "asma-bint-abi-bakr",
-      "name": {
-        "ar": "أسماء بنت أبي بكر"
-      },
-      "honorific": "sahabi",
-      "review": {
-        "status": "preliminaryReview",
-        "editorialFlags": [],
-        "authoredBy": "draft-revision-4"
-      },
-      "gender": "female"
     },
     {
       "id": "abdullah-ibn-abi-bakr",
@@ -128,19 +78,6 @@
         "authoredBy": "draft-revision-4"
       },
       "gender": "male"
-    },
-    {
-      "id": "fatimah",
-      "name": {
-        "ar": "فاطمة بنت رسول الله"
-      },
-      "honorific": "sahabi",
-      "review": {
-        "status": "preliminaryReview",
-        "editorialFlags": [],
-        "authoredBy": "draft-revision-4"
-      },
-      "gender": "female"
     },
     {
       "id": "ruqayyah",

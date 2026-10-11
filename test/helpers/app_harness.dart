@@ -15,6 +15,7 @@ import 'package:siyar_sahaba/app/router/routes.dart';
 import 'package:siyar_sahaba/core/database/app_database.dart';
 import 'package:siyar_sahaba/core/database/database_provider.dart';
 import 'package:siyar_sahaba/core/storage/settings_store.dart';
+import 'package:siyar_sahaba/features/search/presentation/search_providers.dart';
 import 'package:siyar_sahaba/shared/content/providers.dart';
 
 import 'content_bundle.dart';
@@ -42,6 +43,7 @@ class AppUnderTest {
         assetBundleProvider.overrideWithValue(this.bundle),
         // The fake clock never delivers a background isolate's result.
         contentIsolateThresholdProvider.overrideWithValue(null),
+        searchIsolateThresholdProvider.overrideWithValue(null),
         appDatabaseProvider.overrideWithValue(this.database),
         if (settings != null) settingsStoreProvider.overrideWithValue(settings),
         // A fixed day, so the companion of the day is predictable.

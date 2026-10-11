@@ -66,7 +66,7 @@
         "displayName": {
           "ar": "عائشة بنت أبي بكر"
         },
-        "personId": "aisha"
+        "companionId": "aisha"
       },
       "type": "child",
       "reliability": "established",
@@ -95,7 +95,7 @@
         "displayName": {
           "ar": "أسماء بنت أبي بكر"
         },
-        "personId": "asma-bint-abi-bakr"
+        "companionId": "asma-bint-abi-bakr"
       },
       "type": "child",
       "reliability": "established",
@@ -153,7 +153,7 @@
         "displayName": {
           "ar": "عائشة بنت أبي بكر"
         },
-        "personId": "aisha"
+        "companionId": "aisha"
       },
       "type": "spouse",
       "reliability": "established",

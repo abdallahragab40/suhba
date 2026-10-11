@@ -1,0 +1,461 @@
+{
+  "schemaVersion": 1,
+  "id": "aisha",
+  "order": 17,
+  "gender": "female",
+  "name": {
+    "ar": "عائشة بنت أبي بكر"
+  },
+  "fullName": {
+    "ar": "عائشة بنت أبي بكر الصديق التيمية"
+  },
+  "kunya": {
+    "ar": "أم عبد الله"
+  },
+  "titles": [
+    {
+      "ar": "أم المؤمنين"
+    }
+  ],
+  "aliases": [
+    "عائشة"
+  ],
+  "summary": {
+    "ar": "أم المؤمنين، بنت أبي بكر الصديق، أحبّ الناس إلى النبي ﷺ، ومن أعلم الصحابة وأكثرهم رواية، توفي النبي ﷺ في بيتها."
+  },
+  "lineage": {
+    "ar": "من بني تيم بن مرة، من قريش"
+  },
+  "death": {
+    "date": {
+      "precision": "approx",
+      "era": "afterHijra",
+      "hijriYear": 57,
+      "gregorianYear": 677
+    },
+    "reliability": "reported",
+    "citations": [
+      {
+        "sourceId": "siyar",
+        "locatorStatus": "complete",
+        "volume": 2,
+        "page": "192"
+      }
+    ]
+  },
+  "deathPlace": {
+    "ar": "المدينة، ودُفنت بالبقيع"
+  },
+  "memberships": [
+    {
+      "categoryId": "ummahat-al-muminin",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 33,
+            "ayahFrom": 6
+          }
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3894"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "type": "spouse",
+      "person": {
+        "displayName": {
+          "ar": "محمد رسول الله"
+        },
+        "personId": "muhammad"
+      },
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3894"
+        }
+      ]
+    },
+    {
+      "type": "father",
+      "person": {
+        "displayName": {
+          "ar": "أبو بكر الصديق"
+        },
+        "companionId": "abu-bakr"
+      },
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "135"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "aisha.marriage",
+      "kind": "withProphet",
+      "title": {
+        "ar": "زواجها ومكانتها"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "تزوّجها النبي ﷺ بمكة بعد وفاة خديجة، ثم بنى بها في المدينة بعد الهجرة، ولم يتزوّج بكرًا غيرها."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "3894"
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "4753"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وسأله عمرو بن العاص عن أحبّ الناس إليه فذكر عائشة، ثم سأله من الرجال فذكر أباها."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "3662"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وأخبرها النبي ﷺ يومًا أن جبريل يقرئها السلام، فردّت عليه السلام."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "3768"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكانت تخرج معه في أسفاره، وتروي أنها سابقته مرة فسبقته، ثم سابقها بعد أن حملت اللحم فسبقها، فقال: هذه بتلك، فيما يرويه أبو داود."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "abu-dawud",
+              "locatorStatus": "complete",
+              "hadithNumber": "2578"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وأخبر أن فضلها على النساء كفضل الثريد على سائر الطعام."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "3769"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aisha.trial",
+      "kind": "virtues",
+      "title": {
+        "ar": "براءتها وبركتها"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ابتُليت عائشة بحديث الإفك الذي أشاعه المنافقون، فأنزل الله براءتها في آيات من سورة النور تُتلى إلى يوم القيامة."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "quran",
+              "locatorStatus": "complete",
+              "quranRef": {
+                "surah": 24,
+                "ayahFrom": 11
+              }
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "4750"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ودخل عليها ابن عباس قبل موتها فأثنى عليها، وذكر أن النبي ﷺ لم ينكح بكرًا غيرها، وأن عذرها نزل من السماء، فقالت بعد خروجه إنها وددت لو كانت نسيًا منسيًّا، خوفًا من الثناء."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "4753"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكان ضياع عقد لها في سفر سببًا في نزول آية التيمم، فقال أسيد بن حضير إن ذلك ليس بأول بركتهم يا آل أبي بكر."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "334"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aisha.the-last-days",
+      "kind": "contributions",
+      "title": {
+        "ar": "وفاة النبي ﷺ في بيتها"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "استأذن النبي ﷺ أزواجه في مرضه الأخير أن يُمرَّض في بيت عائشة، فتوفي في بيتها وفي يومها، ورأسه بين سحرها ونحرها، ودُفن في بيتها."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "4449"
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "1389"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aisha.knowledge",
+      "kind": "contributions",
+      "title": {
+        "ar": "علمها"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "كانت عائشة من أعلم الناس، ويذكر أبو موسى الأشعري أنهم ما أشكل عليهم حديث قط فسألوا عائشة إلا وجدوا عندها منه علمًا، فيما يرويه الترمذي."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "tirmidhi",
+              "locatorStatus": "complete",
+              "hadithNumber": "3883"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ومن أعظم ما حفظته للأمة وصف حياة النبي ﷺ في بيته؛ فهي التي أخبرت أن خُلقه كان القرآن، وأنه كان يكون في مهنة أهله، فإذا حضرت الصلاة خرج إلى الصلاة."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "746"
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "676"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويذكر الذهبي أن مسندها يبلغ ألفين ومئتين وعشرة أحاديث، اتفق البخاري ومسلم منها على مئة وأربعة وسبعين."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "139"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aisha.generosity",
+      "kind": "character",
+      "title": {
+        "ar": "كرمها"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكانت لا تمسك شيئًا مما جاءها من رزق الله إلا تصدّقت به، حتى رأى ابن أختها عبد الله بن الزبير أن يُؤخذ على يديها، كما يروي عروة بن الزبير."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "3505"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aisha.death",
+      "kind": "death",
+      "title": {
+        "ar": "وفاتها"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "توفيت عائشة بالمدينة، ودُفنت بالبقيع ليلًا، وأرّخ هشام بن عروة وأحمد بن حنبل وفاتها سنة سبع وخمسين، وقال الواقدي وغيره سنة ثمان وخمسين."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "192"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aisha.lessons",
+      "kind": "lessons",
+      "title": {
+        "ar": "دروس من سيرتها"
+      },
+      "blocks": [
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "أن المرأة المسلمة قد تكون مرجعًا في العلم يرجع إليها كبار الصحابة."
+          }
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "وأن الله يدافع عن الذين آمنوا، فتكون المحنة سببًا في رفعة صاحبها."
+          }
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "aisha.prophet-dies",
+      "era": "madinan",
+      "date": {
+        "precision": "year",
+        "era": "afterHijra",
+        "hijriYear": 11,
+        "gregorianYear": 632
+      },
+      "title": {
+        "ar": "توفي النبي ﷺ في بيتها"
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4449"
+        }
+      ],
+      "sectionId": "aisha.the-last-days",
+      "eventId": "death-of-the-prophet"
+    },
+    {
+      "id": "aisha.death",
+      "era": "afterProphet",
+      "date": {
+        "precision": "approx",
+        "era": "afterHijra",
+        "hijriYear": 57,
+        "gregorianYear": 677
+      },
+      "title": {
+        "ar": "وفاتها بالمدينة"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "192"
+        }
+      ],
+      "sectionId": "aisha.death"
+    }
+  ],
+  "references": [
+    "siyar"
+  ],
+  "review": {
+    "status": "preliminaryReview",
+    "editorialFlags": [],
+    "coverage": "sample",
+    "authoredBy": "short-profiles-1"
+  },
+  "atAGlance": [],
+  "storyIds": []
+}

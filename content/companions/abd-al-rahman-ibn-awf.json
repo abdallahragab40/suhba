@@ -79,6 +79,16 @@
           "page": "346"
         }
       ]
+    },
+    {
+      "categoryId": "ahl-badr",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3141"
+        }
+      ]
     }
   ],
   "lineage": {

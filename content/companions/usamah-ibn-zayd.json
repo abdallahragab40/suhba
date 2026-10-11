@@ -1,0 +1,306 @@
+{
+  "schemaVersion": 1,
+  "id": "usamah-ibn-zayd",
+  "order": 34,
+  "gender": "male",
+  "name": {
+    "ar": "أسامة بن زيد"
+  },
+  "fullName": {
+    "ar": "أسامة بن زيد بن حارثة الكلبي"
+  },
+  "kunya": {
+    "ar": "أبو محمد"
+  },
+  "titles": [
+    {
+      "ar": "حِبّ رسول الله ﷺ وابن حِبّه"
+    }
+  ],
+  "aliases": [
+    "أسامة"
+  ],
+  "summary": {
+    "ar": "ابن زيد بن حارثة وأم أيمن، حِبّ رسول الله ﷺ وابن حِبّه، أمّره النبي ﷺ على جيش إلى الشام وهو شاب، فأنفذه أبو بكر، وتوفي بالمدينة في خلافة معاوية."
+  },
+  "lineage": {
+    "ar": "من كلب من قضاعة، مولى رسول الله ﷺ"
+  },
+  "death": {
+    "date": {
+      "precision": "approx",
+      "era": "afterHijra",
+      "hijriYear": 54,
+      "gregorianYear": 674
+    },
+    "reliability": "reported",
+    "citations": [
+      {
+        "sourceId": "isabah",
+        "locatorStatus": "complete",
+        "volume": 1,
+        "page": "49"
+      }
+    ]
+  },
+  "deathPlace": {
+    "ar": "الجرف، بالمدينة"
+  },
+  "relations": [
+    {
+      "type": "father",
+      "person": {
+        "displayName": {
+          "ar": "زيد بن حارثة"
+        },
+        "companionId": "zayd-ibn-harithah"
+      },
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3730"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "usamah-ibn-zayd.beloved",
+      "kind": "withProphet",
+      "title": {
+        "ar": "حِبّ رسول الله ﷺ"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وُلد أسامة في الإسلام، وأمه أم أيمن حاضنة النبي ﷺ، وتوفي النبي ﷺ وله عشرون سنة، وقيل ثماني عشرة، على ما يذكر ابن حجر."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "isabah",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "49"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكان النبي ﷺ يأخذه والحسن بن علي فيقول: اللهم أحبّهما فإني أحبّهما."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "3735"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ولما أهمّ قريشًا شأن المرأة المخزومية التي سرقت قالوا: من يجترئ على النبي ﷺ إلا أسامة حِبّ رسول الله ﷺ، فكلّمه فيها، فقال: أتشفع في حدّ من حدود الله؟ ثم خطب الناس في أن الحدود تقام على الشريف والضعيف سواء."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "3475"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "usamah-ibn-zayd.lesson-of-the-shahadah",
+      "kind": "withProphet",
+      "title": {
+        "ar": "درس لا إله إلا الله"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "بعثه النبي ﷺ في سرية، فلحق هو ورجل من الأنصار رجلًا من العدو، فلما غشيه قال: لا إله إلا الله، فكفّ عنه الأنصاري وطعنه أسامة فقتله، فلما بلغ ذلك النبي ﷺ قال: يا أسامة، أقتلته بعد ما قال لا إله إلا الله؟ وجعل يكرّرها حتى تمنّى أسامة أنه لم يكن أسلم قبل ذلك اليوم."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "4269"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "usamah-ibn-zayd.the-army",
+      "kind": "contributions",
+      "title": {
+        "ar": "جيش أسامة"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "بعث النبي ﷺ بعثًا وأمّر عليهم أسامة، فطعن بعض الناس في إمارته، فأخبر النبي ﷺ أنه خليق بالإمارة كما كان أبوه."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "3730"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويذكر الذهبي وابن حجر أن النبي ﷺ أمّره على جيش لغزو الشام فيه كبار الصحابة، فلم يسر حتى توفي النبي ﷺ، فبادر أبو بكر بإنفاذه، وكان عمر يجلّه ويفضّله في العطاء على ابنه عبد الله."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "497"
+            },
+            {
+              "sourceId": "isabah",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "49"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "usamah-ibn-zayd.death",
+      "kind": "death",
+      "title": {
+        "ar": "وفاته"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "اعتزل أسامة الفتن بعد مقتل عثمان، وسكن المزّة من عمل دمشق ثم وادي القرى، ثم رجع إلى المدينة فمات بالجرف في أواخر خلافة معاوية، وصحّح ابن عبد البر أنه مات سنة أربع وخمسين."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "isabah",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "49"
+            },
+            {
+              "sourceId": "isabah",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "49"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "usamah-ibn-zayd.lessons",
+      "kind": "lessons",
+      "title": {
+        "ar": "دروس من سيرته"
+      },
+      "blocks": [
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "أن حرمة دم من نطق بالشهادة عظيمة، لا يُستهان بها بالظنون."
+          }
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "وأن محبة النبي ﷺ لا تُعطّل حدود الله، فالناس أمامها سواء."
+          }
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "وأن الكفاءة تُقدَّم ولو مع صغر السن."
+          }
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "usamah-ibn-zayd.army",
+      "era": "madinan",
+      "date": {
+        "precision": "year",
+        "era": "afterHijra",
+        "hijriYear": 11,
+        "gregorianYear": 632
+      },
+      "title": {
+        "ar": "أمّره النبي ﷺ على جيش الشام"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "497"
+        }
+      ],
+      "sectionId": "usamah-ibn-zayd.the-army"
+    },
+    {
+      "id": "usamah-ibn-zayd.death",
+      "era": "afterProphet",
+      "date": {
+        "precision": "approx",
+        "era": "afterHijra",
+        "hijriYear": 54,
+        "gregorianYear": 674
+      },
+      "title": {
+        "ar": "وفاته بالمدينة"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "49"
+        }
+      ],
+      "sectionId": "usamah-ibn-zayd.death"
+    }
+  ],
+  "references": [
+    "siyar",
+    "isabah"
+  ],
+  "review": {
+    "status": "preliminaryReview",
+    "editorialFlags": [],
+    "coverage": "sample",
+    "authoredBy": "short-profiles-1"
+  },
+  "atAGlance": [],
+  "storyIds": [],
+  "memberships": []
+}

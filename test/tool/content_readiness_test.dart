@@ -247,13 +247,13 @@ void main() {
     expect(report().toJsonString(), report().toJsonString());
   });
 
-  test('the committed content: the Ten are listed, none ready yet', () {
+  test('the committed content: every companion is listed, none ready yet', () {
     final r = contentReadiness(
       ContentFiles.fromDirectory(Directory('content')),
       schemas,
     );
     final companions = r.items.where((i) => i.key.startsWith('companion.'));
-    expect(companions, hasLength(10));
+    expect(companions, hasLength(40));
     expect(r.editionId, 'expanded-edition-1');
     expect(r.editionReady, isFalse);
     expect(

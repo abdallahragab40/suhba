@@ -56,22 +56,22 @@ void main() {
   });
 
   testApp('features the companion of the day', (tester) async {
-    // 9 October 2026 is day 20735 since 1970; 20735 % 10 = 5 → al-Zubayr.
+    // 9 October 2026 is day 20735 since 1970; 20735 % 40 = 15 → Khadijah.
     await open(tester);
     await reveal(tester, find.text('صحابي اليوم'));
     expect(find.text('صحابي اليوم'), findsOneWidget);
-    expect(find.text('الزبير بن العوام'), findsOneWidget);
+    expect(find.text('خديجة بنت خويلد'), findsOneWidget);
   });
 
   testApp('the next day features someone else', (tester) async {
     await open(tester, now: DateTime(2026, 10, 10));
     await reveal(tester, find.text('صحابي اليوم'));
-    expect(find.text('عبد الرحمن بن عوف'), findsOneWidget);
-    expect(find.text('الزبير بن العوام'), findsNothing);
+    expect(find.text('عائشة بنت أبي بكر'), findsOneWidget);
+    expect(find.text('خديجة بنت خويلد'), findsNothing);
   });
 
   testApp('"read the biography" opens the featured profile', (tester) async {
-    await open(tester, now: DateTime(2026, 10, 4)); // Abu Bakr's day
+    await open(tester, now: DateTime(2026, 9, 24)); // Abu Bakr's day
     await reveal(tester, find.text('اقرأ السيرة'));
     // A real passage from his biography, not only a label.
     expect(find.textContaining('عبد الله بن عثمان بن عامر'), findsWidgets);
@@ -84,8 +84,8 @@ void main() {
   testApp('categories show their sizes and open the directory', (tester) async {
     final app = await open(tester);
     await reveal(tester, find.text('الخلفاء الراشدون'));
-    expect(find.text('١٠ صحابة'), findsNWidgets(2)); // the Ten, Muhajirun
-    expect(find.text('٤ صحابة'), findsOneWidget); // the caliphs
+    expect(find.text('١٠ صحابة'), findsOneWidget); // the Ten
+    expect(find.text('٤ صحابة'), findsWidgets); // the caliphs
     await tester.tap(find.text('الخلفاء الراشدون'));
     await tester.pumpAndSettle();
     expect(find.byType(DirectoryPage), findsOneWidget);

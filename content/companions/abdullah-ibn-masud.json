@@ -1,0 +1,357 @@
+{
+  "schemaVersion": 1,
+  "id": "abdullah-ibn-masud",
+  "order": 22,
+  "gender": "male",
+  "name": {
+    "ar": "عبد الله بن مسعود"
+  },
+  "fullName": {
+    "ar": "عبد الله بن مسعود بن غافل الهذلي، حليف بني زهرة"
+  },
+  "kunya": {
+    "ar": "أبو عبد الرحمن"
+  },
+  "titles": [
+    {
+      "ar": "ابن أم عبد"
+    }
+  ],
+  "aliases": [
+    "ابن مسعود"
+  ],
+  "summary": {
+    "ar": "من السابقين الأولين، هاجر الهجرتين وشهد بدرًا، وكان من أعلم الصحابة بالقرآن، بعثه عمر معلّمًا إلى الكوفة، وتوفي بالمدينة سنة اثنتين وثلاثين."
+  },
+  "lineage": {
+    "ar": "من هذيل، وكان حليفًا لبني زهرة بمكة"
+  },
+  "death": {
+    "date": {
+      "precision": "year",
+      "era": "afterHijra",
+      "hijriYear": 32,
+      "gregorianYear": 652
+    },
+    "reliability": "reported",
+    "citations": [
+      {
+        "sourceId": "siyar",
+        "locatorStatus": "complete",
+        "volume": 1,
+        "page": "462"
+      }
+    ]
+  },
+  "deathPlace": {
+    "ar": "المدينة"
+  },
+  "memberships": [
+    {
+      "categoryId": "muhajirun",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "461"
+        }
+      ]
+    },
+    {
+      "categoryId": "ahl-badr",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "461"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "abdullah-ibn-masud.islam",
+      "kind": "conversion",
+      "title": {
+        "ar": "إسلامه"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "أسلم عبد الله بن مسعود قديمًا، وكان يذكر أنه رأى نفسه سادس ستة وما على ظهر الأرض مسلم غيرهم، على ما يرويه الذهبي."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "464"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وهاجر الهجرتين إلى الحبشة ثم إلى المدينة، وشهد بدرًا، ويذكر الذهبي أنه كان من السابقين الأولين ومن النجباء العالمين."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "461"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abdullah-ibn-masud.with-the-prophet",
+      "kind": "withProphet",
+      "title": {
+        "ar": "مع النبي ﷺ"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "كان ابن مسعود ملازمًا للنبي ﷺ، حتى عرفه الناس بصاحب السواك والوساد والنعلين، وكان أبو الدرداء يذكر ذلك لأهل الكوفة."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "3742"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "470"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وطلب منه النبي ﷺ يومًا أن يقرأ عليه القرآن، فقال: أقرأ عليك وعليك أُنزل؟ فذكر أنه يحب أن يسمعه من غيره، فقرأ عليه من سورة النساء حتى بلغ قوله تعالى: فكيف إذا جئنا من كل أمة بشهيد، فقال: حسبك، فإذا عيناه تذرفان."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "5050"
+            },
+            {
+              "sourceId": "quran",
+              "locatorStatus": "complete",
+              "quranRef": {
+                "surah": 4,
+                "ayahFrom": 41
+              }
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويوم بدر وجد أبا جهل صريعًا قد ضربه ابنا عفراء حتى برد، فأخذ بلحيته وقال له: أنت أبا جهل؟"
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "3963"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abdullah-ibn-masud.the-quran",
+      "kind": "virtues",
+      "title": {
+        "ar": "علمه بالقرآن"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "أمر النبي ﷺ أصحابه أن يأخذوا القرآن من أربعة، وبدأ بعبد الله بن مسعود."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "3758"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكان ابن مسعود يقسم أنه أخذ من في رسول الله ﷺ بضعًا وسبعين سورة، وأن الصحابة قد علموا أنه من أعلمهم بكتاب الله، وما هو بخيرهم."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "5000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abdullah-ibn-masud.kufa",
+      "kind": "contributions",
+      "title": {
+        "ar": "معلّم الكوفة"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "بعثه عمر بن الخطاب إلى الكوفة معلّمًا ووزيرًا مع عمار بن ياسر، وكتب إلى أهلها أنه آثرهم به على نفسه، فكان من أعظم من نشر العلم والقرآن في العراق."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "422"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abdullah-ibn-masud.death",
+      "kind": "death",
+      "title": {
+        "ar": "وفاته"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "قدم ابن مسعود المدينة في آخر عمره، وتوفي بها سنة اثنتين وثلاثين على ما يذكر الذهبي، ولما مات قال أحد أصحابه لصاحبه: أتراه ترك بعده مثله؟"
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "462"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "468"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abdullah-ibn-masud.lessons",
+      "kind": "lessons",
+      "title": {
+        "ar": "دروس من سيرته"
+      },
+      "blocks": [
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "أن ملازمة أهل العلم والخدمة لهم طريق إلى العلم، فقد صحب ابن مسعود النبي ﷺ في خاصّة أمره."
+          }
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "وأن تدبّر القرآن يرقّ له القلب، فقد بكى النبي ﷺ حين سمع قراءته."
+          }
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "وأن العالم الصادق يعرف قدر علمه دون أن يزكّي نفسه بالخيرية."
+          }
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "abdullah-ibn-masud.badr",
+      "era": "madinan",
+      "date": {
+        "precision": "year",
+        "era": "afterHijra",
+        "hijriYear": 2,
+        "gregorianYear": 624
+      },
+      "title": {
+        "ar": "شهد بدرًا"
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3963"
+        }
+      ],
+      "sectionId": "abdullah-ibn-masud.with-the-prophet",
+      "eventId": "badr"
+    },
+    {
+      "id": "abdullah-ibn-masud.death",
+      "era": "afterProphet",
+      "date": {
+        "precision": "year",
+        "era": "afterHijra",
+        "hijriYear": 32,
+        "gregorianYear": 652
+      },
+      "title": {
+        "ar": "وفاته بالمدينة"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "462"
+        }
+      ],
+      "sectionId": "abdullah-ibn-masud.death"
+    }
+  ],
+  "references": [
+    "siyar"
+  ],
+  "review": {
+    "status": "preliminaryReview",
+    "editorialFlags": [],
+    "coverage": "sample",
+    "authoredBy": "short-profiles-1"
+  },
+  "atAGlance": [],
+  "relations": [],
+  "storyIds": []
+}

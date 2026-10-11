@@ -82,6 +82,17 @@
           "page": "73"
         }
       ]
+    },
+    {
+      "categoryId": "ahl-badr",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "110"
+        }
+      ]
     }
   ],
   "storyIds": [

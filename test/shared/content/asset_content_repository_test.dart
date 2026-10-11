@@ -53,13 +53,13 @@ void main() {
     final manifest = (await repo.manifest()).getOrThrow();
     expect(manifest.channel, ContentChannel.draft);
     expect(manifest.isDraft, isTrue);
-    expect(manifest.companionCount, 10);
+    expect(manifest.companionCount, 40);
     expect(manifest.approvedCount, 0);
   });
 
-  test('the index lists the Ten in their traditional order', () async {
+  test('the index lists the Ten first, in their traditional order', () async {
     final index = (await repo.companionIndex()).getOrThrow();
-    expect(index.map((c) => c.id), [
+    expect(index.take(10).map((c) => c.id), [
       'abu-bakr',
       'umar',
       'uthman',
@@ -72,8 +72,12 @@ void main() {
       'abu-ubaydah',
     ]);
     expect(
-      index.every((c) => c.categoryIds.contains('ashara-mubashshara')),
+      index.take(10).every((c) => c.categoryIds.contains('ashara-mubashshara')),
       isTrue,
+    );
+    expect(
+      index.skip(10).any((c) => c.categoryIds.contains('ashara-mubashshara')),
+      isFalse,
     );
     expect(index.every((c) => !c.review.isApproved), isTrue);
   });
@@ -92,6 +96,9 @@ void main() {
       'ashara-mubashshara',
       'khulafa-rashidun',
       'muhajirun',
+      'ansar',
+      'ahl-badr',
+      'ummahat-al-muminin',
     ]);
     final sources = (await repo.sources()).getOrThrow();
     expect(sources.keys, containsAll(['quran', 'bukhari', 'isabah']));
@@ -100,7 +107,7 @@ void main() {
     expect(events.keys.first, 'birth-of-the-prophet', reason: 'date order');
     expect(
       (await repo.people()).getOrThrow().keys,
-      containsAll(['aisha', 'hafsa', 'muhammad']),
+      containsAll(['muhammad', 'abu-talib']),
     );
     final places = (await repo.places()).getOrThrow();
     expect(places['makkah']!.location.precision, GeoPrecision.identified);
@@ -249,6 +256,6 @@ void main() {
   test('the real asset bundle contains the content', () async {
     final real = AssetContentRepository(AssetContentSource(rootBundle));
     final manifest = (await real.manifest()).getOrThrow();
-    expect(manifest.companionCount, 10);
+    expect(manifest.companionCount, 40);
   });
 }

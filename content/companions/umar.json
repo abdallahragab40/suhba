@@ -100,6 +100,17 @@
           "page": "474"
         }
       ]
+    },
+    {
+      "categoryId": "ahl-badr",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "683"
+        }
+      ]
     }
   ],
   "lineage": {
@@ -152,7 +163,7 @@
         "displayName": {
           "ar": "حفصة أم المؤمنين"
         },
-        "personId": "hafsa"
+        "companionId": "hafsa"
       },
       "citations": [
         {

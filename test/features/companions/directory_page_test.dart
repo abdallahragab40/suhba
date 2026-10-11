@@ -46,12 +46,14 @@ void main() {
     });
   });
 
-  testApp('lists the Ten in order, each labelled as a draft', (tester) async {
+  testApp('lists the Ten first and in order, each labelled', (tester) async {
     tester.view
       ..devicePixelRatio = 1
       ..physicalSize = const Size(800, 6000);
     addTearDown(tester.view.reset);
-    await AppUnderTest(location: '/companions').pump(tester);
+    await AppUnderTest(
+      location: '/companions?category=ashara-mubashshara',
+    ).pump(tester);
 
     expect(_cardNames(tester), [
       'أبو بكر الصديق',
@@ -68,6 +70,17 @@ void main() {
     expect(find.byType(DraftBanner), findsOneWidget);
     expect(find.byType(DraftBadge), findsNWidgets(10));
     expect(find.text('رضي الله عنه'), findsNWidgets(10));
+  });
+
+  testApp('everyone is listed, beyond the Ten', (tester) async {
+    await AppUnderTest(location: '/companions').pump(tester);
+    expect(_cardNames(tester).first, 'أبو بكر الصديق');
+    await tester.scrollUntilVisible(
+      find.text('عبد الله بن رواحة'),
+      600,
+      scrollable: find.byType(Scrollable).first,
+    );
+    expect(find.text('عبد الله بن رواحة'), findsOneWidget);
   });
 
   testApp('the category filter narrows the list and updates the URL', (
@@ -145,7 +158,10 @@ void main() {
       ..devicePixelRatio = 1
       ..physicalSize = const Size(800, 6000);
     addTearDown(tester.view.reset);
-    await AppUnderTest(location: '/companions', bundle: bundle).pump(tester);
+    await AppUnderTest(
+      location: '/companions?category=ashara-mubashshara',
+      bundle: bundle,
+    ).pump(tester);
     expect(find.byType(DraftBadge), findsNWidgets(9));
     expect(
       find.descendant(

@@ -50,6 +50,10 @@ void main() {
   });
 
   testApp('finds biography sections by heading', (tester) async {
+    tester.view
+      ..devicePixelRatio = 1
+      ..physicalSize = const Size(800, 4000);
+    addTearDown(tester.view.reset);
     await open(tester);
     await type(tester, 'الهجره');
     expect(heading('أقسام السيرة'), findsOneWidget);

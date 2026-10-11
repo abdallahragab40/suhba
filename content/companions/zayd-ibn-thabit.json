@@ -1,0 +1,351 @@
+{
+  "schemaVersion": 1,
+  "id": "zayd-ibn-thabit",
+  "order": 24,
+  "gender": "male",
+  "name": {
+    "ar": "زيد بن ثابت"
+  },
+  "fullName": {
+    "ar": "زيد بن ثابت بن الضحاك الأنصاري النجاري"
+  },
+  "kunya": {
+    "ar": "أبو سعيد"
+  },
+  "titles": [
+    {
+      "ar": "كاتب الوحي"
+    }
+  ],
+  "aliases": [
+    "زيد بن ثابت"
+  ],
+  "summary": {
+    "ar": "من الأنصار، كتب الوحي للنبي ﷺ، وجمع القرآن في صحف بأمر أبي بكر، ثم كان على نسخ المصاحف في خلافة عثمان، وكان من أعلم الصحابة بالفرائض."
+  },
+  "lineage": {
+    "ar": "من بني النجار من الخزرج، من الأنصار"
+  },
+  "death": {
+    "date": {
+      "precision": "approx",
+      "era": "afterHijra",
+      "hijriYear": 45,
+      "gregorianYear": 665
+    },
+    "reliability": "reported",
+    "citations": [
+      {
+        "sourceId": "siyar",
+        "locatorStatus": "complete",
+        "volume": 2,
+        "page": "441"
+      }
+    ]
+  },
+  "deathPlace": {
+    "ar": "المدينة"
+  },
+  "memberships": [
+    {
+      "categoryId": "ansar",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3810"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "zayd-ibn-thabit.youth",
+      "kind": "earlyLife",
+      "title": {
+        "ar": "نشأته"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "قدم النبي ﷺ المدينة وزيد ابن إحدى عشرة سنة، وكان قد حفظ سورًا من القرآن، فأعجب ذلك النبي ﷺ، فأمره أن يتعلّم كتاب يهود لأنه لا يأمنهم على كتابه، فتعلّمه في نصف شهر، فكان يكتب له إليهم ويقرأ له كتبهم، على ما يرويه الترمذي ويذكره الذهبي."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "tirmidhi",
+              "locatorStatus": "complete",
+              "hadithNumber": "2715"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "428"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويروى أن النبي ﷺ سأله هل يحسن السريانية، فتعلّمها في سبعة عشر يومًا."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "429"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zayd-ibn-thabit.scribe",
+      "kind": "withProphet",
+      "title": {
+        "ar": "كاتب الوحي"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "كان زيد من كتّاب الوحي للنبي ﷺ، ووصفه أبو بكر بأنه شاب عاقل لا يُتّهم، وأنه كان يكتب الوحي لرسول الله ﷺ."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "4986"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكان أنس يعدّه في الأربعة من الأنصار الذين جمعوا القرآن على عهد النبي ﷺ."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "3810"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zayd-ibn-thabit.the-mushaf",
+      "kind": "contributions",
+      "title": {
+        "ar": "جمع القرآن"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "لما استحرّ القتل بالقرّاء يوم اليمامة أمره أبو بكر بمشورة عمر أن يتتبّع القرآن فيجمعه، فذكر أنهم لو كلّفوه نقل جبل ما كان أثقل عليه من ذلك، ثم جمعه من العُسُب واللِّخاف وصدور الرجال."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "4986"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ثم كان في خلافة عثمان فيمن أمرهم بنسخ المصاحف من صحف حفصة، مع عبد الله بن الزبير وسعيد بن العاص وعبد الرحمن بن الحارث بن هشام."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "4987"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zayd-ibn-thabit.knowledge",
+      "kind": "virtues",
+      "title": {
+        "ar": "علمه"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويروي الترمذي عن أنس أن النبي ﷺ ذكر أن أفرض أصحابه، أي أعلمهم بالمواريث، زيد بن ثابت، ويصحّحه."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "tirmidhi",
+              "locatorStatus": "complete",
+              "hadithNumber": "3791"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكان عمر يستخلفه على المدينة في أسفاره، ولما مات قال أبو هريرة: مات حبر الأمة، ولعل الله أن يجعل في ابن عباس منه خلفًا، على ما يذكر الذهبي."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "434"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "439"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zayd-ibn-thabit.death",
+      "kind": "death",
+      "title": {
+        "ar": "وفاته"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "اختلف المؤرخون في سنة وفاته؛ فقال الواقدي سنة خمس وأربعين عن ست وخمسين سنة، وقال أحمد بن حنبل سنة إحدى وخمسين، وقيل غير ذلك."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "441"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zayd-ibn-thabit.lessons",
+      "kind": "lessons",
+      "title": {
+        "ar": "دروس من سيرته"
+      },
+      "blocks": [
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "أن تعلّم اللغات والعلوم النافعة من خدمة الدين، فقد تعلّم زيد كتاب يهود لحاجة الدعوة."
+          }
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "وأن الأمانة والضبط أهّلا شابًّا لأعظم مهمة في تاريخ الأمة: جمع القرآن."
+          }
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "zayd-ibn-thabit.quran",
+      "era": "afterProphet",
+      "date": {
+        "precision": "approx",
+        "era": "afterHijra",
+        "hijriYear": 12,
+        "gregorianYear": 633
+      },
+      "title": {
+        "ar": "جمع القرآن في صحف بأمر أبي بكر"
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4986"
+        }
+      ],
+      "sectionId": "zayd-ibn-thabit.the-mushaf"
+    },
+    {
+      "id": "zayd-ibn-thabit.mushafs",
+      "era": "afterProphet",
+      "date": {
+        "precision": "approx",
+        "era": "afterHijra",
+        "hijriYear": 25,
+        "gregorianYear": 646
+      },
+      "title": {
+        "ar": "نسخ المصاحف في خلافة عثمان"
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4987"
+        }
+      ],
+      "sectionId": "zayd-ibn-thabit.the-mushaf"
+    },
+    {
+      "id": "zayd-ibn-thabit.death",
+      "era": "afterProphet",
+      "date": {
+        "precision": "approx",
+        "era": "afterHijra",
+        "hijriYear": 45,
+        "gregorianYear": 665
+      },
+      "title": {
+        "ar": "وفاته بالمدينة على قول الواقدي"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "441"
+        }
+      ],
+      "sectionId": "zayd-ibn-thabit.death"
+    }
+  ],
+  "references": [
+    "siyar"
+  ],
+  "review": {
+    "status": "preliminaryReview",
+    "editorialFlags": [],
+    "coverage": "sample",
+    "authoredBy": "short-profiles-1"
+  },
+  "atAGlance": [],
+  "relations": [],
+  "storyIds": []
+}

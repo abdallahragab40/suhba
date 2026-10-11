@@ -1,0 +1,312 @@
+{
+  "schemaVersion": 1,
+  "id": "abdullah-ibn-abbas",
+  "order": 30,
+  "gender": "male",
+  "name": {
+    "ar": "عبد الله بن عباس"
+  },
+  "fullName": {
+    "ar": "عبد الله بن عباس بن عبد المطلب الهاشمي"
+  },
+  "kunya": {
+    "ar": "أبو العباس"
+  },
+  "titles": [
+    {
+      "ar": "حبر الأمة"
+    },
+    {
+      "ar": "ترجمان القرآن"
+    }
+  ],
+  "aliases": [
+    "ابن عباس"
+  ],
+  "summary": {
+    "ar": "ابن عم النبي ﷺ، دعا له النبي ﷺ بالفقه والحكمة وتعليم الكتاب، فصار حبر الأمة وترجمان القرآن، وأدناه عمر من أشياخ بدر، وتوفي بالطائف سنة ثمان وستين."
+  },
+  "lineage": {
+    "ar": "من بني هاشم، من قريش"
+  },
+  "death": {
+    "date": {
+      "precision": "approx",
+      "era": "afterHijra",
+      "hijriYear": 68,
+      "gregorianYear": 687
+    },
+    "reliability": "reported",
+    "citations": [
+      {
+        "sourceId": "siyar",
+        "locatorStatus": "complete",
+        "volume": 3,
+        "page": "359"
+      }
+    ]
+  },
+  "deathPlace": {
+    "ar": "الطائف"
+  },
+  "relations": [
+    {
+      "type": "relative",
+      "person": {
+        "displayName": {
+          "ar": "محمد رسول الله"
+        },
+        "personId": "muhammad"
+      },
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "331"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "abdullah-ibn-abbas.childhood",
+      "kind": "earlyLife",
+      "title": {
+        "ar": "نشأته مع النبي ﷺ"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "كان عبد الله بن عباس ابن عم النبي ﷺ، وبات ليلة عند خالته ميمونة أم المؤمنين، فقام النبي ﷺ من الليل يصلّي، فقام عن يساره، فأخذ برأسه فجعله عن يمينه، كما يروي في صحيح البخاري."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "138"
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "859"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وتوفي النبي ﷺ وابن عباس صغير، وكان يذكر أنه توفي وهو ابن عشر سنين وقد قرأ المحكم من القرآن."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "5035"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ووضع له يومًا وَضوءه، فلما علم النبي ﷺ من وضعه دعا له: اللهم فقّهه في الدين."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "143"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وضمّه النبي ﷺ إلى صدره ودعا له: اللهم علّمه الحكمة، وفي رواية: علّمه الكتاب."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "3756"
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "75"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abdullah-ibn-abbas.knowledge",
+      "kind": "virtues",
+      "title": {
+        "ar": "علمه"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "كان عمر بن الخطاب يُدخله مع أشياخ بدر، فوجد بعضهم في نفسه، فسألهم عمر عن تفسير سورة النصر، فذكروا الأمر بالحمد والاستغفار، وذكر ابن عباس أنها أجل رسول الله ﷺ أعلمه الله إياه، فقال عمر: ما أعلم منها إلا ما تعلم."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "4294"
+            },
+            {
+              "sourceId": "quran",
+              "locatorStatus": "complete",
+              "quranRef": {
+                "surah": 110,
+                "ayahFrom": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وجدّ في طلب العلم بعد النبي ﷺ، فكان يبلغه الحديث عن الرجل من الصحابة فيأتيه وهو قائل، فيتوسّد رداءه على بابه تسفي الريح عليه التراب حتى يخرج، فيعجب الرجل أن يأتيه ابن عم رسول الله ﷺ، على ما يرويه الذهبي."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "343"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكان عبد الله بن مسعود يقول: نِعم ترجمان القرآن ابن عباس."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "347"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ولما مات زيد بن ثابت قال أبو هريرة: مات حبر الأمة، ولعل الله أن يجعل في ابن عباس منه خلفًا، على ما يذكر الذهبي."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "439"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abdullah-ibn-abbas.death",
+      "kind": "death",
+      "title": {
+        "ar": "وفاته"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "توفي ابن عباس بالطائف، وذكر علي بن المديني أنه توفي سنة ثمان أو سبع وستين، وقال الواقدي وغيره سنة ثمان وستين."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "358"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "359"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abdullah-ibn-abbas.lessons",
+      "kind": "lessons",
+      "title": {
+        "ar": "دروس من سيرته"
+      },
+      "blocks": [
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "أن الأدب مع أهل العلم والسعي في خدمتهم يفتح أبواب العلم."
+          }
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "وأن الفهم في القرآن عطاء من الله، قد يُعطاه الشاب فيقدّمه أهل الفضل."
+          }
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "abdullah-ibn-abbas.death",
+      "era": "afterProphet",
+      "date": {
+        "precision": "approx",
+        "era": "afterHijra",
+        "hijriYear": 68,
+        "gregorianYear": 687
+      },
+      "title": {
+        "ar": "وفاته بالطائف"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "358"
+        }
+      ],
+      "sectionId": "abdullah-ibn-abbas.death"
+    }
+  ],
+  "references": [
+    "siyar"
+  ],
+  "review": {
+    "status": "preliminaryReview",
+    "editorialFlags": [],
+    "coverage": "sample",
+    "authoredBy": "short-profiles-1"
+  },
+  "atAGlance": [],
+  "storyIds": [],
+  "memberships": []
+}

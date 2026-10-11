@@ -24,14 +24,17 @@ void main() {
       final files = Directory(
         'content/companions',
       ).listSync().whereType<File>().where((f) => f.path.endsWith('.json'));
-      expect(files, hasLength(10));
+      expect(files, hasLength(40));
       for (final file in files) {
         final companion = CompanionDto.fromJson(
           _readJson(file.path),
         ).toDomain();
         // Draft or preliminarily reviewed; never approved by the tooling.
         expect(companion.review.isApproved, isFalse, reason: file.path);
-        expect(companion.memberships, isNotEmpty, reason: file.path);
+        // Full biographies belong to a category; a short profile may not.
+        if (companion.review.coverage == Coverage.complete) {
+          expect(companion.memberships, isNotEmpty, reason: file.path);
+        }
       }
     });
 
@@ -71,6 +74,7 @@ void main() {
         'ashara-mubashshara',
         'khulafa-rashidun',
         'muhajirun',
+        'ahl-badr',
       ]);
       expect(c.sections.map((x) => x.kind), [
         SectionKind.earlyLife,

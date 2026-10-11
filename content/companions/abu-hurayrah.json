@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "id": "abu-hurayrah",
+  "order": 28,
+  "gender": "male",
+  "name": {
+    "ar": "أبو هريرة"
+  },
+  "fullName": {
+    "ar": "عبد الرحمن بن صخر الدوسي، على الأشهر"
+  },
+  "kunya": {
+    "ar": "أبو هريرة"
+  },
+  "aliases": [
+    "أبو هريرة"
+  ],
+  "summary": {
+    "ar": "من دوس، قدم المدينة عام خيبر فلزم النبي ﷺ نحو أربع سنين، فكان أحفظ الصحابة لحديثه وأكثرهم رواية، وتوفي بالمدينة نحو سنة سبع أو ثمان أو تسع وخمسين."
+  },
+  "lineage": {
+    "ar": "من دوس من الأزد، من اليمن"
+  },
+  "death": {
+    "date": {
+      "precision": "approx",
+      "era": "afterHijra",
+      "hijriYear": 57,
+      "gregorianYear": 677
+    },
+    "reliability": "reported",
+    "citations": [
+      {
+        "sourceId": "siyar",
+        "locatorStatus": "complete",
+        "volume": 2,
+        "page": "626"
+      }
+    ]
+  },
+  "deathPlace": {
+    "ar": "المدينة"
+  },
+  "memberships": [
+    {
+      "categoryId": "muhajirun",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "589"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "abu-hurayrah.arrival",
+      "kind": "conversion",
+      "title": {
+        "ar": "قدومه وإسلامه"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "قدم أبو هريرة المدينة مهاجرًا والنبي ﷺ بخيبر، وكان مقدمه وإسلامه في أول سنة سبع عام خيبر على ما يذكر الذهبي، فلحق بالنبي ﷺ بعد فتحها."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "586"
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "2827"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكان يدعو أمه إلى الإسلام فتأبى، فأسمعته يومًا في النبي ﷺ ما يكره، فجاءه يبكي يسأله أن يدعو لها، فدعا لها، فرجع فوجدها قد اغتسلت وأسلمت، كما يروي في صحيح مسلم."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "2491"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abu-hurayrah.with-the-prophet",
+      "kind": "withProphet",
+      "title": {
+        "ar": "ملازمته للنبي ﷺ"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "لزم أبو هريرة النبي ﷺ يدور معه حيث دار، وكان من أهل الصفّة، وأصابه الجوع الشديد، فدعاه النبي ﷺ يومًا إلى قدح من لبن، وأمره أن يدعو أهل الصفّة، فسقاهم حتى رووا، ثم شرب هو، ثم شرب النبي ﷺ."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "6452"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكان الناس يقولون أكثر أبو هريرة، فذكر أن إخوانه من المهاجرين كان يشغلهم الصفق بالأسواق، والأنصار يشغلهم العمل في أموالهم، وكان هو يلزم النبي ﷺ بشبع بطنه، فيحضر ما لا يحضرون ويحفظ ما لا يحفظون."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "118"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وشكا إليه أنه يسمع منه حديثًا كثيرًا فينساه، فأمره أن يبسط رداءه، فغرف بيديه فيه ثم أمره أن يضمّه، فما نسي شيئًا بعده."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "119"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abu-hurayrah.narration",
+      "kind": "contributions",
+      "title": {
+        "ar": "روايته الحديث"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "كان أبو هريرة أكثر الصحابة رواية للحديث، ويذكر الذهبي أنه روى عنه ثمان مئة من أهل العلم أو أكثر، مع أن صحبته كانت نحو أربع سنين من فتح خيبر إلى وفاة النبي ﷺ."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "586"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "590"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abu-hurayrah.death",
+      "kind": "death",
+      "title": {
+        "ar": "وفاته"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "توفي أبو هريرة بالمدينة، وأرّخ الواقدي وفاته سنة تسع وخمسين وله ثمان وسبعون سنة، وقيل سنة سبع أو ثمان وخمسين."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "626"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abu-hurayrah.lessons",
+      "kind": "lessons",
+      "title": {
+        "ar": "دروس من سيرته"
+      },
+      "blocks": [
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "أن ملازمة العالم والصبر على الفقر في طلب العلم يثمران علمًا نافعًا تنتفع به الأمة قرونًا."
+          }
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "وأن برّ الوالدين يكون بالحرص على هدايتهما والدعاء لهما."
+          }
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "abu-hurayrah.khaybar",
+      "era": "madinan",
+      "date": {
+        "precision": "year",
+        "era": "afterHijra",
+        "hijriYear": 7,
+        "gregorianYear": 628
+      },
+      "title": {
+        "ar": "قدومه عام خيبر"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "586"
+        }
+      ],
+      "sectionId": "abu-hurayrah.arrival",
+      "eventId": "khaybar"
+    },
+    {
+      "id": "abu-hurayrah.death",
+      "era": "afterProphet",
+      "date": {
+        "precision": "approx",
+        "era": "afterHijra",
+        "hijriYear": 57,
+        "gregorianYear": 677
+      },
+      "title": {
+        "ar": "وفاته بالمدينة"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "626"
+        }
+      ],
+      "sectionId": "abu-hurayrah.death"
+    }
+  ],
+  "references": [
+    "siyar"
+  ],
+  "review": {
+    "status": "preliminaryReview",
+    "editorialFlags": [],
+    "coverage": "sample",
+    "authoredBy": "short-profiles-1"
+  },
+  "titles": [],
+  "atAGlance": [],
+  "relations": [],
+  "storyIds": []
+}

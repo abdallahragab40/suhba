@@ -67,7 +67,7 @@ void main() {
     final app = AppUnderTest();
     final companions = await app.container.read(companionIndexProvider.future);
     expect(companions.map((c) => c.id), isNot(contains('muhammad')));
-    expect(companions, hasLength(10));
+    expect(companions, hasLength(40));
     final people = await app.container.read(peopleProvider.future);
     expect(people['muhammad'], isNotNull, reason: 'a referenced person');
   });

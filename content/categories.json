@@ -125,6 +125,112 @@
       "description": {
         "ar": "الصحابة الذين هاجروا من مكة إلى المدينة."
       }
+    },
+    {
+      "id": "ansar",
+      "name": {
+        "ar": "الأنصار"
+      },
+      "order": 4,
+      "review": {
+        "status": "preliminaryReview",
+        "editorialFlags": [],
+        "authoredBy": "short-profiles-1"
+      },
+      "description": {
+        "ar": "أهل المدينة من الأوس والخزرج الذين آووا النبي ﷺ ونصروه."
+      },
+      "basis": {
+        "type": "paragraph",
+        "text": {
+          "ar": "سمّاهم القرآن الأنصار وأثنى عليهم مع المهاجرين، وجعل النبي ﷺ حبّهم من علامات الإيمان."
+        },
+        "reliability": "established",
+        "citations": [
+          {
+            "sourceId": "quran",
+            "locatorStatus": "complete",
+            "quranRef": {
+              "surah": 9,
+              "ayahFrom": 100
+            }
+          },
+          {
+            "sourceId": "bukhari",
+            "locatorStatus": "complete",
+            "hadithNumber": "3783"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ahl-badr",
+      "name": {
+        "ar": "أهل بدر"
+      },
+      "order": 5,
+      "review": {
+        "status": "preliminaryReview",
+        "editorialFlags": [],
+        "authoredBy": "short-profiles-1"
+      },
+      "description": {
+        "ar": "الصحابة الذين شهدوا غزوة بدر مع النبي ﷺ."
+      },
+      "basis": {
+        "type": "paragraph",
+        "text": {
+          "ar": "شهدوا أول معركة كبرى في الإسلام، وأخبر النبي ﷺ بفضلهم."
+        },
+        "reliability": "established",
+        "citations": [
+          {
+            "sourceId": "quran",
+            "locatorStatus": "complete",
+            "quranRef": {
+              "surah": 3,
+              "ayahFrom": 123
+            }
+          },
+          {
+            "sourceId": "bukhari",
+            "locatorStatus": "complete",
+            "hadithNumber": "3081"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ummahat-al-muminin",
+      "name": {
+        "ar": "أمهات المؤمنين"
+      },
+      "order": 6,
+      "review": {
+        "status": "preliminaryReview",
+        "editorialFlags": [],
+        "authoredBy": "short-profiles-1"
+      },
+      "description": {
+        "ar": "زوجات النبي ﷺ."
+      },
+      "basis": {
+        "type": "paragraph",
+        "text": {
+          "ar": "جعلهن القرآن أمهات للمؤمنين."
+        },
+        "reliability": "established",
+        "citations": [
+          {
+            "sourceId": "quran",
+            "locatorStatus": "complete",
+            "quranRef": {
+              "surah": 33,
+              "ayahFrom": 6
+            }
+          }
+        ]
+      }
     }
   ]
 }

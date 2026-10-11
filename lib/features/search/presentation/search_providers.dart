@@ -9,8 +9,10 @@ import 'package:siyar_sahaba/shared/content/domain/seerah.dart';
 import 'package:siyar_sahaba/shared/content/domain/story.dart';
 import 'package:siyar_sahaba/shared/content/providers.dart';
 
-/// Above this many documents the index is built on a background isolate.
-const _isolateThreshold = 300;
+/// Above this many documents the index is built on a background isolate;
+/// null builds it in place (tests, where isolate results never arrive under
+/// the fake clock).
+final searchIsolateThresholdProvider = Provider<int?>((ref) => 300);
 
 /// The search index over every companion, section, story and chapter,
 /// Seerah chapter and essay, event and place.
@@ -71,7 +73,8 @@ final searchIndexProvider = FutureProvider<SearchIndex>((ref) async {
     events: events?.values.toList() ?? const [],
     places: places?.values.toList() ?? const [],
   );
-  return documents.length < _isolateThreshold
+  final threshold = ref.watch(searchIsolateThresholdProvider);
+  return threshold == null || documents.length < threshold
       ? SearchIndex(documents, unavailable: unavailableAll)
       : _buildOnIsolate(documents, unavailableAll);
 });

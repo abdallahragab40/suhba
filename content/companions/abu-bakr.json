@@ -105,6 +105,17 @@
           "page": "169"
         }
       ]
+    },
+    {
+      "categoryId": "ahl-badr",
+      "citations": [
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "173"
+        }
+      ]
     }
   ],
   "timeline": [
@@ -501,7 +512,7 @@
         "displayName": {
           "ar": "عائشة أم المؤمنين"
         },
-        "personId": "aisha"
+        "companionId": "aisha"
       },
       "citations": [
         {

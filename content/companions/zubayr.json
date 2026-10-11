@@ -89,6 +89,16 @@
           "page": "553"
         }
       ]
+    },
+    {
+      "categoryId": "ahl-badr",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3998"
+        }
+      ]
     }
   ],
   "lineage": {
@@ -168,7 +178,7 @@
         "displayName": {
           "ar": "أسماء بنت أبي بكر"
         },
-        "personId": "asma-bint-abi-bakr"
+        "companionId": "asma-bint-abi-bakr"
       },
       "citations": [
         {

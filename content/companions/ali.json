@@ -97,6 +97,16 @@
           "page": "15"
         }
       ]
+    },
+    {
+      "categoryId": "ahl-badr",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3965"
+        }
+      ]
     }
   ],
   "storyIds": [
@@ -216,7 +226,7 @@
         "displayName": {
           "ar": "فاطمة بنت رسول الله"
         },
-        "personId": "fatimah"
+        "companionId": "fatimah"
       },
       "citations": [
         {

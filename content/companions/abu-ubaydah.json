@@ -87,6 +87,17 @@
           "page": "589"
         }
       ]
+    },
+    {
+      "categoryId": "ahl-badr",
+      "citations": [
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "586"
+        }
+      ]
     }
   ],
   "lineage": {

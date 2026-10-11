@@ -32,7 +32,7 @@
         "displayName": {
           "ar": "خديجة بنت خويلد"
         },
-        "personId": "khadijah"
+        "companionId": "khadijah"
       },
       "type": "spouse",
       "reliability": "established",
@@ -61,7 +61,7 @@
         "displayName": {
           "ar": "فاطمة بنت رسول الله"
         },
-        "personId": "fatimah"
+        "companionId": "fatimah"
       },
       "type": "child",
       "reliability": "established",
@@ -84,13 +84,13 @@
         "displayName": {
           "ar": "خديجة بنت خويلد"
         },
-        "personId": "khadijah"
+        "companionId": "khadijah"
       },
       "to": {
         "displayName": {
           "ar": "فاطمة بنت رسول الله"
         },
-        "personId": "fatimah"
+        "companionId": "fatimah"
       },
       "type": "child",
       "reliability": "established",
@@ -120,7 +120,7 @@
         "displayName": {
           "ar": "فاطمة بنت رسول الله"
         },
-        "personId": "fatimah"
+        "companionId": "fatimah"
       },
       "type": "spouse",
       "reliability": "established",
