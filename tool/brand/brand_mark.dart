@@ -22,11 +22,13 @@ enum BrandMarkLayout {
   disc,
 }
 
-/// The app's mark: the name "صحبة" (companionship, the bond that makes a
-/// Companion) as a calligraphic word mark in Amiri, gold on ink, with a
-/// small eight-pointed star (khatam, as in the app's lattice) above it.
-/// The vowel marks are left off so the word reads cleanly at icon sizes.
-/// Lettering and geometry only, with no figures (decision D5).
+/// The name صحبة within a pointed arch, above an open book: a doorway
+/// into the Seerah and the lives of the Companions, read from its sources.
+/// The arch carries the eight-pointed star (khatam) of the app's lattice
+/// at its crown. Only the app's ink and gold, with no figurative imagery
+/// (D5); the gold deepens slightly towards the foot, and the ink glows
+/// faintly behind the name. The monochrome (themed) icon is flat, in one
+/// colour, so Android can tint it.
 void paintBrandMark(
   Canvas canvas,
   Size size,
@@ -35,40 +37,106 @@ void paintBrandMark(
 }) {
   final s = size.shortestSide;
   final centre = size.center(Offset.zero);
-  final gold = layout == BrandMarkLayout.monochrome
-      ? const Color(0xFFFFFFFF)
-      : Palette.goldOnInk;
+  final flat = layout == BrandMarkLayout.monochrome;
+  final gold = flat ? const Color(0xFFFFFFFF) : Palette.goldOnInk;
+
+  // The ink ground, lit faintly from behind the name.
+  Paint ground(Rect bounds) => Paint()
+    ..shader = RadialGradient(
+      center: const Alignment(0, -0.15),
+      radius: 0.75,
+      colors: [Color.lerp(Palette.ink, Palette.goldOnInk, 0.09)!, Palette.ink],
+    ).createShader(bounds);
 
   switch (layout) {
     case BrandMarkLayout.square:
-      canvas.drawRect(Offset.zero & size, Paint()..color = Palette.ink);
+      final r = Offset.zero & size;
+      canvas.drawRect(r, ground(r));
     case BrandMarkLayout.roundedSquare:
+      final r = Rect.fromCenter(
+        center: centre,
+        width: s * 0.92,
+        height: s * 0.92,
+      );
       canvas.drawRRect(
-        RRect.fromRectAndRadius(
-          Rect.fromCenter(center: centre, width: s * 0.92, height: s * 0.92),
-          Radius.circular(s * 0.2),
-        ),
-        Paint()..color = Palette.ink,
+        RRect.fromRectAndRadius(r, Radius.circular(s * 0.2)),
+        ground(r),
       );
     case BrandMarkLayout.disc:
-      canvas.drawCircle(centre, s / 2, Paint()..color = Palette.ink);
+      final r = Rect.fromCircle(center: centre, radius: s / 2);
+      canvas.drawCircle(centre, s / 2, ground(r));
     case BrandMarkLayout.adaptiveForeground || BrandMarkLayout.monochrome:
       break;
   }
 
-  // The box the mark is drawn in, as a share of the canvas. The adaptive
-  // layers are 108 dp with a 66 dp safe circle, so the word stays inside.
-  final box =
+  // The mark is drawn in a 100-unit box, scaled so its silhouette stays
+  // within Android's 66 dp safe circle on the 108 dp adaptive layers.
+  final extent =
       s *
       switch (layout) {
         BrandMarkLayout.square => 0.74,
-        BrandMarkLayout.roundedSquare => 0.66,
-        BrandMarkLayout.disc => 0.62,
+        BrandMarkLayout.roundedSquare => 0.68,
+        BrandMarkLayout.disc => 0.64,
         BrandMarkLayout.adaptiveForeground ||
         BrandMarkLayout.monochrome => 0.54,
       };
+  canvas
+    ..save()
+    ..translate(centre.dx - extent / 2, centre.dy - extent / 2)
+    ..scale(extent / 100);
 
-  // The word, sized so its width fills the box.
+  // Gold, a touch lighter at the crown and deeper at the foot.
+  final shader = flat
+      ? null
+      : LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Color.lerp(gold, const Color(0xFFFFFFFF), 0.22)!,
+            gold,
+            Color.lerp(gold, Palette.goldDeep, 0.25)!,
+          ],
+          stops: const [0, 0.55, 1],
+        ).createShader(const Rect.fromLTWH(0, 0, 100, 100));
+  Paint ink({double? stroke}) {
+    final p = Paint()
+      ..color = gold
+      ..shader = shader
+      ..isAntiAlias = true;
+    if (stroke != null) {
+      p
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = stroke
+        ..strokeCap = StrokeCap.round
+        ..strokeJoin = StrokeJoin.round;
+    }
+    return p;
+  }
+
+  // The pointed arch: straight jambs, then two curves meeting at the apex.
+  Path arch(double inset) {
+    final l = 12 + inset;
+    final r = 88 - inset;
+    const spring = 40.0;
+    const foot = 72.0;
+    final apex = 6 + inset * 1.25;
+    final half = (r - l) / 2;
+    return Path()
+      ..moveTo(l, foot)
+      ..lineTo(l, spring)
+      ..cubicTo(l, spring - 16, 50 - half * 0.32, apex + 9, 50, apex)
+      ..cubicTo(50 + half * 0.32, apex + 9, r, spring - 16, r, spring)
+      ..lineTo(r, foot);
+  }
+
+  canvas
+    ..drawPath(arch(0), ink(stroke: 3.4))
+    ..drawPath(arch(5), ink(stroke: 1.1));
+
+  // The star in the crown, inside the inner arch.
+  canvas.drawPath(_star(const Offset(50, 21), 4.6), ink());
+
+  // The name, centred in the arch's opening.
   TextPainter word(double fontSize) => TextPainter(
     text: TextSpan(
       text: 'صحبة',
@@ -77,23 +145,43 @@ void paintBrandMark(
         fontWeight: FontWeight.w700,
         fontSize: fontSize,
         height: 1,
-        color: gold,
+        foreground: ink(),
       ),
     ),
     textDirection: TextDirection.rtl,
   )..layout();
   final probe = word(100);
-  final name = word(100 * box / probe.width);
-  final top = centre.dy - name.height / 2 + box * 0.08;
-  name.paint(canvas, Offset(centre.dx - name.width / 2, top));
+  final name = word(100 * 56 / probe.width);
+  // Amiri's line box has room above the letters; place by eye.
+  name.paint(canvas, Offset(50 - name.width / 2, 49 - name.height / 2));
+  probe.dispose();
+  name.dispose();
 
-  // The star above the word.
-  canvas.drawPath(
-    _star(Offset(centre.dx, centre.dy - box * 0.36), box * 0.07),
-    Paint()
-      ..color = gold
-      ..isAntiAlias = true,
-  );
+  // The open book: two pages curving down to the spine, each with a page
+  // edge beneath, broad enough to read at the smallest sizes.
+  Path page(double side) {
+    double x(double v) => 50 + side * v;
+    return Path()
+      ..moveTo(x(2), 83)
+      ..cubicTo(x(10), 76.5, x(26), 72.5, x(40), 74.5)
+      ..lineTo(x(40), 86.5)
+      ..cubicTo(x(26), 84.5, x(10), 88.5, x(2), 95)
+      ..close();
+  }
+
+  Path edge(double side) {
+    double x(double v) => 50 + side * v;
+    return Path()
+      ..moveTo(x(2), 98.4)
+      ..cubicTo(x(10), 92, x(26), 88, x(40.5), 90);
+  }
+
+  for (final side in const [-1.0, 1.0]) {
+    canvas
+      ..drawPath(page(side), ink())
+      ..drawPath(edge(side), ink(stroke: 1.4));
+  }
+  canvas.restore();
 }
 
 /// A {8/2} star: two squares, one turned 45°, traced as one outline.
