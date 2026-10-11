@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:siyar_sahaba/core/design_system/theme/app_theme.dart';
 import 'package:siyar_sahaba/core/design_system/tokens/motion.dart';
@@ -83,84 +84,88 @@ class _WelcomePageState extends ConsumerState<WelcomePage> {
       child: Builder(
         builder: (context) {
           final scheme = Theme.of(context).colorScheme;
-          return Scaffold(
-            backgroundColor: Palette.green,
-            body: SafeArea(
-              child: Column(
-                children: [
-                  Align(
-                    alignment: AlignmentDirectional.centerEnd,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: AppSpacing.xs,
-                      ),
-                      child: AnimatedOpacity(
-                        opacity: last ? 0 : 1,
-                        duration: AppMotion.resolve(context, AppMotion.short),
-                        child: TextButton(
-                          onPressed: last ? null : _finish,
-                          child: Text(l10n.welcomeSkip),
+          return AnnotatedRegion<SystemUiOverlayStyle>(
+            // Light status bar text on the green.
+            value: SystemUiOverlayStyle.light,
+            child: Scaffold(
+              backgroundColor: Palette.green,
+              body: SafeArea(
+                child: Column(
+                  children: [
+                    Align(
+                      alignment: AlignmentDirectional.centerEnd,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: AppSpacing.xs,
+                        ),
+                        child: AnimatedOpacity(
+                          opacity: last ? 0 : 1,
+                          duration: AppMotion.resolve(context, AppMotion.short),
+                          child: TextButton(
+                            onPressed: last ? null : _finish,
+                            child: Text(l10n.welcomeSkip),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  Expanded(
-                    child: PageView(
-                      controller: _controller,
-                      onPageChanged: (i) => setState(() => _page = i),
-                      children: pages,
+                    Expanded(
+                      child: PageView(
+                        controller: _controller,
+                        onPageChanged: (i) => setState(() => _page = i),
+                        children: pages,
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(
-                      AppSpacing.gutter,
-                      AppSpacing.md,
-                      AppSpacing.gutter,
-                      AppSpacing.lg,
-                    ),
-                    child: Row(
-                      children: [
-                        Semantics(
-                          label: l10n.welcomePageLabel(
-                            format.integer(_page + 1),
-                            format.integer(pages.length),
-                          ),
-                          child: ExcludeSemantics(
-                            child: Row(
-                              children: [
-                                for (var i = 0; i < pages.length; i++)
-                                  AnimatedContainer(
-                                    duration: AppMotion.resolve(
-                                      context,
-                                      AppMotion.medium,
+                    Padding(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                        AppSpacing.gutter,
+                        AppSpacing.md,
+                        AppSpacing.gutter,
+                        AppSpacing.lg,
+                      ),
+                      child: Row(
+                        children: [
+                          Semantics(
+                            label: l10n.welcomePageLabel(
+                              format.integer(_page + 1),
+                              format.integer(pages.length),
+                            ),
+                            child: ExcludeSemantics(
+                              child: Row(
+                                children: [
+                                  for (var i = 0; i < pages.length; i++)
+                                    AnimatedContainer(
+                                      duration: AppMotion.resolve(
+                                        context,
+                                        AppMotion.medium,
+                                      ),
+                                      margin: const EdgeInsetsDirectional.only(
+                                        end: AppSpacing.xxs,
+                                      ),
+                                      width: i == _page ? 22 : 8,
+                                      height: 8,
+                                      decoration: BoxDecoration(
+                                        color: i == _page
+                                            ? Palette.goldOnInk
+                                            : scheme.outlineVariant,
+                                        borderRadius: BorderRadius.circular(4),
+                                      ),
                                     ),
-                                    margin: const EdgeInsetsDirectional.only(
-                                      end: AppSpacing.xxs,
-                                    ),
-                                    width: i == _page ? 22 : 8,
-                                    height: 8,
-                                    decoration: BoxDecoration(
-                                      color: i == _page
-                                          ? Palette.goldOnInk
-                                          : scheme.outlineVariant,
-                                      borderRadius: BorderRadius.circular(4),
-                                    ),
-                                  ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                        const Spacer(),
-                        FilledButton(
-                          onPressed: () => _next(pages.length),
-                          child: Text(
-                            last ? l10n.welcomeStart : l10n.welcomeNext,
+                          const Spacer(),
+                          FilledButton(
+                            onPressed: () => _next(pages.length),
+                            child: Text(
+                              last ? l10n.welcomeStart : l10n.welcomeNext,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           );
