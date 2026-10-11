@@ -22,10 +22,17 @@ enum BrandMarkLayout {
   disc,
 }
 
-/// The app's mark: an eight-pointed star (khatam, as in the app's lattice)
-/// framing the name "سِيَر" in Amiri. Geometry and lettering only, with no
-/// figures (decision D5).
-void paintBrandMark(Canvas canvas, Size size, BrandMarkLayout layout) {
+/// The app's mark: a pointed arch (as of a mihrab or a gate), with an
+/// eight-pointed star (khatam, as in the app's lattice) in its crown and
+/// the name "سِيَر" in Cairo on its threshold (its vowel marks sit close
+/// to the letters at icon sizes). Geometry and lettering only,
+/// with no figures (decision D5).
+void paintBrandMark(
+  Canvas canvas,
+  Size size,
+  BrandMarkLayout layout, {
+  String fontFamily = AppFonts.cairo,
+}) {
   final s = size.shortestSide;
   final centre = size.center(Offset.zero);
   final gold = layout == BrandMarkLayout.monochrome
@@ -49,47 +56,87 @@ void paintBrandMark(Canvas canvas, Size size, BrandMarkLayout layout) {
       break;
   }
 
-  // Outer radius of the star as a share of the canvas. The adaptive layers
-  // are 108 dp with a 66 dp safe circle, so the star must stay within it.
-  final outer =
+  // The box the mark is drawn in, as a share of the canvas. The adaptive
+  // layers are 108 dp with a 66 dp safe circle, so the arch stays inside.
+  final box =
       s *
       switch (layout) {
-        BrandMarkLayout.square => 0.40,
-        BrandMarkLayout.roundedSquare => 0.36,
-        BrandMarkLayout.disc => 0.40,
+        BrandMarkLayout.square => 0.80,
+        BrandMarkLayout.roundedSquare => 0.70,
+        BrandMarkLayout.disc => 0.66,
         BrandMarkLayout.adaptiveForeground ||
-        BrandMarkLayout.monochrome => 0.29,
+        BrandMarkLayout.monochrome => 0.48,
       };
+
+  // The arch: straight jambs, then two arcs meeting at a point.
+  final width = box * 0.66;
+  final bottom = centre.dy + box * 0.46;
+  final spring = centre.dy - box * 0.02;
+  final left = centre.dx - width / 2;
+  final right = centre.dx + width / 2;
+  final radius = width * 0.74;
+  Path arch(double inset) {
+    final l = left + inset;
+    final r = right - inset;
+    final rad = Radius.circular(radius - inset);
+    final apexY =
+        spring -
+        math.sqrt(
+          math.pow(radius - inset, 2) -
+              math.pow(radius - inset - (r - l) / 2, 2),
+        );
+    return Path()
+      ..moveTo(l, bottom - inset * 0.4)
+      ..lineTo(l, spring)
+      ..arcToPoint(Offset(centre.dx, apexY), radius: rad)
+      ..arcToPoint(Offset(r, spring), radius: rad)
+      ..lineTo(r, bottom - inset * 0.4);
+  }
 
   final stroke = Paint()
     ..color = gold
     ..style = PaintingStyle.stroke
-    ..strokeJoin = StrokeJoin.miter
-    ..strokeWidth = outer * 0.06
+    ..strokeJoin = StrokeJoin.round
+    ..strokeCap = StrokeCap.round
+    ..strokeWidth = box * 0.045
     ..isAntiAlias = true;
-  canvas.drawPath(_star(centre, outer), stroke);
+  canvas
+    ..drawPath(arch(0), stroke)
+    ..drawPath(arch(box * 0.075), stroke..strokeWidth = box * 0.018)
+    // The threshold.
+    ..drawLine(
+      Offset(left - box * 0.08, bottom),
+      Offset(right + box * 0.08, bottom),
+      stroke..strokeWidth = box * 0.045,
+    );
+
+  // The star in the crown.
   canvas.drawPath(
-    _star(centre, outer * 0.84),
-    stroke..strokeWidth = outer * 0.025,
+    _star(Offset(centre.dx, spring - box * 0.14), box * 0.085),
+    Paint()
+      ..color = gold
+      ..isAntiAlias = true,
   );
 
   final name = TextPainter(
     text: TextSpan(
       text: 'سِيَر',
       style: TextStyle(
-        fontFamily: AppFonts.amiri,
+        fontFamily: fontFamily,
         fontWeight: FontWeight.w700,
-        fontSize: outer * 0.8,
-        height: 1,
+        fontSize: box * 0.25,
+        height: 1.2,
         color: gold,
       ),
     ),
     textDirection: TextDirection.rtl,
   )..layout();
-  // Amiri's ascent is tall; nudge the word down to sit optically centred.
   name.paint(
     canvas,
-    centre - Offset(name.width / 2, name.height / 2 - outer * 0.06),
+    Offset(
+      centre.dx - name.width / 2,
+      (spring + bottom) / 2 - name.height / 2 + box * 0.02,
+    ),
   );
 }
 
