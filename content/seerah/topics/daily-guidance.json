@@ -161,10 +161,6 @@
           "sourceId": "bukhari",
           "locatorStatus": "complete",
           "hadithNumber": "2567"
-        },
-        {
-          "sourceId": "muslim",
-          "locatorStatus": "pending"
         }
       ]
     },

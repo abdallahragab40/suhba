@@ -97,6 +97,21 @@
         {
           "type": "paragraph",
           "text": {
+            "ar": "ويذكر ابن كثير هذا الجمع في حوادث السنة الثانية عشرة من الهجرة، بعد ما استحرّ القتل في القرّاء يوم اليمامة."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "complete",
+              "volume": 9,
+              "page": "536"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
             "ar": "ووصف أبو بكر زيدًا بأنه شاب عاقل لا يُتّهم، وأنه كان يكتب الوحي لرسول الله ﷺ، فلذلك اختاره لهذه المهمة."
           },
           "reliability": "established",

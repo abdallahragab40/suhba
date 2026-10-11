@@ -777,32 +777,6 @@
               "hadithNumber": "2965"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "وكان شديد الحرص على الحلال، يدعو الناس إلى طيب المطعم، ويذكر أهل التراجم أنه كان يرى أن إجابة الدعاء مرتبطة بطيب الكسب."
-          },
-          "reliability": "reported",
-          "citations": [
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "ويروى أنه كُفّ بصره في آخر عمره، فقيل له لو دعوت الله لنفسك وأنت مستجاب الدعوة، فذكر أن قضاء الله أحب إليه من بصره، وفي إسناد هذه الرواية ضعف عند بعض أهل العلم."
-          },
-          "reliability": "reported",
-          "citations": [
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            }
-          ]
         }
       ]
     },
@@ -1115,6 +1089,21 @@
           "type": "paragraph",
           "text": {
             "ar": "وكان من آخر من بقي من المهاجرين الأولين، فكان الناس يقصدونه يسألونه عن النبي ﷺ وأيامه، فيحدّثهم بما شهد، ويحثّهم على لزوم الجماعة واجتناب الفتن."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "123"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ولما مات وجيء بسريره فأُدخل على أم سلمة أم المؤمنين، جعلت تبكي وتقول: بقية أصحاب رسول الله ﷺ، على ما يرويه الذهبي."
           },
           "reliability": "reported",
           "citations": [

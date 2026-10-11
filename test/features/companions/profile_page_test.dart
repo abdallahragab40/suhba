@@ -122,7 +122,9 @@ void main() {
       find.textContaining('لم يعتمد هذا المحتوى مختص بعد'),
       findsOneWidget,
     );
-    expect(find.text('الموضع بانتظار التحقق'), findsWidgets);
+    // Every locator in the biography is now located in its edition.
+    expect(find.text('الموضع بانتظار التحقق'), findsNothing);
+    expect(find.textContaining('ص '), findsWidgets);
   });
 
   testApp('the Qur\'an citation shows its surah and ayah', (tester) async {

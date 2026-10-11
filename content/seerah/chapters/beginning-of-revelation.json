@@ -198,18 +198,7 @@
       "opinions": [
         {
           "text": {
-            "ar": "أنها كانت أيامًا قليلة."
-          },
-          "citations": [
-            {
-              "sourceId": "al-bidaya",
-              "locatorStatus": "pending"
-            }
-          ]
-        },
-        {
-          "text": {
-            "ar": "أنها طالت أشهرًا، وقيل أكثر من ذلك، والروايات في تحديدها غير قاطعة."
+            "ar": "أنها قاربت سنتين أو سنتين ونصفًا، على قول ذكره ابن كثير عن بعضهم."
           },
           "citations": [
             {
@@ -217,6 +206,18 @@
               "locatorStatus": "complete",
               "volume": 4,
               "page": "42"
+            }
+          ]
+        },
+        {
+          "text": {
+            "ar": "وفي حديث عائشة في الصحيح ذكر الفترة دون تحديد لمدتها، فالروايات في تحديدها غير قاطعة."
+          },
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "3"
             }
           ]
         }

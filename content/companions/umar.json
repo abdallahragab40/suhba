@@ -49,14 +49,16 @@
     "reliability": "established",
     "citations": [
       {
-        "sourceId": "siyar",
-        "locatorStatus": "pending"
-      },
-      {
         "sourceId": "tabaqat-ibn-sad",
         "locatorStatus": "complete",
         "volume": 3,
         "page": "251"
+      },
+      {
+        "sourceId": "tarikh-al-tabari",
+        "locatorStatus": "complete",
+        "volume": 4,
+        "page": "193"
       }
     ]
   },
@@ -214,10 +216,6 @@
               "page": "588"
             },
             {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "tabaqat-ibn-sad",
               "locatorStatus": "complete",
               "volume": 3,
@@ -233,21 +231,23 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "tabaqat-ibn-sad",
               "locatorStatus": "complete",
               "volume": 3,
               "page": "204"
+            },
+            {
+              "sourceId": "istiab",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "1145"
             }
           ]
         },
         {
           "type": "paragraph",
           "text": {
-            "ar": "ونشأ في شظف من العيش، ورعى إبل أبيه في صباه، وكان ممن يقرأ ويكتب في قوم قلّ فيهم ذلك، وعُرف بالقوة والفصاحة."
+            "ar": "ونشأ في شظف من العيش، يرعى إبل أبيه في صباه ويحتطب عليها، وذكر بعد ذلك أن أباه كان فظًّا غليظًا."
           },
           "reliability": "reported",
           "citations": [
@@ -256,10 +256,6 @@
               "locatorStatus": "complete",
               "volume": 3,
               "page": "202"
-            },
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
             },
             {
               "sourceId": "isabah",
@@ -281,10 +277,6 @@
               "locatorStatus": "complete",
               "volume": 3,
               "page": "1145"
-            },
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
             }
           ]
         },
@@ -426,7 +418,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وكان إسلامه في السنة السادسة من البعثة على المشهور، بعد إسلام حمزة بن عبد المطلب بأيام."
+            "ar": "وكان إسلامه في السنة السادسة من البعثة على ما يرويه ابن سعد، بعد إسلام حمزة بن عبد المطلب."
           },
           "reliability": "reported",
           "citations": [
@@ -437,8 +429,10 @@
               "page": "204"
             },
             {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "346"
             }
           ]
         },
@@ -733,10 +727,6 @@
               "locatorStatus": "complete",
               "volume": 3,
               "page": "205"
-            },
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
             }
           ]
         },
@@ -928,14 +918,10 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وكان من فقهاء الصحابة وقضاتهم، يرجع إليه الناس في المسائل، ونقل عنه الصحابة والتابعون علمًا كثيرًا في القضاء والفرائض والسياسة."
+            "ar": "وكان من فقهاء الصحابة، ويروي ابن سعد عن رجل من أهل المدينة أنه رأى الفقهاء عند عمر مثل الصبيان، قد استعلى عليهم في فقهه وعلمه."
           },
           "reliability": "reported",
           "citations": [
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            },
             {
               "sourceId": "tabaqat-ibn-sad",
               "locatorStatus": "complete",
@@ -956,10 +942,6 @@
               "locatorStatus": "complete",
               "volume": 3,
               "page": "204"
-            },
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
             }
           ]
         }
@@ -1005,10 +987,6 @@
               "locatorStatus": "complete",
               "volume": 3,
               "page": "234"
-            },
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
             }
           ]
         },
@@ -1065,10 +1043,6 @@
               "locatorStatus": "complete",
               "volume": 4,
               "page": "205"
-            },
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
             }
           ]
         },
@@ -1635,8 +1609,10 @@
               "hadithNumber": "2348"
             },
             {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "193"
             }
           ]
         }
@@ -1725,14 +1701,16 @@
       "reliability": "reported",
       "citations": [
         {
-          "sourceId": "siyar",
-          "locatorStatus": "pending"
-        },
-        {
           "sourceId": "tabaqat-ibn-sad",
           "locatorStatus": "complete",
           "volume": 3,
           "page": "204"
+        },
+        {
+          "sourceId": "istiab",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "1145"
         }
       ],
       "sectionId": "umar.early-life"
@@ -1757,8 +1735,10 @@
           "page": "588"
         },
         {
-          "sourceId": "siyar",
-          "locatorStatus": "pending"
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "204"
         }
       ],
       "sectionId": "umar.conversion"

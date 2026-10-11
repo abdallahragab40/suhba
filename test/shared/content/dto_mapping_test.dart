@@ -57,18 +57,19 @@ void main() {
         ),
       );
       expect(c.death!.reliability, Reliability.established);
-      // al-Isabah is located in the printed edition; the Siyar's caliphs'
-      // volume is unpaginated in the digital text, so it is left pending.
+      // The date rests on al-Isabah, located in the printed edition. The
+      // Siyar's caliphs' volume is unpaginated in the digital text, so it
+      // is not cited where a located work says the same.
       final isabah = c.death!.citations.firstWhere(
         (x) => x.sourceId == 'isabah',
       );
       expect(isabah.locatorStatus, LocatorStatus.complete);
       expect((isabah.volume, isabah.page), (4, '174'));
       expect(
-        c.death!.citations
-            .firstWhere((x) => x.sourceId == 'siyar')
-            .locatorStatus,
-        LocatorStatus.pending,
+        c.death!.citations.every(
+          (x) => x.locatorStatus == LocatorStatus.complete,
+        ),
+        isTrue,
       );
       expect(c.memberships.map((m) => m.categoryId), [
         'ashara-mubashshara',

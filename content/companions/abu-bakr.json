@@ -58,10 +58,6 @@
         "locatorStatus": "complete",
         "volume": 4,
         "page": "174"
-      },
-      {
-        "sourceId": "siyar",
-        "locatorStatus": "pending"
       }
     ]
   },
@@ -133,10 +129,6 @@
       "reliability": "reported",
       "citations": [
         {
-          "sourceId": "siyar",
-          "locatorStatus": "pending"
-        },
-        {
           "sourceId": "isabah",
           "locatorStatus": "complete",
           "volume": 4,
@@ -159,8 +151,10 @@
       "reliability": "reported",
       "citations": [
         {
-          "sourceId": "siyar",
-          "locatorStatus": "pending"
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "249"
         }
       ],
       "sectionId": "abu-bakr.conversion"
@@ -410,10 +404,6 @@
           "locatorStatus": "complete",
           "volume": 4,
           "page": "174"
-        },
-        {
-          "sourceId": "siyar",
-          "locatorStatus": "pending"
         }
       ],
       "sectionId": "abu-bakr.death"
@@ -455,10 +445,6 @@
     "reliability": "reported",
     "citations": [
       {
-        "sourceId": "siyar",
-        "locatorStatus": "pending"
-      },
-      {
         "sourceId": "isabah",
         "locatorStatus": "complete",
         "volume": 4,
@@ -499,8 +485,10 @@
       "reliability": "established",
       "citations": [
         {
-          "sourceId": "siyar",
-          "locatorStatus": "pending"
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "157"
         }
       ]
     }
@@ -546,10 +534,6 @@
               "page": "169"
             },
             {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "tabaqat-ibn-sad",
               "locatorStatus": "complete",
               "volume": 3,
@@ -564,10 +548,6 @@
           },
           "reliability": "reported",
           "citations": [
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            },
             {
               "sourceId": "isabah",
               "locatorStatus": "complete",
@@ -593,7 +573,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وعُرف قبل الإسلام بالتجارة، وكانت تجارته في الثياب، يخرج بها في الرحلات كعادة تجار قريش، فاكتسب منها مالًا كثيرًا، ثم أنفق أكثره في الإسلام بعد ذلك، حتى خرج في الهجرة بما بقي له منه."
+            "ar": "وعُرف قبل الإسلام بالتجارة، يغدو إلى السوق فيبيع ويبتاع، ويذكر ابن سعد أنه كان عنده يوم بُعث النبي ﷺ أربعون ألف درهم، فجعل يعتق منها ويقوّي المسلمين، حتى قدم المدينة بخمسة آلاف."
           },
           "reliability": "reported",
           "citations": [
@@ -604,14 +584,16 @@
               "page": "138"
             },
             {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "isabah",
               "locatorStatus": "complete",
               "volume": 4,
               "page": "171"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "128"
             }
           ]
         },
@@ -622,10 +604,6 @@
           },
           "reliability": "reported",
           "citations": [
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            },
             {
               "sourceId": "isabah",
               "locatorStatus": "complete",
@@ -658,7 +636,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وكان محبَّبًا في قومه، سهل الخلق، يألفه الناس لعلمه وتجارته وحسن مجالسته، وتذكر كتب التراجم أنه كان ممن ترك شرب الخمر في الجاهلية."
+            "ar": "وكان محبَّبًا في قومه، سهل الخلق، يألفه الناس لعلمه وتجارته وحسن مجالسته."
           },
           "reliability": "reported",
           "citations": [
@@ -667,10 +645,6 @@
               "locatorStatus": "complete",
               "volume": 1,
               "page": "250"
-            },
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
             }
           ]
         },
@@ -705,10 +679,6 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "isabah",
               "locatorStatus": "complete",
               "volume": 4,
@@ -719,7 +689,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "ولم يتردد في الإسلام حين عرضه عليه النبي ﷺ، لما يعرف من صدقه وأمانته في قومه، وهذا من أسباب تسميته بالصدّيق عند أهل التراجم، مع ما سيأتي من تصديقه خبر الإسراء."
+            "ar": "ولم يتردد في الإسلام حين عرضه عليه النبي ﷺ؛ فيروي ابن إسحاق أن النبي ﷺ كان يذكر أنه ما دعا أحدًا إلى الإسلام إلا كانت له عنده كبوة وتردد، إلا أبا بكر، فإنه ما تلعثم فيه."
           },
           "reliability": "reported",
           "citations": [
@@ -728,10 +698,6 @@
               "locatorStatus": "complete",
               "volume": 1,
               "page": "252"
-            },
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
             }
           ]
         },
@@ -856,10 +822,6 @@
               "locatorStatus": "complete",
               "volume": 1,
               "page": "318"
-            },
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
             }
           ]
         },
@@ -1044,10 +1006,6 @@
               "locatorStatus": "complete",
               "volume": 4,
               "page": "169"
-            },
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
             }
           ]
         },
@@ -1336,13 +1294,15 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وروي أنه لُقّب بالصدّيق لتصديقه خبر الإسراء حين كذّبه المشركون."
+            "ar": "ويروي ابن إسحاق عن الحسن البصري أن أبا بكر صدّق النبي ﷺ في خبر الإسراء، فقال له النبي ﷺ: وأنت يا أبا بكر الصدّيق، فيومئذ سمّاه الصدّيق."
           },
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "399"
             }
           ]
         },
@@ -1415,10 +1375,6 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "tabaqat-ibn-sad",
               "locatorStatus": "complete",
               "volume": 3,
@@ -1458,10 +1414,6 @@
               "sourceId": "bukhari",
               "locatorStatus": "complete",
               "hadithNumber": "3654"
-            },
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
             }
           ]
         },
@@ -1803,8 +1755,10 @@
               "page": "174"
             },
             {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "157"
             }
           ]
         },
@@ -1842,8 +1796,10 @@
               "hadithNumber": "2348"
             },
             {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
+              "sourceId": "isabah",
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "174"
             }
           ]
         },
@@ -1882,8 +1838,16 @@
               "page": "151"
             },
             {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "155"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "157"
             }
           ]
         }

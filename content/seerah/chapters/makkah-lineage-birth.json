@@ -137,14 +137,22 @@
       "reliability": "established",
       "citations": [
         {
-          "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "1"
         },
         {
           "sourceId": "sirat-ibn-hisham",
           "locatorStatus": "complete",
           "volume": 1,
-          "page": "1"
+          "page": "2"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "110"
         }
       ]
     },

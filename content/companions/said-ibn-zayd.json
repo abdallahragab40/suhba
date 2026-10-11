@@ -804,17 +804,30 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "ولما وقعت الفتنة اعتزلها كما اعتزلها سعد بن أبي وقاص وعبد الله بن عمر، فلم يقاتل مع أحد من الفريقين، على ما يذكره أهل التراجم."
+            "ar": "ويصفه الواقدي، فيما ينقله الذهبي، بأنه كان رجلًا آدم طويلًا أشعر."
           },
           "reliability": "reported",
           "citations": [
             {
               "sourceId": "siyar",
-              "locatorStatus": "pending"
-            },
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "140"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ولما وقعت الفتنة اعتزلها كما اعتزلها سعد بن أبي وقاص وعبد الله بن عمر، فلم يقاتل مع أحد من الفريقين، على ما يذكره الذهبي."
+          },
+          "reliability": "reported",
+          "citations": [
             {
-              "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "pending"
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "128"
             }
           ]
         },
@@ -859,13 +872,19 @@
               "locatorStatus": "complete",
               "volume": 9,
               "page": "559"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "124"
             }
           ]
         },
         {
           "type": "paragraph",
           "text": {
-            "ar": "وكان مع أبي عبيدة بن الجراح في فتوح الشام حتى ولّاه دمشق، ويجمعهما السبق إلى الإسلام والبشارة بالجنة."
+            "ar": "وكان مع أبي عبيدة بن الجراح في فتوح الشام حتى ولّاه دمشق، فكان أول من ولي نيابة دمشق من هذه الأمة على ما يذكره الذهبي، ويجمعهما السبق إلى الإسلام والبشارة بالجنة."
           },
           "reliability": "reported",
           "citations": [
@@ -874,6 +893,12 @@
               "locatorStatus": "complete",
               "volume": 9,
               "page": "655"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "125"
             }
           ]
         },
@@ -1251,8 +1276,10 @@
       "reliability": "reported",
       "citations": [
         {
-          "sourceId": "tarikh-al-tabari",
-          "locatorStatus": "pending"
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "124"
         }
       ],
       "sectionId": "said-ibn-zayd.contributions"

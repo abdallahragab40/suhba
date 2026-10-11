@@ -50,10 +50,6 @@
         "locatorStatus": "complete",
         "volume": 4,
         "page": "569"
-      },
-      {
-        "sourceId": "siyar",
-        "locatorStatus": "pending"
       }
     ]
   },
@@ -134,14 +130,16 @@
     "reliability": "reported",
     "citations": [
       {
-        "sourceId": "siyar",
-        "locatorStatus": "pending"
-      },
-      {
         "sourceId": "tabaqat-ibn-sad",
         "locatorStatus": "complete",
         "volume": 3,
         "page": "27"
+      },
+      {
+        "sourceId": "isabah",
+        "locatorStatus": "complete",
+        "volume": 4,
+        "page": "564"
       }
     ]
   },
@@ -309,14 +307,16 @@
               "page": "564"
             },
             {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "tabaqat-ibn-sad",
               "locatorStatus": "complete",
               "volume": 3,
               "page": "13"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 6,
+              "page": "91"
             }
           ]
         },
@@ -354,8 +354,10 @@
               "page": "246"
             },
             {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
+              "sourceId": "isabah",
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "564"
             }
           ]
         },
@@ -408,10 +410,6 @@
           },
           "reliability": "reported",
           "citations": [
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            },
             {
               "sourceId": "tabaqat-ibn-sad",
               "locatorStatus": "complete",
@@ -471,7 +469,7 @@
             },
             {
               "text": {
-                "ar": "أقوال أخرى بين الثامنة والخامسة عشرة، ذكرها ابن حجر والذهبي."
+                "ar": "أقوال أخرى بين الثامنة والسادسة عشرة، ذكرها ابن عبد البر."
               },
               "citations": [
                 {
@@ -481,8 +479,10 @@
                   "page": "564"
                 },
                 {
-                  "sourceId": "siyar",
-                  "locatorStatus": "pending"
+                  "sourceId": "istiab",
+                  "locatorStatus": "complete",
+                  "volume": 3,
+                  "page": "1093"
                 }
               ]
             }
@@ -984,14 +984,10 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وكان من أعلم الصحابة بالقضاء والفقه، وكان عمر يستشيره في النوازل ويرجع إلى رأيه، وتُروى عنه أقضية كثيرة في كتب الحديث والفقه."
+            "ar": "وكان من أعلم الصحابة بالقضاء والفقه، وتُروى عنه أقضية كثيرة في كتب الحديث والفقه."
           },
           "reliability": "reported",
           "citations": [
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            },
             {
               "sourceId": "bukhari",
               "locatorStatus": "complete",
@@ -1040,10 +1036,6 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "tabaqat-ibn-sad",
               "locatorStatus": "complete",
               "volume": 2,
@@ -1063,19 +1055,21 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "عُرف بالشجاعة في المواقف، وبالزهد في الدنيا مع ولايته؛ فكان يلبس الخشن من الثياب، ويأكل البسيط من الطعام، ويقسم ما في بيت المال على الناس."
+            "ar": "عُرف بالشجاعة في المواقف، وبالزهد في الدنيا مع ولايته؛ فيروي ابن سعد أنه رُئي عليه إزار مرقوع، فسُئل عنه، فذكر أنه يُخشع القلب ويقتدي به المؤمن."
           },
           "reliability": "reported",
           "citations": [
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            },
             {
               "sourceId": "tabaqat-ibn-sad",
               "locatorStatus": "complete",
               "volume": 3,
               "page": "19"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "20"
             }
           ]
         },
@@ -1117,14 +1111,10 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وكان قويًّا في الحق، رفيقًا بالضعيف، يقف في الخصومة موقف الناس، ويعظ أصحابه بالآخرة ويحذّرهم من الدنيا."
+            "ar": "وكان يعظ أصحابه بالآخرة ويحذّرهم من الدنيا، ومن كلامه أن الدنيا قد ارتحلت مدبرة، وأن الآخرة قد أتت مقبلة، فكونوا من أبناء الآخرة ولا تكونوا من أبناء الدنيا."
           },
           "reliability": "reported",
           "citations": [
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            },
             {
               "sourceId": "al-bidaya",
               "locatorStatus": "complete",
@@ -1172,7 +1162,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "ويروي ابن سعد أنه كان يدعو الناس إلى أن يسألوه عن كتاب الله، وأنه ما من آية إلا وهو يعلم فيمَ نزلت وأين نزلت، وكان ابن عباس من أخصّ من أخذ عنه."
+            "ar": "ويروي ابن سعد أنه كان يدعو الناس إلى أن يسألوه عن كتاب الله، وأنه ما من آية إلا وهو يعلم فيمَ نزلت وأين نزلت."
           },
           "reliability": "reported",
           "citations": [
@@ -1181,10 +1171,6 @@
               "locatorStatus": "complete",
               "volume": 2,
               "page": "257"
-            },
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
             }
           ]
         }
@@ -1459,17 +1445,13 @@
               "locatorStatus": "complete",
               "volume": 3,
               "page": "25"
-            },
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
             }
           ]
         },
         {
           "type": "paragraph",
           "text": {
-            "ar": "وكان يكثر قبل موته من ذكر الآخرة وتمنّي لقاء الله، ويحذّر الناس من الفرقة، ويوصيهم بتقوى الله ولزوم الجماعة وإصلاح ذات البين."
+            "ar": "وأوصى قبل موته بتقوى الله، والاعتصام بحبل الله وترك الفرقة، وإصلاح ذات البين، وصلة الأرحام."
           },
           "reliability": "reported",
           "citations": [
@@ -1478,10 +1460,6 @@
               "locatorStatus": "complete",
               "volume": 11,
               "page": "16"
-            },
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
             }
           ]
         },
@@ -1537,21 +1515,19 @@
                   "locatorStatus": "complete",
                   "volume": 3,
                   "page": "27"
-                },
-                {
-                  "sourceId": "siyar",
-                  "locatorStatus": "pending"
                 }
               ]
             },
             {
               "text": {
-                "ar": "أقوال أخرى بين الثامنة والخمسين والخامسة والستين."
+                "ar": "ثمان وخمسون سنة، على قول جعفر بن محمد الذي نقله ابن عبد البر."
               },
               "citations": [
                 {
-                  "sourceId": "siyar",
-                  "locatorStatus": "pending"
+                  "sourceId": "istiab",
+                  "locatorStatus": "complete",
+                  "volume": 1,
+                  "page": "397"
                 }
               ]
             }
@@ -1569,10 +1545,6 @@
               "locatorStatus": "complete",
               "volume": 11,
               "page": "20"
-            },
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
             }
           ]
         },
@@ -1681,14 +1653,16 @@
       "reliability": "reported",
       "citations": [
         {
-          "sourceId": "siyar",
-          "locatorStatus": "pending"
-        },
-        {
           "sourceId": "tabaqat-ibn-sad",
           "locatorStatus": "complete",
           "volume": 3,
           "page": "27"
+        },
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "564"
         }
       ],
       "sectionId": "ali.early-life"
@@ -1973,10 +1947,6 @@
           "locatorStatus": "complete",
           "volume": 5,
           "page": "143"
-        },
-        {
-          "sourceId": "siyar",
-          "locatorStatus": "pending"
         }
       ],
       "sectionId": "ali.death"

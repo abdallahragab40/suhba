@@ -472,12 +472,14 @@
         },
         {
           "text": {
-            "ar": "أنها في السنة الرابعة، وهو قول موسى بن عقبة، ونقله البخاري."
+            "ar": "أنها في شوال من السنة الرابعة، وهو قول موسى بن عقبة عن الزهري، وبه قال مالك، على ما يذكره ابن كثير."
           },
           "citations": [
             {
-              "sourceId": "bukhari",
-              "locatorStatus": "pending"
+              "sourceId": "al-bidaya",
+              "locatorStatus": "complete",
+              "volume": 6,
+              "page": "10"
             }
           ]
         }

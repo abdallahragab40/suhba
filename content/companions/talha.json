@@ -282,19 +282,6 @@
               "page": "25"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "وعُرف في تجارته بالأمانة وحسن المعاملة، فكان له بين تجار قريش ذكر حسن قبل الإسلام وبعده، وثقة عند من عامله."
-          },
-          "reliability": "reported",
-          "citations": [
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            }
-          ]
         }
       ]
     },
@@ -486,7 +473,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "ويوم أحد كان من أعظم الناس بلاءً؛ فحين انكشف المسلمون وأحاط المشركون بالنبي ﷺ ثبت عنده في نفر قليل، ووقاه بيده من سهم كان موجّهًا إليه، فشُلّت يده، وقد ذكر ذلك قيس بن أبي حازم أنه رأى يد طلحة شلّاء وقى بها النبي ﷺ يوم أحد."
+            "ar": "ويوم أحد كان من أعظم الناس بلاءً؛ فحين انكشف المسلمون وأحاط المشركون بالنبي ﷺ ثبت عنده في نفر قليل وبايعه على الموت على ما يذكره ابن سعد، ووقاه بيده من سهم رماه مالك بن زهير نحو وجهه، فشُلّت يده، وقد ذكر ذلك قيس بن أبي حازم أنه رأى يد طلحة شلّاء وقى بها النبي ﷺ يوم أحد."
           },
           "reliability": "established",
           "citations": [
@@ -494,6 +481,12 @@
               "sourceId": "bukhari",
               "locatorStatus": "complete",
               "hadithNumber": "4063"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "162"
             }
           ]
         },
@@ -1377,13 +1370,15 @@
         "gregorianYear": 628
       },
       "title": {
-        "ar": "بيعته تحت الشجرة"
+        "ar": "شهوده الحديبية"
       },
       "reliability": "reported",
       "citations": [
         {
-          "sourceId": "isabah",
-          "locatorStatus": "pending"
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "163"
         }
       ],
       "eventId": "hudaybiyah",

@@ -55,10 +55,6 @@
         "locatorStatus": "complete",
         "volume": 4,
         "page": "458"
-      },
-      {
-        "sourceId": "siyar",
-        "locatorStatus": "pending"
       }
     ]
   },
@@ -124,14 +120,16 @@
     "reliability": "reported",
     "citations": [
       {
-        "sourceId": "siyar",
-        "locatorStatus": "pending"
-      },
-      {
         "sourceId": "tabaqat-ibn-sad",
         "locatorStatus": "complete",
         "volume": 3,
         "page": "57"
+      },
+      {
+        "sourceId": "isabah",
+        "locatorStatus": "complete",
+        "volume": 4,
+        "page": "456"
       }
     ]
   },
@@ -174,8 +172,10 @@
           "page": "56"
         },
         {
-          "sourceId": "siyar",
-          "locatorStatus": "pending"
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "57"
         }
       ]
     }
@@ -249,10 +249,6 @@
               "page": "456"
             },
             {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "tabaqat-ibn-sad",
               "locatorStatus": "complete",
               "volume": 3,
@@ -289,28 +285,26 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "tabaqat-ibn-sad",
               "locatorStatus": "complete",
               "volume": 3,
               "page": "44"
+            },
+            {
+              "sourceId": "isabah",
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "456"
             }
           ]
         },
         {
           "type": "paragraph",
           "text": {
-            "ar": "وعُرف قبل الإسلام وبعده بالحياء ولين الجانب وكرم اليد، وكان محبّبًا في قومه."
+            "ar": "وعُرف بالحياء، ويروي ابن عبد البر حديثًا فيه أن أصدق هذه الأمة حياءً عثمان."
           },
           "reliability": "reported",
           "citations": [
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            },
             {
               "sourceId": "istiab",
               "locatorStatus": "complete",
@@ -322,7 +316,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وكان يخرج بتجارته إلى الشام وغيرها كعادة تجار قريش، وكانت بينه وبين أبي بكر صحبة ومعرفة قبل الإسلام، فكان ذلك من أسباب استجابته لدعوته."
+            "ar": "وكان تاجرًا في الجاهلية والإسلام، يدفع ماله قراضًا إلى من يتّجر فيه، على ما يذكره ابن سعد."
           },
           "reliability": "reported",
           "citations": [
@@ -331,17 +325,13 @@
               "locatorStatus": "complete",
               "volume": 3,
               "page": "44"
-            },
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
             }
           ]
         },
         {
           "type": "paragraph",
           "text": {
-            "ar": "ويصفه أهل التراجم بأنه كان رجلًا معتدل القامة، حسن الوجه، رقيق البشرة، كثّ اللحية، وأنه كان من أحسن الناس هيئة ولباسًا قبل الخلافة."
+            "ar": "ويصفه أهل التراجم بأنه كان رجلًا ربعة، ليس بالقصير ولا بالطويل، حسن الوجه، رقيق البشرة، عظيم اللحية، بعيد ما بين المنكبين."
           },
           "reliability": "reported",
           "citations": [
@@ -352,8 +342,16 @@
               "page": "42"
             },
             {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "43"
+            },
+            {
+              "sourceId": "isabah",
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "456"
             }
           ]
         }
@@ -672,19 +670,10 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "al-bidaya",
               "locatorStatus": "complete",
               "volume": 8,
               "page": "321"
-            },
-            {
-              "sourceId": "bukhari",
-              "locatorStatus": "complete",
-              "hadithNumber": "446"
             }
           ]
         },
@@ -851,7 +840,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "ويذكر أهل التراجم أنه كان كثير التلاوة، وأنه ربما ختم القرآن في ركعة من الليل."
+            "ar": "ويذكر أهل التراجم أنه كان يحيي الليل في ركعة، ويصل الرحم، ويطعم الملهوف، ويحمل الكلّ."
           },
           "reliability": "reported",
           "citations": [
@@ -860,10 +849,6 @@
               "locatorStatus": "complete",
               "volume": 3,
               "page": "55"
-            },
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
             }
           ]
         },
@@ -906,32 +891,14 @@
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            },
-            {
               "sourceId": "bukhari",
               "locatorStatus": "complete",
               "hadithNumber": "2778"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "ويذكر أهل التراجم كثرة صيامه وقيامه وتلاوته القرآن، وأنه كان رفيقًا بالناس حليمًا عليهم."
-          },
-          "reliability": "reported",
-          "citations": [
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
             },
             {
-              "sourceId": "tabaqat-ibn-sad",
+              "sourceId": "muslim",
               "locatorStatus": "complete",
-              "volume": 3,
-              "page": "55"
+              "hadithNumber": "2401"
             }
           ]
         },
@@ -1379,7 +1346,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "ثم دخل عليه بعضهم فقتلوه في داره في ذي الحجة سنة خمس وثلاثين، وهو يقرأ القرآن على ما يذكره المؤرخون، ودُفن بالبقيع."
+            "ar": "ثم دخل عليه بعضهم فقتلوه في داره في ذي الحجة سنة خمس وثلاثين، وهو يقرأ القرآن على ما يذكره المؤرخون، ودُفن بين المغرب والعشاء في حشّ كوكب بالبقيع."
           },
           "reliability": "established",
           "citations": [
@@ -1396,8 +1363,25 @@
               "page": "55"
             },
             {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "57"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويروي ابن سعد أن الناس كانوا يتوقّون أن يدفنوا موتاهم في حشّ كوكب، فكان عثمان يقول: يوشك أن يهلك رجل صالح فيُدفن هناك فيأتسي الناس به، فكان هو أول من دُفن فيه."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "56"
             }
           ]
         },
@@ -1445,7 +1429,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وكانت خلافته نحو اثنتي عشرة سنة إلا أيامًا، وقُتل في يوم الجمعة الثامن عشر من ذي الحجة على المشهور، وفي اليوم خلاف."
+            "ar": "وكانت خلافته نحو اثنتي عشرة سنة إلا أيامًا، وقُتل في يوم الجمعة الثامن عشر من ذي الحجة على المشهور، وفي اليوم خلاف؛ فجعله ابن إسحاق الثاني والعشرين منه، وقيل السابع عشر."
           },
           "reliability": "reported",
           "citations": [
@@ -1460,6 +1444,12 @@
               "locatorStatus": "complete",
               "volume": 3,
               "page": "57"
+            },
+            {
+              "sourceId": "isabah",
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "458"
             }
           ]
         },
@@ -1484,13 +1474,9 @@
             },
             {
               "text": {
-                "ar": "أقوال أخرى، منها خمس وسبعون سنة على قول أبي معشر، وقيل أكثر من الثمانين، ذكرها ابن سعد والذهبي."
+                "ar": "خمس وسبعون سنة، على قول أبي معشر الذي ذكره ابن سعد."
               },
               "citations": [
-                {
-                  "sourceId": "siyar",
-                  "locatorStatus": "pending"
-                },
                 {
                   "sourceId": "tabaqat-ibn-sad",
                   "locatorStatus": "complete",
@@ -1577,14 +1563,16 @@
       "reliability": "reported",
       "citations": [
         {
-          "sourceId": "siyar",
-          "locatorStatus": "pending"
-        },
-        {
           "sourceId": "tabaqat-ibn-sad",
           "locatorStatus": "complete",
           "volume": 3,
           "page": "57"
+        },
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "456"
         }
       ],
       "sectionId": "uthman.early-life"
@@ -1808,10 +1796,6 @@
           "locatorStatus": "complete",
           "volume": 4,
           "page": "353"
-        },
-        {
-          "sourceId": "siyar",
-          "locatorStatus": "pending"
         }
       ],
       "sectionId": "uthman.death"
