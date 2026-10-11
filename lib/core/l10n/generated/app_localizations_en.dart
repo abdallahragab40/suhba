@@ -1551,4 +1551,200 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get welcome4Body =>
       'Reports are attributed to the books of hadith and Seerah, and their standing is shown: established, historical report or disputed. The content has had a preliminary review and is not final until a qualified scholar approves it. The whole app works offline.';
+
+  @override
+  String get quizTitle => 'Test your knowledge';
+
+  @override
+  String get quizSubtitle =>
+      'New questions every round, on the Companions and the Seerah, each answer pointing to its place.';
+
+  @override
+  String get quizModeMixed => 'Mixed round';
+
+  @override
+  String get quizModeMixedHint => 'The Companions and the Seerah together';
+
+  @override
+  String get quizModeCompanions => 'The Companions';
+
+  @override
+  String get quizModeCompanionsHint => 'Kunyas, titles, families and stories';
+
+  @override
+  String get quizModeSeerah => 'The Seerah';
+
+  @override
+  String get quizModeSeerahHint => 'Events, their dates, places and order';
+
+  @override
+  String quizBest(String score, String total) {
+    return 'Best: $score of $total';
+  }
+
+  @override
+  String get quizNoBest => 'Not played yet';
+
+  @override
+  String get quizNote =>
+      'Questions are generated each time from the app\'s own content, which has had a preliminary review.';
+
+  @override
+  String quizProgress(String current, String total) {
+    return 'Question $current of $total';
+  }
+
+  @override
+  String quizStreak(String count) {
+    return '$count in a row';
+  }
+
+  @override
+  String get quizCorrect => 'Well done!';
+
+  @override
+  String get quizWrong => 'Not this one';
+
+  @override
+  String quizAnswerWas(String answer) {
+    return 'The answer: $answer';
+  }
+
+  @override
+  String get quizReadMore => 'Read more';
+
+  @override
+  String get quizNext => 'Next';
+
+  @override
+  String get quizSeeResult => 'Result';
+
+  @override
+  String quizScore(String score, String total) {
+    return '$score of $total';
+  }
+
+  @override
+  String get quizResult3 => 'Excellent, well-rooted knowledge!';
+
+  @override
+  String get quizResult2 => 'Well done, good knowledge.';
+
+  @override
+  String get quizResult1 => 'A good start; reading adds more.';
+
+  @override
+  String get quizResult0 => 'No matter; read, then try again.';
+
+  @override
+  String get quizNewBest => 'Your best result so far';
+
+  @override
+  String get quizPlayAgain => 'New round';
+
+  @override
+  String get quizReview => 'Review your answers';
+
+  @override
+  String get quizDone => 'Done';
+
+  @override
+  String get quizAboutCompanions => 'The Companions';
+
+  @override
+  String get quizAboutSeerah => 'The Seerah';
+
+  @override
+  String quizYourAnswer(String answer) {
+    return 'Your answer: $answer';
+  }
+
+  @override
+  String get quizTileTitle => 'Test your knowledge';
+
+  @override
+  String get quizTileSubtitle =>
+      'New questions every round on the Companions and the Seerah';
+
+  @override
+  String quizQKunyaMale(String subject) {
+    return 'Whose kunya is “$subject”?';
+  }
+
+  @override
+  String quizQKunyaFemale(String subject) {
+    return 'Whose kunya is “$subject”?';
+  }
+
+  @override
+  String quizQKunyaOf(String subject) {
+    return 'What is $subject\'s kunya?';
+  }
+
+  @override
+  String quizQTitleMale(String subject) {
+    return 'Who was called “$subject”?';
+  }
+
+  @override
+  String quizQTitleFemale(String subject) {
+    return 'Who was called “$subject”?';
+  }
+
+  @override
+  String quizQDeathMale(String subject) {
+    return 'Where did $subject die?';
+  }
+
+  @override
+  String quizQDeathFemale(String subject) {
+    return 'Where did $subject die?';
+  }
+
+  @override
+  String quizQMember(String subject) {
+    return 'Which of these is among $subject?';
+  }
+
+  @override
+  String quizQFather(String subject) {
+    return 'Who is $subject\'s father?';
+  }
+
+  @override
+  String quizQMother(String subject) {
+    return 'Who is $subject\'s mother?';
+  }
+
+  @override
+  String quizQStory(String subject) {
+    return 'Which of these is in the story “$subject”?';
+  }
+
+  @override
+  String quizQEventYear(String subject) {
+    return 'In which year was “$subject”?';
+  }
+
+  @override
+  String get quizQEarliestEvent => 'Which of these came first?';
+
+  @override
+  String quizQEventPlace(String subject) {
+    return 'Where was “$subject”?';
+  }
+
+  @override
+  String quizQEventAtPlace(String subject) {
+    return 'Which of these took place in $subject?';
+  }
+
+  @override
+  String get quizQEarliestChapter =>
+      'Which of these chapters comes first in the Seerah?';
+
+  @override
+  String quizOutOf(String total) {
+    return 'of $total';
+  }
 }

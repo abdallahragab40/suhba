@@ -356,9 +356,10 @@ class SeerahOpening extends ConsumerWidget {
                                 Flexible(
                                   child: Text(
                                     l10n.seerahScrollHint,
-                                    style: SahabaTextStyles.of(
-                                      context,
-                                    ).kicker.copyWith(color: Palette.paperDimOnGreen),
+                                    style: SahabaTextStyles.of(context).kicker
+                                        .copyWith(
+                                          color: Palette.paperDimOnGreen,
+                                        ),
                                   ),
                                 ),
                                 const Icon(

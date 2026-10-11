@@ -29,12 +29,22 @@ abstract final class SettingsKeys {
   /// Set once the welcome screens have been seen (or skipped).
   static const welcomeSeen = 'welcomeSeen';
 
+  /// Question keys the quiz asked lately (a JSON list).
+  static const quizRecent = 'quizRecent';
+
+  /// The best quiz score in a mode ('mixed', 'companions', 'seerah').
+  static String quizBest(String mode) => 'quizBest.$mode';
+
   static const all = {
     themeMode,
     digitStyle,
     readingTextSize,
     reconciledContent,
     welcomeSeen,
+    quizRecent,
+    'quizBest.mixed',
+    'quizBest.companions',
+    'quizBest.seerah',
   };
 }
 

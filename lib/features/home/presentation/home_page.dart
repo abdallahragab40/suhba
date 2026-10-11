@@ -19,6 +19,7 @@ import 'package:siyar_sahaba/core/format/display_formatter.dart';
 import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
 import 'package:siyar_sahaba/features/companions/presentation/directory/directory_page.dart';
 import 'package:siyar_sahaba/features/home/domain/daily_featured.dart';
+import 'package:siyar_sahaba/features/quiz/presentation/quiz_banner.dart';
 import 'package:siyar_sahaba/features/reading_progress/domain/reading_progress.dart';
 import 'package:siyar_sahaba/features/reading_progress/presentation/continue_reading.dart';
 import 'package:siyar_sahaba/features/reading_progress/presentation/progress_providers.dart';
@@ -221,6 +222,8 @@ class _Home extends ConsumerWidget {
               header(l10n.homeFeaturedKicker, l10n.homeDiscoverTitle),
               _FeaturedCompanion(companion: featured),
             ],
+            const SizedBox(height: AppSpacing.xl),
+            const QuizBanner(),
             if (seerah?.collection.visualIds.contains('seerah-atlas') ??
                 false) ...[
               header(l10n.homeAtlasKicker, l10n.homeAtlasTitle),

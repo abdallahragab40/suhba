@@ -64,6 +64,10 @@ abstract final class AppRoutes {
   // Sources, search and settings pages (M2–M4).
   static String source(String id) => '/sources/${_id(id)}';
   static const search = '/search';
+
+  /// The quiz, and a round in one of its modes.
+  static const quiz = '/quiz';
+  static String quizPlay(String mode) => '$quiz/${_id(mode)}';
   static const about = '$settings/about';
 
   /// Reading history opened from Settings, so Back returns there.

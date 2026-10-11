@@ -2737,6 +2737,306 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'تُعزى الأخبار إلى كتب الحديث والسيرة، وتُبيَّن درجتها: ثابت، أو رواية تاريخية، أو مختلف فيه. والمحتوى في مراجعة أولية، ولا يُعتمد قبل أن يعتمده عالم مختص. ويعمل التطبيق كلّه دون اتصال.'**
   String get welcome4Body;
+
+  /// No description provided for @quizTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'اختبر معلوماتك'**
+  String get quizTitle;
+
+  /// No description provided for @quizSubtitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'أسئلة جديدة في كل جولة، من الصحابة والسيرة، وكل إجابة تُحيلك إلى موضعها.'**
+  String get quizSubtitle;
+
+  /// No description provided for @quizModeMixed.
+  ///
+  /// In ar, this message translates to:
+  /// **'جولة منوّعة'**
+  String get quizModeMixed;
+
+  /// No description provided for @quizModeMixedHint.
+  ///
+  /// In ar, this message translates to:
+  /// **'من الصحابة والسيرة معًا'**
+  String get quizModeMixedHint;
+
+  /// No description provided for @quizModeCompanions.
+  ///
+  /// In ar, this message translates to:
+  /// **'الصحابة'**
+  String get quizModeCompanions;
+
+  /// No description provided for @quizModeCompanionsHint.
+  ///
+  /// In ar, this message translates to:
+  /// **'الكنى والألقاب والأنساب والقصص'**
+  String get quizModeCompanionsHint;
+
+  /// No description provided for @quizModeSeerah.
+  ///
+  /// In ar, this message translates to:
+  /// **'السيرة النبوية'**
+  String get quizModeSeerah;
+
+  /// No description provided for @quizModeSeerahHint.
+  ///
+  /// In ar, this message translates to:
+  /// **'الأحداث وتواريخها وأماكنها وترتيبها'**
+  String get quizModeSeerahHint;
+
+  /// No description provided for @quizBest.
+  ///
+  /// In ar, this message translates to:
+  /// **'أفضل نتيجة: {score} من {total}'**
+  String quizBest(String score, String total);
+
+  /// No description provided for @quizNoBest.
+  ///
+  /// In ar, this message translates to:
+  /// **'لم تُلعب بعد'**
+  String get quizNoBest;
+
+  /// No description provided for @quizNote.
+  ///
+  /// In ar, this message translates to:
+  /// **'تُولَّد الأسئلة في كل مرة من محتوى التطبيق نفسه، وهو في مراجعة أولية.'**
+  String get quizNote;
+
+  /// No description provided for @quizProgress.
+  ///
+  /// In ar, this message translates to:
+  /// **'السؤال {current} من {total}'**
+  String quizProgress(String current, String total);
+
+  /// No description provided for @quizStreak.
+  ///
+  /// In ar, this message translates to:
+  /// **'{count} متتالية'**
+  String quizStreak(String count);
+
+  /// No description provided for @quizCorrect.
+  ///
+  /// In ar, this message translates to:
+  /// **'أحسنت!'**
+  String get quizCorrect;
+
+  /// No description provided for @quizWrong.
+  ///
+  /// In ar, this message translates to:
+  /// **'ليست هذه'**
+  String get quizWrong;
+
+  /// No description provided for @quizAnswerWas.
+  ///
+  /// In ar, this message translates to:
+  /// **'الإجابة الصحيحة: {answer}'**
+  String quizAnswerWas(String answer);
+
+  /// No description provided for @quizReadMore.
+  ///
+  /// In ar, this message translates to:
+  /// **'اقرأ المزيد'**
+  String get quizReadMore;
+
+  /// No description provided for @quizNext.
+  ///
+  /// In ar, this message translates to:
+  /// **'التالي'**
+  String get quizNext;
+
+  /// No description provided for @quizSeeResult.
+  ///
+  /// In ar, this message translates to:
+  /// **'النتيجة'**
+  String get quizSeeResult;
+
+  /// No description provided for @quizScore.
+  ///
+  /// In ar, this message translates to:
+  /// **'{score} من {total}'**
+  String quizScore(String score, String total);
+
+  /// No description provided for @quizResult3.
+  ///
+  /// In ar, this message translates to:
+  /// **'ما شاء الله، معرفة راسخة!'**
+  String get quizResult3;
+
+  /// No description provided for @quizResult2.
+  ///
+  /// In ar, this message translates to:
+  /// **'أحسنت، معرفة طيبة.'**
+  String get quizResult2;
+
+  /// No description provided for @quizResult1.
+  ///
+  /// In ar, this message translates to:
+  /// **'بداية طيبة، والقراءة تزيدك.'**
+  String get quizResult1;
+
+  /// No description provided for @quizResult0.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا بأس، اقرأ ثم أعد المحاولة.'**
+  String get quizResult0;
+
+  /// No description provided for @quizNewBest.
+  ///
+  /// In ar, this message translates to:
+  /// **'أفضل نتيجة لك حتى الآن'**
+  String get quizNewBest;
+
+  /// No description provided for @quizPlayAgain.
+  ///
+  /// In ar, this message translates to:
+  /// **'جولة جديدة'**
+  String get quizPlayAgain;
+
+  /// No description provided for @quizReview.
+  ///
+  /// In ar, this message translates to:
+  /// **'راجع إجاباتك'**
+  String get quizReview;
+
+  /// No description provided for @quizDone.
+  ///
+  /// In ar, this message translates to:
+  /// **'إنهاء'**
+  String get quizDone;
+
+  /// No description provided for @quizAboutCompanions.
+  ///
+  /// In ar, this message translates to:
+  /// **'عن الصحابة'**
+  String get quizAboutCompanions;
+
+  /// No description provided for @quizAboutSeerah.
+  ///
+  /// In ar, this message translates to:
+  /// **'عن السيرة'**
+  String get quizAboutSeerah;
+
+  /// No description provided for @quizYourAnswer.
+  ///
+  /// In ar, this message translates to:
+  /// **'إجابتك: {answer}'**
+  String quizYourAnswer(String answer);
+
+  /// No description provided for @quizTileTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'اختبر معلوماتك'**
+  String get quizTileTitle;
+
+  /// No description provided for @quizTileSubtitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'أسئلة جديدة في كل جولة من الصحابة والسيرة'**
+  String get quizTileSubtitle;
+
+  /// No description provided for @quizQKunyaMale.
+  ///
+  /// In ar, this message translates to:
+  /// **'مَن كنيتُه «{subject}»؟'**
+  String quizQKunyaMale(String subject);
+
+  /// No description provided for @quizQKunyaFemale.
+  ///
+  /// In ar, this message translates to:
+  /// **'مَن كنيتُها «{subject}»؟'**
+  String quizQKunyaFemale(String subject);
+
+  /// No description provided for @quizQKunyaOf.
+  ///
+  /// In ar, this message translates to:
+  /// **'ما كنية {subject}؟'**
+  String quizQKunyaOf(String subject);
+
+  /// No description provided for @quizQTitleMale.
+  ///
+  /// In ar, this message translates to:
+  /// **'مَن لُقِّب بـ«{subject}»؟'**
+  String quizQTitleMale(String subject);
+
+  /// No description provided for @quizQTitleFemale.
+  ///
+  /// In ar, this message translates to:
+  /// **'مَن لُقِّبت بـ«{subject}»؟'**
+  String quizQTitleFemale(String subject);
+
+  /// No description provided for @quizQDeathMale.
+  ///
+  /// In ar, this message translates to:
+  /// **'أين توفي {subject}؟'**
+  String quizQDeathMale(String subject);
+
+  /// No description provided for @quizQDeathFemale.
+  ///
+  /// In ar, this message translates to:
+  /// **'أين توفيت {subject}؟'**
+  String quizQDeathFemale(String subject);
+
+  /// No description provided for @quizQMember.
+  ///
+  /// In ar, this message translates to:
+  /// **'أيّ هؤلاء من {subject}؟'**
+  String quizQMember(String subject);
+
+  /// No description provided for @quizQFather.
+  ///
+  /// In ar, this message translates to:
+  /// **'مَن والد {subject}؟'**
+  String quizQFather(String subject);
+
+  /// No description provided for @quizQMother.
+  ///
+  /// In ar, this message translates to:
+  /// **'مَن أمّ {subject}؟'**
+  String quizQMother(String subject);
+
+  /// No description provided for @quizQStory.
+  ///
+  /// In ar, this message translates to:
+  /// **'أيّ هؤلاء من أصحاب قصة «{subject}»؟'**
+  String quizQStory(String subject);
+
+  /// No description provided for @quizQEventYear.
+  ///
+  /// In ar, this message translates to:
+  /// **'في أيّ سنة كان حدث «{subject}»؟'**
+  String quizQEventYear(String subject);
+
+  /// No description provided for @quizQEarliestEvent.
+  ///
+  /// In ar, this message translates to:
+  /// **'أيّ هذه الأحداث كان أولًا؟'**
+  String get quizQEarliestEvent;
+
+  /// No description provided for @quizQEventPlace.
+  ///
+  /// In ar, this message translates to:
+  /// **'أين كان حدث «{subject}»؟'**
+  String quizQEventPlace(String subject);
+
+  /// No description provided for @quizQEventAtPlace.
+  ///
+  /// In ar, this message translates to:
+  /// **'أيّ هذه الأحداث كان في {subject}؟'**
+  String quizQEventAtPlace(String subject);
+
+  /// No description provided for @quizQEarliestChapter.
+  ///
+  /// In ar, this message translates to:
+  /// **'أيّ هذه الفصول يأتي أولًا في السيرة؟'**
+  String get quizQEarliestChapter;
+
+  /// No description provided for @quizOutOf.
+  ///
+  /// In ar, this message translates to:
+  /// **'من {total}'**
+  String quizOutOf(String total);
 }
 
 class _AppLocalizationsDelegate

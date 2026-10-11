@@ -12,6 +12,7 @@ import 'package:siyar_sahaba/core/design_system/widgets/loading_skeleton.dart';
 import 'package:siyar_sahaba/core/design_system/widgets/section_header.dart';
 import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
 import 'package:siyar_sahaba/features/atlas/presentation/place_page.dart';
+import 'package:siyar_sahaba/features/quiz/presentation/quiz_banner.dart';
 import 'package:siyar_sahaba/features/stories/presentation/story_card.dart';
 import 'package:siyar_sahaba/shared/content/domain/atlas.dart';
 import 'package:siyar_sahaba/shared/content/domain/catalog.dart';
@@ -165,6 +166,10 @@ class _ExploreState extends State<_Explore> {
               ),
           ],
         ),
+        if (_filter == ExploreFilter.all) ...[
+          const SizedBox(height: AppSpacing.lg),
+          const QuizBanner(),
+        ],
         if (show(ExploreFilter.events)) ...[
           header(
             l10n.exploreEventsKicker,

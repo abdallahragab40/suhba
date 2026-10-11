@@ -15,6 +15,9 @@ import 'package:siyar_sahaba/features/companions/presentation/directory/director
 import 'package:siyar_sahaba/features/companions/presentation/profile/companion_profile_page.dart';
 import 'package:siyar_sahaba/features/explore/presentation/explore_page.dart';
 import 'package:siyar_sahaba/features/home/presentation/home_page.dart';
+import 'package:siyar_sahaba/features/quiz/domain/quiz_question.dart';
+import 'package:siyar_sahaba/features/quiz/presentation/quiz_home_page.dart';
+import 'package:siyar_sahaba/features/quiz/presentation/quiz_play_page.dart';
 import 'package:siyar_sahaba/features/reading_progress/presentation/reading_history_page.dart';
 import 'package:siyar_sahaba/features/relations/presentation/relations_page.dart';
 import 'package:siyar_sahaba/features/search/presentation/search_page.dart';
@@ -51,6 +54,26 @@ GoRouter buildAppRouter({String initialLocation = AppRoutes.home}) {
         path: AppRoutes.search,
         pageBuilder: (context, state) =>
             fadeThroughPage(context, state, const SearchPage()),
+      ),
+      GoRoute(
+        path: AppRoutes.quiz,
+        pageBuilder: (context, state) =>
+            fadeThroughPage(context, state, const QuizHomePage()),
+        routes: [
+          GoRoute(
+            path: ':mode',
+            pageBuilder: (context, state) => fadeThroughPage(
+              context,
+              state,
+              QuizPlayPage(
+                mode: QuizMode.values.firstWhere(
+                  (m) => m.name == state.pathParameters['mode'],
+                  orElse: () => QuizMode.mixed,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
       GoRoute(
         path: AppRoutes.settings,

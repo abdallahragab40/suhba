@@ -1556,4 +1556,198 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get welcome4Body =>
       'تُعزى الأخبار إلى كتب الحديث والسيرة، وتُبيَّن درجتها: ثابت، أو رواية تاريخية، أو مختلف فيه. والمحتوى في مراجعة أولية، ولا يُعتمد قبل أن يعتمده عالم مختص. ويعمل التطبيق كلّه دون اتصال.';
+
+  @override
+  String get quizTitle => 'اختبر معلوماتك';
+
+  @override
+  String get quizSubtitle =>
+      'أسئلة جديدة في كل جولة، من الصحابة والسيرة، وكل إجابة تُحيلك إلى موضعها.';
+
+  @override
+  String get quizModeMixed => 'جولة منوّعة';
+
+  @override
+  String get quizModeMixedHint => 'من الصحابة والسيرة معًا';
+
+  @override
+  String get quizModeCompanions => 'الصحابة';
+
+  @override
+  String get quizModeCompanionsHint => 'الكنى والألقاب والأنساب والقصص';
+
+  @override
+  String get quizModeSeerah => 'السيرة النبوية';
+
+  @override
+  String get quizModeSeerahHint => 'الأحداث وتواريخها وأماكنها وترتيبها';
+
+  @override
+  String quizBest(String score, String total) {
+    return 'أفضل نتيجة: $score من $total';
+  }
+
+  @override
+  String get quizNoBest => 'لم تُلعب بعد';
+
+  @override
+  String get quizNote =>
+      'تُولَّد الأسئلة في كل مرة من محتوى التطبيق نفسه، وهو في مراجعة أولية.';
+
+  @override
+  String quizProgress(String current, String total) {
+    return 'السؤال $current من $total';
+  }
+
+  @override
+  String quizStreak(String count) {
+    return '$count متتالية';
+  }
+
+  @override
+  String get quizCorrect => 'أحسنت!';
+
+  @override
+  String get quizWrong => 'ليست هذه';
+
+  @override
+  String quizAnswerWas(String answer) {
+    return 'الإجابة الصحيحة: $answer';
+  }
+
+  @override
+  String get quizReadMore => 'اقرأ المزيد';
+
+  @override
+  String get quizNext => 'التالي';
+
+  @override
+  String get quizSeeResult => 'النتيجة';
+
+  @override
+  String quizScore(String score, String total) {
+    return '$score من $total';
+  }
+
+  @override
+  String get quizResult3 => 'ما شاء الله، معرفة راسخة!';
+
+  @override
+  String get quizResult2 => 'أحسنت، معرفة طيبة.';
+
+  @override
+  String get quizResult1 => 'بداية طيبة، والقراءة تزيدك.';
+
+  @override
+  String get quizResult0 => 'لا بأس، اقرأ ثم أعد المحاولة.';
+
+  @override
+  String get quizNewBest => 'أفضل نتيجة لك حتى الآن';
+
+  @override
+  String get quizPlayAgain => 'جولة جديدة';
+
+  @override
+  String get quizReview => 'راجع إجاباتك';
+
+  @override
+  String get quizDone => 'إنهاء';
+
+  @override
+  String get quizAboutCompanions => 'عن الصحابة';
+
+  @override
+  String get quizAboutSeerah => 'عن السيرة';
+
+  @override
+  String quizYourAnswer(String answer) {
+    return 'إجابتك: $answer';
+  }
+
+  @override
+  String get quizTileTitle => 'اختبر معلوماتك';
+
+  @override
+  String get quizTileSubtitle => 'أسئلة جديدة في كل جولة من الصحابة والسيرة';
+
+  @override
+  String quizQKunyaMale(String subject) {
+    return 'مَن كنيتُه «$subject»؟';
+  }
+
+  @override
+  String quizQKunyaFemale(String subject) {
+    return 'مَن كنيتُها «$subject»؟';
+  }
+
+  @override
+  String quizQKunyaOf(String subject) {
+    return 'ما كنية $subject؟';
+  }
+
+  @override
+  String quizQTitleMale(String subject) {
+    return 'مَن لُقِّب بـ«$subject»؟';
+  }
+
+  @override
+  String quizQTitleFemale(String subject) {
+    return 'مَن لُقِّبت بـ«$subject»؟';
+  }
+
+  @override
+  String quizQDeathMale(String subject) {
+    return 'أين توفي $subject؟';
+  }
+
+  @override
+  String quizQDeathFemale(String subject) {
+    return 'أين توفيت $subject؟';
+  }
+
+  @override
+  String quizQMember(String subject) {
+    return 'أيّ هؤلاء من $subject؟';
+  }
+
+  @override
+  String quizQFather(String subject) {
+    return 'مَن والد $subject؟';
+  }
+
+  @override
+  String quizQMother(String subject) {
+    return 'مَن أمّ $subject؟';
+  }
+
+  @override
+  String quizQStory(String subject) {
+    return 'أيّ هؤلاء من أصحاب قصة «$subject»؟';
+  }
+
+  @override
+  String quizQEventYear(String subject) {
+    return 'في أيّ سنة كان حدث «$subject»؟';
+  }
+
+  @override
+  String get quizQEarliestEvent => 'أيّ هذه الأحداث كان أولًا؟';
+
+  @override
+  String quizQEventPlace(String subject) {
+    return 'أين كان حدث «$subject»؟';
+  }
+
+  @override
+  String quizQEventAtPlace(String subject) {
+    return 'أيّ هذه الأحداث كان في $subject؟';
+  }
+
+  @override
+  String get quizQEarliestChapter => 'أيّ هذه الفصول يأتي أولًا في السيرة؟';
+
+  @override
+  String quizOutOf(String total) {
+    return 'من $total';
+  }
 }

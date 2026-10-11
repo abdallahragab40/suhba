@@ -156,10 +156,7 @@ void paintBrandMark(
   const rest = 69.0; // where the ink's foot rests, above the pages
   name.paint(
     canvas,
-    Offset(
-      50 - name.width / 2 + inkCentreShift,
-      rest - name.height * inkFoot,
-    ),
+    Offset(50 - name.width / 2 + inkCentreShift, rest - name.height * inkFoot),
   );
   probe.dispose();
   name.dispose();
