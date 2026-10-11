@@ -3,6 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:siyar_sahaba/core/design_system/tokens/palette.dart';
 import 'package:siyar_sahaba/core/storage/settings_store.dart';
 import 'package:siyar_sahaba/features/home/presentation/home_page.dart';
+import 'package:siyar_sahaba/features/reading_progress/presentation/reading_history_page.dart';
+import 'package:siyar_sahaba/features/settings/presentation/settings_page.dart';
 import 'package:siyar_sahaba/features/sources/presentation/about_page.dart';
 import 'package:siyar_sahaba/features/sources/presentation/sources_page.dart';
 
@@ -37,6 +39,35 @@ void main() {
       tester.element(find.byType(HomePage)),
     ).scaffoldBackgroundColor;
     expect(background, Palette.ink);
+  });
+
+  testApp('back from a Settings page returns to Settings, then home', (
+    tester,
+  ) async {
+    tall(tester);
+    final app = AppUnderTest();
+    await app.pump(tester);
+    await tester.tap(find.byTooltip('الإعدادات'));
+    await tester.pumpAndSettle();
+    expect(find.byType(SettingsPage), findsOneWidget);
+
+    for (final (label, page) in [
+      ('سجل القراءة', ReadingHistoryPage),
+      ('عن التطبيق والمنهج', AboutPage),
+      ('المصادر المعتمدة', SourcesPage),
+    ]) {
+      await tester.tap(find.text(label));
+      await tester.pumpAndSettle();
+      expect(find.byType(page), findsOneWidget, reason: label);
+      await tester.binding.handlePopRoute();
+      await tester.pumpAndSettle();
+      expect(app.location, '/settings', reason: label);
+      expect(find.byType(SettingsPage), findsOneWidget, reason: label);
+    }
+
+    await tester.binding.handlePopRoute();
+    await tester.pumpAndSettle();
+    expect(app.location, '/home');
   });
 
   testApp('the content version and channel are shown', (tester) async {

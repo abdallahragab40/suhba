@@ -65,6 +65,9 @@ abstract final class AppRoutes {
   static String source(String id) => '/sources/${_id(id)}';
   static const search = '/search';
   static const about = '$settings/about';
+
+  /// Reading history opened from Settings, so Back returns there.
+  static const settingsHistory = '$settings/history';
   static const sourcesDirectory = '$settings/sources';
 
   /// Developer-only design system gallery (debug builds).

@@ -67,6 +67,11 @@ GoRouter buildAppRouter({String initialLocation = AppRoutes.home}) {
             pageBuilder: (context, state) =>
                 fadeThroughPage(context, state, const SourcesPage()),
           ),
+          GoRoute(
+            path: 'history',
+            pageBuilder: (context, state) =>
+                fadeThroughPage(context, state, const ReadingHistoryPage()),
+          ),
           if (kDebugMode)
             GoRoute(
               path: 'design-gallery',

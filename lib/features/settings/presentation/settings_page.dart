@@ -141,14 +141,14 @@ class SettingsPage extends ConsumerWidget {
             leading: const Icon(Icons.info_outline),
             title: Text(l10n.settingsAbout),
             trailing: const Icon(Icons.chevron_right),
-            onTap: () => context.go(AppRoutes.about),
+            onTap: () => context.push(AppRoutes.about),
           ),
           ListTile(
             contentPadding: EdgeInsets.zero,
             leading: const Icon(Icons.menu_book_outlined),
             title: Text(l10n.settingsSources),
             trailing: const Icon(Icons.chevron_right),
-            onTap: () => context.go(AppRoutes.sourcesDirectory),
+            onTap: () => context.push(AppRoutes.sourcesDirectory),
           ),
           if (kDebugMode)
             ListTile(
@@ -156,7 +156,7 @@ class SettingsPage extends ConsumerWidget {
               leading: const Icon(Icons.palette_outlined),
               title: Text(l10n.designGalleryTitle),
               trailing: const Icon(Icons.chevron_right),
-              onTap: () => context.go(AppRoutes.designGallery),
+              onTap: () => context.push(AppRoutes.designGallery),
             ),
         ],
       ),

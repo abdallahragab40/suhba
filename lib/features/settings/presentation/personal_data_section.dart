@@ -34,7 +34,7 @@ class PersonalDataSection extends ConsumerWidget {
           leading: const Icon(Icons.history),
           title: Text(l10n.historyTitle),
           trailing: const Icon(Icons.chevron_right),
-          onTap: () => context.go(AppRoutes.readingHistory),
+          onTap: () => context.push(AppRoutes.settingsHistory),
         ),
         Builder(
           builder: (tile) => ListTile(
