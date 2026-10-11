@@ -22,6 +22,15 @@ abstract class CompanionCategory with _$CompanionCategory {
 
     /// What defines the category, with its sources.
     ContentBlock? basis,
+
+    /// Every companion in the content has been checked against the
+    /// category: anyone not a member is certainly not one, except those in
+    /// [contested].
+    @Default(false) bool complete,
+
+    /// Companions whose membership the sources dispute; never offered as
+    /// a member or as a non-member.
+    @Default(<String>[]) List<String> contested,
   }) = _CompanionCategory;
 }
 

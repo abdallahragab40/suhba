@@ -274,5 +274,8 @@
     ],
     "authoredBy": "draft-revision-4",
     "coverage": "complete"
-  }
+  },
+  "companionIds": [
+    "hudhayfah-ibn-al-yaman"
+  ]
 }

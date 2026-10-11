@@ -15,7 +15,12 @@ T _$identity<T>(T value) => value;
 mixin _$CompanionCategory {
 
  String get id; LocalizedText get name; int get order; ReviewInfo get review; LocalizedText? get description;/// What defines the category, with its sources.
- ContentBlock? get basis;
+ ContentBlock? get basis;/// Every companion in the content has been checked against the
+/// category: anyone not a member is certainly not one, except those in
+/// [contested].
+ bool get complete;/// Companions whose membership the sources dispute; never offered as
+/// a member or as a non-member.
+ List<String> get contested;
 /// Create a copy of CompanionCategory
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -26,16 +31,16 @@ $CompanionCategoryCopyWith<CompanionCategory> get copyWith => _$CompanionCategor
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CompanionCategory&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.order, order) || other.order == order)&&(identical(other.review, review) || other.review == review)&&(identical(other.description, description) || other.description == description)&&(identical(other.basis, basis) || other.basis == basis));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CompanionCategory&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.order, order) || other.order == order)&&(identical(other.review, review) || other.review == review)&&(identical(other.description, description) || other.description == description)&&(identical(other.basis, basis) || other.basis == basis)&&(identical(other.complete, complete) || other.complete == complete)&&const DeepCollectionEquality().equals(other.contested, contested));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,id,name,order,review,description,basis);
+int get hashCode => Object.hash(runtimeType,id,name,order,review,description,basis,complete,const DeepCollectionEquality().hash(contested));
 
 @override
 String toString() {
-  return 'CompanionCategory(id: $id, name: $name, order: $order, review: $review, description: $description, basis: $basis)';
+  return 'CompanionCategory(id: $id, name: $name, order: $order, review: $review, description: $description, basis: $basis, complete: $complete, contested: $contested)';
 }
 
 
@@ -46,7 +51,7 @@ abstract mixin class $CompanionCategoryCopyWith<$Res>  {
   factory $CompanionCategoryCopyWith(CompanionCategory value, $Res Function(CompanionCategory) _then) = _$CompanionCategoryCopyWithImpl;
 @useResult
 $Res call({
- String id, LocalizedText name, int order, ReviewInfo review, LocalizedText? description, ContentBlock? basis
+ String id, LocalizedText name, int order, ReviewInfo review, LocalizedText? description, ContentBlock? basis, bool complete, List<String> contested
 });
 
 
@@ -63,7 +68,7 @@ class _$CompanionCategoryCopyWithImpl<$Res>
 
 /// Create a copy of CompanionCategory
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? order = null,Object? review = null,Object? description = freezed,Object? basis = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? order = null,Object? review = null,Object? description = freezed,Object? basis = freezed,Object? complete = null,Object? contested = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -71,7 +76,9 @@ as LocalizedText,order: null == order ? _self.order : order // ignore: cast_null
 as int,review: null == review ? _self.review : review // ignore: cast_nullable_to_non_nullable
 as ReviewInfo,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as LocalizedText?,basis: freezed == basis ? _self.basis : basis // ignore: cast_nullable_to_non_nullable
-as ContentBlock?,
+as ContentBlock?,complete: null == complete ? _self.complete : complete // ignore: cast_nullable_to_non_nullable
+as bool,contested: null == contested ? _self.contested : contested // ignore: cast_nullable_to_non_nullable
+as List<String>,
   ));
 }
 /// Create a copy of CompanionCategory
@@ -198,10 +205,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  LocalizedText name,  int order,  ReviewInfo review,  LocalizedText? description,  ContentBlock? basis)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  LocalizedText name,  int order,  ReviewInfo review,  LocalizedText? description,  ContentBlock? basis,  bool complete,  List<String> contested)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CompanionCategory() when $default != null:
-return $default(_that.id,_that.name,_that.order,_that.review,_that.description,_that.basis);case _:
+return $default(_that.id,_that.name,_that.order,_that.review,_that.description,_that.basis,_that.complete,_that.contested);case _:
   return orElse();
 
 }
@@ -219,10 +226,10 @@ return $default(_that.id,_that.name,_that.order,_that.review,_that.description,_
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  LocalizedText name,  int order,  ReviewInfo review,  LocalizedText? description,  ContentBlock? basis)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  LocalizedText name,  int order,  ReviewInfo review,  LocalizedText? description,  ContentBlock? basis,  bool complete,  List<String> contested)  $default,) {final _that = this;
 switch (_that) {
 case _CompanionCategory():
-return $default(_that.id,_that.name,_that.order,_that.review,_that.description,_that.basis);case _:
+return $default(_that.id,_that.name,_that.order,_that.review,_that.description,_that.basis,_that.complete,_that.contested);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -239,10 +246,10 @@ return $default(_that.id,_that.name,_that.order,_that.review,_that.description,_
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  LocalizedText name,  int order,  ReviewInfo review,  LocalizedText? description,  ContentBlock? basis)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  LocalizedText name,  int order,  ReviewInfo review,  LocalizedText? description,  ContentBlock? basis,  bool complete,  List<String> contested)?  $default,) {final _that = this;
 switch (_that) {
 case _CompanionCategory() when $default != null:
-return $default(_that.id,_that.name,_that.order,_that.review,_that.description,_that.basis);case _:
+return $default(_that.id,_that.name,_that.order,_that.review,_that.description,_that.basis,_that.complete,_that.contested);case _:
   return null;
 
 }
@@ -254,7 +261,7 @@ return $default(_that.id,_that.name,_that.order,_that.review,_that.description,_
 
 
 class _CompanionCategory implements CompanionCategory {
-  const _CompanionCategory({required this.id, required this.name, required this.order, required this.review, this.description, this.basis});
+  const _CompanionCategory({required this.id, required this.name, required this.order, required this.review, this.description, this.basis, this.complete = false, final  List<String> contested = const <String>[]}): _contested = contested;
   
 
 @override final  String id;
@@ -264,6 +271,21 @@ class _CompanionCategory implements CompanionCategory {
 @override final  LocalizedText? description;
 /// What defines the category, with its sources.
 @override final  ContentBlock? basis;
+/// Every companion in the content has been checked against the
+/// category: anyone not a member is certainly not one, except those in
+/// [contested].
+@override@JsonKey() final  bool complete;
+/// Companions whose membership the sources dispute; never offered as
+/// a member or as a non-member.
+ final  List<String> _contested;
+/// Companions whose membership the sources dispute; never offered as
+/// a member or as a non-member.
+@override@JsonKey() List<String> get contested {
+  if (_contested is EqualUnmodifiableListView) return _contested;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_contested);
+}
+
 
 /// Create a copy of CompanionCategory
 /// with the given fields replaced by the non-null parameter values.
@@ -275,16 +297,16 @@ _$CompanionCategoryCopyWith<_CompanionCategory> get copyWith => __$CompanionCate
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CompanionCategory&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.order, order) || other.order == order)&&(identical(other.review, review) || other.review == review)&&(identical(other.description, description) || other.description == description)&&(identical(other.basis, basis) || other.basis == basis));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CompanionCategory&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.order, order) || other.order == order)&&(identical(other.review, review) || other.review == review)&&(identical(other.description, description) || other.description == description)&&(identical(other.basis, basis) || other.basis == basis)&&(identical(other.complete, complete) || other.complete == complete)&&const DeepCollectionEquality().equals(other._contested, _contested));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,id,name,order,review,description,basis);
+int get hashCode => Object.hash(runtimeType,id,name,order,review,description,basis,complete,const DeepCollectionEquality().hash(_contested));
 
 @override
 String toString() {
-  return 'CompanionCategory(id: $id, name: $name, order: $order, review: $review, description: $description, basis: $basis)';
+  return 'CompanionCategory(id: $id, name: $name, order: $order, review: $review, description: $description, basis: $basis, complete: $complete, contested: $contested)';
 }
 
 
@@ -295,7 +317,7 @@ abstract mixin class _$CompanionCategoryCopyWith<$Res> implements $CompanionCate
   factory _$CompanionCategoryCopyWith(_CompanionCategory value, $Res Function(_CompanionCategory) _then) = __$CompanionCategoryCopyWithImpl;
 @override @useResult
 $Res call({
- String id, LocalizedText name, int order, ReviewInfo review, LocalizedText? description, ContentBlock? basis
+ String id, LocalizedText name, int order, ReviewInfo review, LocalizedText? description, ContentBlock? basis, bool complete, List<String> contested
 });
 
 
@@ -312,7 +334,7 @@ class __$CompanionCategoryCopyWithImpl<$Res>
 
 /// Create a copy of CompanionCategory
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? order = null,Object? review = null,Object? description = freezed,Object? basis = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? order = null,Object? review = null,Object? description = freezed,Object? basis = freezed,Object? complete = null,Object? contested = null,}) {
   return _then(_CompanionCategory(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -320,7 +342,9 @@ as LocalizedText,order: null == order ? _self.order : order // ignore: cast_null
 as int,review: null == review ? _self.review : review // ignore: cast_nullable_to_non_nullable
 as ReviewInfo,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as LocalizedText?,basis: freezed == basis ? _self.basis : basis // ignore: cast_nullable_to_non_nullable
-as ContentBlock?,
+as ContentBlock?,complete: null == complete ? _self.complete : complete // ignore: cast_nullable_to_non_nullable
+as bool,contested: null == contested ? _self._contested : contested // ignore: cast_nullable_to_non_nullable
+as List<String>,
   ));
 }
 

@@ -413,5 +413,8 @@
     "coverage": "sample",
     "authoredBy": "short-profiles-1"
   },
-  "storyIds": []
+  "storyIds": [
+    "day-of-badr",
+    "the-archers-of-uhud"
+  ]
 }

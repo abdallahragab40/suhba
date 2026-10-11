@@ -437,5 +437,11 @@
     ],
     "authoredBy": "draft-revision-4",
     "coverage": "complete"
-  }
+  },
+  "companionIds": [
+    "zayd-ibn-harithah",
+    "musab-ibn-umayr",
+    "sad-ibn-muadh",
+    "umm-salamah"
+  ]
 }

@@ -35,7 +35,8 @@
             "hadithNumber": "4649"
           }
         ]
-      }
+      },
+      "complete": true
     },
     {
       "id": "khulafa-rashidun",
@@ -109,7 +110,8 @@
             "page": "420"
           }
         ]
-      }
+      },
+      "complete": true
     },
     {
       "id": "muhajirun",
@@ -124,6 +126,37 @@
       },
       "description": {
         "ar": "الصحابة الذين هاجروا من مكة إلى المدينة."
+      },
+      "complete": true,
+      "contested": [
+        "usamah-ibn-zayd",
+        "abdullah-ibn-abbas",
+        "hudhayfah-ibn-al-yaman"
+      ],
+      "basis": {
+        "type": "paragraph",
+        "text": {
+          "ar": "الذين هاجروا إلى الله ورسوله، فتركوا ديارهم وأموالهم بمكة إلى المدينة، وسبق بعضهم بالهجرة إلى الحبشة، وأثنى عليهم القرآن مع الأنصار."
+        },
+        "reliability": "established",
+        "citations": [
+          {
+            "sourceId": "quran",
+            "locatorStatus": "complete",
+            "quranRef": {
+              "surah": 59,
+              "ayahFrom": 8
+            }
+          },
+          {
+            "sourceId": "quran",
+            "locatorStatus": "complete",
+            "quranRef": {
+              "surah": 9,
+              "ayahFrom": 100
+            }
+          }
+        ]
       }
     },
     {
@@ -161,7 +194,11 @@
             "hadithNumber": "3783"
           }
         ]
-      }
+      },
+      "complete": true,
+      "contested": [
+        "hudhayfah-ibn-al-yaman"
+      ]
     },
     {
       "id": "ahl-badr",
@@ -198,7 +235,14 @@
             "hadithNumber": "3081"
           }
         ]
-      }
+      },
+      "complete": true,
+      "contested": [
+        "uthman",
+        "talha",
+        "said-ibn-zayd",
+        "anas-ibn-malik"
+      ]
     },
     {
       "id": "ummahat-al-muminin",
@@ -230,7 +274,8 @@
             }
           }
         ]
-      }
+      },
+      "complete": true
     }
   ]
 }

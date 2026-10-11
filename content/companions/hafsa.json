@@ -61,6 +61,23 @@
           "hadithNumber": "4005"
         }
       ]
+    },
+    {
+      "categoryId": "muhajirun",
+      "citations": [
+        {
+          "sourceId": "istiab",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "1811"
+        },
+        {
+          "sourceId": "al-bidaya",
+          "locatorStatus": "complete",
+          "volume": 11,
+          "page": "172"
+        }
+      ]
     }
   ],
   "relations": [
@@ -341,5 +358,7 @@
     "authoredBy": "short-profiles-1"
   },
   "atAGlance": [],
-  "storyIds": []
+  "storyIds": [
+    "jam-al-quran"
+  ]
 }

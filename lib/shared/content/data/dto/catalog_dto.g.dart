@@ -17,6 +17,8 @@ _CategoryDto _$CategoryDtoFromJson(Map<String, dynamic> json) =>
           'review',
           'description',
           'basis',
+          'complete',
+          'contested',
         ],
       );
       final val = _CategoryDto(
@@ -42,6 +44,13 @@ _CategoryDto _$CategoryDtoFromJson(Map<String, dynamic> json) =>
               ? null
               : ContentBlockDto.fromJson(v as Map<String, dynamic>),
         ),
+        complete: $checkedConvert('complete', (v) => v as bool? ?? false),
+        contested: $checkedConvert(
+          'contested',
+          (v) =>
+              (v as List<dynamic>?)?.map((e) => e as String).toList() ??
+              const <String>[],
+        ),
       );
       return val;
     });
@@ -54,6 +63,8 @@ Map<String, dynamic> _$CategoryDtoToJson(_CategoryDto instance) =>
       'review': instance.review.toJson(),
       'description': ?instance.description?.toJson(),
       'basis': ?instance.basis?.toJson(),
+      'complete': instance.complete,
+      'contested': instance.contested,
     };
 
 _HistoricalEventDto _$HistoricalEventDtoFromJson(Map<String, dynamic> json) =>

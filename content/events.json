@@ -224,6 +224,18 @@
             "ar": "عثمان بن عفان"
           },
           "companionId": "uthman"
+        },
+        {
+          "displayName": {
+            "ar": "الزبير بن العوام"
+          },
+          "companionId": "zubayr"
+        },
+        {
+          "displayName": {
+            "ar": "عبد الرحمن بن عوف"
+          },
+          "companionId": "abd-al-rahman-ibn-awf"
         }
       ],
       "placeIds": [
@@ -470,7 +482,15 @@
       },
       "outcome": {
         "ar": "أرسل النبي ﷺ معهم مصعب بن عمير يعلّمهم القرآن."
-      }
+      },
+      "participants": [
+        {
+          "displayName": {
+            "ar": "مصعب بن عمير"
+          },
+          "companionId": "musab-ibn-umayr"
+        }
+      ]
     },
     {
       "id": "second-aqabah",
@@ -591,6 +611,24 @@
             "ar": "عبد الله بن أريقط"
           },
           "personId": "abdullah-ibn-uraiqit"
+        },
+        {
+          "displayName": {
+            "ar": "علي بن أبي طالب"
+          },
+          "companionId": "ali"
+        },
+        {
+          "displayName": {
+            "ar": "أسماء بنت أبي بكر"
+          },
+          "companionId": "asma-bint-abi-bakr"
+        },
+        {
+          "displayName": {
+            "ar": "أبو أيوب الأنصاري"
+          },
+          "companionId": "abu-ayyub-al-ansari"
         }
       ],
       "placeIds": [
@@ -688,6 +726,12 @@
             "ar": "عبد الرحمن بن عوف"
           },
           "companionId": "abd-al-rahman-ibn-awf"
+        },
+        {
+          "displayName": {
+            "ar": "أبو عبيدة بن الجراح"
+          },
+          "companionId": "abu-ubaydah"
         }
       ],
       "placeIds": [
@@ -861,6 +905,96 @@
             "ar": "عمر بن الخطاب"
           },
           "companionId": "umar"
+        },
+        {
+          "displayName": {
+            "ar": "علي بن أبي طالب"
+          },
+          "companionId": "ali"
+        },
+        {
+          "displayName": {
+            "ar": "الزبير بن العوام"
+          },
+          "companionId": "zubayr"
+        },
+        {
+          "displayName": {
+            "ar": "عبد الرحمن بن عوف"
+          },
+          "companionId": "abd-al-rahman-ibn-awf"
+        },
+        {
+          "displayName": {
+            "ar": "سعد بن أبي وقاص"
+          },
+          "companionId": "sad-ibn-abi-waqqas"
+        },
+        {
+          "displayName": {
+            "ar": "أبو عبيدة بن الجراح"
+          },
+          "companionId": "abu-ubaydah"
+        },
+        {
+          "displayName": {
+            "ar": "بلال بن رباح"
+          },
+          "companionId": "bilal"
+        },
+        {
+          "displayName": {
+            "ar": "حمزة بن عبد المطلب"
+          },
+          "companionId": "hamzah"
+        },
+        {
+          "displayName": {
+            "ar": "عمار بن ياسر"
+          },
+          "companionId": "ammar-ibn-yasir"
+        },
+        {
+          "displayName": {
+            "ar": "خباب بن الأرت"
+          },
+          "companionId": "khabbab-ibn-al-aratt"
+        },
+        {
+          "displayName": {
+            "ar": "معاذ بن جبل"
+          },
+          "companionId": "muadh-ibn-jabal"
+        },
+        {
+          "displayName": {
+            "ar": "عبد الله بن مسعود"
+          },
+          "companionId": "abdullah-ibn-masud"
+        },
+        {
+          "displayName": {
+            "ar": "أُبيّ بن كعب"
+          },
+          "companionId": "ubayy-ibn-kab"
+        },
+        {
+          "displayName": {
+            "ar": "سعد بن معاذ"
+          },
+          "companionId": "sad-ibn-muadh"
+        },
+        {
+          "displayName": {
+            "ar": "أبو أيوب الأنصاري"
+          },
+          "companionId": "abu-ayyub-al-ansari"
+        },
+        {
+          "displayName": {
+            "ar": "عبد الله بن رواحة"
+          },
+          "companionId": "abdullah-ibn-rawahah"
         }
       ],
       "placeIds": [
@@ -933,7 +1067,57 @@
       },
       "outcome": {
         "ar": "استُشهد فيها عدد من الصحابة، منهم حمزة بن عبد المطلب، ونزلت فيها آيات من سورة آل عمران."
-      }
+      },
+      "participants": [
+        {
+          "displayName": {
+            "ar": "طلحة بن عبيد الله"
+          },
+          "companionId": "talha"
+        },
+        {
+          "displayName": {
+            "ar": "عبد الرحمن بن عوف"
+          },
+          "companionId": "abd-al-rahman-ibn-awf"
+        },
+        {
+          "displayName": {
+            "ar": "سعد بن أبي وقاص"
+          },
+          "companionId": "sad-ibn-abi-waqqas"
+        },
+        {
+          "displayName": {
+            "ar": "سعيد بن زيد"
+          },
+          "companionId": "said-ibn-zayd"
+        },
+        {
+          "displayName": {
+            "ar": "أبو عبيدة بن الجراح"
+          },
+          "companionId": "abu-ubaydah"
+        },
+        {
+          "displayName": {
+            "ar": "حمزة بن عبد المطلب"
+          },
+          "companionId": "hamzah"
+        },
+        {
+          "displayName": {
+            "ar": "مصعب بن عمير"
+          },
+          "companionId": "musab-ibn-umayr"
+        },
+        {
+          "displayName": {
+            "ar": "حذيفة بن اليمان"
+          },
+          "companionId": "hudhayfah-ibn-al-yaman"
+        }
+      ]
     },
     {
       "id": "khandaq",
@@ -985,7 +1169,39 @@
       },
       "outcome": {
         "ar": "لم تغزُ قريش المدينة بعدها."
-      }
+      },
+      "participants": [
+        {
+          "displayName": {
+            "ar": "الزبير بن العوام"
+          },
+          "companionId": "zubayr"
+        },
+        {
+          "displayName": {
+            "ar": "سعد بن معاذ"
+          },
+          "companionId": "sad-ibn-muadh"
+        },
+        {
+          "displayName": {
+            "ar": "سلمان الفارسي"
+          },
+          "companionId": "salman-al-farisi"
+        },
+        {
+          "displayName": {
+            "ar": "عبد الله بن عمر"
+          },
+          "companionId": "abdullah-ibn-umar"
+        },
+        {
+          "displayName": {
+            "ar": "حذيفة بن اليمان"
+          },
+          "companionId": "hudhayfah-ibn-al-yaman"
+        }
+      ]
     },
     {
       "id": "letters-to-kings",
@@ -1134,6 +1350,30 @@
             "ar": "عثمان بن عفان"
           },
           "companionId": "uthman"
+        },
+        {
+          "displayName": {
+            "ar": "علي بن أبي طالب"
+          },
+          "companionId": "ali"
+        },
+        {
+          "displayName": {
+            "ar": "طلحة بن عبيد الله"
+          },
+          "companionId": "talha"
+        },
+        {
+          "displayName": {
+            "ar": "سعيد بن زيد"
+          },
+          "companionId": "said-ibn-zayd"
+        },
+        {
+          "displayName": {
+            "ar": "أم سلمة"
+          },
+          "companionId": "umm-salamah"
         }
       ],
       "placeIds": [
@@ -1304,7 +1544,33 @@
       ],
       "outcome": {
         "ar": "رجع الجيش إلى المدينة بعد أن انحاز به خالد."
-      }
+      },
+      "participants": [
+        {
+          "displayName": {
+            "ar": "جعفر بن أبي طالب"
+          },
+          "companionId": "jafar-ibn-abi-talib"
+        },
+        {
+          "displayName": {
+            "ar": "زيد بن حارثة"
+          },
+          "companionId": "zayd-ibn-harithah"
+        },
+        {
+          "displayName": {
+            "ar": "خالد بن الوليد"
+          },
+          "companionId": "khalid-ibn-al-walid"
+        },
+        {
+          "displayName": {
+            "ar": "عبد الله بن رواحة"
+          },
+          "companionId": "abdullah-ibn-rawahah"
+        }
+      ]
     },
     {
       "id": "conquest-of-makkah",
@@ -1382,7 +1648,15 @@
       },
       "outcome": {
         "ar": "دخل كثير من أهل مكة في الإسلام، ومنهم أبو قحافة والد أبي بكر."
-      }
+      },
+      "participants": [
+        {
+          "displayName": {
+            "ar": "الزبير بن العوام"
+          },
+          "companionId": "zubayr"
+        }
+      ]
     },
     {
       "id": "hunayn",
@@ -1496,7 +1770,15 @@
       },
       "outcome": {
         "ar": "عمّ الإسلام أكثر الجزيرة العربية."
-      }
+      },
+      "participants": [
+        {
+          "displayName": {
+            "ar": "أبو عبيدة بن الجراح"
+          },
+          "companionId": "abu-ubaydah"
+        }
+      ]
     },
     {
       "id": "tabuk",
@@ -1552,6 +1834,18 @@
             "ar": "عثمان بن عفان"
           },
           "companionId": "uthman"
+        },
+        {
+          "displayName": {
+            "ar": "أبو بكر الصديق"
+          },
+          "companionId": "abu-bakr"
+        },
+        {
+          "displayName": {
+            "ar": "عبد الرحمن بن عوف"
+          },
+          "companionId": "abd-al-rahman-ibn-awf"
         }
       ],
       "placeIds": [
@@ -1630,7 +1924,15 @@
       ],
       "outcome": {
         "ar": "توفي النبي ﷺ بعدها بنحو ثلاثة أشهر."
-      }
+      },
+      "participants": [
+        {
+          "displayName": {
+            "ar": "سعد بن أبي وقاص"
+          },
+          "companionId": "sad-ibn-abi-waqqas"
+        }
+      ]
     },
     {
       "id": "death-of-the-prophet",
@@ -1697,6 +1999,12 @@
             "ar": "أبو بكر الصديق"
           },
           "companionId": "abu-bakr"
+        },
+        {
+          "displayName": {
+            "ar": "عائشة بنت أبي بكر"
+          },
+          "companionId": "aisha"
         }
       ],
       "placeIds": [
@@ -1767,6 +2075,12 @@
             "ar": "عمر بن الخطاب"
           },
           "companionId": "umar"
+        },
+        {
+          "displayName": {
+            "ar": "أبو عبيدة بن الجراح"
+          },
+          "companionId": "abu-ubaydah"
         }
       ],
       "placeIds": [

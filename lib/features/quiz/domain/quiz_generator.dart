@@ -49,14 +49,6 @@ class QuizGenerator {
 
   static const choiceCount = 4;
 
-  /// Categories whose membership is complete by definition, so anyone not
-  /// listed is certainly not a member.
-  static const closedCategories = {
-    'ashara-mubashshara',
-    'khulafa-rashidun',
-    'ummahat-al-muminin',
-  };
-
   /// Kunyas shared by many (in the content or in the sources), which could
   /// make a wrong answer right.
   static const _commonKunyas = {
@@ -286,11 +278,14 @@ class QuizGenerator {
     ];
   }
 
+  /// Only categories checked against every companion ([complete]), so a
+  /// non-member is certainly not one; disputed members are never used.
   List<QuizQuestion> _memberOf() => [
     for (final cat in content.categories)
-      if (closedCategories.contains(cat.id))
+      if (cat.complete)
         for (final c in content.companions)
-          if (c.memberships.any((m) => m.categoryId == cat.id))
+          if (c.memberships.any((m) => m.categoryId == cat.id) &&
+              !cat.contested.contains(c.id))
             ?_build(
               key: 'member:${cat.id}:${c.id}',
               kind: QuizKind.memberOfCategory,
@@ -298,7 +293,8 @@ class QuizGenerator {
               correct: TextChoice(c.name),
               wrong: [
                 for (final o in content.companions)
-                  if (!o.memberships.any((m) => m.categoryId == cat.id))
+                  if (!o.memberships.any((m) => m.categoryId == cat.id) &&
+                      !cat.contested.contains(o.id))
                     TextChoice(o.name),
               ],
               explanation: cat.description ?? c.summary,

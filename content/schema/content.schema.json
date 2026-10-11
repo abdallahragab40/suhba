@@ -973,6 +973,18 @@
         },
         "basis": {
           "$ref": "#/$defs/contentBlock"
+        },
+        "complete": {
+          "type": "boolean",
+          "description": "Every companion in the content has been checked against the category: anyone not a member is not one, except those in 'contested'."
+        },
+        "contested": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true,
+          "description": "Companions whose membership the sources dispute."
         }
       },
       "additionalProperties": false,

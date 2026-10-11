@@ -67,6 +67,14 @@ void main() {
             final category = content.categories.firstWhere(
               (c) => c.name == q.subject,
             );
+            expect(category.complete, isTrue, reason: where);
+            for (final c in q.choices) {
+              expect(
+                category.contested,
+                isNot(contains(companionNamed(text(c)).id)),
+                reason: '$where: a disputed member is offered',
+              );
+            }
             right = (c) => companionNamed(
               text(c),
             ).memberships.any((m) => m.categoryId == category.id);
@@ -119,6 +127,15 @@ void main() {
         expect(right(q.answer), isTrue, reason: where);
       }
     }
+  });
+
+  test('every category is used, and disputed members never appear', () {
+    final generator = QuizGenerator(content, random: Random(8));
+    final asked = {
+      for (final q in generator.questionsOf(QuizKind.memberOfCategory))
+        q.subject!.ar,
+    };
+    expect(asked, {for (final c in content.categories) c.name.ar});
   });
 
   test('wrong answers never repeat the right one in another form', () {

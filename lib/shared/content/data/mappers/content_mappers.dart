@@ -305,6 +305,8 @@ extension CategoryDtoMapper on CategoryDto {
     review: review.toDomain(),
     description: description?.toDomain(),
     basis: basis?.toDomain(),
+    complete: complete,
+    contested: contested,
   );
 }
 

@@ -64,6 +64,16 @@
           "hadithNumber": "3894"
         }
       ]
+    },
+    {
+      "categoryId": "muhajirun",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3894"
+        }
+      ]
     }
   ],
   "relations": [

@@ -248,6 +248,20 @@
   "titles": [],
   "atAGlance": [],
   "relations": [],
-  "storyIds": [],
-  "memberships": []
+  "storyIds": [
+    "islam-of-abu-dharr"
+  ],
+  "memberships": [
+    {
+      "categoryId": "muhajirun",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "46"
+        }
+      ]
+    }
+  ]
 }

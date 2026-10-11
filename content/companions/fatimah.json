@@ -364,5 +364,23 @@
   },
   "atAGlance": [],
   "storyIds": [],
-  "memberships": []
+  "memberships": [
+    {
+      "categoryId": "muhajirun",
+      "citations": [
+        {
+          "sourceId": "al-bidaya",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "499"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "183"
+        }
+      ]
+    }
+  ]
 }

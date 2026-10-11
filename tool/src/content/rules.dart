@@ -333,6 +333,27 @@ class _Rules {
 
   void _category(Item<CategoryDto> item) {
     _noHonorificInName(item, r'$.name', item.dto.name);
+    final c = item.dto;
+    _refs(
+      item,
+      r'$.contested',
+      c.contested,
+      tree.companionById,
+      ContentKind.companion,
+    );
+    for (var i = 0; i < c.contested.length; i++) {
+      final member = tree.companionById[c.contested[i]]?.dto.memberships.any(
+        (m) => m.categoryId == c.id,
+      );
+      if (member ?? false) {
+        sink.error(
+          'V2',
+          item.file,
+          '\$.contested[$i]',
+          '"${c.contested[i]}" is both a member and contested.',
+        );
+      }
+    }
     final basis = item.dto.basis;
     if (basis == null) return;
     _block(item, r'$.basis', basis);

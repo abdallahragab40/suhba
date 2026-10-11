@@ -311,6 +311,9 @@
   },
   "atAGlance": [],
   "relations": [],
-  "storyIds": [],
+  "storyIds": [
+    "jam-al-quran",
+    "the-trench"
+  ],
   "memberships": []
 }

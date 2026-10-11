@@ -332,6 +332,9 @@
   "titles": [],
   "atAGlance": [],
   "relations": [],
-  "storyIds": [],
+  "storyIds": [
+    "brotherhood-of-the-ansar",
+    "the-trench"
+  ],
   "memberships": []
 }

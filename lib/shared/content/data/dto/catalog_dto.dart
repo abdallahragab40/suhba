@@ -19,6 +19,8 @@ abstract class CategoryDto with _$CategoryDto {
     required ReviewDto review,
     LocalizedTextDto? description,
     ContentBlockDto? basis,
+    @Default(false) bool complete,
+    @Default(<String>[]) List<String> contested,
   }) = _CategoryDto;
 
   factory CategoryDto.fromJson(Map<String, dynamic> json) =>

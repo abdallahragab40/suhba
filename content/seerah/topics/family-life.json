@@ -302,5 +302,8 @@
     ],
     "authoredBy": "draft-revision-4",
     "coverage": "complete"
-  }
+  },
+  "companionIds": [
+    "umm-salamah"
+  ]
 }
