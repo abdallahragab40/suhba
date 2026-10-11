@@ -14,7 +14,6 @@ import 'package:siyar_sahaba/core/design_system/widgets/draft_banner.dart';
 import 'package:siyar_sahaba/core/design_system/widgets/empty_state.dart';
 import 'package:siyar_sahaba/core/design_system/widgets/error_view.dart';
 import 'package:siyar_sahaba/core/design_system/widgets/loading_skeleton.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/outlined_numeral.dart';
 import 'package:siyar_sahaba/core/design_system/widgets/scene_backdrop.dart';
 import 'package:siyar_sahaba/core/design_system/widgets/section_header.dart';
 import 'package:siyar_sahaba/core/format/display_formatter.dart';
@@ -457,7 +456,26 @@ class ChapterJourneyTile extends StatelessWidget {
               width: 64,
               child: Column(
                 children: [
-                  OutlinedNumeral(c.number, size: 44),
+                  // The chapter's place in the sequence, as a solid number
+                  // in a ring: an outlined "١" reads as an empty box.
+                  ExcludeSemantics(
+                    child: Container(
+                      width: 40,
+                      height: 40,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(color: colors.accent, width: 1.5),
+                      ),
+                      child: Text(
+                        format.integer(c.number),
+                        textScaler: TextScaler.noScaling,
+                        style: textTheme.titleMedium?.copyWith(
+                          color: colors.accentText,
+                        ),
+                      ),
+                    ),
+                  ),
                   if (!last)
                     Expanded(
                       child: Center(

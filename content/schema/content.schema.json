@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "content.schema.json",
-  "title": "Siyar al-Sahaba content",
+  "title": "Siyar content",
   "description": "Definitions for every content file. Per-file schemas in this folder point at these.",
   "$defs": {
     "id": {

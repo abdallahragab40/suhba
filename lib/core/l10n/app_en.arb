@@ -1,6 +1,6 @@
 {
   "@@locale": "en",
-  "appTitle": "Siyar al-Sahaba",
+  "appTitle": "Siyar",
   "designGalleryTitle": "Design system gallery",
   "themeModeSystem": "System default",
   "themeModeLight": "Light theme",
@@ -168,7 +168,7 @@
   "settingsAbout": "About and methodology",
   "settingsSources": "Sources",
   "settingsLicenses": "Licences",
-  "aboutIntro": "Siyar al-Sahaba is an educational app presenting the lives and stories of the Companions of the Prophet ﷺ, each attributed to its sources.",
+  "aboutIntro": "Siyar is an educational app presenting the life of the Prophet ﷺ and the lives and stories of his Companions, each attributed to its sources.",
   "aboutMethodTitle": "Methodology",
   "aboutMethodBody": "The app follows the methodology of Ahl al-Sunnah wal-Jama'ah in presenting biography and history. Every statement is attributed to its source, and established facts, reports, disputed matters and the unknown are kept distinct. This version focuses on biography, virtues, achievements and key events, and does not cover the details of the fitna.",
   "aboutReliabilityTitle": "Reliability levels",

@@ -88,7 +88,7 @@ void main() {
         'تنبيه: نص تجريبي لم يراجعه مختص بعد، والمصادر ومواضعها مبدئية.',
       ),
     );
-    expect(lines.last, 'من تطبيق سِيَر الصحابة');
+    expect(lines.last, 'من تطبيق سِيَر');
   });
 
   testApp('sources without a passage offer no sharing', (tester) async {

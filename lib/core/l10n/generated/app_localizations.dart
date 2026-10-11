@@ -101,7 +101,7 @@ abstract class AppLocalizations {
   /// Working app name, shown in the app bar and the task switcher.
   ///
   /// In ar, this message translates to:
-  /// **'سِيَر الصحابة'**
+  /// **'سِيَر'**
   String get appTitle;
 
   /// Title of the developer-facing design system gallery.
@@ -1109,7 +1109,7 @@ abstract class AppLocalizations {
   /// About: introduction.
   ///
   /// In ar, this message translates to:
-  /// **'سِيَر الصحابة تطبيق تعليمي يعرض سير صحابة النبي ﷺ وقصصهم، معزوّةً إلى مصادرها.'**
+  /// **'سِيَر تطبيق تعليمي يعرض سيرة النبي ﷺ وسِيَر أصحابه وقصصهم، معزوّةً كلها إلى مصادرها.'**
   String get aboutIntro;
 
   /// About section.
