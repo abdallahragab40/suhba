@@ -127,7 +127,8 @@ class _Event extends ConsumerWidget {
                         ).kicker.copyWith(color: colors.accentText),
                       ),
                     ),
-                    if (provisional) const DraftBadge(),
+                    if (provisional)
+                      DraftBadge(preliminary: e.review.isPreliminary),
                   ],
                 ),
                 Semantics(

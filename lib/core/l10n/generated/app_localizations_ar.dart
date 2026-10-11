@@ -183,11 +183,11 @@ class AppLocalizationsAr extends AppLocalizations {
   String get draftBadge => 'مسودة — لم يُراجَع';
 
   @override
-  String get draftBannerTitle => 'محتوى تجريبي لم يُراجَع علميًا بعد';
+  String get draftBannerTitle => 'لم يعتمد هذا المحتوى مختص بعد';
 
   @override
   String get draftBannerMessage =>
-      'النصوص والمصادر هنا للتطوير والمراجعة، ولا تُعتمد قبل أن يراجعها مختص.';
+      'النصوص والمصادر هنا مسودة أو خضعت لمراجعة أولية، ولا تُعتمد قبل أن يعتمدها عالم مختص.';
 
   @override
   String get directoryAll => 'الكل';
@@ -323,7 +323,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get citationDraftNotice =>
-      'هذا المحتوى مسودة لم يراجعها مختص بعد؛ التصنيف والمواضع مبدئية.';
+      'لم يعتمد هذا المحتوى مختص بعد؛ التصنيف والمواضع مبدئية.';
 
   @override
   String get reliabilityExplainEstablished =>
@@ -1414,7 +1414,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get shareDraftNotice =>
-      'تنبيه: نص تجريبي لم يراجعه مختص بعد، والمصادر ومواضعها مبدئية.';
+      'تنبيه: نص لم يعتمده مختص بعد، والمصادر ومواضعها مبدئية.';
 
   @override
   String shareFromApp(String appName) {
@@ -1502,4 +1502,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get aboutLicensesLink => 'تراخيص البرمجيات المستخدمة';
+
+  @override
+  String get draftBadgePreliminary => 'مراجعة أولية — لم يعتمدها مختص';
 }

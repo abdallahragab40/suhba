@@ -139,7 +139,7 @@ class _InfographicViewState extends ConsumerState<InfographicView> {
                 style: SahabaTextStyles.of(context).kicker,
               ),
             ),
-            if (provisional) const DraftBadge(),
+            if (provisional) DraftBadge(preliminary: v.review.isPreliminary),
           ],
         ),
         const SizedBox(height: AppSpacing.xs),

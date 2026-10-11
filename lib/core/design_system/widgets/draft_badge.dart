@@ -3,16 +3,21 @@ import 'package:siyar_sahaba/core/design_system/tokens/radii.dart';
 import 'package:siyar_sahaba/core/design_system/tokens/sahaba_colors.dart';
 import 'package:siyar_sahaba/core/l10n/generated/app_localizations.dart';
 
-/// "مسودة — لم يُراجَع": shown on every item whose content a qualified
-/// reviewer has not approved, so a draft is never presented as
-/// authenticated.
+/// Shown on every item whose content a qualified reviewer has not
+/// approved, so it is never presented as authenticated: "مسودة — لم
+/// يُراجَع", or "مراجعة أولية — لم يعتمدها مختص" after a preliminary
+/// review.
 class DraftBadge extends StatelessWidget {
-  const DraftBadge({super.key});
+  const DraftBadge({this.preliminary = false, super.key});
+
+  /// The item had a preliminary review (see `ReviewStatus`).
+  final bool preliminary;
 
   @override
   Widget build(BuildContext context) {
     final colors = SahabaColors.of(context);
-    final label = AppLocalizations.of(context).draftBadge;
+    final l10n = AppLocalizations.of(context);
+    final label = preliminary ? l10n.draftBadgePreliminary : l10n.draftBadge;
     return Semantics(
       label: label,
       excludeSemantics: true,

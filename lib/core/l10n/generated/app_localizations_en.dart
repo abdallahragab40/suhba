@@ -185,12 +185,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get draftBadge => 'Draft — not reviewed';
 
   @override
-  String get draftBannerTitle =>
-      'Sample content, not yet academically reviewed';
+  String get draftBannerTitle => 'Not yet approved by a specialist';
 
   @override
   String get draftBannerMessage =>
-      'The texts and sources here are for development and review, and should not be relied on until a qualified reviewer has checked them.';
+      'The texts and sources here are drafts or have had a preliminary review; do not rely on them until a qualified scholar approves them.';
 
   @override
   String get directoryAll => 'All';
@@ -326,7 +325,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get citationDraftNotice =>
-      'This content is a draft not yet checked by a qualified reviewer; the classification and locations are provisional.';
+      'Not yet approved by a specialist; the grading and locations are provisional.';
 
   @override
   String get reliabilityExplainEstablished =>
@@ -1409,7 +1408,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get shareDraftNotice =>
-      'Note: draft text not yet reviewed by a specialist; sources and locations are provisional.';
+      'Note: text not yet approved by a specialist; sources and locations are provisional.';
 
   @override
   String shareFromApp(String appName) {
@@ -1498,4 +1497,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutLicensesLink => 'Open-source licences';
+
+  @override
+  String get draftBadgePreliminary => 'Preliminary review — not yet approved';
 }

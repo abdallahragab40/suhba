@@ -116,14 +116,14 @@ void main() {
           .provisional,
       isTrue,
     );
-    expect(find.textContaining('مسودة لم يراجعها مختص'), findsOneWidget);
+    expect(find.textContaining('لم يعتمد هذا المحتوى مختص'), findsOneWidget);
   });
 
   testWidgets('approved content has no draft notice', (tester) async {
     await pumpSheet(tester, const [
       Citation(sourceId: 'siyar', locatorStatus: LocatorStatus.pending),
     ]);
-    expect(find.textContaining('مسودة'), findsNothing);
+    expect(find.textContaining('لم يعتمد'), findsNothing);
   });
 
   testWidgets('the share action meets the accessibility guidelines', (

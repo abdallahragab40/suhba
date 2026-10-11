@@ -292,7 +292,8 @@ class SeerahOpening extends ConsumerWidget {
                                 ).kicker.copyWith(color: Palette.goldOnInk),
                               ),
                             ),
-                            if (!s.review.isApproved) const DraftBadge(),
+                            if (!s.review.isApproved)
+                              DraftBadge(preliminary: s.review.isPreliminary),
                           ],
                         ),
                         const SizedBox(height: AppSpacing.sm),

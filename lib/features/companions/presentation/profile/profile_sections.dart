@@ -186,7 +186,7 @@ class StoryList extends ConsumerWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       if (!s.review.isApproved) ...[
-                        const DraftBadge(),
+                        DraftBadge(preliminary: s.review.isPreliminary),
                         const SizedBox(height: AppSpacing.xs),
                       ],
                       Text(s.title.of(context), style: textTheme.titleLarge),

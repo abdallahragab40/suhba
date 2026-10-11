@@ -16,6 +16,7 @@ class CompanionCard extends StatelessWidget {
     this.tags = const [],
     this.ordinal,
     this.isDraft = false,
+    this.isPreliminary = false,
     this.onTap,
     this.heroTag,
     super.key,
@@ -33,6 +34,9 @@ class CompanionCard extends StatelessWidget {
   /// Decorative watermark (the list position), if any.
   final int? ordinal;
   final bool isDraft;
+
+  /// A draft that had a preliminary review.
+  final bool isPreliminary;
   final VoidCallback? onTap;
 
   /// Shared with the profile header for the hero transition.
@@ -82,7 +86,7 @@ class CompanionCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     if (isDraft) ...[
-                      const DraftBadge(),
+                      DraftBadge(preliminary: isPreliminary),
                       const SizedBox(height: AppSpacing.xs),
                     ],
                     nameText,

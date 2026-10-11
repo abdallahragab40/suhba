@@ -13,7 +13,7 @@
     "ar": "أحد العشرة المبشرين بالجنة، ومن المهاجرين."
   },
   "review": {
-    "status": "draft",
+    "status": "preliminaryReview",
     "editorialFlags": [
       "needsLocators"
     ],
@@ -741,14 +741,15 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "ويروي البخاري أنه أُتي بطعام وهو صائم، فذكر مصعب بن عمير وحمزة وأنهما خير منه، وخشي أن تكون حسناتهم قد عُجّلت لهم بما بُسط لهم من الدنيا، فجعل يبكي حتى ترك الطعام."
+            "ar": "ويروي الذهبي عن جعفر بن بُرقان أنه بلغه أن عبد الرحمن أعتق ثلاثين ألف بيت، وهو بلاغ لا إسناد متصل له، فيُذكر على أنه رواية."
           },
           "reliability": "reported",
           "citations": [
             {
-              "sourceId": "bukhari",
+              "sourceId": "siyar",
               "locatorStatus": "complete",
-              "hadithNumber": "1275"
+              "volume": 1,
+              "page": "92"
             }
           ]
         }

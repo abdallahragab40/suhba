@@ -42,8 +42,8 @@
   "quranRefRange": "{surah} {from}–{to}",
   "percent": "{value}%",
   "draftBadge": "Draft — not reviewed",
-  "draftBannerTitle": "Sample content, not yet academically reviewed",
-  "draftBannerMessage": "The texts and sources here are for development and review, and should not be relied on until a qualified reviewer has checked them.",
+  "draftBannerTitle": "Not yet approved by a specialist",
+  "draftBannerMessage": "The texts and sources here are drafts or have had a preliminary review; do not rely on them until a qualified scholar approves them.",
   "directoryAll": "All",
   "directoryEmpty": "No companions in this category yet.",
   "companionNotFound": "This companion could not be found.",
@@ -84,7 +84,7 @@
   "gradeHasan": "Hasan",
   "gradeDaif": "Da'if",
   "citationUnknownSource": "Unknown source",
-  "citationDraftNotice": "This content is a draft not yet checked by a qualified reviewer; the classification and locations are provisional.",
+  "citationDraftNotice": "Not yet approved by a specialist; the grading and locations are provisional.",
   "reliabilityExplainEstablished": "From the Qur'an, a sahih or hasan hadith, or agreed by the historians.",
   "reliabilityExplainReported": "Reported in sira and history works; its chain has not been assessed.",
   "reliabilityExplainDisputed": "Reports differ or scholars disagree.",
@@ -399,7 +399,7 @@
   "citationShareAction": "Share this passage with its sources",
   "shareSourcesHeading": "Sources:",
   "shareReliability": "Reliability: {label}",
-  "shareDraftNotice": "Note: draft text not yet reviewed by a specialist; sources and locations are provisional.",
+  "shareDraftNotice": "Note: text not yet approved by a specialist; sources and locations are provisional.",
   "shareFromApp": "From the {appName} app",
   "settingsExport": "Export reading data",
   "settingsExportSubtitle": "A file with your saved items and reading positions, to keep or move to another device.",
@@ -423,5 +423,6 @@
   "themeShortSystem": "Automatic",
   "themeShortLight": "Light",
   "themeShortDark": "Dark",
-  "aboutLicensesLink": "Open-source licences"
+  "aboutLicensesLink": "Open-source licences",
+  "draftBadgePreliminary": "Preliminary review — not yet approved"
 }

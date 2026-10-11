@@ -158,7 +158,8 @@ class _Place extends ConsumerWidget {
                           ).kicker.copyWith(color: colors.accentText),
                         ),
                       ),
-                      if (provisional) const DraftBadge(),
+                      if (provisional)
+                        DraftBadge(preliminary: p.review.isPreliminary),
                     ],
                   ),
                   const SizedBox(height: AppSpacing.sm),

@@ -13,7 +13,7 @@
     "ar": "ثالث الخلفاء الراشدين، وأحد العشرة المبشرين بالجنة، ومن المهاجرين."
   },
   "review": {
-    "status": "draft",
+    "status": "preliminaryReview",
     "editorialFlags": [
       "needsLocators",
       "fitnaAdjacent"
@@ -1516,12 +1516,18 @@
             },
             {
               "text": {
-                "ar": "أقوال أخرى بين الثمانين والتسعين، ذكرها الذهبي."
+                "ar": "أقوال أخرى، منها خمس وسبعون سنة على قول أبي معشر، وقيل أكثر من الثمانين، ذكرها ابن سعد والذهبي."
               },
               "citations": [
                 {
                   "sourceId": "siyar",
                   "locatorStatus": "pending"
+                },
+                {
+                  "sourceId": "tabaqat-ibn-sad",
+                  "locatorStatus": "complete",
+                  "volume": 3,
+                  "page": "57"
                 }
               ]
             }

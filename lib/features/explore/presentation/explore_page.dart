@@ -242,7 +242,8 @@ class _VisualTile extends StatelessWidget {
                   ],
                 ),
               ),
-              if (!v.review.isApproved) const DraftBadge(),
+              if (!v.review.isApproved)
+                DraftBadge(preliminary: v.review.isPreliminary),
             ],
           ),
         ),

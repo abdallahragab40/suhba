@@ -341,6 +341,7 @@
           "enum": [
             "draft",
             "sourced",
+            "preliminaryReview",
             "inReview",
             "approved",
             "rejected"

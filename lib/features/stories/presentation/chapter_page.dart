@@ -132,9 +132,9 @@ class _Chapter extends ConsumerWidget {
       ],
       children: [
         if (provisional) ...[
-          const Align(
+          Align(
             alignment: AlignmentDirectional.centerStart,
-            child: DraftBadge(),
+            child: DraftBadge(preliminary: s.review.isPreliminary),
           ),
           const SizedBox(height: AppSpacing.sm),
         ],

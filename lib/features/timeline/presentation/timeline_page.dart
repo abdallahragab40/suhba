@@ -130,9 +130,9 @@ class _TimelineState extends State<_Timeline> {
                   children: [
                     if (provisional) ...[
                       const SizedBox(height: AppSpacing.sm),
-                      const Align(
+                      Align(
                         alignment: AlignmentDirectional.centerStart,
-                        child: DraftBadge(),
+                        child: DraftBadge(preliminary: c.review.isPreliminary),
                       ),
                     ],
                     for (var g = 0; g < groups.length; g++) ...[

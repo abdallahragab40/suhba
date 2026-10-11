@@ -119,7 +119,7 @@ void main() {
     expect(find.byType(CitationSheet), findsOneWidget);
     expect(find.text('مصادر هذه المعلومة'), findsOneWidget);
     expect(
-      find.textContaining('هذا المحتوى مسودة لم يراجعها مختص'),
+      find.textContaining('لم يعتمد هذا المحتوى مختص بعد'),
       findsOneWidget,
     );
     expect(find.text('الموضع بانتظار التحقق'), findsWidgets);

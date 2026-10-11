@@ -98,7 +98,8 @@ class EventRow extends StatelessWidget {
                 ],
               ),
             ),
-            if (!e.review.isApproved) const DraftBadge(),
+            if (!e.review.isApproved)
+              DraftBadge(preliminary: e.review.isPreliminary),
           ],
         ),
       ),

@@ -129,9 +129,9 @@ class _SectionReader extends ConsumerWidget {
       ],
       children: [
         if (provisional) ...[
-          const Align(
+          Align(
             alignment: AlignmentDirectional.centerStart,
-            child: DraftBadge(),
+            child: DraftBadge(preliminary: c.review.isPreliminary),
           ),
           const SizedBox(height: AppSpacing.sm),
         ],

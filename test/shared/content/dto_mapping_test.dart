@@ -29,7 +29,8 @@ void main() {
         final companion = CompanionDto.fromJson(
           _readJson(file.path),
         ).toDomain();
-        expect(companion.review.status, ReviewStatus.draft, reason: file.path);
+        // Draft or preliminarily reviewed; never approved by the tooling.
+        expect(companion.review.isApproved, isFalse, reason: file.path);
         expect(companion.memberships, isNotEmpty, reason: file.path);
       }
     });

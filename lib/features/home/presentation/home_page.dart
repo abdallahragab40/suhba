@@ -339,23 +339,24 @@ class _FeaturedCompanion extends ConsumerWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              child: Hero(
-                tag: DirectoryPage.heroTag(c.id),
-                child: Material(
-                  type: MaterialType.transparency,
-                  child: Text(
-                    c.name.of(context),
-                    style: CompanionCard.nameStyle(context),
-                  ),
-                ),
-              ),
+        // The review badge on its own line, as on the other cards: beside
+        // the name it does not fit at large text sizes.
+        if (!c.review.isApproved) ...[
+          Align(
+            alignment: AlignmentDirectional.centerStart,
+            child: DraftBadge(preliminary: c.review.isPreliminary),
+          ),
+          const SizedBox(height: AppSpacing.xs),
+        ],
+        Hero(
+          tag: DirectoryPage.heroTag(c.id),
+          child: Material(
+            type: MaterialType.transparency,
+            child: Text(
+              c.name.of(context),
+              style: CompanionCard.nameStyle(context),
             ),
-            if (!c.review.isApproved) const DraftBadge(),
-          ],
+          ),
         ),
         Text(
           companionHonorific(c.gender),

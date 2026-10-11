@@ -355,6 +355,7 @@ Map<String, dynamic> _$ReviewDtoToJson(_ReviewDto instance) =>
 const _$ReviewStatusEnumMap = {
   ReviewStatus.draft: 'draft',
   ReviewStatus.sourced: 'sourced',
+  ReviewStatus.preliminaryReview: 'preliminaryReview',
   ReviewStatus.inReview: 'inReview',
   ReviewStatus.approved: 'approved',
   ReviewStatus.rejected: 'rejected',

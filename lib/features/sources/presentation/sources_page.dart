@@ -109,7 +109,7 @@ class _SourceTile extends StatelessWidget {
             ),
           if (!s.review.isApproved) ...[
             const SizedBox(height: AppSpacing.xxs),
-            const DraftBadge(),
+            DraftBadge(preliminary: s.review.isPreliminary),
           ],
         ],
       ),

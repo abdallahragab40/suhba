@@ -5,7 +5,19 @@ part 'review.freezed.dart';
 /// Where an item is in the editorial workflow. Only [approved] items can be
 /// published, and only with a valid approval record (enforced by
 /// tool/content_validate.dart).
-enum ReviewStatus { draft, sourced, inReview, approved, rejected }
+enum ReviewStatus {
+  draft,
+  sourced,
+
+  /// Checked in a preliminary review: every claim against its cited source
+  /// and every quote against the source text, with problems corrected. Not
+  /// an approval: a qualified scholar must still approve before
+  /// publication.
+  preliminaryReview,
+  inReview,
+  approved,
+  rejected,
+}
 
 /// Editorial markers that need attention before publication.
 enum EditorialFlag {
@@ -56,4 +68,7 @@ abstract class ReviewInfo with _$ReviewInfo {
   const ReviewInfo._();
 
   bool get isApproved => status == ReviewStatus.approved;
+
+  /// Checked in a preliminary review, but not approved.
+  bool get isPreliminary => status == ReviewStatus.preliminaryReview;
 }

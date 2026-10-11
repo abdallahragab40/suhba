@@ -92,7 +92,7 @@ class _StoryOverview extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     if (!s.review.isApproved) ...[
-                      const DraftBadge(),
+                      DraftBadge(preliminary: s.review.isPreliminary),
                       const SizedBox(height: AppSpacing.lg),
                     ],
                     Semantics(

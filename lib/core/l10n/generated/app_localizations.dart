@@ -353,13 +353,13 @@ abstract class AppLocalizations {
   /// Banner shown while the app runs on unreviewed (draft) content.
   ///
   /// In ar, this message translates to:
-  /// **'محتوى تجريبي لم يُراجَع علميًا بعد'**
+  /// **'لم يعتمد هذا المحتوى مختص بعد'**
   String get draftBannerTitle;
 
   /// Explanation under the draft banner.
   ///
   /// In ar, this message translates to:
-  /// **'النصوص والمصادر هنا للتطوير والمراجعة، ولا تُعتمد قبل أن يراجعها مختص.'**
+  /// **'النصوص والمصادر هنا مسودة أو خضعت لمراجعة أولية، ولا تُعتمد قبل أن يعتمدها عالم مختص.'**
   String get draftBannerMessage;
 
   /// Category filter: show every companion.
@@ -605,7 +605,7 @@ abstract class AppLocalizations {
   /// Notice in the citation sheet for draft content.
   ///
   /// In ar, this message translates to:
-  /// **'هذا المحتوى مسودة لم يراجعها مختص بعد؛ التصنيف والمواضع مبدئية.'**
+  /// **'لم يعتمد هذا المحتوى مختص بعد؛ التصنيف والمواضع مبدئية.'**
   String get citationDraftNotice;
 
   /// Explains the established level.
@@ -2495,7 +2495,7 @@ abstract class AppLocalizations {
   /// Shared text: draft warning; always included for unreviewed content.
   ///
   /// In ar, this message translates to:
-  /// **'تنبيه: نص تجريبي لم يراجعه مختص بعد، والمصادر ومواضعها مبدئية.'**
+  /// **'تنبيه: نص لم يعتمده مختص بعد، والمصادر ومواضعها مبدئية.'**
   String get shareDraftNotice;
 
   /// Shared text: last line.
@@ -2641,6 +2641,12 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'تراخيص البرمجيات المستخدمة'**
   String get aboutLicensesLink;
+
+  /// Badge on items that had a preliminary review but no scholar approval.
+  ///
+  /// In ar, this message translates to:
+  /// **'مراجعة أولية — لم يعتمدها مختص'**
+  String get draftBadgePreliminary;
 }
 
 class _AppLocalizationsDelegate

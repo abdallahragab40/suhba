@@ -47,7 +47,7 @@ class ProfileHeader extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   if (!c.review.isApproved) ...[
-                    const DraftBadge(),
+                    DraftBadge(preliminary: c.review.isPreliminary),
                     const SizedBox(height: AppSpacing.sm),
                   ],
                   const SizedBox(height: AppSpacing.xl),

@@ -281,11 +281,11 @@
   "@draftBadge": {
     "description": "Label on every item whose content has not been approved by a qualified reviewer."
   },
-  "draftBannerTitle": "محتوى تجريبي لم يُراجَع علميًا بعد",
+  "draftBannerTitle": "لم يعتمد هذا المحتوى مختص بعد",
   "@draftBannerTitle": {
     "description": "Banner shown while the app runs on unreviewed (draft) content."
   },
-  "draftBannerMessage": "النصوص والمصادر هنا للتطوير والمراجعة، ولا تُعتمد قبل أن يراجعها مختص.",
+  "draftBannerMessage": "النصوص والمصادر هنا مسودة أو خضعت لمراجعة أولية، ولا تُعتمد قبل أن يعتمدها عالم مختص.",
   "@draftBannerMessage": {
     "description": "Explanation under the draft banner."
   },
@@ -485,7 +485,7 @@
   "@citationUnknownSource": {
     "description": "Fallback when a cited source is missing."
   },
-  "citationDraftNotice": "هذا المحتوى مسودة لم يراجعها مختص بعد؛ التصنيف والمواضع مبدئية.",
+  "citationDraftNotice": "لم يعتمد هذا المحتوى مختص بعد؛ التصنيف والمواضع مبدئية.",
   "@citationDraftNotice": {
     "description": "Notice in the citation sheet for draft content."
   },
@@ -1967,7 +1967,7 @@
       }
     }
   },
-  "shareDraftNotice": "تنبيه: نص تجريبي لم يراجعه مختص بعد، والمصادر ومواضعها مبدئية.",
+  "shareDraftNotice": "تنبيه: نص لم يعتمده مختص بعد، والمصادر ومواضعها مبدئية.",
   "@shareDraftNotice": {
     "description": "Shared text: draft warning; always included for unreviewed content."
   },
@@ -2089,5 +2089,9 @@
   "aboutLicensesLink": "تراخيص البرمجيات المستخدمة",
   "@aboutLicensesLink": {
     "description": "About: link to the open-source licence notices."
+  },
+  "draftBadgePreliminary": "مراجعة أولية — لم يعتمدها مختص",
+  "@draftBadgePreliminary": {
+    "description": "Badge on items that had a preliminary review but no scholar approval."
   }
 }

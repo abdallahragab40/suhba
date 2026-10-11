@@ -106,7 +106,7 @@ class SeerahPassageReader extends ConsumerWidget {
                 ).kicker.copyWith(color: colors.accentText),
               ),
             ),
-            if (provisional) const DraftBadge(),
+            if (provisional) DraftBadge(preliminary: review.isPreliminary),
           ],
         ),
         const SizedBox(height: AppSpacing.xxs),
