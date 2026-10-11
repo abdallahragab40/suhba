@@ -1486,4 +1486,16 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get importReadFailed =>
       'The file could not be opened; nothing changed.';
+
+  @override
+  String get themeShortSystem => 'Automatic';
+
+  @override
+  String get themeShortLight => 'Light';
+
+  @override
+  String get themeShortDark => 'Dark';
+
+  @override
+  String get aboutLicensesLink => 'Open-source licences';
 }

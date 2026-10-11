@@ -40,7 +40,14 @@ class SettingsPage extends ConsumerWidget {
     );
 
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.tabSettings)),
+      appBar: AppBar(
+        title: Text(l10n.tabSettings),
+        // Opened above the tabs; if nothing is under it (a direct link),
+        // back still leads somewhere.
+        leading: context.canPop()
+            ? null
+            : BackButton(onPressed: () => context.go(AppRoutes.home)),
+      ),
       body: ListView(
         padding: const EdgeInsetsDirectional.fromSTEB(
           AppSpacing.gutter,
@@ -54,17 +61,24 @@ class SettingsPage extends ConsumerWidget {
             segments: [
               ButtonSegment(
                 value: ThemeMode.system,
-                label: Text(l10n.themeModeSystem),
+                icon: const Icon(Icons.brightness_auto_outlined),
+                label: Text(l10n.themeShortSystem),
+                tooltip: l10n.themeModeSystem,
               ),
               ButtonSegment(
                 value: ThemeMode.light,
-                label: Text(l10n.themeModeLight),
+                icon: const Icon(Icons.light_mode_outlined),
+                label: Text(l10n.themeShortLight),
+                tooltip: l10n.themeModeLight,
               ),
               ButtonSegment(
                 value: ThemeMode.dark,
-                label: Text(l10n.themeModeDark),
+                icon: const Icon(Icons.dark_mode_outlined),
+                label: Text(l10n.themeShortDark),
+                tooltip: l10n.themeModeDark,
               ),
             ],
+            showSelectedIcon: false,
             selected: {mode},
             onSelectionChanged: (s) =>
                 ref.read(themeModeProvider.notifier).select(s.single),
@@ -135,17 +149,6 @@ class SettingsPage extends ConsumerWidget {
             title: Text(l10n.settingsSources),
             trailing: const Icon(Icons.chevron_right),
             onTap: () => context.go(AppRoutes.sourcesDirectory),
-          ),
-          ListTile(
-            contentPadding: EdgeInsets.zero,
-            leading: const Icon(Icons.gavel_outlined),
-            title: Text(l10n.settingsLicenses),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () => showLicensePage(
-              context: context,
-              applicationName: l10n.appTitle,
-              applicationVersion: manifest?.contentVersion,
-            ),
           ),
           if (kDebugMode)
             ListTile(

@@ -1490,4 +1490,16 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get importReadFailed => 'تعذّر فتح الملف، ولم يتغير شيء.';
+
+  @override
+  String get themeShortSystem => 'تلقائي';
+
+  @override
+  String get themeShortLight => 'فاتح';
+
+  @override
+  String get themeShortDark => 'داكن';
+
+  @override
+  String get aboutLicensesLink => 'تراخيص البرمجيات المستخدمة';
 }

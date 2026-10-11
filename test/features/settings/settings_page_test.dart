@@ -22,7 +22,7 @@ void main() {
     final first = AppUnderTest(location: '/settings', settings: store);
     await first.pump(tester);
 
-    await tester.tap(find.text('المظهر الداكن'));
+    await tester.tap(find.text('داكن'));
     await tester.tap(find.text('غربية (123)'));
     await tester.pumpAndSettle();
     expect(find.text('حجم خط القراءة: 19'), findsOneWidget);

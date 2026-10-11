@@ -2073,5 +2073,21 @@
   "importReadFailed": "تعذّر فتح الملف، ولم يتغير شيء.",
   "@importReadFailed": {
     "description": "Import: the chosen file could not be read."
+  },
+  "themeShortSystem": "تلقائي",
+  "@themeShortSystem": {
+    "description": "Settings: short label, follow the system theme."
+  },
+  "themeShortLight": "فاتح",
+  "@themeShortLight": {
+    "description": "Settings: short label, light theme."
+  },
+  "themeShortDark": "داكن",
+  "@themeShortDark": {
+    "description": "Settings: short label, dark theme."
+  },
+  "aboutLicensesLink": "تراخيص البرمجيات المستخدمة",
+  "@aboutLicensesLink": {
+    "description": "About: link to the open-source licence notices."
   }
 }

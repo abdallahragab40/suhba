@@ -102,6 +102,19 @@ class AboutPage extends ConsumerWidget {
             l10n.aboutImagesTitle,
             Text(l10n.aboutImagesBody, style: textTheme.bodyLarge),
           ),
+          const SizedBox(height: AppSpacing.lg),
+          // The notices the open-source packages ask to be shown; kept out
+          // of Settings, one tap away here.
+          Align(
+            alignment: AlignmentDirectional.centerStart,
+            child: TextButton(
+              onPressed: () => showLicensePage(
+                context: context,
+                applicationName: l10n.appTitle,
+              ),
+              child: Text(l10n.aboutLicensesLink),
+            ),
+          ),
         ],
       ),
     );

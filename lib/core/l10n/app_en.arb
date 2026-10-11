@@ -419,5 +419,9 @@
   "importRefusedNewer": "This file was exported by a newer version of the app; update the app and try again.",
   "importRefusedInvalid": "The file has an invalid record ({where}), so nothing was imported.",
   "dialogOk": "OK",
-  "importReadFailed": "The file could not be opened; nothing changed."
+  "importReadFailed": "The file could not be opened; nothing changed.",
+  "themeShortSystem": "Automatic",
+  "themeShortLight": "Light",
+  "themeShortDark": "Dark",
+  "aboutLicensesLink": "Open-source licences"
 }

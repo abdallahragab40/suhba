@@ -7,8 +7,6 @@ import 'package:siyar_sahaba/core/design_system/tokens/typography.dart';
 import 'package:siyar_sahaba/core/design_system/widgets/companion_card.dart';
 import 'package:siyar_sahaba/core/design_system/widgets/draft_badge.dart';
 import 'package:siyar_sahaba/core/design_system/widgets/landscape_hero.dart';
-import 'package:siyar_sahaba/core/design_system/widgets/outlined_numeral.dart';
-import 'package:siyar_sahaba/core/domain/historical_date.dart';
 import 'package:siyar_sahaba/core/format/display_formatter.dart';
 import 'package:siyar_sahaba/features/companions/presentation/directory/directory_page.dart';
 import 'package:siyar_sahaba/shared/content/domain/companion.dart';
@@ -16,8 +14,7 @@ import 'package:siyar_sahaba/shared/content/presentation/content_text.dart';
 import 'package:siyar_sahaba/shared/content/providers.dart';
 
 /// The profile hero: name (shared with the directory card), honorific,
-/// kunya and titles, death place and date, categories, and the death year
-/// as an outlined numeral.
+/// kunya and titles, death place and date, and categories.
 class ProfileHeader extends ConsumerWidget {
   const ProfileHeader({required this.companion, super.key});
 
@@ -30,9 +27,6 @@ class ProfileHeader extends ConsumerWidget {
     final categories = ref.watch(categoriesProvider).value ?? const [];
     final names = {for (final cat in categories) cat.id: cat.name.of(context)};
     final death = c.death?.date;
-    final deathYear = death?.era == HijriEra.afterHijra
-        ? death?.hijriYear
-        : null;
 
     final subtitle = [
       if (c.kunya case final k?) k.of(context),
@@ -49,12 +43,6 @@ class ProfileHeader extends ConsumerWidget {
           final textTheme = Theme.of(context).textTheme;
           return Stack(
             children: [
-              if (deathYear != null)
-                PositionedDirectional(
-                  end: 0,
-                  top: 0,
-                  child: OutlinedNumeral(deathYear, size: 88),
-                ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

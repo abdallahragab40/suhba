@@ -151,7 +151,6 @@ class _DirectoryList extends StatelessWidget {
                       tags: [
                         for (final id in c.categoryIds) ?categoryNames[id],
                       ],
-                      ordinal: c.order,
                       isDraft: !c.review.isApproved,
                       heroTag: DirectoryPage.heroTag(c.id),
                       onTap: () => context.push(AppRoutes.companion(c.id)),

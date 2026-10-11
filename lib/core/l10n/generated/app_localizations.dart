@@ -2617,6 +2617,30 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'تعذّر فتح الملف، ولم يتغير شيء.'**
   String get importReadFailed;
+
+  /// Settings: short label, follow the system theme.
+  ///
+  /// In ar, this message translates to:
+  /// **'تلقائي'**
+  String get themeShortSystem;
+
+  /// Settings: short label, light theme.
+  ///
+  /// In ar, this message translates to:
+  /// **'فاتح'**
+  String get themeShortLight;
+
+  /// Settings: short label, dark theme.
+  ///
+  /// In ar, this message translates to:
+  /// **'داكن'**
+  String get themeShortDark;
+
+  /// About: link to the open-source licence notices.
+  ///
+  /// In ar, this message translates to:
+  /// **'تراخيص البرمجيات المستخدمة'**
+  String get aboutLicensesLink;
 }
 
 class _AppLocalizationsDelegate
