@@ -19,7 +19,7 @@ void main() {
     final context = tester.element(find.byType(HomePage));
     expect(Localizations.localeOf(context), const Locale('ar'));
     expect(Directionality.of(context), TextDirection.rtl);
-    expect(find.text('سِيَر'), findsWidgets);
+    expect(find.text('صُحبة'), findsWidgets);
   });
 
   testApp('stays Arabic even when the device language is English', (

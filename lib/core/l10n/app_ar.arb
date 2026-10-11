@@ -1,6 +1,6 @@
 {
   "@@locale": "ar",
-  "appTitle": "سِيَر",
+  "appTitle": "صُحبة",
   "@appTitle": {
     "description": "Working app name, shown in the app bar and the task switcher."
   },
@@ -877,7 +877,7 @@
   "@settingsLicenses": {
     "description": "Opens the licence page."
   },
-  "aboutIntro": "سِيَر تطبيق تعليمي يعرض سيرة النبي ﷺ وسِيَر أصحابه وقصصهم، معزوّةً كلها إلى مصادرها.",
+  "aboutIntro": "صُحبة تطبيق تعليمي يعرض سيرة النبي ﷺ وسِيَر أصحابه وقصصهم، معزوّةً كلها إلى مصادرها.",
   "@aboutIntro": {
     "description": "About: introduction."
   },

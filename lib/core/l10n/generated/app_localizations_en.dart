@@ -9,7 +9,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appTitle => 'Siyar';
+  String get appTitle => 'Suhba';
 
   @override
   String get designGalleryTitle => 'Design system gallery';
@@ -611,7 +611,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutIntro =>
-      'Siyar is an educational app presenting the life of the Prophet ﷺ and the lives and stories of his Companions, each attributed to its sources.';
+      'Suhba is an educational app presenting the life of the Prophet ﷺ and the lives and stories of his Companions, each attributed to its sources.';
 
   @override
   String get aboutMethodTitle => 'Methodology';

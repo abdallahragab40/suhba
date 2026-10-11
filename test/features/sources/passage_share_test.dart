@@ -88,7 +88,7 @@ void main() {
         'تنبيه: نص لم يعتمده مختص بعد، والمصادر ومواضعها مبدئية.',
       ),
     );
-    expect(lines.last, 'من تطبيق سِيَر');
+    expect(lines.last, 'من تطبيق صُحبة');
   });
 
   testApp('sources without a passage offer no sharing', (tester) async {

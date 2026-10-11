@@ -9,7 +9,7 @@ class AppLocalizationsAr extends AppLocalizations {
   AppLocalizationsAr([String locale = 'ar']) : super(locale);
 
   @override
-  String get appTitle => 'سِيَر';
+  String get appTitle => 'صُحبة';
 
   @override
   String get designGalleryTitle => 'معرض نظام التصميم';
@@ -609,7 +609,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get aboutIntro =>
-      'سِيَر تطبيق تعليمي يعرض سيرة النبي ﷺ وسِيَر أصحابه وقصصهم، معزوّةً كلها إلى مصادرها.';
+      'صُحبة تطبيق تعليمي يعرض سيرة النبي ﷺ وسِيَر أصحابه وقصصهم، معزوّةً كلها إلى مصادرها.';
 
   @override
   String get aboutMethodTitle => 'المنهج';
