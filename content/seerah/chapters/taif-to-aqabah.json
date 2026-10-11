@@ -94,26 +94,6 @@
       ]
     },
     {
-      "type": "paragraph",
-      "text": {
-        "ar": "ورجع النبي ﷺ إلى مكة فدخلها في جوار المطعم بن عدي، وقد ذكر النبي ﷺ المطعم يوم بدر بخير لهذا الصنيع."
-      },
-      "reliability": "reported",
-      "citations": [
-        {
-          "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "complete",
-          "volume": 1,
-          "page": "381"
-        },
-        {
-          "sourceId": "bukhari",
-          "locatorStatus": "complete",
-          "hadithNumber": "3139"
-        }
-      ]
-    },
-    {
       "type": "hadithQuote",
       "textStatus": "complete",
       "reliability": "established",
@@ -147,6 +127,26 @@
       "summary": {
         "ar": "حديث عائشة لما سألت النبي ﷺ: هل أتى عليك يوم أشد من يوم أحد؟ فذكر يوم عرضه نفسه على أهل الطائف، وأن ملك الجبال استأذنه في إهلاكهم، فأبى ورجا أن يُخرج الله من ذرياتهم من يعبده وحده."
       }
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ورجع النبي ﷺ إلى مكة فدخلها في جوار المطعم بن عدي، وقد ذكر النبي ﷺ المطعم يوم بدر بخير لهذا الصنيع."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "381"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3139"
+        }
+      ]
     },
     {
       "type": "heading",
@@ -284,22 +284,7 @@
     {
       "type": "paragraph",
       "text": {
-        "ar": "وكان النبي ﷺ يعرض نفسه على القبائل في مواسم الحج، يطلب من يؤويه وينصره حتى يبلّغ رسالة ربه، فلقي عند العقبة نفرًا من الخزرج فأسلموا، ورجعوا يدعون قومهم."
-      },
-      "reliability": "reported",
-      "citations": [
-        {
-          "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "complete",
-          "volume": 1,
-          "page": "422"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": {
-        "ar": "وردّته قبائل كثيرة، وطلبت بعضها أن يكون لها الأمر من بعده شرطًا لنصرته فأبى، على ما يذكره ابن إسحاق، فكان أن هيّأ الله له أهل يثرب."
+        "ar": "وكان النبي ﷺ يعرض نفسه على القبائل في المواسم، فردّته قبائل كثيرة، وطلبت بعضها أن يكون لها الأمر من بعده شرطًا لنصرته فأبى، على ما يذكره ابن إسحاق."
       },
       "reliability": "reported",
       "citations": [
@@ -308,6 +293,21 @@
           "locatorStatus": "complete",
           "volume": 1,
           "page": "424"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وظلّ على ذلك يطلب من يؤويه وينصره ليبلّغ رسالة ربه، حتى لقي عند العقبة نفرًا من الخزرج فأسلموا، ورجعوا يدعون قومهم."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "422"
         }
       ]
     },

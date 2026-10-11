@@ -547,6 +547,53 @@
         {
           "type": "paragraph",
           "text": {
+            "ar": "ويوم أحد كان ممن تولّى حين انكشف المسلمون، فنزل القرآن بأن الله قد عفا عنهم، فكان عفو الله شهادة له لا عليه."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "3698"
+            },
+            {
+              "sourceId": "quran",
+              "locatorStatus": "complete",
+              "quranRef": {
+                "surah": 3,
+                "ayahFrom": 155
+              }
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "واشترى بئر رومة بالمدينة، وكان الماء العذب فيها قليلًا، ويذكر أهل السير أنها كانت لرجل يبيع ماءها، فاشترى عثمان نصفها ثم اشترى بقيتها، وجعلها سبيلًا للمسلمين بعد أن رغّب النبي ﷺ في ذلك."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tirmidhi",
+              "locatorStatus": "complete",
+              "hadithNumber": "3703"
+            },
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "complete",
+              "volume": 10,
+              "page": "287"
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "2778"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
             "ar": "وفي الحديبية أرسله النبي ﷺ إلى قريش يخبرهم أنهم جاؤوا معتمرين، فلما شاع أنه قُتل بايع الصحابة تحت الشجرة، وجعل النبي ﷺ إحدى يديه عن عثمان."
           },
           "reliability": "established",
@@ -578,67 +625,6 @@
               "locatorStatus": "complete",
               "volume": 2,
               "page": "315"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "واشترى بئر رومة بالمدينة وجعلها للمسلمين، وكان الماء العذب فيها قليلًا."
-          },
-          "reliability": "reported",
-          "citations": [
-            {
-              "sourceId": "bukhari",
-              "locatorStatus": "complete",
-              "hadithNumber": "2778"
-            },
-            {
-              "sourceId": "tirmidhi",
-              "locatorStatus": "complete",
-              "hadithNumber": "3703"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "ويوم أحد كان ممن تولّى حين انكشف المسلمون، فنزل القرآن بأن الله قد عفا عنهم، فكان عفو الله شهادة له لا عليه."
-          },
-          "reliability": "established",
-          "citations": [
-            {
-              "sourceId": "bukhari",
-              "locatorStatus": "complete",
-              "hadithNumber": "3698"
-            },
-            {
-              "sourceId": "quran",
-              "locatorStatus": "complete",
-              "quranRef": {
-                "surah": 3,
-                "ayahFrom": 155
-              }
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "ويذكر أهل السير أن البئر كانت لرجل يبيع ماءها، فاشترى عثمان نصفها ثم اشترى بقيتها، وجعلها سبيلًا للمسلمين بعد أن رغّب النبي ﷺ في ذلك."
-          },
-          "reliability": "reported",
-          "citations": [
-            {
-              "sourceId": "tirmidhi",
-              "locatorStatus": "complete",
-              "hadithNumber": "3703"
-            },
-            {
-              "sourceId": "al-bidaya",
-              "locatorStatus": "complete",
-              "volume": 10,
-              "page": "287"
             }
           ]
         },
@@ -681,7 +667,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وكان من كتّاب الوحي، ووسّع المسجد النبوي حين ضاق، على ما يذكره أهل السير."
+            "ar": "وكان من كتّاب الوحي، على ما يذكره أهل السير."
           },
           "reliability": "reported",
           "citations": [
@@ -827,7 +813,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وروى عن النبي ﷺ أحاديث كثيرة، منها حديث فضل من تعلّم القرآن وعلّمه، وكان يعلّم الناس صفة وضوء النبي ﷺ عملًا ليروه كما رآه."
+            "ar": "وروى عن النبي ﷺ أحاديث، منها حديث فضل من تعلّم القرآن وعلّمه، وكان يعلّم الناس صفة وضوء النبي ﷺ عملًا ليروه كما رآه."
           },
           "reliability": "established",
           "citations": [
@@ -878,25 +864,6 @@
             {
               "sourceId": "siyar",
               "locatorStatus": "pending"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "وكان من العشرة الذين شهد لهم النبي ﷺ بالجنة، ومن الستة الذين اختارهم عمر للشورى لعلمه بمنزلتهم في الإسلام."
-          },
-          "reliability": "established",
-          "citations": [
-            {
-              "sourceId": "bukhari",
-              "locatorStatus": "complete",
-              "hadithNumber": "3700"
-            },
-            {
-              "sourceId": "tirmidhi",
-              "locatorStatus": "complete",
-              "hadithNumber": "3747"
             }
           ]
         },
@@ -1029,7 +996,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "لما طُعن عمر جعل الأمر شورى في ستة، فاجتمعوا ثلاثة أيام، وتولّى عبد الرحمن بن عوف المشاورة، فسأل الناس، ثم بايع عثمان، فبايعه الناس في أول المحرّم سنة أربع وعشرين."
+            "ar": "لما طُعن عمر جعل الأمر شورى في ستة، فبويع عثمان في أول المحرّم سنة أربع وعشرين."
           },
           "reliability": "established",
           "citations": [
@@ -1246,27 +1213,6 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "ووسّع المسجد الحرام بمكة بعد أن ضاق بالناس، كما وسّع المسجد النبوي."
-          },
-          "reliability": "reported",
-          "citations": [
-            {
-              "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "complete",
-              "volume": 4,
-              "page": "251"
-            },
-            {
-              "sourceId": "al-bidaya",
-              "locatorStatus": "complete",
-              "volume": 10,
-              "page": "224"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
             "ar": "ولم يكن عمل عثمان جمعًا جديدًا للقرآن، بل نسخًا للصحف التي جُمعت في عهد أبي بكر، وحملًا للناس على مصحف واحد؛ ولذلك يُنسب رسم المصاحف إليه فيقال الرسم العثماني."
           },
           "reliability": "established",
@@ -1281,6 +1227,27 @@
               "locatorStatus": "complete",
               "volume": 10,
               "page": "393"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ووسّع المسجد الحرام بمكة بعد أن ضاق بالناس."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "251"
+            },
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "complete",
+              "volume": 10,
+              "page": "224"
             }
           ]
         },

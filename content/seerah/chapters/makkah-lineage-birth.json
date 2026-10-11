@@ -272,6 +272,45 @@
       ]
     },
     {
+      "type": "paragraph",
+      "text": {
+        "ar": "ويذكر ابن إسحاق أن أمه آمنة أُمرت وهي حامل به أن تسمّيه محمدًا."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "158"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وأرضعته أيامًا ثويبة مولاة أبي لهب قبل أن يُدفع إلى البادية، وكانت حاضنته أم أيمن بركة الحبشية، وقد بقيت معه حتى كبر، وكان يكرمها ويعرف لها حقها."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "5101"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "complete",
+          "hadithNumber": "1449"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "complete",
+          "hadithNumber": "1771"
+        }
+      ]
+    },
+    {
       "type": "heading",
       "text": {
         "ar": "قريش ومكة قبل المولد"
@@ -410,45 +449,6 @@
           "locatorStatus": "complete",
           "volume": 1,
           "page": "225"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": {
-        "ar": "ويذكر ابن إسحاق أن أمه آمنة أُمرت وهي حامل به أن تسمّيه محمدًا."
-      },
-      "reliability": "reported",
-      "citations": [
-        {
-          "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "complete",
-          "volume": 1,
-          "page": "158"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": {
-        "ar": "وأرضعته أيامًا ثويبة مولاة أبي لهب قبل أن يُدفع إلى البادية، وكانت حاضنته أم أيمن بركة الحبشية، وقد بقيت معه حتى كبر، وكان يكرمها ويعرف لها حقها."
-      },
-      "reliability": "established",
-      "citations": [
-        {
-          "sourceId": "bukhari",
-          "locatorStatus": "complete",
-          "hadithNumber": "5101"
-        },
-        {
-          "sourceId": "muslim",
-          "locatorStatus": "complete",
-          "hadithNumber": "1449"
-        },
-        {
-          "sourceId": "muslim",
-          "locatorStatus": "complete",
-          "hadithNumber": "1771"
         }
       ]
     },

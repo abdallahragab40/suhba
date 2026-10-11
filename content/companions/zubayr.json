@@ -653,14 +653,15 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وبعثه النبي ﷺ مع علي والمقداد في طلب المرأة التي حملت كتاب حاطب بن أبي بلتعة إلى قريش قبيل الفتح، فأدركوها بروضة خاخ وأخذوا الكتاب."
+            "ar": "وشهد الحديبية وبيعة الرضوان، وكان من الذين حضروا مع النبي ﷺ المشاهد كلها، لم يتخلّف عن غزوة."
           },
-          "reliability": "established",
+          "reliability": "reported",
           "citations": [
             {
-              "sourceId": "bukhari",
+              "sourceId": "tabaqat-ibn-sad",
               "locatorStatus": "complete",
-              "hadithNumber": "3007"
+              "volume": 3,
+              "page": "73"
             }
           ]
         },
@@ -682,6 +683,20 @@
         {
           "type": "paragraph",
           "text": {
+            "ar": "وبعثه النبي ﷺ مع علي والمقداد في طلب المرأة التي حملت كتاب حاطب بن أبي بلتعة إلى قريش قبيل الفتح، فأدركوها بروضة خاخ وأخذوا الكتاب."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "3007"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
             "ar": "ويوم فتح مكة جعله النبي ﷺ على إحدى المجنّبتين، وأمره أن يركز رايته بالحجون، على ما في صحيح البخاري، ثم شهد حنينًا والطائف وتبوك."
           },
           "reliability": "established",
@@ -696,21 +711,6 @@
               "locatorStatus": "complete",
               "volume": 2,
               "page": "406"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "وشهد الحديبية وبيعة الرضوان، وكان من الذين حضروا مع النبي ﷺ المشاهد كلها، لم يتخلّف عن غزوة."
-          },
-          "reliability": "reported",
-          "citations": [
-            {
-              "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "complete",
-              "volume": 3,
-              "page": "73"
             }
           ]
         },
@@ -1028,7 +1028,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وفي خلافة عثمان كان من كبار أهل المدينة ووجوههم، حتى تحدّث الناس سنة الرعاف بأن عثمان سيستخلفه، فشهد له عثمان بأنه خيرهم فيما يعلم، كما في صحيح البخاري."
+            "ar": "وفي خلافة عثمان كان من كبار أهل المدينة ووجوههم، وقد تقدّم ما شهد له به عثمان سنة الرعاف."
           },
           "reliability": "reported",
           "citations": [

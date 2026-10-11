@@ -579,25 +579,6 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "نشأ أبو بكر بمكة في بني تيم بن مرة من قريش، وعُرف قبل الإسلام بالتجارة."
-          },
-          "reliability": "established",
-          "citations": [
-            {
-              "sourceId": "isabah",
-              "locatorStatus": "complete",
-              "volume": 4,
-              "page": "171"
-            },
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
             "ar": "وكان من أعلم قريش بأنسابها."
           },
           "reliability": "established",
@@ -612,7 +593,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وكانت تجارته في الثياب، يخرج بها في الرحلات كعادة تجار قريش، فاكتسب منها مالًا كثيرًا، ثم أنفق أكثره في الإسلام بعد ذلك، حتى خرج في الهجرة بما بقي له منه."
+            "ar": "وعُرف قبل الإسلام بالتجارة، وكانت تجارته في الثياب، يخرج بها في الرحلات كعادة تجار قريش، فاكتسب منها مالًا كثيرًا، ثم أنفق أكثره في الإسلام بعد ذلك، حتى خرج في الهجرة بما بقي له منه."
           },
           "reliability": "reported",
           "citations": [
@@ -625,6 +606,12 @@
             {
               "sourceId": "siyar",
               "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "isabah",
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "171"
             }
           ]
         },
@@ -1067,6 +1054,77 @@
         {
           "type": "paragraph",
           "text": {
+            "ar": "وفي بدر كان أبو بكر مع النبي ﷺ في العريش الذي بُني له يشرف منه على القتال، يشدّ من أزره ويطمئنه بوعد الله."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "626"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "1763"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكان النبي ﷺ يستشيره في الأمور العامة، كما في أسرى بدر حين أشار بالفداء والعفو رجاء أن يهديهم الله، وأشار عمر بغير ذلك، فنزل القرآن في هذا الأمر."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "1763"
+            },
+            {
+              "sourceId": "quran",
+              "locatorStatus": "complete",
+              "quranRef": {
+                "surah": 8,
+                "ayahFrom": 67,
+                "ayahTo": 68
+              }
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وفي أحد ثبت مع النبي ﷺ فيمن ثبت حين انكشف كثير من الناس، وكان ممن استجاب لله والرسول بعد ما أصابهم القرح."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "102"
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "4077"
+            },
+            {
+              "sourceId": "quran",
+              "locatorStatus": "complete",
+              "quranRef": {
+                "surah": 3,
+                "ayahFrom": 172
+              }
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
             "ar": "وفي الحديبية سأل عمر أبا بكر عن شروط الصلح كما سأل النبي ﷺ، فأجابه أبو بكر بمثل جواب النبي ﷺ، وأوصاه بلزوم أمره."
           },
           "reliability": "established",
@@ -1108,77 +1166,6 @@
               "sourceId": "bukhari",
               "locatorStatus": "complete",
               "hadithNumber": "1622"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "وفي بدر كان أبو بكر مع النبي ﷺ في العريش الذي بُني له يشرف منه على القتال، يشدّ من أزره ويطمئنه بوعد الله."
-          },
-          "reliability": "reported",
-          "citations": [
-            {
-              "sourceId": "sirat-ibn-hisham",
-              "locatorStatus": "complete",
-              "volume": 1,
-              "page": "626"
-            },
-            {
-              "sourceId": "muslim",
-              "locatorStatus": "complete",
-              "hadithNumber": "1763"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "وفي أحد ثبت مع النبي ﷺ فيمن ثبت حين انكشف كثير من الناس، وكان ممن استجاب لله والرسول بعد ما أصابهم القرح."
-          },
-          "reliability": "reported",
-          "citations": [
-            {
-              "sourceId": "sirat-ibn-hisham",
-              "locatorStatus": "complete",
-              "volume": 2,
-              "page": "102"
-            },
-            {
-              "sourceId": "bukhari",
-              "locatorStatus": "complete",
-              "hadithNumber": "4077"
-            },
-            {
-              "sourceId": "quran",
-              "locatorStatus": "complete",
-              "quranRef": {
-                "surah": 3,
-                "ayahFrom": 172
-              }
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "وكان النبي ﷺ يستشيره في الأمور العامة، كما في أسرى بدر حين أشار بالفداء والعفو رجاء أن يهديهم الله، وأشار عمر بغير ذلك، فنزل القرآن في هذا الأمر."
-          },
-          "reliability": "established",
-          "citations": [
-            {
-              "sourceId": "muslim",
-              "locatorStatus": "complete",
-              "hadithNumber": "1763"
-            },
-            {
-              "sourceId": "quran",
-              "locatorStatus": "complete",
-              "quranRef": {
-                "surah": 8,
-                "ayahFrom": 67,
-                "ayahTo": 68
-              }
             }
           ]
         }
@@ -1790,48 +1777,6 @@
               "locatorStatus": "complete",
               "volume": 9,
               "page": "543"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "ثم وجّه الجيوش نحو العراق والشام، بقيادة خالد بن الوليد وغيره من الأمراء."
-          },
-          "reliability": "reported",
-          "citations": [
-            {
-              "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "complete",
-              "volume": 3,
-              "page": "387"
-            },
-            {
-              "sourceId": "al-bidaya",
-              "locatorStatus": "complete",
-              "volume": 9,
-              "page": "543"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "ولما مرض عهد بالخلافة من بعده إلى عمر بن الخطاب بعد أن استشار فيه."
-          },
-          "reliability": "reported",
-          "citations": [
-            {
-              "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "complete",
-              "volume": 3,
-              "page": "428"
-            },
-            {
-              "sourceId": "tabaqat-ibn-sad",
-              "locatorStatus": "complete",
-              "volume": 3,
-              "page": "148"
             }
           ]
         }

@@ -247,41 +247,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "نشأ عمر بمكة في بني عدي بن كعب من قريش."
-          },
-          "reliability": "established",
-          "citations": [
-            {
-              "sourceId": "isabah",
-              "locatorStatus": "complete",
-              "volume": 4,
-              "page": "588"
-            },
-            {
-              "sourceId": "siyar",
-              "locatorStatus": "pending"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "وكان قبل إسلامه شديدًا على المسلمين."
-          },
-          "reliability": "reported",
-          "citations": [
-            {
-              "sourceId": "sirat-ibn-hisham",
-              "locatorStatus": "complete",
-              "volume": 1,
-              "page": "342"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "ونشأ في بيئة قريش الشاقة، ورعى إبل أبيه في صباه، وكان ممن يقرأ ويكتب في قوم قلّ فيهم ذلك، وعُرف بالقوة والفصاحة."
+            "ar": "ونشأ في شظف من العيش، ورعى إبل أبيه في صباه، وكان ممن يقرأ ويكتب في قوم قلّ فيهم ذلك، وعُرف بالقوة والفصاحة."
           },
           "reliability": "reported",
           "citations": [
@@ -294,6 +260,12 @@
             {
               "sourceId": "siyar",
               "locatorStatus": "pending"
+            },
+            {
+              "sourceId": "isabah",
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "588"
             }
           ]
         },
@@ -401,6 +373,12 @@
               "sourceId": "bukhari",
               "locatorStatus": "complete",
               "hadithNumber": "3862"
+            },
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "342"
             }
           ]
         },
@@ -610,35 +588,7 @@
                 "surah": 2,
                 "ayahFrom": 125
               }
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "وتروي السنن أن النبي ﷺ أمر أصحابه بالصدقة، فجاء عمر بنصف ماله يرجو أن يسبق أبا بكر، وجاء أبو بكر بكل ما عنده، فقال عمر إنه لا يسبقه إلى شيء أبدًا؛ ويذكر بعض أهل السير أن ذلك كان في تجهيز جيش تبوك."
-          },
-          "reliability": "reported",
-          "citations": [
-            {
-              "sourceId": "tirmidhi",
-              "locatorStatus": "complete",
-              "hadithNumber": "3675"
             },
-            {
-              "sourceId": "abu-dawud",
-              "locatorStatus": "complete",
-              "hadithNumber": "1678"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "وفي بدر أشار في الأسرى بغير ما أشار به أبو بكر، ثم نزل القرآن في ذلك الأمر."
-          },
-          "reliability": "established",
-          "citations": [
             {
               "sourceId": "muslim",
               "locatorStatus": "complete",
@@ -672,7 +622,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وفي الحديبية سأل النبي ﷺ عن شروط الصلح التي رآها شديدة، ثم سأل أبا بكر، فأجابه بمثل جواب النبي ﷺ؛ وذكر عمر بعدُ أنه عمل لذلك أعمالًا."
+            "ar": "وفي الحديبية سأل النبي ﷺ عن شروط الصلح التي رآها شديدة، ثم سأل أبا بكر، فأجابه بمثل جواب النبي ﷺ؛ وذكر عمر بعدُ أنه عمل لذلك أعمالًا، يعني أعمالًا صالحة يرجو أن تكفّر ما كان منه يومئذ."
           },
           "reliability": "established",
           "citations": [
@@ -699,6 +649,25 @@
               "sourceId": "muslim",
               "locatorStatus": "complete",
               "hadithNumber": "1632"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وتروي السنن أن النبي ﷺ أمر أصحابه بالصدقة، فجاء عمر بنصف ماله يرجو أن يسبق أبا بكر، وجاء أبو بكر بكل ما عنده، فقال عمر إنه لا يسبقه إلى شيء أبدًا؛ ويذكر بعض أهل السير أن ذلك كان في تجهيز جيش تبوك."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tirmidhi",
+              "locatorStatus": "complete",
+              "hadithNumber": "3675"
+            },
+            {
+              "sourceId": "abu-dawud",
+              "locatorStatus": "complete",
+              "hadithNumber": "1678"
             }
           ]
         },
@@ -1325,6 +1294,30 @@
               "locatorStatus": "complete",
               "volume": 9,
               "page": "641"
+            },
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "384"
+            },
+            {
+              "sourceId": "tarikh-al-tabari",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "516"
+            },
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "complete",
+              "volume": 9,
+              "page": "545"
+            },
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "complete",
+              "volume": 9,
+              "page": "629"
             }
           ]
         },
@@ -1358,66 +1351,6 @@
               "locatorStatus": "complete",
               "volume": 10,
               "page": "111"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "واتسعت الفتوح في عهده فشملت الشام والعراق ومصر."
-          },
-          "reliability": "established",
-          "citations": [
-            {
-              "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "complete",
-              "volume": 3,
-              "page": "384"
-            },
-            {
-              "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "complete",
-              "volume": 3,
-              "page": "516"
-            },
-            {
-              "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "complete",
-              "volume": 4,
-              "page": "102"
-            },
-            {
-              "sourceId": "al-bidaya",
-              "locatorStatus": "complete",
-              "volume": 9,
-              "page": "545"
-            },
-            {
-              "sourceId": "al-bidaya",
-              "locatorStatus": "complete",
-              "volume": 9,
-              "page": "629"
-            },
-            {
-              "sourceId": "al-bidaya",
-              "locatorStatus": "complete",
-              "volume": 10,
-              "page": "85"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "وفي خلافته اعتُمد التأريخ بالهجرة."
-          },
-          "reliability": "established",
-          "citations": [
-            {
-              "sourceId": "tarikh-al-tabari",
-              "locatorStatus": "complete",
-              "volume": 4,
-              "page": "38"
             }
           ]
         },

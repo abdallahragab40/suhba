@@ -33,10 +33,30 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "أعدّ أبو بكر راحلتين للهجرة، وخرج مع النبي ﷺ من مكة إلى غارٍ في جبل ثور."
+            "ar": "تروي عائشة أن النبي ﷺ أتى أبا بكر في نحر الظهيرة متقنّعًا في ساعة لم يكن يأتيه فيها، فأخبره أنه قد أُذن له في الخروج، فسأله أبو بكر الصحبة فأجابه."
           },
           "reliability": "established",
           "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "3905"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكان أبو بكر قد بكى فرحًا حين علم أنه سيصحب النبي ﷺ، على ما يذكره ابن إسحاق عن عائشة، وأعدّ الراحلتين اللتين علفهما أربعة أشهر لهذا اليوم."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "485"
+            },
             {
               "sourceId": "bukhari",
               "locatorStatus": "complete",
@@ -75,20 +95,6 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وتروي عائشة أن النبي ﷺ أتى أبا بكر في نحر الظهيرة متقنّعًا في ساعة لم يكن يأتيه فيها، فأخبره أنه قد أُذن له في الخروج، فسأله أبو بكر الصحبة فأجابه."
-          },
-          "reliability": "established",
-          "citations": [
-            {
-              "sourceId": "bukhari",
-              "locatorStatus": "complete",
-              "hadithNumber": "3905"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
             "ar": "ويذكر ابن إسحاق أنهما خرجا من خوخة في ظهر بيت أبي بكر، وأن أبا بكر حمل معه ماله كله، فجاء جدّه أبو قحافة، وكان قد ذهب بصره، يسأل أسماء هل تركهم أبوها بلا مال، فوضعت أحجارًا في كوّة وغطّتها بثوب وأمسكت يده عليها لتطمئنه."
           },
           "reliability": "reported",
@@ -110,16 +116,10 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وكان أبو بكر قد بكى فرحًا حين علم أنه سيصحب النبي ﷺ، على ما يذكره ابن إسحاق عن عائشة، وأعدّ الراحلتين اللتين علفهما أربعة أشهر لهذا اليوم."
+            "ar": "ومضيا إلى غارٍ في جبل ثور جنوب مكة."
           },
-          "reliability": "reported",
+          "reliability": "established",
           "citations": [
-            {
-              "sourceId": "sirat-ibn-hisham",
-              "locatorStatus": "complete",
-              "volume": 1,
-              "page": "485"
-            },
             {
               "sourceId": "bukhari",
               "locatorStatus": "complete",
@@ -152,14 +152,44 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وكان عامر بن فهيرة مولى أبي بكر يرعى الغنم قريبًا منهما، فيأتيهما باللبن."
+            "ar": "ويذكر ابن إسحاق أن عامر بن فهيرة كان يرعى الغنم على آثار عبد الله بن أبي بكر إذا رجع إلى مكة، ليعفّي أثر قدميه، والثابت في البخاري أنه كان يرعى عليهما غنمًا يريحها عليهما فيشربان من لبنها."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "3905"
+            },
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "486"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وجعلت قريش لمن يأتي بهما أو بأحدهما دية كل واحد منهما، وبلغ الطلب باب الغار، فخشي أبو بكر أن ينظر أحدهم إلى موضع قدميه فيراهما، فطمأنه النبي ﷺ بأن الله ثالثهما."
           },
           "reliability": "established",
           "citations": [
             {
               "sourceId": "bukhari",
               "locatorStatus": "complete",
-              "hadithNumber": "3905"
+              "hadithNumber": "3906"
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "3653"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "2381"
             }
           ]
         },
@@ -204,50 +234,6 @@
           "summary": {
             "ar": "حديث أبي بكر عمّا قاله للنبي ﷺ وهما في الغار، وما طمأنه به النبي ﷺ من معيّة الله لهما."
           }
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "وجعلت قريش لمن يأتي بهما أو بأحدهما دية كل واحد منهما، وبلغ الطلب باب الغار، فخشي أبو بكر أن ينظر أحدهم إلى موضع قدميه فيراهما، فطمأنه النبي ﷺ بأن الله ثالثهما."
-          },
-          "reliability": "established",
-          "citations": [
-            {
-              "sourceId": "bukhari",
-              "locatorStatus": "complete",
-              "hadithNumber": "3906"
-            },
-            {
-              "sourceId": "bukhari",
-              "locatorStatus": "complete",
-              "hadithNumber": "3653"
-            },
-            {
-              "sourceId": "muslim",
-              "locatorStatus": "complete",
-              "hadithNumber": "2381"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "ويذكر ابن إسحاق أن عامر بن فهيرة كان يرعى الغنم على آثار عبد الله بن أبي بكر إذا رجع إلى مكة، ليعفّي أثر قدميه، والثابت في البخاري أنه كان يرعى عليهما غنمًا يريحها عليهما فيشربان من لبنها."
-          },
-          "reliability": "reported",
-          "citations": [
-            {
-              "sourceId": "bukhari",
-              "locatorStatus": "complete",
-              "hadithNumber": "3905"
-            },
-            {
-              "sourceId": "sirat-ibn-hisham",
-              "locatorStatus": "complete",
-              "volume": 1,
-              "page": "486"
-            }
-          ]
         }
       ]
     },
@@ -268,34 +254,6 @@
               "sourceId": "bukhari",
               "locatorStatus": "complete",
               "hadithNumber": "3905"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "ولحق بهما في الطريق سراقة بن مالك طمعًا في جائزة قريش، ثم رجع عنهما."
-          },
-          "reliability": "established",
-          "citations": [
-            {
-              "sourceId": "bukhari",
-              "locatorStatus": "complete",
-              "hadithNumber": "3906"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "ومضيا في طريقهما نحو المدينة، والمسلمون فيها ينتظرون قدومهما."
-          },
-          "reliability": "established",
-          "citations": [
-            {
-              "sourceId": "bukhari",
-              "locatorStatus": "complete",
-              "hadithNumber": "3906"
             }
           ]
         },
@@ -330,6 +288,20 @@
         {
           "type": "paragraph",
           "text": {
+            "ar": "فأقام بقباء قبل دخول المدينة أيامًا أسّس فيها مسجدها، وأبو بكر معه."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "3906"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
             "ar": "ثم ركب إلى المدينة فبركت ناقته في موضع المسجد، فبنى المسجد، وكان أبو بكر معه في كل ذلك صاحبًا وخادمًا، كما وصفه القرآن ثاني اثنين."
           },
           "reliability": "established",
@@ -346,20 +318,6 @@
                 "surah": 9,
                 "ayahFrom": 40
               }
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "وكان قد أقام بقباء قبل دخول المدينة أيامًا أسّس فيها مسجدها، وأبو بكر معه."
-          },
-          "reliability": "established",
-          "citations": [
-            {
-              "sourceId": "bukhari",
-              "locatorStatus": "complete",
-              "hadithNumber": "3906"
             }
           ]
         },

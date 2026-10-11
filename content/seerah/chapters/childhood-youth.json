@@ -111,7 +111,27 @@
     {
       "type": "paragraph",
       "text": {
-        "ar": "وتوفيت أمه آمنة وهو ابن ست سنين بالأبواء بين مكة والمدينة، فكفله جده عبد المطلب، فلما مات وهو ابن ثماني سنين كفله عمه أبو طالب."
+        "ar": "وخرجت به أمه آمنة إلى يثرب تزور أخواله من بني النجار، فلما رجعت توفيت بالأبواء بين مكة والمدينة وهو ابن ست سنين، فحملته حاضنته أم أيمن إلى مكة."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "168"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "complete",
+          "hadithNumber": "1771"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "فكفله جده عبد المطلب، فلما مات وهو ابن ثماني سنين كفله عمه أبو طالب."
       },
       "reliability": "reported",
       "citations": [
@@ -132,7 +152,7 @@
     {
       "type": "paragraph",
       "text": {
-        "ar": "وكانت أمه قد خرجت به إلى يثرب تزور أخواله من بني النجار، فلما رجعت توفيت بالأبواء، فحملته حاضنته أم أيمن إلى مكة."
+        "ar": "وكان عبد المطلب يحبه حبًّا شديدًا، ويُدنيه منه في مجلسه عند الكعبة، وكان أبو طالب على قلة ماله يؤثره على أبنائه."
       },
       "reliability": "reported",
       "citations": [
@@ -141,11 +161,26 @@
           "locatorStatus": "complete",
           "volume": 1,
           "page": "168"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وتُروى قصة خروجه صبيًّا مع عمه أبي طالب في تجارة إلى الشام، ولقائه راهبًا يُدعى بحيرا رأى فيه علامات النبوة، وقد أخرجها الترمذي، وتكلّم بعض أهل العلم في بعض ألفاظها."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tirmidhi",
+          "locatorStatus": "complete",
+          "hadithNumber": "3620"
         },
         {
-          "sourceId": "muslim",
+          "sourceId": "sirat-ibn-hisham",
           "locatorStatus": "complete",
-          "hadithNumber": "1771"
+          "volume": 1,
+          "page": "180"
         }
       ]
     },
@@ -198,81 +233,6 @@
           "sourceId": "bukhari",
           "locatorStatus": "complete",
           "hadithNumber": "2072"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": {
-        "ar": "وشارك قريشًا في إعادة بناء الكعبة، وكان ينقل الحجارة مع عمه العباس. ولما اختلفت القبائل في وضع الحجر الأسود في موضعه حكّموه، فجعله في ثوب وأمر كل قبيلة أن تأخذ بطرفه، ثم وضعه بيده."
-      },
-      "reliability": "reported",
-      "citations": [
-        {
-          "sourceId": "bukhari",
-          "locatorStatus": "complete",
-          "hadithNumber": "1582"
-        },
-        {
-          "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "complete",
-          "volume": 1,
-          "page": "197"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": {
-        "ar": "وكان سبب بناء الكعبة أن سيلًا أصابها فصدّع جدرانها، فأجمعت قريش على هدمها وبنائها، واشترطت ألا يُدخل في بنائها إلا مال طيّب، فلما قصرت بهم النفقة الطيبة أخرجوا من البيت جزءًا هو الحِجر، كما جاء في حديث عائشة."
-      },
-      "reliability": "established",
-      "citations": [
-        {
-          "sourceId": "bukhari",
-          "locatorStatus": "complete",
-          "hadithNumber": "1584"
-        },
-        {
-          "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "complete",
-          "volume": 1,
-          "page": "194"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": {
-        "ar": "وكان عبد المطلب يحبه حبًّا شديدًا، ويُدنيه منه في مجلسه عند الكعبة، فلما مات كفله أبو طالب على قلة ماله، فكان يؤثره على أبنائه."
-      },
-      "reliability": "reported",
-      "citations": [
-        {
-          "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "complete",
-          "volume": 1,
-          "page": "168"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": {
-        "ar": "وتُروى قصة خروجه صبيًّا مع عمه أبي طالب في تجارة إلى الشام، ولقائه راهبًا يُدعى بحيرا رأى فيه علامات النبوة، وقد أخرجها الترمذي، وتكلّم بعض أهل العلم في بعض ألفاظها."
-      },
-      "reliability": "reported",
-      "citations": [
-        {
-          "sourceId": "tirmidhi",
-          "locatorStatus": "complete",
-          "hadithNumber": "3620"
-        },
-        {
-          "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "complete",
-          "volume": 1,
-          "page": "180"
         }
       ]
     },
@@ -348,6 +308,61 @@
     {
       "type": "paragraph",
       "text": {
+        "ar": "ثم أصاب الكعبةَ سيلٌ صدّع جدرانها، فأجمعت قريش على هدمها وبنائها، واشترطت ألا يُدخل في بنائها إلا مال طيّب، فلما قصرت بهم النفقة الطيبة أخرجوا من البيت جزءًا هو الحِجر، كما جاء في حديث عائشة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "1584"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "194"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وشارك قريشًا في إعادة بناء الكعبة، وكان ينقل الحجارة مع عمه العباس. ولما اختلفت القبائل في وضع الحجر الأسود في موضعه حكّموه، فجعله في ثوب وأمر كل قبيلة أن تأخذ بطرفه، ثم وضعه بيده."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "1582"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "197"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "ولما قام يضع الحجر الأسود بعد أن حكّموه قالت قريش إنه الأمين، رضينا به حكمًا، على ما يذكره أهل السير؛ فكان لقبه بين قومه شهادة على أمانته قبل الرسالة."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "197"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
         "ar": "وعُرف في قومه بالصدق والأمانة حتى كانوا يسمّونه الأمين، وهذا ما شهد به خصومه أنفسهم بعد البعثة."
       },
       "reliability": "established",
@@ -382,21 +397,6 @@
           "locatorStatus": "complete",
           "volume": 1,
           "page": "485"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": {
-        "ar": "ولما قام يضع الحجر الأسود بعد أن حكّموه قالت قريش إنه الأمين، رضينا به حكمًا، على ما يذكره أهل السير؛ فكان لقبه بين قومه شهادة على أمانته قبل الرسالة."
-      },
-      "reliability": "reported",
-      "citations": [
-        {
-          "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "complete",
-          "volume": 1,
-          "page": "197"
         }
       ]
     },

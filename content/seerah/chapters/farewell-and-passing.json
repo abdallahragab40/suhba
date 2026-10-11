@@ -61,7 +61,7 @@
     {
       "type": "paragraph",
       "text": {
-        "ar": "وأعلن النبي ﷺ عزمه على الحج، فقدم المدينة بشر كثير كلهم يريد أن يأتمّ به، وجعل يعلّمهم المناسك ويأمرهم أن يأخذوها عنه."
+        "ar": "وأعلن النبي ﷺ عزمه على الحج، فقدم المدينة بشر كثير كلهم يريد أن يأتمّ به، وجعل يعلّمهم المناسك ويأمرهم أن يأخذوها عنه، ثم خطبهم يوم عرفة ببطن الوادي."
       },
       "reliability": "established",
       "citations": [
@@ -74,39 +74,6 @@
           "sourceId": "muslim",
           "locatorStatus": "complete",
           "hadithNumber": "1297"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": {
-        "ar": "وجمع يوم عرفة بين الظهر والعصر، ثم وقف يدعو حتى غربت الشمس، ثم دفع إلى مزدلفة، ثم رمى ونحر بمنى، فنحر بيده ثلاثًا وستين بدنة وأكمل علي الباقي، كما في حديث جابر."
-      },
-      "reliability": "established",
-      "citations": [
-        {
-          "sourceId": "muslim",
-          "locatorStatus": "complete",
-          "hadithNumber": "1218"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": {
-        "ar": "وخطب الناس يوم النحر بمنى، فسألهم عن اليوم والشهر والبلد، ثم بيّن أن دماءهم وأموالهم وأعراضهم حرام عليهم كحرمة يومهم ذاك، وأمر الشاهد أن يبلّغ الغائب."
-      },
-      "reliability": "established",
-      "citations": [
-        {
-          "sourceId": "bukhari",
-          "locatorStatus": "complete",
-          "hadithNumber": "1739"
-        },
-        {
-          "sourceId": "bukhari",
-          "locatorStatus": "complete",
-          "hadithNumber": "1741"
         }
       ]
     },
@@ -137,7 +104,7 @@
     {
       "type": "paragraph",
       "text": {
-        "ar": "ونزل على النبي ﷺ يوم عرفة، وكان يوم جمعة، قوله تعالى: اليوم أكملت لكم دينكم."
+        "ar": "ونزل على النبي ﷺ يوم عرفة، وكان يوم جمعة، قوله تعالى: ﴿اليوم أكملت لكم دينكم﴾."
       },
       "reliability": "established",
       "citations": [
@@ -162,6 +129,39 @@
         "surah": 5,
         "ayahFrom": 3
       }
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وجمع يومئذ بين الظهر والعصر، ثم وقف يدعو حتى غربت الشمس، ثم دفع إلى مزدلفة، ثم رمى ونحر بمنى، فنحر بيده ثلاثًا وستين بدنة وأكمل علي الباقي، كما في حديث جابر."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "complete",
+          "hadithNumber": "1218"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وخطب الناس يوم النحر بمنى، فسألهم عن اليوم والشهر والبلد، ثم بيّن أن دماءهم وأموالهم وأعراضهم حرام عليهم كحرمة يومهم ذاك، وأمر الشاهد أن يبلّغ الغائب."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "1739"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "1741"
+        }
+      ]
     },
     {
       "type": "heading",
@@ -383,7 +383,7 @@
     {
       "type": "paragraph",
       "text": {
-        "ar": "واضطرب الناس لخبر وفاته، فجاء أبو بكر فكشف عن وجهه وقبّله، ثم خرج إلى الناس فذكّرهم بأن من كان يعبد الله فإن الله حي لا يموت، وتلا قوله تعالى: وما محمد إلا رسول قد خلت من قبله الرسل."
+        "ar": "واضطرب الناس لخبر وفاته، فجاء أبو بكر فكشف عن وجهه وقبّله، ثم خرج إلى الناس فذكّرهم بأن من كان يعبد الله فإن الله حي لا يموت، وتلا قوله تعالى: ﴿وما محمد إلا رسول قد خلت من قبله الرسل﴾."
       },
       "reliability": "established",
       "citations": [
@@ -412,6 +412,27 @@
     {
       "type": "paragraph",
       "text": {
+        "ar": "وغسّله أهل بيته وعليه قميصه، ثم صلّى عليه المسلمون أرسالًا: الرجال ثم النساء ثم الصبيان، بغير إمام، على ما يذكره أهل السير."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "663"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "221"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
         "ar": "ودُفن ﷺ في حجرة عائشة حيث توفي، وبايع المسلمون أبا بكر خليفة له."
       },
       "reliability": "reported",
@@ -430,27 +451,6 @@
           "sourceId": "bukhari",
           "locatorStatus": "complete",
           "hadithNumber": "3668"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": {
-        "ar": "وغسّله أهل بيته وعليه قميصه، ثم صلّى عليه المسلمون أرسالًا: الرجال ثم النساء ثم الصبيان، بغير إمام، على ما يذكره أهل السير."
-      },
-      "reliability": "reported",
-      "citations": [
-        {
-          "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "complete",
-          "volume": 2,
-          "page": "663"
-        },
-        {
-          "sourceId": "tabaqat-ibn-sad",
-          "locatorStatus": "complete",
-          "volume": 2,
-          "page": "221"
         }
       ]
     },

@@ -36,28 +36,7 @@
     {
       "type": "paragraph",
       "text": {
-        "ar": "خرج النبي ﷺ في تجارة لخديجة بنت خويلد إلى الشام مع غلامها ميسرة، فرجعت التجارة بربح، ورأت خديجة من أمانته وخلقه ما رغّبها في الزواج به."
-      },
-      "reliability": "reported",
-      "citations": [
-        {
-          "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "complete",
-          "volume": 1,
-          "page": "188"
-        },
-        {
-          "sourceId": "tabaqat-ibn-sad",
-          "locatorStatus": "complete",
-          "volume": 1,
-          "page": "104"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": {
-        "ar": "وخديجة هي بنت خويلد بن أسد، من بني أسد بن عبد العزى من قريش، وكانت امرأة ذات شرف ومال، تستأجر الرجال في تجارتها، وقد تزوجت قبله."
+        "ar": "كانت خديجة بنت خويلد بن أسد، من بني أسد بن عبد العزى من قريش، امرأة ذات شرف ومال، تستأجر الرجال في تجارتها، وقد تزوجت قبله."
       },
       "reliability": "reported",
       "citations": [
@@ -72,6 +51,27 @@
           "locatorStatus": "complete",
           "volume": 1,
           "page": "105"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
+        "ar": "وخرج النبي ﷺ في تجارة لخديجة إلى الشام مع غلامها ميسرة، فرجعت التجارة بربح، ورأت خديجة من أمانته وخلقه ما رغّبها في الزواج به."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "188"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "104"
         }
       ]
     },
@@ -147,27 +147,6 @@
           "sourceId": "bukhari",
           "locatorStatus": "complete",
           "hadithNumber": "3818"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "text": {
-        "ar": "وكان بيت خديجة أول بيت دخله الإسلام؛ إذ اجتمعت فيه على الإيمان خديجة وعلي وزيد وبنات النبي ﷺ، فكانت الأسرة التي هيّأها الله قبل البعثة أول من حمل الرسالة معه."
-      },
-      "reliability": "reported",
-      "citations": [
-        {
-          "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "complete",
-          "volume": 1,
-          "page": "240"
-        },
-        {
-          "sourceId": "tabaqat-ibn-sad",
-          "locatorStatus": "complete",
-          "volume": 8,
-          "page": "13"
         }
       ]
     },
@@ -435,6 +414,27 @@
     {
       "type": "paragraph",
       "text": {
+        "ar": "وكان بيت خديجة أول بيت دخله الإسلام؛ إذ اجتمعت فيه على الإيمان خديجة وعلي وزيد وبنات النبي ﷺ، فكانت الأسرة التي هيّأها الله قبل البعثة أول من حمل الرسالة معه."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "240"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 8,
+          "page": "13"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": {
         "ar": "ولما قارب الأربعين حُبّب إليه الخلاء، فكان يخلو بغار حراء يتعبّد الليالي ذوات العدد، ثم يرجع إلى خديجة فيتزوّد لمثلها."
       },
       "reliability": "established",
@@ -456,7 +456,7 @@
     {
       "type": "paragraph",
       "text": {
-        "ar": "وكان غار حراء في جبل يطلّ على مكة، يصعد إليه ويمكث فيه الليالي متفكّرًا متعبّدًا، بعيدًا عمّا كان عليه قومه، وكان يتزوّد لذلك ثم يرجع إلى خديجة."
+        "ar": "وكان غار حراء في جبل يطلّ على مكة، يصعد إليه ويمكث فيه الليالي متفكّرًا متعبّدًا، بعيدًا عمّا كان عليه قومه."
       },
       "reliability": "established",
       "citations": [

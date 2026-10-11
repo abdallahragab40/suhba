@@ -540,7 +540,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وليلة الهجرة نام في فراش النبي ﷺ، وتخلّف بعده بمكة أيامًا يؤدّي ما كان عند النبي ﷺ من ودائع الناس، ثم هاجر إلى المدينة فلحق به في قباء."
+            "ar": "وليلة الهجرة نام في فراش النبي ﷺ، وتخلّف بعده بمكة أيامًا يؤدّي ما كان عند النبي ﷺ من ودائع الناس."
           },
           "reliability": "reported",
           "citations": [
@@ -765,39 +765,6 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وفي غزوة تبوك خلّفه النبي ﷺ على أهله بالمدينة، فشقّ ذلك عليه، فطيّب النبي ﷺ نفسه بأنه منه بمنزلة هارون من موسى، إلا أنه لا نبي بعده."
-          },
-          "reliability": "established",
-          "citations": [
-            {
-              "sourceId": "bukhari",
-              "locatorStatus": "complete",
-              "hadithNumber": "4416"
-            },
-            {
-              "sourceId": "muslim",
-              "locatorStatus": "complete",
-              "hadithNumber": "2404"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "وفي السنة التاسعة أرسله النبي ﷺ في موسم الحج ليبلّغ الناس أوائل سورة براءة، وكان أبو بكر أمير الحج."
-          },
-          "reliability": "established",
-          "citations": [
-            {
-              "sourceId": "bukhari",
-              "locatorStatus": "complete",
-              "hadithNumber": "4655"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
             "ar": "وقبيل فتح مكة كتب حاطب بن أبي بلتعة كتابًا إلى قريش يخبرهم ببعض أمر النبي ﷺ، فبعث النبي ﷺ عليًّا والزبير والمقداد في طلب المرأة التي تحمله، فأدركوها في روضة خاخ وأخذوا الكتاب."
           },
           "reliability": "established",
@@ -826,6 +793,39 @@
               "locatorStatus": "complete",
               "volume": 2,
               "page": "443"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وفي غزوة تبوك خلّفه النبي ﷺ على أهله بالمدينة، فشقّ ذلك عليه، فطيّب النبي ﷺ نفسه بأنه منه بمنزلة هارون من موسى، إلا أنه لا نبي بعده."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "4416"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "2404"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وفي السنة التاسعة أرسله النبي ﷺ في موسم الحج ليبلّغ الناس أوائل سورة براءة، وكان أبو بكر أمير الحج."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "4655"
             }
           ]
         },
@@ -1260,7 +1260,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "فلما قُتل عثمان في ذي الحجة سنة خمس وثلاثين بايعه الناس بالمدينة، فتولّى الخلافة في زمن فتنة شديدة، ثم انتقل إلى الكوفة فجعلها مقرّه."
+            "ar": "فلما قُتل عثمان في ذي الحجة سنة خمس وثلاثين بايعه الناس بالمدينة، فتولّى الخلافة في زمن فتنة شديدة."
           },
           "reliability": "established",
           "citations": [
