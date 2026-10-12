@@ -32,6 +32,7 @@ abstract class PlaceDto with _$PlaceDto {
     required ReviewDto review,
     LocalizedTextDto? modernName,
     LocalizedTextDto? contemporaryNote,
+    @Default(<String>[]) List<String> companionIds,
   }) = _PlaceDto;
 
   factory PlaceDto.fromJson(Map<String, dynamic> json) =>

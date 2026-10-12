@@ -6,6 +6,8 @@
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>ar</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>لترتيب أماكن المدينة ومكة بحسب قربها منك. يبقى موقعك على جهازك ولا يُرسل.</string>
 	<key>CFBundleLocalizations</key>
 	<array>
 		<string>ar</string>

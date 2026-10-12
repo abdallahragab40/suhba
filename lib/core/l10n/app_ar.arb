@@ -2180,5 +2180,133 @@
   "@quizQEventAtPlace": {"placeholders": {"subject": {"type": "String"}}},
   "quizQEarliestChapter": "أيّ هذه الفصول يأتي أولًا في السيرة؟",
   "quizOutOf": "من {total}",
-  "@quizOutOf": {"placeholders": {"total": {"type": "String"}}}
+  "@quizOutOf": {"placeholders": {"total": {"type": "String"}}},
+  "homeThisMonthKicker": "هذا الشهر",
+  "@homeThisMonthKicker": {
+    "description": "Home: kicker of the current Hijri month's events."
+  },
+  "homeThisMonthTitle": "في {month} من السيرة",
+  "@homeThisMonthTitle": {
+    "description": "Home: title of the current Hijri month's events.",
+    "placeholders": {
+      "month": {
+        "type": "String"
+      }
+    }
+  },
+  "homeThisMonthNote": "اليوم {day} {month} {year} هـ بتقويم أم القرى، وقد يختلف يومًا عن بداية الشهر برؤية الهلال في بلدك.",
+  "@homeThisMonthNote": {
+    "description": "Home: today's Umm al-Qura date under the month's events.",
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "month": {
+        "type": "String"
+      },
+      "year": {
+        "type": "String"
+      }
+    }
+  },
+  "visitTitle": "أماكن المدينة ومكة",
+  "@visitTitle": {
+    "description": "Title of the visiting page."
+  },
+  "visitMadinah": "المدينة",
+  "@visitMadinah": {
+    "description": "Visiting page: city choice."
+  },
+  "visitMakkah": "مكة",
+  "@visitMakkah": {
+    "description": "Visiting page: city choice."
+  },
+  "visitIntro": "أماكن من السيرة وحياة الصحابة في المدينة ومكة وما حولهما، مع ما جرى فيها ومصادره. الصفحة تعرّف بتاريخ هذه الأماكن، وليست دليلًا للمناسك ولا لآداب الزيارة.",
+  "@visitIntro": {
+    "description": "Visiting page introduction."
+  },
+  "visitNearMe": "رتّبها بحسب قربها مني",
+  "@visitNearMe": {
+    "description": "Visiting page: button that reads the reader's position."
+  },
+  "visitLocating": "جارٍ تحديد موقعك…",
+  "@visitLocating": {
+    "description": "Visiting page: while reading the position."
+  },
+  "visitLocationOff": "خدمة الموقع متوقفة في جهازك، فشغّلها ثم أعد المحاولة.",
+  "@visitLocationOff": {
+    "description": "Visiting page: location services off."
+  },
+  "visitLocationDenied": "لم يُسمح بالوصول إلى موقعك، فبقيت الأماكن مرتبة بحسب قربها من الحرم.",
+  "@visitLocationDenied": {
+    "description": "Visiting page: permission declined."
+  },
+  "visitLocationDeniedForever": "الوصول إلى موقعك ممنوع لهذا التطبيق، ويمكنك السماح به من إعدادات الجهاز.",
+  "@visitLocationDeniedForever": {
+    "description": "Visiting page: permission permanently declined."
+  },
+  "visitLocationFailed": "تعذّر تحديد موقعك الآن، فحاول مرة أخرى.",
+  "@visitLocationFailed": {
+    "description": "Visiting page: no position returned."
+  },
+  "visitOpenSettings": "فتح الإعدادات",
+  "@visitOpenSettings": {
+    "description": "Visiting page: opens the app's device settings."
+  },
+  "visitOrderedFromYou": "الأماكن مرتبة بحسب قربها منك.",
+  "@visitOrderedFromYou": {
+    "description": "Visiting page: ordered from the reader."
+  },
+  "visitNotInCity": "لست في {city} الآن، فالأماكن مرتبة بحسب قربها من الحرم.",
+  "@visitNotInCity": {
+    "description": "Visiting page: the reader is elsewhere.",
+    "placeholders": {
+      "city": {
+        "type": "String"
+      }
+    }
+  },
+  "visitPrivacy": "يُستعمل موقعك على جهازك فقط لترتيب القائمة، ولا يُحفظ ولا يُرسل إلى أي جهة.",
+  "@visitPrivacy": {
+    "description": "Visiting page: location privacy note."
+  },
+  "visitNoPlaces": "لا أماكن مسجّلة في {city} بعد.",
+  "@visitNoPlaces": {
+    "description": "Visiting page: no places in the city.",
+    "placeholders": {
+      "city": {
+        "type": "String"
+      }
+    }
+  },
+  "visitUnderOneKm": "على أقل من كيلومتر منك",
+  "@visitUnderOneKm": {
+    "description": "Visiting page: distance under 1 km."
+  },
+  "visitKmAway": "على نحو {km} كم منك",
+  "@visitKmAway": {
+    "description": "Visiting page: rounded distance in km.",
+    "placeholders": {
+      "km": {
+        "type": "String"
+      }
+    }
+  },
+  "exploreVisitBody": "أماكن السيرة في المدينة ومكة وما حولهما على خريطة واحدة، ويمكن ترتيبها بحسب قربها منك.",
+  "@exploreVisitBody": {
+    "description": "Explore: body of the visiting entry."
+  },
+  "placeCompanions": "صحابة ارتبط ذكرهم بالمكان",
+  "@placeCompanions": {
+    "description": "Place page: heading of the linked companions."
+  },
+  "placeVisitCity": "أماكن أخرى في {city}",
+  "@placeVisitCity": {
+    "description": "Place page: opens the visiting page on the city.",
+    "placeholders": {
+      "city": {
+        "type": "String"
+      }
+    }
+  }
 }

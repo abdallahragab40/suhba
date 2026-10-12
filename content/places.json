@@ -410,7 +410,7 @@
         "precision": "identified"
       },
       "summary": {
-        "ar": "جبل شمال المدينة، كانت عنده غزوة أحد في السنة الثالثة للهجرة."
+        "ar": "جبل شمال المدينة، كانت عنده غزوة أحد في السنة الثالثة للهجرة، واستُشهد فيها حمزة بن عبد المطلب ومصعب بن عمير في جماعة من الصحابة."
       },
       "reliability": "established",
       "citations": [
@@ -418,6 +418,16 @@
           "sourceId": "bukhari",
           "locatorStatus": "complete",
           "hadithNumber": "3039"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4072"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4047"
         }
       ],
       "review": {
@@ -426,7 +436,11 @@
           "needsLocators"
         ],
         "authoredBy": "draft-revision-4"
-      }
+      },
+      "companionIds": [
+        "hamzah",
+        "musab-ibn-umayr"
+      ]
     },
     {
       "id": "al-hudaybiyah",
@@ -634,6 +648,288 @@
       },
       "contemporaryNote": {
         "ar": "تعيين الوادي اليوم مختلف فيه، والموضع على الخريطة تقريبي."
+      }
+    },
+    {
+      "id": "al-masjid-an-nabawi",
+      "name": {
+        "ar": "المسجد النبوي"
+      },
+      "kind": "mosque",
+      "location": {
+        "lat": 24.4673,
+        "lon": 39.6111,
+        "precision": "identified"
+      },
+      "summary": {
+        "ar": "مسجد النبي ﷺ، بناه أول مقدمه المدينة في موضع مربد كان لغلامين يتيمين اشتراه منهما، وشارك أصحابه العمل فيه بيده."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3906"
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "editorialFlags": [
+          "needsLocators"
+        ],
+        "authoredBy": "madinah-sites-1"
+      },
+      "modernName": {
+        "ar": "المسجد النبوي الشريف"
+      },
+      "contemporaryNote": {
+        "ar": "وُسّع المسجد مرات كثيرة عبر القرون، والبناء القائم اليوم حديث يحيط بموضع المسجد الأول."
+      }
+    },
+    {
+      "id": "al-baqi",
+      "name": {
+        "ar": "بقيع الغرقد"
+      },
+      "kind": "other",
+      "location": {
+        "lat": 24.467,
+        "lon": 39.6168,
+        "precision": "identified"
+      },
+      "summary": {
+        "ar": "مقبرة أهل المدينة، كان النبي ﷺ يخرج إليها فيسلّم على أهلها ويدعو لهم، ودُفن فيها كثير من الصحابة، منهم عثمان بن عفان وعبد الرحمن بن عوف وسعد بن أبي وقاص وعائشة أم المؤمنين."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "complete",
+          "hadithNumber": "974"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "57"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "100"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "109"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "192"
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "editorialFlags": [
+          "needsLocators"
+        ],
+        "authoredBy": "madinah-sites-1"
+      },
+      "modernName": {
+        "ar": "البقيع"
+      },
+      "contemporaryNote": {
+        "ar": "لا يزال مقبرةً إلى اليوم، وحدوده الحالية أوسع بكثير مما كانت عليه في عهد النبي ﷺ."
+      },
+      "companionIds": [
+        "uthman",
+        "abd-al-rahman-ibn-awf",
+        "sad-ibn-abi-waqqas",
+        "aisha"
+      ]
+    },
+    {
+      "id": "saqifat-bani-saidah",
+      "name": {
+        "ar": "سقيفة بني ساعدة"
+      },
+      "kind": "other",
+      "location": {
+        "lat": 24.4697,
+        "lon": 39.6078,
+        "precision": "approximate"
+      },
+      "summary": {
+        "ar": "ظُلّة لبني ساعدة من الخزرج، اجتمع فيها الأنصار بعد وفاة النبي ﷺ، فلحق بهم أبو بكر وعمر وأبو عبيدة، وفيها بويع أبو بكر بالخلافة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3668"
+        },
+        {
+          "sourceId": "tarikh-al-tabari",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "221"
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "editorialFlags": [
+          "needsLocators"
+        ],
+        "authoredBy": "madinah-sites-1"
+      },
+      "contemporaryNote": {
+        "ar": "الموضع اليوم حديقة قريبة من المسجد النبوي، ولم يبقَ فيه شيء من بناء ذلك العهد."
+      },
+      "companionIds": [
+        "abu-bakr",
+        "umar",
+        "abu-ubaydah"
+      ]
+    },
+    {
+      "id": "bir-rumah",
+      "name": {
+        "ar": "بئر رومة"
+      },
+      "kind": "well",
+      "location": {
+        "lat": 24.517,
+        "lon": 39.589,
+        "precision": "approximate"
+      },
+      "summary": {
+        "ar": "بئر بالمدينة لم يكن بها ماء يُستعذب غيرها، رغّب النبي ﷺ في شرائها للمسلمين، فاشتراها عثمان بن عفان وجعل دلوه فيها مع دلاء المسلمين."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tirmidhi",
+          "locatorStatus": "complete",
+          "hadithNumber": "3703"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "2778"
+        },
+        {
+          "sourceId": "al-bidaya",
+          "locatorStatus": "complete",
+          "volume": 10,
+          "page": "290"
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "editorialFlags": [
+          "needsLocators"
+        ],
+        "authoredBy": "madinah-sites-1"
+      },
+      "modernName": {
+        "ar": "بئر عثمان"
+      },
+      "contemporaryNote": {
+        "ar": "يُعرف موضعها اليوم ببئر عثمان في شمال غربي المدينة، والمنشآت حولها حديثة."
+      },
+      "companionIds": [
+        "uthman"
+      ]
+    },
+    {
+      "id": "al-khandaq",
+      "name": {
+        "ar": "الخندق"
+      },
+      "kind": "other",
+      "location": {
+        "lat": 24.4786,
+        "lon": 39.597,
+        "precision": "approximate"
+      },
+      "summary": {
+        "ar": "الخندق الذي حفره المسلمون حول المدينة حين تحزّبت عليهم القبائل في السنة الخامسة، وعمل النبي ﷺ في حفره مع أصحابه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 33,
+            "ayahFrom": 9,
+            "ayahTo": 10
+          }
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "2834"
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "editorialFlags": [
+          "needsLocators"
+        ],
+        "authoredBy": "madinah-sites-1"
+      },
+      "contemporaryNote": {
+        "ar": "لم يبقَ للخندق أثر ظاهر اليوم، وموضعه على الخريطة تقريبي."
+      }
+    },
+    {
+      "id": "al-masjid-al-haram",
+      "name": {
+        "ar": "المسجد الحرام"
+      },
+      "kind": "mosque",
+      "location": {
+        "lat": 21.4227,
+        "lon": 39.8258,
+        "precision": "identified"
+      },
+      "summary": {
+        "ar": "المسجد الذي فيه الكعبة بمكة، منه أُسري بالنبي ﷺ ليلًا إلى المسجد الأقصى، وإليه حُوّلت قبلة المسلمين."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 17,
+            "ayahFrom": 1
+          }
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 2,
+            "ayahFrom": 144
+          }
+        }
+      ],
+      "review": {
+        "status": "draft",
+        "editorialFlags": [
+          "needsLocators"
+        ],
+        "authoredBy": "madinah-sites-1"
+      },
+      "contemporaryNote": {
+        "ar": "وُسّع المسجد مرات كثيرة عبر القرون، والبناء القائم اليوم حديث يحيط بالكعبة وموضع المسجد الأول."
       }
     }
   ]

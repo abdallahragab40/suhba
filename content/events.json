@@ -678,7 +678,8 @@
         "ar": "المدينة"
       },
       "placeIds": [
-        "madinah"
+        "madinah",
+        "al-masjid-an-nabawi"
       ],
       "context": {
         "ar": "كان الموضع مربدًا لغلامين يتيمين، فاشتراه النبي ﷺ منهما."
@@ -1162,7 +1163,8 @@
         "ar": "المدينة"
       },
       "placeIds": [
-        "madinah"
+        "madinah",
+        "al-khandaq"
       ],
       "context": {
         "ar": "السنة الخامسة على المشهور، وقيل الرابعة."
@@ -2084,7 +2086,8 @@
         }
       ],
       "placeIds": [
-        "madinah"
+        "madinah",
+        "saqifat-bani-saidah"
       ],
       "context": {
         "ar": "توفي النبي ﷺ ولم يكن للمسلمين خليفة."

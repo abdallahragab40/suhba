@@ -383,6 +383,16 @@ void main() {
       expect(report.issues.where((i) => i.rule == 'V2'), hasLength(3));
     });
 
+    test('a place can only name known companions', () {
+      (fx.list('places.json', 'places').first as Map)['companionIds'] = [
+        'comp-a',
+        'no-companion',
+      ];
+      final report = validate();
+      expect(codes(report), {'V2'});
+      expect(report.issues.where((i) => i.rule == 'V2'), hasLength(1));
+    });
+
     test('a visual only carries the data of its own type', () {
       visual()['bands'] = [
         {

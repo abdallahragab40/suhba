@@ -1450,6 +1450,14 @@
         },
         "contemporaryNote": {
           "$ref": "#/$defs/localizedText"
+        },
+        "companionIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true,
+          "description": "Companions tied to this place, e.g. buried there or named for it. The link must be supported by the place's own citations."
         }
       },
       "additionalProperties": false,

@@ -209,9 +209,18 @@ BuildResult buildContent(
     }
   }
 
+  final shippedCompanionIds = {
+    for (final c in tree.companions.where(include)) c.id,
+  };
   final places = [
     for (final p in tree.places.where(include))
-      p.dto.copyWith(review: shipped(p.dto.review)),
+      p.dto.copyWith(
+        review: shipped(p.dto.review),
+        companionIds: [
+          for (final id in p.dto.companionIds)
+            if (shippedCompanionIds.contains(id)) id,
+        ],
+      ),
   ]..sort((a, b) => a.id.compareTo(b.id));
   outputs['places.json'] = encode(
     PlacesFileDto(schemaVersion: outputSchemaVersion, places: places).toJson(),

@@ -47,6 +47,12 @@ abstract final class AppRoutes {
   static String place(String id) => '/places/${_id(id)}';
   static String visual(String id) => '/visuals/${_id(id)}';
 
+  /// Visiting Madinah and Makkah, optionally opened on one city.
+  static const visitRoot = '/visit';
+  static String visit({String? city}) => city == null
+      ? visitRoot
+      : Uri(path: visitRoot, queryParameters: {'city': _id(city)}).toString();
+
   /// The relationship explorer, optionally showing one companion's or one
   /// person's relations.
   static const relationsRoot = '/relations';

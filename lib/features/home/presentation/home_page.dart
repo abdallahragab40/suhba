@@ -15,10 +15,12 @@ import 'package:suhba/core/design_system/widgets/draft_banner.dart';
 import 'package:suhba/core/design_system/widgets/error_view.dart';
 import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
 import 'package:suhba/core/design_system/widgets/section_header.dart';
+import 'package:suhba/core/domain/umm_al_qura.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/features/companions/presentation/directory/directory_page.dart';
 import 'package:suhba/features/home/domain/daily_featured.dart';
+import 'package:suhba/features/home/domain/this_month.dart';
 import 'package:suhba/features/quiz/presentation/quiz_banner.dart';
 import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
 import 'package:suhba/features/reading_progress/presentation/continue_reading.dart';
@@ -40,7 +42,7 @@ import 'package:suhba/shared/visuals/presentation/infographic_view.dart';
 /// Home (S02), an editorial front page. In order: the Seerah's opening
 /// scene with begin/continue; the reader's unfinished reading; the next
 /// Seerah chapters on paper; one decisive episode on ink with its visual;
-/// the companion of the day with a passage from their biography; the
+/// what happened in the current Hijri month; the companion of the day with a passage from their biography; the
 /// atlas; selected events from the archive; then the collections.
 ///
 /// Sections alternate between paper and ink, and each has its own
@@ -118,6 +120,17 @@ class _Home extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
     final featured = featuredFor(today, companions, channel: manifest.channel);
+    final hijri = UmmAlQuraDate.fromGregorian(today);
+    final thisMonth = hijri == null
+        ? const <HistoricalEvent>[]
+        : eventsInHijriMonth(
+            hijri.month,
+            (ref.watch(eventsProvider).value ?? const {}).values,
+          );
+    final monthName = hijri == null
+        ? null
+        : l10n.hijriMonthName('${hijri.month}');
+    final format = DisplayFormatter.of(context);
     final progress =
         ref
             .watch(
@@ -218,6 +231,22 @@ class _Home extends ConsumerWidget {
             const _InkEpisode(),
           ],
           paper([
+            // Only in a month the sources date something to.
+            if ((hijri, monthName) case (
+              final h?,
+              final month?,
+            ) when thisMonth.isNotEmpty) ...[
+              header(
+                l10n.homeThisMonthKicker,
+                l10n.homeThisMonthTitle(month),
+                note: l10n.homeThisMonthNote(
+                  format.integer(h.day),
+                  month,
+                  format.integer(h.year),
+                ),
+              ),
+              for (final e in thisMonth) EventRow(event: e),
+            ],
             if (featured != null) ...[
               header(l10n.homeFeaturedKicker, l10n.homeDiscoverTitle),
               _FeaturedCompanion(companion: featured),

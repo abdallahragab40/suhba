@@ -37,6 +37,8 @@ void main() {
     'explore': '/explore',
     'event': '/events/hijrah',
     'place': '/places/makkah',
+    'place (in Madinah)': '/places/al-baqi',
+    'visiting': '/visit',
     'visual (map)': '/visuals/hijrah-route',
     'visual (relationships)': '/visuals/abu-bakr-family',
     'visual (sequence)': '/visuals/hijrah-sequence',

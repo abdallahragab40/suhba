@@ -185,7 +185,12 @@ class _ExploreState extends State<_Explore> {
         ],
         if (_filter == ExploreFilter.all) ...[
           header(l10n.exploreRelationsKicker, l10n.exploreRelationsTitle),
-          const _RelationsTile(),
+          _EntryTile(
+            icon: Icons.account_tree_outlined,
+            title: l10n.relationsTitle,
+            body: l10n.exploreRelationsBody,
+            onTap: () => context.push(AppRoutes.relations()),
+          ),
         ],
         if (show(ExploreFilter.visuals)) ...[
           header(l10n.exploreVisualsKicker, l10n.exploreVisualsTitle),
@@ -193,6 +198,13 @@ class _ExploreState extends State<_Explore> {
         ],
         if (show(ExploreFilter.places)) ...[
           header(l10n.explorePlacesKicker, l10n.explorePlacesTitle),
+          _EntryTile(
+            icon: Icons.mosque_outlined,
+            title: l10n.visitTitle,
+            body: l10n.exploreVisitBody,
+            onTap: () => context.push(AppRoutes.visit()),
+          ),
+          const SizedBox(height: AppSpacing.sm),
           for (final p in widget.places) _PlaceTile(place: p),
         ],
         if (show(ExploreFilter.stories)) ...[
@@ -283,34 +295,41 @@ class _PlaceTile extends StatelessWidget {
   }
 }
 
-class _RelationsTile extends StatelessWidget {
-  const _RelationsTile();
+/// A card that opens a page of its own, such as the relations explorer.
+class _EntryTile extends StatelessWidget {
+  const _EntryTile({
+    required this.icon,
+    required this.title,
+    required this.body,
+    required this.onTap,
+  });
+
+  final IconData icon;
+  final String title;
+  final String body;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context);
     final colors = SuhbaColors.of(context);
     return Card(
       margin: EdgeInsets.zero,
       clipBehavior: Clip.antiAlias,
       child: InkWell(
-        onTap: () => context.push(AppRoutes.relations()),
+        onTap: onTap,
         child: Padding(
           padding: const EdgeInsets.all(AppSpacing.md),
           child: Row(
             children: [
-              Icon(Icons.account_tree_outlined, color: colors.accentText),
+              Icon(icon, color: colors.accentText),
               const SizedBox(width: AppSpacing.sm),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Text(title, style: Theme.of(context).textTheme.titleMedium),
                     Text(
-                      l10n.relationsTitle,
-                      style: Theme.of(context).textTheme.titleMedium,
-                    ),
-                    Text(
-                      l10n.exploreRelationsBody,
+                      body,
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         color: colors.onSurfaceDim,
                       ),

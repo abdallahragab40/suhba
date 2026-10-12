@@ -364,6 +364,13 @@ class _Rules {
     final p = item.dto;
     _noHonorificInName(item, r'$.name', p.name);
     _needsCitations(item, r'$', p.citations, p.reliability);
+    _refs(
+      item,
+      r'$.companionIds',
+      p.companionIds,
+      tree.companionById,
+      ContentKind.companion,
+    );
     _citations(item, _list(r'$', p.citations));
   }
 

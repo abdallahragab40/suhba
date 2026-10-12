@@ -1749,4 +1749,91 @@ class AppLocalizationsAr extends AppLocalizations {
   String quizOutOf(String total) {
     return 'من $total';
   }
+
+  @override
+  String get homeThisMonthKicker => 'هذا الشهر';
+
+  @override
+  String homeThisMonthTitle(String month) {
+    return 'في $month من السيرة';
+  }
+
+  @override
+  String homeThisMonthNote(String day, String month, String year) {
+    return 'اليوم $day $month $year هـ بتقويم أم القرى، وقد يختلف يومًا عن بداية الشهر برؤية الهلال في بلدك.';
+  }
+
+  @override
+  String get visitTitle => 'أماكن المدينة ومكة';
+
+  @override
+  String get visitMadinah => 'المدينة';
+
+  @override
+  String get visitMakkah => 'مكة';
+
+  @override
+  String get visitIntro =>
+      'أماكن من السيرة وحياة الصحابة في المدينة ومكة وما حولهما، مع ما جرى فيها ومصادره. الصفحة تعرّف بتاريخ هذه الأماكن، وليست دليلًا للمناسك ولا لآداب الزيارة.';
+
+  @override
+  String get visitNearMe => 'رتّبها بحسب قربها مني';
+
+  @override
+  String get visitLocating => 'جارٍ تحديد موقعك…';
+
+  @override
+  String get visitLocationOff =>
+      'خدمة الموقع متوقفة في جهازك، فشغّلها ثم أعد المحاولة.';
+
+  @override
+  String get visitLocationDenied =>
+      'لم يُسمح بالوصول إلى موقعك، فبقيت الأماكن مرتبة بحسب قربها من الحرم.';
+
+  @override
+  String get visitLocationDeniedForever =>
+      'الوصول إلى موقعك ممنوع لهذا التطبيق، ويمكنك السماح به من إعدادات الجهاز.';
+
+  @override
+  String get visitLocationFailed => 'تعذّر تحديد موقعك الآن، فحاول مرة أخرى.';
+
+  @override
+  String get visitOpenSettings => 'فتح الإعدادات';
+
+  @override
+  String get visitOrderedFromYou => 'الأماكن مرتبة بحسب قربها منك.';
+
+  @override
+  String visitNotInCity(String city) {
+    return 'لست في $city الآن، فالأماكن مرتبة بحسب قربها من الحرم.';
+  }
+
+  @override
+  String get visitPrivacy =>
+      'يُستعمل موقعك على جهازك فقط لترتيب القائمة، ولا يُحفظ ولا يُرسل إلى أي جهة.';
+
+  @override
+  String visitNoPlaces(String city) {
+    return 'لا أماكن مسجّلة في $city بعد.';
+  }
+
+  @override
+  String get visitUnderOneKm => 'على أقل من كيلومتر منك';
+
+  @override
+  String visitKmAway(String km) {
+    return 'على نحو $km كم منك';
+  }
+
+  @override
+  String get exploreVisitBody =>
+      'أماكن السيرة في المدينة ومكة وما حولهما على خريطة واحدة، ويمكن ترتيبها بحسب قربها منك.';
+
+  @override
+  String get placeCompanions => 'صحابة ارتبط ذكرهم بالمكان';
+
+  @override
+  String placeVisitCity(String city) {
+    return 'أماكن أخرى في $city';
+  }
 }

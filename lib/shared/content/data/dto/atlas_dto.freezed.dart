@@ -284,7 +284,7 @@ as GeoPrecision,
 /// @nodoc
 mixin _$PlaceDto {
 
- String get id; LocalizedTextDto get name; PlaceKind get kind; GeoPointDto get location; LocalizedTextDto get summary; Reliability get reliability; List<CitationDto> get citations; ReviewDto get review; LocalizedTextDto? get modernName; LocalizedTextDto? get contemporaryNote;
+ String get id; LocalizedTextDto get name; PlaceKind get kind; GeoPointDto get location; LocalizedTextDto get summary; Reliability get reliability; List<CitationDto> get citations; ReviewDto get review; LocalizedTextDto? get modernName; LocalizedTextDto? get contemporaryNote; List<String> get companionIds;
 /// Create a copy of PlaceDto
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -297,16 +297,16 @@ $PlaceDtoCopyWith<PlaceDto> get copyWith => _$PlaceDtoCopyWithImpl<PlaceDto>(thi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PlaceDto&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.location, location) || other.location == location)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.reliability, reliability) || other.reliability == reliability)&&const DeepCollectionEquality().equals(other.citations, citations)&&(identical(other.review, review) || other.review == review)&&(identical(other.modernName, modernName) || other.modernName == modernName)&&(identical(other.contemporaryNote, contemporaryNote) || other.contemporaryNote == contemporaryNote));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PlaceDto&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.location, location) || other.location == location)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.reliability, reliability) || other.reliability == reliability)&&const DeepCollectionEquality().equals(other.citations, citations)&&(identical(other.review, review) || other.review == review)&&(identical(other.modernName, modernName) || other.modernName == modernName)&&(identical(other.contemporaryNote, contemporaryNote) || other.contemporaryNote == contemporaryNote)&&const DeepCollectionEquality().equals(other.companionIds, companionIds));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,kind,location,summary,reliability,const DeepCollectionEquality().hash(citations),review,modernName,contemporaryNote);
+int get hashCode => Object.hash(runtimeType,id,name,kind,location,summary,reliability,const DeepCollectionEquality().hash(citations),review,modernName,contemporaryNote,const DeepCollectionEquality().hash(companionIds));
 
 @override
 String toString() {
-  return 'PlaceDto(id: $id, name: $name, kind: $kind, location: $location, summary: $summary, reliability: $reliability, citations: $citations, review: $review, modernName: $modernName, contemporaryNote: $contemporaryNote)';
+  return 'PlaceDto(id: $id, name: $name, kind: $kind, location: $location, summary: $summary, reliability: $reliability, citations: $citations, review: $review, modernName: $modernName, contemporaryNote: $contemporaryNote, companionIds: $companionIds)';
 }
 
 
@@ -317,7 +317,7 @@ abstract mixin class $PlaceDtoCopyWith<$Res>  {
   factory $PlaceDtoCopyWith(PlaceDto value, $Res Function(PlaceDto) _then) = _$PlaceDtoCopyWithImpl;
 @useResult
 $Res call({
- String id, LocalizedTextDto name, PlaceKind kind, GeoPointDto location, LocalizedTextDto summary, Reliability reliability, List<CitationDto> citations, ReviewDto review, LocalizedTextDto? modernName, LocalizedTextDto? contemporaryNote
+ String id, LocalizedTextDto name, PlaceKind kind, GeoPointDto location, LocalizedTextDto summary, Reliability reliability, List<CitationDto> citations, ReviewDto review, LocalizedTextDto? modernName, LocalizedTextDto? contemporaryNote, List<String> companionIds
 });
 
 
@@ -334,7 +334,7 @@ class _$PlaceDtoCopyWithImpl<$Res>
 
 /// Create a copy of PlaceDto
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? kind = null,Object? location = null,Object? summary = null,Object? reliability = null,Object? citations = null,Object? review = null,Object? modernName = freezed,Object? contemporaryNote = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? kind = null,Object? location = null,Object? summary = null,Object? reliability = null,Object? citations = null,Object? review = null,Object? modernName = freezed,Object? contemporaryNote = freezed,Object? companionIds = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -346,7 +346,8 @@ as Reliability,citations: null == citations ? _self.citations : citations // ign
 as List<CitationDto>,review: null == review ? _self.review : review // ignore: cast_nullable_to_non_nullable
 as ReviewDto,modernName: freezed == modernName ? _self.modernName : modernName // ignore: cast_nullable_to_non_nullable
 as LocalizedTextDto?,contemporaryNote: freezed == contemporaryNote ? _self.contemporaryNote : contemporaryNote // ignore: cast_nullable_to_non_nullable
-as LocalizedTextDto?,
+as LocalizedTextDto?,companionIds: null == companionIds ? _self.companionIds : companionIds // ignore: cast_nullable_to_non_nullable
+as List<String>,
   ));
 }
 /// Create a copy of PlaceDto
@@ -491,10 +492,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  LocalizedTextDto name,  PlaceKind kind,  GeoPointDto location,  LocalizedTextDto summary,  Reliability reliability,  List<CitationDto> citations,  ReviewDto review,  LocalizedTextDto? modernName,  LocalizedTextDto? contemporaryNote)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  LocalizedTextDto name,  PlaceKind kind,  GeoPointDto location,  LocalizedTextDto summary,  Reliability reliability,  List<CitationDto> citations,  ReviewDto review,  LocalizedTextDto? modernName,  LocalizedTextDto? contemporaryNote,  List<String> companionIds)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _PlaceDto() when $default != null:
-return $default(_that.id,_that.name,_that.kind,_that.location,_that.summary,_that.reliability,_that.citations,_that.review,_that.modernName,_that.contemporaryNote);case _:
+return $default(_that.id,_that.name,_that.kind,_that.location,_that.summary,_that.reliability,_that.citations,_that.review,_that.modernName,_that.contemporaryNote,_that.companionIds);case _:
   return orElse();
 
 }
@@ -512,10 +513,10 @@ return $default(_that.id,_that.name,_that.kind,_that.location,_that.summary,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  LocalizedTextDto name,  PlaceKind kind,  GeoPointDto location,  LocalizedTextDto summary,  Reliability reliability,  List<CitationDto> citations,  ReviewDto review,  LocalizedTextDto? modernName,  LocalizedTextDto? contemporaryNote)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  LocalizedTextDto name,  PlaceKind kind,  GeoPointDto location,  LocalizedTextDto summary,  Reliability reliability,  List<CitationDto> citations,  ReviewDto review,  LocalizedTextDto? modernName,  LocalizedTextDto? contemporaryNote,  List<String> companionIds)  $default,) {final _that = this;
 switch (_that) {
 case _PlaceDto():
-return $default(_that.id,_that.name,_that.kind,_that.location,_that.summary,_that.reliability,_that.citations,_that.review,_that.modernName,_that.contemporaryNote);case _:
+return $default(_that.id,_that.name,_that.kind,_that.location,_that.summary,_that.reliability,_that.citations,_that.review,_that.modernName,_that.contemporaryNote,_that.companionIds);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -532,10 +533,10 @@ return $default(_that.id,_that.name,_that.kind,_that.location,_that.summary,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  LocalizedTextDto name,  PlaceKind kind,  GeoPointDto location,  LocalizedTextDto summary,  Reliability reliability,  List<CitationDto> citations,  ReviewDto review,  LocalizedTextDto? modernName,  LocalizedTextDto? contemporaryNote)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  LocalizedTextDto name,  PlaceKind kind,  GeoPointDto location,  LocalizedTextDto summary,  Reliability reliability,  List<CitationDto> citations,  ReviewDto review,  LocalizedTextDto? modernName,  LocalizedTextDto? contemporaryNote,  List<String> companionIds)?  $default,) {final _that = this;
 switch (_that) {
 case _PlaceDto() when $default != null:
-return $default(_that.id,_that.name,_that.kind,_that.location,_that.summary,_that.reliability,_that.citations,_that.review,_that.modernName,_that.contemporaryNote);case _:
+return $default(_that.id,_that.name,_that.kind,_that.location,_that.summary,_that.reliability,_that.citations,_that.review,_that.modernName,_that.contemporaryNote,_that.companionIds);case _:
   return null;
 
 }
@@ -547,7 +548,7 @@ return $default(_that.id,_that.name,_that.kind,_that.location,_that.summary,_tha
 @JsonSerializable()
 
 class _PlaceDto implements PlaceDto {
-  const _PlaceDto({required this.id, required this.name, required this.kind, required this.location, required this.summary, required this.reliability, required final  List<CitationDto> citations, required this.review, this.modernName, this.contemporaryNote}): _citations = citations;
+  const _PlaceDto({required this.id, required this.name, required this.kind, required this.location, required this.summary, required this.reliability, required final  List<CitationDto> citations, required this.review, this.modernName, this.contemporaryNote, final  List<String> companionIds = const <String>[]}): _citations = citations,_companionIds = companionIds;
   factory _PlaceDto.fromJson(Map<String, dynamic> json) => _$PlaceDtoFromJson(json);
 
 @override final  String id;
@@ -566,6 +567,13 @@ class _PlaceDto implements PlaceDto {
 @override final  ReviewDto review;
 @override final  LocalizedTextDto? modernName;
 @override final  LocalizedTextDto? contemporaryNote;
+ final  List<String> _companionIds;
+@override@JsonKey() List<String> get companionIds {
+  if (_companionIds is EqualUnmodifiableListView) return _companionIds;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_companionIds);
+}
+
 
 /// Create a copy of PlaceDto
 /// with the given fields replaced by the non-null parameter values.
@@ -580,16 +588,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PlaceDto&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.location, location) || other.location == location)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.reliability, reliability) || other.reliability == reliability)&&const DeepCollectionEquality().equals(other._citations, _citations)&&(identical(other.review, review) || other.review == review)&&(identical(other.modernName, modernName) || other.modernName == modernName)&&(identical(other.contemporaryNote, contemporaryNote) || other.contemporaryNote == contemporaryNote));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PlaceDto&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.location, location) || other.location == location)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.reliability, reliability) || other.reliability == reliability)&&const DeepCollectionEquality().equals(other._citations, _citations)&&(identical(other.review, review) || other.review == review)&&(identical(other.modernName, modernName) || other.modernName == modernName)&&(identical(other.contemporaryNote, contemporaryNote) || other.contemporaryNote == contemporaryNote)&&const DeepCollectionEquality().equals(other._companionIds, _companionIds));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,kind,location,summary,reliability,const DeepCollectionEquality().hash(_citations),review,modernName,contemporaryNote);
+int get hashCode => Object.hash(runtimeType,id,name,kind,location,summary,reliability,const DeepCollectionEquality().hash(_citations),review,modernName,contemporaryNote,const DeepCollectionEquality().hash(_companionIds));
 
 @override
 String toString() {
-  return 'PlaceDto(id: $id, name: $name, kind: $kind, location: $location, summary: $summary, reliability: $reliability, citations: $citations, review: $review, modernName: $modernName, contemporaryNote: $contemporaryNote)';
+  return 'PlaceDto(id: $id, name: $name, kind: $kind, location: $location, summary: $summary, reliability: $reliability, citations: $citations, review: $review, modernName: $modernName, contemporaryNote: $contemporaryNote, companionIds: $companionIds)';
 }
 
 
@@ -600,7 +608,7 @@ abstract mixin class _$PlaceDtoCopyWith<$Res> implements $PlaceDtoCopyWith<$Res>
   factory _$PlaceDtoCopyWith(_PlaceDto value, $Res Function(_PlaceDto) _then) = __$PlaceDtoCopyWithImpl;
 @override @useResult
 $Res call({
- String id, LocalizedTextDto name, PlaceKind kind, GeoPointDto location, LocalizedTextDto summary, Reliability reliability, List<CitationDto> citations, ReviewDto review, LocalizedTextDto? modernName, LocalizedTextDto? contemporaryNote
+ String id, LocalizedTextDto name, PlaceKind kind, GeoPointDto location, LocalizedTextDto summary, Reliability reliability, List<CitationDto> citations, ReviewDto review, LocalizedTextDto? modernName, LocalizedTextDto? contemporaryNote, List<String> companionIds
 });
 
 
@@ -617,7 +625,7 @@ class __$PlaceDtoCopyWithImpl<$Res>
 
 /// Create a copy of PlaceDto
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? kind = null,Object? location = null,Object? summary = null,Object? reliability = null,Object? citations = null,Object? review = null,Object? modernName = freezed,Object? contemporaryNote = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? kind = null,Object? location = null,Object? summary = null,Object? reliability = null,Object? citations = null,Object? review = null,Object? modernName = freezed,Object? contemporaryNote = freezed,Object? companionIds = null,}) {
   return _then(_PlaceDto(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -629,7 +637,8 @@ as Reliability,citations: null == citations ? _self._citations : citations // ig
 as List<CitationDto>,review: null == review ? _self.review : review // ignore: cast_nullable_to_non_nullable
 as ReviewDto,modernName: freezed == modernName ? _self.modernName : modernName // ignore: cast_nullable_to_non_nullable
 as LocalizedTextDto?,contemporaryNote: freezed == contemporaryNote ? _self.contemporaryNote : contemporaryNote // ignore: cast_nullable_to_non_nullable
-as LocalizedTextDto?,
+as LocalizedTextDto?,companionIds: null == companionIds ? _self._companionIds : companionIds // ignore: cast_nullable_to_non_nullable
+as List<String>,
   ));
 }
 

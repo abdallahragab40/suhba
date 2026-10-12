@@ -139,6 +139,7 @@ extension PlaceDtoMapper on PlaceDto {
     review: review.toDomain(),
     modernName: modernName?.toDomain(),
     contemporaryNote: contemporaryNote?.toDomain(),
+    companionIds: companionIds,
   );
 }
 

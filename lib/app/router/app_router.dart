@@ -6,6 +6,7 @@ import 'package:suhba/app/router/routes.dart';
 import 'package:suhba/app/router/transitions.dart';
 import 'package:suhba/features/atlas/presentation/event_page.dart';
 import 'package:suhba/features/atlas/presentation/place_page.dart';
+import 'package:suhba/features/atlas/presentation/visit_page.dart';
 import 'package:suhba/features/atlas/presentation/visual_page.dart';
 import 'package:suhba/features/biography/presentation/section_reader_page.dart';
 import 'package:suhba/features/bookmarks/presentation/saved_page.dart';
@@ -109,6 +110,14 @@ GoRouter buildAppRouter({String initialLocation = AppRoutes.home}) {
           context,
           state,
           PlacePage(placeId: state.pathParameters['pid']!),
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.visitRoot,
+        pageBuilder: (context, state) => fadeThroughPage(
+          context,
+          state,
+          VisitPage(city: state.uri.queryParameters['city']),
         ),
       ),
       GoRoute(

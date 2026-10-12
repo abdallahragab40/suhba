@@ -3037,6 +3037,144 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'من {total}'**
   String quizOutOf(String total);
+
+  /// Home: kicker of the current Hijri month's events.
+  ///
+  /// In ar, this message translates to:
+  /// **'هذا الشهر'**
+  String get homeThisMonthKicker;
+
+  /// Home: title of the current Hijri month's events.
+  ///
+  /// In ar, this message translates to:
+  /// **'في {month} من السيرة'**
+  String homeThisMonthTitle(String month);
+
+  /// Home: today's Umm al-Qura date under the month's events.
+  ///
+  /// In ar, this message translates to:
+  /// **'اليوم {day} {month} {year} هـ بتقويم أم القرى، وقد يختلف يومًا عن بداية الشهر برؤية الهلال في بلدك.'**
+  String homeThisMonthNote(String day, String month, String year);
+
+  /// Title of the visiting page.
+  ///
+  /// In ar, this message translates to:
+  /// **'أماكن المدينة ومكة'**
+  String get visitTitle;
+
+  /// Visiting page: city choice.
+  ///
+  /// In ar, this message translates to:
+  /// **'المدينة'**
+  String get visitMadinah;
+
+  /// Visiting page: city choice.
+  ///
+  /// In ar, this message translates to:
+  /// **'مكة'**
+  String get visitMakkah;
+
+  /// Visiting page introduction.
+  ///
+  /// In ar, this message translates to:
+  /// **'أماكن من السيرة وحياة الصحابة في المدينة ومكة وما حولهما، مع ما جرى فيها ومصادره. الصفحة تعرّف بتاريخ هذه الأماكن، وليست دليلًا للمناسك ولا لآداب الزيارة.'**
+  String get visitIntro;
+
+  /// Visiting page: button that reads the reader's position.
+  ///
+  /// In ar, this message translates to:
+  /// **'رتّبها بحسب قربها مني'**
+  String get visitNearMe;
+
+  /// Visiting page: while reading the position.
+  ///
+  /// In ar, this message translates to:
+  /// **'جارٍ تحديد موقعك…'**
+  String get visitLocating;
+
+  /// Visiting page: location services off.
+  ///
+  /// In ar, this message translates to:
+  /// **'خدمة الموقع متوقفة في جهازك، فشغّلها ثم أعد المحاولة.'**
+  String get visitLocationOff;
+
+  /// Visiting page: permission declined.
+  ///
+  /// In ar, this message translates to:
+  /// **'لم يُسمح بالوصول إلى موقعك، فبقيت الأماكن مرتبة بحسب قربها من الحرم.'**
+  String get visitLocationDenied;
+
+  /// Visiting page: permission permanently declined.
+  ///
+  /// In ar, this message translates to:
+  /// **'الوصول إلى موقعك ممنوع لهذا التطبيق، ويمكنك السماح به من إعدادات الجهاز.'**
+  String get visitLocationDeniedForever;
+
+  /// Visiting page: no position returned.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذّر تحديد موقعك الآن، فحاول مرة أخرى.'**
+  String get visitLocationFailed;
+
+  /// Visiting page: opens the app's device settings.
+  ///
+  /// In ar, this message translates to:
+  /// **'فتح الإعدادات'**
+  String get visitOpenSettings;
+
+  /// Visiting page: ordered from the reader.
+  ///
+  /// In ar, this message translates to:
+  /// **'الأماكن مرتبة بحسب قربها منك.'**
+  String get visitOrderedFromYou;
+
+  /// Visiting page: the reader is elsewhere.
+  ///
+  /// In ar, this message translates to:
+  /// **'لست في {city} الآن، فالأماكن مرتبة بحسب قربها من الحرم.'**
+  String visitNotInCity(String city);
+
+  /// Visiting page: location privacy note.
+  ///
+  /// In ar, this message translates to:
+  /// **'يُستعمل موقعك على جهازك فقط لترتيب القائمة، ولا يُحفظ ولا يُرسل إلى أي جهة.'**
+  String get visitPrivacy;
+
+  /// Visiting page: no places in the city.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا أماكن مسجّلة في {city} بعد.'**
+  String visitNoPlaces(String city);
+
+  /// Visiting page: distance under 1 km.
+  ///
+  /// In ar, this message translates to:
+  /// **'على أقل من كيلومتر منك'**
+  String get visitUnderOneKm;
+
+  /// Visiting page: rounded distance in km.
+  ///
+  /// In ar, this message translates to:
+  /// **'على نحو {km} كم منك'**
+  String visitKmAway(String km);
+
+  /// Explore: body of the visiting entry.
+  ///
+  /// In ar, this message translates to:
+  /// **'أماكن السيرة في المدينة ومكة وما حولهما على خريطة واحدة، ويمكن ترتيبها بحسب قربها منك.'**
+  String get exploreVisitBody;
+
+  /// Place page: heading of the linked companions.
+  ///
+  /// In ar, this message translates to:
+  /// **'صحابة ارتبط ذكرهم بالمكان'**
+  String get placeCompanions;
+
+  /// Place page: opens the visiting page on the city.
+  ///
+  /// In ar, this message translates to:
+  /// **'أماكن أخرى في {city}'**
+  String placeVisitCity(String city);
 }
 
 class _AppLocalizationsDelegate

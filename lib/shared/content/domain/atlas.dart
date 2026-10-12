@@ -60,6 +60,9 @@ abstract class HistoricalPlace with _$HistoricalPlace {
     /// A note on what stands there today, so present-day buildings are
     /// never taken for the historical setting.
     LocalizedText? contemporaryNote,
+
+    /// Companions tied to this place, such as those buried there.
+    @Default(<String>[]) List<String> companionIds,
   }) = _HistoricalPlace;
 }
 

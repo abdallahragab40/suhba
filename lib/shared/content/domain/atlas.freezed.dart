@@ -279,7 +279,8 @@ mixin _$HistoricalPlace {
 
  String get id; LocalizedText get name; PlaceKind get kind; GeoPoint get location; LocalizedText get summary; Reliability get reliability; List<Citation> get citations; ReviewInfo get review; LocalizedText? get modernName;/// A note on what stands there today, so present-day buildings are
 /// never taken for the historical setting.
- LocalizedText? get contemporaryNote;
+ LocalizedText? get contemporaryNote;/// Companions tied to this place, such as those buried there.
+ List<String> get companionIds;
 /// Create a copy of HistoricalPlace
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -290,16 +291,16 @@ $HistoricalPlaceCopyWith<HistoricalPlace> get copyWith => _$HistoricalPlaceCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is HistoricalPlace&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.location, location) || other.location == location)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.reliability, reliability) || other.reliability == reliability)&&const DeepCollectionEquality().equals(other.citations, citations)&&(identical(other.review, review) || other.review == review)&&(identical(other.modernName, modernName) || other.modernName == modernName)&&(identical(other.contemporaryNote, contemporaryNote) || other.contemporaryNote == contemporaryNote));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is HistoricalPlace&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.location, location) || other.location == location)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.reliability, reliability) || other.reliability == reliability)&&const DeepCollectionEquality().equals(other.citations, citations)&&(identical(other.review, review) || other.review == review)&&(identical(other.modernName, modernName) || other.modernName == modernName)&&(identical(other.contemporaryNote, contemporaryNote) || other.contemporaryNote == contemporaryNote)&&const DeepCollectionEquality().equals(other.companionIds, companionIds));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,id,name,kind,location,summary,reliability,const DeepCollectionEquality().hash(citations),review,modernName,contemporaryNote);
+int get hashCode => Object.hash(runtimeType,id,name,kind,location,summary,reliability,const DeepCollectionEquality().hash(citations),review,modernName,contemporaryNote,const DeepCollectionEquality().hash(companionIds));
 
 @override
 String toString() {
-  return 'HistoricalPlace(id: $id, name: $name, kind: $kind, location: $location, summary: $summary, reliability: $reliability, citations: $citations, review: $review, modernName: $modernName, contemporaryNote: $contemporaryNote)';
+  return 'HistoricalPlace(id: $id, name: $name, kind: $kind, location: $location, summary: $summary, reliability: $reliability, citations: $citations, review: $review, modernName: $modernName, contemporaryNote: $contemporaryNote, companionIds: $companionIds)';
 }
 
 
@@ -310,7 +311,7 @@ abstract mixin class $HistoricalPlaceCopyWith<$Res>  {
   factory $HistoricalPlaceCopyWith(HistoricalPlace value, $Res Function(HistoricalPlace) _then) = _$HistoricalPlaceCopyWithImpl;
 @useResult
 $Res call({
- String id, LocalizedText name, PlaceKind kind, GeoPoint location, LocalizedText summary, Reliability reliability, List<Citation> citations, ReviewInfo review, LocalizedText? modernName, LocalizedText? contemporaryNote
+ String id, LocalizedText name, PlaceKind kind, GeoPoint location, LocalizedText summary, Reliability reliability, List<Citation> citations, ReviewInfo review, LocalizedText? modernName, LocalizedText? contemporaryNote, List<String> companionIds
 });
 
 
@@ -327,7 +328,7 @@ class _$HistoricalPlaceCopyWithImpl<$Res>
 
 /// Create a copy of HistoricalPlace
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? kind = null,Object? location = null,Object? summary = null,Object? reliability = null,Object? citations = null,Object? review = null,Object? modernName = freezed,Object? contemporaryNote = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? kind = null,Object? location = null,Object? summary = null,Object? reliability = null,Object? citations = null,Object? review = null,Object? modernName = freezed,Object? contemporaryNote = freezed,Object? companionIds = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -339,7 +340,8 @@ as Reliability,citations: null == citations ? _self.citations : citations // ign
 as List<Citation>,review: null == review ? _self.review : review // ignore: cast_nullable_to_non_nullable
 as ReviewInfo,modernName: freezed == modernName ? _self.modernName : modernName // ignore: cast_nullable_to_non_nullable
 as LocalizedText?,contemporaryNote: freezed == contemporaryNote ? _self.contemporaryNote : contemporaryNote // ignore: cast_nullable_to_non_nullable
-as LocalizedText?,
+as LocalizedText?,companionIds: null == companionIds ? _self.companionIds : companionIds // ignore: cast_nullable_to_non_nullable
+as List<String>,
   ));
 }
 /// Create a copy of HistoricalPlace
@@ -484,10 +486,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  LocalizedText name,  PlaceKind kind,  GeoPoint location,  LocalizedText summary,  Reliability reliability,  List<Citation> citations,  ReviewInfo review,  LocalizedText? modernName,  LocalizedText? contemporaryNote)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  LocalizedText name,  PlaceKind kind,  GeoPoint location,  LocalizedText summary,  Reliability reliability,  List<Citation> citations,  ReviewInfo review,  LocalizedText? modernName,  LocalizedText? contemporaryNote,  List<String> companionIds)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _HistoricalPlace() when $default != null:
-return $default(_that.id,_that.name,_that.kind,_that.location,_that.summary,_that.reliability,_that.citations,_that.review,_that.modernName,_that.contemporaryNote);case _:
+return $default(_that.id,_that.name,_that.kind,_that.location,_that.summary,_that.reliability,_that.citations,_that.review,_that.modernName,_that.contemporaryNote,_that.companionIds);case _:
   return orElse();
 
 }
@@ -505,10 +507,10 @@ return $default(_that.id,_that.name,_that.kind,_that.location,_that.summary,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  LocalizedText name,  PlaceKind kind,  GeoPoint location,  LocalizedText summary,  Reliability reliability,  List<Citation> citations,  ReviewInfo review,  LocalizedText? modernName,  LocalizedText? contemporaryNote)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  LocalizedText name,  PlaceKind kind,  GeoPoint location,  LocalizedText summary,  Reliability reliability,  List<Citation> citations,  ReviewInfo review,  LocalizedText? modernName,  LocalizedText? contemporaryNote,  List<String> companionIds)  $default,) {final _that = this;
 switch (_that) {
 case _HistoricalPlace():
-return $default(_that.id,_that.name,_that.kind,_that.location,_that.summary,_that.reliability,_that.citations,_that.review,_that.modernName,_that.contemporaryNote);case _:
+return $default(_that.id,_that.name,_that.kind,_that.location,_that.summary,_that.reliability,_that.citations,_that.review,_that.modernName,_that.contemporaryNote,_that.companionIds);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -525,10 +527,10 @@ return $default(_that.id,_that.name,_that.kind,_that.location,_that.summary,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  LocalizedText name,  PlaceKind kind,  GeoPoint location,  LocalizedText summary,  Reliability reliability,  List<Citation> citations,  ReviewInfo review,  LocalizedText? modernName,  LocalizedText? contemporaryNote)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  LocalizedText name,  PlaceKind kind,  GeoPoint location,  LocalizedText summary,  Reliability reliability,  List<Citation> citations,  ReviewInfo review,  LocalizedText? modernName,  LocalizedText? contemporaryNote,  List<String> companionIds)?  $default,) {final _that = this;
 switch (_that) {
 case _HistoricalPlace() when $default != null:
-return $default(_that.id,_that.name,_that.kind,_that.location,_that.summary,_that.reliability,_that.citations,_that.review,_that.modernName,_that.contemporaryNote);case _:
+return $default(_that.id,_that.name,_that.kind,_that.location,_that.summary,_that.reliability,_that.citations,_that.review,_that.modernName,_that.contemporaryNote,_that.companionIds);case _:
   return null;
 
 }
@@ -540,7 +542,7 @@ return $default(_that.id,_that.name,_that.kind,_that.location,_that.summary,_tha
 
 
 class _HistoricalPlace implements HistoricalPlace {
-  const _HistoricalPlace({required this.id, required this.name, required this.kind, required this.location, required this.summary, required this.reliability, required final  List<Citation> citations, required this.review, this.modernName, this.contemporaryNote}): _citations = citations;
+  const _HistoricalPlace({required this.id, required this.name, required this.kind, required this.location, required this.summary, required this.reliability, required final  List<Citation> citations, required this.review, this.modernName, this.contemporaryNote, final  List<String> companionIds = const <String>[]}): _citations = citations,_companionIds = companionIds;
   
 
 @override final  String id;
@@ -561,6 +563,15 @@ class _HistoricalPlace implements HistoricalPlace {
 /// A note on what stands there today, so present-day buildings are
 /// never taken for the historical setting.
 @override final  LocalizedText? contemporaryNote;
+/// Companions tied to this place, such as those buried there.
+ final  List<String> _companionIds;
+/// Companions tied to this place, such as those buried there.
+@override@JsonKey() List<String> get companionIds {
+  if (_companionIds is EqualUnmodifiableListView) return _companionIds;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_companionIds);
+}
+
 
 /// Create a copy of HistoricalPlace
 /// with the given fields replaced by the non-null parameter values.
@@ -572,16 +583,16 @@ _$HistoricalPlaceCopyWith<_HistoricalPlace> get copyWith => __$HistoricalPlaceCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _HistoricalPlace&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.location, location) || other.location == location)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.reliability, reliability) || other.reliability == reliability)&&const DeepCollectionEquality().equals(other._citations, _citations)&&(identical(other.review, review) || other.review == review)&&(identical(other.modernName, modernName) || other.modernName == modernName)&&(identical(other.contemporaryNote, contemporaryNote) || other.contemporaryNote == contemporaryNote));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _HistoricalPlace&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.kind, kind) || other.kind == kind)&&(identical(other.location, location) || other.location == location)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.reliability, reliability) || other.reliability == reliability)&&const DeepCollectionEquality().equals(other._citations, _citations)&&(identical(other.review, review) || other.review == review)&&(identical(other.modernName, modernName) || other.modernName == modernName)&&(identical(other.contemporaryNote, contemporaryNote) || other.contemporaryNote == contemporaryNote)&&const DeepCollectionEquality().equals(other._companionIds, _companionIds));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,id,name,kind,location,summary,reliability,const DeepCollectionEquality().hash(_citations),review,modernName,contemporaryNote);
+int get hashCode => Object.hash(runtimeType,id,name,kind,location,summary,reliability,const DeepCollectionEquality().hash(_citations),review,modernName,contemporaryNote,const DeepCollectionEquality().hash(_companionIds));
 
 @override
 String toString() {
-  return 'HistoricalPlace(id: $id, name: $name, kind: $kind, location: $location, summary: $summary, reliability: $reliability, citations: $citations, review: $review, modernName: $modernName, contemporaryNote: $contemporaryNote)';
+  return 'HistoricalPlace(id: $id, name: $name, kind: $kind, location: $location, summary: $summary, reliability: $reliability, citations: $citations, review: $review, modernName: $modernName, contemporaryNote: $contemporaryNote, companionIds: $companionIds)';
 }
 
 
@@ -592,7 +603,7 @@ abstract mixin class _$HistoricalPlaceCopyWith<$Res> implements $HistoricalPlace
   factory _$HistoricalPlaceCopyWith(_HistoricalPlace value, $Res Function(_HistoricalPlace) _then) = __$HistoricalPlaceCopyWithImpl;
 @override @useResult
 $Res call({
- String id, LocalizedText name, PlaceKind kind, GeoPoint location, LocalizedText summary, Reliability reliability, List<Citation> citations, ReviewInfo review, LocalizedText? modernName, LocalizedText? contemporaryNote
+ String id, LocalizedText name, PlaceKind kind, GeoPoint location, LocalizedText summary, Reliability reliability, List<Citation> citations, ReviewInfo review, LocalizedText? modernName, LocalizedText? contemporaryNote, List<String> companionIds
 });
 
 
@@ -609,7 +620,7 @@ class __$HistoricalPlaceCopyWithImpl<$Res>
 
 /// Create a copy of HistoricalPlace
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? kind = null,Object? location = null,Object? summary = null,Object? reliability = null,Object? citations = null,Object? review = null,Object? modernName = freezed,Object? contemporaryNote = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? kind = null,Object? location = null,Object? summary = null,Object? reliability = null,Object? citations = null,Object? review = null,Object? modernName = freezed,Object? contemporaryNote = freezed,Object? companionIds = null,}) {
   return _then(_HistoricalPlace(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -621,7 +632,8 @@ as Reliability,citations: null == citations ? _self._citations : citations // ig
 as List<Citation>,review: null == review ? _self.review : review // ignore: cast_nullable_to_non_nullable
 as ReviewInfo,modernName: freezed == modernName ? _self.modernName : modernName // ignore: cast_nullable_to_non_nullable
 as LocalizedText?,contemporaryNote: freezed == contemporaryNote ? _self.contemporaryNote : contemporaryNote // ignore: cast_nullable_to_non_nullable
-as LocalizedText?,
+as LocalizedText?,companionIds: null == companionIds ? _self._companionIds : companionIds // ignore: cast_nullable_to_non_nullable
+as List<String>,
   ));
 }
 

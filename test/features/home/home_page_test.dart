@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:suhba/core/design_system/widgets/draft_banner.dart';
+import 'package:suhba/features/atlas/presentation/event_page.dart';
 import 'package:suhba/features/companions/presentation/directory/directory_page.dart';
 import 'package:suhba/features/companions/presentation/profile/companion_profile_page.dart';
 import 'package:suhba/features/search/presentation/search_page.dart';
@@ -53,6 +54,32 @@ void main() {
       await reveal(tester, find.text('صحابي اليوم'));
       expect(find.text('اقرأ السيرة'), findsOneWidget);
     }
+  });
+
+  testApp('in Ramadan, shows what the sources date to Ramadan', (tester) async {
+    // 20 February 2026 is 3 Ramadan 1447 by Umm al-Qura.
+    await open(tester, now: DateTime(2026, 2, 20));
+    await reveal(tester, find.text('في رمضان من السيرة'));
+    expect(
+      find.textContaining('٣ رمضان ١٤٤٧ هـ بتقويم أم القرى'),
+      findsOneWidget,
+    );
+    // Earliest first.
+    final badr = tester.getTopLeft(find.text('غزوة بدر').first).dy;
+    final conquest = tester.getTopLeft(find.text('فتح مكة').first).dy;
+    expect(badr, lessThan(conquest));
+    await tester.tap(find.text('غزوة بدر').first);
+    await tester.pumpAndSettle();
+    expect(find.byType(EventPage), findsOneWidget);
+  });
+
+  testApp('a month the sources date nothing to has no such section', (
+    tester,
+  ) async {
+    // 9 October 2026 is in Rabi al-Akhir, when no event is dated.
+    await open(tester);
+    await reveal(tester, find.text('صحابي اليوم'));
+    expect(find.text('هذا الشهر'), findsNothing);
   });
 
   testApp('features the companion of the day', (tester) async {

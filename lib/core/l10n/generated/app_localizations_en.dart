@@ -1746,4 +1746,93 @@ class AppLocalizationsEn extends AppLocalizations {
   String quizOutOf(String total) {
     return 'of $total';
   }
+
+  @override
+  String get homeThisMonthKicker => 'This month';
+
+  @override
+  String homeThisMonthTitle(String month) {
+    return 'In $month in the Seerah';
+  }
+
+  @override
+  String homeThisMonthNote(String day, String month, String year) {
+    return 'Today is $day $month $year AH by the Umm al-Qura calendar; it may differ by a day from the month\'s start by moon sighting where you are.';
+  }
+
+  @override
+  String get visitTitle => 'Places of Madinah and Makkah';
+
+  @override
+  String get visitMadinah => 'Madinah';
+
+  @override
+  String get visitMakkah => 'Makkah';
+
+  @override
+  String get visitIntro =>
+      'Places of the Seerah and the Companions\' lives in and around Madinah and Makkah, with what happened there and its sources. This page introduces their history; it is not a guide to the rites or to visiting.';
+
+  @override
+  String get visitNearMe => 'Order by distance from me';
+
+  @override
+  String get visitLocating => 'Finding your location…';
+
+  @override
+  String get visitLocationOff =>
+      'Location services are off on your device. Turn them on and try again.';
+
+  @override
+  String get visitLocationDenied =>
+      'Location access was not allowed, so the places stay ordered by distance from the Haram.';
+
+  @override
+  String get visitLocationDeniedForever =>
+      'Location access is blocked for this app. You can allow it in the device settings.';
+
+  @override
+  String get visitLocationFailed =>
+      'Your location could not be found just now. Try again.';
+
+  @override
+  String get visitOpenSettings => 'Open settings';
+
+  @override
+  String get visitOrderedFromYou =>
+      'The places are ordered by distance from you.';
+
+  @override
+  String visitNotInCity(String city) {
+    return 'You are not in $city now, so the places are ordered by distance from the Haram.';
+  }
+
+  @override
+  String get visitPrivacy =>
+      'Your location is used on your device only, to order the list. It is never stored or sent anywhere.';
+
+  @override
+  String visitNoPlaces(String city) {
+    return 'No places are recorded in $city yet.';
+  }
+
+  @override
+  String get visitUnderOneKm => 'Less than a kilometre from you';
+
+  @override
+  String visitKmAway(String km) {
+    return 'About $km km from you';
+  }
+
+  @override
+  String get exploreVisitBody =>
+      'The Seerah\'s places in and around Madinah and Makkah on one map, which can be ordered by distance from you.';
+
+  @override
+  String get placeCompanions => 'Companions tied to this place';
+
+  @override
+  String placeVisitCity(String city) {
+    return 'Other places in $city';
+  }
 }

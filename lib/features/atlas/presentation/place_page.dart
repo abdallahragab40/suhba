@@ -14,6 +14,7 @@ import 'package:suhba/core/design_system/widgets/error_view.dart';
 import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
 import 'package:suhba/core/design_system/widgets/scene_backdrop.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/features/atlas/domain/visiting.dart';
 import 'package:suhba/features/sources/presentation/citation_sheet.dart';
 import 'package:suhba/shared/content/domain/atlas.dart';
 import 'package:suhba/shared/content/presentation/content_text.dart';
@@ -30,9 +31,15 @@ String geoPrecisionLabel(AppLocalizations l10n, GeoPrecision p) => switch (p) {
   GeoPrecision.uncertain => l10n.mapLegendUncertain,
 };
 
+/// A city's name as the visiting page shows it.
+String holyCityLabel(AppLocalizations l10n, HolyCity city) => switch (city) {
+  HolyCity.madinah => l10n.visitMadinah,
+  HolyCity.makkah => l10n.visitMakkah,
+};
+
 /// A place (S21): an illustrative scene, why it matters, how well its
-/// site is known, a schematic map in context, the events there and the
-/// visuals that show it.
+/// site is known, the Companions tied to it, a schematic map in context,
+/// the events there and the visuals that show it.
 class PlacePage extends ConsumerWidget {
   const PlacePage({required this.placeId, super.key});
 
@@ -91,11 +98,18 @@ class _Place extends ConsumerWidget {
         })
           v,
     ];
-    // The place among the two cities of the Seerah, for orientation.
-    final orientation = {
-      p.id: p,
-      for (final id in ['makkah', 'madinah']) id: ?all[id],
-    };
+    // A site in or near Madinah or Makkah among that city's other sites;
+    // anywhere else, among the two cities of the Seerah, for orientation.
+    final local = holyCityOf(p, all);
+    final orientation = local != null
+        ? placesIn(local, all)
+        : [
+            p,
+            for (final id in ['makkah', 'madinah'])
+              if (id != p.id) ?all[id],
+          ];
+    final city =
+        local ?? HolyCity.values.where((c) => c.placeId == p.id).firstOrNull;
 
     return ListView(
       padding: EdgeInsets.zero,
@@ -190,9 +204,13 @@ class _Place extends ConsumerWidget {
                         color: colors.onSurfaceDim,
                       ),
                     ),
+                  if (p.companionIds.isNotEmpty) ...[
+                    LinkGroupTitle(l10n.placeCompanions),
+                    CompanionChips(ids: p.companionIds),
+                  ],
                   LinkGroupTitle(l10n.placeOnMap),
                   SchematicMap(
-                    places: orientation.values.toList(),
+                    places: orientation,
                     height: 260,
                     onOpenPlace: (other) {
                       if (other.id != p.id) {
@@ -200,6 +218,18 @@ class _Place extends ConsumerWidget {
                       }
                     },
                   ),
+                  if (city != null)
+                    Align(
+                      alignment: AlignmentDirectional.centerStart,
+                      child: TextButton.icon(
+                        onPressed: () =>
+                            context.push(AppRoutes.visit(city: city.name)),
+                        icon: const Icon(Icons.mosque_outlined),
+                        label: Text(
+                          l10n.placeVisitCity(holyCityLabel(l10n, city)),
+                        ),
+                      ),
+                    ),
                   if (events.isNotEmpty) ...[
                     LinkGroupTitle(l10n.placeEvents),
                     for (final e in events) EventRow(event: e),

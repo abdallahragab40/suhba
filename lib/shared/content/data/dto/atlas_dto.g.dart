@@ -50,6 +50,7 @@ _PlaceDto _$PlaceDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
         'review',
         'modernName',
         'contemporaryNote',
+        'companionIds',
       ],
     );
     final val = _PlaceDto(
@@ -93,6 +94,12 @@ _PlaceDto _$PlaceDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
             ? null
             : LocalizedTextDto.fromJson(v as Map<String, dynamic>),
       ),
+      companionIds: $checkedConvert(
+        'companionIds',
+        (v) =>
+            (v as List<dynamic>?)?.map((e) => e as String).toList() ??
+            const <String>[],
+      ),
     );
     return val;
   },
@@ -109,6 +116,7 @@ Map<String, dynamic> _$PlaceDtoToJson(_PlaceDto instance) => <String, dynamic>{
   'review': instance.review.toJson(),
   'modernName': ?instance.modernName?.toJson(),
   'contemporaryNote': ?instance.contemporaryNote?.toJson(),
+  'companionIds': instance.companionIds,
 };
 
 const _$PlaceKindEnumMap = {
