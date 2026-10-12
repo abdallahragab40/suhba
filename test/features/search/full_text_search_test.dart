@@ -190,7 +190,7 @@ void main() {
       final index = await container.read(searchIndexProvider.future);
       expect(index.isComplete, isTrue);
       final hit = index
-          .search('بني تيم')
+          .search('الديات والمغارم')
           .firstWhere((h) => h.document.kind == SearchKind.section);
       expect(hit.document.id, 'abu-bakr.early-life');
       expect(hit.excerpt, isNotNull);
