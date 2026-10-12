@@ -74,9 +74,6 @@ abstract final class AppRoutes {
   static const settingsHistory = '$settings/history';
   static const sourcesDirectory = '$settings/sources';
 
-  /// Developer-only design system gallery (debug builds).
-  static const designGallery = '$settings/design-gallery';
-
   static final _slug = RegExp(r'^[a-z0-9]+(?:[-.][a-z0-9]+)*$');
 
   static String _id(String id) {

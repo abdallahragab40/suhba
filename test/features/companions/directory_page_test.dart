@@ -67,7 +67,7 @@ void main() {
       'سعيد بن زيد',
       'أبو عبيدة بن الجراح',
     ]);
-    expect(find.byType(DraftBanner), findsOneWidget);
+    expect(find.byType(DraftBanner), findsNothing);
     expect(find.byType(DraftBadge), findsNWidgets(10));
     expect(find.text('رضي الله عنه'), findsNWidgets(10));
   });

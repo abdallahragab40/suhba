@@ -118,10 +118,7 @@ void main() {
 
     expect(find.byType(CitationSheet), findsOneWidget);
     expect(find.text('مصادر هذه المعلومة'), findsOneWidget);
-    expect(
-      find.textContaining('لم يعتمد هذا المحتوى مختص بعد'),
-      findsOneWidget,
-    );
+    expect(find.textContaining('إحالات قيد المراجعة.'), findsOneWidget);
     // Every locator in the biography is now located in its edition.
     expect(find.text('الموضع بانتظار التحقق'), findsNothing);
     expect(find.textContaining('ص '), findsWidgets);

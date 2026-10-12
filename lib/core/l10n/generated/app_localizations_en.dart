@@ -182,14 +182,14 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get draftBadge => 'Draft — not reviewed';
+  String get draftBadge => 'Draft';
 
   @override
-  String get draftBannerTitle => 'Not yet approved by a specialist';
+  String get draftBannerTitle => 'Content under review';
 
   @override
   String get draftBannerMessage =>
-      'The texts and sources here are drafts or have had a preliminary review; do not rely on them until a qualified scholar approves them.';
+      'Scholarly approval is pending. See About for the review method.';
 
   @override
   String get directoryAll => 'All';
@@ -324,8 +324,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get citationUnknownSource => 'Unknown source';
 
   @override
-  String get citationDraftNotice =>
-      'Not yet approved by a specialist; the grading and locations are provisional.';
+  String get citationDraftNotice => 'References under review.';
 
   @override
   String get reliabilityExplainEstablished =>
@@ -628,7 +627,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutReviewDraft =>
-      'No qualified specialist has approved the content yet. Texts that have had a preliminary review, in which every report was checked against its source and errors were corrected, are marked \"preliminary review\"; texts that have not yet had one are marked \"draft\". Nothing will be published until a qualified specialist approves it.';
+      'No qualified specialist has approved the content yet. “Preliminary review” indicates editorial checks and comparisons of reports with sources; it does not mean every claim or chain of transmission has been verified. “Draft” indicates content that has not yet had this review. Final approval remains with a qualified specialist.';
 
   @override
   String get aboutReviewPublished =>
@@ -1408,7 +1407,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get shareDraftNotice =>
-      'Note: text not yet approved by a specialist; sources and locations are provisional.';
+      'Content under review; scholarly approval is pending.';
 
   @override
   String shareFromApp(String appName) {
@@ -1499,7 +1498,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutLicensesLink => 'Open-source licences';
 
   @override
-  String get draftBadgePreliminary => 'Preliminary review — not yet approved';
+  String get draftBadgePreliminary => 'Preliminary review';
 
   @override
   String get welcomeSkip => 'Skip';

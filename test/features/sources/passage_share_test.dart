@@ -82,10 +82,7 @@ void main() {
     expect(lines, contains('• الجامع الصحيح (صحيح البخاري)، رقم ٣٩٠٥'));
     expect(lines, contains('درجة الخبر: ثابت'));
     // Draft content never leaves the app without saying so.
-    expect(
-      lines,
-      contains('تنبيه: نص لم يعتمده مختص بعد، والمصادر ومواضعها مبدئية.'),
-    );
+    expect(lines, contains('المحتوى قيد المراجعة ولم يكتمل اعتماده العلمي.'));
     expect(lines.last, 'من تطبيق صُحبة');
   });
 

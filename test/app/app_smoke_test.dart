@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:suhba/core/design_system/gallery/design_gallery_page.dart';
-import 'package:suhba/core/design_system/tokens/palette.dart';
 import 'package:suhba/core/format/digits.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/features/home/presentation/home_page.dart';
@@ -43,48 +41,5 @@ void main() {
     );
     expect(formatter.digitStyle, DigitStyle.arabicIndic);
     expect(formatter.integer(13), '١٣');
-  });
-
-  testApp('the gallery theme button cycles system → light → dark', (
-    tester,
-  ) async {
-    tester.platformDispatcher.platformBrightnessTestValue = Brightness.light;
-    addTearDown(tester.platformDispatcher.clearPlatformBrightnessTestValue);
-    // Tall enough for the gallery link at the end of Settings.
-    tester.view
-      ..devicePixelRatio = 1
-      ..physicalSize = const Size(800, 2000);
-    addTearDown(tester.view.reset);
-    await pumpApp(tester);
-
-    await tester.tap(find.byTooltip('الإعدادات'));
-    await tester.pumpAndSettle();
-    await tester.ensureVisible(find.text('معرض نظام التصميم'));
-    await tester.tap(find.text('معرض نظام التصميم'));
-    // The gallery contains a pulsing skeleton, so pump past the page
-    // transition rather than settling.
-    await tester.pump();
-    await tester.pump(const Duration(seconds: 1));
-
-    Color background() => Theme.of(
-      tester.element(find.byType(DesignGalleryPage)),
-    ).scaffoldBackgroundColor;
-    Finder toggle(String modeLabel) =>
-        find.byTooltip('تغيير المظهر: $modeLabel');
-
-    expect(toggle('حسب النظام'), findsOneWidget);
-    expect(background(), Palette.paper); // system on a light device
-
-    await tester.tap(toggle('حسب النظام'));
-    await tester.pump();
-    await tester.pump(const Duration(milliseconds: 500));
-    expect(toggle('المظهر الفاتح'), findsOneWidget);
-    expect(background(), Palette.paper);
-
-    await tester.tap(toggle('المظهر الفاتح'));
-    await tester.pump();
-    await tester.pump(const Duration(milliseconds: 500));
-    expect(toggle('المظهر الداكن'), findsOneWidget);
-    expect(background(), Palette.ink);
   });
 }

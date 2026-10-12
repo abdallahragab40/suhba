@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/routes.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/widgets/companion_card.dart';
-import 'package:suhba/core/design_system/widgets/draft_banner.dart';
 import 'package:suhba/core/design_system/widgets/empty_state.dart';
 import 'package:suhba/core/design_system/widgets/error_view.dart';
 import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
@@ -31,24 +30,20 @@ class DirectoryPage extends ConsumerWidget {
     final l10n = AppLocalizations.of(context);
     final index = ref.watch(companionIndexProvider);
     final categories = ref.watch(categoriesProvider);
-    final manifest = ref.watch(contentManifestProvider);
 
     final Widget body;
-    if (index.hasError || categories.hasError || manifest.hasError) {
+    if (index.hasError || categories.hasError) {
       body = ErrorView(
-        error: index.error ?? categories.error ?? manifest.error,
+        error: index.error ?? categories.error,
         onRetry: () => ref
           ..invalidate(companionIndexProvider)
-          ..invalidate(categoriesProvider)
-          ..invalidate(contentManifestProvider),
+          ..invalidate(categoriesProvider),
       );
-    } else if (index.value case final all?
-        when categories.value != null && manifest.value != null) {
+    } else if (index.value case final all? when categories.value != null) {
       body = _DirectoryList(
         companions: all,
         categories: categories.value!,
         selected: effectiveCategory(categoryId, categories.value!),
-        showDraftBanner: manifest.value!.isDraft,
       );
     } else {
       body = const Padding(
@@ -78,13 +73,11 @@ class _DirectoryList extends StatelessWidget {
     required this.companions,
     required this.categories,
     required this.selected,
-    required this.showDraftBanner,
   });
 
   final List<CompanionSummary> companions;
   final List<CompanionCategory> categories;
   final String? selected;
-  final bool showDraftBanner;
 
   @override
   Widget build(BuildContext context) {
@@ -100,16 +93,6 @@ class _DirectoryList extends StatelessWidget {
         constraints: const BoxConstraints(maxWidth: 720),
         child: CustomScrollView(
           slivers: [
-            if (showDraftBanner)
-              const SliverPadding(
-                padding: EdgeInsetsDirectional.fromSTEB(
-                  AppSpacing.gutter,
-                  AppSpacing.xs,
-                  AppSpacing.gutter,
-                  0,
-                ),
-                sliver: SliverToBoxAdapter(child: DraftBanner()),
-              ),
             SliverToBoxAdapter(
               child: CategoryFilterBar(
                 categories: categories,

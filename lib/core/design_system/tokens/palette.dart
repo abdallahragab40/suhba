@@ -60,12 +60,11 @@ abstract final class Palette {
   static const establishedOnInk = Color(0xFF7BC4A0);
   static const disputedOnPaper = Color(0xFF784700);
   static const disputedOnInk = Color(0xFFF0B45A);
-  static const draftOnPaper = Color(0xFF8A3B2E);
-  static const draftWash = Color(0xFFF4E6DB);
-  static const draftOnInk = Color(0xFFF1D3A6);
-  static const draftWashOnInk = Color(0xFF2A2312);
-  // Draft on the green feature sections: warm sand on a deep amber wash,
-  // which sits with the gold rather than against the green.
-  static const draftOnGreen = Color(0xFFF1D3A6);
-  static const draftWashOnGreen = Color(0xFF3B2E14);
+  static const draftOnPaper = goldText;
+  static const draftWash = goldWash;
+  static const draftOnInk = goldOnInk;
+  static const draftWashOnInk = goldWashOnInk;
+  // Review status uses the same gold family on paper, ink and green.
+  static const draftOnGreen = goldOnInk;
+  static const draftWashOnGreen = goldWashOnInk;
 }

@@ -72,7 +72,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "ويروي ابن إسحاق قصته الطويلة: أنه كان مجوسيًّا، فمرّ بكنيسة للنصارى فأعجبه دينهم، فخرج يطلب العلم يتنقّل بين رهبان الشام والموصل ونصيبين وعمورية، حتى أخبره آخرهم أنه قد أظلّ زمان نبي يُبعث من الحرم، يهاجر إلى أرض ذات نخل بين حرّتين، يأكل الهدية ولا يأكل الصدقة، وبين كتفيه خاتم النبوة."
+            "ar": "ويروي ابن إسحاق قصته الطويلة: أنه كان مجوسيًّا، فمرّ بكنيسة للنصارى فأعجبه دينهم، فخرج يطلب العلم يتنقّل بين رهبان الشام والموصل ونصيبين وعمورية، حتى أخبره آخرهم أنه قد أظلّ زمان نبي يُبعث بأرض العرب، يهاجر إلى أرض ذات نخل بين حرّتين، يأكل الهدية ولا يأكل الصدقة، وبين كتفيه خاتم النبوة."
           },
           "reliability": "reported",
           "citations": [
@@ -80,13 +80,25 @@
               "sourceId": "sirat-ibn-hisham",
               "locatorStatus": "complete",
               "volume": 1,
-              "page": "214"
+              "page": "215"
             },
             {
-              "sourceId": "siyar",
+              "sourceId": "sirat-ibn-hisham",
               "locatorStatus": "complete",
               "volume": 1,
-              "page": "509"
+              "page": "216"
+            },
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "217"
+            },
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "218"
             }
           ]
         },
@@ -101,7 +113,19 @@
               "sourceId": "sirat-ibn-hisham",
               "locatorStatus": "complete",
               "volume": 1,
-              "page": "214"
+              "page": "218"
+            },
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "219"
+            },
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "220"
             }
           ]
         }
@@ -228,7 +252,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "ويذكر الذهبي أنه توفي بالمدائن سنة ست وثلاثين، في رواية الأكثر."
+            "ar": "ويذكر الذهبي أنه توفي بالمدائن، وينقل اختلافًا في سنة وفاته: قيل في خلافة عثمان، وقيل سنة ست وثلاثين."
           },
           "reliability": "reported",
           "citations": [
@@ -237,6 +261,12 @@
               "locatorStatus": "complete",
               "volume": 1,
               "page": "554"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "555"
             }
           ]
         }

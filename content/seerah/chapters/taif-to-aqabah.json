@@ -131,7 +131,7 @@
     {
       "type": "paragraph",
       "text": {
-        "ar": "ورجع النبي ﷺ إلى مكة فدخلها في جوار المطعم بن عدي، وقد ذكر النبي ﷺ المطعم يوم بدر بخير لهذا الصنيع."
+        "ar": "ورجع النبي ﷺ إلى مكة فدخلها في جوار المطعم بن عدي، كما يذكر ابن هشام. وفي الصحيح أنه قال عن أسرى بدر إنه لو كان المطعم حيًّا وكلّمه فيهم لتركهم له."
       },
       "reliability": "reported",
       "citations": [
@@ -299,7 +299,7 @@
     {
       "type": "paragraph",
       "text": {
-        "ar": "وظلّ على ذلك يطلب من يؤويه وينصره ليبلّغ رسالة ربه، حتى لقي عند العقبة نفرًا من الخزرج فأسلموا، ورجعوا يدعون قومهم."
+        "ar": "وظلّ يعرض نفسه على القبائل في المواسم يدعوهم إلى الله ويسألهم أن ينصروه، حتى لقي عند العقبة نفرًا من الخزرج فأسلموا، ثم رجعوا يدعون قومهم."
       },
       "reliability": "reported",
       "citations": [
@@ -308,6 +308,18 @@
           "locatorStatus": "complete",
           "volume": 1,
           "page": "422"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "428"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "429"
         }
       ]
     },
@@ -322,7 +334,13 @@
           "sourceId": "sirat-ibn-hisham",
           "locatorStatus": "complete",
           "volume": 1,
-          "page": "211"
+          "page": "428"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "429"
         }
       ]
     },
@@ -343,6 +361,12 @@
           "locatorStatus": "complete",
           "volume": 1,
           "page": "433"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "434"
         }
       ]
     },
@@ -399,6 +423,12 @@
           "locatorStatus": "complete",
           "volume": 1,
           "page": "441"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "443"
         }
       ]
     },

@@ -1,11 +1,9 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/app_shell.dart';
 import 'package:suhba/app/router/not_found_page.dart';
 import 'package:suhba/app/router/routes.dart';
 import 'package:suhba/app/router/transitions.dart';
-import 'package:suhba/core/design_system/gallery/design_gallery_page.dart';
 import 'package:suhba/features/atlas/presentation/event_page.dart';
 import 'package:suhba/features/atlas/presentation/place_page.dart';
 import 'package:suhba/features/atlas/presentation/visual_page.dart';
@@ -95,11 +93,6 @@ GoRouter buildAppRouter({String initialLocation = AppRoutes.home}) {
             pageBuilder: (context, state) =>
                 fadeThroughPage(context, state, const ReadingHistoryPage()),
           ),
-          if (kDebugMode)
-            GoRoute(
-              path: 'design-gallery',
-              builder: (_, _) => const DesignGalleryPage(),
-            ),
         ],
       ),
       GoRoute(

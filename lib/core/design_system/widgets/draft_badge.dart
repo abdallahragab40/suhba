@@ -3,10 +3,7 @@ import 'package:suhba/core/design_system/tokens/radii.dart';
 import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 
-/// Shown on every item whose content a qualified reviewer has not
-/// approved, so it is never presented as authenticated: "مسودة — لم
-/// يُراجَع", or "مراجعة أولية — لم يعتمدها مختص" after a preliminary
-/// review.
+/// Compact review status for content awaiting specialist approval.
 class DraftBadge extends StatelessWidget {
   const DraftBadge({this.preliminary = false, super.key});
 
@@ -22,7 +19,7 @@ class DraftBadge extends StatelessWidget {
       label: label,
       excludeSemantics: true,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
         decoration: BoxDecoration(
           color: colors.draftSurface,
           borderRadius: const BorderRadius.all(AppRadii.pill),

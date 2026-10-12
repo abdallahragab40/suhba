@@ -238,7 +238,7 @@
           "text": {
             "ar": "انفجر جرحه بعد الحكم في بني قريظة فمات منه، وذلك سنة خمس من الهجرة، وهو ابن سبع وثلاثين سنة، وصلّى عليه النبي ﷺ، على ما يذكر الذهبي."
           },
-          "reliability": "established",
+          "reliability": "reported",
           "citations": [
             {
               "sourceId": "bukhari",
@@ -250,6 +250,12 @@
               "locatorStatus": "complete",
               "volume": 1,
               "page": "289"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "290"
             }
           ]
         }

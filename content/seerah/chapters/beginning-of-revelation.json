@@ -239,6 +239,15 @@
           "sourceId": "muslim",
           "locatorStatus": "complete",
           "hadithNumber": "161"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 74,
+            "ayahFrom": 1,
+            "ayahTo": 7
+          }
         }
       ]
     },
@@ -464,7 +473,7 @@
     {
       "type": "paragraph",
       "text": {
-        "ar": "ثم تتابع الوحي منجّمًا بحسب الوقائع طوال ثلاث وعشرين سنة، ليثبّت به فؤاده ويعلّم الناس على مكث، كما ذكر القرآن."
+        "ar": "ثم تتابع الوحي منجّمًا بحسب الوقائع ليثبّت به فؤاده ويُقرأ على الناس على مكث، كما ذكر القرآن. وروى ابن عباس أنه أقام بعد بدء الوحي ثلاث عشرة سنة بمكة، ثم عشر سنين بالمدينة."
       },
       "reliability": "established",
       "citations": [
@@ -483,6 +492,11 @@
             "surah": 25,
             "ayahFrom": 32
           }
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3851"
         }
       ]
     },

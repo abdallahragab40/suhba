@@ -17,12 +17,17 @@ void main() {
     addTearDown(tester.view.reset);
   }
 
+  /// Scrolls the page until [finder] is built (lists build lazily, so it
+  /// may not exist yet), then brings its first match into view.
   Future<void> reveal(WidgetTester tester, Finder finder) async {
-    await tester.scrollUntilVisible(
-      finder.first,
-      300,
-      scrollable: find.byType(Scrollable).first,
+    final page = find.byWidgetPredicate(
+      (w) => w is Scrollable && w.axisDirection == AxisDirection.down,
     );
+    for (var i = 0; i < 60 && finder.evaluate().isEmpty; i++) {
+      await tester.drag(page.first, const Offset(0, -300));
+      await tester.pump();
+    }
+    await tester.ensureVisible(finder.first);
     await tester.pumpAndSettle();
   }
 

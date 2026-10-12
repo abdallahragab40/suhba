@@ -180,14 +180,14 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get draftBadge => 'مسودة — لم يُراجَع';
+  String get draftBadge => 'مسودة';
 
   @override
-  String get draftBannerTitle => 'لم يعتمد هذا المحتوى مختص بعد';
+  String get draftBannerTitle => 'المحتوى قيد المراجعة';
 
   @override
   String get draftBannerMessage =>
-      'النصوص والمصادر هنا مسودة أو خضعت لمراجعة أولية، ولا تُعتمد قبل أن يعتمدها عالم مختص.';
+      'لم يكتمل الاعتماد العلمي بعد. تفاصيل المنهج في «عن التطبيق».';
 
   @override
   String get directoryAll => 'الكل';
@@ -322,8 +322,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get citationUnknownSource => 'مصدر غير معروف';
 
   @override
-  String get citationDraftNotice =>
-      'لم يعتمد هذا المحتوى مختص بعد؛ التصنيف والمواضع مبدئية.';
+  String get citationDraftNotice => 'إحالات قيد المراجعة.';
 
   @override
   String get reliabilityExplainEstablished =>
@@ -626,7 +625,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get aboutReviewDraft =>
-      'لم يعتمد المحتوى مختص مؤهل بعد. ما خضع منه لمراجعة أولية — رُوجع فيها كل خبر على مصدره وصُحّح ما وُجد من أخطاء — يُوسم بـ«مراجعة أولية»، وما لم يخضع لها بعدُ يُوسم بـ«مسودة». ولن يُنشر شيء قبل أن يعتمده مختص مؤهل.';
+      'لم يعتمد المحتوى مختص مؤهل بعد. تشير «مراجعة أولية» إلى فحص تحريري ومقارنة أخبار بمصادرها، ولا تعني التحقق الكامل من كل خبر أو اعتماد أسانيد جميع الروايات. وتشير «مسودة» إلى محتوى لم يخضع لهذه المراجعة بعد. يبقى الاعتماد النهائي لمختص مؤهل.';
 
   @override
   String get aboutReviewPublished =>
@@ -1414,7 +1413,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get shareDraftNotice =>
-      'تنبيه: نص لم يعتمده مختص بعد، والمصادر ومواضعها مبدئية.';
+      'المحتوى قيد المراجعة ولم يكتمل اعتماده العلمي.';
 
   @override
   String shareFromApp(String appName) {
@@ -1504,7 +1503,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get aboutLicensesLink => 'تراخيص البرمجيات المستخدمة';
 
   @override
-  String get draftBadgePreliminary => 'مراجعة أولية — لم يعتمدها مختص';
+  String get draftBadgePreliminary => 'مراجعة أولية';
 
   @override
   String get welcomeSkip => 'تخطَّ';

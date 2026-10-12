@@ -347,19 +347,19 @@ abstract class AppLocalizations {
   /// Label on every item whose content has not been approved by a qualified reviewer.
   ///
   /// In ar, this message translates to:
-  /// **'مسودة — لم يُراجَع'**
+  /// **'مسودة'**
   String get draftBadge;
 
   /// Banner shown while the app runs on unreviewed (draft) content.
   ///
   /// In ar, this message translates to:
-  /// **'لم يعتمد هذا المحتوى مختص بعد'**
+  /// **'المحتوى قيد المراجعة'**
   String get draftBannerTitle;
 
   /// Explanation under the draft banner.
   ///
   /// In ar, this message translates to:
-  /// **'النصوص والمصادر هنا مسودة أو خضعت لمراجعة أولية، ولا تُعتمد قبل أن يعتمدها عالم مختص.'**
+  /// **'لم يكتمل الاعتماد العلمي بعد. تفاصيل المنهج في «عن التطبيق».'**
   String get draftBannerMessage;
 
   /// Category filter: show every companion.
@@ -605,7 +605,7 @@ abstract class AppLocalizations {
   /// Notice in the citation sheet for draft content.
   ///
   /// In ar, this message translates to:
-  /// **'لم يعتمد هذا المحتوى مختص بعد؛ التصنيف والمواضع مبدئية.'**
+  /// **'إحالات قيد المراجعة.'**
   String get citationDraftNotice;
 
   /// Explains the established level.
@@ -1139,7 +1139,7 @@ abstract class AppLocalizations {
   /// About: draft status.
   ///
   /// In ar, this message translates to:
-  /// **'لم يعتمد المحتوى مختص مؤهل بعد. ما خضع منه لمراجعة أولية — رُوجع فيها كل خبر على مصدره وصُحّح ما وُجد من أخطاء — يُوسم بـ«مراجعة أولية»، وما لم يخضع لها بعدُ يُوسم بـ«مسودة». ولن يُنشر شيء قبل أن يعتمده مختص مؤهل.'**
+  /// **'لم يعتمد المحتوى مختص مؤهل بعد. تشير «مراجعة أولية» إلى فحص تحريري ومقارنة أخبار بمصادرها، ولا تعني التحقق الكامل من كل خبر أو اعتماد أسانيد جميع الروايات. وتشير «مسودة» إلى محتوى لم يخضع لهذه المراجعة بعد. يبقى الاعتماد النهائي لمختص مؤهل.'**
   String get aboutReviewDraft;
 
   /// About: published status.
@@ -2495,7 +2495,7 @@ abstract class AppLocalizations {
   /// Shared text: draft warning; always included for unreviewed content.
   ///
   /// In ar, this message translates to:
-  /// **'تنبيه: نص لم يعتمده مختص بعد، والمصادر ومواضعها مبدئية.'**
+  /// **'المحتوى قيد المراجعة ولم يكتمل اعتماده العلمي.'**
   String get shareDraftNotice;
 
   /// Shared text: last line.
@@ -2645,7 +2645,7 @@ abstract class AppLocalizations {
   /// Badge on items that had a preliminary review but no scholar approval.
   ///
   /// In ar, this message translates to:
-  /// **'مراجعة أولية — لم يعتمدها مختص'**
+  /// **'مراجعة أولية'**
   String get draftBadgePreliminary;
 
   /// No description provided for @welcomeSkip.

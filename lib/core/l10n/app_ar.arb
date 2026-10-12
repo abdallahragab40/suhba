@@ -277,15 +277,15 @@
       }
     }
   },
-  "draftBadge": "مسودة — لم يُراجَع",
+  "draftBadge": "مسودة",
   "@draftBadge": {
     "description": "Label on every item whose content has not been approved by a qualified reviewer."
   },
-  "draftBannerTitle": "لم يعتمد هذا المحتوى مختص بعد",
+  "draftBannerTitle": "المحتوى قيد المراجعة",
   "@draftBannerTitle": {
     "description": "Banner shown while the app runs on unreviewed (draft) content."
   },
-  "draftBannerMessage": "النصوص والمصادر هنا مسودة أو خضعت لمراجعة أولية، ولا تُعتمد قبل أن يعتمدها عالم مختص.",
+  "draftBannerMessage": "لم يكتمل الاعتماد العلمي بعد. تفاصيل المنهج في «عن التطبيق».",
   "@draftBannerMessage": {
     "description": "Explanation under the draft banner."
   },
@@ -485,7 +485,7 @@
   "@citationUnknownSource": {
     "description": "Fallback when a cited source is missing."
   },
-  "citationDraftNotice": "لم يعتمد هذا المحتوى مختص بعد؛ التصنيف والمواضع مبدئية.",
+  "citationDraftNotice": "إحالات قيد المراجعة.",
   "@citationDraftNotice": {
     "description": "Notice in the citation sheet for draft content."
   },
@@ -897,7 +897,7 @@
   "@aboutReviewTitle": {
     "description": "About section."
   },
-  "aboutReviewDraft": "لم يعتمد المحتوى مختص مؤهل بعد. ما خضع منه لمراجعة أولية — رُوجع فيها كل خبر على مصدره وصُحّح ما وُجد من أخطاء — يُوسم بـ«مراجعة أولية»، وما لم يخضع لها بعدُ يُوسم بـ«مسودة». ولن يُنشر شيء قبل أن يعتمده مختص مؤهل.",
+  "aboutReviewDraft": "لم يعتمد المحتوى مختص مؤهل بعد. تشير «مراجعة أولية» إلى فحص تحريري ومقارنة أخبار بمصادرها، ولا تعني التحقق الكامل من كل خبر أو اعتماد أسانيد جميع الروايات. وتشير «مسودة» إلى محتوى لم يخضع لهذه المراجعة بعد. يبقى الاعتماد النهائي لمختص مؤهل.",
   "@aboutReviewDraft": {
     "description": "About: draft status."
   },
@@ -1967,7 +1967,7 @@
       }
     }
   },
-  "shareDraftNotice": "تنبيه: نص لم يعتمده مختص بعد، والمصادر ومواضعها مبدئية.",
+  "shareDraftNotice": "المحتوى قيد المراجعة ولم يكتمل اعتماده العلمي.",
   "@shareDraftNotice": {
     "description": "Shared text: draft warning; always included for unreviewed content."
   },
@@ -2090,7 +2090,7 @@
   "@aboutLicensesLink": {
     "description": "About: link to the open-source licence notices."
   },
-  "draftBadgePreliminary": "مراجعة أولية — لم يعتمدها مختص",
+  "draftBadgePreliminary": "مراجعة أولية",
   "@draftBadgePreliminary": {
     "description": "Badge on items that had a preliminary review but no scholar approval."
   },

@@ -103,8 +103,8 @@ class AboutPage extends ConsumerWidget {
             Text(l10n.aboutImagesBody, style: textTheme.bodyLarge),
           ),
           const SizedBox(height: AppSpacing.lg),
-          // The notices the open-source packages ask to be shown; kept out
-          // of Settings, one tap away here.
+          // The notices the open-source packages and the bundled fonts' OFL
+          // require to ship with the app; this is the only place they show.
           Align(
             alignment: AlignmentDirectional.centerStart,
             child: TextButton(

@@ -10,7 +10,6 @@ import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
 import 'package:suhba/core/design_system/tokens/typography.dart';
 import 'package:suhba/core/design_system/widgets/draft_badge.dart';
-import 'package:suhba/core/design_system/widgets/draft_banner.dart';
 import 'package:suhba/core/design_system/widgets/empty_state.dart';
 import 'package:suhba/core/design_system/widgets/error_view.dart';
 import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
@@ -94,7 +93,6 @@ class _Hub extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
-    final manifest = ref.watch(contentManifestProvider).value;
     final progress =
         ref
             .watch(
@@ -143,10 +141,6 @@ class _Hub extends ConsumerWidget {
         children: [
           SeerahOpening(index: index, progress: progress),
           paper([
-            if (manifest?.isDraft ?? false) ...[
-              const SizedBox(height: AppSpacing.md),
-              const DraftBanner(),
-            ],
             const SizedBox(height: AppSpacing.md),
             ReadingBody(
               blocks: s.introduction.skip(1).toList(),
@@ -282,23 +276,11 @@ class SeerahOpening extends ConsumerWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        Row(
-                          children: [
-                            Expanded(
-                              child: Text(
-                                s.subtitle.of(context),
-                                style: SuhbaTextStyles.of(
-                                  context,
-                                ).kicker.copyWith(color: Palette.goldOnInk),
-                              ),
-                            ),
-                            if (!s.review.isApproved)
-                              Flexible(
-                                child: DraftBadge(
-                                  preliminary: s.review.isPreliminary,
-                                ),
-                              ),
-                          ],
+                        Text(
+                          s.subtitle.of(context),
+                          style: SuhbaTextStyles.of(
+                            context,
+                          ).kicker.copyWith(color: Palette.goldOnInk),
                         ),
                         const SizedBox(height: AppSpacing.sm),
                         Semantics(
@@ -313,6 +295,15 @@ class SeerahOpening extends ConsumerWidget {
                                     ?.copyWith(color: Palette.paper),
                           ),
                         ),
+                        if (!s.review.isApproved) ...[
+                          const SizedBox(height: AppSpacing.sm),
+                          Align(
+                            alignment: AlignmentDirectional.centerStart,
+                            child: DraftBadge(
+                              preliminary: s.review.isPreliminary,
+                            ),
+                          ),
+                        ],
                         if (introText != null) ...[
                           const SizedBox(height: AppSpacing.md),
                           Text(

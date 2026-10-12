@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -148,14 +147,6 @@ class SettingsPage extends ConsumerWidget {
             trailing: const Icon(Icons.chevron_right),
             onTap: () => context.push(AppRoutes.sourcesDirectory),
           ),
-          if (kDebugMode)
-            ListTile(
-              contentPadding: EdgeInsets.zero,
-              leading: const Icon(Icons.palette_outlined),
-              title: Text(l10n.designGalleryTitle),
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () => context.push(AppRoutes.designGallery),
-            ),
         ],
       ),
     );
