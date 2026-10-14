@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:suhba/core/database/database_provider.dart';
 import 'package:suhba/core/share/share_service.dart';
 import 'package:suhba/features/bookmarks/domain/bookmark.dart';
 import 'package:suhba/features/bookmarks/presentation/bookmark_providers.dart';
 import 'package:suhba/features/personal_data/data/file_opener.dart';
 import 'package:suhba/features/personal_data/domain/reading_data_archive.dart';
+import 'package:suhba/features/personal_data/presentation/reading_data_transfer.dart';
+import 'package:suhba/features/reading_progress/data/drift_reading_progress_repository.dart';
 import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
 import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
 
@@ -41,6 +44,15 @@ Bookmark _companion(String id) => Bookmark(
   targetId: id,
   createdAt: DateTime.utc(2026, 10, 2),
 );
+
+/// Fails every save, to interrupt an import part-way.
+class _FailingProgress extends DriftReadingProgressRepository {
+  _FailingProgress(super.db);
+
+  @override
+  Future<void> save(ReadingProgress progress) async =>
+      throw StateError('disk full');
+}
 
 /// E10: exporting and importing saved items and reading positions.
 void main() {
@@ -151,6 +163,31 @@ void main() {
       'abu-bakr.hijrah',
       'abu-bakr.virtues',
     });
+  });
+
+  testApp('an import that fails part-way writes nothing', (tester) async {
+    tall(tester);
+    final app = AppUnderTest(
+      location: '/settings',
+      overrides: [
+        readingProgressRepositoryProvider.overrideWith(
+          (ref) => _FailingProgress(ref.watch(appDatabaseProvider)),
+        ),
+      ],
+    );
+    await app.pump(tester);
+    // The saved item is written first; the position then fails.
+    final plan = ImportPlan(
+      newBookmarks: [_companion('umar')],
+      progressToSave: [_p('abu-bakr.hijrah')],
+      keptBookmarks: 0,
+      keptPositions: 0,
+    );
+    await expectLater(
+      app.container.read(readingDataTransferProvider).apply(plan),
+      throwsA(isA<StateError>()),
+    );
+    expect(await saved(app), isEmpty);
   });
 
   testApp('cancelling the confirmation writes nothing', (tester) async {

@@ -90,81 +90,97 @@ class _WelcomePageState extends ConsumerState<WelcomePage> {
             child: Scaffold(
               backgroundColor: Palette.green,
               body: SafeArea(
-                child: Column(
-                  children: [
-                    Align(
-                      alignment: AlignmentDirectional.centerEnd,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: AppSpacing.xs,
-                        ),
-                        child: AnimatedOpacity(
-                          opacity: last ? 0 : 1,
-                          duration: AppMotion.resolve(context, AppMotion.short),
-                          child: TextButton(
-                            onPressed: last ? null : _finish,
-                            child: Text(l10n.welcomeSkip),
-                          ),
-                        ),
-                      ),
+                // On tablets the screens keep a reading width, centred,
+                // with the controls beneath them rather than in the corners.
+                child: Center(
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(
+                      maxWidth:
+                          AppSpacing.readingMaxWidth + 2 * AppSpacing.gutter,
                     ),
-                    Expanded(
-                      child: PageView(
-                        controller: _controller,
-                        onPageChanged: (i) => setState(() => _page = i),
-                        children: pages,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                        AppSpacing.gutter,
-                        AppSpacing.md,
-                        AppSpacing.gutter,
-                        AppSpacing.lg,
-                      ),
-                      child: Row(
-                        children: [
-                          Semantics(
-                            label: l10n.welcomePageLabel(
-                              format.integer(_page + 1),
-                              format.integer(pages.length),
+                    child: Column(
+                      children: [
+                        Align(
+                          alignment: AlignmentDirectional.centerEnd,
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: AppSpacing.xs,
                             ),
-                            child: ExcludeSemantics(
-                              child: Row(
-                                children: [
-                                  for (var i = 0; i < pages.length; i++)
-                                    AnimatedContainer(
-                                      duration: AppMotion.resolve(
-                                        context,
-                                        AppMotion.medium,
-                                      ),
-                                      margin: const EdgeInsetsDirectional.only(
-                                        end: AppSpacing.xxs,
-                                      ),
-                                      width: i == _page ? 22 : 8,
-                                      height: 8,
-                                      decoration: BoxDecoration(
-                                        color: i == _page
-                                            ? Palette.goldOnInk
-                                            : scheme.outlineVariant,
-                                        borderRadius: BorderRadius.circular(4),
-                                      ),
-                                    ),
-                                ],
+                            child: AnimatedOpacity(
+                              opacity: last ? 0 : 1,
+                              duration: AppMotion.resolve(
+                                context,
+                                AppMotion.short,
+                              ),
+                              child: TextButton(
+                                onPressed: last ? null : _finish,
+                                child: Text(l10n.welcomeSkip),
                               ),
                             ),
                           ),
-                          const Spacer(),
-                          FilledButton(
-                            onPressed: () => _next(pages.length),
-                            child: Text(
-                              last ? l10n.welcomeStart : l10n.welcomeNext,
-                            ),
+                        ),
+                        Expanded(
+                          child: PageView(
+                            controller: _controller,
+                            onPageChanged: (i) => setState(() => _page = i),
+                            children: pages,
                           ),
-                        ],
-                      ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                            AppSpacing.gutter,
+                            AppSpacing.md,
+                            AppSpacing.gutter,
+                            AppSpacing.lg,
+                          ),
+                          child: Row(
+                            children: [
+                              Semantics(
+                                label: l10n.welcomePageLabel(
+                                  format.integer(_page + 1),
+                                  format.integer(pages.length),
+                                ),
+                                child: ExcludeSemantics(
+                                  child: Row(
+                                    children: [
+                                      for (var i = 0; i < pages.length; i++)
+                                        AnimatedContainer(
+                                          duration: AppMotion.resolve(
+                                            context,
+                                            AppMotion.medium,
+                                          ),
+                                          margin:
+                                              const EdgeInsetsDirectional.only(
+                                                end: AppSpacing.xxs,
+                                              ),
+                                          width: i == _page ? 22 : 8,
+                                          height: 8,
+                                          decoration: BoxDecoration(
+                                            color: i == _page
+                                                ? Palette.goldOnInk
+                                                : scheme.outlineVariant,
+                                            borderRadius: BorderRadius.circular(
+                                              4,
+                                            ),
+                                          ),
+                                        ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              const Spacer(),
+                              FilledButton(
+                                onPressed: () => _next(pages.length),
+                                child: Text(
+                                  last ? l10n.welcomeStart : l10n.welcomeNext,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
               ),
             ),

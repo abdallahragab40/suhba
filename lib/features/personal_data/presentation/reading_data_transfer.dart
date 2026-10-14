@@ -97,18 +97,21 @@ class ReadingDataTransfer {
     };
   }
 
-  /// Writes [plan], then checks the result against the content as on a
-  /// new build: positions in passages that no longer exist are dropped,
-  /// and positions in edited passages are kept but not restored silently.
+  /// Writes [plan] in one transaction (all of it or none), then checks the
+  /// result against the content as on a new build: positions in passages
+  /// that no longer exist are dropped, and positions in edited passages are
+  /// kept but not restored silently.
   Future<void> apply(ImportPlan plan) async {
     final bookmarks = _ref.read(bookmarkRepositoryProvider);
     final progress = _ref.read(readingProgressRepositoryProvider);
-    for (final b in plan.newBookmarks) {
-      await bookmarks.restore(b);
-    }
-    for (final p in plan.progressToSave) {
-      await progress.save(p);
-    }
+    await _ref.read(appDatabaseProvider).transaction(() async {
+      for (final b in plan.newBookmarks) {
+        await bookmarks.restore(b);
+      }
+      for (final p in plan.progressToSave) {
+        await progress.save(p);
+      }
+    });
     final manifest = await _ref.read(contentManifestProvider.future);
     await reconcileUserData(
       content: _ref.read(contentRepositoryProvider),

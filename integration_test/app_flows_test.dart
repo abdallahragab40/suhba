@@ -34,6 +34,9 @@ void main() {
     await settings.setString(SettingsKeys.themeMode, 'system');
     await settings.setString(SettingsKeys.digitStyle, 'arabicIndic');
     await settings.setDouble(SettingsKeys.readingTextSize, 19);
+    // On a fresh install the welcome screens would cover the app; they
+    // have their own tests.
+    await settings.setString(SettingsKeys.welcomeSeen, '1');
   });
 
   // The database is not closed: the test process ends with the last test,
@@ -62,10 +65,14 @@ void main() {
     await tester.pumpAndSettle();
   }
 
+  /// Opens a destination from the bottom bar, or from the side rail on
+  /// wide screens (tablets).
   Future<void> tab(WidgetTester tester, String label) async {
     await tester.tap(
       find.descendant(
-        of: find.byType(NavigationBar),
+        of: find.byWidgetPredicate(
+          (w) => w is NavigationBar || w is NavigationRail,
+        ),
         matching: find.text(label),
       ),
     );

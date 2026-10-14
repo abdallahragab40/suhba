@@ -136,4 +136,24 @@ void main() {
       expect(tester.takeException(), isNull, reason: location);
     });
   }
+
+  // Tablets (the iOS build runs on iPad): the side rail and the widest
+  // and narrowest iPad windows, upright and on its side.
+  const tablets = {
+    'iPad mini': Size(744, 1133),
+    'iPad 13-inch': Size(1032, 1376),
+    'iPad 13-inch landscape': Size(1376, 1032),
+  };
+  for (final MapEntry(key: device, value: size) in tablets.entries) {
+    testApp('every screen fits an $device without overflow', (tester) async {
+      tester.view
+        ..devicePixelRatio = 1
+        ..physicalSize = size;
+      addTearDown(tester.view.reset);
+      for (final location in screens.values) {
+        await AppUnderTest(location: location).pump(tester);
+        expect(tester.takeException(), isNull, reason: location);
+      }
+    });
+  }
 }
