@@ -77,7 +77,7 @@ void main() {
     expect(find.text('محتوى تجريبي (مسودة)'), findsOneWidget);
   });
 
-  testApp('about explains method, reliability, review and images', (
+  testApp('about explains method, reliability, review, images and privacy', (
     tester,
   ) async {
     tall(tester);
@@ -92,6 +92,12 @@ void main() {
       findsOneWidget,
     );
     expect(find.textContaining('لا يتضمن التطبيق صورًا'), findsOneWidget);
+    expect(find.text('الخصوصية'), findsOneWidget);
+    expect(
+      find.textContaining('لا يجمع التطبيق أي بيانات عنك'),
+      findsOneWidget,
+    );
+    expect(find.textContaining('لا يُقرأ موقعك إلا حين تطلب'), findsOneWidget);
     for (final level in ['ثابت', 'رواية تاريخية', 'مختلف فيه', 'غير معروف']) {
       expect(find.text(level), findsOneWidget, reason: level);
     }

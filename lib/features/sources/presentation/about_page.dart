@@ -10,8 +10,8 @@ import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/shared/content/providers.dart';
 
 /// About and methodology (S13): what the app is, how it treats sources,
-/// what each reliability level means, whether the content is reviewed, and
-/// the image policy.
+/// what each reliability level means, whether the content is reviewed, the
+/// image policy and privacy.
 class AboutPage extends ConsumerWidget {
   const AboutPage({super.key});
 
@@ -101,6 +101,10 @@ class AboutPage extends ConsumerWidget {
           section(
             l10n.aboutImagesTitle,
             Text(l10n.aboutImagesBody, style: textTheme.bodyLarge),
+          ),
+          section(
+            l10n.aboutPrivacyTitle,
+            Text(l10n.aboutPrivacyBody, style: textTheme.bodyLarge),
           ),
           const SizedBox(height: AppSpacing.lg),
           // The notices the open-source packages and the bundled fonts' OFL

@@ -641,6 +641,13 @@ class AppLocalizationsEn extends AppLocalizations {
       'The app contains no images or drawings of the Companions or of the Prophet ﷺ; geometric ornament and Arabic calligraphy are used instead. It currently includes no photographs.';
 
   @override
+  String get aboutPrivacyTitle => 'Privacy';
+
+  @override
+  String get aboutPrivacyBody =>
+      'The app collects no data about you and sends nothing anywhere: it has no account, no ads, no tracking or analytics, and it does not connect to the internet.\n\nSaved items, reading positions, settings and quiz scores are stored on your device only. You can clear saved items and reading positions in Settings, and deleting the app removes everything. Your device may include them in its backups, depending on your settings.\n\nYour location is read only when you ask to order places by distance from you, and only approximately. It is used on your device for that ordering alone, and is never stored or sent.\n\nWhen you share a passage or export your data, the content is handed to your device\'s share sheet and you choose where it goes. When you import, the app reads only the file you choose.';
+
+  @override
   String get sourceTypeQuran => 'The Qur\'an';
 
   @override

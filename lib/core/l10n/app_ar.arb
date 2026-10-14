@@ -913,6 +913,14 @@
   "@aboutImagesBody": {
     "description": "About: images policy."
   },
+  "aboutPrivacyTitle": "الخصوصية",
+  "@aboutPrivacyTitle": {
+    "description": "About section."
+  },
+  "aboutPrivacyBody": "لا يجمع التطبيق أي بيانات عنك ولا يرسلها إلى أي جهة: لا حساب فيه ولا إعلانات ولا أدوات تتبّع أو تحليل، ولا يتصل بالإنترنت.\n\nتُحفظ العناصر المحفوظة ومواضع القراءة والإعدادات ونتائج الاختبارات على جهازك فقط. يمكنك مسح المحفوظات ومواضع القراءة من الإعدادات، ويُزال كل شيء بحذف التطبيق. وقد يضمّنها نظام جهازك في نسخه الاحتياطية بحسب إعداداتك.\n\nلا يُقرأ موقعك إلا حين تطلب ترتيب الأماكن بحسب قربها منك، وبدقة تقريبية. يُستعمل على جهازك لهذا الترتيب فقط، ولا يُحفظ ولا يُرسل.\n\nعند مشاركة نص أو تصدير بياناتك يُسلَّم المحتوى إلى نافذة المشاركة في نظام جهازك، وأنت من يختار وجهته. وعند الاستيراد لا يقرأ التطبيق إلا الملف الذي تختاره.",
+  "@aboutPrivacyBody": {
+    "description": "About: privacy policy, in short. Must stay true to what the app does; keep in step with site/privacy.html."
+  },
   "sourceTypeQuran": "القرآن الكريم",
   "@sourceTypeQuran": {
     "description": "Source group."
