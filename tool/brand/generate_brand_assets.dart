@@ -60,7 +60,10 @@ void main() {
         );
       }
 
-      // iOS: every icon listed in the asset catalogue, opaque.
+      // iOS: every icon listed in the asset catalogue. The standard icon is
+      // opaque, as the App Store requires; the iOS 18 dark variant is
+      // transparent (the OS supplies its ground) and the tinted one is
+      // grayscale on black.
       const iconSet = '$_iosAssets/AppIcon.appiconset';
       final contents =
           jsonDecode(File('$iconSet/Contents.json').readAsStringSync())
@@ -72,13 +75,21 @@ void main() {
           (image['size']! as String).split('x').first,
         );
         final scale = double.parse(
-          (image['scale']! as String).replaceAll('x', ''),
+          ((image['scale'] as String?) ?? '1x').replaceAll('x', ''),
         );
+        final appearance = (image['appearances'] as List<Object?>?)
+            ?.cast<Map<String, Object?>>()
+            .firstOrNull?['value'];
+        final layout = switch (appearance) {
+          'dark' => BrandMarkLayout.squareDark,
+          'tinted' => BrandMarkLayout.squareTinted,
+          _ => BrandMarkLayout.square,
+        };
         await _write(
           '$iconSet/${image['filename']}',
           (points * scale).round(),
-          BrandMarkLayout.square,
-          alpha: false,
+          layout,
+          alpha: layout == BrandMarkLayout.squareDark,
         );
       }
 

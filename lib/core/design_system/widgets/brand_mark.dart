@@ -7,6 +7,14 @@ enum BrandMarkLayout {
   /// Opaque ink square, full bleed: iOS icons (the OS rounds the corners).
   square,
 
+  /// Gold mark on transparent, sized as [square]: the iOS 18 dark icon,
+  /// which the OS sets on its own dark ground.
+  squareDark,
+
+  /// White mark on black, sized as [square]: the iOS 18 tinted icon, whose
+  /// luminance the OS tints.
+  squareTinted,
+
   /// Ink rounded square on transparent: legacy Android launcher icons.
   roundedSquare,
 
@@ -24,8 +32,8 @@ enum BrandMarkLayout {
 /// into the Seerah and the lives of the Companions, read from its sources.
 /// Gold on the app's Madinah green, with no figurative
 /// imagery (D5); the gold deepens slightly towards the foot, and the green
-/// glows faintly behind the name. The monochrome (themed) icon is flat, in one
-/// colour, so Android can tint it.
+/// glows faintly behind the name. The monochrome (themed) and tinted icons
+/// are flat, in one colour, so the OS can tint them.
 void paintBrandMark(
   Canvas canvas,
   Size size,
@@ -36,7 +44,9 @@ void paintBrandMark(
 }) {
   final s = size.shortestSide;
   final centre = size.center(Offset.zero);
-  final flat = layout == BrandMarkLayout.monochrome;
+  final flat =
+      layout == BrandMarkLayout.monochrome ||
+      layout == BrandMarkLayout.squareTinted;
   final gold = flat ? const Color(0xFFFFFFFF) : markColor;
 
   // The ink ground, lit faintly from behind the name.
@@ -51,6 +61,11 @@ void paintBrandMark(
     case BrandMarkLayout.square:
       final r = Offset.zero & size;
       canvas.drawRect(r, ground(r));
+    case BrandMarkLayout.squareTinted:
+      canvas.drawRect(
+        Offset.zero & size,
+        Paint()..color = const Color(0xFF000000),
+      );
     case BrandMarkLayout.roundedSquare:
       final r = Rect.fromCenter(
         center: centre,
@@ -64,7 +79,9 @@ void paintBrandMark(
     case BrandMarkLayout.disc:
       final r = Rect.fromCircle(center: centre, radius: s / 2);
       canvas.drawCircle(centre, s / 2, ground(r));
-    case BrandMarkLayout.adaptiveForeground || BrandMarkLayout.monochrome:
+    case BrandMarkLayout.squareDark ||
+        BrandMarkLayout.adaptiveForeground ||
+        BrandMarkLayout.monochrome:
       break;
   }
 
@@ -73,7 +90,9 @@ void paintBrandMark(
   final extent =
       s *
       switch (layout) {
-        BrandMarkLayout.square => 0.74,
+        BrandMarkLayout.square ||
+        BrandMarkLayout.squareDark ||
+        BrandMarkLayout.squareTinted => 0.74,
         BrandMarkLayout.roundedSquare => 0.68,
         BrandMarkLayout.disc => 0.64,
         BrandMarkLayout.adaptiveForeground ||
