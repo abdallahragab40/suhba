@@ -1,0 +1,350 @@
+{
+  "schemaVersion": 1,
+  "id": "safiyyah-bint-huyayy",
+  "order": 46,
+  "gender": "female",
+  "name": {
+    "ar": "صفية بنت حيي"
+  },
+  "fullName": {
+    "ar": "صفية بنت حيي بن أخطب"
+  },
+  "titles": [
+    {
+      "ar": "أم المؤمنين"
+    }
+  ],
+  "aliases": [
+    "صفية بنت حيي",
+    "صفية"
+  ],
+  "summary": {
+    "ar": "أم المؤمنين، من ذرية هارون عليه السلام، سُبيت يوم خيبر فأعتقها النبي ﷺ وتزوجها وجعل عتقها صداقها، وكانت ذات حلم ووقار."
+  },
+  "lineage": {
+    "ar": "من بني إسرائيل، من سبط لاوي، ثم من ذرية هارون عليه السلام"
+  },
+  "death": {
+    "date": {
+      "precision": "range",
+      "era": "afterHijra",
+      "hijriYear": 36,
+      "hijriYearEnd": 50,
+      "gregorianYear": 656,
+      "gregorianYearEnd": 670
+    },
+    "reliability": "disputed",
+    "citations": [
+      {
+        "sourceId": "siyar",
+        "locatorStatus": "complete",
+        "volume": 2,
+        "page": "235"
+      }
+    ]
+  },
+  "memberships": [
+    {
+      "categoryId": "ummahat-al-muminin",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 33,
+            "ayahFrom": 6
+          }
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "231"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "type": "spouse",
+      "person": {
+        "displayName": {
+          "ar": "محمد رسول الله"
+        },
+        "personId": "muhammad"
+      },
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "5086"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "safiyyah-bint-huyayy.marriage",
+      "kind": "withProphet",
+      "title": {
+        "ar": "زواجها من النبي ﷺ"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "كانت صفية قبل إسلامها عند سلّام بن أبي الحقيق، ثم عند كنانة بن أبي الحقيق، فقُتل كنانة يوم خيبر، على ما يذكر الذهبي."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "231"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويروي أنس أن النبي ﷺ لما فتح خيبر كانت صفية في السبي، فصارت إلى دحية الكلبي، ثم صارت إلى النبي ﷺ، فأعتقها وتزوجها، وجعل عتقها صداقها، وأولم عليها بحيس."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "4200"
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "5169"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويروي أنس أيضًا أن النبي ﷺ دفعها إلى أم سليم تهيّئها، وأن الناقة عثرت بهما مرة فصُرع وصُرعت، فأسرع أبو طلحة فألقى ثوبه عليها، وشدّ لها على راحلتها."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "235"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "236"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "safiyyah-bint-huyayy.character",
+      "kind": "character",
+      "title": {
+        "ar": "حلمها ومكانتها"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وجاءت صفية تزور رسول الله ﷺ في اعتكافه في المسجد في العشر الأواخر من رمضان، فتحدثت عنده ساعة، ثم قام معها يردّها، فمرّ رجلان من الأنصار، فقال لهما: على رِسلكما، إنما هي صفية بنت حيي، ثم قال: إن الشيطان يبلغ من الإنسان مبلغ الدم، وإني خشيت أن يقذف في قلوبكما شيئًا."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "2035"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكانت صفية ذات حلم ووقار، ويروي زيد بن أسلم أن النبي ﷺ في وجعه الذي توفي فيه سمعها تقول: والله يا نبي الله، لوددت أن الذي بك بي، فتغامز بها أزواجه، فقال: والله إنها لصادقة."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "235"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويروي ابن عبد البر أن جارية لصفية أتت عمر فقالت: إن صفية تحب السبت وتصل اليهود، فسألها عمر، فقالت: أما السبت فلم أحبه منذ أبدلني الله به الجمعة، وأما اليهود فإن لي فيهم رحمًا فأنا أصلها. ثم أعتقت الجارية."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "232"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "233"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "safiyyah-bint-huyayy.death",
+      "kind": "death",
+      "title": {
+        "ar": "وفاتها"
+      },
+      "blocks": [
+        {
+          "type": "disputeNote",
+          "text": {
+            "ar": "اختُلف في سنة وفاتها."
+          },
+          "opinions": [
+            {
+              "text": {
+                "ar": "توفيت سنة ست وثلاثين."
+              },
+              "citations": [
+                {
+                  "sourceId": "siyar",
+                  "locatorStatus": "complete",
+                  "volume": 2,
+                  "page": "235"
+                }
+              ]
+            },
+            {
+              "text": {
+                "ar": "توفيت سنة خمسين."
+              },
+              "citations": [
+                {
+                  "sourceId": "siyar",
+                  "locatorStatus": "complete",
+                  "volume": 2,
+                  "page": "235"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وقبرها بالبقيع، على ما يذكر الذهبي."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "238"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "safiyyah-bint-huyayy.lessons",
+      "kind": "lessons",
+      "title": {
+        "ar": "دروس من سيرتها"
+      },
+      "blocks": [
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "أن الإسلام يرفع من دخل فيه، فتصير المسبيّة أمًّا للمؤمنين."
+          }
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "وأن صلة الرحم مع القرابة من غير المسلمين من البر الذي لا ينافي الإيمان."
+          }
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "safiyyah-bint-huyayy.marriage",
+      "era": "madinan",
+      "date": {
+        "precision": "year",
+        "era": "afterHijra",
+        "hijriYear": 7,
+        "gregorianYear": 628
+      },
+      "title": {
+        "ar": "زواجها من النبي ﷺ بعد خيبر"
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4200"
+        }
+      ],
+      "sectionId": "safiyyah-bint-huyayy.marriage",
+      "eventId": "khaybar"
+    },
+    {
+      "id": "safiyyah-bint-huyayy.death",
+      "era": "afterProphet",
+      "date": {
+        "precision": "range",
+        "era": "afterHijra",
+        "hijriYear": 36,
+        "hijriYearEnd": 50,
+        "gregorianYear": 656,
+        "gregorianYearEnd": 670
+      },
+      "title": {
+        "ar": "وفاتها"
+      },
+      "reliability": "disputed",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "235"
+        }
+      ],
+      "sectionId": "safiyyah-bint-huyayy.death"
+    }
+  ],
+  "references": [
+    "siyar"
+  ],
+  "review": {
+    "status": "sourced",
+    "editorialFlags": [],
+    "coverage": "sample",
+    "authoredBy": "ummahat-2"
+  },
+  "atAGlance": [],
+  "storyIds": []
+}

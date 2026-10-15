@@ -83,22 +83,23 @@ void main() {
   });
 
   testApp('features the companion of the day', (tester) async {
-    // 9 October 2026 is day 20735 since 1970; 20735 % 40 = 15 → Khadijah.
+    // 9 October 2026 is day 20735 since 1970; 20735 % 47 = 8 → Sa'id ibn
+    // Zayd.
     await open(tester);
     await reveal(tester, find.text('صحابي اليوم'));
     expect(find.text('صحابي اليوم'), findsOneWidget);
-    expect(find.text('خديجة بنت خويلد'), findsOneWidget);
+    expect(find.text('سعيد بن زيد'), findsOneWidget);
   });
 
   testApp('the next day features someone else', (tester) async {
     await open(tester, now: DateTime(2026, 10, 10));
     await reveal(tester, find.text('صحابي اليوم'));
-    expect(find.text('عائشة بنت أبي بكر'), findsOneWidget);
-    expect(find.text('خديجة بنت خويلد'), findsNothing);
+    expect(find.text('أبو عبيدة بن الجراح'), findsOneWidget);
+    expect(find.text('سعيد بن زيد'), findsNothing);
   });
 
   testApp('"read the biography" opens the featured profile', (tester) async {
-    await open(tester, now: DateTime(2026, 9, 24)); // Abu Bakr's day
+    await open(tester, now: DateTime(2026, 10)); // Abu Bakr's day
     await reveal(tester, find.text('اقرأ السيرة'));
     // A real passage from his biography, not only a label.
     expect(find.textContaining('عبد الله بن عثمان بن عامر'), findsWidgets);

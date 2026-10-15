@@ -1,0 +1,416 @@
+{
+  "schemaVersion": 1,
+  "id": "zaynab-bint-jahsh",
+  "order": 43,
+  "gender": "female",
+  "name": {
+    "ar": "زينب بنت جحش"
+  },
+  "fullName": {
+    "ar": "زينب بنت جحش بن رياب"
+  },
+  "titles": [
+    {
+      "ar": "أم المؤمنين"
+    }
+  ],
+  "aliases": [
+    "زينب بنت جحش"
+  ],
+  "summary": {
+    "ar": "أم المؤمنين وابنة عمة النبي ﷺ، زوّجها الله نبيه ﷺ وفيها نزل قرآن، وكانت تعمل بيدها وتتصدق، فكانت أول أزواجه لحوقًا به."
+  },
+  "lineage": {
+    "ar": "ابنة عمة النبي ﷺ: أمها أميمة بنت عبد المطلب بن هاشم"
+  },
+  "death": {
+    "date": {
+      "precision": "year",
+      "era": "afterHijra",
+      "hijriYear": 20,
+      "gregorianYear": 641
+    },
+    "reliability": "reported",
+    "citations": [
+      {
+        "sourceId": "siyar",
+        "locatorStatus": "complete",
+        "volume": 2,
+        "page": "212"
+      }
+    ]
+  },
+  "deathPlace": {
+    "ar": "المدينة"
+  },
+  "memberships": [
+    {
+      "categoryId": "ummahat-al-muminin",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 33,
+            "ayahFrom": 6
+          }
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "211"
+        }
+      ]
+    },
+    {
+      "categoryId": "muhajirun",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "211"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "type": "spouse",
+      "person": {
+        "displayName": {
+          "ar": "محمد رسول الله"
+        },
+        "personId": "muhammad"
+      },
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "7420"
+        }
+      ]
+    },
+    {
+      "type": "spouse",
+      "person": {
+        "displayName": {
+          "ar": "زيد بن حارثة"
+        },
+        "companionId": "zayd-ibn-harithah"
+      },
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "7420"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "zaynab-bint-jahsh.early",
+      "kind": "earlyLife",
+      "title": {
+        "ar": "نسبها وهجرتها"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "زينب بنت جحش ابنة عمة النبي ﷺ، أمها أميمة بنت عبد المطلب بن هاشم، وهي أخت حمنة وأبي أحمد، وكانت من المهاجرات الأُوَل، على ما يذكر الذهبي."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "211"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zaynab-bint-jahsh.marriage",
+      "kind": "withProphet",
+      "title": {
+        "ar": "زواجها من النبي ﷺ"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "كانت زينب عند زيد بن حارثة مولى النبي ﷺ، وفي شأنها وشأن زيد نزل قوله تعالى في سورة الأحزاب، فلما قضى زيد منها وطرًا زوّجها الله نبيه ﷺ."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "quran",
+              "locatorStatus": "complete",
+              "quranRef": {
+                "surah": 33,
+                "ayahFrom": 37
+              }
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "7420"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "211"
+            }
+          ]
+        },
+        {
+          "type": "quranQuote",
+          "ref": {
+            "surah": 33,
+            "ayahFrom": 37
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "فكانت تفخر على أزواج النبي ﷺ تقول: زوّجكن أهاليكن، وزوّجني الله تعالى من فوق سبع سماوات."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "7420"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وأولم رسول الله ﷺ حين بنى بها، فأشبع الناس خبزًا ولحمًا، فيما يرويه أنس."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "4794"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويذكر الذهبي قولًا أن النبي ﷺ تزوجها في ذي القعدة سنة خمس، وهي يومئذ بنت خمس وعشرين سنة."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "217"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zaynab-bint-jahsh.virtues",
+      "kind": "virtues",
+      "title": {
+        "ar": "فضلها"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "قالت عائشة: وهي التي كانت تساميني منهن في المنزلة عند رسول الله ﷺ، ولم أر امرأة قط خيرًا في الدين من زينب، وأتقى لله، وأصدق حديثًا، وأوصل للرحم، وأعظم صدقة، وأشد ابتذالًا لنفسها في العمل الذي تصدّق به وتقرّب به إلى الله تعالى."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "2442"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ولما سأل النبي ﷺ زينب عن أمر عائشة في حديث الإفك قالت: يا رسول الله، أحمي سمعي وبصري، ما علمت إلا خيرًا. قالت عائشة: وهي التي كانت تساميني من أزواج رسول الله ﷺ، فعصمها الله بالورع."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "4750"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وقال رسول الله ﷺ لأزواجه: أسرعكن لحاقًا بي أطولكن يدًا، فكنّ يتطاولن أيتهن أطول يدًا، قالت عائشة: فكانت أطولنا يدًا زينب، لأنها كانت تعمل بيدها وتصدّق."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "2452"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويُروى عن برزة بنت رافع أن عمر أرسل إلى زينب بعطائها، فأمرت به فصُبّ وغُطّي بثوب، وجعلت تفرّقه في ذوي رحمها وأيتامها، ثم رفعت يدها فقالت: اللهم لا يدركني عطاء عمر بعد عامي هذا."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "212"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zaynab-bint-jahsh.death",
+      "kind": "death",
+      "title": {
+        "ar": "وفاتها"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "توفيت زينب سنة عشرين، وصلى عليها عمر، على ما يذكر الذهبي."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "212"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويروي نافع عن ابن عمر أن عمر لما ماتت أمر مناديًا ألا يخرج معها إلا ذو محرم، فأشارت أسماء بنت عميس بنعش يغطى بثوب كما رأت الحبشة تصنع، فاستحسنه عمر، وأمر مناديًا فنادى: أن اخرجوا على أمكم."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "212"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "213"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zaynab-bint-jahsh.lessons",
+      "kind": "lessons",
+      "title": {
+        "ar": "دروس من سيرتها"
+      },
+      "blocks": [
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "أن العمل باليد والصدقة من أسباب السبق إلى الخير."
+          }
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "وأن الورع يحفظ صاحبه في الخصومات، كما شهدت زينب لعائشة بالخير وكانت تساميها."
+          }
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "zaynab-bint-jahsh.marriage",
+      "era": "madinan",
+      "date": {
+        "precision": "year",
+        "era": "afterHijra",
+        "hijriYear": 5,
+        "gregorianYear": 627
+      },
+      "title": {
+        "ar": "زواجها من النبي ﷺ"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "217"
+        }
+      ],
+      "sectionId": "zaynab-bint-jahsh.marriage"
+    },
+    {
+      "id": "zaynab-bint-jahsh.death",
+      "era": "afterProphet",
+      "date": {
+        "precision": "year",
+        "era": "afterHijra",
+        "hijriYear": 20,
+        "gregorianYear": 641
+      },
+      "title": {
+        "ar": "وفاتها"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "212"
+        }
+      ],
+      "sectionId": "zaynab-bint-jahsh.death"
+    }
+  ],
+  "references": [
+    "siyar"
+  ],
+  "review": {
+    "status": "sourced",
+    "editorialFlags": [],
+    "coverage": "sample",
+    "authoredBy": "ummahat-2"
+  },
+  "atAGlance": [],
+  "storyIds": []
+}

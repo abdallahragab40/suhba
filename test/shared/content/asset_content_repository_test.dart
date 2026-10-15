@@ -53,7 +53,7 @@ void main() {
     final manifest = (await repo.manifest()).getOrThrow();
     expect(manifest.channel, ContentChannel.draft);
     expect(manifest.isDraft, isTrue);
-    expect(manifest.companionCount, 40);
+    expect(manifest.companionCount, 47);
     expect(manifest.approvedCount, 0);
   });
 
@@ -256,6 +256,6 @@ void main() {
   test('the real asset bundle contains the content', () async {
     final real = AssetContentRepository(AssetContentSource(rootBundle));
     final manifest = (await real.manifest()).getOrThrow();
-    expect(manifest.companionCount, 40);
+    expect(manifest.companionCount, 47);
   });
 }

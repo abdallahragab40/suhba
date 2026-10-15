@@ -1,0 +1,422 @@
+{
+  "schemaVersion": 1,
+  "id": "umm-habibah",
+  "order": 45,
+  "gender": "female",
+  "name": {
+    "ar": "أم حبيبة"
+  },
+  "fullName": {
+    "ar": "رملة بنت أبي سفيان صخر بن حرب الأموية"
+  },
+  "kunya": {
+    "ar": "أم حبيبة"
+  },
+  "titles": [
+    {
+      "ar": "أم المؤمنين"
+    }
+  ],
+  "aliases": [
+    "أم حبيبة",
+    "رملة بنت أبي سفيان"
+  ],
+  "summary": {
+    "ar": "أم المؤمنين، هاجرت إلى الحبشة، وفيها زوّجها النجاشي النبيَّ ﷺ وأمهرها عنه، وكانت شديدة التعظيم لرسول الله ﷺ، وروت حديث الثنتي عشرة ركعة."
+  },
+  "lineage": {
+    "ar": "من بني أمية بن عبد شمس، من قريش"
+  },
+  "death": {
+    "date": {
+      "precision": "range",
+      "era": "afterHijra",
+      "hijriYear": 42,
+      "hijriYearEnd": 44,
+      "gregorianYear": 662,
+      "gregorianYearEnd": 664
+    },
+    "reliability": "disputed",
+    "citations": [
+      {
+        "sourceId": "siyar",
+        "locatorStatus": "complete",
+        "volume": 2,
+        "page": "222"
+      }
+    ]
+  },
+  "deathPlace": {
+    "ar": "المدينة"
+  },
+  "memberships": [
+    {
+      "categoryId": "ummahat-al-muminin",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 33,
+            "ayahFrom": 6
+          }
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "218"
+        }
+      ]
+    },
+    {
+      "categoryId": "muhajirun",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "220"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "type": "spouse",
+      "person": {
+        "displayName": {
+          "ar": "محمد رسول الله"
+        },
+        "personId": "muhammad"
+      },
+      "citations": [
+        {
+          "sourceId": "abu-dawud",
+          "locatorStatus": "complete",
+          "hadithNumber": "2107"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "umm-habibah.abyssinia",
+      "kind": "earlyLife",
+      "title": {
+        "ar": "هجرتها إلى الحبشة"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "هاجرت أم حبيبة إلى الحبشة مع زوجها عبيد الله بن جحش، فتوفي عنها هناك، ويذكر ابن سعد أنه مات مرتدًّا متنصّرًا، ويُروى عن عثمان الأخنسي أنها ولدت ابنتها حبيبة بمكة قبل هجرة الحبشة."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "220"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "umm-habibah.marriage",
+      "kind": "withProphet",
+      "title": {
+        "ar": "زواجها من النبي ﷺ"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وتروي أم حبيبة أنها كانت تحت عبيد الله بن جحش فمات بأرض الحبشة، فزوّجها النجاشيُّ النبيَّ ﷺ، وأمهرها عنه أربعة آلاف، وبعث بها إلى رسول الله ﷺ مع شرحبيل ابن حسنة."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "abu-dawud",
+              "locatorStatus": "complete",
+              "hadithNumber": "2107"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "221"
+            }
+          ]
+        },
+        {
+          "type": "disputeNote",
+          "text": {
+            "ar": "واختلفت الروايات فيمن تولّى عقدها بالحبشة."
+          },
+          "opinions": [
+            {
+              "text": {
+                "ar": "عثمان بن عفان، فيما يذكره ابن سعد، وأن ذلك كان سنة ست، وعلّق الذهبي: كذا قال."
+              },
+              "citations": [
+                {
+                  "sourceId": "siyar",
+                  "locatorStatus": "complete",
+                  "volume": 2,
+                  "page": "220"
+                }
+              ]
+            },
+            {
+              "text": {
+                "ar": "خالد بن سعيد بن العاص، فيما يرويه عبد الله بن أبي بكر بن حزم وغيره."
+              },
+              "citations": [
+                {
+                  "sourceId": "siyar",
+                  "locatorStatus": "complete",
+                  "volume": 2,
+                  "page": "220"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويذكر الذهبي أنه ليس في أزواج النبي ﷺ من هي أقرب نسبًا إليه منها، ولا أكثر صداقًا، ولا من تزوّج بها وهي نائية الدار أبعد منها."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "219"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "umm-habibah.reverence",
+      "kind": "character",
+      "title": {
+        "ar": "تعظيمها لرسول الله ﷺ"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويروي الواقدي عن الزهري أن أبا سفيان لما قدم المدينة يكلّم النبي ﷺ في أن يزيد في الهدنة دخل على ابنته أم حبيبة، فلما ذهب ليجلس على فراش النبي ﷺ طوته دونه، وقالت: بل هو فراش رسول الله، وأنت امرؤ نجس مشرك."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "223"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ولما جاء نعي أبي سفيان من الشام دعت أم حبيبة بصفرة في اليوم الثالث فمسحت عارضيها وذراعيها، وقالت: إني كنت عن هذا لغنية، لولا أني سمعت النبي ﷺ يقول: لا يحل لامرأة تؤمن بالله واليوم الآخر أن تحدّ على ميت فوق ثلاث، إلا على زوج، فإنها تحدّ عليه أربعة أشهر وعشرًا."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "1280"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "umm-habibah.narration",
+      "kind": "contributions",
+      "title": {
+        "ar": "روايتها"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "روت أم حبيبة عن النبي ﷺ قوله: من صلى اثنتي عشرة ركعة في يوم وليلة بُني له بهن بيت في الجنة. قالت: فما تركتهن منذ سمعتهن من رسول الله ﷺ، وقال مثل ذلك من رواه عنها."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "728"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "umm-habibah.death",
+      "kind": "death",
+      "title": {
+        "ar": "وفاتها"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويروي الواقدي عن عائشة أن أم حبيبة دعتها عند موتها فقالت: قد كان يكون بيننا ما يكون بين الضرائر، فغفر الله لي ولك ما كان من ذلك. فقالت عائشة: غفر الله لك ذلك كله، وحلّلك من ذلك. فقالت: سررتني سرّك الله، وأرسلت إلى أم سلمة فقالت لها مثل ذلك."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "223"
+            }
+          ]
+        },
+        {
+          "type": "disputeNote",
+          "text": {
+            "ar": "واختُلف في سنة وفاتها."
+          },
+          "opinions": [
+            {
+              "text": {
+                "ar": "سنة أربع وأربعين، قاله الواقدي وأبو عبيد والفسوي."
+              },
+              "citations": [
+                {
+                  "sourceId": "siyar",
+                  "locatorStatus": "complete",
+                  "volume": 2,
+                  "page": "222"
+                }
+              ]
+            },
+            {
+              "text": {
+                "ar": "سنة اثنتين وأربعين، قاله المفضل الغلابي."
+              },
+              "citations": [
+                {
+                  "sourceId": "siyar",
+                  "locatorStatus": "complete",
+                  "volume": 2,
+                  "page": "222"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويرجّح الذهبي أن قبرها بالمدينة، وينفي ما يقال من أنه بدمشق."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "220"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "umm-habibah.lessons",
+      "kind": "lessons",
+      "title": {
+        "ar": "دروس من سيرتها"
+      },
+      "blocks": [
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "أن محبة النبي ﷺ وتعظيمه تُقدَّم على القرابة والنسب."
+          }
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "وأن المداومة على العمل بعد سماع فضله من هدي الصحابة."
+          }
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "umm-habibah.marriage",
+      "era": "madinan",
+      "date": {
+        "precision": "year",
+        "era": "afterHijra",
+        "hijriYear": 6,
+        "gregorianYear": 628
+      },
+      "title": {
+        "ar": "زواجها من النبي ﷺ بالحبشة"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "220"
+        }
+      ],
+      "sectionId": "umm-habibah.marriage"
+    },
+    {
+      "id": "umm-habibah.death",
+      "era": "afterProphet",
+      "date": {
+        "precision": "range",
+        "era": "afterHijra",
+        "hijriYear": 42,
+        "hijriYearEnd": 44,
+        "gregorianYear": 662,
+        "gregorianYearEnd": 664
+      },
+      "title": {
+        "ar": "وفاتها"
+      },
+      "reliability": "disputed",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "222"
+        }
+      ],
+      "sectionId": "umm-habibah.death"
+    }
+  ],
+  "references": [
+    "siyar"
+  ],
+  "review": {
+    "status": "sourced",
+    "editorialFlags": [],
+    "coverage": "sample",
+    "authoredBy": "ummahat-2"
+  },
+  "atAGlance": [],
+  "storyIds": []
+}

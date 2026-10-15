@@ -253,7 +253,7 @@ void main() {
       schemas,
     );
     final companions = r.items.where((i) => i.key.startsWith('companion.'));
-    expect(companions, hasLength(40));
+    expect(companions, hasLength(47));
     expect(r.editionId, 'expanded-edition-1');
     expect(r.editionReady, isFalse);
     expect(

@@ -1,0 +1,336 @@
+{
+  "schemaVersion": 1,
+  "id": "zaynab-bint-khuzaymah",
+  "order": 42,
+  "gender": "female",
+  "name": {
+    "ar": "زينب بنت خزيمة"
+  },
+  "fullName": {
+    "ar": "زينب بنت خزيمة بن الحارث الهلالية"
+  },
+  "titles": [
+    {
+      "ar": "أم المؤمنين"
+    },
+    {
+      "ar": "أم المساكين"
+    }
+  ],
+  "aliases": [
+    "زينب بنت خزيمة",
+    "أم المساكين"
+  ],
+  "summary": {
+    "ar": "أم المؤمنين، كانت تُدعى أم المساكين، تزوجها النبي ﷺ بعد استشهاد زوجها، ولم تلبث عنده إلا أشهرًا حتى توفيت."
+  },
+  "lineage": {
+    "ar": "من بني هلال بن عامر بن صعصعة"
+  },
+  "death": {
+    "date": {
+      "precision": "approx",
+      "era": "afterHijra",
+      "hijriYear": 4,
+      "gregorianYear": 625
+    },
+    "reliability": "reported",
+    "citations": [
+      {
+        "sourceId": "tabaqat-ibn-sad",
+        "locatorStatus": "complete",
+        "volume": 8,
+        "page": "91"
+      },
+      {
+        "sourceId": "tabaqat-ibn-sad",
+        "locatorStatus": "complete",
+        "volume": 8,
+        "page": "92"
+      }
+    ]
+  },
+  "deathPlace": {
+    "ar": "المدينة"
+  },
+  "memberships": [
+    {
+      "categoryId": "ummahat-al-muminin",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 33,
+            "ayahFrom": 6
+          }
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "218"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "type": "spouse",
+      "person": {
+        "displayName": {
+          "ar": "محمد رسول الله"
+        },
+        "personId": "muhammad"
+      },
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 8,
+          "page": "91"
+        }
+      ]
+    },
+    {
+      "type": "sibling",
+      "person": {
+        "displayName": {
+          "ar": "ميمونة بنت الحارث"
+        },
+        "companionId": "maymunah"
+      },
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "218"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "zaynab-bint-khuzaymah.name",
+      "kind": "character",
+      "title": {
+        "ar": "أم المساكين"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "كانت زينب بنت خزيمة الهلالية تُدعى أم المساكين، ويذكر ابن سعد أنها كانت تسمى بذلك في الجاهلية، ويعلّله الذهبي بكثرة معروفها."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "91"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "218"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وهي أخت أم المؤمنين ميمونة بنت الحارث لأمها، على ما يذكر الذهبي."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "218"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zaynab-bint-khuzaymah.marriage",
+      "kind": "withProphet",
+      "title": {
+        "ar": "زواجها من النبي ﷺ"
+      },
+      "blocks": [
+        {
+          "type": "disputeNote",
+          "text": {
+            "ar": "اختلفت الروايات في زوجها الذي قُتل عنها قبل النبي ﷺ."
+          },
+          "opinions": [
+            {
+              "text": {
+                "ar": "عبيدة بن الحارث بن المطلب، قُتل عنها يوم بدر شهيدًا، وكانت قبله عند الطفيل بن الحارث فطلّقها، فيما يرويه ابن سعد."
+              },
+              "citations": [
+                {
+                  "sourceId": "tabaqat-ibn-sad",
+                  "locatorStatus": "complete",
+                  "volume": 8,
+                  "page": "91"
+                }
+              ]
+            },
+            {
+              "text": {
+                "ar": "عبد الله بن جحش، قُتل عنها يوم أحد، وهو ما قدّمه الذهبي، ثم نقل قول من قال إنها كانت عند الطفيل ثم عند أخيه عبيدة بن الحارث."
+              },
+              "citations": [
+                {
+                  "sourceId": "siyar",
+                  "locatorStatus": "complete",
+                  "volume": 2,
+                  "page": "218"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويروي ابن سعد أن النبي ﷺ خطبها فجعلت أمرها إليه، فتزوجها وأصدقها اثنتي عشرة أوقية ونشًّا، وكان ذلك في شهر رمضان على رأس أحد وثلاثين شهرًا من الهجرة."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "91"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zaynab-bint-khuzaymah.death",
+      "kind": "death",
+      "title": {
+        "ar": "وفاتها"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ولم تلبث عند النبي ﷺ إلا قليلًا؛ فيروي ابن سعد أنها مكثت عنده ثمانية أشهر، وتوفيت في آخر ربيع الآخر على رأس تسعة وثلاثين شهرًا من الهجرة، فصلى عليها رسول الله ﷺ ودفنها بالبقيع، وكانت نحو ثلاثين سنة. ويذكر الذهبي أنها لم تمكث عنده إلا شهرين أو أكثر، وأنها لم تروِ شيئًا."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "91"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "92"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "218"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zaynab-bint-khuzaymah.lessons",
+      "kind": "lessons",
+      "title": {
+        "ar": "دروس من سيرتها"
+      },
+      "blocks": [
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "أن المعروف والإحسان إلى المساكين يرفع ذكر صاحبه حتى يُعرف به."
+          }
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "zaynab-bint-khuzaymah.marriage",
+      "era": "madinan",
+      "date": {
+        "precision": "month",
+        "era": "afterHijra",
+        "hijriYear": 3,
+        "hijriMonth": 9,
+        "gregorianYear": 625
+      },
+      "title": {
+        "ar": "زواجها من النبي ﷺ"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 8,
+          "page": "91"
+        }
+      ],
+      "sectionId": "zaynab-bint-khuzaymah.marriage"
+    },
+    {
+      "id": "zaynab-bint-khuzaymah.death",
+      "era": "madinan",
+      "date": {
+        "precision": "approx",
+        "era": "afterHijra",
+        "hijriYear": 4,
+        "gregorianYear": 625
+      },
+      "title": {
+        "ar": "وفاتها"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 8,
+          "page": "91"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 8,
+          "page": "92"
+        }
+      ],
+      "sectionId": "zaynab-bint-khuzaymah.death"
+    }
+  ],
+  "references": [
+    "siyar",
+    "tabaqat-ibn-sad"
+  ],
+  "review": {
+    "status": "sourced",
+    "editorialFlags": [],
+    "coverage": "sample",
+    "authoredBy": "ummahat-2"
+  },
+  "atAGlance": [],
+  "storyIds": []
+}

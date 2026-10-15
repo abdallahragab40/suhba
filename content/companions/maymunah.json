@@ -1,0 +1,472 @@
+{
+  "schemaVersion": 1,
+  "id": "maymunah",
+  "order": 47,
+  "gender": "female",
+  "name": {
+    "ar": "ميمونة بنت الحارث"
+  },
+  "fullName": {
+    "ar": "ميمونة بنت الحارث بن حزن الهلالية"
+  },
+  "titles": [
+    {
+      "ar": "أم المؤمنين"
+    }
+  ],
+  "aliases": [
+    "ميمونة",
+    "ميمونة بنت الحارث"
+  ],
+  "summary": {
+    "ar": "أم المؤمنين، تزوجها النبي ﷺ عند فراغه من عمرة القضاء، وهي خالة ابن عباس وخالد بن الوليد، ووصفتها عائشة بأنها من أتقاهن لله وأوصلهن للرحم."
+  },
+  "lineage": {
+    "ar": "من بني هلال بن عامر بن صعصعة"
+  },
+  "death": {
+    "date": {
+      "precision": "range",
+      "era": "afterHijra",
+      "hijriYear": 51,
+      "hijriYearEnd": 61,
+      "gregorianYear": 671,
+      "gregorianYearEnd": 680
+    },
+    "reliability": "disputed",
+    "citations": [
+      {
+        "sourceId": "siyar",
+        "locatorStatus": "complete",
+        "volume": 2,
+        "page": "245"
+      }
+    ]
+  },
+  "deathPlace": {
+    "ar": "سرف"
+  },
+  "memberships": [
+    {
+      "categoryId": "ummahat-al-muminin",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 33,
+            "ayahFrom": 6
+          }
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "238"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "type": "spouse",
+      "person": {
+        "displayName": {
+          "ar": "محمد رسول الله"
+        },
+        "personId": "muhammad"
+      },
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "complete",
+          "hadithNumber": "1411"
+        }
+      ]
+    },
+    {
+      "type": "relative",
+      "person": {
+        "displayName": {
+          "ar": "عبد الله بن عباس"
+        },
+        "companionId": "abdullah-ibn-abbas"
+      },
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "238"
+        }
+      ]
+    },
+    {
+      "type": "relative",
+      "person": {
+        "displayName": {
+          "ar": "خالد بن الوليد"
+        },
+        "companionId": "khalid-ibn-al-walid"
+      },
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "238"
+        }
+      ]
+    },
+    {
+      "type": "sibling",
+      "person": {
+        "displayName": {
+          "ar": "زينب بنت خزيمة"
+        },
+        "companionId": "zaynab-bint-khuzaymah"
+      },
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "218"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "maymunah.family",
+      "kind": "earlyLife",
+      "title": {
+        "ar": "نسبها وأهلها"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ميمونة بنت الحارث الهلالية أخت أم الفضل زوجة العباس، وخالة خالد بن الوليد، وخالة عبد الله بن عباس، وكانت قبل النبي ﷺ عند مسعود بن عمرو الثقفي ففارقها، ثم عند أبي رهم بن عبد العزى فمات عنها، على ما يذكر الذهبي."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "238"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "239"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويروي مجاهد أن اسمها كان برّة، فسماها رسول الله ﷺ ميمونة."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "243"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maymunah.marriage",
+      "kind": "withProphet",
+      "title": {
+        "ar": "زواجها من النبي ﷺ"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وتزوجها النبي ﷺ عند فراغه من عمرة القضاء، سنة سبع في ذي القعدة، وبنى بها بسَرِف، على ما يذكر الذهبي، ويروي ابن سعد أنها جعلت أمرها إلى العباس فزوّجها إياه."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "239"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "240"
+            }
+          ]
+        },
+        {
+          "type": "disputeNote",
+          "text": {
+            "ar": "واختلفت الرواية في حال النبي ﷺ حين تزوجها: أكان محرمًا أم حلالًا."
+          },
+          "opinions": [
+            {
+              "text": {
+                "ar": "روى ابن عباس أن النبي ﷺ تزوج ميمونة وهو محرم، وفي رواية عنه: وبنى بها وهو حلال. وقال الذهبي إن هذا متواتر عنه."
+              },
+              "citations": [
+                {
+                  "sourceId": "bukhari",
+                  "locatorStatus": "complete",
+                  "hadithNumber": "1837"
+                },
+                {
+                  "sourceId": "bukhari",
+                  "locatorStatus": "complete",
+                  "hadithNumber": "4258"
+                },
+                {
+                  "sourceId": "siyar",
+                  "locatorStatus": "complete",
+                  "volume": 2,
+                  "page": "241"
+                }
+              ]
+            },
+            {
+              "text": {
+                "ar": "وروى يزيد بن الأصم، وهو ابن أختها، عن ميمونة نفسها أن رسول الله ﷺ تزوجها وهو حلال، وروى مثله أبو رافع، وكان الرسول بينهما."
+              },
+              "citations": [
+                {
+                  "sourceId": "muslim",
+                  "locatorStatus": "complete",
+                  "hadithNumber": "1411"
+                },
+                {
+                  "sourceId": "siyar",
+                  "locatorStatus": "complete",
+                  "volume": 2,
+                  "page": "240"
+                },
+                {
+                  "sourceId": "siyar",
+                  "locatorStatus": "complete",
+                  "volume": 2,
+                  "page": "241"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maymunah.character",
+      "kind": "character",
+      "title": {
+        "ar": "تقواها"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويروي يزيد بن الأصم أن عائشة قالت له بعد وفاة ميمونة: ذهبت والله ميمونة، أما إنها كانت من أتقانا لله، وأوصلنا للرحم."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "243"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "244"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويروي أيضًا أن قريبًا لها دخل عليها فوجدت منه ريح شراب، فقالت: لئن لم تخرج إلى المسلمين فيجلدوك لا تدخل عليّ أبدًا."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "244"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maymunah.death",
+      "kind": "death",
+      "title": {
+        "ar": "وفاتها"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وحضر ابن عباس جنازة ميمونة بسَرِف، فقال: هذه زوجة النبي ﷺ، فإذا رفعتم نعشها فلا تزعزعوها ولا تزلزلوها، وارفقوا."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "5067"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويروي يزيد بن الأصم أنهم دفنوها بسرف، في الظلة التي بنى بها فيها رسول الله ﷺ."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "245"
+            }
+          ]
+        },
+        {
+          "type": "disputeNote",
+          "text": {
+            "ar": "واختُلف في سنة وفاتها."
+          },
+          "opinions": [
+            {
+              "text": {
+                "ar": "سنة إحدى وخمسين، قاله خليفة."
+              },
+              "citations": [
+                {
+                  "sourceId": "siyar",
+                  "locatorStatus": "complete",
+                  "volume": 2,
+                  "page": "245"
+                }
+              ]
+            },
+            {
+              "text": {
+                "ar": "سنة إحدى وستين، قاله الواقدي، وردّه الذهبي بأنها ماتت قبل عائشة."
+              },
+              "citations": [
+                {
+                  "sourceId": "siyar",
+                  "locatorStatus": "complete",
+                  "volume": 2,
+                  "page": "245"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maymunah.lessons",
+      "kind": "lessons",
+      "title": {
+        "ar": "دروس من سيرتها"
+      },
+      "blocks": [
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "أن صلة الرحم لا تمنع من القيام بحق الله، كما فعلت ميمونة مع قريبها."
+          }
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "وأن توقير أمهات المؤمنين في حياتهن وبعد موتهن من الأدب الذي علّمه الصحابة."
+          }
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": "maymunah.marriage",
+      "era": "madinan",
+      "date": {
+        "precision": "month",
+        "era": "afterHijra",
+        "hijriYear": 7,
+        "hijriMonth": 11,
+        "gregorianYear": 629
+      },
+      "title": {
+        "ar": "زواجها من النبي ﷺ"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "239"
+        }
+      ],
+      "sectionId": "maymunah.marriage",
+      "eventId": "umrat-al-qada"
+    },
+    {
+      "id": "maymunah.death",
+      "era": "afterProphet",
+      "date": {
+        "precision": "range",
+        "era": "afterHijra",
+        "hijriYear": 51,
+        "hijriYearEnd": 61,
+        "gregorianYear": 671,
+        "gregorianYearEnd": 680
+      },
+      "title": {
+        "ar": "وفاتها"
+      },
+      "reliability": "disputed",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "245"
+        }
+      ],
+      "sectionId": "maymunah.death"
+    }
+  ],
+  "references": [
+    "siyar"
+  ],
+  "review": {
+    "status": "sourced",
+    "editorialFlags": [],
+    "coverage": "sample",
+    "authoredBy": "ummahat-2"
+  },
+  "atAGlance": [],
+  "storyIds": []
+}

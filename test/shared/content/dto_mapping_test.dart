@@ -24,7 +24,7 @@ void main() {
       final files = Directory(
         'content/companions',
       ).listSync().whereType<File>().where((f) => f.path.endsWith('.json'));
-      expect(files, hasLength(40));
+      expect(files, hasLength(47));
       for (final file in files) {
         final companion = CompanionDto.fromJson(
           _readJson(file.path),
