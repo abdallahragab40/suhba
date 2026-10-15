@@ -106,19 +106,6 @@ class AboutPage extends ConsumerWidget {
             l10n.aboutPrivacyTitle,
             Text(l10n.aboutPrivacyBody, style: textTheme.bodyLarge),
           ),
-          const SizedBox(height: AppSpacing.lg),
-          // The notices the open-source packages and the bundled fonts' OFL
-          // require to ship with the app; this is the only place they show.
-          Align(
-            alignment: AlignmentDirectional.centerStart,
-            child: TextButton(
-              onPressed: () => showLicensePage(
-                context: context,
-                applicationName: l10n.appTitle,
-              ),
-              child: Text(l10n.aboutLicensesLink),
-            ),
-          ),
         ],
       ),
     );

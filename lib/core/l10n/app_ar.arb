@@ -2094,10 +2094,6 @@
   "@themeShortDark": {
     "description": "Settings: short label, dark theme."
   },
-  "aboutLicensesLink": "تراخيص البرمجيات المستخدمة",
-  "@aboutLicensesLink": {
-    "description": "About: link to the open-source licence notices."
-  },
   "draftBadgePreliminary": "مراجعة أولية",
   "@draftBadgePreliminary": {
     "description": "Badge on items that had a preliminary review but no scholar approval."

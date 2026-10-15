@@ -1507,9 +1507,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get themeShortDark => 'داكن';
 
   @override
-  String get aboutLicensesLink => 'تراخيص البرمجيات المستخدمة';
-
-  @override
   String get draftBadgePreliminary => 'مراجعة أولية';
 
   @override

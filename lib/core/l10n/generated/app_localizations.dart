@@ -2648,12 +2648,6 @@ abstract class AppLocalizations {
   /// **'داكن'**
   String get themeShortDark;
 
-  /// About: link to the open-source licence notices.
-  ///
-  /// In ar, this message translates to:
-  /// **'تراخيص البرمجيات المستخدمة'**
-  String get aboutLicensesLink;
-
   /// Badge on items that had a preliminary review but no scholar approval.
   ///
   /// In ar, this message translates to:

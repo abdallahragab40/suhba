@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:suhba/app/app.dart';
 import 'package:suhba/app/provider_retry.dart';
-import 'package:suhba/core/design_system/tokens/fonts.dart';
 import 'package:suhba/core/error/app_error_widget.dart';
 import 'package:suhba/core/error/error_reporter.dart';
 import 'package:suhba/core/storage/settings_store.dart';
 
-/// Starts the app: installs the global error handlers, registers licences
+/// Starts the app: installs the global error handlers
 /// and runs [SuhbaApp] in a [ProviderScope].
 ///
 /// Settings are loaded before the first frame (so the theme never flashes);
@@ -18,7 +17,6 @@ Future<void> bootstrap({
 }) async {
   WidgetsFlutterBinding.ensureInitialized();
   installErrorHandlers(reporter);
-  registerFontLicenses();
 
   final settings = await PrefsSettingsStore.open();
 

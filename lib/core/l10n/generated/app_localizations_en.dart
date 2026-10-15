@@ -1502,9 +1502,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get themeShortDark => 'Dark';
 
   @override
-  String get aboutLicensesLink => 'Open-source licences';
-
-  @override
   String get draftBadgePreliminary => 'Preliminary review';
 
   @override
