@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:suhba/core/feedback/haptics.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/storage/settings_store.dart';
 import 'package:suhba/features/quiz/domain/quiz_generator.dart';
@@ -35,7 +36,11 @@ void main() {
     final app = AppUnderTest(
       location: location,
       settings: store,
-      overrides: [quizRandomProvider.overrideWithValue(Random(42))],
+      overrides: [
+        quizRandomProvider.overrideWithValue(Random(42)),
+        // The answer patterns are timed; these tests check what is seen.
+        hapticsEnabledProvider.overrideWithBuild((_, _) => false),
+      ],
     );
     final content = await app.container.read(quizContentProvider.future);
     final round = QuizGenerator(content, random: Random(42)).round(mode);

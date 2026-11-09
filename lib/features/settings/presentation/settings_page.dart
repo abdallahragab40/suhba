@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/routes.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/tokens/typography.dart';
+import 'package:suhba/core/feedback/haptics.dart';
 import 'package:suhba/core/format/digits.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
@@ -25,6 +26,7 @@ class SettingsPage extends ConsumerWidget {
     final mode = ref.watch(themeModeProvider);
     final digits = ref.watch(digitStyleProvider);
     final size = ref.watch(readingTextSizeProvider);
+    final haptics = ref.watch(hapticsEnabledProvider);
     final manifest = ref.watch(contentManifestProvider).value;
 
     Widget group(String title) => Padding(
@@ -79,8 +81,23 @@ class SettingsPage extends ConsumerWidget {
             ],
             showSelectedIcon: false,
             selected: {mode},
-            onSelectionChanged: (s) =>
-                ref.read(themeModeProvider.notifier).select(s.single),
+            onSelectionChanged: (s) {
+              Haptics.selection(context);
+              ref.read(themeModeProvider.notifier).select(s.single);
+            },
+          ),
+          const SizedBox(height: AppSpacing.sm),
+          SwitchListTile(
+            contentPadding: EdgeInsets.zero,
+            secondary: const Icon(Icons.vibration),
+            title: Text(l10n.settingsHaptics),
+            subtitle: Text(l10n.settingsHapticsHint),
+            value: haptics,
+            onChanged: (on) {
+              ref.read(hapticsEnabledProvider.notifier).select(on);
+              // Turning it on answers with the feeling itself.
+              if (on) Haptics.tap(context);
+            },
           ),
           group(l10n.settingsReading),
           Text(l10n.readerTextSize(format.integer(size.round()))),
@@ -92,7 +109,10 @@ class SettingsPage extends ConsumerWidget {
                 (ReadingTextSizeController.max - ReadingTextSizeController.min)
                     .round(),
             label: format.integer(size.round()),
-            onChanged: ref.read(readingTextSizeProvider.notifier).select,
+            onChanged: (v) {
+              if (v != size) Haptics.selection(context);
+              ref.read(readingTextSizeProvider.notifier).select(v);
+            },
           ),
           Text(
             l10n.readerTextSample,
@@ -113,8 +133,10 @@ class SettingsPage extends ConsumerWidget {
               ),
             ],
             selected: {digits},
-            onSelectionChanged: (s) =>
-                ref.read(digitStyleProvider.notifier).select(s.single),
+            onSelectionChanged: (s) {
+              Haptics.selection(context);
+              ref.read(digitStyleProvider.notifier).select(s.single);
+            },
           ),
           group(l10n.settingsYourData),
           const PersonalDataSection(),

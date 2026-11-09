@@ -840,6 +840,14 @@
   "@settingsAppearance": {
     "description": "Settings group."
   },
+  "settingsHaptics": "الاهتزاز عند اللمس",
+  "@settingsHaptics": {
+    "description": "Settings switch: light vibrations on taps, choices and quiz answers."
+  },
+  "settingsHapticsHint": "اهتزازات خفيفة عند التنقّل والحفظ وإجابات الاختبار",
+  "@settingsHapticsHint": {
+    "description": "Subtitle under the touch feedback switch."
+  },
   "settingsReading": "القراءة",
   "@settingsReading": {
     "description": "Settings group."

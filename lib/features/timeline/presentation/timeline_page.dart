@@ -15,6 +15,7 @@ import 'package:suhba/core/design_system/widgets/error_view.dart';
 import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
 import 'package:suhba/core/design_system/widgets/reliability_badge.dart';
 import 'package:suhba/core/design_system/widgets/section_header.dart';
+import 'package:suhba/core/feedback/haptics.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/core/result/failure.dart';
@@ -114,7 +115,13 @@ class _TimelineState extends State<_Timeline> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          EraStrip(entries: ordered, onSelected: (e) => _jumpTo(e.id)),
+          EraStrip(
+            entries: ordered,
+            onSelected: (e) {
+              Haptics.selection(context);
+              _jumpTo(e.id);
+            },
+          ),
           Align(
             alignment: Alignment.topCenter,
             child: ConstrainedBox(

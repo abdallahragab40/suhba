@@ -11,6 +11,7 @@ import 'package:suhba/core/design_system/widgets/error_view.dart';
 import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
 import 'package:suhba/core/design_system/widgets/reliability_badge.dart';
 import 'package:suhba/core/domain/reliability.dart';
+import 'package:suhba/core/feedback/haptics.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/features/relations/domain/relationship_index.dart';
 import 'package:suhba/features/relations/presentation/relationship_providers.dart';
@@ -100,6 +101,12 @@ class _Relations extends ConsumerStatefulWidget {
 class _RelationsState extends ConsumerState<_Relations> {
   RelationCategory? _category;
 
+  void _choose(RelationCategory? category) {
+    if (_category == category) return;
+    Haptics.selection(context);
+    setState(() => _category = category);
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
@@ -170,14 +177,14 @@ class _RelationsState extends ConsumerState<_Relations> {
               ChoiceChip(
                 label: Text(l10n.exploreAll),
                 selected: _category == null,
-                onSelected: (_) => setState(() => _category = null),
+                onSelected: (_) => _choose(null),
               ),
               for (final c in RelationCategory.values)
                 if (present.contains(c))
                   ChoiceChip(
                     label: Text(relationCategoryLabel(l10n, c)),
                     selected: _category == c,
-                    onSelected: (_) => setState(() => _category = c),
+                    onSelected: (_) => _choose(c),
                   ),
             ],
           ),

@@ -8,6 +8,7 @@ import 'package:suhba/core/design_system/tokens/typography.dart';
 import 'package:suhba/core/design_system/widgets/draft_badge.dart';
 import 'package:suhba/core/design_system/widgets/error_view.dart';
 import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
+import 'package:suhba/core/feedback/haptics.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/core/location/location_service.dart';
@@ -149,7 +150,10 @@ class _VisitState extends ConsumerState<_Visit> {
                       ),
                   ],
                   selected: {_city},
-                  onSelectionChanged: (s) => setState(() => _city = s.first),
+                  onSelectionChanged: (s) {
+                    Haptics.selection(context);
+                    setState(() => _city = s.first);
+                  },
                 ),
                 const SizedBox(height: AppSpacing.md),
                 Wrap(

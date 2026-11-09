@@ -22,6 +22,9 @@ abstract final class SettingsKeys {
   static const digitStyle = 'digitStyle';
   static const readingTextSize = 'readingTextSize';
 
+  /// Touch feedback: 'on' (the default) or 'off'.
+  static const haptics = 'haptics';
+
   /// The content build that saved items and positions were last checked
   /// against (see `reconcileUserData`).
   static const reconciledContent = 'reconciledContent';
@@ -39,6 +42,7 @@ abstract final class SettingsKeys {
     themeMode,
     digitStyle,
     readingTextSize,
+    haptics,
     reconciledContent,
     welcomeSeen,
     quizRecent,

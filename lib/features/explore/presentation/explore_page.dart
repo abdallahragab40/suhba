@@ -10,6 +10,7 @@ import 'package:suhba/core/design_system/widgets/draft_badge.dart';
 import 'package:suhba/core/design_system/widgets/error_view.dart';
 import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
 import 'package:suhba/core/design_system/widgets/section_header.dart';
+import 'package:suhba/core/feedback/haptics.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/features/atlas/presentation/place_page.dart';
 import 'package:suhba/features/quiz/presentation/quiz_banner.dart';
@@ -162,7 +163,11 @@ class _ExploreState extends State<_Explore> {
               ChoiceChip(
                 label: Text(label),
                 selected: _filter == f,
-                onSelected: (_) => setState(() => _filter = f),
+                onSelected: (_) {
+                  if (_filter == f) return;
+                  Haptics.selection(context);
+                  setState(() => _filter = f);
+                },
               ),
           ],
         ),

@@ -11,6 +11,7 @@ import 'package:suhba/core/design_system/widgets/draft_badge.dart';
 import 'package:suhba/core/design_system/widgets/error_view.dart';
 import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
 import 'package:suhba/core/domain/reliability.dart';
+import 'package:suhba/core/feedback/haptics.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/core/result/failure.dart';
@@ -176,7 +177,10 @@ class _InfographicViewState extends ConsumerState<InfographicView> {
               ),
             ],
             selected: {_asList},
-            onSelectionChanged: (s) => setState(() => _asList = s.first),
+            onSelectionChanged: (s) {
+              Haptics.selection(context);
+              setState(() => _asList = s.first);
+            },
           ),
         ),
         const SizedBox(height: AppSpacing.md),

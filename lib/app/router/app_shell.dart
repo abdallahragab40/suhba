@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/feedback/haptics.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 
 /// The navigation shell: a bottom bar on phones and a rail on wide screens.
@@ -16,7 +17,8 @@ class AppShell extends StatelessWidget {
   /// From this width the destinations move to a side rail.
   static const railBreakpoint = 840.0;
 
-  void _select(int index) {
+  void _select(BuildContext context, int index) {
+    Haptics.selection(context);
     // Tapping the current destination again returns it to its root.
     navigationShell.goBranch(
       index,
@@ -41,7 +43,7 @@ class AppShell extends StatelessWidget {
       // Back from another destination's root goes home before leaving.
       canPop: onHome,
       onPopInvokedWithResult: (didPop, _) {
-        if (!didPop) _select(homeBranch);
+        if (!didPop) navigationShell.goBranch(homeBranch);
       },
       child: wide
           ? Scaffold(
@@ -49,7 +51,7 @@ class AppShell extends StatelessWidget {
                 children: [
                   NavigationRail(
                     selectedIndex: navigationShell.currentIndex,
-                    onDestinationSelected: _select,
+                    onDestinationSelected: (i) => _select(context, i),
                     labelType: NavigationRailLabelType.all,
                     destinations: [
                       for (final (icon, selected, label) in destinations)
@@ -69,7 +71,7 @@ class AppShell extends StatelessWidget {
               body: navigationShell,
               bottomNavigationBar: NavigationBar(
                 selectedIndex: navigationShell.currentIndex,
-                onDestinationSelected: _select,
+                onDestinationSelected: (i) => _select(context, i),
                 destinations: [
                   for (final (icon, selected, label) in destinations)
                     NavigationDestination(

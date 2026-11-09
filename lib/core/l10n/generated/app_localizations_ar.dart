@@ -581,6 +581,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsAppearance => 'المظهر';
 
   @override
+  String get settingsHaptics => 'الاهتزاز عند اللمس';
+
+  @override
+  String get settingsHapticsHint =>
+      'اهتزازات خفيفة عند التنقّل والحفظ وإجابات الاختبار';
+
+  @override
   String get settingsReading => 'القراءة';
 
   @override

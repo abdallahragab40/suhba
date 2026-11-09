@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:suhba/core/database/database_provider.dart';
+import 'package:suhba/core/feedback/haptics.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/features/bookmarks/data/drift_bookmark_repository.dart';
 import 'package:suhba/features/bookmarks/domain/bookmark.dart';
@@ -53,6 +54,9 @@ class BookmarkButton extends ConsumerWidget {
           final nowSaved = await ref
               .read(bookmarkRepositoryProvider)
               .toggle(target, targetId, parentId: parentId);
+          if (context.mounted) {
+            nowSaved ? Haptics.tap(context) : Haptics.selection(context);
+          }
           message = nowSaved ? l10n.bookmarkSaved : l10n.bookmarkRemoved;
         } on Object catch (error, stackTrace) {
           FlutterError.reportError(

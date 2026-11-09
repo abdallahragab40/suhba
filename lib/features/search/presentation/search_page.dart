@@ -8,6 +8,7 @@ import 'package:suhba/core/design_system/tokens/typography.dart';
 import 'package:suhba/core/design_system/widgets/empty_state.dart';
 import 'package:suhba/core/design_system/widgets/error_view.dart';
 import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
+import 'package:suhba/core/feedback/haptics.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/features/search/domain/search_index.dart';
 import 'package:suhba/features/search/presentation/search_providers.dart';
@@ -205,7 +206,11 @@ class _ResultsView extends ConsumerWidget {
               ChoiceChip(
                 label: Text(scopeLabel(s)),
                 selected: s == scope,
-                onSelected: (_) => filters.scope(s),
+                onSelected: (_) {
+                  if (s == scope) return;
+                  Haptics.selection(context);
+                  filters.scope(s);
+                },
               ),
               const SizedBox(width: AppSpacing.xs),
             ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:suhba/core/feedback/haptics.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 
 /// Says what was just removed and offers to put it back ("تراجع"). The
@@ -9,13 +10,20 @@ void showUndoSnackBar(
   required String message,
   required VoidCallback onUndo,
 }) {
+  if (messenger != null) Haptics.tap(messenger.context);
   messenger
     ?..hideCurrentSnackBar()
     ..showSnackBar(
       SnackBar(
         content: Text(message),
         duration: const Duration(seconds: 6),
-        action: SnackBarAction(label: l10n.undo, onPressed: onUndo),
+        action: SnackBarAction(
+          label: l10n.undo,
+          onPressed: () {
+            if (messenger.mounted) Haptics.tap(messenger.context);
+            onUndo();
+          },
+        ),
       ),
     );
 }

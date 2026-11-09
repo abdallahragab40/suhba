@@ -5,6 +5,7 @@ import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
 import 'package:suhba/core/design_system/tokens/typography.dart';
 import 'package:suhba/core/design_system/widgets/citation_marker.dart';
 import 'package:suhba/core/design_system/widgets/section_header.dart';
+import 'package:suhba/core/feedback/haptics.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/shared/content/domain/citation.dart';
@@ -35,7 +36,10 @@ class ReaderNavigation extends StatelessWidget {
     Widget card(String label, String title, VoidCallback onTap, bool next) =>
         Card(
           child: InkWell(
-            onTap: onTap,
+            onTap: () {
+              Haptics.tap(context);
+              onTap();
+            },
             child: Padding(
               padding: const EdgeInsets.all(AppSpacing.md),
               child: Column(

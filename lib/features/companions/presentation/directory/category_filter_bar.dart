@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/feedback/haptics.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/shared/content/domain/catalog.dart';
 import 'package:suhba/shared/content/presentation/content_text.dart';
@@ -37,7 +38,11 @@ class CategoryFilterBar extends StatelessWidget {
             ChoiceChip(
               label: Text(label),
               selected: selected == id,
-              onSelected: (_) => onSelected(id),
+              onSelected: (_) {
+                if (selected == id) return;
+                Haptics.selection(context);
+                onSelected(id);
+              },
             ),
             const SizedBox(width: AppSpacing.xs),
           ],

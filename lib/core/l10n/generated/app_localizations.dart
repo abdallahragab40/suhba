@@ -1058,6 +1058,18 @@ abstract class AppLocalizations {
   /// **'المظهر'**
   String get settingsAppearance;
 
+  /// Settings switch: light vibrations on taps, choices and quiz answers.
+  ///
+  /// In ar, this message translates to:
+  /// **'الاهتزاز عند اللمس'**
+  String get settingsHaptics;
+
+  /// Subtitle under the touch feedback switch.
+  ///
+  /// In ar, this message translates to:
+  /// **'اهتزازات خفيفة عند التنقّل والحفظ وإجابات الاختبار'**
+  String get settingsHapticsHint;
+
   /// Settings group.
   ///
   /// In ar, this message translates to:

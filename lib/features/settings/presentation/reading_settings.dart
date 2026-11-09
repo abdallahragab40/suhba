@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/tokens/typography.dart';
+import 'package:suhba/core/feedback/haptics.dart';
 import 'package:suhba/core/format/digits.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
@@ -92,7 +93,10 @@ class ReadingSettingsSheet extends ConsumerWidget {
                 (ReadingTextSizeController.max - ReadingTextSizeController.min)
                     .round(),
             label: format.integer(size.round()),
-            onChanged: ref.read(readingTextSizeProvider.notifier).select,
+            onChanged: (v) {
+              if (v != size) Haptics.selection(context);
+              ref.read(readingTextSizeProvider.notifier).select(v);
+            },
           ),
           Text(
             l10n.readerTextSample,
@@ -113,8 +117,10 @@ class ReadingSettingsSheet extends ConsumerWidget {
               ),
             ],
             selected: {digits},
-            onSelectionChanged: (s) =>
-                ref.read(digitStyleProvider.notifier).select(s.single),
+            onSelectionChanged: (s) {
+              Haptics.selection(context);
+              ref.read(digitStyleProvider.notifier).select(s.single);
+            },
           ),
         ],
       ),

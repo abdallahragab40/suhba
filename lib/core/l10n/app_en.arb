@@ -160,6 +160,8 @@
   "homeStoriesKicker": "Stories",
   "homeStoriesTitle": "Selected stories",
   "settingsAppearance": "Appearance",
+  "settingsHaptics": "Touch feedback",
+  "settingsHapticsHint": "Light vibrations when moving around, saving and answering quiz questions",
   "settingsReading": "Reading",
   "settingsContent": "Content",
   "settingsContentVersion": "Content version: {version}",

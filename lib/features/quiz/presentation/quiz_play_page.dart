@@ -9,6 +9,7 @@ import 'package:suhba/core/design_system/tokens/radii.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/tokens/typography.dart';
 import 'package:suhba/core/design_system/widgets/error_view.dart';
+import 'package:suhba/core/feedback/haptics.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/features/quiz/domain/quiz_generator.dart';
@@ -66,7 +67,7 @@ class _QuizPlayPageState extends ConsumerState<QuizPlayPage> {
         _streak = 0;
       }
     });
-    right ? HapticFeedback.lightImpact() : HapticFeedback.mediumImpact();
+    right ? Haptics.success(context) : Haptics.error(context);
   }
 
   Future<void> _next() async {
@@ -85,6 +86,7 @@ class _QuizPlayPageState extends ConsumerState<QuizPlayPage> {
         .read(quizBestProvider.notifier)
         .record(widget.mode, _score);
     if (!mounted) return;
+    best ? Haptics.celebrate(context) : Haptics.tap(context);
     setState(() {
       _finished = true;
       _newBest = best;

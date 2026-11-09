@@ -583,6 +583,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsAppearance => 'Appearance';
 
   @override
+  String get settingsHaptics => 'Touch feedback';
+
+  @override
+  String get settingsHapticsHint =>
+      'Light vibrations when moving around, saving and answering quiz questions';
+
+  @override
   String get settingsReading => 'Reading';
 
   @override
