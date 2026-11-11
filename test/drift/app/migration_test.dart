@@ -9,6 +9,8 @@ import 'generated/schema.dart';
 import 'generated/schema_v1.dart' as v1;
 import 'generated/schema_v2.dart' as v2;
 import 'generated/schema_v3.dart' as v3;
+import 'generated/schema_v4.dart' as v4;
+import 'generated/schema_v5.dart' as v5;
 
 void main() {
   driftRuntimeOptions.dontWarnAboutMultipleDatabases = true;
@@ -162,4 +164,121 @@ void main() {
       ),
     );
   });
+  test(
+    'v3 to v4 preserves saved items and anchored reading progress',
+    () async {
+      await verifier.testWithDataIntegrity(
+        oldVersion: 3,
+        newVersion: 4,
+        createOld: v3.DatabaseAtV3.new,
+        createNew: v4.DatabaseAtV4.new,
+        openTestedDatabase: AppDatabase.new,
+        createItems: (batch, oldDb) {
+          batch.insertAll(oldDb.bookmarks, [
+            const v3.BookmarksData(
+              id: 7,
+              targetType: 'section',
+              targetId: 'abu-bakr.hijrah',
+              parentId: 'abu-bakr',
+              createdAt: 1760000000,
+            ),
+          ]);
+          batch.insertAll(oldDb.readingProgressEntries, [
+            const v3.ReadingProgressEntriesData(
+              targetType: 'section',
+              targetId: 'abu-bakr.hijrah',
+              parentId: 'abu-bakr',
+              fraction: 0.7,
+              completed: 1,
+              contentVersion: '0.1.0',
+              updatedAt: 1760000300,
+              targetRevision: '0123456789abcdef',
+              blockIndex: 3,
+              blockOffset: 0.25,
+            ),
+          ]);
+        },
+        validateItems: (db) async {
+          expect(await db.select(db.bookmarks).get(), [
+            const v4.BookmarksData(
+              id: 7,
+              targetType: 'section',
+              targetId: 'abu-bakr.hijrah',
+              parentId: 'abu-bakr',
+              createdAt: 1760000000,
+            ),
+          ]);
+          expect(await db.select(db.readingProgressEntries).get(), [
+            const v4.ReadingProgressEntriesData(
+              targetType: 'section',
+              targetId: 'abu-bakr.hijrah',
+              parentId: 'abu-bakr',
+              fraction: 0.7,
+              completed: 1,
+              contentVersion: '0.1.0',
+              updatedAt: 1760000300,
+              targetRevision: '0123456789abcdef',
+              blockIndex: 3,
+              blockOffset: 0.25,
+            ),
+          ]);
+          expect(await db.select(db.reviewItems).get(), isEmpty);
+        },
+      );
+    },
+  );
+  test(
+    'v4 to v5 retains review history and creates empty journey tables',
+    () async {
+      await verifier.testWithDataIntegrity(
+        oldVersion: 4,
+        newVersion: 5,
+        createOld: v4.DatabaseAtV4.new,
+        createNew: v5.DatabaseAtV5.new,
+        openTestedDatabase: AppDatabase.new,
+        createItems: (batch, db) {
+          batch.insertAll(db.reviewItems, [
+            const v4.ReviewItemsData(
+              questionKey: 'kunya:ali',
+              box: 3,
+              dueOn: 1760000000,
+              lastAnsweredAt: 1759000000,
+              timesRight: 4,
+              timesWrong: 2,
+            ),
+          ]);
+          batch.insertAll(db.bookmarks, [
+            const v4.BookmarksData(
+              id: 2,
+              targetType: 'companion',
+              targetId: 'ali',
+              createdAt: 1759000000,
+            ),
+          ]);
+        },
+        validateItems: (db) async {
+          expect(await db.select(db.reviewItems).get(), [
+            const v5.ReviewItemsData(
+              questionKey: 'kunya:ali',
+              box: 3,
+              dueOn: 1760000000,
+              lastAnsweredAt: 1759000000,
+              timesRight: 4,
+              timesWrong: 2,
+            ),
+          ]);
+          expect(await db.select(db.bookmarks).get(), [
+            const v5.BookmarksData(
+              id: 2,
+              targetType: 'companion',
+              targetId: 'ali',
+              createdAt: 1759000000,
+            ),
+          ]);
+          expect(await db.select(db.journeyEnrollments).get(), isEmpty);
+          expect(await db.select(db.journeyProgressEntries).get(), isEmpty);
+        },
+      );
+    },
+  );
 }

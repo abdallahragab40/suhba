@@ -1,10 +1,13 @@
 import 'dart:convert';
 
 import 'package:crypto/crypto.dart';
+import 'package:suhba/features/journeys/data/journey_dto.dart';
+import 'package:suhba/features/journeys/domain/journey.dart';
 import 'package:suhba/shared/content/domain/review.dart';
 
 import 'content_files.dart';
 import 'content_hash.dart';
+import 'content_tree.dart';
 import 'issues.dart';
 import 'readiness.dart';
 import 'schema_set.dart';
@@ -107,23 +110,26 @@ Map<String, String> reviewPacket(ContentFiles files, SchemaSet schemas) {
     )
     ..writeln('## Items\n')
     ..writeln('| Item | Flags | Pending checks |\n|---|---|---|');
+  final journeyReadings = <Map<String, Object>>[];
   for (final item in items) {
     final state = readiness.items.singleWhere((r) => r.key == item.key);
     final sources = <String>{};
     final text = <(String, String)>[];
-    void walk(Object? node, String path) {
+    void walk(Object? node, String path, {bool includeText = true}) {
       if (node is Map) {
         if (node['sourceId'] case final String id) sources.add(id);
-        if (node['ar'] case final String ar) text.add(('$path.ar', ar));
+        if (includeText && node['ar'] is String) {
+          text.add(('$path.ar', node['ar'] as String));
+        }
         if (node['references'] case final List<dynamic> refs) {
           sources.addAll(refs.cast<String>());
         }
         for (final key in node.keys) {
-          walk(node[key], '$path.$key');
+          walk(node[key], '$path.$key', includeText: includeText);
         }
       } else if (node is List) {
         for (var i = 0; i < node.length; i++) {
-          walk(node[i], '$path[$i]');
+          walk(node[i], '$path[$i]', includeText: includeText);
         }
       }
     }
@@ -156,6 +162,53 @@ Map<String, String> reviewPacket(ContentFiles files, SchemaSet schemas) {
       b
         ..writeln('`$path`\n')
         ..writeln('$ar\n');
+    }
+    if (item.dto case final JourneyDto journey) {
+      b
+        ..writeln('## Ordered journey readings and separate approvals\n')
+        ..writeln(
+          'Journey approval does not approve these referenced items. '
+          'Review their passage text, citations and gradings independently. '
+          'Owner-item approval covers the full owner snapshot, not only the extracted passage. '
+          'Reflection fallback is accepted; question counts are not an approval.\n',
+        );
+      for (final (stepIndex, step) in journey.steps.indexed) {
+        b
+          ..writeln('### Step ${stepIndex + 1}: ${step.title.ar}\n')
+          ..writeln('Stable step ID: `${step.id}`  ')
+          ..writeln(
+            'Supported generated questions: ${draft.journeyQuestionCounts[step.id] ?? 0}\n',
+          );
+        for (final reading in step.readings) {
+          final passage = _journeyPassage(tree, reading);
+          final ownerHash = contentHash(passage.owner.raw);
+          final passageHash = contentHash(passage.raw);
+          walk(passage.raw, passage.path, includeText: false);
+          journeyReadings.add({
+            'journey': item.key,
+            'stepId': step.id,
+            'type': reading.type.name,
+            'targetId': reading.targetId,
+            'owner': passage.owner.key,
+            'ownerPacket': 'items/${passage.owner.key}.md',
+            'ownerContentHash': ownerHash,
+            'passageHash': passageHash,
+            'file': passage.owner.file,
+            'path': passage.path,
+          });
+          b
+            ..writeln('#### ${reading.type.name}: ${reading.targetId}\n')
+            ..writeln(
+              'Owner: [${passage.owner.key}](${passage.owner.key}.md)  ',
+            )
+            ..writeln(
+              'Original passage: `content/${passage.owner.file}` `${passage.path}`  ',
+            )
+            ..writeln('Owner content SHA-256: `$ownerHash`  ')
+            ..writeln('Extracted passage SHA-256: `$passageHash`\n');
+          _jsonBlock(b, passage.raw);
+        }
+      }
     }
     b.writeln('## Automated findings (not scholarly verification)\n');
     final findings = draft.issues.where(
@@ -209,6 +262,7 @@ Map<String, String> reviewPacket(ContentFiles files, SchemaSet schemas) {
         'edition': readiness.editionId,
         'snapshotHash': snapshotHash,
         'registeredReviewers': tree.reviewers.length,
+        'journeyReadings': journeyReadings,
         'items': [
           for (final item in items) {'key': item.key, 'file': item.file, 'path': item.path, 'contentHash': contentHash(item.raw), 'packet': 'items/${item.key}.md', 'template': 'templates/${item.key}.json'},
         ],
@@ -227,4 +281,32 @@ void _jsonBlock(StringBuffer b, Object value) {
     ..writeln('${fence}json')
     ..writeln(json)
     ..writeln('$fence\n');
+}
+
+({Item<Object> owner, Map<String, dynamic> raw, String path}) _journeyPassage(
+  ContentTree tree,
+  StepRefDto ref,
+) {
+  final Item<Object> owner = switch (ref.type) {
+    StepRefType.companionSection => tree.companionById[ref.parentId]!,
+    StepRefType.storyChapter => tree.storyById[ref.parentId]!,
+    StepRefType.seerahChapter => tree.seerahChapterById[ref.targetId]!,
+    StepRefType.seerahTopic => tree.seerahTopicById[ref.targetId]!,
+  };
+  final field = switch (ref.type) {
+    StepRefType.companionSection => 'sections',
+    StepRefType.storyChapter => 'chapters',
+    _ => null,
+  };
+  if (field == null) return (owner: owner, raw: owner.raw, path: r'$');
+  final children = owner.raw[field] as List<dynamic>;
+  final index = children.indexWhere(
+    (child) => (child as Map)['id'] == ref.targetId,
+  );
+  if (index < 0) throw StateError('Missing journey passage ${ref.targetId}');
+  return (
+    owner: owner,
+    raw: children[index] as Map<String, dynamic>,
+    path: '\$.$field[$index]',
+  );
 }

@@ -1,6 +1,6 @@
 // Frame timings while scrolling the heaviest screens. Run in profile mode
 // on a real device (an emulator gives only a rough picture):
-//   flutter drive --profile --driver=test_driver/perf_driver.dart \
+//   flutter drive --keep-app-running --profile --driver=test_driver/perf_driver.dart \
 //     --target=integration_test/scroll_perf_test.dart -d <device>
 // The summaries are written to build/integration_response_data.json.
 import 'package:drift_flutter/drift_flutter.dart';
@@ -13,6 +13,12 @@ import 'package:suhba/app/provider_retry.dart';
 import 'package:suhba/app/router/app_router.dart';
 import 'package:suhba/core/database/app_database.dart';
 import 'package:suhba/core/database/database_provider.dart';
+import 'package:suhba/core/storage/settings_store.dart';
+import 'package:suhba/features/journeys/presentation/journey_providers.dart';
+import 'package:suhba/features/quiz/domain/quiz_generator.dart';
+import 'package:suhba/features/quiz/presentation/quiz_providers.dart';
+import 'package:suhba/features/review/presentation/review_providers.dart';
+import 'package:suhba/features/welcome/presentation/welcome_controller.dart';
 
 void main() {
   final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized()
@@ -24,6 +30,12 @@ void main() {
   const screens = {
     // A plain list: the device's own floor for comparison.
     'baseline': '/settings',
+    'journeys': '/journeys',
+    'journey overview': '/journeys/moments-and-lessons',
+    'journey step':
+        '/journeys/moments-and-lessons/steps/moments-and-lessons.mercy',
+    'review': '/review',
+    'learned': '/review/learned',
     'directory': '/companions',
     'profile': '/companions/abu-bakr',
     'reader': '/companions/abu-bakr/sections/abu-bakr.hijrah',
@@ -39,7 +51,24 @@ void main() {
   };
 
   for (final MapEntry(key: name, value: location) in screens.entries) {
+    if (const bool.fromEnvironment('SUHBA_V2_PERF_ONLY') &&
+        ![
+          'baseline',
+          'journeys',
+          'journey overview',
+          'journey step',
+          'review',
+          'learned',
+        ].contains(name)) {
+      continue;
+    }
     testWidgets('scrolling $name', (tester) async {
+      var now = DateTime(2026, 11, 10, 12);
+      final settings = MemorySettingsStore();
+      await settings.setString(
+        SettingsKeys.welcomeSeen,
+        WelcomeController.seen,
+      );
       final container = ProviderContainer(
         retry: noAutomaticRetry,
         overrides: [
@@ -47,8 +76,28 @@ void main() {
             buildAppRouter(initialLocation: location),
           ),
           appDatabaseProvider.overrideWithValue(db),
+          settingsStoreProvider.overrideWithValue(settings),
+          clockProvider.overrideWithValue(() => now),
         ],
       );
+      await db.delete(db.reviewItems).go();
+      await db.delete(db.journeyProgressEntries).go();
+      await db.delete(db.journeyEnrollments).go();
+      final runtime = await container.read(
+        journeyRuntimeProvider('moments-and-lessons').future,
+      );
+      await container.read(journeyActionsProvider).start('moments-and-lessons');
+      final questions = ['review', 'learned'].contains(name)
+          ? QuizGenerator(
+              await container.read(quizContentProvider.future),
+            ).questionBank().values.take(80)
+          : runtime.questions['moments-and-lessons.mercy']!;
+      for (final q in questions) {
+        await container
+            .read(reviewRepositoryProvider)
+            .recordAnswer(q.key, correct: false);
+      }
+      now = DateTime(2026, 11, 11, 12);
       await tester.pumpWidget(
         UncontrolledProviderScope(
           container: container,

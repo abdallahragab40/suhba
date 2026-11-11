@@ -8,6 +8,7 @@ import 'package:suhba/core/feedback/haptics.dart';
 import 'package:suhba/core/format/digits.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/features/reminders/presentation/reminder_page.dart';
 import 'package:suhba/features/settings/presentation/digit_style_controller.dart';
 import 'package:suhba/features/settings/presentation/personal_data_section.dart';
 import 'package:suhba/features/settings/presentation/reading_settings.dart';
@@ -138,6 +139,8 @@ class SettingsPage extends ConsumerWidget {
               ref.read(digitStyleProvider.notifier).select(s.single);
             },
           ),
+          group(l10n.reminderGroup),
+          const ReminderSettingsTile(),
           group(l10n.settingsYourData),
           const PersonalDataSection(),
           group(l10n.settingsContent),

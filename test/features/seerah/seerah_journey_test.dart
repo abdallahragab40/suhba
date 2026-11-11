@@ -145,7 +145,7 @@ void main() {
             parentId: seerahParentId,
             fraction: 0.4,
             completed: false,
-            contentVersion: '0.2.0',
+            contentVersion: '0.3.0',
             updatedAt: DateTime(2026, 10, 9),
           ),
         );
@@ -238,7 +238,7 @@ void main() {
     await reveal(tester, find.text('الهجرة إلى المدينة'));
     await tester.tap(find.text('الهجرة إلى المدينة'));
     await tester.pumpAndSettle();
-    expect(app.location, hijrah);
+    expect(app.location, '/content$hijrah');
   });
 
   testApp('a place: scene, precision, events and visuals', (tester) async {

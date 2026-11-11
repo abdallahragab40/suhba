@@ -1,6 +1,6 @@
 // End-to-end flows on a real device: real asset loading, a real database
 // file and real preferences. Run with:
-//   flutter test integration_test -d <device>
+//   SUHBA_INTEGRATION_TEST=true flutter test --no-uninstall integration_test/app_flows_test.dart -d <device>
 import 'package:drift_flutter/drift_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -15,6 +15,7 @@ import 'package:suhba/features/atlas/presentation/visual_page.dart';
 import 'package:suhba/features/companions/presentation/profile/companion_profile_page.dart';
 import 'package:suhba/features/seerah/presentation/seerah_chapter_page.dart';
 import 'package:suhba/features/seerah/presentation/seerah_hub_page.dart';
+import 'package:suhba/features/welcome/presentation/welcome_controller.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
@@ -36,7 +37,7 @@ void main() {
     await settings.setDouble(SettingsKeys.readingTextSize, 19);
     // On a fresh install the welcome screens would cover the app; they
     // have their own tests.
-    await settings.setString(SettingsKeys.welcomeSeen, '1');
+    await settings.setString(SettingsKeys.welcomeSeen, WelcomeController.seen);
   });
 
   // The database is not closed: the test process ends with the last test,

@@ -25,11 +25,13 @@ List<String> preBuildProblems({
 /// `companions/abu-bakr.json`, …) to file contents. The manifest must be of
 /// [channel] and [contentVersion], in a supported format, with nothing
 /// unapproved if published, and every file must match its listed hash, with
-/// none missing or extra.
+/// none missing or extra. [requiredJourneyIds] also enforces the launch
+/// journeys and their catalog entries; published journey records must be approved.
 List<String> artifactProblems({
   required Map<String, String> bundled,
   required ContentChannel channel,
   required String contentVersion,
+  List<String> requiredJourneyIds = const [],
 }) {
   final text = bundled['manifest.json'];
   if (text == null) return ['No content manifest in the artifact.'];
@@ -81,6 +83,36 @@ List<String> artifactProblems({
       problems.add('Not listed in the manifest: $path');
     }
   }
+  if (requiredJourneyIds.isNotEmpty) {
+    final indexText = bundled['index/journeys.json'];
+    final index = indexText == null ? null : _jsonObject(indexText);
+    final ids = index?['journeyIds'];
+    if (ids is! List || ids.any((id) => id is! String)) {
+      problems.add('Required journey index is missing or malformed.');
+    }
+    for (final id in requiredJourneyIds) {
+      if (ids is List && !ids.contains(id)) {
+        problems.add('Required journey is absent from the index: $id');
+      }
+      final path = 'journeys/$id.json';
+      final text = bundled[path];
+      if (text == null) {
+        problems.add('Required journey is missing from the artifact: $id');
+        continue;
+      }
+      final journey = _jsonObject(text);
+      if (journey == null || journey['id'] != id) {
+        problems.add(
+          'Required journey record is malformed or has the wrong id: $id',
+        );
+      } else if (channel == ContentChannel.published) {
+        final review = journey['review'];
+        if (review is! Map || review['status'] != 'approved') {
+          problems.add('Required published journey is not approved: $id');
+        }
+      }
+    }
+  }
   problems.sort();
   return problems;
 }
@@ -89,3 +121,12 @@ List<String> artifactProblems({
 final contentEntry = RegExp(
   r'(?:^|/)flutter_assets/assets/content/(.+\.json)$',
 );
+
+Map<String, dynamic>? _jsonObject(String text) {
+  try {
+    final value = jsonDecode(text);
+    return value is Map<String, dynamic> ? value : null;
+  } on FormatException {
+    return null;
+  }
+}

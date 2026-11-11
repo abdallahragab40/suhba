@@ -6,6 +6,8 @@ import 'package:suhba/app/provider_retry.dart';
 import 'package:suhba/core/error/app_error_widget.dart';
 import 'package:suhba/core/error/error_reporter.dart';
 import 'package:suhba/core/storage/settings_store.dart';
+import 'package:suhba/features/reminders/data/flutter_reminder_service.dart';
+import 'package:suhba/features/reminders/presentation/reminder_providers.dart';
 
 /// Starts the app: installs the global error handlers
 /// and runs [SuhbaApp] in a [ProviderScope].
@@ -23,7 +25,10 @@ Future<void> bootstrap({
   runApp(
     ProviderScope(
       retry: noAutomaticRetry,
-      overrides: [settingsStoreProvider.overrideWithValue(settings)],
+      overrides: [
+        settingsStoreProvider.overrideWithValue(settings),
+        reminderServiceProvider.overrideWithValue(FlutterReminderService()),
+      ],
       child: const SuhbaApp(),
     ),
   );

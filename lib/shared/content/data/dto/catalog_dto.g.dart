@@ -638,6 +638,7 @@ Map<String, dynamic> _$ApprovalDtoToJson(_ApprovalDto instance) =>
     };
 
 const _$ContentKindEnumMap = {
+  ContentKind.journey: 'journey',
   ContentKind.companion: 'companion',
   ContentKind.story: 'story',
   ContentKind.event: 'event',
@@ -797,6 +798,7 @@ _EditionDto _$EditionDtoFromJson(Map<String, dynamic> json) =>
           'stories',
           'events',
           'visuals',
+          'journeyIds',
         ],
       );
       final val = _EditionDto(
@@ -825,6 +827,12 @@ _EditionDto _$EditionDtoFromJson(Map<String, dynamic> json) =>
           'visuals',
           (v) => EditionVisualsDto.fromJson(v as Map<String, dynamic>),
         ),
+        journeyIds: $checkedConvert(
+          'journeyIds',
+          (v) =>
+              (v as List<dynamic>?)?.map((e) => e as String).toList() ??
+              const <String>[],
+        ),
       );
       return val;
     });
@@ -838,4 +846,5 @@ Map<String, dynamic> _$EditionDtoToJson(_EditionDto instance) =>
       'stories': instance.stories.toJson(),
       'events': instance.events.toJson(),
       'visuals': instance.visuals.toJson(),
+      'journeyIds': instance.journeyIds,
     };

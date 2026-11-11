@@ -232,6 +232,12 @@
   "settingsYourData": "Reading data on this device",
   "settingsClearHistory": "Clear reading history",
   "settingsClearSaved": "Clear saved items",
+  "settingsClearLearning": "Clear review and journey progress",
+  "settingsLearningCounts": "Review questions: {reviews} · Journeys: {journeys}",
+  "@settingsLearningCounts": {"placeholders": {"reviews": {"type": "String"}, "journeys": {"type": "String"}}},
+  "clearLearningTitle": "Clear review and journey progress?",
+  "clearLearningMessage": "Your answers, their review dates and your journey progress will be deleted from this device. This cannot be undone. Saved items, reading history and settings are not affected.",
+  "learningCleared": "Review and journey progress cleared.",
   "settingsNothingToClear": "Nothing to clear",
   "clearHistoryTitle": "Clear reading history?",
   "clearSavedTitle": "Clear saved items?",
@@ -406,10 +412,11 @@
   "shareDraftNotice": "Content under review; scholarly approval is pending.",
   "shareFromApp": "From the {appName} app",
   "settingsExport": "Export reading data",
-  "settingsExportSubtitle": "A file with your saved items and reading positions, to keep or move to another device.",
+  "settingsExportSubtitle": "A file with your saved items, reading positions, journey progress and review history, to keep or move to another device.",
   "settingsImport": "Import reading data",
   "settingsImportSubtitle": "Adds what the file holds to what is on this device; nothing is deleted.",
   "exportSubject": "Reading data from {appName}",
+  "importReviewCount": "Review histories to add or update: {count}.",
   "importConfirmTitle": "Import reading data",
   "importConfirmMessage": "Saved items to add: {items}. Reading positions to add or advance: {texts}. Everything else on this device stays as it is; nothing is deleted.",
   "importConfirm": "Import",
@@ -441,8 +448,13 @@
   "welcome3Title": "The lives of his Companions",
   "welcome3Body": "The Ten promised Paradise in full biographies, many other Companions in short profiles, and stories from the Seerah to read in one sitting.",
   "welcome4Kicker": "The method",
+  "welcomeJourneysKicker": "Your journey",
+  "welcomeWhatsNewKicker": "New in Suhba",
+  "welcomeJourneysTitle": "A step a day",
+  "welcomeJourneysBody": "Short journeys through the Seerah and the lives of the Companions, read one step at a time, with review questions that bring back what you read when it is due, and a daily reminder if you want one.",
   "welcome4Title": "Every report with its source",
   "welcome4Body": "Reports are attributed to the books of hadith and Seerah, and their standing is shown: established, historical report or disputed. The content has had a preliminary review and is not final until a qualified scholar approves it. The whole app works offline.",
+  "welcome4BodyPublished": "Reports are attributed to the books of hadith and Seerah, and their standing is shown: established, historical report or disputed. Qualified specialists reviewed the content before it was published. The whole app works offline.",
   "quizTitle": "Test your knowledge",
   "quizSubtitle": "New questions every round, on the Companions and the Seerah, each answer pointing to its place.",
   "quizModeMixed": "Mixed round",
@@ -454,6 +466,7 @@
   "quizBest": "Best: {score} of {total}",
   "quizNoBest": "Not played yet",
   "quizNote": "Questions are generated each time from the app's own content, which has had a preliminary review.",
+  "quizNotePublished": "Questions are generated each time from the app's own content.",
   "quizProgress": "Question {current} of {total}",
   "quizStreak": "{count} in a row",
   "quizCorrect": "Well done!",
@@ -521,5 +534,117 @@
   "exploreVisitBody": "The Seerah's places in and around Madinah and Makkah on one map, which can be ordered by distance from you.",
   "placeCompanions": "Companions tied to this place",
   "placeVisitCity": "Other places in {city}",
-  "@placeVisitCity": {"placeholders": {"city": {"type": "String"}}}
+  "@placeVisitCity": {"placeholders": {"city": {"type": "String"}}},
+  "journeysTitle": "Journeys",
+  "journeysIntro": "Connected readings, one step at a time. Choose a journey and follow it at your own pace.",
+  "journeyPacing": "Steps follow an order; you do not need to read on consecutive days.",
+  "journeyLength": "{stepCount, plural, =1{1 step} other{{steps} steps}}, {minuteCount, plural, =1{about 1 minute per step} other{about {minutes} minutes per step}}",
+  "@journeyLength": {
+    "description": "Guided journeys: journeyLength",
+    "placeholders": {
+      "stepCount": {
+        "type": "int"
+      },
+      "steps": {
+        "type": "String"
+      },
+      "minuteCount": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyProgress": "Completed {done} of {totalCount, plural, =1{1 step} other{{total} steps}}",
+  "@journeyProgress": {
+    "description": "Guided journeys: journeyProgress",
+    "placeholders": {
+      "done": {
+        "type": "String"
+      },
+      "totalCount": {
+        "type": "int"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyStart": "Start journey",
+  "journeyContinue": "Continue journey",
+  "journeyPause": "Pause",
+  "journeyResume": "Resume journey",
+  "journeyPaused": "This journey is paused. Resume when you are ready.",
+  "journeyRestart": "Restart journey",
+  "journeyRestartMessage": "This journey will start again. Reading and review history and progress in other journeys are kept.",
+  "journeyFinished": "You finished this journey. Return to its readings whenever you like.",
+  "journeyStepNumber": "Step {number} of {total}",
+  "journeyLocked": "Complete the previous step first",
+  "journeySkipped": "This step was skipped because a reading is no longer available. Your earlier progress is kept.",
+  "journeyReading": "Step readings",
+  "journeyReadNext": "Continue reading",
+  "journeyMinutes": "{count, plural, =1{About 1 minute of reading} other{About {minutes} minutes of reading}}",
+  "@journeyMinutes": {
+    "description": "Guided journeys: journeyMinutes",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyQuestions": "Recall what you read",
+  "journeyReflection": "Reflect",
+  "journeyReflectionOnly": "There are no suitable generated questions for this reading yet. Take your time with the reflection.",
+  "journeyCompleteStep": "Complete step",
+  "journeyAnswerRecorded": "Your answer was recorded",
+  "journeyCorrectAnswer": "Answer: {answer}",
+  "journeyUnavailable": "This journey is unavailable in this edition.",
+  "importJourneyCount": "Journeys to add or update: {count}.",
+  "nextStepTitle": "Your next step",
+  "nextStepStartBody": "Choose a journey, begin with a short reading, and return whenever you like.",
+  "reviewTitle": "Review",
+  "reviewIntro": "Questions from your readings, ready to revisit.",
+  "reviewStart": "Start review",
+  "reviewProgress": "Review {number} of {total}",
+  "reviewEmptyTitle": "No reviews due now",
+  "reviewEmptyBody": "Return to a journey or explore what you have learned.",
+  "reviewCompleteTitle": "You finished this review",
+  "reviewCompleteBody": "Your answers are saved. The questions will return when they are due again.",
+  "reviewReadPassage": "Read the passage",
+  "reviewAlreadyAnswered": "This question was updated since you opened it. The newer answer has been kept.",
+  "learnedTitle": "What I have learned",
+  "learnedIntro": "Topics you have encountered in review. Their status changes with your answers and does not fall when you miss a day.",
+  "learnedEmpty": "Start a journey to see the topics you review here.",
+  "learnedMastered": "Mastered",
+  "learnedLearning": "Learning",
+  "learnedRevisit": "Worth revisiting",
+  "reviewDueCount": "{count, plural, =1{One question to review today} other{{n} questions to review today}}",
+  "reminderGroup": "Reminders",
+  "reminderTitle": "Daily reminder",
+  "reminderIntro": "Choose a time for a reading or review. The reminder stays off until you enable it.",
+  "reminderSwitch": "Enable reminder",
+  "reminderTime": "Reminder time",
+  "reminderOnAt": "Daily around {time}",
+  "reminderOffAt": "Off. Time: {time}",
+  "reminderDenied": "Notifications are not allowed. Allow them in device settings, then enable the reminder here.",
+  "reminderFailed": "The reminder could not be updated. Try again.",
+  "reminderSystemSettings": "Notification settings",
+  "reminderUnsupported": "Reminders are available on Android in this edition.",
+  "reminderTimingNote": "Delivery may follow the selected time depending on device settings. After restarting the device, open Suhba once to restore the reminder.",
+  "reminderNotificationTitle": "Time for Suhba",
+  "reminderNotificationBody": "A small step in your journey through the Seerah and the Companions, when it suits you.",
+  "reminderChannel": "Reading reminders",
+  "reminderChannelDescription": "An optional daily reminder to read or review.",
+  "shareCardTitle": "A card from Suhba",
+  "shareCardSquare": "Square",
+  "shareCardStory": "Story",
+  "shareCardDark": "Dark",
+  "shareCardAction": "Share card",
+  "shareCardFailed": "Could not prepare the card. Try again.",
+  "shareCardFooter": "Suhba app • Seerah and Companions\nGoogle Play",
+  "shareCardOption": "Card"
 }

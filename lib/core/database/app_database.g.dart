@@ -1016,12 +1016,1256 @@ class ReadingProgressEntriesCompanion extends UpdateCompanion<ProgressRow> {
   }
 }
 
+class $ReviewItemsTable extends ReviewItems
+    with TableInfo<$ReviewItemsTable, ReviewItemRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $ReviewItemsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _questionKeyMeta = const VerificationMeta(
+    'questionKey',
+  );
+  @override
+  late final GeneratedColumn<String> questionKey = GeneratedColumn<String>(
+    'question_key',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _boxMeta = const VerificationMeta('box');
+  @override
+  late final GeneratedColumn<int> box = GeneratedColumn<int>(
+    'box',
+    aliasedName,
+    false,
+    check: () => ComparableExpr(box).isBetweenValues(1, 5),
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _dueOnMeta = const VerificationMeta('dueOn');
+  @override
+  late final GeneratedColumn<DateTime> dueOn = GeneratedColumn<DateTime>(
+    'due_on',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _lastAnsweredAtMeta = const VerificationMeta(
+    'lastAnsweredAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> lastAnsweredAt =
+      GeneratedColumn<DateTime>(
+        'last_answered_at',
+        aliasedName,
+        false,
+        type: DriftSqlType.dateTime,
+        requiredDuringInsert: true,
+      );
+  static const VerificationMeta _timesRightMeta = const VerificationMeta(
+    'timesRight',
+  );
+  @override
+  late final GeneratedColumn<int> timesRight = GeneratedColumn<int>(
+    'times_right',
+    aliasedName,
+    false,
+    check: () => ComparableExpr(timesRight).isBiggerOrEqualValue(0),
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _timesWrongMeta = const VerificationMeta(
+    'timesWrong',
+  );
+  @override
+  late final GeneratedColumn<int> timesWrong = GeneratedColumn<int>(
+    'times_wrong',
+    aliasedName,
+    false,
+    check: () => ComparableExpr(timesWrong).isBiggerOrEqualValue(0),
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    questionKey,
+    box,
+    dueOn,
+    lastAnsweredAt,
+    timesRight,
+    timesWrong,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'review_items';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<ReviewItemRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('question_key')) {
+      context.handle(
+        _questionKeyMeta,
+        questionKey.isAcceptableOrUnknown(
+          data['question_key']!,
+          _questionKeyMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_questionKeyMeta);
+    }
+    if (data.containsKey('box')) {
+      context.handle(
+        _boxMeta,
+        box.isAcceptableOrUnknown(data['box']!, _boxMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_boxMeta);
+    }
+    if (data.containsKey('due_on')) {
+      context.handle(
+        _dueOnMeta,
+        dueOn.isAcceptableOrUnknown(data['due_on']!, _dueOnMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_dueOnMeta);
+    }
+    if (data.containsKey('last_answered_at')) {
+      context.handle(
+        _lastAnsweredAtMeta,
+        lastAnsweredAt.isAcceptableOrUnknown(
+          data['last_answered_at']!,
+          _lastAnsweredAtMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_lastAnsweredAtMeta);
+    }
+    if (data.containsKey('times_right')) {
+      context.handle(
+        _timesRightMeta,
+        timesRight.isAcceptableOrUnknown(data['times_right']!, _timesRightMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_timesRightMeta);
+    }
+    if (data.containsKey('times_wrong')) {
+      context.handle(
+        _timesWrongMeta,
+        timesWrong.isAcceptableOrUnknown(data['times_wrong']!, _timesWrongMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_timesWrongMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {questionKey};
+  @override
+  ReviewItemRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return ReviewItemRow(
+      questionKey: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}question_key'],
+      )!,
+      box: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}box'],
+      )!,
+      dueOn: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}due_on'],
+      )!,
+      lastAnsweredAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}last_answered_at'],
+      )!,
+      timesRight: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}times_right'],
+      )!,
+      timesWrong: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}times_wrong'],
+      )!,
+    );
+  }
+
+  @override
+  $ReviewItemsTable createAlias(String alias) {
+    return $ReviewItemsTable(attachedDatabase, alias);
+  }
+}
+
+class ReviewItemRow extends DataClass implements Insertable<ReviewItemRow> {
+  final String questionKey;
+  final int box;
+
+  /// UTC midnight encoding a local calendar date, rather than an instant.
+  final DateTime dueOn;
+  final DateTime lastAnsweredAt;
+  final int timesRight;
+  final int timesWrong;
+  const ReviewItemRow({
+    required this.questionKey,
+    required this.box,
+    required this.dueOn,
+    required this.lastAnsweredAt,
+    required this.timesRight,
+    required this.timesWrong,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['question_key'] = Variable<String>(questionKey);
+    map['box'] = Variable<int>(box);
+    map['due_on'] = Variable<DateTime>(dueOn);
+    map['last_answered_at'] = Variable<DateTime>(lastAnsweredAt);
+    map['times_right'] = Variable<int>(timesRight);
+    map['times_wrong'] = Variable<int>(timesWrong);
+    return map;
+  }
+
+  ReviewItemsCompanion toCompanion(bool nullToAbsent) {
+    return ReviewItemsCompanion(
+      questionKey: Value(questionKey),
+      box: Value(box),
+      dueOn: Value(dueOn),
+      lastAnsweredAt: Value(lastAnsweredAt),
+      timesRight: Value(timesRight),
+      timesWrong: Value(timesWrong),
+    );
+  }
+
+  factory ReviewItemRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return ReviewItemRow(
+      questionKey: serializer.fromJson<String>(json['questionKey']),
+      box: serializer.fromJson<int>(json['box']),
+      dueOn: serializer.fromJson<DateTime>(json['dueOn']),
+      lastAnsweredAt: serializer.fromJson<DateTime>(json['lastAnsweredAt']),
+      timesRight: serializer.fromJson<int>(json['timesRight']),
+      timesWrong: serializer.fromJson<int>(json['timesWrong']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'questionKey': serializer.toJson<String>(questionKey),
+      'box': serializer.toJson<int>(box),
+      'dueOn': serializer.toJson<DateTime>(dueOn),
+      'lastAnsweredAt': serializer.toJson<DateTime>(lastAnsweredAt),
+      'timesRight': serializer.toJson<int>(timesRight),
+      'timesWrong': serializer.toJson<int>(timesWrong),
+    };
+  }
+
+  ReviewItemRow copyWith({
+    String? questionKey,
+    int? box,
+    DateTime? dueOn,
+    DateTime? lastAnsweredAt,
+    int? timesRight,
+    int? timesWrong,
+  }) => ReviewItemRow(
+    questionKey: questionKey ?? this.questionKey,
+    box: box ?? this.box,
+    dueOn: dueOn ?? this.dueOn,
+    lastAnsweredAt: lastAnsweredAt ?? this.lastAnsweredAt,
+    timesRight: timesRight ?? this.timesRight,
+    timesWrong: timesWrong ?? this.timesWrong,
+  );
+  ReviewItemRow copyWithCompanion(ReviewItemsCompanion data) {
+    return ReviewItemRow(
+      questionKey: data.questionKey.present
+          ? data.questionKey.value
+          : this.questionKey,
+      box: data.box.present ? data.box.value : this.box,
+      dueOn: data.dueOn.present ? data.dueOn.value : this.dueOn,
+      lastAnsweredAt: data.lastAnsweredAt.present
+          ? data.lastAnsweredAt.value
+          : this.lastAnsweredAt,
+      timesRight: data.timesRight.present
+          ? data.timesRight.value
+          : this.timesRight,
+      timesWrong: data.timesWrong.present
+          ? data.timesWrong.value
+          : this.timesWrong,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('ReviewItemRow(')
+          ..write('questionKey: $questionKey, ')
+          ..write('box: $box, ')
+          ..write('dueOn: $dueOn, ')
+          ..write('lastAnsweredAt: $lastAnsweredAt, ')
+          ..write('timesRight: $timesRight, ')
+          ..write('timesWrong: $timesWrong')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    questionKey,
+    box,
+    dueOn,
+    lastAnsweredAt,
+    timesRight,
+    timesWrong,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is ReviewItemRow &&
+          other.questionKey == this.questionKey &&
+          other.box == this.box &&
+          other.dueOn == this.dueOn &&
+          other.lastAnsweredAt == this.lastAnsweredAt &&
+          other.timesRight == this.timesRight &&
+          other.timesWrong == this.timesWrong);
+}
+
+class ReviewItemsCompanion extends UpdateCompanion<ReviewItemRow> {
+  final Value<String> questionKey;
+  final Value<int> box;
+  final Value<DateTime> dueOn;
+  final Value<DateTime> lastAnsweredAt;
+  final Value<int> timesRight;
+  final Value<int> timesWrong;
+  final Value<int> rowid;
+  const ReviewItemsCompanion({
+    this.questionKey = const Value.absent(),
+    this.box = const Value.absent(),
+    this.dueOn = const Value.absent(),
+    this.lastAnsweredAt = const Value.absent(),
+    this.timesRight = const Value.absent(),
+    this.timesWrong = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  ReviewItemsCompanion.insert({
+    required String questionKey,
+    required int box,
+    required DateTime dueOn,
+    required DateTime lastAnsweredAt,
+    required int timesRight,
+    required int timesWrong,
+    this.rowid = const Value.absent(),
+  }) : questionKey = Value(questionKey),
+       box = Value(box),
+       dueOn = Value(dueOn),
+       lastAnsweredAt = Value(lastAnsweredAt),
+       timesRight = Value(timesRight),
+       timesWrong = Value(timesWrong);
+  static Insertable<ReviewItemRow> custom({
+    Expression<String>? questionKey,
+    Expression<int>? box,
+    Expression<DateTime>? dueOn,
+    Expression<DateTime>? lastAnsweredAt,
+    Expression<int>? timesRight,
+    Expression<int>? timesWrong,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (questionKey != null) 'question_key': questionKey,
+      if (box != null) 'box': box,
+      if (dueOn != null) 'due_on': dueOn,
+      if (lastAnsweredAt != null) 'last_answered_at': lastAnsweredAt,
+      if (timesRight != null) 'times_right': timesRight,
+      if (timesWrong != null) 'times_wrong': timesWrong,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  ReviewItemsCompanion copyWith({
+    Value<String>? questionKey,
+    Value<int>? box,
+    Value<DateTime>? dueOn,
+    Value<DateTime>? lastAnsweredAt,
+    Value<int>? timesRight,
+    Value<int>? timesWrong,
+    Value<int>? rowid,
+  }) {
+    return ReviewItemsCompanion(
+      questionKey: questionKey ?? this.questionKey,
+      box: box ?? this.box,
+      dueOn: dueOn ?? this.dueOn,
+      lastAnsweredAt: lastAnsweredAt ?? this.lastAnsweredAt,
+      timesRight: timesRight ?? this.timesRight,
+      timesWrong: timesWrong ?? this.timesWrong,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (questionKey.present) {
+      map['question_key'] = Variable<String>(questionKey.value);
+    }
+    if (box.present) {
+      map['box'] = Variable<int>(box.value);
+    }
+    if (dueOn.present) {
+      map['due_on'] = Variable<DateTime>(dueOn.value);
+    }
+    if (lastAnsweredAt.present) {
+      map['last_answered_at'] = Variable<DateTime>(lastAnsweredAt.value);
+    }
+    if (timesRight.present) {
+      map['times_right'] = Variable<int>(timesRight.value);
+    }
+    if (timesWrong.present) {
+      map['times_wrong'] = Variable<int>(timesWrong.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('ReviewItemsCompanion(')
+          ..write('questionKey: $questionKey, ')
+          ..write('box: $box, ')
+          ..write('dueOn: $dueOn, ')
+          ..write('lastAnsweredAt: $lastAnsweredAt, ')
+          ..write('timesRight: $timesRight, ')
+          ..write('timesWrong: $timesWrong, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $JourneyEnrollmentsTable extends JourneyEnrollments
+    with TableInfo<$JourneyEnrollmentsTable, JourneyEnrollmentRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $JourneyEnrollmentsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _journeyIdMeta = const VerificationMeta(
+    'journeyId',
+  );
+  @override
+  late final GeneratedColumn<String> journeyId = GeneratedColumn<String>(
+    'journey_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _startedAtMeta = const VerificationMeta(
+    'startedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> startedAt = GeneratedColumn<DateTime>(
+    'started_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _updatedAtMeta = const VerificationMeta(
+    'updatedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> updatedAt = GeneratedColumn<DateTime>(
+    'updated_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _pausedMeta = const VerificationMeta('paused');
+  @override
+  late final GeneratedColumn<bool> paused = GeneratedColumn<bool>(
+    'paused',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("paused" IN (0, 1))',
+    ),
+    defaultValue: const Constant(false),
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    journeyId,
+    startedAt,
+    updatedAt,
+    paused,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'journey_enrollments';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<JourneyEnrollmentRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('journey_id')) {
+      context.handle(
+        _journeyIdMeta,
+        journeyId.isAcceptableOrUnknown(data['journey_id']!, _journeyIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_journeyIdMeta);
+    }
+    if (data.containsKey('started_at')) {
+      context.handle(
+        _startedAtMeta,
+        startedAt.isAcceptableOrUnknown(data['started_at']!, _startedAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_startedAtMeta);
+    }
+    if (data.containsKey('updated_at')) {
+      context.handle(
+        _updatedAtMeta,
+        updatedAt.isAcceptableOrUnknown(data['updated_at']!, _updatedAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_updatedAtMeta);
+    }
+    if (data.containsKey('paused')) {
+      context.handle(
+        _pausedMeta,
+        paused.isAcceptableOrUnknown(data['paused']!, _pausedMeta),
+      );
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {journeyId};
+  @override
+  JourneyEnrollmentRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return JourneyEnrollmentRow(
+      journeyId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}journey_id'],
+      )!,
+      startedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}started_at'],
+      )!,
+      updatedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}updated_at'],
+      )!,
+      paused: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}paused'],
+      )!,
+    );
+  }
+
+  @override
+  $JourneyEnrollmentsTable createAlias(String alias) {
+    return $JourneyEnrollmentsTable(attachedDatabase, alias);
+  }
+}
+
+class JourneyEnrollmentRow extends DataClass
+    implements Insertable<JourneyEnrollmentRow> {
+  final String journeyId;
+  final DateTime startedAt;
+  final DateTime updatedAt;
+  final bool paused;
+  const JourneyEnrollmentRow({
+    required this.journeyId,
+    required this.startedAt,
+    required this.updatedAt,
+    required this.paused,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['journey_id'] = Variable<String>(journeyId);
+    map['started_at'] = Variable<DateTime>(startedAt);
+    map['updated_at'] = Variable<DateTime>(updatedAt);
+    map['paused'] = Variable<bool>(paused);
+    return map;
+  }
+
+  JourneyEnrollmentsCompanion toCompanion(bool nullToAbsent) {
+    return JourneyEnrollmentsCompanion(
+      journeyId: Value(journeyId),
+      startedAt: Value(startedAt),
+      updatedAt: Value(updatedAt),
+      paused: Value(paused),
+    );
+  }
+
+  factory JourneyEnrollmentRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return JourneyEnrollmentRow(
+      journeyId: serializer.fromJson<String>(json['journeyId']),
+      startedAt: serializer.fromJson<DateTime>(json['startedAt']),
+      updatedAt: serializer.fromJson<DateTime>(json['updatedAt']),
+      paused: serializer.fromJson<bool>(json['paused']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'journeyId': serializer.toJson<String>(journeyId),
+      'startedAt': serializer.toJson<DateTime>(startedAt),
+      'updatedAt': serializer.toJson<DateTime>(updatedAt),
+      'paused': serializer.toJson<bool>(paused),
+    };
+  }
+
+  JourneyEnrollmentRow copyWith({
+    String? journeyId,
+    DateTime? startedAt,
+    DateTime? updatedAt,
+    bool? paused,
+  }) => JourneyEnrollmentRow(
+    journeyId: journeyId ?? this.journeyId,
+    startedAt: startedAt ?? this.startedAt,
+    updatedAt: updatedAt ?? this.updatedAt,
+    paused: paused ?? this.paused,
+  );
+  JourneyEnrollmentRow copyWithCompanion(JourneyEnrollmentsCompanion data) {
+    return JourneyEnrollmentRow(
+      journeyId: data.journeyId.present ? data.journeyId.value : this.journeyId,
+      startedAt: data.startedAt.present ? data.startedAt.value : this.startedAt,
+      updatedAt: data.updatedAt.present ? data.updatedAt.value : this.updatedAt,
+      paused: data.paused.present ? data.paused.value : this.paused,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('JourneyEnrollmentRow(')
+          ..write('journeyId: $journeyId, ')
+          ..write('startedAt: $startedAt, ')
+          ..write('updatedAt: $updatedAt, ')
+          ..write('paused: $paused')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(journeyId, startedAt, updatedAt, paused);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is JourneyEnrollmentRow &&
+          other.journeyId == this.journeyId &&
+          other.startedAt == this.startedAt &&
+          other.updatedAt == this.updatedAt &&
+          other.paused == this.paused);
+}
+
+class JourneyEnrollmentsCompanion
+    extends UpdateCompanion<JourneyEnrollmentRow> {
+  final Value<String> journeyId;
+  final Value<DateTime> startedAt;
+  final Value<DateTime> updatedAt;
+  final Value<bool> paused;
+  final Value<int> rowid;
+  const JourneyEnrollmentsCompanion({
+    this.journeyId = const Value.absent(),
+    this.startedAt = const Value.absent(),
+    this.updatedAt = const Value.absent(),
+    this.paused = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  JourneyEnrollmentsCompanion.insert({
+    required String journeyId,
+    required DateTime startedAt,
+    required DateTime updatedAt,
+    this.paused = const Value.absent(),
+    this.rowid = const Value.absent(),
+  }) : journeyId = Value(journeyId),
+       startedAt = Value(startedAt),
+       updatedAt = Value(updatedAt);
+  static Insertable<JourneyEnrollmentRow> custom({
+    Expression<String>? journeyId,
+    Expression<DateTime>? startedAt,
+    Expression<DateTime>? updatedAt,
+    Expression<bool>? paused,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (journeyId != null) 'journey_id': journeyId,
+      if (startedAt != null) 'started_at': startedAt,
+      if (updatedAt != null) 'updated_at': updatedAt,
+      if (paused != null) 'paused': paused,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  JourneyEnrollmentsCompanion copyWith({
+    Value<String>? journeyId,
+    Value<DateTime>? startedAt,
+    Value<DateTime>? updatedAt,
+    Value<bool>? paused,
+    Value<int>? rowid,
+  }) {
+    return JourneyEnrollmentsCompanion(
+      journeyId: journeyId ?? this.journeyId,
+      startedAt: startedAt ?? this.startedAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+      paused: paused ?? this.paused,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (journeyId.present) {
+      map['journey_id'] = Variable<String>(journeyId.value);
+    }
+    if (startedAt.present) {
+      map['started_at'] = Variable<DateTime>(startedAt.value);
+    }
+    if (updatedAt.present) {
+      map['updated_at'] = Variable<DateTime>(updatedAt.value);
+    }
+    if (paused.present) {
+      map['paused'] = Variable<bool>(paused.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('JourneyEnrollmentsCompanion(')
+          ..write('journeyId: $journeyId, ')
+          ..write('startedAt: $startedAt, ')
+          ..write('updatedAt: $updatedAt, ')
+          ..write('paused: $paused, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $JourneyProgressEntriesTable extends JourneyProgressEntries
+    with TableInfo<$JourneyProgressEntriesTable, JourneyStepProgressRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $JourneyProgressEntriesTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _journeyIdMeta = const VerificationMeta(
+    'journeyId',
+  );
+  @override
+  late final GeneratedColumn<String> journeyId = GeneratedColumn<String>(
+    'journey_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _stepIdMeta = const VerificationMeta('stepId');
+  @override
+  late final GeneratedColumn<String> stepId = GeneratedColumn<String>(
+    'step_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _startedAtMeta = const VerificationMeta(
+    'startedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> startedAt = GeneratedColumn<DateTime>(
+    'started_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _updatedAtMeta = const VerificationMeta(
+    'updatedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> updatedAt = GeneratedColumn<DateTime>(
+    'updated_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _completedAtMeta = const VerificationMeta(
+    'completedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> completedAt = GeneratedColumn<DateTime>(
+    'completed_at',
+    aliasedName,
+    true,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _skippedMeta = const VerificationMeta(
+    'skipped',
+  );
+  @override
+  late final GeneratedColumn<bool> skipped = GeneratedColumn<bool>(
+    'skipped',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("skipped" IN (0, 1))',
+    ),
+    defaultValue: const Constant(false),
+  );
+  static const VerificationMeta _answeredKeysMeta = const VerificationMeta(
+    'answeredKeys',
+  );
+  @override
+  late final GeneratedColumn<String> answeredKeys = GeneratedColumn<String>(
+    'answered_keys',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    defaultValue: const Constant('[]'),
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    journeyId,
+    stepId,
+    startedAt,
+    updatedAt,
+    completedAt,
+    skipped,
+    answeredKeys,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'journey_progress_entries';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<JourneyStepProgressRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('journey_id')) {
+      context.handle(
+        _journeyIdMeta,
+        journeyId.isAcceptableOrUnknown(data['journey_id']!, _journeyIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_journeyIdMeta);
+    }
+    if (data.containsKey('step_id')) {
+      context.handle(
+        _stepIdMeta,
+        stepId.isAcceptableOrUnknown(data['step_id']!, _stepIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_stepIdMeta);
+    }
+    if (data.containsKey('started_at')) {
+      context.handle(
+        _startedAtMeta,
+        startedAt.isAcceptableOrUnknown(data['started_at']!, _startedAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_startedAtMeta);
+    }
+    if (data.containsKey('updated_at')) {
+      context.handle(
+        _updatedAtMeta,
+        updatedAt.isAcceptableOrUnknown(data['updated_at']!, _updatedAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_updatedAtMeta);
+    }
+    if (data.containsKey('completed_at')) {
+      context.handle(
+        _completedAtMeta,
+        completedAt.isAcceptableOrUnknown(
+          data['completed_at']!,
+          _completedAtMeta,
+        ),
+      );
+    }
+    if (data.containsKey('skipped')) {
+      context.handle(
+        _skippedMeta,
+        skipped.isAcceptableOrUnknown(data['skipped']!, _skippedMeta),
+      );
+    }
+    if (data.containsKey('answered_keys')) {
+      context.handle(
+        _answeredKeysMeta,
+        answeredKeys.isAcceptableOrUnknown(
+          data['answered_keys']!,
+          _answeredKeysMeta,
+        ),
+      );
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {journeyId, stepId};
+  @override
+  JourneyStepProgressRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return JourneyStepProgressRow(
+      journeyId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}journey_id'],
+      )!,
+      stepId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}step_id'],
+      )!,
+      startedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}started_at'],
+      )!,
+      updatedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}updated_at'],
+      )!,
+      completedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}completed_at'],
+      ),
+      skipped: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}skipped'],
+      )!,
+      answeredKeys: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}answered_keys'],
+      )!,
+    );
+  }
+
+  @override
+  $JourneyProgressEntriesTable createAlias(String alias) {
+    return $JourneyProgressEntriesTable(attachedDatabase, alias);
+  }
+}
+
+class JourneyStepProgressRow extends DataClass
+    implements Insertable<JourneyStepProgressRow> {
+  final String journeyId;
+  final String stepId;
+  final DateTime startedAt;
+  final DateTime updatedAt;
+  final DateTime? completedAt;
+  final bool skipped;
+  final String answeredKeys;
+  const JourneyStepProgressRow({
+    required this.journeyId,
+    required this.stepId,
+    required this.startedAt,
+    required this.updatedAt,
+    this.completedAt,
+    required this.skipped,
+    required this.answeredKeys,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['journey_id'] = Variable<String>(journeyId);
+    map['step_id'] = Variable<String>(stepId);
+    map['started_at'] = Variable<DateTime>(startedAt);
+    map['updated_at'] = Variable<DateTime>(updatedAt);
+    if (!nullToAbsent || completedAt != null) {
+      map['completed_at'] = Variable<DateTime>(completedAt);
+    }
+    map['skipped'] = Variable<bool>(skipped);
+    map['answered_keys'] = Variable<String>(answeredKeys);
+    return map;
+  }
+
+  JourneyProgressEntriesCompanion toCompanion(bool nullToAbsent) {
+    return JourneyProgressEntriesCompanion(
+      journeyId: Value(journeyId),
+      stepId: Value(stepId),
+      startedAt: Value(startedAt),
+      updatedAt: Value(updatedAt),
+      completedAt: completedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(completedAt),
+      skipped: Value(skipped),
+      answeredKeys: Value(answeredKeys),
+    );
+  }
+
+  factory JourneyStepProgressRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return JourneyStepProgressRow(
+      journeyId: serializer.fromJson<String>(json['journeyId']),
+      stepId: serializer.fromJson<String>(json['stepId']),
+      startedAt: serializer.fromJson<DateTime>(json['startedAt']),
+      updatedAt: serializer.fromJson<DateTime>(json['updatedAt']),
+      completedAt: serializer.fromJson<DateTime?>(json['completedAt']),
+      skipped: serializer.fromJson<bool>(json['skipped']),
+      answeredKeys: serializer.fromJson<String>(json['answeredKeys']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'journeyId': serializer.toJson<String>(journeyId),
+      'stepId': serializer.toJson<String>(stepId),
+      'startedAt': serializer.toJson<DateTime>(startedAt),
+      'updatedAt': serializer.toJson<DateTime>(updatedAt),
+      'completedAt': serializer.toJson<DateTime?>(completedAt),
+      'skipped': serializer.toJson<bool>(skipped),
+      'answeredKeys': serializer.toJson<String>(answeredKeys),
+    };
+  }
+
+  JourneyStepProgressRow copyWith({
+    String? journeyId,
+    String? stepId,
+    DateTime? startedAt,
+    DateTime? updatedAt,
+    Value<DateTime?> completedAt = const Value.absent(),
+    bool? skipped,
+    String? answeredKeys,
+  }) => JourneyStepProgressRow(
+    journeyId: journeyId ?? this.journeyId,
+    stepId: stepId ?? this.stepId,
+    startedAt: startedAt ?? this.startedAt,
+    updatedAt: updatedAt ?? this.updatedAt,
+    completedAt: completedAt.present ? completedAt.value : this.completedAt,
+    skipped: skipped ?? this.skipped,
+    answeredKeys: answeredKeys ?? this.answeredKeys,
+  );
+  JourneyStepProgressRow copyWithCompanion(
+    JourneyProgressEntriesCompanion data,
+  ) {
+    return JourneyStepProgressRow(
+      journeyId: data.journeyId.present ? data.journeyId.value : this.journeyId,
+      stepId: data.stepId.present ? data.stepId.value : this.stepId,
+      startedAt: data.startedAt.present ? data.startedAt.value : this.startedAt,
+      updatedAt: data.updatedAt.present ? data.updatedAt.value : this.updatedAt,
+      completedAt: data.completedAt.present
+          ? data.completedAt.value
+          : this.completedAt,
+      skipped: data.skipped.present ? data.skipped.value : this.skipped,
+      answeredKeys: data.answeredKeys.present
+          ? data.answeredKeys.value
+          : this.answeredKeys,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('JourneyStepProgressRow(')
+          ..write('journeyId: $journeyId, ')
+          ..write('stepId: $stepId, ')
+          ..write('startedAt: $startedAt, ')
+          ..write('updatedAt: $updatedAt, ')
+          ..write('completedAt: $completedAt, ')
+          ..write('skipped: $skipped, ')
+          ..write('answeredKeys: $answeredKeys')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    journeyId,
+    stepId,
+    startedAt,
+    updatedAt,
+    completedAt,
+    skipped,
+    answeredKeys,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is JourneyStepProgressRow &&
+          other.journeyId == this.journeyId &&
+          other.stepId == this.stepId &&
+          other.startedAt == this.startedAt &&
+          other.updatedAt == this.updatedAt &&
+          other.completedAt == this.completedAt &&
+          other.skipped == this.skipped &&
+          other.answeredKeys == this.answeredKeys);
+}
+
+class JourneyProgressEntriesCompanion
+    extends UpdateCompanion<JourneyStepProgressRow> {
+  final Value<String> journeyId;
+  final Value<String> stepId;
+  final Value<DateTime> startedAt;
+  final Value<DateTime> updatedAt;
+  final Value<DateTime?> completedAt;
+  final Value<bool> skipped;
+  final Value<String> answeredKeys;
+  final Value<int> rowid;
+  const JourneyProgressEntriesCompanion({
+    this.journeyId = const Value.absent(),
+    this.stepId = const Value.absent(),
+    this.startedAt = const Value.absent(),
+    this.updatedAt = const Value.absent(),
+    this.completedAt = const Value.absent(),
+    this.skipped = const Value.absent(),
+    this.answeredKeys = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  JourneyProgressEntriesCompanion.insert({
+    required String journeyId,
+    required String stepId,
+    required DateTime startedAt,
+    required DateTime updatedAt,
+    this.completedAt = const Value.absent(),
+    this.skipped = const Value.absent(),
+    this.answeredKeys = const Value.absent(),
+    this.rowid = const Value.absent(),
+  }) : journeyId = Value(journeyId),
+       stepId = Value(stepId),
+       startedAt = Value(startedAt),
+       updatedAt = Value(updatedAt);
+  static Insertable<JourneyStepProgressRow> custom({
+    Expression<String>? journeyId,
+    Expression<String>? stepId,
+    Expression<DateTime>? startedAt,
+    Expression<DateTime>? updatedAt,
+    Expression<DateTime>? completedAt,
+    Expression<bool>? skipped,
+    Expression<String>? answeredKeys,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (journeyId != null) 'journey_id': journeyId,
+      if (stepId != null) 'step_id': stepId,
+      if (startedAt != null) 'started_at': startedAt,
+      if (updatedAt != null) 'updated_at': updatedAt,
+      if (completedAt != null) 'completed_at': completedAt,
+      if (skipped != null) 'skipped': skipped,
+      if (answeredKeys != null) 'answered_keys': answeredKeys,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  JourneyProgressEntriesCompanion copyWith({
+    Value<String>? journeyId,
+    Value<String>? stepId,
+    Value<DateTime>? startedAt,
+    Value<DateTime>? updatedAt,
+    Value<DateTime?>? completedAt,
+    Value<bool>? skipped,
+    Value<String>? answeredKeys,
+    Value<int>? rowid,
+  }) {
+    return JourneyProgressEntriesCompanion(
+      journeyId: journeyId ?? this.journeyId,
+      stepId: stepId ?? this.stepId,
+      startedAt: startedAt ?? this.startedAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+      completedAt: completedAt ?? this.completedAt,
+      skipped: skipped ?? this.skipped,
+      answeredKeys: answeredKeys ?? this.answeredKeys,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (journeyId.present) {
+      map['journey_id'] = Variable<String>(journeyId.value);
+    }
+    if (stepId.present) {
+      map['step_id'] = Variable<String>(stepId.value);
+    }
+    if (startedAt.present) {
+      map['started_at'] = Variable<DateTime>(startedAt.value);
+    }
+    if (updatedAt.present) {
+      map['updated_at'] = Variable<DateTime>(updatedAt.value);
+    }
+    if (completedAt.present) {
+      map['completed_at'] = Variable<DateTime>(completedAt.value);
+    }
+    if (skipped.present) {
+      map['skipped'] = Variable<bool>(skipped.value);
+    }
+    if (answeredKeys.present) {
+      map['answered_keys'] = Variable<String>(answeredKeys.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('JourneyProgressEntriesCompanion(')
+          ..write('journeyId: $journeyId, ')
+          ..write('stepId: $stepId, ')
+          ..write('startedAt: $startedAt, ')
+          ..write('updatedAt: $updatedAt, ')
+          ..write('completedAt: $completedAt, ')
+          ..write('skipped: $skipped, ')
+          ..write('answeredKeys: $answeredKeys, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
 abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
   $AppDatabaseManager get managers => $AppDatabaseManager(this);
   late final $BookmarksTable bookmarks = $BookmarksTable(this);
   late final $ReadingProgressEntriesTable readingProgressEntries =
       $ReadingProgressEntriesTable(this);
+  late final $ReviewItemsTable reviewItems = $ReviewItemsTable(this);
+  late final $JourneyEnrollmentsTable journeyEnrollments =
+      $JourneyEnrollmentsTable(this);
+  late final $JourneyProgressEntriesTable journeyProgressEntries =
+      $JourneyProgressEntriesTable(this);
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
@@ -1029,6 +2273,9 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   List<DatabaseSchemaEntity> get allSchemaEntities => [
     bookmarks,
     readingProgressEntries,
+    reviewItems,
+    journeyEnrollments,
+    journeyProgressEntries,
   ];
 }
 
@@ -1552,6 +2799,688 @@ typedef $$ReadingProgressEntriesTableProcessedTableManager =
       ProgressRow,
       PrefetchHooks Function()
     >;
+typedef $$ReviewItemsTableCreateCompanionBuilder =
+    ReviewItemsCompanion Function({
+      required String questionKey,
+      required int box,
+      required DateTime dueOn,
+      required DateTime lastAnsweredAt,
+      required int timesRight,
+      required int timesWrong,
+      Value<int> rowid,
+    });
+typedef $$ReviewItemsTableUpdateCompanionBuilder =
+    ReviewItemsCompanion Function({
+      Value<String> questionKey,
+      Value<int> box,
+      Value<DateTime> dueOn,
+      Value<DateTime> lastAnsweredAt,
+      Value<int> timesRight,
+      Value<int> timesWrong,
+      Value<int> rowid,
+    });
+
+class $$ReviewItemsTableFilterComposer
+    extends Composer<_$AppDatabase, $ReviewItemsTable> {
+  $$ReviewItemsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get questionKey => $composableBuilder(
+    column: $table.questionKey,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get box => $composableBuilder(
+    column: $table.box,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get dueOn => $composableBuilder(
+    column: $table.dueOn,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get lastAnsweredAt => $composableBuilder(
+    column: $table.lastAnsweredAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get timesRight => $composableBuilder(
+    column: $table.timesRight,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get timesWrong => $composableBuilder(
+    column: $table.timesWrong,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$ReviewItemsTableOrderingComposer
+    extends Composer<_$AppDatabase, $ReviewItemsTable> {
+  $$ReviewItemsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get questionKey => $composableBuilder(
+    column: $table.questionKey,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get box => $composableBuilder(
+    column: $table.box,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get dueOn => $composableBuilder(
+    column: $table.dueOn,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get lastAnsweredAt => $composableBuilder(
+    column: $table.lastAnsweredAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get timesRight => $composableBuilder(
+    column: $table.timesRight,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get timesWrong => $composableBuilder(
+    column: $table.timesWrong,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$ReviewItemsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $ReviewItemsTable> {
+  $$ReviewItemsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get questionKey => $composableBuilder(
+    column: $table.questionKey,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get box =>
+      $composableBuilder(column: $table.box, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get dueOn =>
+      $composableBuilder(column: $table.dueOn, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get lastAnsweredAt => $composableBuilder(
+    column: $table.lastAnsweredAt,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get timesRight => $composableBuilder(
+    column: $table.timesRight,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get timesWrong => $composableBuilder(
+    column: $table.timesWrong,
+    builder: (column) => column,
+  );
+}
+
+class $$ReviewItemsTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $ReviewItemsTable,
+          ReviewItemRow,
+          $$ReviewItemsTableFilterComposer,
+          $$ReviewItemsTableOrderingComposer,
+          $$ReviewItemsTableAnnotationComposer,
+          $$ReviewItemsTableCreateCompanionBuilder,
+          $$ReviewItemsTableUpdateCompanionBuilder,
+          (
+            ReviewItemRow,
+            BaseReferences<_$AppDatabase, $ReviewItemsTable, ReviewItemRow>,
+          ),
+          ReviewItemRow,
+          PrefetchHooks Function()
+        > {
+  $$ReviewItemsTableTableManager(_$AppDatabase db, $ReviewItemsTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$ReviewItemsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$ReviewItemsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$ReviewItemsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> questionKey = const Value.absent(),
+                Value<int> box = const Value.absent(),
+                Value<DateTime> dueOn = const Value.absent(),
+                Value<DateTime> lastAnsweredAt = const Value.absent(),
+                Value<int> timesRight = const Value.absent(),
+                Value<int> timesWrong = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => ReviewItemsCompanion(
+                questionKey: questionKey,
+                box: box,
+                dueOn: dueOn,
+                lastAnsweredAt: lastAnsweredAt,
+                timesRight: timesRight,
+                timesWrong: timesWrong,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String questionKey,
+                required int box,
+                required DateTime dueOn,
+                required DateTime lastAnsweredAt,
+                required int timesRight,
+                required int timesWrong,
+                Value<int> rowid = const Value.absent(),
+              }) => ReviewItemsCompanion.insert(
+                questionKey: questionKey,
+                box: box,
+                dueOn: dueOn,
+                lastAnsweredAt: lastAnsweredAt,
+                timesRight: timesRight,
+                timesWrong: timesWrong,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$ReviewItemsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $ReviewItemsTable,
+      ReviewItemRow,
+      $$ReviewItemsTableFilterComposer,
+      $$ReviewItemsTableOrderingComposer,
+      $$ReviewItemsTableAnnotationComposer,
+      $$ReviewItemsTableCreateCompanionBuilder,
+      $$ReviewItemsTableUpdateCompanionBuilder,
+      (
+        ReviewItemRow,
+        BaseReferences<_$AppDatabase, $ReviewItemsTable, ReviewItemRow>,
+      ),
+      ReviewItemRow,
+      PrefetchHooks Function()
+    >;
+typedef $$JourneyEnrollmentsTableCreateCompanionBuilder =
+    JourneyEnrollmentsCompanion Function({
+      required String journeyId,
+      required DateTime startedAt,
+      required DateTime updatedAt,
+      Value<bool> paused,
+      Value<int> rowid,
+    });
+typedef $$JourneyEnrollmentsTableUpdateCompanionBuilder =
+    JourneyEnrollmentsCompanion Function({
+      Value<String> journeyId,
+      Value<DateTime> startedAt,
+      Value<DateTime> updatedAt,
+      Value<bool> paused,
+      Value<int> rowid,
+    });
+
+class $$JourneyEnrollmentsTableFilterComposer
+    extends Composer<_$AppDatabase, $JourneyEnrollmentsTable> {
+  $$JourneyEnrollmentsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get journeyId => $composableBuilder(
+    column: $table.journeyId,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get startedAt => $composableBuilder(
+    column: $table.startedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get paused => $composableBuilder(
+    column: $table.paused,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$JourneyEnrollmentsTableOrderingComposer
+    extends Composer<_$AppDatabase, $JourneyEnrollmentsTable> {
+  $$JourneyEnrollmentsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get journeyId => $composableBuilder(
+    column: $table.journeyId,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get startedAt => $composableBuilder(
+    column: $table.startedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get paused => $composableBuilder(
+    column: $table.paused,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$JourneyEnrollmentsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $JourneyEnrollmentsTable> {
+  $$JourneyEnrollmentsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get journeyId =>
+      $composableBuilder(column: $table.journeyId, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get startedAt =>
+      $composableBuilder(column: $table.startedAt, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+
+  GeneratedColumn<bool> get paused =>
+      $composableBuilder(column: $table.paused, builder: (column) => column);
+}
+
+class $$JourneyEnrollmentsTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $JourneyEnrollmentsTable,
+          JourneyEnrollmentRow,
+          $$JourneyEnrollmentsTableFilterComposer,
+          $$JourneyEnrollmentsTableOrderingComposer,
+          $$JourneyEnrollmentsTableAnnotationComposer,
+          $$JourneyEnrollmentsTableCreateCompanionBuilder,
+          $$JourneyEnrollmentsTableUpdateCompanionBuilder,
+          (
+            JourneyEnrollmentRow,
+            BaseReferences<
+              _$AppDatabase,
+              $JourneyEnrollmentsTable,
+              JourneyEnrollmentRow
+            >,
+          ),
+          JourneyEnrollmentRow,
+          PrefetchHooks Function()
+        > {
+  $$JourneyEnrollmentsTableTableManager(
+    _$AppDatabase db,
+    $JourneyEnrollmentsTable table,
+  ) : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$JourneyEnrollmentsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$JourneyEnrollmentsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$JourneyEnrollmentsTableAnnotationComposer(
+                $db: db,
+                $table: table,
+              ),
+          updateCompanionCallback:
+              ({
+                Value<String> journeyId = const Value.absent(),
+                Value<DateTime> startedAt = const Value.absent(),
+                Value<DateTime> updatedAt = const Value.absent(),
+                Value<bool> paused = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => JourneyEnrollmentsCompanion(
+                journeyId: journeyId,
+                startedAt: startedAt,
+                updatedAt: updatedAt,
+                paused: paused,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String journeyId,
+                required DateTime startedAt,
+                required DateTime updatedAt,
+                Value<bool> paused = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => JourneyEnrollmentsCompanion.insert(
+                journeyId: journeyId,
+                startedAt: startedAt,
+                updatedAt: updatedAt,
+                paused: paused,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$JourneyEnrollmentsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $JourneyEnrollmentsTable,
+      JourneyEnrollmentRow,
+      $$JourneyEnrollmentsTableFilterComposer,
+      $$JourneyEnrollmentsTableOrderingComposer,
+      $$JourneyEnrollmentsTableAnnotationComposer,
+      $$JourneyEnrollmentsTableCreateCompanionBuilder,
+      $$JourneyEnrollmentsTableUpdateCompanionBuilder,
+      (
+        JourneyEnrollmentRow,
+        BaseReferences<
+          _$AppDatabase,
+          $JourneyEnrollmentsTable,
+          JourneyEnrollmentRow
+        >,
+      ),
+      JourneyEnrollmentRow,
+      PrefetchHooks Function()
+    >;
+typedef $$JourneyProgressEntriesTableCreateCompanionBuilder =
+    JourneyProgressEntriesCompanion Function({
+      required String journeyId,
+      required String stepId,
+      required DateTime startedAt,
+      required DateTime updatedAt,
+      Value<DateTime?> completedAt,
+      Value<bool> skipped,
+      Value<String> answeredKeys,
+      Value<int> rowid,
+    });
+typedef $$JourneyProgressEntriesTableUpdateCompanionBuilder =
+    JourneyProgressEntriesCompanion Function({
+      Value<String> journeyId,
+      Value<String> stepId,
+      Value<DateTime> startedAt,
+      Value<DateTime> updatedAt,
+      Value<DateTime?> completedAt,
+      Value<bool> skipped,
+      Value<String> answeredKeys,
+      Value<int> rowid,
+    });
+
+class $$JourneyProgressEntriesTableFilterComposer
+    extends Composer<_$AppDatabase, $JourneyProgressEntriesTable> {
+  $$JourneyProgressEntriesTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get journeyId => $composableBuilder(
+    column: $table.journeyId,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get stepId => $composableBuilder(
+    column: $table.stepId,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get startedAt => $composableBuilder(
+    column: $table.startedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get completedAt => $composableBuilder(
+    column: $table.completedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get skipped => $composableBuilder(
+    column: $table.skipped,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get answeredKeys => $composableBuilder(
+    column: $table.answeredKeys,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$JourneyProgressEntriesTableOrderingComposer
+    extends Composer<_$AppDatabase, $JourneyProgressEntriesTable> {
+  $$JourneyProgressEntriesTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get journeyId => $composableBuilder(
+    column: $table.journeyId,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get stepId => $composableBuilder(
+    column: $table.stepId,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get startedAt => $composableBuilder(
+    column: $table.startedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get completedAt => $composableBuilder(
+    column: $table.completedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get skipped => $composableBuilder(
+    column: $table.skipped,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get answeredKeys => $composableBuilder(
+    column: $table.answeredKeys,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$JourneyProgressEntriesTableAnnotationComposer
+    extends Composer<_$AppDatabase, $JourneyProgressEntriesTable> {
+  $$JourneyProgressEntriesTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get journeyId =>
+      $composableBuilder(column: $table.journeyId, builder: (column) => column);
+
+  GeneratedColumn<String> get stepId =>
+      $composableBuilder(column: $table.stepId, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get startedAt =>
+      $composableBuilder(column: $table.startedAt, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get completedAt => $composableBuilder(
+    column: $table.completedAt,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<bool> get skipped =>
+      $composableBuilder(column: $table.skipped, builder: (column) => column);
+
+  GeneratedColumn<String> get answeredKeys => $composableBuilder(
+    column: $table.answeredKeys,
+    builder: (column) => column,
+  );
+}
+
+class $$JourneyProgressEntriesTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $JourneyProgressEntriesTable,
+          JourneyStepProgressRow,
+          $$JourneyProgressEntriesTableFilterComposer,
+          $$JourneyProgressEntriesTableOrderingComposer,
+          $$JourneyProgressEntriesTableAnnotationComposer,
+          $$JourneyProgressEntriesTableCreateCompanionBuilder,
+          $$JourneyProgressEntriesTableUpdateCompanionBuilder,
+          (
+            JourneyStepProgressRow,
+            BaseReferences<
+              _$AppDatabase,
+              $JourneyProgressEntriesTable,
+              JourneyStepProgressRow
+            >,
+          ),
+          JourneyStepProgressRow,
+          PrefetchHooks Function()
+        > {
+  $$JourneyProgressEntriesTableTableManager(
+    _$AppDatabase db,
+    $JourneyProgressEntriesTable table,
+  ) : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$JourneyProgressEntriesTableFilterComposer(
+                $db: db,
+                $table: table,
+              ),
+          createOrderingComposer: () =>
+              $$JourneyProgressEntriesTableOrderingComposer(
+                $db: db,
+                $table: table,
+              ),
+          createComputedFieldComposer: () =>
+              $$JourneyProgressEntriesTableAnnotationComposer(
+                $db: db,
+                $table: table,
+              ),
+          updateCompanionCallback:
+              ({
+                Value<String> journeyId = const Value.absent(),
+                Value<String> stepId = const Value.absent(),
+                Value<DateTime> startedAt = const Value.absent(),
+                Value<DateTime> updatedAt = const Value.absent(),
+                Value<DateTime?> completedAt = const Value.absent(),
+                Value<bool> skipped = const Value.absent(),
+                Value<String> answeredKeys = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => JourneyProgressEntriesCompanion(
+                journeyId: journeyId,
+                stepId: stepId,
+                startedAt: startedAt,
+                updatedAt: updatedAt,
+                completedAt: completedAt,
+                skipped: skipped,
+                answeredKeys: answeredKeys,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String journeyId,
+                required String stepId,
+                required DateTime startedAt,
+                required DateTime updatedAt,
+                Value<DateTime?> completedAt = const Value.absent(),
+                Value<bool> skipped = const Value.absent(),
+                Value<String> answeredKeys = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => JourneyProgressEntriesCompanion.insert(
+                journeyId: journeyId,
+                stepId: stepId,
+                startedAt: startedAt,
+                updatedAt: updatedAt,
+                completedAt: completedAt,
+                skipped: skipped,
+                answeredKeys: answeredKeys,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$JourneyProgressEntriesTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $JourneyProgressEntriesTable,
+      JourneyStepProgressRow,
+      $$JourneyProgressEntriesTableFilterComposer,
+      $$JourneyProgressEntriesTableOrderingComposer,
+      $$JourneyProgressEntriesTableAnnotationComposer,
+      $$JourneyProgressEntriesTableCreateCompanionBuilder,
+      $$JourneyProgressEntriesTableUpdateCompanionBuilder,
+      (
+        JourneyStepProgressRow,
+        BaseReferences<
+          _$AppDatabase,
+          $JourneyProgressEntriesTable,
+          JourneyStepProgressRow
+        >,
+      ),
+      JourneyStepProgressRow,
+      PrefetchHooks Function()
+    >;
 
 class $AppDatabaseManager {
   final _$AppDatabase _db;
@@ -1562,5 +3491,14 @@ class $AppDatabaseManager {
       $$ReadingProgressEntriesTableTableManager(
         _db,
         _db.readingProgressEntries,
+      );
+  $$ReviewItemsTableTableManager get reviewItems =>
+      $$ReviewItemsTableTableManager(_db, _db.reviewItems);
+  $$JourneyEnrollmentsTableTableManager get journeyEnrollments =>
+      $$JourneyEnrollmentsTableTableManager(_db, _db.journeyEnrollments);
+  $$JourneyProgressEntriesTableTableManager get journeyProgressEntries =>
+      $$JourneyProgressEntriesTableTableManager(
+        _db,
+        _db.journeyProgressEntries,
       );
 }

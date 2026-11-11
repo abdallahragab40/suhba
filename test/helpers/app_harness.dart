@@ -30,6 +30,7 @@ class AppUnderTest {
     AppDatabase? database,
     SettingsStore? settings,
     DateTime? now,
+    DateTime Function()? clock,
     bool welcome = false,
     List<Override> overrides = const [],
   }) : router = buildAppRouter(initialLocation: location),
@@ -51,7 +52,9 @@ class AppUnderTest {
         appDatabaseProvider.overrideWithValue(this.database),
         if (settings != null) settingsStoreProvider.overrideWithValue(settings),
         // A fixed day, so the companion of the day is predictable.
-        clockProvider.overrideWithValue(() => now ?? DateTime(2026, 10, 9)),
+        clockProvider.overrideWithValue(
+          clock ?? () => now ?? DateTime(2026, 10, 9),
+        ),
         // Test-specific overrides last, e.g. a failing repository.
         ...overrides,
       ],

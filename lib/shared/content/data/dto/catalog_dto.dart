@@ -192,6 +192,7 @@ abstract class ReviewersFileDto with _$ReviewersFileDto {
 
 /// The kinds of reviewable content items.
 enum ContentKind {
+  journey,
   companion,
   story,
   event,
@@ -302,6 +303,7 @@ abstract class EditionDto with _$EditionDto {
     required EditionCountDto stories,
     required EditionCountDto events,
     required EditionVisualsDto visuals,
+    @Default(<String>[]) List<String> journeyIds,
   }) = _EditionDto;
 
   factory EditionDto.fromJson(Map<String, dynamic> json) =>

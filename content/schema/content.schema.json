@@ -1312,7 +1312,8 @@
             "seerah",
             "seerahChapter",
             "seerahTopic",
-            "visual"
+            "visual",
+            "journey"
           ]
         },
         "id": {
@@ -2273,6 +2274,13 @@
             "count",
             "requiredTypes"
           ]
+        },
+        "journeyIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
         }
       },
       "additionalProperties": false,
@@ -2286,6 +2294,122 @@
         "visuals"
       ],
       "description": "content/release/edition.json: what the next public edition must contain. Word minimums diagnose thin drafts; they do not establish quality."
+    },
+    "journeyStepRef": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": [
+            "companionSection",
+            "storyChapter",
+            "seerahChapter",
+            "seerahTopic"
+          ]
+        },
+        "targetId": {
+          "$ref": "#/$defs/id"
+        },
+        "parentId": {
+          "$ref": "#/$defs/id"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "targetId"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "companionSection",
+                  "storyChapter"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "parentId"
+            ]
+          },
+          "else": {
+            "not": {
+              "required": [
+                "parentId"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "journeyStep": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "title": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "readings": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/journeyStepRef"
+          }
+        },
+        "framing": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "reflection": {
+          "$ref": "#/$defs/localizedText"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "readings"
+      ]
+    },
+    "journeyFile": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "title": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "description": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "steps": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/journeyStep"
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/review"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "id",
+        "title",
+        "description",
+        "steps",
+        "review"
+      ]
     }
   }
 }

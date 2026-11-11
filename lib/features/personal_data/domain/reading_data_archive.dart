@@ -2,10 +2,13 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:suhba/features/bookmarks/domain/bookmark.dart';
+import 'package:suhba/features/journeys/domain/journey_import.dart';
+import 'package:suhba/features/journeys/domain/journey_progress.dart';
 import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
+import 'package:suhba/features/review/domain/review_item.dart';
 
-/// A reader's saved items and reading positions, as exported to a file and
-/// imported back (E10). Settings are not part of it: importing must never
+/// A reader's saved items, reading positions and review history, exported
+/// to a file and imported back (E10). Settings are not part of it: importing must never
 /// change how the app looks.
 ///
 /// The file is JSON:
@@ -13,13 +16,14 @@ import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
 /// ```json
 /// {
 ///   "format": "suhba.reading-data",
-///   "version": 1,
+///   "version": 3,
 ///   "exportedAt": "2026-10-11T09:30:00.000Z",
 ///   "contentVersion": "0.2.0",
 ///   "bookmarks": [
 ///     {"target": "section", "targetId": "abu-bakr.hijrah",
 ///      "parentId": "abu-bakr", "createdAt": "2026-10-09T08:00:00.000Z"}
 ///   ],
+///   "reviews": [],
 ///   "progress": [
 ///     {"target": "section", "targetId": "abu-bakr.hijrah",
 ///      "parentId": "abu-bakr", "fraction": 0.35, "completed": false,
@@ -38,19 +42,25 @@ class ReadingDataArchive {
     required this.progress,
     required this.exportedAt,
     this.contentVersion,
+    this.reviews = const [],
+    this.journeys = const [],
+    this.journeySteps = const [],
   });
 
   static const format = 'suhba.reading-data';
 
   /// Files exported before the app was renamed; still imported.
   static const legacyFormats = {'siyar-sahaba.reading-data'};
-  static const version = 1;
+  static const version = 3;
 
   /// Files larger than this are refused before parsing.
   static const maxBytes = 2 * 1024 * 1024;
 
   final List<Bookmark> bookmarks;
   final List<ReadingProgress> progress;
+  final List<ReviewItem> reviews;
+  final List<JourneyEnrollment> journeys;
+  final List<JourneyStepProgress> journeySteps;
   final DateTime exportedAt;
 
   /// The content build the data was exported from; informational only.
@@ -111,6 +121,38 @@ String encodeArchive(ReadingDataArchive a) =>
             'createdAt': b.createdAt.toUtc().toIso8601String(),
           },
       ],
+      'journeys': [
+        for (final j in a.journeys)
+          {
+            'journeyId': j.journeyId,
+            'startedAt': j.startedAt.toUtc().toIso8601String(),
+            'updatedAt': j.updatedAt.toUtc().toIso8601String(),
+            'paused': j.paused,
+          },
+      ],
+      'journeySteps': [
+        for (final s in a.journeySteps)
+          {
+            'journeyId': s.journeyId,
+            'stepId': s.stepId,
+            'startedAt': s.startedAt.toUtc().toIso8601String(),
+            'updatedAt': s.updatedAt.toUtc().toIso8601String(),
+            'completedAt': ?s.completedAt?.toUtc().toIso8601String(),
+            'skipped': s.skipped,
+            'answeredKeys': s.answeredKeys.toList()..sort(),
+          },
+      ],
+      'reviews': [
+        for (final r in a.reviews)
+          {
+            'questionKey': r.questionKey,
+            'box': r.box,
+            'dueOn': r.dueOn.toUtc().toIso8601String(),
+            'lastAnsweredAt': r.lastAnsweredAt.toUtc().toIso8601String(),
+            'timesRight': r.timesRight,
+            'timesWrong': r.timesWrong,
+          },
+      ],
       'progress': [
         for (final p in a.progress)
           {
@@ -159,13 +201,34 @@ ArchiveDecoding decodeArchive(String text) {
     if (contentVersion != null && contentVersion is! String) {
       throw const _Invalid('contentVersion');
     }
+    final journeys = [
+      for (final (i, r) in _list(json, 'journeys').indexed)
+        _journey(r, 'journeys[$i]'),
+    ];
+    final journeySteps = [
+      for (final (i, r) in _list(json, 'journeySteps').indexed)
+        _journeyStep(r, 'journeySteps[$i]'),
+    ];
+    for (final (i, step) in journeySteps.indexed) {
+      if (!journeys.any(
+        (j) => j.journeyId == step.journeyId && j.startedAt == step.startedAt,
+      )) {
+        throw _Invalid('journeySteps[$i].startedAt');
+      }
+    }
     return ArchiveDecoded(
       ReadingDataArchive(
         exportedAt: exportedAt,
+        journeys: journeys,
+        journeySteps: journeySteps,
         contentVersion: contentVersion as String?,
         bookmarks: [
           for (final (i, r) in _list(json, 'bookmarks').indexed)
             _bookmark(r, 'bookmarks[$i]'),
+        ],
+        reviews: [
+          for (final (i, r) in _list(json, 'reviews').indexed)
+            _review(r, 'reviews[$i]'),
         ],
         progress: [
           for (final (i, r) in _list(json, 'progress').indexed)
@@ -270,6 +333,10 @@ class ImportPlan {
     required this.progressToSave,
     required this.keptBookmarks,
     required this.keptPositions,
+    this.reviewsToSave = const [],
+    this.keptReviews = 0,
+    this.journeysToSave = const [],
+    this.journeyStepsToSave = const [],
   });
 
   /// Saved items not on this device; added exactly as exported.
@@ -281,8 +348,21 @@ class ImportPlan {
   /// Items or positions already here that the import leaves as they are.
   final int keptBookmarks;
   final int keptPositions;
+  final List<ReviewItem> reviewsToSave;
+  final int keptReviews;
+  final List<JourneyEnrollment> journeysToSave;
+  final List<JourneyStepProgress> journeyStepsToSave;
+  int get changedJourneys => {
+    ...journeysToSave.map((j) => j.journeyId),
+    ...journeyStepsToSave.map((s) => s.journeyId),
+  }.length;
 
-  bool get isEmpty => newBookmarks.isEmpty && progressToSave.isEmpty;
+  bool get isEmpty =>
+      newBookmarks.isEmpty &&
+      progressToSave.isEmpty &&
+      reviewsToSave.isEmpty &&
+      journeysToSave.isEmpty &&
+      journeyStepsToSave.isEmpty;
 }
 
 /// Merges an archive into what is on the device, deterministically and
@@ -299,6 +379,9 @@ ImportPlan planImport({
   required List<Bookmark> localBookmarks,
   required List<ReadingProgress> localProgress,
   required ReadingDataArchive archive,
+  List<ReviewItem> localReviews = const [],
+  List<JourneyEnrollment> localJourneys = const [],
+  List<JourneyStepProgress> localJourneySteps = const [],
 }) {
   String bKey(Bookmark b) => '${b.target.name}/${b.targetId}';
   String pKey(ReadingProgress p) => '${p.target.name}/${p.targetId}';
@@ -334,7 +417,36 @@ ImportPlan planImport({
   }
   toSave.sort((a, b) => pKey(a).compareTo(pKey(b)));
 
+  // A review history is a snapshot, not an event log: keep the later answer,
+  // keeping the local snapshot on ties. Never add counters from two devices.
+  final incomingReviews = <String, ReviewItem>{};
+  for (final r in archive.reviews) {
+    final prior = incomingReviews[r.questionKey];
+    if (prior == null || r.lastAnsweredAt.isAfter(prior.lastAnsweredAt)) {
+      incomingReviews[r.questionKey] = r;
+    }
+  }
+  final localReviewByKey = {for (final r in localReviews) r.questionKey: r};
+  final reviewsToSave = [
+    for (final r in incomingReviews.values)
+      if (localReviewByKey[r.questionKey] == null ||
+          r.lastAnsweredAt.isAfter(
+            localReviewByKey[r.questionKey]!.lastAnsweredAt,
+          ))
+        r,
+  ]..sort((a, b) => a.questionKey.compareTo(b.questionKey));
+
+  final journeyPlan = mergeJourneys(
+    local: localJourneys,
+    localSteps: localJourneySteps,
+    incoming: archive.journeys,
+    incomingSteps: archive.journeySteps,
+  );
   return ImportPlan(
+    journeysToSave: journeyPlan.enrollments,
+    journeyStepsToSave: journeyPlan.steps,
+    reviewsToSave: reviewsToSave,
+    keptReviews: incomingReviews.length - reviewsToSave.length,
     newBookmarks: newBookmarks,
     progressToSave: toSave,
     keptBookmarks: incomingBookmarks.length - newBookmarks.length,
@@ -347,4 +459,63 @@ ImportPlan planImport({
 bool _wins(ReadingProgress p, {required ReadingProgress over}) {
   if (p.completed != over.completed) return p.completed;
   return p.updatedAt.isAfter(over.updatedAt);
+}
+
+int _nonNegative(Object? v, String at) =>
+    v is int && v >= 0 ? v : throw _Invalid(at);
+
+ReviewItem _review(Object? raw, String at) {
+  final r = _record(raw, at);
+  final key = r['questionKey'];
+  if (key is! String || key.trim().isEmpty || key.length > 1024) {
+    throw _Invalid('$at.questionKey');
+  }
+  final box = r['box'];
+  if (box is! int || box < 1 || box > 5) throw _Invalid('$at.box');
+  final dueOn = _date(r['dueOn'], '$at.dueOn');
+  if (dueOn != DateTime.utc(dueOn.year, dueOn.month, dueOn.day)) {
+    throw _Invalid('$at.dueOn');
+  }
+  return ReviewItem(
+    questionKey: key,
+    box: box,
+    dueOn: dueOn,
+    lastAnsweredAt: _date(r['lastAnsweredAt'], '$at.lastAnsweredAt'),
+    timesRight: _nonNegative(r['timesRight'], '$at.timesRight'),
+    timesWrong: _nonNegative(r['timesWrong'], '$at.timesWrong'),
+  );
+}
+
+JourneyEnrollment _journey(Object? raw, String at) {
+  final r = _record(raw, at);
+  final paused = r['paused'];
+  if (paused is! bool) throw _Invalid('$at.paused');
+  return JourneyEnrollment(
+    journeyId: _id(r['journeyId'], '$at.journeyId'),
+    startedAt: _date(r['startedAt'], '$at.startedAt'),
+    updatedAt: _date(r['updatedAt'], '$at.updatedAt'),
+    paused: paused,
+  );
+}
+
+JourneyStepProgress _journeyStep(Object? raw, String at) {
+  final r = _record(raw, at);
+  final skipped = r['skipped'];
+  if (skipped is! bool) throw _Invalid('$at.skipped');
+  final keys = r['answeredKeys'];
+  if (keys is! List ||
+      keys.any((k) => k is! String || k.trim().isEmpty || k.length > 1024)) {
+    throw _Invalid('$at.answeredKeys');
+  }
+  return JourneyStepProgress(
+    journeyId: _id(r['journeyId'], '$at.journeyId'),
+    stepId: _id(r['stepId'], '$at.stepId'),
+    startedAt: _date(r['startedAt'], '$at.startedAt'),
+    updatedAt: _date(r['updatedAt'], '$at.updatedAt'),
+    completedAt: r['completedAt'] == null
+        ? null
+        : _date(r['completedAt'], '$at.completedAt'),
+    skipped: skipped,
+    answeredKeys: keys.cast<String>().toSet(),
+  );
 }

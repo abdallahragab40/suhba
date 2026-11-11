@@ -356,6 +356,12 @@ ReadinessReport contentReadiness(
       }
     }
 
+    // Named launch journeys cannot silently disappear when publication filters
+    // out drafts. Completion means editorial coverage, not a question quota.
+    for (final id in checklist.journeyIds) {
+      require('journey.$id', why: 'launch journey: ');
+    }
+
     // Episodes, the event archive and the visuals: counted when ready.
     final readyStories = [
       for (final s in tree.stories)

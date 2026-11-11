@@ -14,6 +14,9 @@ import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/features/quiz/domain/quiz_question.dart';
 import 'package:suhba/features/quiz/presentation/quiz_providers.dart';
+import 'package:suhba/features/review/presentation/review_page.dart';
+import 'package:suhba/features/review/presentation/review_providers.dart';
+import 'package:suhba/shared/content/providers.dart';
 
 /// The quiz's front page: what it is, and a card for each mode with the
 /// best result so far. The cards slide in one after another.
@@ -51,6 +54,7 @@ class _QuizHomePageState extends ConsumerState<QuizHomePage>
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final best = ref.watch(quizBestProvider);
+    final hasDue = ref.watch(dueReviewsProvider).value?.isNotEmpty ?? false;
     final modes = [
       (
         QuizMode.mixed,
@@ -136,6 +140,7 @@ class _QuizHomePageState extends ConsumerState<QuizHomePage>
                 padding: const EdgeInsets.all(AppSpacing.gutter),
                 sliver: SliverList.list(
                   children: [
+                    if (hasDue) const DueReviewTile(),
                     for (var i = 0; i < modes.length; i++)
                       _Entrance(
                         animation: CurvedAnimation(
@@ -159,9 +164,18 @@ class _QuizHomePageState extends ConsumerState<QuizHomePage>
                           ),
                         ),
                       ),
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      leading: const Icon(Icons.school_outlined),
+                      title: Text(l10n.learnedTitle),
+                      onTap: () => context.push(AppRoutes.learned),
+                    ),
                     const SizedBox(height: AppSpacing.sm),
                     Text(
-                      l10n.quizNote,
+                      (ref.watch(contentManifestProvider).value?.isDraft ??
+                              true)
+                          ? l10n.quizNote
+                          : l10n.quizNotePublished,
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         color: Palette.paperDimOnGreen,
                       ),

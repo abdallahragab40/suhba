@@ -5461,7 +5461,7 @@ as List<InfographicType>,
 /// @nodoc
 mixin _$EditionDto {
 
- int get schemaVersion; String get id; EditionCompanionsDto get companions; EditionSeerahDto get seerah; EditionCountDto get stories; EditionCountDto get events; EditionVisualsDto get visuals;
+ int get schemaVersion; String get id; EditionCompanionsDto get companions; EditionSeerahDto get seerah; EditionCountDto get stories; EditionCountDto get events; EditionVisualsDto get visuals; List<String> get journeyIds;
 /// Create a copy of EditionDto
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -5474,16 +5474,16 @@ $EditionDtoCopyWith<EditionDto> get copyWith => _$EditionDtoCopyWithImpl<Edition
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is EditionDto&&(identical(other.schemaVersion, schemaVersion) || other.schemaVersion == schemaVersion)&&(identical(other.id, id) || other.id == id)&&(identical(other.companions, companions) || other.companions == companions)&&(identical(other.seerah, seerah) || other.seerah == seerah)&&(identical(other.stories, stories) || other.stories == stories)&&(identical(other.events, events) || other.events == events)&&(identical(other.visuals, visuals) || other.visuals == visuals));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is EditionDto&&(identical(other.schemaVersion, schemaVersion) || other.schemaVersion == schemaVersion)&&(identical(other.id, id) || other.id == id)&&(identical(other.companions, companions) || other.companions == companions)&&(identical(other.seerah, seerah) || other.seerah == seerah)&&(identical(other.stories, stories) || other.stories == stories)&&(identical(other.events, events) || other.events == events)&&(identical(other.visuals, visuals) || other.visuals == visuals)&&const DeepCollectionEquality().equals(other.journeyIds, journeyIds));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,schemaVersion,id,companions,seerah,stories,events,visuals);
+int get hashCode => Object.hash(runtimeType,schemaVersion,id,companions,seerah,stories,events,visuals,const DeepCollectionEquality().hash(journeyIds));
 
 @override
 String toString() {
-  return 'EditionDto(schemaVersion: $schemaVersion, id: $id, companions: $companions, seerah: $seerah, stories: $stories, events: $events, visuals: $visuals)';
+  return 'EditionDto(schemaVersion: $schemaVersion, id: $id, companions: $companions, seerah: $seerah, stories: $stories, events: $events, visuals: $visuals, journeyIds: $journeyIds)';
 }
 
 
@@ -5494,7 +5494,7 @@ abstract mixin class $EditionDtoCopyWith<$Res>  {
   factory $EditionDtoCopyWith(EditionDto value, $Res Function(EditionDto) _then) = _$EditionDtoCopyWithImpl;
 @useResult
 $Res call({
- int schemaVersion, String id, EditionCompanionsDto companions, EditionSeerahDto seerah, EditionCountDto stories, EditionCountDto events, EditionVisualsDto visuals
+ int schemaVersion, String id, EditionCompanionsDto companions, EditionSeerahDto seerah, EditionCountDto stories, EditionCountDto events, EditionVisualsDto visuals, List<String> journeyIds
 });
 
 
@@ -5511,7 +5511,7 @@ class _$EditionDtoCopyWithImpl<$Res>
 
 /// Create a copy of EditionDto
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? schemaVersion = null,Object? id = null,Object? companions = null,Object? seerah = null,Object? stories = null,Object? events = null,Object? visuals = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? schemaVersion = null,Object? id = null,Object? companions = null,Object? seerah = null,Object? stories = null,Object? events = null,Object? visuals = null,Object? journeyIds = null,}) {
   return _then(_self.copyWith(
 schemaVersion: null == schemaVersion ? _self.schemaVersion : schemaVersion // ignore: cast_nullable_to_non_nullable
 as int,id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
@@ -5520,7 +5520,8 @@ as EditionCompanionsDto,seerah: null == seerah ? _self.seerah : seerah // ignore
 as EditionSeerahDto,stories: null == stories ? _self.stories : stories // ignore: cast_nullable_to_non_nullable
 as EditionCountDto,events: null == events ? _self.events : events // ignore: cast_nullable_to_non_nullable
 as EditionCountDto,visuals: null == visuals ? _self.visuals : visuals // ignore: cast_nullable_to_non_nullable
-as EditionVisualsDto,
+as EditionVisualsDto,journeyIds: null == journeyIds ? _self.journeyIds : journeyIds // ignore: cast_nullable_to_non_nullable
+as List<String>,
   ));
 }
 /// Create a copy of EditionDto
@@ -5650,10 +5651,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int schemaVersion,  String id,  EditionCompanionsDto companions,  EditionSeerahDto seerah,  EditionCountDto stories,  EditionCountDto events,  EditionVisualsDto visuals)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int schemaVersion,  String id,  EditionCompanionsDto companions,  EditionSeerahDto seerah,  EditionCountDto stories,  EditionCountDto events,  EditionVisualsDto visuals,  List<String> journeyIds)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _EditionDto() when $default != null:
-return $default(_that.schemaVersion,_that.id,_that.companions,_that.seerah,_that.stories,_that.events,_that.visuals);case _:
+return $default(_that.schemaVersion,_that.id,_that.companions,_that.seerah,_that.stories,_that.events,_that.visuals,_that.journeyIds);case _:
   return orElse();
 
 }
@@ -5671,10 +5672,10 @@ return $default(_that.schemaVersion,_that.id,_that.companions,_that.seerah,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int schemaVersion,  String id,  EditionCompanionsDto companions,  EditionSeerahDto seerah,  EditionCountDto stories,  EditionCountDto events,  EditionVisualsDto visuals)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int schemaVersion,  String id,  EditionCompanionsDto companions,  EditionSeerahDto seerah,  EditionCountDto stories,  EditionCountDto events,  EditionVisualsDto visuals,  List<String> journeyIds)  $default,) {final _that = this;
 switch (_that) {
 case _EditionDto():
-return $default(_that.schemaVersion,_that.id,_that.companions,_that.seerah,_that.stories,_that.events,_that.visuals);case _:
+return $default(_that.schemaVersion,_that.id,_that.companions,_that.seerah,_that.stories,_that.events,_that.visuals,_that.journeyIds);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -5691,10 +5692,10 @@ return $default(_that.schemaVersion,_that.id,_that.companions,_that.seerah,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int schemaVersion,  String id,  EditionCompanionsDto companions,  EditionSeerahDto seerah,  EditionCountDto stories,  EditionCountDto events,  EditionVisualsDto visuals)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int schemaVersion,  String id,  EditionCompanionsDto companions,  EditionSeerahDto seerah,  EditionCountDto stories,  EditionCountDto events,  EditionVisualsDto visuals,  List<String> journeyIds)?  $default,) {final _that = this;
 switch (_that) {
 case _EditionDto() when $default != null:
-return $default(_that.schemaVersion,_that.id,_that.companions,_that.seerah,_that.stories,_that.events,_that.visuals);case _:
+return $default(_that.schemaVersion,_that.id,_that.companions,_that.seerah,_that.stories,_that.events,_that.visuals,_that.journeyIds);case _:
   return null;
 
 }
@@ -5706,7 +5707,7 @@ return $default(_that.schemaVersion,_that.id,_that.companions,_that.seerah,_that
 @JsonSerializable()
 
 class _EditionDto implements EditionDto {
-  const _EditionDto({required this.schemaVersion, required this.id, required this.companions, required this.seerah, required this.stories, required this.events, required this.visuals});
+  const _EditionDto({required this.schemaVersion, required this.id, required this.companions, required this.seerah, required this.stories, required this.events, required this.visuals, final  List<String> journeyIds = const <String>[]}): _journeyIds = journeyIds;
   factory _EditionDto.fromJson(Map<String, dynamic> json) => _$EditionDtoFromJson(json);
 
 @override final  int schemaVersion;
@@ -5716,6 +5717,13 @@ class _EditionDto implements EditionDto {
 @override final  EditionCountDto stories;
 @override final  EditionCountDto events;
 @override final  EditionVisualsDto visuals;
+ final  List<String> _journeyIds;
+@override@JsonKey() List<String> get journeyIds {
+  if (_journeyIds is EqualUnmodifiableListView) return _journeyIds;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_journeyIds);
+}
+
 
 /// Create a copy of EditionDto
 /// with the given fields replaced by the non-null parameter values.
@@ -5730,16 +5738,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _EditionDto&&(identical(other.schemaVersion, schemaVersion) || other.schemaVersion == schemaVersion)&&(identical(other.id, id) || other.id == id)&&(identical(other.companions, companions) || other.companions == companions)&&(identical(other.seerah, seerah) || other.seerah == seerah)&&(identical(other.stories, stories) || other.stories == stories)&&(identical(other.events, events) || other.events == events)&&(identical(other.visuals, visuals) || other.visuals == visuals));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _EditionDto&&(identical(other.schemaVersion, schemaVersion) || other.schemaVersion == schemaVersion)&&(identical(other.id, id) || other.id == id)&&(identical(other.companions, companions) || other.companions == companions)&&(identical(other.seerah, seerah) || other.seerah == seerah)&&(identical(other.stories, stories) || other.stories == stories)&&(identical(other.events, events) || other.events == events)&&(identical(other.visuals, visuals) || other.visuals == visuals)&&const DeepCollectionEquality().equals(other._journeyIds, _journeyIds));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,schemaVersion,id,companions,seerah,stories,events,visuals);
+int get hashCode => Object.hash(runtimeType,schemaVersion,id,companions,seerah,stories,events,visuals,const DeepCollectionEquality().hash(_journeyIds));
 
 @override
 String toString() {
-  return 'EditionDto(schemaVersion: $schemaVersion, id: $id, companions: $companions, seerah: $seerah, stories: $stories, events: $events, visuals: $visuals)';
+  return 'EditionDto(schemaVersion: $schemaVersion, id: $id, companions: $companions, seerah: $seerah, stories: $stories, events: $events, visuals: $visuals, journeyIds: $journeyIds)';
 }
 
 
@@ -5750,7 +5758,7 @@ abstract mixin class _$EditionDtoCopyWith<$Res> implements $EditionDtoCopyWith<$
   factory _$EditionDtoCopyWith(_EditionDto value, $Res Function(_EditionDto) _then) = __$EditionDtoCopyWithImpl;
 @override @useResult
 $Res call({
- int schemaVersion, String id, EditionCompanionsDto companions, EditionSeerahDto seerah, EditionCountDto stories, EditionCountDto events, EditionVisualsDto visuals
+ int schemaVersion, String id, EditionCompanionsDto companions, EditionSeerahDto seerah, EditionCountDto stories, EditionCountDto events, EditionVisualsDto visuals, List<String> journeyIds
 });
 
 
@@ -5767,7 +5775,7 @@ class __$EditionDtoCopyWithImpl<$Res>
 
 /// Create a copy of EditionDto
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? schemaVersion = null,Object? id = null,Object? companions = null,Object? seerah = null,Object? stories = null,Object? events = null,Object? visuals = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? schemaVersion = null,Object? id = null,Object? companions = null,Object? seerah = null,Object? stories = null,Object? events = null,Object? visuals = null,Object? journeyIds = null,}) {
   return _then(_EditionDto(
 schemaVersion: null == schemaVersion ? _self.schemaVersion : schemaVersion // ignore: cast_nullable_to_non_nullable
 as int,id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
@@ -5776,7 +5784,8 @@ as EditionCompanionsDto,seerah: null == seerah ? _self.seerah : seerah // ignore
 as EditionSeerahDto,stories: null == stories ? _self.stories : stories // ignore: cast_nullable_to_non_nullable
 as EditionCountDto,events: null == events ? _self.events : events // ignore: cast_nullable_to_non_nullable
 as EditionCountDto,visuals: null == visuals ? _self.visuals : visuals // ignore: cast_nullable_to_non_nullable
-as EditionVisualsDto,
+as EditionVisualsDto,journeyIds: null == journeyIds ? _self._journeyIds : journeyIds // ignore: cast_nullable_to_non_nullable
+as List<String>,
   ));
 }
 

@@ -62,6 +62,35 @@ enum QuizKind {
   final QuizMode mode;
 }
 
+/// The structured record containing the fact. This deliberately does not
+/// claim a biography section contains a fact recorded only in its metadata.
+enum QuizSourceType { companion, story, event, seerahChapter }
+
+class QuizProvenance {
+  const QuizProvenance(this.type, this.recordId, this.field);
+
+  final QuizSourceType type;
+  final String recordId;
+  final String field;
+
+  String get route => switch (type) {
+    QuizSourceType.companion => '/companions/$recordId',
+    QuizSourceType.story => '/stories/$recordId',
+    QuizSourceType.event => '/events/$recordId',
+    QuizSourceType.seerahChapter => '/seerah/chapters/$recordId',
+  };
+
+  @override
+  bool operator ==(Object other) =>
+      other is QuizProvenance &&
+      other.type == type &&
+      other.recordId == recordId &&
+      other.field == field;
+
+  @override
+  int get hashCode => Object.hash(type, recordId, field);
+}
+
 /// One answer on offer.
 sealed class QuizChoice {
   const QuizChoice();
@@ -105,6 +134,7 @@ class QuizQuestion {
     this.subjectGender,
     this.explanation,
     this.route,
+    this.provenance,
   });
 
   /// Stable across rounds (kind and subject ids), so recently asked
@@ -128,6 +158,8 @@ class QuizQuestion {
 
   /// Where to read more about it.
   final String? route;
+
+  final QuizProvenance? provenance;
 
   QuizChoice get answer => choices[correct];
 }

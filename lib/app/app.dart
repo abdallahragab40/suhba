@@ -1,11 +1,15 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:suhba/app/reconciliation/user_data_reconciliation.dart';
 import 'package:suhba/app/router/app_router.dart';
+import 'package:suhba/app/router/routes.dart';
 import 'package:suhba/core/design_system/theme/app_theme.dart';
 import 'package:suhba/core/design_system/tokens/motion.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/features/reminders/presentation/reminder_providers.dart';
 import 'package:suhba/features/settings/presentation/digit_style_controller.dart';
 import 'package:suhba/features/settings/presentation/theme_mode_controller.dart';
 import 'package:suhba/features/welcome/presentation/welcome_controller.dart';
@@ -20,6 +24,19 @@ class SuhbaApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // Attach the listener before silent initialization can report a cold tap.
+    ref.listen(reminderTapProvider, (previous, next) {
+      if (next <= (previous ?? 0)) return;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!context.mounted) return;
+        final router = ref.read(appRouterProvider);
+        if (!router.state.uri.path.startsWith(AppRoutes.journeys)) {
+          unawaited(router.push<void>(AppRoutes.journeys));
+        }
+      });
+      WidgetsBinding.instance.ensureVisualUpdate();
+    });
+    ref.listen(reminderProvider, (_, next) {});
     final digitStyle = ref.watch(digitStyleProvider);
     final welcome = ref.watch(welcomeProvider);
     // Check saved items and positions against the content once per build
@@ -52,7 +69,9 @@ class SuhbaApp extends ConsumerWidget {
         formatter: DisplayFormatter(AppLocalizations.of(context), digitStyle),
         child: AnimatedSwitcher(
           duration: AppMotion.resolve(context, AppMotion.long),
-          child: welcome ? const WelcomePage() : child!,
+          child: welcome == WelcomeMode.hidden
+              ? child!
+              : WelcomePage(mode: welcome),
         ),
       ),
     );

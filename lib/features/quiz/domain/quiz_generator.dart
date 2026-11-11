@@ -1,7 +1,5 @@
 import 'dart:math';
 
-import 'package:meta/meta.dart';
-
 import 'package:suhba/core/domain/historical_date.dart';
 import 'package:suhba/features/quiz/domain/quiz_question.dart';
 import 'package:suhba/features/search/domain/search_documents.dart';
@@ -137,8 +135,84 @@ class QuizGenerator {
   }
 
   /// Every question of [kind] the content supports (each built once).
-  @visibleForTesting
   List<QuizQuestion> questionsOf(QuizKind kind) => _questions(kind);
+
+  /// All single-fact questions, independent of a round's randomly selected
+  /// chronology comparisons. Review resolves those comparisons by their key.
+  Map<String, QuizQuestion> questionBank() => {
+    for (final kind in QuizKind.values)
+      if (kind != QuizKind.earliestEvent && kind != QuizKind.earliestChapter)
+        for (final q in _questions(kind)) q.key: q,
+  };
+
+  /// Reconstructs the exact saved comparison, rather than hoping a random
+  /// round picks the same four records again. Removed or invalid facts return
+  /// null; callers retain their learning history without presenting them.
+  QuizQuestion? questionByKey(String key) {
+    if (key.startsWith('first-event:')) {
+      final ids = _comparisonIds(key, 'first-event:');
+      if (ids == null) return null;
+      final pick = <HistoricalEvent>[];
+      for (final id in ids) {
+        final e = content.events.where((e) => e.id == id).firstOrNull;
+        if (e == null ||
+            e.date.precision == DatePrecision.unknown ||
+            e.date.precision == DatePrecision.range ||
+            e.date.sortKey == null) {
+          return null;
+        }
+        if (pick.any(
+          (p) => (p.date.sortKey!.floor() - e.date.sortKey!.floor()).abs() < 1,
+        )) {
+          return null;
+        }
+        pick.add(e);
+      }
+      pick.sort((a, b) => a.date.compareTo(b.date));
+      return _ordered(
+        key: key,
+        kind: QuizKind.earliestEvent,
+        provenance: QuizProvenance(QuizSourceType.event, pick.first.id, 'date'),
+        items: [for (final e in pick) TextChoice(e.name)],
+        explanation: pick.first.summary,
+        route: '/events/${pick.first.id}',
+      );
+    }
+    if (key.startsWith('first-chapter:')) {
+      final ids = _comparisonIds(key, 'first-chapter:');
+      if (ids == null) return null;
+      final pick = <SeerahChapterSummary>[];
+      for (final id in ids) {
+        final c = content.chapters.where((c) => c.id == id).firstOrNull;
+        if (c == null) return null;
+        pick.add(c);
+      }
+      if (pick.map((c) => c.number).toSet().length != choiceCount) return null;
+      pick.sort((a, b) => a.number.compareTo(b.number));
+      return _ordered(
+        key: key,
+        kind: QuizKind.earliestChapter,
+        provenance: QuizProvenance(
+          QuizSourceType.seerahChapter,
+          pick.first.id,
+          'number',
+        ),
+        items: [for (final c in pick) TextChoice(c.title)],
+        explanation: pick.first.abstract,
+        route: '/seerah/chapters/${pick.first.id}',
+      );
+    }
+    return questionBank()[key];
+  }
+
+  static List<String>? _comparisonIds(String key, String prefix) {
+    final ids = key.substring(prefix.length).split(',');
+    if (ids.length != choiceCount || ids.toSet().length != choiceCount) {
+      return null;
+    }
+    final sorted = [...ids]..sort();
+    return sorted.join(',') == ids.join(',') ? ids : null;
+  }
 
   List<QuizQuestion> _questions(QuizKind kind) => switch (kind) {
     QuizKind.companionByKunya => _byKunya(),
@@ -192,6 +266,7 @@ class QuizGenerator {
               TextChoice(o.name),
         ],
         explanation: c.summary,
+        provenance: QuizProvenance(QuizSourceType.companion, c.id, 'kunya'),
         route: _companionRoute(c.id),
       ),
   ];
@@ -209,6 +284,7 @@ class QuizGenerator {
             if (o.id != c.id && o.gender == c.gender) TextChoice(o.kunya!),
         ],
         explanation: c.summary,
+        provenance: QuizProvenance(QuizSourceType.companion, c.id, 'kunya'),
         route: _companionRoute(c.id),
       ),
   ];
@@ -243,6 +319,11 @@ class QuizGenerator {
                     TextChoice(o.name),
               ],
               explanation: c.summary,
+              provenance: QuizProvenance(
+                QuizSourceType.companion,
+                c.id,
+                'titles',
+              ),
               route: _companionRoute(c.id),
             ),
     ];
@@ -275,6 +356,11 @@ class QuizGenerator {
                 TextChoice(LocalizedText(ar: p)),
           ],
           explanation: c.summary,
+          provenance: QuizProvenance(
+            QuizSourceType.companion,
+            c.id,
+            'deathPlace',
+          ),
           route: _companionRoute(c.id),
         ),
     ];
@@ -300,6 +386,11 @@ class QuizGenerator {
                     TextChoice(o.name),
               ],
               explanation: cat.description ?? c.summary,
+              provenance: QuizProvenance(
+                QuizSourceType.companion,
+                c.id,
+                'memberships',
+              ),
               route: _companionRoute(c.id),
             ),
   ];
@@ -335,6 +426,11 @@ class QuizGenerator {
                     TextChoice(value),
               ],
               explanation: c.summary,
+              provenance: QuizProvenance(
+                QuizSourceType.companion,
+                c.id,
+                'relations.${type.name}',
+              ),
               route: _companionRoute(c.id),
             ),
     ];
@@ -349,6 +445,9 @@ class QuizGenerator {
     bool mentioned(Companion c, String text) =>
         [c.name.ar, ...c.aliases].any((n) => n.isNotEmpty && text.contains(n));
     final byId = {for (final c in content.companions) c.id: c};
+    final storyTexts = {
+      for (final story in content.stories) story.id: textOf(story),
+    };
     return [
       for (final s in content.stories)
         for (final id in s.companionIds)
@@ -361,10 +460,15 @@ class QuizGenerator {
               wrong: [
                 for (final o in content.companions)
                   if (!s.companionIds.contains(o.id) &&
-                      !mentioned(o, textOf(s)))
+                      !mentioned(o, storyTexts[s.id]!))
                     TextChoice(o.name),
               ],
               explanation: s.synopsis,
+              provenance: QuizProvenance(
+                QuizSourceType.story,
+                s.id,
+                'companionIds',
+              ),
               route: '/stories/${s.id}',
             ),
     ];
@@ -403,6 +507,7 @@ class QuizGenerator {
               if (y != year) DateChoice(y),
           ],
           explanation: e.summary,
+          provenance: QuizProvenance(QuizSourceType.event, e.id, 'date'),
           route: '/events/${e.id}',
         ),
     ];
@@ -437,6 +542,7 @@ class QuizGenerator {
           kind: QuizKind.earliestEvent,
           items: [for (final e in pick) TextChoice(e.name)],
           explanation: first.summary,
+          provenance: QuizProvenance(QuizSourceType.event, first.id, 'date'),
           route: '/events/${first.id}',
         ),
       );
@@ -460,6 +566,7 @@ class QuizGenerator {
                 TextChoice(p.name),
           ],
           explanation: e.summary,
+          provenance: QuizProvenance(QuizSourceType.event, e.id, 'placeIds'),
           route: '/events/${e.id}',
         ),
   ];
@@ -484,7 +591,8 @@ class QuizGenerator {
                   TextChoice(o.name),
             ],
             explanation: e.summary,
-            route: '/places/${place.id}',
+            provenance: QuizProvenance(QuizSourceType.event, e.id, 'placeIds'),
+            route: '/events/${e.id}',
           ),
     ];
   }
@@ -504,6 +612,11 @@ class QuizGenerator {
             kind: QuizKind.earliestChapter,
             items: [for (final c in pick) TextChoice(c.title)],
             explanation: pick.first.abstract,
+            provenance: QuizProvenance(
+              QuizSourceType.seerahChapter,
+              pick.first.id,
+              'number',
+            ),
             route: '/seerah/chapters/${pick.first.id}',
           );
         }(),
@@ -525,6 +638,7 @@ class QuizGenerator {
   QuizQuestion? _build({
     required String key,
     required QuizKind kind,
+    required QuizProvenance provenance,
     required QuizChoice correct,
     required List<QuizChoice> wrong,
     LocalizedText? subject,
@@ -540,6 +654,7 @@ class QuizGenerator {
     return QuizQuestion(
       key: key,
       kind: kind,
+      provenance: provenance,
       subject: subject,
       subjectGender: subjectGender,
       choices: choices,
@@ -553,6 +668,7 @@ class QuizGenerator {
   QuizQuestion _ordered({
     required String key,
     required QuizKind kind,
+    required QuizProvenance provenance,
     required List<QuizChoice> items,
     LocalizedText? explanation,
     String? route,
@@ -561,6 +677,7 @@ class QuizGenerator {
     return QuizQuestion(
       key: key,
       kind: kind,
+      provenance: provenance,
       choices: choices,
       correct: choices.indexOf(items.first),
       explanation: explanation,

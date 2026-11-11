@@ -1,6 +1,8 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:suhba/core/result/failure.dart';
 import 'package:suhba/core/result/result.dart';
+import 'package:suhba/features/journeys/data/journey_dto.dart';
+import 'package:suhba/features/journeys/domain/journey.dart';
 import 'package:suhba/shared/content/data/asset_content_source.dart';
 import 'package:suhba/shared/content/data/dto/atlas_dto.dart';
 import 'package:suhba/shared/content/data/dto/catalog_dto.dart';
@@ -29,6 +31,30 @@ class AssetContentRepository implements ContentRepository {
   final _cache = <String, Future<Object>>{};
 
   static final _slug = RegExp(r'^[a-z0-9]+(?:[-.][a-z0-9]+)*$');
+
+  @override
+  Future<Result<List<Journey>>> journeys() async {
+    final ids = await _load(
+      'index/journeys.json',
+      (json) => (json['journeyIds'] as List).cast<String>(),
+    );
+    if (ids case Err(:final failure)) return Err(failure);
+    final result = <Journey>[];
+    for (final id in ids.getOrThrow()) {
+      final loaded = await journey(id);
+      if (loaded case Err(:final failure)) return Err(failure);
+      result.add(loaded.getOrThrow());
+    }
+    return Ok(result);
+  }
+
+  @override
+  Future<Result<Journey>> journey(String id) =>
+      _byId(id, 'journeys/$id.json', (json) {
+        final dto = JourneyDto.fromJson(json);
+        if (dto.id != id) throw const FormatException('Journey id mismatch');
+        return dto.toDomain();
+      });
 
   @override
   Future<Result<ContentManifest>> manifest() =>

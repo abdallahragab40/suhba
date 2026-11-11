@@ -1,6 +1,6 @@
 // Scale baseline on a device (plan task E09): 1,000 synthetic companions
 // and a 5,000-word passage, in profile mode:
-//   flutter drive --profile --no-dds --driver=test_driver/perf_driver.dart \
+//   flutter drive --keep-app-running --profile --no-dds --driver=test_driver/perf_driver.dart \
 //     --target=integration_test/scale_perf_test.dart -d <device>
 // Results go to build/integration_response_data.json. The synthetic content
 // is generated in memory from the bundled structure and never shown

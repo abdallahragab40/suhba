@@ -13,6 +13,7 @@ import 'package:suhba/core/design_system/widgets/section_header.dart';
 import 'package:suhba/core/feedback/haptics.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/features/atlas/presentation/place_page.dart';
+import 'package:suhba/features/journeys/presentation/journey_providers.dart';
 import 'package:suhba/features/quiz/presentation/quiz_banner.dart';
 import 'package:suhba/features/stories/presentation/story_card.dart';
 import 'package:suhba/shared/content/domain/atlas.dart';
@@ -43,6 +44,7 @@ class ExplorePage extends ConsumerWidget {
     final places = ref.watch(placesProvider);
     final visuals = ref.watch(visualsProvider);
     final stories = ref.watch(storyIndexProvider);
+    final journeys = ref.watch(journeysProvider);
 
     final Widget body;
     if (events.hasError || places.hasError || visuals.hasError) {
@@ -67,6 +69,7 @@ class ExplorePage extends ConsumerWidget {
           ..sort((a, b) => a.name.ar.compareTo(b.name.ar)),
         visuals: v.values.toList(),
         stories: stories.value ?? const [],
+        showJourneys: journeys.value?.isNotEmpty ?? false,
       );
     } else {
       body = const Padding(
@@ -91,6 +94,7 @@ class _Explore extends StatefulWidget {
     required this.places,
     required this.visuals,
     required this.stories,
+    required this.showJourneys,
   });
 
   final ExploreFilter initial;
@@ -98,6 +102,7 @@ class _Explore extends StatefulWidget {
   final List<HistoricalPlace> places;
   final List<Infographic> visuals;
   final List<StorySummary> stories;
+  final bool showJourneys;
 
   @override
   State<_Explore> createState() => _ExploreState();
@@ -173,6 +178,15 @@ class _ExploreState extends State<_Explore> {
         ),
         if (_filter == ExploreFilter.all) ...[
           const SizedBox(height: AppSpacing.lg),
+          if (widget.showJourneys) ...[
+            _EntryTile(
+              icon: Icons.route_outlined,
+              title: l10n.journeysTitle,
+              body: l10n.journeysIntro,
+              onTap: () => context.push(AppRoutes.journeys),
+            ),
+            const SizedBox(height: AppSpacing.md),
+          ],
           const QuizBanner(),
         ],
         if (show(ExploreFilter.events)) ...[

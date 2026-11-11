@@ -190,4 +190,46 @@ void main() {
       isEmpty,
     );
   });
+
+  test('keys retain their facts and reading links across 1,000 rounds', () {
+    final facts =
+        <
+          String,
+          (QuizKind, String?, String, String?, String?, QuizProvenance?)
+        >{};
+    for (var seed = 0; seed < 1000; seed++) {
+      final round = QuizGenerator(
+        content,
+        random: Random(seed),
+      ).round(QuizMode.mixed);
+      for (final q in round) {
+        expect(q.route, isNotEmpty, reason: q.key);
+        final origin = q.provenance!;
+        expect(q.route, origin.route, reason: q.key);
+        final sourceIds = switch (origin.type) {
+          QuizSourceType.companion => content.companions.map((c) => c.id),
+          QuizSourceType.story => content.stories.map((s) => s.id),
+          QuizSourceType.event => content.events.map((e) => e.id),
+          QuizSourceType.seerahChapter => content.chapters.map((c) => c.id),
+        };
+        expect(sourceIds, contains(origin.recordId), reason: q.key);
+        expect(q.explanation?.ar, isNotEmpty, reason: q.key);
+        final fact = (
+          q.kind,
+          q.subject?.ar,
+          text(q.answer),
+          q.route,
+          q.explanation?.ar,
+          q.provenance,
+        );
+        final previous = facts.putIfAbsent(q.key, () => fact);
+        expect(
+          fact,
+          previous,
+          reason: '${q.key} changed meaning in round $seed',
+        );
+      }
+    }
+    expect(facts.length, greaterThan(100));
+  });
 }

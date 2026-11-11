@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:suhba/features/journeys/data/journey_dto.dart';
 import 'package:suhba/shared/content/data/dto/atlas_dto.dart';
 import 'package:suhba/shared/content/data/dto/catalog_dto.dart';
 import 'package:suhba/shared/content/data/dto/common_dto.dart';
@@ -59,6 +60,7 @@ class ContentTree {
   final people = <Item<PersonDto>>[];
   final events = <Item<HistoricalEventDto>>[];
   final companions = <Item<CompanionDto>>[];
+  final journeys = <Item<JourneyDto>>[];
   final stories = <Item<StoryDto>>[];
   final places = <Item<PlaceDto>>[];
   final seerahChapters = <Item<SeerahChapterDto>>[];
@@ -89,6 +91,7 @@ class ContentTree {
     ...events,
     ...companions,
     ...stories,
+    ...journeys,
     ...places,
     ?seerah,
     ...seerahChapters,
@@ -305,6 +308,16 @@ ContentTree parseContent(
           load(file, 'seerahTopicFile', kind: ContentKind.seerahTopic),
           (json) => parse(file, () => SeerahTopicDto.fromJson(json)),
           kind: ContentKind.seerahTopic,
+          file: file,
+          idOf: (d) => d.id,
+          reviewOf: (d) => d.review,
+        );
+      case _ when file.startsWith('journeys/'):
+        _file(
+          tree.journeys,
+          load(file, 'journeyFile', kind: ContentKind.journey),
+          (json) => parse(file, () => JourneyDto.fromJson(json)),
+          kind: ContentKind.journey,
           file: file,
           idOf: (d) => d.id,
           reviewOf: (d) => d.review,

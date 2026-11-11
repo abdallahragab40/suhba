@@ -9,7 +9,10 @@ import 'package:suhba/core/domain/reliability.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/core/share/share_service.dart';
+import 'package:suhba/features/sources/domain/share_card_policy.dart';
+import 'package:suhba/features/sources/presentation/passage_card.dart';
 import 'package:suhba/features/sources/presentation/passage_share.dart';
+import 'package:suhba/features/sources/presentation/share_card_sheet.dart';
 import 'package:suhba/shared/content/domain/catalog.dart';
 import 'package:suhba/shared/content/domain/citation.dart';
 import 'package:suhba/shared/content/presentation/content_text.dart';
@@ -98,6 +101,54 @@ class CitationSheet extends ConsumerWidget {
     final colors = SuhbaColors.of(context);
     final sources = ref.watch(sourcesProvider);
     final reliability = this.reliability;
+    final sourceMap = sources.value;
+    final shareSources = <ShareSourceLine>[
+      if (sourceMap != null)
+        for (final c in citations)
+          (
+            title:
+                sourceMap[c.sourceId]?.title.of(context) ??
+                l10n.citationUnknownSource,
+            locator: citationLocatorText(context, c),
+            grading: c.grading == null
+                ? null
+                : l10n.citationGrading(
+                    _gradeLabel(l10n, c.grading!.grade),
+                    c.grading!.gradedBy.of(context),
+                  ),
+          ),
+    ];
+    final excerpt = share == null ? null : cardExcerpt(share!.text);
+    final sourceText = [
+      l10n.shareSourcesHeading,
+      for (final line in shareSources)
+        '• ${line.title}، ${line.locator}${line.grading == null ? '' : ' (${line.grading})'}',
+      if (reliability != null)
+        l10n.shareReliability(reliabilityLabel(l10n, reliability)),
+    ].join('\n');
+    final cardAllowed =
+        excerpt != null &&
+        sourceMap != null &&
+        citations.isNotEmpty &&
+        citations.every(
+          (c) =>
+              sourceMap.containsKey(c.sourceId) &&
+              c.locatorStatus == LocatorStatus.complete &&
+              c.hasLocator,
+        ) &&
+        reliability != Reliability.disputed &&
+        passageCardFits(
+          excerpt: excerpt,
+          origin: share!.origin,
+          sources: sourceText,
+          footer: l10n.shareCardFooter,
+          notice: provisional ? l10n.shareDraftNotice : null,
+        ) &&
+        canShareCard(
+          channel: ref.watch(contentManifestProvider).value?.channel,
+          provisional: provisional,
+          preview: ref.watch(shareCardPreviewProvider),
+        );
 
     return ConstrainedBox(
       constraints: BoxConstraints(
@@ -160,7 +211,26 @@ class CitationSheet extends ConsumerWidget {
             _ => const LoadingSkeleton(lines: 2),
           },
           if (share case final share?)
-            if (sources.value case final sourceMap?) ...[
+            if (sources.hasValue) ...[
+              if (cardAllowed) ...[
+                const SizedBox(height: AppSpacing.sm),
+                OutlinedButton.icon(
+                  icon: const Icon(Icons.image_outlined),
+                  label: Text(l10n.shareCardOption),
+                  onPressed: () => showModalBottomSheet<void>(
+                    context: context,
+                    isScrollControlled: true,
+                    useSafeArea: true,
+                    builder: (_) => ShareCardSheet(
+                      excerpt: excerpt,
+                      origin: share.origin,
+                      sources: sourceText,
+                      footer: l10n.shareCardFooter,
+                      notice: provisional ? l10n.shareDraftNotice : null,
+                    ),
+                  ),
+                ),
+              ],
               const SizedBox(height: AppSpacing.md),
               Builder(
                 builder: (button) => FilledButton.tonalIcon(
@@ -171,22 +241,7 @@ class CitationSheet extends ConsumerWidget {
                       .shareText(
                         formatPassageShare(
                           passage: share,
-                          sources: [
-                            for (final c in citations)
-                              (
-                                title:
-                                    sourceMap[c.sourceId]?.title.of(context) ??
-                                    l10n.citationUnknownSource,
-                                locator: citationLocatorText(context, c),
-                                grading: switch (c.grading) {
-                                  final g? => l10n.citationGrading(
-                                    _gradeLabel(l10n, g.grade),
-                                    g.gradedBy.of(context),
-                                  ),
-                                  null => null,
-                                },
-                              ),
-                          ],
+                          sources: shareSources,
                           sourcesHeading: l10n.shareSourcesHeading,
                           reliabilityLine: reliability == null
                               ? null

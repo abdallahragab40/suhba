@@ -4,12 +4,16 @@ import 'package:suhba/core/database/database_provider.dart';
 import 'package:suhba/core/share/share_service.dart';
 import 'package:suhba/features/bookmarks/domain/bookmark.dart';
 import 'package:suhba/features/bookmarks/presentation/bookmark_providers.dart';
+import 'package:suhba/features/journeys/domain/journey_progress.dart';
+import 'package:suhba/features/journeys/presentation/journey_providers.dart';
 import 'package:suhba/features/personal_data/data/file_opener.dart';
 import 'package:suhba/features/personal_data/domain/reading_data_archive.dart';
 import 'package:suhba/features/personal_data/presentation/reading_data_transfer.dart';
 import 'package:suhba/features/reading_progress/data/drift_reading_progress_repository.dart';
 import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
 import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
+import 'package:suhba/features/review/domain/leitner_scheduler.dart';
+import 'package:suhba/features/review/presentation/review_providers.dart';
 
 import '../../helpers/app_harness.dart';
 import '../../helpers/recording_share.dart';
@@ -177,7 +181,27 @@ void main() {
     );
     await app.pump(tester);
     // The saved item is written first; the position then fails.
+    final review = LeitnerScheduler(
+      clock: () => DateTime(2026, 11, 9),
+    ).answer(questionKey: 'kunya:ali', correct: false);
     final plan = ImportPlan(
+      reviewsToSave: [review],
+      journeysToSave: [
+        JourneyEnrollment(
+          journeyId: 'meet-the-companions',
+          startedAt: DateTime.utc(2026, 11, 9),
+          updatedAt: DateTime.utc(2026, 11, 9),
+          paused: false,
+        ),
+      ],
+      journeyStepsToSave: [
+        JourneyStepProgress(
+          journeyId: 'meet-the-companions',
+          stepId: 'meet-the-companions.abu-bakr',
+          startedAt: DateTime.utc(2026, 11, 9),
+          updatedAt: DateTime.utc(2026, 11, 9),
+        ),
+      ],
       newBookmarks: [_companion('umar')],
       progressToSave: [_p('abu-bakr.hijrah')],
       keptBookmarks: 0,
@@ -188,6 +212,15 @@ void main() {
       throwsA(isA<StateError>()),
     );
     expect(await saved(app), isEmpty);
+    expect(await app.container.read(reviewRepositoryProvider).all(), isEmpty);
+    expect(
+      await app.container.read(journeyRepositoryProvider).enrollments(),
+      isEmpty,
+    );
+    expect(
+      await app.container.read(journeyRepositoryProvider).steps(),
+      isEmpty,
+    );
   });
 
   testApp('cancelling the confirmation writes nothing', (tester) async {
@@ -287,5 +320,39 @@ void main() {
     await tester.pumpAndSettle();
     expect((await positions(app)).single.fraction, 0.8);
     expect((await saved(app)).single.targetId, 'umar');
+  });
+  testApp('review-only history exports and imports onto a fresh device', (
+    tester,
+  ) async {
+    final share = RecordingShare();
+    final source = await settings(tester, share: share);
+    final original = await source.container
+        .read(reviewRepositoryProvider)
+        .recordAnswer('kunya:ali', correct: false);
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('تصدير بيانات القراءة'));
+    await tester.pumpAndSettle();
+    final file = share.files.single.content;
+    expect(
+      (decodeArchive(file) as ArchiveDecoded)
+          .archive
+          .reviews
+          .single
+          .questionKey,
+      original.questionKey,
+    );
+
+    final fresh = await settings(tester, file: file);
+    await tester.tap(find.text('استيراد بيانات القراءة'));
+    await tester.pumpAndSettle();
+    expect(find.textContaining('سجلات مراجعة ستُضاف'), findsOneWidget);
+    await tester.tap(find.widgetWithText(FilledButton, 'استيراد'));
+    await tester.pumpAndSettle();
+    final restored =
+        (await fresh.container.read(reviewRepositoryProvider).all()).single;
+    expect(restored.questionKey, original.questionKey);
+    expect(restored.dueOn, original.dueOn);
+    expect(restored.timesWrong, 1);
+    expect(restored.lastAnsweredAt, original.lastAnsweredAt);
   });
 }

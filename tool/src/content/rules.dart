@@ -1,6 +1,8 @@
 import 'package:suhba/core/domain/historical_date.dart';
 import 'package:suhba/core/domain/quran_ref.dart';
 import 'package:suhba/core/domain/reliability.dart';
+import 'package:suhba/features/journeys/data/journey_dto.dart';
+import 'package:suhba/features/journeys/domain/journey.dart';
 import 'package:suhba/shared/content/data/dto/atlas_dto.dart';
 import 'package:suhba/shared/content/data/dto/block_dto.dart';
 import 'package:suhba/shared/content/data/dto/catalog_dto.dart';
@@ -48,6 +50,9 @@ class _Rules {
       sink.error('V2', 'meta.json', '', 'meta.json is missing or invalid.');
     }
     _duplicates();
+    for (final item in tree.journeys) {
+      _journey(item);
+    }
     for (final item in tree.companions) {
       _companion(item);
     }
@@ -102,10 +107,51 @@ class _Rules {
     check(tree.events);
     check(tree.companions);
     check(tree.stories);
+    check(tree.journeys);
     check(tree.places);
     check(tree.seerahChapters);
     check(tree.seerahTopics);
     check(tree.visuals);
+  }
+
+  Item<Object>? _readingItem(StepRefDto r) => switch (r.type) {
+    StepRefType.companionSection => tree.companionById[r.parentId],
+    StepRefType.storyChapter => tree.storyById[r.parentId],
+    StepRefType.seerahChapter => tree.seerahChapterById[r.targetId],
+    StepRefType.seerahTopic => tree.seerahTopicById[r.targetId],
+  };
+
+  void _journey(Item<JourneyDto> item) {
+    _fileNameMatchesId(item, 'journeys');
+    _childIds(item, r'$.steps', item.dto.steps.map((s) => s.id));
+    for (final (i, step) in item.dto.steps.indexed) {
+      final seen = <String>{};
+      for (final (j, r) in step.readings.indexed) {
+        final path = '\$.steps[$i].readings[$j]';
+        final key = '${r.type.name}:${r.parentId}:${r.targetId}';
+        if (!seen.add(key)) {
+          sink.error('V2', item.file, path, 'Duplicate reading reference.');
+        }
+        final target = _readingItem(r);
+        final exists = switch (r.type) {
+          StepRefType.companionSection =>
+            tree.companionById[r.parentId]?.dto.sections.any(
+                  (s) => s.id == r.targetId,
+                ) ??
+                false,
+          StepRefType.storyChapter =>
+            tree.storyById[r.parentId]?.dto.chapters.any(
+                  (c) => c.id == r.targetId,
+                ) ??
+                false,
+          StepRefType.seerahChapter ||
+          StepRefType.seerahTopic => target != null,
+        };
+        if (!exists) {
+          sink.error('V2', item.file, path, 'Unknown journey passage "$key".');
+        }
+      }
+    }
   }
 
   void _fileNameMatchesId(Item<Object> item, String folder) {
@@ -1056,6 +1102,12 @@ class _Rules {
         case HistoricalEventDto():
           for (final id in dto.placeIds) {
             needApproved(item, 'place', tree.placeById[id]);
+          }
+        case JourneyDto():
+          for (final step in dto.steps) {
+            for (final r in step.readings) {
+              needApproved(item, 'journey passage', _readingItem(r));
+            }
           }
         case VisualDto():
           // A visual's marks are its records: each must be approved too.

@@ -67,16 +67,24 @@ abstract final class AppRoutes {
           },
         ).toString();
 
+  static const journeys = '/journeys';
+  static String journey(String id) => '$journeys/${_id(id)}';
+  static String journeyStep(String id, String stepId) =>
+      '${journey(id)}/steps/${_id(stepId)}';
+
   // Sources, search and settings pages (M2–M4).
   static String source(String id) => '/sources/${_id(id)}';
   static const search = '/search';
 
   /// The quiz, and a round in one of its modes.
+  static const review = '/review';
+  static const learned = '$review/learned';
   static const quiz = '/quiz';
   static String quizPlay(String mode) => '$quiz/${_id(mode)}';
   static const about = '$settings/about';
 
   /// Reading history opened from Settings, so Back returns there.
+  static const settingsReminder = '$settings/reminder';
   static const settingsHistory = '$settings/history';
   static const sourcesDirectory = '$settings/sources';
 

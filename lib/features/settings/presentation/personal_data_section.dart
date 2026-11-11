@@ -2,19 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/database/app_database.dart';
+import 'package:suhba/core/database/database_provider.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/core/share/share_service.dart';
 import 'package:suhba/features/bookmarks/presentation/bookmark_providers.dart';
+import 'package:suhba/features/journeys/presentation/journey_providers.dart';
 import 'package:suhba/features/personal_data/domain/reading_data_archive.dart';
 import 'package:suhba/features/personal_data/presentation/reading_data_transfer.dart';
 import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
+import 'package:suhba/features/review/presentation/review_providers.dart';
 
 /// The reader's own data on this device (E10): the reading history, export
-/// and import of saved items and positions, and separate controls to clear
-/// either kind. Clearing everything of a kind asks first, says how much
-/// will go, and never touches the other kind or the settings. Importing
-/// says what it will add first and never deletes anything.
+/// and import of saved items, positions, review history and journeys, and
+/// separate controls to clear reading history, saved items, or review and
+/// journey progress. Clearing everything of a kind asks first, says how
+/// much will go, and never touches the other kinds or the settings.
+/// Importing says what it will add first and never deletes anything.
 class PersonalDataSection extends ConsumerWidget {
   const PersonalDataSection({super.key});
 
@@ -23,6 +28,8 @@ class PersonalDataSection extends ConsumerWidget {
     final l10n = AppLocalizations.of(context);
     final format = DisplayFormatter.of(context);
     final progress = ref.watch(allProgressProvider).value?.length ?? 0;
+    final journeys = ref.watch(journeyEnrollmentsProvider).value?.length ?? 0;
+    final reviews = ref.watch(reviewItemsProvider).value?.length ?? 0;
     final saved = ref.watch(bookmarksProvider).value?.length ?? 0;
     final texts = l10n.countTexts(progress, format.integer(progress));
     final items = l10n.countItems(saved, format.integer(saved));
@@ -42,7 +49,7 @@ class PersonalDataSection extends ConsumerWidget {
             leading: const Icon(Icons.ios_share),
             title: Text(l10n.settingsExport),
             subtitle: Text(l10n.settingsExportSubtitle),
-            enabled: progress + saved > 0,
+            enabled: progress + saved + reviews + journeys > 0,
             onTap: () => _export(tile, ref),
           ),
         ),
@@ -79,6 +86,27 @@ class PersonalDataSection extends ConsumerWidget {
             message: l10n.clearSavedMessage(items),
             done: l10n.savedCleared,
             clear: ref.read(bookmarkRepositoryProvider).clearAll,
+          ),
+        ),
+        ListTile(
+          contentPadding: EdgeInsets.zero,
+          leading: const Icon(Icons.school_outlined),
+          title: Text(l10n.settingsClearLearning),
+          subtitle: Text(
+            reviews + journeys == 0
+                ? l10n.settingsNothingToClear
+                : l10n.settingsLearningCounts(
+                    format.integer(reviews),
+                    format.integer(journeys),
+                  ),
+          ),
+          enabled: reviews + journeys > 0,
+          onTap: () => _confirmAndClear(
+            context,
+            title: l10n.clearLearningTitle,
+            message: l10n.clearLearningMessage,
+            done: l10n.learningCleared,
+            clear: () => clearLearningData(ref.read(appDatabaseProvider)),
           ),
         ),
       ],
@@ -149,9 +177,15 @@ class PersonalDataSection extends ConsumerWidget {
             title: Text(l10n.importConfirmTitle),
             content: Text(
               l10n.importConfirmMessage(
-                l10n.countItems(items, format.integer(items)),
-                l10n.countTexts(texts, format.integer(texts)),
-              ),
+                    l10n.countItems(items, format.integer(items)),
+                    l10n.countTexts(texts, format.integer(texts)),
+                  ) +
+                  (plan.reviewsToSave.isEmpty
+                      ? ''
+                      : '\n${l10n.importReviewCount(format.integer(plan.reviewsToSave.length))}') +
+                  (plan.changedJourneys == 0
+                      ? ''
+                      : '\n${l10n.importJourneyCount(format.integer(plan.changedJourneys))}'),
             ),
             actions: [
               TextButton(
@@ -216,3 +250,12 @@ class PersonalDataSection extends ConsumerWidget {
     }
   }
 }
+
+/// Deletes review history and journey progress together; nothing else.
+/// Returns the number of rows deleted.
+Future<int> clearLearningData(AppDatabase db) => db.transaction(() async {
+  final reviews = await db.delete(db.reviewItems).go();
+  final steps = await db.delete(db.journeyProgressEntries).go();
+  final journeys = await db.delete(db.journeyEnrollments).go();
+  return reviews + steps + journeys;
+});

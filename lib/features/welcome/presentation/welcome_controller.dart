@@ -5,24 +5,49 @@ import 'package:suhba/core/storage/settings_store.dart';
 /// unless they are about them.
 final welcomeEnabledProvider = Provider<bool>((ref) => true);
 
-/// Whether the welcome screens are showing: on the first launch only,
-/// until they are finished or skipped.
-final welcomeProvider = NotifierProvider<WelcomeController, bool>(
+/// What the welcome screens show, if anything.
+enum WelcomeMode {
+  /// Seen (or skipped): the app opens directly.
+  hidden,
+
+  /// First launch: every welcome page.
+  full,
+
+  /// Upgraded from 1.0, whose welcome screens came before journeys: only
+  /// the page about what is new.
+  whatsNew,
+}
+
+/// The welcome screens: on the first launch, or once after the upgrade
+/// from 1.0, until they are finished or skipped.
+final welcomeProvider = NotifierProvider<WelcomeController, WelcomeMode>(
   WelcomeController.new,
 );
 
-class WelcomeController extends Notifier<bool> {
+class WelcomeController extends Notifier<WelcomeMode> {
+  /// Stored once the current welcome screens are seen.
+  static const seen = '2';
+
+  /// Stored by 1.0, whose welcome screens had no journeys page.
+  static const seenBeforeJourneys = '1';
+
   @override
-  bool build() =>
-      ref.watch(welcomeEnabledProvider) &&
-      ref.watch(settingsStoreProvider).getString(SettingsKeys.welcomeSeen) ==
-          null;
+  WelcomeMode build() {
+    if (!ref.watch(welcomeEnabledProvider)) return WelcomeMode.hidden;
+    return switch (ref
+        .watch(settingsStoreProvider)
+        .getString(SettingsKeys.welcomeSeen)) {
+      null => WelcomeMode.full,
+      seenBeforeJourneys => WelcomeMode.whatsNew,
+      _ => WelcomeMode.hidden,
+    };
+  }
 
   /// Hides the welcome screens for good.
   Future<void> finish() async {
-    state = false;
+    state = WelcomeMode.hidden;
     await ref
         .read(settingsStoreProvider)
-        .setString(SettingsKeys.welcomeSeen, '1');
+        .setString(SettingsKeys.welcomeSeen, seen);
   }
 }

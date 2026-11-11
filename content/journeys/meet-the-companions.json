@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 1,
+  "id": "meet-the-companions",
+  "title": {
+    "ar": "تعرّف على الصحابة"
+  },
+  "description": {
+    "ar": "أربع عشرة خطوة؛ في كل خطوة تقرأ من سيرة صحابي أو صحابية، ثم تتأمل ما تعلّمته. تقدّم بالوتيرة التي تناسبك."
+  },
+  "steps": [
+    {
+      "id": "meet-the-companions.abu-bakr",
+      "title": {
+        "ar": "أبو بكر الصديق"
+      },
+      "readings": [
+        {
+          "type": "companionSection",
+          "targetId": "abu-bakr.early-life",
+          "parentId": "abu-bakr"
+        },
+        {
+          "type": "companionSection",
+          "targetId": "abu-bakr.virtues",
+          "parentId": "abu-bakr"
+        }
+      ],
+      "reflection": {
+        "ar": "ما الفكرة التي تريد أن تتذكرها من هذه القراءة؟"
+      }
+    },
+    {
+      "id": "meet-the-companions.umar",
+      "title": {
+        "ar": "عمر بن الخطاب"
+      },
+      "readings": [
+        {
+          "type": "companionSection",
+          "targetId": "umar.early-life",
+          "parentId": "umar"
+        },
+        {
+          "type": "companionSection",
+          "targetId": "umar.virtues",
+          "parentId": "umar"
+        }
+      ],
+      "reflection": {
+        "ar": "ما الفكرة التي تريد أن تتذكرها من هذه القراءة؟"
+      }
+    },
+    {
+      "id": "meet-the-companions.uthman",
+      "title": {
+        "ar": "عثمان بن عفان"
+      },
+      "readings": [
+        {
+          "type": "companionSection",
+          "targetId": "uthman.early-life",
+          "parentId": "uthman"
+        },
+        {
+          "type": "companionSection",
+          "targetId": "uthman.virtues",
+          "parentId": "uthman"
+        }
+      ],
+      "reflection": {
+        "ar": "ما الفكرة التي تريد أن تتذكرها من هذه القراءة؟"
+      }
+    },
+    {
+      "id": "meet-the-companions.ali",
+      "title": {
+        "ar": "علي بن أبي طالب"
+      },
+      "readings": [
+        {
+          "type": "companionSection",
+          "targetId": "ali.early-life",
+          "parentId": "ali"
+        },
+        {
+          "type": "companionSection",
+          "targetId": "ali.virtues",
+          "parentId": "ali"
+        }
+      ],
+      "reflection": {
+        "ar": "ما الفكرة التي تريد أن تتذكرها من هذه القراءة؟"
+      }
+    },
+    {
+      "id": "meet-the-companions.talha",
+      "title": {
+        "ar": "طلحة بن عبيد الله"
+      },
+      "readings": [
+        {
+          "type": "companionSection",
+          "targetId": "talha.early-life",
+          "parentId": "talha"
+        },
+        {
+          "type": "companionSection",
+          "targetId": "talha.virtues",
+          "parentId": "talha"
+        }
+      ],
+      "reflection": {
+        "ar": "ما الفكرة التي تريد أن تتذكرها من هذه القراءة؟"
+      }
+    },
+    {
+      "id": "meet-the-companions.zubayr",
+      "title": {
+        "ar": "الزبير بن العوام"
+      },
+      "readings": [
+        {
+          "type": "companionSection",
+          "targetId": "zubayr.early-life",
+          "parentId": "zubayr"
+        },
+        {
+          "type": "companionSection",
+          "targetId": "zubayr.virtues",
+          "parentId": "zubayr"
+        }
+      ],
+      "reflection": {
+        "ar": "ما الفكرة التي تريد أن تتذكرها من هذه القراءة؟"
+      }
+    },
+    {
+      "id": "meet-the-companions.abd-al-rahman-ibn-awf",
+      "title": {
+        "ar": "عبد الرحمن بن عوف"
+      },
+      "readings": [
+        {
+          "type": "companionSection",
+          "targetId": "abd-al-rahman-ibn-awf.early-life",
+          "parentId": "abd-al-rahman-ibn-awf"
+        },
+        {
+          "type": "companionSection",
+          "targetId": "abd-al-rahman-ibn-awf.virtues",
+          "parentId": "abd-al-rahman-ibn-awf"
+        }
+      ],
+      "reflection": {
+        "ar": "ما الفكرة التي تريد أن تتذكرها من هذه القراءة؟"
+      }
+    },
+    {
+      "id": "meet-the-companions.sad-ibn-abi-waqqas",
+      "title": {
+        "ar": "سعد بن أبي وقاص"
+      },
+      "readings": [
+        {
+          "type": "companionSection",
+          "targetId": "sad-ibn-abi-waqqas.early-life",
+          "parentId": "sad-ibn-abi-waqqas"
+        },
+        {
+          "type": "companionSection",
+          "targetId": "sad-ibn-abi-waqqas.virtues",
+          "parentId": "sad-ibn-abi-waqqas"
+        }
+      ],
+      "reflection": {
+        "ar": "ما الفكرة التي تريد أن تتذكرها من هذه القراءة؟"
+      }
+    },
+    {
+      "id": "meet-the-companions.said-ibn-zayd",
+      "title": {
+        "ar": "سعيد بن زيد"
+      },
+      "readings": [
+        {
+          "type": "companionSection",
+          "targetId": "said-ibn-zayd.early-life",
+          "parentId": "said-ibn-zayd"
+        },
+        {
+          "type": "companionSection",
+          "targetId": "said-ibn-zayd.virtues",
+          "parentId": "said-ibn-zayd"
+        }
+      ],
+      "reflection": {
+        "ar": "ما الفكرة التي تريد أن تتذكرها من هذه القراءة؟"
+      }
+    },
+    {
+      "id": "meet-the-companions.abu-ubaydah",
+      "title": {
+        "ar": "أبو عبيدة بن الجراح"
+      },
+      "readings": [
+        {
+          "type": "companionSection",
+          "targetId": "abu-ubaydah.early-life",
+          "parentId": "abu-ubaydah"
+        },
+        {
+          "type": "companionSection",
+          "targetId": "abu-ubaydah.virtues",
+          "parentId": "abu-ubaydah"
+        }
+      ],
+      "reflection": {
+        "ar": "ما الفكرة التي تريد أن تتذكرها من هذه القراءة؟"
+      }
+    },
+    {
+      "id": "meet-the-companions.khadijah",
+      "title": {
+        "ar": "خديجة بنت خويلد"
+      },
+      "readings": [
+        {
+          "type": "companionSection",
+          "targetId": "khadijah.before",
+          "parentId": "khadijah"
+        },
+        {
+          "type": "companionSection",
+          "targetId": "khadijah.virtues",
+          "parentId": "khadijah"
+        }
+      ],
+      "reflection": {
+        "ar": "ما الفكرة التي تريد أن تتذكرها من هذه القراءة؟"
+      }
+    },
+    {
+      "id": "meet-the-companions.bilal",
+      "title": {
+        "ar": "بلال بن رباح"
+      },
+      "readings": [
+        {
+          "type": "companionSection",
+          "targetId": "bilal.islam-and-trial",
+          "parentId": "bilal"
+        },
+        {
+          "type": "companionSection",
+          "targetId": "bilal.virtues",
+          "parentId": "bilal"
+        }
+      ],
+      "reflection": {
+        "ar": "ما الفكرة التي تريد أن تتذكرها من هذه القراءة؟"
+      }
+    },
+    {
+      "id": "meet-the-companions.musab-ibn-umayr",
+      "title": {
+        "ar": "مصعب بن عمير"
+      },
+      "readings": [
+        {
+          "type": "companionSection",
+          "targetId": "musab-ibn-umayr.early-life",
+          "parentId": "musab-ibn-umayr"
+        },
+        {
+          "type": "companionSection",
+          "targetId": "musab-ibn-umayr.teacher-of-madinah",
+          "parentId": "musab-ibn-umayr"
+        }
+      ],
+      "reflection": {
+        "ar": "ما الفكرة التي تريد أن تتذكرها من هذه القراءة؟"
+      }
+    },
+    {
+      "id": "meet-the-companions.aisha",
+      "title": {
+        "ar": "عائشة بنت أبي بكر"
+      },
+      "readings": [
+        {
+          "type": "companionSection",
+          "targetId": "aisha.marriage",
+          "parentId": "aisha"
+        },
+        {
+          "type": "companionSection",
+          "targetId": "aisha.trial",
+          "parentId": "aisha"
+        }
+      ],
+      "reflection": {
+        "ar": "ما الفكرة التي تريد أن تتذكرها من هذه القراءة؟"
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "coverage": "complete"
+  }
+}

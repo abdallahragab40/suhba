@@ -239,6 +239,23 @@ BuildResult buildContent(
     ).toJson(),
   );
 
+  final journeys = [...tree.journeys.where(include)]
+    ..sort((a, b) => a.id.compareTo(b.id));
+  for (final j in journeys) {
+    outputs['journeys/${j.id}.json'] = encode(
+      j.dto
+          .copyWith(
+            schemaVersion: outputSchemaVersion,
+            review: shipped(j.dto.review),
+          )
+          .toJson(),
+    );
+  }
+  outputs['index/journeys.json'] = encode({
+    'schemaVersion': outputSchemaVersion,
+    'journeyIds': [for (final j in journeys) j.id],
+  });
+
   // The verified text of every ayah the shipped content quotes.
   if (files.quranText case final text?) {
     outputs['quran.json'] = encode(

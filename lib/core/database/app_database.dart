@@ -52,9 +52,62 @@ class ReadingProgressEntries extends Table {
   Set<Column> get primaryKey => {targetType, targetId};
 }
 
-/// The app's local database: user data only (content ships as assets).
-/// Nothing in it leaves the device.
-@DriftDatabase(tables: [Bookmarks, ReadingProgressEntries])
+/// Spaced review history, keyed independently of shuffled answer choices.
+@DataClassName('ReviewItemRow')
+class ReviewItems extends Table {
+  TextColumn get questionKey => text()();
+  // Drift resolves column references inside check expressions at generation.
+  // ignore: recursive_getters
+  IntColumn get box => integer().check(box.isBetweenValues(1, 5))();
+
+  /// UTC midnight encoding a local calendar date, rather than an instant.
+  DateTimeColumn get dueOn => dateTime()();
+  DateTimeColumn get lastAnsweredAt => dateTime()();
+  IntColumn get timesRight =>
+      // ignore: recursive_getters
+      integer().check(timesRight.isBiggerOrEqualValue(0))();
+  IntColumn get timesWrong =>
+      // ignore: recursive_getters
+      integer().check(timesWrong.isBiggerOrEqualValue(0))();
+
+  @override
+  Set<Column> get primaryKey => {questionKey};
+}
+
+/// One enrollment per journey; multiple journeys may be followed at once.
+@DataClassName('JourneyEnrollmentRow')
+class JourneyEnrollments extends Table {
+  TextColumn get journeyId => text()();
+  DateTimeColumn get startedAt => dateTime()();
+  DateTimeColumn get updatedAt => dateTime()();
+  BoolColumn get paused => boolean().withDefault(const Constant(false))();
+  @override
+  Set<Column> get primaryKey => {journeyId};
+}
+
+@DataClassName('JourneyStepProgressRow')
+class JourneyProgressEntries extends Table {
+  TextColumn get journeyId => text()();
+  TextColumn get stepId => text()();
+  DateTimeColumn get startedAt => dateTime()();
+  DateTimeColumn get updatedAt => dateTime()();
+  DateTimeColumn get completedAt => dateTime().nullable()();
+  BoolColumn get skipped => boolean().withDefault(const Constant(false))();
+  TextColumn get answeredKeys => text().withDefault(const Constant('[]'))();
+  @override
+  Set<Column> get primaryKey => {journeyId, stepId};
+}
+
+/// User data only; exported solely at the reader's request.
+@DriftDatabase(
+  tables: [
+    Bookmarks,
+    ReadingProgressEntries,
+    ReviewItems,
+    JourneyEnrollments,
+    JourneyProgressEntries,
+  ],
+)
 class AppDatabase extends _$AppDatabase {
   AppDatabase(super.executor);
 
@@ -62,7 +115,7 @@ class AppDatabase extends _$AppDatabase {
   factory AppDatabase.open() => AppDatabase(driftDatabase(name: 'suhba'));
 
   @override
-  int get schemaVersion => 3;
+  int get schemaVersion => 5;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -85,6 +138,11 @@ class AppDatabase extends _$AppDatabase {
           schema.readingProgressEntries,
           schema.readingProgressEntries.blockOffset,
         );
+      },
+      from3To4: (m, schema) => m.createTable(schema.reviewItems),
+      from4To5: (m, schema) async {
+        await m.createTable(schema.journeyEnrollments);
+        await m.createTable(schema.journeyProgressEntries);
       },
     ),
   );

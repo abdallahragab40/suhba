@@ -7,10 +7,14 @@ import 'package:suhba/core/storage/settings_store.dart';
 import 'package:suhba/features/bookmarks/data/drift_bookmark_repository.dart';
 import 'package:suhba/features/bookmarks/domain/bookmark.dart';
 import 'package:suhba/features/bookmarks/presentation/bookmark_providers.dart';
+import 'package:suhba/features/journeys/domain/journey_progress.dart';
+import 'package:suhba/features/journeys/presentation/journey_providers.dart';
 import 'package:suhba/features/reading_progress/data/drift_reading_progress_repository.dart';
 import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
 import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
 import 'package:suhba/features/reading_progress/presentation/reading_history_page.dart';
+import 'package:suhba/features/review/domain/review_item.dart';
+import 'package:suhba/features/review/presentation/review_providers.dart';
 
 import '../helpers/app_harness.dart';
 
@@ -262,6 +266,55 @@ void main() {
           await app.database.select(app.database.bookmarks).get(),
           isEmpty,
         );
+        expect(await rows(app), hasLength(2));
+      });
+
+      testApp('review and journeys: clears both, keeps saved items and '
+          'the history', (tester) async {
+        final app = await withData(tester, MemorySettingsStore());
+        final db = app.database;
+        final at = DateTime.utc(2026, 10, 8, 21);
+        await app.container
+            .read(reviewRepositoryProvider)
+            .save(
+              ReviewItem(
+                questionKey: 'story:the-cave:abu-bakr',
+                box: 2,
+                dueOn: DateTime.utc(2026, 10, 11),
+                lastAnsweredAt: at,
+                timesRight: 1,
+                timesWrong: 0,
+              ),
+            );
+        final journeys = app.container.read(journeyRepositoryProvider);
+        await journeys.saveEnrollment(
+          JourneyEnrollment(
+            journeyId: 'moments-and-lessons',
+            startedAt: at,
+            updatedAt: at,
+            paused: false,
+          ),
+        );
+        await journeys.saveStep(
+          JourneyStepProgress(
+            journeyId: 'moments-and-lessons',
+            stepId: 'first',
+            startedAt: at,
+            updatedAt: at,
+            completedAt: at,
+          ),
+        );
+        await tester.pumpAndSettle();
+        await tester.tap(find.text('مسح سجل المراجعة والرحلات'));
+        await tester.pumpAndSettle();
+        expect(find.text('مسح سجل المراجعة والرحلات؟'), findsOneWidget);
+        await tester.tap(find.widgetWithText(FilledButton, 'مسح'));
+        await tester.pumpAndSettle();
+        expect(find.text('مُسح سجل المراجعة والرحلات.'), findsOneWidget);
+        expect(await db.select(db.reviewItems).get(), isEmpty);
+        expect(await db.select(db.journeyEnrollments).get(), isEmpty);
+        expect(await db.select(db.journeyProgressEntries).get(), isEmpty);
+        expect(await db.select(db.bookmarks).get(), hasLength(1));
         expect(await rows(app), hasLength(2));
       });
     });

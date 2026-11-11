@@ -40,5 +40,10 @@
       "periods",
       "placePanel"
     ]
-  }
+  },
+  "journeyIds": [
+    "seerah-in-thirty-steps",
+    "meet-the-companions",
+    "moments-and-lessons"
+  ]
 }

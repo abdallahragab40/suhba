@@ -30,6 +30,19 @@ if (System.getenv("SUHBA_PUBLIC_BUILD") == "true" && !hasReleaseKey) {
     )
 }
 
+// Device tests use their own sandbox, including shared preferences and alarms.
+val isolatedIntegrationTest = System.getenv("SUHBA_INTEGRATION_TEST") == "true"
+val isolatedDeliveryTest = System.getenv("SUHBA_REMINDER_DELIVERY_TEST") == "true"
+val reminderSmokeTest = System.getenv("SUHBA_REMINDER_TEST") == "true"
+val integrationTarget = providers.gradleProperty("target").orNull
+    ?.replace('\\', '/')?.contains("integration_test/") == true
+if (integrationTarget && !isolatedIntegrationTest && !isolatedDeliveryTest && !reminderSmokeTest) {
+    throw GradleException("Set SUHBA_INTEGRATION_TEST=true to protect the installed reader app.")
+}
+if ((isolatedIntegrationTest || isolatedDeliveryTest) && System.getenv("SUHBA_PUBLIC_BUILD") == "true") {
+    throw GradleException("An isolated test application cannot be a public build.")
+}
+
 android {
     // Code namespace only; independent of the published application ID.
     namespace = "com.abdallahragab.suhba"
@@ -42,12 +55,15 @@ android {
     }
 
     compileOptions {
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
 
     defaultConfig {
         applicationId = appIdentity.getProperty("applicationId")
+        if (isolatedIntegrationTest) applicationIdSuffix = ".integration_test"
+        if (isolatedDeliveryTest) applicationIdSuffix = ".delivery_test"
         resValue("string", "app_name", appIdentity.getProperty("appName"))
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
@@ -69,6 +85,12 @@ android {
     }
 
     buildTypes {
+        debug {
+            // Native reminder smoke tests never replace an installed reader build.
+            if (System.getenv("SUHBA_REMINDER_TEST") == "true") {
+                applicationIdSuffix = ".reminders_test"
+            }
+        }
         release {
             signingConfig = signingConfigs.getByName(if (hasReleaseKey) "release" else "debug")
         }
@@ -79,6 +101,10 @@ kotlin {
     compilerOptions {
         jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
     }
+}
+
+dependencies {
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
 }
 
 flutter {

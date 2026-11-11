@@ -26,7 +26,13 @@ void main() {
           'make-migrations',
     );
     final exported = jsonEncode(jsonDecode(file.readAsStringSync()));
-    for (final table in ['bookmarks', 'reading_progress_entries']) {
+    for (final table in [
+      'bookmarks',
+      'reading_progress_entries',
+      'review_items',
+      'journey_enrollments',
+      'journey_progress_entries',
+    ]) {
       expect(exported, contains('"$table"'), reason: table);
     }
   });
@@ -38,6 +44,9 @@ void main() {
         .customSelect("SELECT name FROM sqlite_master WHERE type = 'table'")
         .map((row) => row.read<String>('name'))
         .get();
-    expect(tables, containsAll(['bookmarks', 'reading_progress_entries']));
+    expect(
+      tables,
+      containsAll(['bookmarks', 'reading_progress_entries', 'review_items']),
+    );
   });
 }

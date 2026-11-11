@@ -1,4 +1,5 @@
 import 'package:suhba/core/result/result.dart';
+import 'package:suhba/features/journeys/domain/journey.dart';
 import 'package:suhba/shared/content/domain/atlas.dart';
 import 'package:suhba/shared/content/domain/catalog.dart';
 import 'package:suhba/shared/content/domain/companion.dart';
@@ -10,6 +11,8 @@ import 'package:suhba/shared/content/domain/story.dart';
 /// Read access to the content. Today it reads bundled assets; a remote
 /// content-pack source can implement it later without UI changes.
 abstract interface class ContentRepository {
+  Future<Result<List<Journey>>> journeys();
+  Future<Result<Journey>> journey(String id);
   Future<Result<ContentManifest>> manifest();
 
   /// Summaries of every companion, in display order.

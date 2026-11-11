@@ -1167,6 +1167,27 @@
   "@settingsClearSaved": {
     "description": "Settings: delete every saved item."
   },
+  "settingsClearLearning": "مسح سجل المراجعة والرحلات",
+  "@settingsClearLearning": {
+    "description": "Settings: delete review history and journey progress."
+  },
+  "settingsLearningCounts": "أسئلة المراجعة: {reviews} · الرحلات: {journeys}",
+  "@settingsLearningCounts": {
+    "description": "Subtitle: how much review and journey data there is.",
+    "placeholders": {"reviews": {"type": "String"}, "journeys": {"type": "String"}}
+  },
+  "clearLearningTitle": "مسح سجل المراجعة والرحلات؟",
+  "@clearLearningTitle": {
+    "description": "Confirmation dialog title."
+  },
+  "clearLearningMessage": "ستُحذف إجاباتك ومواعيد مراجعتها وتقدّمك في الرحلات من هذا الجهاز، ولا يمكن التراجع عن ذلك. لن تتأثر المحفوظات ولا سجل القراءة ولا الإعدادات.",
+  "@clearLearningMessage": {
+    "description": "Confirmation dialog message."
+  },
+  "learningCleared": "مُسح سجل المراجعة والرحلات.",
+  "@learningCleared": {
+    "description": "Snack bar after clearing review and journey data."
+  },
   "settingsNothingToClear": "لا شيء لمسحه",
   "@settingsNothingToClear": {
     "description": "Subtitle when there is no data of that kind."
@@ -2000,7 +2021,7 @@
   "@settingsExport": {
     "description": "Settings: export saved items and positions to a file."
   },
-  "settingsExportSubtitle": "ملف بالمحفوظات ومواضع القراءة، تحفظه أو تنقله إلى جهاز آخر.",
+  "settingsExportSubtitle": "ملف بالمحفوظات ومواضع القراءة وتقدّم الرحلات وسجل المراجعة، تحفظه أو تنقله إلى جهاز آخر.",
   "@settingsExportSubtitle": {
     "description": "Settings: export subtitle."
   },
@@ -2017,6 +2038,15 @@
     "description": "Share subject of the export file.",
     "placeholders": {
       "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "importReviewCount": "سجلات مراجعة ستُضاف أو تُحدَّث: {count}.",
+  "@importReviewCount": {
+    "description": "Review histories included in the import",
+    "placeholders": {
+      "count": {
         "type": "String"
       }
     }
@@ -2119,9 +2149,14 @@
   "welcome3Kicker": "الصحابة",
   "welcome3Title": "سِيَر أصحابه وقصصهم",
   "welcome3Body": "العشرة المبشّرون بالجنة بسير كاملة، ونخبة من الصحابة والصحابيات بملفات مختصرة، وقصص من السيرة تُقرأ في جلسة.",
+  "welcomeJourneysKicker": "رحلتك",
+  "welcomeWhatsNewKicker": "جديد في صُحبة",
+  "welcomeJourneysTitle": "خطوة كل يوم",
+  "welcomeJourneysBody": "رحلات قصيرة في السيرة وسِيَر الصحابة تقرؤها خطوةً بعد خطوة، وأسئلة مراجعة تعيد إليك ما قرأته في وقته، وتذكير يومي إن شئت.",
   "welcome4Kicker": "المنهج",
   "welcome4Title": "كلّ خبر بمصدره",
   "welcome4Body": "تُعزى الأخبار إلى كتب الحديث والسيرة، وتُبيَّن درجتها: ثابت، أو رواية تاريخية، أو مختلف فيه. والمحتوى في مراجعة أولية، ولا يُعتمد قبل أن يعتمده عالم مختص. ويعمل التطبيق كلّه دون اتصال.",
+  "welcome4BodyPublished": "تُعزى الأخبار إلى كتب الحديث والسيرة، وتُبيَّن درجتها: ثابت، أو رواية تاريخية، أو مختلف فيه. وقد راجع المحتوى مختصون مؤهلون قبل نشره. ويعمل التطبيق كلّه دون اتصال.",
   "quizTitle": "اختبر معلوماتك",
   "quizSubtitle": "أسئلة جديدة في كل جولة، من الصحابة والسيرة، وكل إجابة تُحيلك إلى موضعها.",
   "quizModeMixed": "جولة منوّعة",
@@ -2134,6 +2169,7 @@
   "@quizBest": {"placeholders": {"score": {"type": "String"}, "total": {"type": "String"}}},
   "quizNoBest": "لم تُلعب بعد",
   "quizNote": "تُولَّد الأسئلة في كل مرة من محتوى التطبيق نفسه، وهو في مراجعة أولية.",
+  "quizNotePublished": "تُولَّد الأسئلة في كل مرة من محتوى التطبيق نفسه.",
   "quizProgress": "السؤال {current} من {total}",
   "@quizProgress": {"placeholders": {"current": {"type": "String"}, "total": {"type": "String"}}},
   "quizStreak": "{count} متتالية",
@@ -2320,5 +2356,338 @@
         "type": "String"
       }
     }
-  }
+  },
+  "journeysTitle": "الرحلات",
+  "@journeysTitle": {
+    "description": "Guided journeys: journeysTitle"
+  },
+  "journeysIntro": "قراءات مترابطة، خطوة بعد خطوة. اختر رحلة وسِر فيها بالوتيرة التي تناسبك.",
+  "@journeysIntro": {
+    "description": "Guided journeys: journeysIntro"
+  },
+  "journeyPacing": "الخطوات بالترتيب، ولا يلزم أن تقرأها في أيام متتالية.",
+  "@journeyPacing": {
+    "description": "Guided journeys: journeyPacing"
+  },
+  "journeyLength": "{stepCount, plural, =1{خطوة واحدة} =2{خطوتان} few{{steps} خطوات} other{{steps} خطوة}}، {minuteCount, plural, =1{نحو دقيقة للخطوة} =2{نحو دقيقتين للخطوة} few{نحو {minutes} دقائق للخطوة} other{نحو {minutes} دقيقة للخطوة}}",
+  "@journeyLength": {
+    "description": "Guided journeys: journeyLength",
+    "placeholders": {
+      "stepCount": {
+        "type": "int"
+      },
+      "steps": {
+        "type": "String"
+      },
+      "minuteCount": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyProgress": "أنجزت {done} من {totalCount, plural, =1{خطوة واحدة} =2{خطوتين} few{{total} خطوات} other{{total} خطوة}}",
+  "@journeyProgress": {
+    "description": "Guided journeys: journeyProgress",
+    "placeholders": {
+      "done": {
+        "type": "String"
+      },
+      "totalCount": {
+        "type": "int"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyStart": "ابدأ الرحلة",
+  "@journeyStart": {
+    "description": "Guided journeys: journeyStart"
+  },
+  "journeyContinue": "تابع الرحلة",
+  "@journeyContinue": {
+    "description": "Guided journeys: journeyContinue"
+  },
+  "journeyPause": "إيقاف مؤقت",
+  "@journeyPause": {
+    "description": "Guided journeys: journeyPause"
+  },
+  "journeyResume": "استئناف الرحلة",
+  "@journeyResume": {
+    "description": "Guided journeys: journeyResume"
+  },
+  "journeyPaused": "الرحلة متوقفة مؤقتًا. استأنفها حين تكون مستعدًا.",
+  "@journeyPaused": {
+    "description": "Guided journeys: journeyPaused"
+  },
+  "journeyRestart": "ابدأ الرحلة من جديد",
+  "@journeyRestart": {
+    "description": "Guided journeys: journeyRestart"
+  },
+  "journeyRestartMessage": "سيُعاد تقدّم هذه الرحلة إلى البداية. يبقى سجل القراءة والمراجعة، وتقدّم الرحلات الأخرى محفوظًا.",
+  "@journeyRestartMessage": {
+    "description": "Guided journeys: journeyRestartMessage"
+  },
+  "journeyFinished": "أتممت الرحلة. يمكنك العودة إلى قراءاتها متى شئت.",
+  "@journeyFinished": {
+    "description": "Guided journeys: journeyFinished"
+  },
+  "journeyStepNumber": "الخطوة {number} من {total}",
+  "@journeyStepNumber": {
+    "description": "Guided journeys: journeyStepNumber",
+    "placeholders": {
+      "number": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyLocked": "أكمل الخطوة السابقة أولًا",
+  "@journeyLocked": {
+    "description": "Guided journeys: journeyLocked"
+  },
+  "journeySkipped": "تُخطّيت هذه الخطوة لأن إحدى قراءاتها لم تعد متاحة. تقدّمك السابق محفوظ.",
+  "@journeySkipped": {
+    "description": "Guided journeys: journeySkipped"
+  },
+  "journeyReading": "قراءة الخطوة",
+  "@journeyReading": {
+    "description": "Guided journeys: journeyReading"
+  },
+  "journeyReadNext": "تابع القراءة",
+  "@journeyReadNext": {
+    "description": "Guided journeys: journeyReadNext"
+  },
+  "journeyMinutes": "{count, plural, =1{نحو دقيقة قراءة} =2{نحو دقيقتَي قراءة} few{نحو {minutes} دقائق قراءة} other{نحو {minutes} دقيقة قراءة}}",
+  "@journeyMinutes": {
+    "description": "Guided journeys: journeyMinutes",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyQuestions": "استرجع ما قرأت",
+  "@journeyQuestions": {
+    "description": "Guided journeys: journeyQuestions"
+  },
+  "journeyReflection": "للتأمل",
+  "@journeyReflection": {
+    "description": "Guided journeys: journeyReflection"
+  },
+  "journeyReflectionOnly": "لا توجد أسئلة مولّدة مناسبة لهذه القراءة الآن. خذ وقتك مع سؤال التأمل.",
+  "@journeyReflectionOnly": {
+    "description": "Guided journeys: journeyReflectionOnly"
+  },
+  "journeyCompleteStep": "أكملت الخطوة",
+  "@journeyCompleteStep": {
+    "description": "Guided journeys: journeyCompleteStep"
+  },
+  "journeyAnswerRecorded": "سُجّلت إجابتك",
+  "@journeyAnswerRecorded": {
+    "description": "Guided journeys: journeyAnswerRecorded"
+  },
+  "journeyCorrectAnswer": "الإجابة: {answer}",
+  "@journeyCorrectAnswer": {
+    "description": "Guided journeys: journeyCorrectAnswer",
+    "placeholders": {
+      "answer": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyUnavailable": "هذه الرحلة غير متاحة في هذا الإصدار.",
+  "@journeyUnavailable": {
+    "description": "Guided journeys: journeyUnavailable"
+  },
+  "importJourneyCount": "رحلات ستُضاف أو يُحدَّث تقدّمها: {count}.",
+  "@importJourneyCount": {
+    "description": "Guided journeys: importJourneyCount",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "nextStepTitle": "خطوتك التالية",
+  "@nextStepTitle": {
+    "description": "Review and next step: nextStepTitle"
+  },
+  "nextStepStartBody": "اختر رحلة وابدأ بقراءة قصيرة، ثم عد متى شئت.",
+  "@nextStepStartBody": {
+    "description": "Review and next step: nextStepStartBody"
+  },
+  "reviewTitle": "مراجعة",
+  "@reviewTitle": {
+    "description": "Review and next step: reviewTitle"
+  },
+  "reviewIntro": "أسئلة من قراءاتك، تعود إليها في وقتها.",
+  "@reviewIntro": {
+    "description": "Review and next step: reviewIntro"
+  },
+  "reviewStart": "ابدأ المراجعة",
+  "@reviewStart": {
+    "description": "Review and next step: reviewStart"
+  },
+  "reviewProgress": "المراجعة {number} من {total}",
+  "@reviewProgress": {
+    "description": "Review and next step: reviewProgress",
+    "placeholders": {
+      "number": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "reviewEmptyTitle": "لا توجد أسئلة مستحقة الآن",
+  "@reviewEmptyTitle": {
+    "description": "Review and next step: reviewEmptyTitle"
+  },
+  "reviewEmptyBody": "يمكنك العودة إلى رحلة أو إلى ما تعلّمته.",
+  "@reviewEmptyBody": {
+    "description": "Review and next step: reviewEmptyBody"
+  },
+  "reviewCompleteTitle": "أتممت هذه المراجعة",
+  "@reviewCompleteTitle": {
+    "description": "Review and next step: reviewCompleteTitle"
+  },
+  "reviewCompleteBody": "سُجّلت إجاباتك. ستعود الأسئلة في موعدها التالي.",
+  "@reviewCompleteBody": {
+    "description": "Review and next step: reviewCompleteBody"
+  },
+  "reviewReadPassage": "اقرأ الموضع",
+  "@reviewReadPassage": {
+    "description": "Review and next step: reviewReadPassage"
+  },
+  "reviewAlreadyAnswered": "تغيّر سجل هذا السؤال منذ فتحه؛ احتفظنا بالإجابة الأحدث.",
+  "@reviewAlreadyAnswered": {
+    "description": "Review and next step: reviewAlreadyAnswered"
+  },
+  "learnedTitle": "ما تعلّمتُه",
+  "@learnedTitle": {
+    "description": "Review and next step: learnedTitle"
+  },
+  "learnedIntro": "موضوعات مررت بها في المراجعة. تتغير حالتها مع إجاباتك، ولا تتراجع إن فاتك يوم.",
+  "@learnedIntro": {
+    "description": "Review and next step: learnedIntro"
+  },
+  "learnedEmpty": "ابدأ برحلة، وتظهر هنا الموضوعات التي تراجعها.",
+  "@learnedEmpty": {
+    "description": "Review and next step: learnedEmpty"
+  },
+  "learnedMastered": "راسخة",
+  "@learnedMastered": {
+    "description": "Review and next step: learnedMastered"
+  },
+  "learnedLearning": "قيد التعلّم",
+  "@learnedLearning": {
+    "description": "Review and next step: learnedLearning"
+  },
+  "learnedRevisit": "تستحق المراجعة",
+  "@learnedRevisit": {
+    "description": "Review and next step: learnedRevisit"
+  },
+  "reviewDueCount": "{count, plural, =1{سؤال واحد للمراجعة اليوم} =2{سؤالان للمراجعة اليوم} few{{n} أسئلة للمراجعة اليوم} other{{n} سؤالًا للمراجعة اليوم}}",
+  "@reviewDueCount": {
+    "description": "Review and next step: reviewDueCount",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "reminderGroup": "التذكير",
+  "@reminderGroup": {
+    "description": "Optional reading reminder: reminderGroup"
+  },
+  "reminderTitle": "تذكير يومي",
+  "@reminderTitle": {
+    "description": "Optional reading reminder: reminderTitle"
+  },
+  "reminderIntro": "اختر وقتًا يناسبك لقراءة خطوة أو مراجعتها. يبقى التذكير متوقفًا حتى تفعّله.",
+  "@reminderIntro": {
+    "description": "Optional reading reminder: reminderIntro"
+  },
+  "reminderSwitch": "تفعيل التذكير",
+  "@reminderSwitch": {
+    "description": "Optional reading reminder: reminderSwitch"
+  },
+  "reminderTime": "وقت التذكير",
+  "@reminderTime": {
+    "description": "Optional reading reminder: reminderTime"
+  },
+  "reminderOnAt": "يوميًا نحو {time}",
+  "@reminderOnAt": {
+    "description": "Optional reading reminder: reminderOnAt",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "reminderOffAt": "متوقف. الوقت: {time}",
+  "@reminderOffAt": {
+    "description": "Optional reading reminder: reminderOffAt",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "reminderDenied": "لم يُسمح بالإشعارات. يمكنك السماح بها من إعدادات الجهاز، ثم تفعيل التذكير هنا.",
+  "@reminderDenied": {
+    "description": "Optional reading reminder: reminderDenied"
+  },
+  "reminderFailed": "تعذّر ضبط التذكير. أعد المحاولة.",
+  "@reminderFailed": {
+    "description": "Optional reading reminder: reminderFailed"
+  },
+  "reminderSystemSettings": "إعدادات الإشعارات",
+  "@reminderSystemSettings": {
+    "description": "Optional reading reminder: reminderSystemSettings"
+  },
+  "reminderUnsupported": "التذكير متاح على أندرويد في هذا الإصدار.",
+  "@reminderUnsupported": {
+    "description": "Optional reading reminder: reminderUnsupported"
+  },
+  "reminderTimingNote": "قد يصل التذكير بعد الوقت المختار بحسب إعدادات الجهاز. بعد إعادة تشغيل الجهاز، افتح صُحبة مرة لاستعادة التذكير.",
+  "@reminderTimingNote": {
+    "description": "Optional reading reminder: reminderTimingNote"
+  },
+  "reminderNotificationTitle": "موعدك مع صُحبة",
+  "@reminderNotificationTitle": {
+    "description": "Optional reading reminder: reminderNotificationTitle"
+  },
+  "reminderNotificationBody": "خطوة صغيرة في رحلتك مع السيرة والصحابة، متى تيسّر لك.",
+  "@reminderNotificationBody": {
+    "description": "Optional reading reminder: reminderNotificationBody"
+  },
+  "reminderChannel": "التذكير بالقراءة",
+  "@reminderChannel": {
+    "description": "Optional reading reminder: reminderChannel"
+  },
+  "reminderChannelDescription": "تذكير يومي اختياري بالقراءة أو المراجعة.",
+  "@reminderChannelDescription": {
+    "description": "Optional reading reminder: reminderChannelDescription"
+  },
+  "shareCardTitle": "بطاقة من صُحبة",
+  "shareCardSquare": "مربع",
+  "shareCardStory": "قصة",
+  "shareCardDark": "داكن",
+  "shareCardAction": "مشاركة البطاقة",
+  "shareCardFailed": "تعذّر تجهيز البطاقة. حاول مرة أخرى.",
+  "shareCardFooter": "تطبيق صُحبة • السيرة والصحابة\nGoogle Play",
+  "shareCardOption": "بطاقة"
 }

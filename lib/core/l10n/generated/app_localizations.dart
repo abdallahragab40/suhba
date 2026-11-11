@@ -1490,6 +1490,36 @@ abstract class AppLocalizations {
   /// **'مسح المحفوظات'**
   String get settingsClearSaved;
 
+  /// Settings: delete review history and journey progress.
+  ///
+  /// In ar, this message translates to:
+  /// **'مسح سجل المراجعة والرحلات'**
+  String get settingsClearLearning;
+
+  /// Subtitle: how much review and journey data there is.
+  ///
+  /// In ar, this message translates to:
+  /// **'أسئلة المراجعة: {reviews} · الرحلات: {journeys}'**
+  String settingsLearningCounts(String reviews, String journeys);
+
+  /// Confirmation dialog title.
+  ///
+  /// In ar, this message translates to:
+  /// **'مسح سجل المراجعة والرحلات؟'**
+  String get clearLearningTitle;
+
+  /// Confirmation dialog message.
+  ///
+  /// In ar, this message translates to:
+  /// **'ستُحذف إجاباتك ومواعيد مراجعتها وتقدّمك في الرحلات من هذا الجهاز، ولا يمكن التراجع عن ذلك. لن تتأثر المحفوظات ولا سجل القراءة ولا الإعدادات.'**
+  String get clearLearningMessage;
+
+  /// Snack bar after clearing review and journey data.
+  ///
+  /// In ar, this message translates to:
+  /// **'مُسح سجل المراجعة والرحلات.'**
+  String get learningCleared;
+
   /// Subtitle when there is no data of that kind.
   ///
   /// In ar, this message translates to:
@@ -2537,7 +2567,7 @@ abstract class AppLocalizations {
   /// Settings: export subtitle.
   ///
   /// In ar, this message translates to:
-  /// **'ملف بالمحفوظات ومواضع القراءة، تحفظه أو تنقله إلى جهاز آخر.'**
+  /// **'ملف بالمحفوظات ومواضع القراءة وتقدّم الرحلات وسجل المراجعة، تحفظه أو تنقله إلى جهاز آخر.'**
   String get settingsExportSubtitle;
 
   /// Settings: import a reading-data file.
@@ -2557,6 +2587,12 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'بيانات القراءة من {appName}'**
   String exportSubject(String appName);
+
+  /// Review histories included in the import
+  ///
+  /// In ar, this message translates to:
+  /// **'سجلات مراجعة ستُضاف أو تُحدَّث: {count}.'**
+  String importReviewCount(String count);
 
   /// Import confirmation title.
   ///
@@ -2738,6 +2774,30 @@ abstract class AppLocalizations {
   /// **'العشرة المبشّرون بالجنة بسير كاملة، ونخبة من الصحابة والصحابيات بملفات مختصرة، وقصص من السيرة تُقرأ في جلسة.'**
   String get welcome3Body;
 
+  /// No description provided for @welcomeJourneysKicker.
+  ///
+  /// In ar, this message translates to:
+  /// **'رحلتك'**
+  String get welcomeJourneysKicker;
+
+  /// No description provided for @welcomeWhatsNewKicker.
+  ///
+  /// In ar, this message translates to:
+  /// **'جديد في صُحبة'**
+  String get welcomeWhatsNewKicker;
+
+  /// No description provided for @welcomeJourneysTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'خطوة كل يوم'**
+  String get welcomeJourneysTitle;
+
+  /// No description provided for @welcomeJourneysBody.
+  ///
+  /// In ar, this message translates to:
+  /// **'رحلات قصيرة في السيرة وسِيَر الصحابة تقرؤها خطوةً بعد خطوة، وأسئلة مراجعة تعيد إليك ما قرأته في وقته، وتذكير يومي إن شئت.'**
+  String get welcomeJourneysBody;
+
   /// No description provided for @welcome4Kicker.
   ///
   /// In ar, this message translates to:
@@ -2755,6 +2815,12 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'تُعزى الأخبار إلى كتب الحديث والسيرة، وتُبيَّن درجتها: ثابت، أو رواية تاريخية، أو مختلف فيه. والمحتوى في مراجعة أولية، ولا يُعتمد قبل أن يعتمده عالم مختص. ويعمل التطبيق كلّه دون اتصال.'**
   String get welcome4Body;
+
+  /// No description provided for @welcome4BodyPublished.
+  ///
+  /// In ar, this message translates to:
+  /// **'تُعزى الأخبار إلى كتب الحديث والسيرة، وتُبيَّن درجتها: ثابت، أو رواية تاريخية، أو مختلف فيه. وقد راجع المحتوى مختصون مؤهلون قبل نشره. ويعمل التطبيق كلّه دون اتصال.'**
+  String get welcome4BodyPublished;
 
   /// No description provided for @quizTitle.
   ///
@@ -2821,6 +2887,12 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'تُولَّد الأسئلة في كل مرة من محتوى التطبيق نفسه، وهو في مراجعة أولية.'**
   String get quizNote;
+
+  /// No description provided for @quizNotePublished.
+  ///
+  /// In ar, this message translates to:
+  /// **'تُولَّد الأسئلة في كل مرة من محتوى التطبيق نفسه.'**
+  String get quizNotePublished;
 
   /// No description provided for @quizProgress.
   ///
@@ -3193,6 +3265,431 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'أماكن أخرى في {city}'**
   String placeVisitCity(String city);
+
+  /// Guided journeys: journeysTitle
+  ///
+  /// In ar, this message translates to:
+  /// **'الرحلات'**
+  String get journeysTitle;
+
+  /// Guided journeys: journeysIntro
+  ///
+  /// In ar, this message translates to:
+  /// **'قراءات مترابطة، خطوة بعد خطوة. اختر رحلة وسِر فيها بالوتيرة التي تناسبك.'**
+  String get journeysIntro;
+
+  /// Guided journeys: journeyPacing
+  ///
+  /// In ar, this message translates to:
+  /// **'الخطوات بالترتيب، ولا يلزم أن تقرأها في أيام متتالية.'**
+  String get journeyPacing;
+
+  /// Guided journeys: journeyLength
+  ///
+  /// In ar, this message translates to:
+  /// **'{stepCount, plural, =1{خطوة واحدة} =2{خطوتان} few{{steps} خطوات} other{{steps} خطوة}}، {minuteCount, plural, =1{نحو دقيقة للخطوة} =2{نحو دقيقتين للخطوة} few{نحو {minutes} دقائق للخطوة} other{نحو {minutes} دقيقة للخطوة}}'**
+  String journeyLength(
+    int stepCount,
+    String steps,
+    int minuteCount,
+    String minutes,
+  );
+
+  /// Guided journeys: journeyProgress
+  ///
+  /// In ar, this message translates to:
+  /// **'أنجزت {done} من {totalCount, plural, =1{خطوة واحدة} =2{خطوتين} few{{total} خطوات} other{{total} خطوة}}'**
+  String journeyProgress(String done, int totalCount, String total);
+
+  /// Guided journeys: journeyStart
+  ///
+  /// In ar, this message translates to:
+  /// **'ابدأ الرحلة'**
+  String get journeyStart;
+
+  /// Guided journeys: journeyContinue
+  ///
+  /// In ar, this message translates to:
+  /// **'تابع الرحلة'**
+  String get journeyContinue;
+
+  /// Guided journeys: journeyPause
+  ///
+  /// In ar, this message translates to:
+  /// **'إيقاف مؤقت'**
+  String get journeyPause;
+
+  /// Guided journeys: journeyResume
+  ///
+  /// In ar, this message translates to:
+  /// **'استئناف الرحلة'**
+  String get journeyResume;
+
+  /// Guided journeys: journeyPaused
+  ///
+  /// In ar, this message translates to:
+  /// **'الرحلة متوقفة مؤقتًا. استأنفها حين تكون مستعدًا.'**
+  String get journeyPaused;
+
+  /// Guided journeys: journeyRestart
+  ///
+  /// In ar, this message translates to:
+  /// **'ابدأ الرحلة من جديد'**
+  String get journeyRestart;
+
+  /// Guided journeys: journeyRestartMessage
+  ///
+  /// In ar, this message translates to:
+  /// **'سيُعاد تقدّم هذه الرحلة إلى البداية. يبقى سجل القراءة والمراجعة، وتقدّم الرحلات الأخرى محفوظًا.'**
+  String get journeyRestartMessage;
+
+  /// Guided journeys: journeyFinished
+  ///
+  /// In ar, this message translates to:
+  /// **'أتممت الرحلة. يمكنك العودة إلى قراءاتها متى شئت.'**
+  String get journeyFinished;
+
+  /// Guided journeys: journeyStepNumber
+  ///
+  /// In ar, this message translates to:
+  /// **'الخطوة {number} من {total}'**
+  String journeyStepNumber(String number, String total);
+
+  /// Guided journeys: journeyLocked
+  ///
+  /// In ar, this message translates to:
+  /// **'أكمل الخطوة السابقة أولًا'**
+  String get journeyLocked;
+
+  /// Guided journeys: journeySkipped
+  ///
+  /// In ar, this message translates to:
+  /// **'تُخطّيت هذه الخطوة لأن إحدى قراءاتها لم تعد متاحة. تقدّمك السابق محفوظ.'**
+  String get journeySkipped;
+
+  /// Guided journeys: journeyReading
+  ///
+  /// In ar, this message translates to:
+  /// **'قراءة الخطوة'**
+  String get journeyReading;
+
+  /// Guided journeys: journeyReadNext
+  ///
+  /// In ar, this message translates to:
+  /// **'تابع القراءة'**
+  String get journeyReadNext;
+
+  /// Guided journeys: journeyMinutes
+  ///
+  /// In ar, this message translates to:
+  /// **'{count, plural, =1{نحو دقيقة قراءة} =2{نحو دقيقتَي قراءة} few{نحو {minutes} دقائق قراءة} other{نحو {minutes} دقيقة قراءة}}'**
+  String journeyMinutes(int count, String minutes);
+
+  /// Guided journeys: journeyQuestions
+  ///
+  /// In ar, this message translates to:
+  /// **'استرجع ما قرأت'**
+  String get journeyQuestions;
+
+  /// Guided journeys: journeyReflection
+  ///
+  /// In ar, this message translates to:
+  /// **'للتأمل'**
+  String get journeyReflection;
+
+  /// Guided journeys: journeyReflectionOnly
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد أسئلة مولّدة مناسبة لهذه القراءة الآن. خذ وقتك مع سؤال التأمل.'**
+  String get journeyReflectionOnly;
+
+  /// Guided journeys: journeyCompleteStep
+  ///
+  /// In ar, this message translates to:
+  /// **'أكملت الخطوة'**
+  String get journeyCompleteStep;
+
+  /// Guided journeys: journeyAnswerRecorded
+  ///
+  /// In ar, this message translates to:
+  /// **'سُجّلت إجابتك'**
+  String get journeyAnswerRecorded;
+
+  /// Guided journeys: journeyCorrectAnswer
+  ///
+  /// In ar, this message translates to:
+  /// **'الإجابة: {answer}'**
+  String journeyCorrectAnswer(String answer);
+
+  /// Guided journeys: journeyUnavailable
+  ///
+  /// In ar, this message translates to:
+  /// **'هذه الرحلة غير متاحة في هذا الإصدار.'**
+  String get journeyUnavailable;
+
+  /// Guided journeys: importJourneyCount
+  ///
+  /// In ar, this message translates to:
+  /// **'رحلات ستُضاف أو يُحدَّث تقدّمها: {count}.'**
+  String importJourneyCount(String count);
+
+  /// Review and next step: nextStepTitle
+  ///
+  /// In ar, this message translates to:
+  /// **'خطوتك التالية'**
+  String get nextStepTitle;
+
+  /// Review and next step: nextStepStartBody
+  ///
+  /// In ar, this message translates to:
+  /// **'اختر رحلة وابدأ بقراءة قصيرة، ثم عد متى شئت.'**
+  String get nextStepStartBody;
+
+  /// Review and next step: reviewTitle
+  ///
+  /// In ar, this message translates to:
+  /// **'مراجعة'**
+  String get reviewTitle;
+
+  /// Review and next step: reviewIntro
+  ///
+  /// In ar, this message translates to:
+  /// **'أسئلة من قراءاتك، تعود إليها في وقتها.'**
+  String get reviewIntro;
+
+  /// Review and next step: reviewStart
+  ///
+  /// In ar, this message translates to:
+  /// **'ابدأ المراجعة'**
+  String get reviewStart;
+
+  /// Review and next step: reviewProgress
+  ///
+  /// In ar, this message translates to:
+  /// **'المراجعة {number} من {total}'**
+  String reviewProgress(String number, String total);
+
+  /// Review and next step: reviewEmptyTitle
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد أسئلة مستحقة الآن'**
+  String get reviewEmptyTitle;
+
+  /// Review and next step: reviewEmptyBody
+  ///
+  /// In ar, this message translates to:
+  /// **'يمكنك العودة إلى رحلة أو إلى ما تعلّمته.'**
+  String get reviewEmptyBody;
+
+  /// Review and next step: reviewCompleteTitle
+  ///
+  /// In ar, this message translates to:
+  /// **'أتممت هذه المراجعة'**
+  String get reviewCompleteTitle;
+
+  /// Review and next step: reviewCompleteBody
+  ///
+  /// In ar, this message translates to:
+  /// **'سُجّلت إجاباتك. ستعود الأسئلة في موعدها التالي.'**
+  String get reviewCompleteBody;
+
+  /// Review and next step: reviewReadPassage
+  ///
+  /// In ar, this message translates to:
+  /// **'اقرأ الموضع'**
+  String get reviewReadPassage;
+
+  /// Review and next step: reviewAlreadyAnswered
+  ///
+  /// In ar, this message translates to:
+  /// **'تغيّر سجل هذا السؤال منذ فتحه؛ احتفظنا بالإجابة الأحدث.'**
+  String get reviewAlreadyAnswered;
+
+  /// Review and next step: learnedTitle
+  ///
+  /// In ar, this message translates to:
+  /// **'ما تعلّمتُه'**
+  String get learnedTitle;
+
+  /// Review and next step: learnedIntro
+  ///
+  /// In ar, this message translates to:
+  /// **'موضوعات مررت بها في المراجعة. تتغير حالتها مع إجاباتك، ولا تتراجع إن فاتك يوم.'**
+  String get learnedIntro;
+
+  /// Review and next step: learnedEmpty
+  ///
+  /// In ar, this message translates to:
+  /// **'ابدأ برحلة، وتظهر هنا الموضوعات التي تراجعها.'**
+  String get learnedEmpty;
+
+  /// Review and next step: learnedMastered
+  ///
+  /// In ar, this message translates to:
+  /// **'راسخة'**
+  String get learnedMastered;
+
+  /// Review and next step: learnedLearning
+  ///
+  /// In ar, this message translates to:
+  /// **'قيد التعلّم'**
+  String get learnedLearning;
+
+  /// Review and next step: learnedRevisit
+  ///
+  /// In ar, this message translates to:
+  /// **'تستحق المراجعة'**
+  String get learnedRevisit;
+
+  /// Review and next step: reviewDueCount
+  ///
+  /// In ar, this message translates to:
+  /// **'{count, plural, =1{سؤال واحد للمراجعة اليوم} =2{سؤالان للمراجعة اليوم} few{{n} أسئلة للمراجعة اليوم} other{{n} سؤالًا للمراجعة اليوم}}'**
+  String reviewDueCount(int count, String n);
+
+  /// Optional reading reminder: reminderGroup
+  ///
+  /// In ar, this message translates to:
+  /// **'التذكير'**
+  String get reminderGroup;
+
+  /// Optional reading reminder: reminderTitle
+  ///
+  /// In ar, this message translates to:
+  /// **'تذكير يومي'**
+  String get reminderTitle;
+
+  /// Optional reading reminder: reminderIntro
+  ///
+  /// In ar, this message translates to:
+  /// **'اختر وقتًا يناسبك لقراءة خطوة أو مراجعتها. يبقى التذكير متوقفًا حتى تفعّله.'**
+  String get reminderIntro;
+
+  /// Optional reading reminder: reminderSwitch
+  ///
+  /// In ar, this message translates to:
+  /// **'تفعيل التذكير'**
+  String get reminderSwitch;
+
+  /// Optional reading reminder: reminderTime
+  ///
+  /// In ar, this message translates to:
+  /// **'وقت التذكير'**
+  String get reminderTime;
+
+  /// Optional reading reminder: reminderOnAt
+  ///
+  /// In ar, this message translates to:
+  /// **'يوميًا نحو {time}'**
+  String reminderOnAt(String time);
+
+  /// Optional reading reminder: reminderOffAt
+  ///
+  /// In ar, this message translates to:
+  /// **'متوقف. الوقت: {time}'**
+  String reminderOffAt(String time);
+
+  /// Optional reading reminder: reminderDenied
+  ///
+  /// In ar, this message translates to:
+  /// **'لم يُسمح بالإشعارات. يمكنك السماح بها من إعدادات الجهاز، ثم تفعيل التذكير هنا.'**
+  String get reminderDenied;
+
+  /// Optional reading reminder: reminderFailed
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذّر ضبط التذكير. أعد المحاولة.'**
+  String get reminderFailed;
+
+  /// Optional reading reminder: reminderSystemSettings
+  ///
+  /// In ar, this message translates to:
+  /// **'إعدادات الإشعارات'**
+  String get reminderSystemSettings;
+
+  /// Optional reading reminder: reminderUnsupported
+  ///
+  /// In ar, this message translates to:
+  /// **'التذكير متاح على أندرويد في هذا الإصدار.'**
+  String get reminderUnsupported;
+
+  /// Optional reading reminder: reminderTimingNote
+  ///
+  /// In ar, this message translates to:
+  /// **'قد يصل التذكير بعد الوقت المختار بحسب إعدادات الجهاز. بعد إعادة تشغيل الجهاز، افتح صُحبة مرة لاستعادة التذكير.'**
+  String get reminderTimingNote;
+
+  /// Optional reading reminder: reminderNotificationTitle
+  ///
+  /// In ar, this message translates to:
+  /// **'موعدك مع صُحبة'**
+  String get reminderNotificationTitle;
+
+  /// Optional reading reminder: reminderNotificationBody
+  ///
+  /// In ar, this message translates to:
+  /// **'خطوة صغيرة في رحلتك مع السيرة والصحابة، متى تيسّر لك.'**
+  String get reminderNotificationBody;
+
+  /// Optional reading reminder: reminderChannel
+  ///
+  /// In ar, this message translates to:
+  /// **'التذكير بالقراءة'**
+  String get reminderChannel;
+
+  /// Optional reading reminder: reminderChannelDescription
+  ///
+  /// In ar, this message translates to:
+  /// **'تذكير يومي اختياري بالقراءة أو المراجعة.'**
+  String get reminderChannelDescription;
+
+  /// No description provided for @shareCardTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'بطاقة من صُحبة'**
+  String get shareCardTitle;
+
+  /// No description provided for @shareCardSquare.
+  ///
+  /// In ar, this message translates to:
+  /// **'مربع'**
+  String get shareCardSquare;
+
+  /// No description provided for @shareCardStory.
+  ///
+  /// In ar, this message translates to:
+  /// **'قصة'**
+  String get shareCardStory;
+
+  /// No description provided for @shareCardDark.
+  ///
+  /// In ar, this message translates to:
+  /// **'داكن'**
+  String get shareCardDark;
+
+  /// No description provided for @shareCardAction.
+  ///
+  /// In ar, this message translates to:
+  /// **'مشاركة البطاقة'**
+  String get shareCardAction;
+
+  /// No description provided for @shareCardFailed.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذّر تجهيز البطاقة. حاول مرة أخرى.'**
+  String get shareCardFailed;
+
+  /// No description provided for @shareCardFooter.
+  ///
+  /// In ar, this message translates to:
+  /// **'تطبيق صُحبة • السيرة والصحابة\nGoogle Play'**
+  String get shareCardFooter;
+
+  /// No description provided for @shareCardOption.
+  ///
+  /// In ar, this message translates to:
+  /// **'بطاقة'**
+  String get shareCardOption;
 }
 
 class _AppLocalizationsDelegate

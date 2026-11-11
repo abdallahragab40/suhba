@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/app_shell.dart';
 import 'package:suhba/app/router/routes.dart';
-import 'package:suhba/core/database/database_provider.dart';
 import 'package:suhba/core/design_system/theme/app_theme.dart';
 import 'package:suhba/core/design_system/tokens/palette.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
@@ -18,12 +17,13 @@ import 'package:suhba/core/design_system/widgets/section_header.dart';
 import 'package:suhba/core/domain/umm_al_qura.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/core/time/local_day_provider.dart';
 import 'package:suhba/features/companions/presentation/directory/directory_page.dart';
 import 'package:suhba/features/home/domain/daily_featured.dart';
 import 'package:suhba/features/home/domain/this_month.dart';
+import 'package:suhba/features/home/presentation/next_step_card.dart';
 import 'package:suhba/features/quiz/presentation/quiz_banner.dart';
 import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
-import 'package:suhba/features/reading_progress/presentation/continue_reading.dart';
 import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
 import 'package:suhba/features/seerah/presentation/seerah_hub_page.dart';
 import 'package:suhba/features/stories/presentation/story_card.dart';
@@ -39,11 +39,14 @@ import 'package:suhba/shared/content/presentation/record_links.dart';
 import 'package:suhba/shared/content/providers.dart';
 import 'package:suhba/shared/visuals/presentation/infographic_view.dart';
 
-/// Home (S02), an editorial front page. In order: the Seerah's opening
-/// scene with begin/continue; the reader's unfinished reading; the next
-/// Seerah chapters on paper; one decisive episode on ink with its visual;
-/// what happened in the current Hijri month; the companion of the day with a passage from their biography; the
-/// atlas; selected events from the archive; then the collections.
+/// Home (S02): the next-step card (today's journey step, due review, or the
+/// most recent unfinished reading; the full list of positions is in Saved)
+/// precedes an editorial front page. Editorial order: the Seerah's opening
+/// scene with begin/continue; the next Seerah chapters on paper; one
+/// decisive episode on ink with its visual; what happened in the current
+/// Hijri month; the companion of the day with a passage from their
+/// biography; the atlas; selected events from the archive; then the
+/// collections.
 ///
 /// Sections alternate between paper and ink, and each has its own
 /// composition, rather than one repeated card.
@@ -80,7 +83,7 @@ class HomePage extends ConsumerWidget {
         categories: c,
         stories: stories.value ?? const [],
         seerah: seerah.value,
-        today: ref.watch(clockProvider)(),
+        today: ref.watch(localDayProvider),
       );
     } else {
       body = const Padding(
@@ -187,6 +190,7 @@ class _Home extends ConsumerWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          paper([const NextStepCard()]),
           if (seerah != null)
             SeerahOpening(index: seerah, progress: progress, compact: true),
           paper([
@@ -194,19 +198,6 @@ class _Home extends ConsumerWidget {
               const SizedBox(height: AppSpacing.md),
               const DraftBanner(),
             ],
-            // Not numbered: it only appears when there is unfinished reading.
-            ContinueReadingList(
-              header: Padding(
-                padding: const EdgeInsetsDirectional.only(
-                  top: AppSpacing.xl,
-                  bottom: AppSpacing.sm,
-                ),
-                child: SectionHeader(
-                  kicker: l10n.continueKicker,
-                  title: l10n.continueTitle,
-                ),
-              ),
-            ),
             if (nextChapters.isNotEmpty) ...[
               header(l10n.homeSeerahKicker, l10n.homeSeerahTitle),
               for (final c in nextChapters)

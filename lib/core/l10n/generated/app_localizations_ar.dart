@@ -840,6 +840,24 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsClearSaved => 'مسح المحفوظات';
 
   @override
+  String get settingsClearLearning => 'مسح سجل المراجعة والرحلات';
+
+  @override
+  String settingsLearningCounts(String reviews, String journeys) {
+    return 'أسئلة المراجعة: $reviews · الرحلات: $journeys';
+  }
+
+  @override
+  String get clearLearningTitle => 'مسح سجل المراجعة والرحلات؟';
+
+  @override
+  String get clearLearningMessage =>
+      'ستُحذف إجاباتك ومواعيد مراجعتها وتقدّمك في الرحلات من هذا الجهاز، ولا يمكن التراجع عن ذلك. لن تتأثر المحفوظات ولا سجل القراءة ولا الإعدادات.';
+
+  @override
+  String get learningCleared => 'مُسح سجل المراجعة والرحلات.';
+
+  @override
   String get settingsNothingToClear => 'لا شيء لمسحه';
 
   @override
@@ -1439,7 +1457,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get settingsExportSubtitle =>
-      'ملف بالمحفوظات ومواضع القراءة، تحفظه أو تنقله إلى جهاز آخر.';
+      'ملف بالمحفوظات ومواضع القراءة وتقدّم الرحلات وسجل المراجعة، تحفظه أو تنقله إلى جهاز آخر.';
 
   @override
   String get settingsImport => 'استيراد بيانات القراءة';
@@ -1451,6 +1469,11 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String exportSubject(String appName) {
     return 'بيانات القراءة من $appName';
+  }
+
+  @override
+  String importReviewCount(String count) {
+    return 'سجلات مراجعة ستُضاف أو تُحدَّث: $count.';
   }
 
   @override
@@ -1558,6 +1581,19 @@ class AppLocalizationsAr extends AppLocalizations {
       'العشرة المبشّرون بالجنة بسير كاملة، ونخبة من الصحابة والصحابيات بملفات مختصرة، وقصص من السيرة تُقرأ في جلسة.';
 
   @override
+  String get welcomeJourneysKicker => 'رحلتك';
+
+  @override
+  String get welcomeWhatsNewKicker => 'جديد في صُحبة';
+
+  @override
+  String get welcomeJourneysTitle => 'خطوة كل يوم';
+
+  @override
+  String get welcomeJourneysBody =>
+      'رحلات قصيرة في السيرة وسِيَر الصحابة تقرؤها خطوةً بعد خطوة، وأسئلة مراجعة تعيد إليك ما قرأته في وقته، وتذكير يومي إن شئت.';
+
+  @override
   String get welcome4Kicker => 'المنهج';
 
   @override
@@ -1566,6 +1602,10 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get welcome4Body =>
       'تُعزى الأخبار إلى كتب الحديث والسيرة، وتُبيَّن درجتها: ثابت، أو رواية تاريخية، أو مختلف فيه. والمحتوى في مراجعة أولية، ولا يُعتمد قبل أن يعتمده عالم مختص. ويعمل التطبيق كلّه دون اتصال.';
+
+  @override
+  String get welcome4BodyPublished =>
+      'تُعزى الأخبار إلى كتب الحديث والسيرة، وتُبيَّن درجتها: ثابت، أو رواية تاريخية، أو مختلف فيه. وقد راجع المحتوى مختصون مؤهلون قبل نشره. ويعمل التطبيق كلّه دون اتصال.';
 
   @override
   String get quizTitle => 'اختبر معلوماتك';
@@ -1603,6 +1643,10 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get quizNote =>
       'تُولَّد الأسئلة في كل مرة من محتوى التطبيق نفسه، وهو في مراجعة أولية.';
+
+  @override
+  String get quizNotePublished =>
+      'تُولَّد الأسئلة في كل مرة من محتوى التطبيق نفسه.';
 
   @override
   String quizProgress(String current, String total) {
@@ -1847,4 +1891,295 @@ class AppLocalizationsAr extends AppLocalizations {
   String placeVisitCity(String city) {
     return 'أماكن أخرى في $city';
   }
+
+  @override
+  String get journeysTitle => 'الرحلات';
+
+  @override
+  String get journeysIntro =>
+      'قراءات مترابطة، خطوة بعد خطوة. اختر رحلة وسِر فيها بالوتيرة التي تناسبك.';
+
+  @override
+  String get journeyPacing =>
+      'الخطوات بالترتيب، ولا يلزم أن تقرأها في أيام متتالية.';
+
+  @override
+  String journeyLength(
+    int stepCount,
+    String steps,
+    int minuteCount,
+    String minutes,
+  ) {
+    String _temp0 = intl.Intl.pluralLogic(
+      stepCount,
+      locale: localeName,
+      other: '$steps خطوة',
+      few: '$steps خطوات',
+      two: 'خطوتان',
+      one: 'خطوة واحدة',
+    );
+    String _temp1 = intl.Intl.pluralLogic(
+      minuteCount,
+      locale: localeName,
+      other: 'نحو $minutes دقيقة للخطوة',
+      few: 'نحو $minutes دقائق للخطوة',
+      two: 'نحو دقيقتين للخطوة',
+      one: 'نحو دقيقة للخطوة',
+    );
+    return '$_temp0، $_temp1';
+  }
+
+  @override
+  String journeyProgress(String done, int totalCount, String total) {
+    String _temp0 = intl.Intl.pluralLogic(
+      totalCount,
+      locale: localeName,
+      other: '$total خطوة',
+      few: '$total خطوات',
+      two: 'خطوتين',
+      one: 'خطوة واحدة',
+    );
+    return 'أنجزت $done من $_temp0';
+  }
+
+  @override
+  String get journeyStart => 'ابدأ الرحلة';
+
+  @override
+  String get journeyContinue => 'تابع الرحلة';
+
+  @override
+  String get journeyPause => 'إيقاف مؤقت';
+
+  @override
+  String get journeyResume => 'استئناف الرحلة';
+
+  @override
+  String get journeyPaused =>
+      'الرحلة متوقفة مؤقتًا. استأنفها حين تكون مستعدًا.';
+
+  @override
+  String get journeyRestart => 'ابدأ الرحلة من جديد';
+
+  @override
+  String get journeyRestartMessage =>
+      'سيُعاد تقدّم هذه الرحلة إلى البداية. يبقى سجل القراءة والمراجعة، وتقدّم الرحلات الأخرى محفوظًا.';
+
+  @override
+  String get journeyFinished =>
+      'أتممت الرحلة. يمكنك العودة إلى قراءاتها متى شئت.';
+
+  @override
+  String journeyStepNumber(String number, String total) {
+    return 'الخطوة $number من $total';
+  }
+
+  @override
+  String get journeyLocked => 'أكمل الخطوة السابقة أولًا';
+
+  @override
+  String get journeySkipped =>
+      'تُخطّيت هذه الخطوة لأن إحدى قراءاتها لم تعد متاحة. تقدّمك السابق محفوظ.';
+
+  @override
+  String get journeyReading => 'قراءة الخطوة';
+
+  @override
+  String get journeyReadNext => 'تابع القراءة';
+
+  @override
+  String journeyMinutes(int count, String minutes) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'نحو $minutes دقيقة قراءة',
+      few: 'نحو $minutes دقائق قراءة',
+      two: 'نحو دقيقتَي قراءة',
+      one: 'نحو دقيقة قراءة',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get journeyQuestions => 'استرجع ما قرأت';
+
+  @override
+  String get journeyReflection => 'للتأمل';
+
+  @override
+  String get journeyReflectionOnly =>
+      'لا توجد أسئلة مولّدة مناسبة لهذه القراءة الآن. خذ وقتك مع سؤال التأمل.';
+
+  @override
+  String get journeyCompleteStep => 'أكملت الخطوة';
+
+  @override
+  String get journeyAnswerRecorded => 'سُجّلت إجابتك';
+
+  @override
+  String journeyCorrectAnswer(String answer) {
+    return 'الإجابة: $answer';
+  }
+
+  @override
+  String get journeyUnavailable => 'هذه الرحلة غير متاحة في هذا الإصدار.';
+
+  @override
+  String importJourneyCount(String count) {
+    return 'رحلات ستُضاف أو يُحدَّث تقدّمها: $count.';
+  }
+
+  @override
+  String get nextStepTitle => 'خطوتك التالية';
+
+  @override
+  String get nextStepStartBody =>
+      'اختر رحلة وابدأ بقراءة قصيرة، ثم عد متى شئت.';
+
+  @override
+  String get reviewTitle => 'مراجعة';
+
+  @override
+  String get reviewIntro => 'أسئلة من قراءاتك، تعود إليها في وقتها.';
+
+  @override
+  String get reviewStart => 'ابدأ المراجعة';
+
+  @override
+  String reviewProgress(String number, String total) {
+    return 'المراجعة $number من $total';
+  }
+
+  @override
+  String get reviewEmptyTitle => 'لا توجد أسئلة مستحقة الآن';
+
+  @override
+  String get reviewEmptyBody => 'يمكنك العودة إلى رحلة أو إلى ما تعلّمته.';
+
+  @override
+  String get reviewCompleteTitle => 'أتممت هذه المراجعة';
+
+  @override
+  String get reviewCompleteBody =>
+      'سُجّلت إجاباتك. ستعود الأسئلة في موعدها التالي.';
+
+  @override
+  String get reviewReadPassage => 'اقرأ الموضع';
+
+  @override
+  String get reviewAlreadyAnswered =>
+      'تغيّر سجل هذا السؤال منذ فتحه؛ احتفظنا بالإجابة الأحدث.';
+
+  @override
+  String get learnedTitle => 'ما تعلّمتُه';
+
+  @override
+  String get learnedIntro =>
+      'موضوعات مررت بها في المراجعة. تتغير حالتها مع إجاباتك، ولا تتراجع إن فاتك يوم.';
+
+  @override
+  String get learnedEmpty => 'ابدأ برحلة، وتظهر هنا الموضوعات التي تراجعها.';
+
+  @override
+  String get learnedMastered => 'راسخة';
+
+  @override
+  String get learnedLearning => 'قيد التعلّم';
+
+  @override
+  String get learnedRevisit => 'تستحق المراجعة';
+
+  @override
+  String reviewDueCount(int count, String n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$n سؤالًا للمراجعة اليوم',
+      few: '$n أسئلة للمراجعة اليوم',
+      two: 'سؤالان للمراجعة اليوم',
+      one: 'سؤال واحد للمراجعة اليوم',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get reminderGroup => 'التذكير';
+
+  @override
+  String get reminderTitle => 'تذكير يومي';
+
+  @override
+  String get reminderIntro =>
+      'اختر وقتًا يناسبك لقراءة خطوة أو مراجعتها. يبقى التذكير متوقفًا حتى تفعّله.';
+
+  @override
+  String get reminderSwitch => 'تفعيل التذكير';
+
+  @override
+  String get reminderTime => 'وقت التذكير';
+
+  @override
+  String reminderOnAt(String time) {
+    return 'يوميًا نحو $time';
+  }
+
+  @override
+  String reminderOffAt(String time) {
+    return 'متوقف. الوقت: $time';
+  }
+
+  @override
+  String get reminderDenied =>
+      'لم يُسمح بالإشعارات. يمكنك السماح بها من إعدادات الجهاز، ثم تفعيل التذكير هنا.';
+
+  @override
+  String get reminderFailed => 'تعذّر ضبط التذكير. أعد المحاولة.';
+
+  @override
+  String get reminderSystemSettings => 'إعدادات الإشعارات';
+
+  @override
+  String get reminderUnsupported => 'التذكير متاح على أندرويد في هذا الإصدار.';
+
+  @override
+  String get reminderTimingNote =>
+      'قد يصل التذكير بعد الوقت المختار بحسب إعدادات الجهاز. بعد إعادة تشغيل الجهاز، افتح صُحبة مرة لاستعادة التذكير.';
+
+  @override
+  String get reminderNotificationTitle => 'موعدك مع صُحبة';
+
+  @override
+  String get reminderNotificationBody =>
+      'خطوة صغيرة في رحلتك مع السيرة والصحابة، متى تيسّر لك.';
+
+  @override
+  String get reminderChannel => 'التذكير بالقراءة';
+
+  @override
+  String get reminderChannelDescription =>
+      'تذكير يومي اختياري بالقراءة أو المراجعة.';
+
+  @override
+  String get shareCardTitle => 'بطاقة من صُحبة';
+
+  @override
+  String get shareCardSquare => 'مربع';
+
+  @override
+  String get shareCardStory => 'قصة';
+
+  @override
+  String get shareCardDark => 'داكن';
+
+  @override
+  String get shareCardAction => 'مشاركة البطاقة';
+
+  @override
+  String get shareCardFailed => 'تعذّر تجهيز البطاقة. حاول مرة أخرى.';
+
+  @override
+  String get shareCardFooter => 'تطبيق صُحبة • السيرة والصحابة\nGoogle Play';
+
+  @override
+  String get shareCardOption => 'بطاقة';
 }

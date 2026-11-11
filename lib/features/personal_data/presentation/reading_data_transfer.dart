@@ -7,9 +7,11 @@ import 'package:suhba/app/reconciliation/user_data_reconciliation.dart';
 import 'package:suhba/core/database/database_provider.dart';
 import 'package:suhba/core/share/share_service.dart';
 import 'package:suhba/features/bookmarks/presentation/bookmark_providers.dart';
+import 'package:suhba/features/journeys/presentation/journey_providers.dart';
 import 'package:suhba/features/personal_data/data/file_opener.dart';
 import 'package:suhba/features/personal_data/domain/reading_data_archive.dart';
 import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
+import 'package:suhba/features/review/presentation/review_providers.dart';
 import 'package:suhba/shared/content/providers.dart';
 
 /// What choosing a file to import produced.
@@ -42,12 +44,22 @@ class ReadingDataTransfer {
   final Ref _ref;
 
   /// Everything to export, as of now.
-  Future<ReadingDataArchive> snapshot() async => ReadingDataArchive(
-    bookmarks: await _ref.read(bookmarkRepositoryProvider).all(),
-    progress: await _ref.read(readingProgressRepositoryProvider).all(),
-    exportedAt: _ref.read(clockProvider)(),
-    contentVersion: _ref.read(contentManifestProvider).value?.contentVersion,
-  );
+  Future<ReadingDataArchive> snapshot() => _ref
+      .read(appDatabaseProvider)
+      .transaction(
+        () async => ReadingDataArchive(
+          journeys: await _ref.read(journeyRepositoryProvider).enrollments(),
+          journeySteps: await _ref.read(journeyRepositoryProvider).steps(),
+          reviews: await _ref.read(reviewRepositoryProvider).all(),
+          bookmarks: await _ref.read(bookmarkRepositoryProvider).all(),
+          progress: await _ref.read(readingProgressRepositoryProvider).all(),
+          exportedAt: _ref.read(clockProvider)(),
+          contentVersion: _ref
+              .read(contentManifestProvider)
+              .value
+              ?.contentVersion,
+        ),
+      );
 
   /// The export's file name, dated by the device's local day.
   String fileName(DateTime when) {
@@ -91,6 +103,11 @@ class ReadingDataTransfer {
           localProgress: await _ref
               .read(readingProgressRepositoryProvider)
               .all(),
+          localJourneys: await _ref
+              .read(journeyRepositoryProvider)
+              .enrollments(),
+          localJourneySteps: await _ref.read(journeyRepositoryProvider).steps(),
+          localReviews: await _ref.read(reviewRepositoryProvider).all(),
           archive: archive,
         ),
       ),
@@ -105,6 +122,21 @@ class ReadingDataTransfer {
     final bookmarks = _ref.read(bookmarkRepositoryProvider);
     final progress = _ref.read(readingProgressRepositoryProvider);
     await _ref.read(appDatabaseProvider).transaction(() async {
+      final journeys = _ref.read(journeyRepositoryProvider);
+      final local = await journeys.enrollments();
+      for (final e in plan.journeysToSave) {
+        final old = local.where((j) => j.journeyId == e.journeyId).firstOrNull;
+        if (old != null && old.startedAt != e.startedAt) {
+          await journeys.clearSteps(e.journeyId);
+        }
+        await journeys.saveEnrollment(e);
+      }
+      for (final s in plan.journeyStepsToSave) {
+        await journeys.saveStep(s);
+      }
+      for (final r in plan.reviewsToSave) {
+        await _ref.read(reviewRepositoryProvider).save(r);
+      }
       for (final b in plan.newBookmarks) {
         await bookmarks.restore(b);
       }
@@ -118,6 +150,8 @@ class ReadingDataTransfer {
       bookmarks: bookmarks,
       progress: progress,
       contentVersion: manifest.contentVersion,
+      journeys: _ref.read(journeyRepositoryProvider),
+      clock: _ref.read(clockProvider),
     );
   }
 }

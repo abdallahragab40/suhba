@@ -12,6 +12,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:suhba/shared/content/data/dto/catalog_dto.dart';
 import 'package:suhba/shared/content/domain/review.dart';
 
 import 'src/app_identity.dart';
@@ -45,12 +46,17 @@ void main(List<String> args) {
       final meta =
           jsonDecode(File('content/meta.json').readAsStringSync())
               as Map<String, dynamic>;
+      final edition = EditionDto.fromJson(
+        jsonDecode(File('content/release/edition.json').readAsStringSync())
+            as Map<String, dynamic>,
+      );
       _report(
         'Artifact ($path, ${channel.name})',
         artifactProblems(
           bundled: _bundledContent(path),
           channel: channel,
           contentVersion: meta['contentVersion'] as String,
+          requiredJourneyIds: edition.journeyIds,
         ),
       );
     default:

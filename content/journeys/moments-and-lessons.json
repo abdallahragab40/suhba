@@ -1,0 +1,343 @@
+{
+  "schemaVersion": 1,
+  "id": "moments-and-lessons",
+  "title": {
+    "ar": "مواقف وعِبر"
+  },
+  "description": {
+    "ar": "عشر خطوات تجمع مقالات السيرة وقصصًا من حياة الصحابة، مع سؤال للتأمل بعد القراءة. يمكن أن تقرأ أكثر من خطوة أو تتوقف وتعود."
+  },
+  "steps": [
+    {
+      "id": "moments-and-lessons.mercy",
+      "title": {
+        "ar": "رحمته ﷺ"
+      },
+      "readings": [
+        {
+          "type": "seerahTopic",
+          "targetId": "mercy"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "from-the-shib-to-taif.1",
+          "parentId": "from-the-shib-to-taif"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "from-the-shib-to-taif.2",
+          "parentId": "from-the-shib-to-taif"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "from-the-shib-to-taif.3",
+          "parentId": "from-the-shib-to-taif"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "from-the-shib-to-taif.4",
+          "parentId": "from-the-shib-to-taif"
+        }
+      ],
+      "reflection": {
+        "ar": "ما الفكرة التي تريد أن تتذكرها من هذه القراءة؟"
+      }
+    },
+    {
+      "id": "moments-and-lessons.trustworthiness",
+      "title": {
+        "ar": "أمانته وصدقه"
+      },
+      "readings": [
+        {
+          "type": "seerahTopic",
+          "targetId": "trustworthiness"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "protection-of-ibn-al-daghinah.1",
+          "parentId": "protection-of-ibn-al-daghinah"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "protection-of-ibn-al-daghinah.2",
+          "parentId": "protection-of-ibn-al-daghinah"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "protection-of-ibn-al-daghinah.3",
+          "parentId": "protection-of-ibn-al-daghinah"
+        }
+      ],
+      "reflection": {
+        "ar": "ما الفكرة التي تريد أن تتذكرها من هذه القراءة؟"
+      }
+    },
+    {
+      "id": "moments-and-lessons.justice-loyalty",
+      "title": {
+        "ar": "عدله ووفاؤه"
+      },
+      "readings": [
+        {
+          "type": "seerahTopic",
+          "targetId": "justice-loyalty"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "treaty-of-hudaybiyah.1",
+          "parentId": "treaty-of-hudaybiyah"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "treaty-of-hudaybiyah.2",
+          "parentId": "treaty-of-hudaybiyah"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "treaty-of-hudaybiyah.3",
+          "parentId": "treaty-of-hudaybiyah"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "treaty-of-hudaybiyah.4",
+          "parentId": "treaty-of-hudaybiyah"
+        }
+      ],
+      "reflection": {
+        "ar": "ما الفكرة التي تريد أن تتذكرها من هذه القراءة؟"
+      }
+    },
+    {
+      "id": "moments-and-lessons.teaching",
+      "title": {
+        "ar": "تعليمه وتربيته"
+      },
+      "readings": [
+        {
+          "type": "seerahTopic",
+          "targetId": "teaching"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "day-of-badr.1",
+          "parentId": "day-of-badr"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "day-of-badr.2",
+          "parentId": "day-of-badr"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "day-of-badr.3",
+          "parentId": "day-of-badr"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "day-of-badr.4",
+          "parentId": "day-of-badr"
+        }
+      ],
+      "reflection": {
+        "ar": "ما الفكرة التي تريد أن تتذكرها من هذه القراءة؟"
+      }
+    },
+    {
+      "id": "moments-and-lessons.family-life",
+      "title": {
+        "ar": "حياته مع أهله"
+      },
+      "readings": [
+        {
+          "type": "seerahTopic",
+          "targetId": "family-life"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "the-cave.1",
+          "parentId": "the-cave"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "the-cave.2",
+          "parentId": "the-cave"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "the-cave.3",
+          "parentId": "the-cave"
+        }
+      ],
+      "reflection": {
+        "ar": "ما الفكرة التي تريد أن تتذكرها من هذه القراءة؟"
+      }
+    },
+    {
+      "id": "moments-and-lessons.with-companions",
+      "title": {
+        "ar": "تعامله مع أصحابه"
+      },
+      "readings": [
+        {
+          "type": "seerahTopic",
+          "targetId": "with-companions"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "brotherhood-of-the-ansar.1",
+          "parentId": "brotherhood-of-the-ansar"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "brotherhood-of-the-ansar.2",
+          "parentId": "brotherhood-of-the-ansar"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "brotherhood-of-the-ansar.3",
+          "parentId": "brotherhood-of-the-ansar"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "brotherhood-of-the-ansar.4",
+          "parentId": "brotherhood-of-the-ansar"
+        }
+      ],
+      "reflection": {
+        "ar": "ما الفكرة التي تريد أن تتذكرها من هذه القراءة؟"
+      }
+    },
+    {
+      "id": "moments-and-lessons.worship",
+      "title": {
+        "ar": "عبادته"
+      },
+      "readings": [
+        {
+          "type": "seerahTopic",
+          "targetId": "worship"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "the-trench.1",
+          "parentId": "the-trench"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "the-trench.2",
+          "parentId": "the-trench"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "the-trench.3",
+          "parentId": "the-trench"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "the-trench.4",
+          "parentId": "the-trench"
+        }
+      ],
+      "reflection": {
+        "ar": "ما الفكرة التي تريد أن تتذكرها من هذه القراءة؟"
+      }
+    },
+    {
+      "id": "moments-and-lessons.daily-guidance",
+      "title": {
+        "ar": "هديه في الحياة اليومية"
+      },
+      "readings": [
+        {
+          "type": "seerahTopic",
+          "targetId": "daily-guidance"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "the-coastal-expedition.1",
+          "parentId": "the-coastal-expedition"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "the-coastal-expedition.2",
+          "parentId": "the-coastal-expedition"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "the-coastal-expedition.3",
+          "parentId": "the-coastal-expedition"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "the-coastal-expedition.4",
+          "parentId": "the-coastal-expedition"
+        }
+      ],
+      "reflection": {
+        "ar": "ما الفكرة التي تريد أن تتذكرها من هذه القراءة؟"
+      }
+    },
+    {
+      "id": "moments-and-lessons.army-of-hardship",
+      "title": {
+        "ar": "جيش العسرة"
+      },
+      "readings": [
+        {
+          "type": "storyChapter",
+          "targetId": "army-of-hardship.1",
+          "parentId": "army-of-hardship"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "army-of-hardship.2",
+          "parentId": "army-of-hardship"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "army-of-hardship.3",
+          "parentId": "army-of-hardship"
+        }
+      ],
+      "reflection": {
+        "ar": "ما الفكرة التي تريد أن تتذكرها من هذه القراءة؟"
+      }
+    },
+    {
+      "id": "moments-and-lessons.hunayn-and-the-ansar",
+      "title": {
+        "ar": "حنين والأنصار"
+      },
+      "readings": [
+        {
+          "type": "storyChapter",
+          "targetId": "hunayn-and-the-ansar.1",
+          "parentId": "hunayn-and-the-ansar"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "hunayn-and-the-ansar.2",
+          "parentId": "hunayn-and-the-ansar"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "hunayn-and-the-ansar.3",
+          "parentId": "hunayn-and-the-ansar"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "hunayn-and-the-ansar.4",
+          "parentId": "hunayn-and-the-ansar"
+        }
+      ],
+      "reflection": {
+        "ar": "ما الفكرة التي تريد أن تتذكرها من هذه القراءة؟"
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "coverage": "complete"
+  }
+}

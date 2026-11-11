@@ -139,7 +139,10 @@ void main() {
     });
 
     test('a newer format version', () {
-      refused(_decode(_json(version: 2)), ArchiveProblem.newerVersion);
+      refused(
+        _decode(_json(version: ReadingDataArchive.version + 1)),
+        ArchiveProblem.newerVersion,
+      );
     });
 
     for (final (field, value, where) in [

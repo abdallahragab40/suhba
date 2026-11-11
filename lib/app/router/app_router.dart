@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/app_shell.dart';
+import 'package:suhba/app/router/content_router.dart';
 import 'package:suhba/app/router/not_found_page.dart';
 import 'package:suhba/app/router/routes.dart';
 import 'package:suhba/app/router/transitions.dart';
@@ -14,11 +15,16 @@ import 'package:suhba/features/companions/presentation/directory/directory_page.
 import 'package:suhba/features/companions/presentation/profile/companion_profile_page.dart';
 import 'package:suhba/features/explore/presentation/explore_page.dart';
 import 'package:suhba/features/home/presentation/home_page.dart';
+import 'package:suhba/features/journeys/presentation/journey_page.dart';
+import 'package:suhba/features/journeys/presentation/journeys_page.dart';
 import 'package:suhba/features/quiz/domain/quiz_question.dart';
 import 'package:suhba/features/quiz/presentation/quiz_home_page.dart';
 import 'package:suhba/features/quiz/presentation/quiz_play_page.dart';
 import 'package:suhba/features/reading_progress/presentation/reading_history_page.dart';
 import 'package:suhba/features/relations/presentation/relations_page.dart';
+import 'package:suhba/features/reminders/presentation/reminder_page.dart';
+import 'package:suhba/features/review/presentation/learning_page.dart';
+import 'package:suhba/features/review/presentation/review_page.dart';
 import 'package:suhba/features/search/presentation/search_page.dart';
 import 'package:suhba/features/seerah/presentation/seerah_chapter_page.dart';
 import 'package:suhba/features/seerah/presentation/seerah_hub_page.dart';
@@ -43,12 +49,52 @@ final appRouterProvider = Provider<GoRouter>((ref) {
 /// place and visual pages, so back always returns to where they were
 /// opened from).
 GoRouter buildAppRouter({String initialLocation = AppRoutes.home}) {
-  return GoRouter(
+  return ContentRouter(
     initialLocation: initialLocation,
     redirect: (context, state) => state.uri.path == '/' ? AppRoutes.home : null,
     errorBuilder: (context, state) => const NotFoundPage(),
     routes: [
       // Full screen, above the destinations.
+      GoRoute(
+        path: AppRoutes.review,
+        pageBuilder: (context, state) =>
+            fadeThroughPage(context, state, const ReviewPage()),
+        routes: [
+          GoRoute(
+            path: 'learned',
+            pageBuilder: (context, state) =>
+                fadeThroughPage(context, state, const LearningPage()),
+          ),
+        ],
+      ),
+      GoRoute(
+        path: AppRoutes.journeys,
+        pageBuilder: (context, state) =>
+            fadeThroughPage(context, state, const JourneysPage()),
+        routes: [
+          GoRoute(
+            path: ':jid',
+            pageBuilder: (context, state) => fadeThroughPage(
+              context,
+              state,
+              JourneyPage(journeyId: state.pathParameters['jid']!),
+            ),
+            routes: [
+              GoRoute(
+                path: 'steps/:sid',
+                pageBuilder: (context, state) => fadeThroughPage(
+                  context,
+                  state,
+                  JourneyPage(
+                    journeyId: state.pathParameters['jid']!,
+                    stepId: state.pathParameters['sid']!,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
       GoRoute(
         path: AppRoutes.search,
         pageBuilder: (context, state) =>
@@ -79,6 +125,11 @@ GoRouter buildAppRouter({String initialLocation = AppRoutes.home}) {
         pageBuilder: (context, state) =>
             fadeThroughPage(context, state, const SettingsPage()),
         routes: [
+          GoRoute(
+            path: 'reminder',
+            pageBuilder: (context, state) =>
+                fadeThroughPage(context, state, const ReminderPage()),
+          ),
           GoRoute(
             path: 'about',
             pageBuilder: (context, state) =>

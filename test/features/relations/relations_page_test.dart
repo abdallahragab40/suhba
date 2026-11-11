@@ -118,7 +118,7 @@ void main() {
     await tester.tap(find.text('الزبير بن العوام رضي الله عنه'));
     await tester.pumpAndSettle();
     expect(find.byType(CompanionProfilePage), findsOneWidget);
-    expect(app.location, '/companions/zubayr');
+    expect(app.location, '/content/companions/zubayr');
   });
 
   testApp('Explore and the profile lead to the explorer', (tester) async {

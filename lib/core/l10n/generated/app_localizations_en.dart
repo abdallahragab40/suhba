@@ -840,6 +840,24 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsClearSaved => 'Clear saved items';
 
   @override
+  String get settingsClearLearning => 'Clear review and journey progress';
+
+  @override
+  String settingsLearningCounts(String reviews, String journeys) {
+    return 'Review questions: $reviews · Journeys: $journeys';
+  }
+
+  @override
+  String get clearLearningTitle => 'Clear review and journey progress?';
+
+  @override
+  String get clearLearningMessage =>
+      'Your answers, their review dates and your journey progress will be deleted from this device. This cannot be undone. Saved items, reading history and settings are not affected.';
+
+  @override
+  String get learningCleared => 'Review and journey progress cleared.';
+
+  @override
   String get settingsNothingToClear => 'Nothing to clear';
 
   @override
@@ -1433,7 +1451,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settingsExportSubtitle =>
-      'A file with your saved items and reading positions, to keep or move to another device.';
+      'A file with your saved items, reading positions, journey progress and review history, to keep or move to another device.';
 
   @override
   String get settingsImport => 'Import reading data';
@@ -1445,6 +1463,11 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String exportSubject(String appName) {
     return 'Reading data from $appName';
+  }
+
+  @override
+  String importReviewCount(String count) {
+    return 'Review histories to add or update: $count.';
   }
 
   @override
@@ -1553,6 +1576,19 @@ class AppLocalizationsEn extends AppLocalizations {
       'The Ten promised Paradise in full biographies, many other Companions in short profiles, and stories from the Seerah to read in one sitting.';
 
   @override
+  String get welcomeJourneysKicker => 'Your journey';
+
+  @override
+  String get welcomeWhatsNewKicker => 'New in Suhba';
+
+  @override
+  String get welcomeJourneysTitle => 'A step a day';
+
+  @override
+  String get welcomeJourneysBody =>
+      'Short journeys through the Seerah and the lives of the Companions, read one step at a time, with review questions that bring back what you read when it is due, and a daily reminder if you want one.';
+
+  @override
   String get welcome4Kicker => 'The method';
 
   @override
@@ -1561,6 +1597,10 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get welcome4Body =>
       'Reports are attributed to the books of hadith and Seerah, and their standing is shown: established, historical report or disputed. The content has had a preliminary review and is not final until a qualified scholar approves it. The whole app works offline.';
+
+  @override
+  String get welcome4BodyPublished =>
+      'Reports are attributed to the books of hadith and Seerah, and their standing is shown: established, historical report or disputed. Qualified specialists reviewed the content before it was published. The whole app works offline.';
 
   @override
   String get quizTitle => 'Test your knowledge';
@@ -1598,6 +1638,10 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get quizNote =>
       'Questions are generated each time from the app\'s own content, which has had a preliminary review.';
+
+  @override
+  String get quizNotePublished =>
+      'Questions are generated each time from the app\'s own content.';
 
   @override
   String quizProgress(String current, String total) {
@@ -1846,4 +1890,290 @@ class AppLocalizationsEn extends AppLocalizations {
   String placeVisitCity(String city) {
     return 'Other places in $city';
   }
+
+  @override
+  String get journeysTitle => 'Journeys';
+
+  @override
+  String get journeysIntro =>
+      'Connected readings, one step at a time. Choose a journey and follow it at your own pace.';
+
+  @override
+  String get journeyPacing =>
+      'Steps follow an order; you do not need to read on consecutive days.';
+
+  @override
+  String journeyLength(
+    int stepCount,
+    String steps,
+    int minuteCount,
+    String minutes,
+  ) {
+    String _temp0 = intl.Intl.pluralLogic(
+      stepCount,
+      locale: localeName,
+      other: '$steps steps',
+      one: '1 step',
+    );
+    String _temp1 = intl.Intl.pluralLogic(
+      minuteCount,
+      locale: localeName,
+      other: 'about $minutes minutes per step',
+      one: 'about 1 minute per step',
+    );
+    return '$_temp0, $_temp1';
+  }
+
+  @override
+  String journeyProgress(String done, int totalCount, String total) {
+    String _temp0 = intl.Intl.pluralLogic(
+      totalCount,
+      locale: localeName,
+      other: '$total steps',
+      one: '1 step',
+    );
+    return 'Completed $done of $_temp0';
+  }
+
+  @override
+  String get journeyStart => 'Start journey';
+
+  @override
+  String get journeyContinue => 'Continue journey';
+
+  @override
+  String get journeyPause => 'Pause';
+
+  @override
+  String get journeyResume => 'Resume journey';
+
+  @override
+  String get journeyPaused =>
+      'This journey is paused. Resume when you are ready.';
+
+  @override
+  String get journeyRestart => 'Restart journey';
+
+  @override
+  String get journeyRestartMessage =>
+      'This journey will start again. Reading and review history and progress in other journeys are kept.';
+
+  @override
+  String get journeyFinished =>
+      'You finished this journey. Return to its readings whenever you like.';
+
+  @override
+  String journeyStepNumber(String number, String total) {
+    return 'Step $number of $total';
+  }
+
+  @override
+  String get journeyLocked => 'Complete the previous step first';
+
+  @override
+  String get journeySkipped =>
+      'This step was skipped because a reading is no longer available. Your earlier progress is kept.';
+
+  @override
+  String get journeyReading => 'Step readings';
+
+  @override
+  String get journeyReadNext => 'Continue reading';
+
+  @override
+  String journeyMinutes(int count, String minutes) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'About $minutes minutes of reading',
+      one: 'About 1 minute of reading',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get journeyQuestions => 'Recall what you read';
+
+  @override
+  String get journeyReflection => 'Reflect';
+
+  @override
+  String get journeyReflectionOnly =>
+      'There are no suitable generated questions for this reading yet. Take your time with the reflection.';
+
+  @override
+  String get journeyCompleteStep => 'Complete step';
+
+  @override
+  String get journeyAnswerRecorded => 'Your answer was recorded';
+
+  @override
+  String journeyCorrectAnswer(String answer) {
+    return 'Answer: $answer';
+  }
+
+  @override
+  String get journeyUnavailable =>
+      'This journey is unavailable in this edition.';
+
+  @override
+  String importJourneyCount(String count) {
+    return 'Journeys to add or update: $count.';
+  }
+
+  @override
+  String get nextStepTitle => 'Your next step';
+
+  @override
+  String get nextStepStartBody =>
+      'Choose a journey, begin with a short reading, and return whenever you like.';
+
+  @override
+  String get reviewTitle => 'Review';
+
+  @override
+  String get reviewIntro => 'Questions from your readings, ready to revisit.';
+
+  @override
+  String get reviewStart => 'Start review';
+
+  @override
+  String reviewProgress(String number, String total) {
+    return 'Review $number of $total';
+  }
+
+  @override
+  String get reviewEmptyTitle => 'No reviews due now';
+
+  @override
+  String get reviewEmptyBody =>
+      'Return to a journey or explore what you have learned.';
+
+  @override
+  String get reviewCompleteTitle => 'You finished this review';
+
+  @override
+  String get reviewCompleteBody =>
+      'Your answers are saved. The questions will return when they are due again.';
+
+  @override
+  String get reviewReadPassage => 'Read the passage';
+
+  @override
+  String get reviewAlreadyAnswered =>
+      'This question was updated since you opened it. The newer answer has been kept.';
+
+  @override
+  String get learnedTitle => 'What I have learned';
+
+  @override
+  String get learnedIntro =>
+      'Topics you have encountered in review. Their status changes with your answers and does not fall when you miss a day.';
+
+  @override
+  String get learnedEmpty =>
+      'Start a journey to see the topics you review here.';
+
+  @override
+  String get learnedMastered => 'Mastered';
+
+  @override
+  String get learnedLearning => 'Learning';
+
+  @override
+  String get learnedRevisit => 'Worth revisiting';
+
+  @override
+  String reviewDueCount(int count, String n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$n questions to review today',
+      one: 'One question to review today',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get reminderGroup => 'Reminders';
+
+  @override
+  String get reminderTitle => 'Daily reminder';
+
+  @override
+  String get reminderIntro =>
+      'Choose a time for a reading or review. The reminder stays off until you enable it.';
+
+  @override
+  String get reminderSwitch => 'Enable reminder';
+
+  @override
+  String get reminderTime => 'Reminder time';
+
+  @override
+  String reminderOnAt(String time) {
+    return 'Daily around $time';
+  }
+
+  @override
+  String reminderOffAt(String time) {
+    return 'Off. Time: $time';
+  }
+
+  @override
+  String get reminderDenied =>
+      'Notifications are not allowed. Allow them in device settings, then enable the reminder here.';
+
+  @override
+  String get reminderFailed => 'The reminder could not be updated. Try again.';
+
+  @override
+  String get reminderSystemSettings => 'Notification settings';
+
+  @override
+  String get reminderUnsupported =>
+      'Reminders are available on Android in this edition.';
+
+  @override
+  String get reminderTimingNote =>
+      'Delivery may follow the selected time depending on device settings. After restarting the device, open Suhba once to restore the reminder.';
+
+  @override
+  String get reminderNotificationTitle => 'Time for Suhba';
+
+  @override
+  String get reminderNotificationBody =>
+      'A small step in your journey through the Seerah and the Companions, when it suits you.';
+
+  @override
+  String get reminderChannel => 'Reading reminders';
+
+  @override
+  String get reminderChannelDescription =>
+      'An optional daily reminder to read or review.';
+
+  @override
+  String get shareCardTitle => 'A card from Suhba';
+
+  @override
+  String get shareCardSquare => 'Square';
+
+  @override
+  String get shareCardStory => 'Story';
+
+  @override
+  String get shareCardDark => 'Dark';
+
+  @override
+  String get shareCardAction => 'Share card';
+
+  @override
+  String get shareCardFailed => 'Could not prepare the card. Try again.';
+
+  @override
+  String get shareCardFooter =>
+      'Suhba app • Seerah and Companions\nGoogle Play';
+
+  @override
+  String get shareCardOption => 'Card';
 }

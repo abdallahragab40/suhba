@@ -18,6 +18,7 @@ final settingsStoreProvider = Provider<SettingsStore>(
 
 /// Setting keys, in one place.
 abstract final class SettingsKeys {
+  static const readingReminder = 'readingReminder';
   static const themeMode = 'themeMode';
   static const digitStyle = 'digitStyle';
   static const readingTextSize = 'readingTextSize';
@@ -39,6 +40,7 @@ abstract final class SettingsKeys {
   static String quizBest(String mode) => 'quizBest.$mode';
 
   static const all = {
+    readingReminder,
     themeMode,
     digitStyle,
     readingTextSize,

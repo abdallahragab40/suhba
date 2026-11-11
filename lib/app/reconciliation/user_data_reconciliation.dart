@@ -1,8 +1,12 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:suhba/core/database/database_provider.dart';
 import 'package:suhba/core/result/result.dart';
 import 'package:suhba/core/storage/settings_store.dart';
 import 'package:suhba/features/bookmarks/domain/bookmark.dart';
 import 'package:suhba/features/bookmarks/presentation/bookmark_providers.dart';
+import 'package:suhba/features/journeys/data/drift_journey_repository.dart';
+import 'package:suhba/features/journeys/data/journey_reconciliation.dart';
+import 'package:suhba/features/journeys/presentation/journey_providers.dart';
 import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
 import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
 import 'package:suhba/shared/content/domain/content_repository.dart';
@@ -56,12 +60,20 @@ Future<ReconciliationReport> reconcileUserData({
   required BookmarkRepository bookmarks,
   required ReadingProgressRepository progress,
   required String contentVersion,
+  DriftJourneyRepository? journeys,
+  DateTime Function()? clock,
 }) async {
   var confirmed = 0;
   var outdated = 0;
   var removed = 0;
   var unavailable = 0;
-  var failed = 0;
+  var failed = journeys == null
+      ? 0
+      : await reconcileJourneys(
+          content: content,
+          journeys: journeys,
+          clock: clock ?? DateTime.now,
+        );
 
   for (final p in await progress.all()) {
     switch (await lookUpTarget(content, p.contentTarget)) {
@@ -142,6 +154,8 @@ final userDataReconciliationProvider = FutureProvider<ReconciliationReport?>((
     bookmarks: ref.watch(bookmarkRepositoryProvider),
     progress: ref.watch(readingProgressRepositoryProvider),
     contentVersion: manifest.contentVersion,
+    journeys: ref.watch(journeyRepositoryProvider),
+    clock: ref.watch(clockProvider),
   );
   if (report.complete) {
     await settings.setString(SettingsKeys.reconciledContent, build);
