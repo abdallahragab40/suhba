@@ -616,6 +616,24 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsLicenses => 'Licences';
 
   @override
+  String get feedbackTitle => 'Send feedback';
+
+  @override
+  String get feedbackHint => 'A bug, a suggestion or a content correction';
+
+  @override
+  String get feedbackSubject => 'Feedback on Suhba';
+
+  @override
+  String get feedbackBody =>
+      'What did you notice?\n\n\nOn which screen or text?\n\n\nYour device:\n';
+
+  @override
+  String feedbackCopied(String email) {
+    return 'No mail app found. Address copied: $email';
+  }
+
+  @override
   String get aboutIntro =>
       'Suhba is an educational app presenting the life of the Prophet ﷺ and the lives and stories of his Companions, each attributed to its sources.';
 
@@ -652,7 +670,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutPrivacyBody =>
-      'The app collects no data about you and sends nothing anywhere: it has no account, no ads, no tracking or analytics, and it does not connect to the internet.\n\nSaved items, reading positions, settings and quiz scores are stored on your device only. You can clear saved items and reading positions in Settings, and deleting the app removes everything. Your device may include them in its backups, depending on your settings.\n\nYour location is read only when you ask to order places by distance from you, and only approximately. It is used on your device for that ordering alone, and is never stored or sent.\n\nWhen you share a passage or export your data, the content is handed to your device\'s share sheet and you choose where it goes. When you import, the app reads only the file you choose.';
+      'The app collects no data about you and sends nothing anywhere: it has no account, no ads, no tracking or analytics, and it does not connect to the internet.\n\nSaved items, reading positions, settings and quiz scores are stored on your device only. You can clear saved items and reading positions in Settings, and deleting the app removes everything. Your device may include them in its backups, depending on your settings.\n\nYour location is read only when you ask to order places by distance from you, and only approximately. It is used on your device for that ordering alone, and is never stored or sent.\n\nWhen you share a passage or export your data, the content is handed to your device\'s share sheet and you choose where it goes. When you import, the app reads only the file you choose.\n\n“Send feedback” opens your mail app with a message to the developer, which you write and send yourself.';
 
   @override
   String get sourceTypeQuran => 'The Qur\'an';

@@ -1118,6 +1118,36 @@ abstract class AppLocalizations {
   /// **'التراخيص'**
   String get settingsLicenses;
 
+  /// Settings tile that opens the mail app to send feedback.
+  ///
+  /// In ar, this message translates to:
+  /// **'أرسل ملاحظاتك'**
+  String get feedbackTitle;
+
+  /// Subtitle of the feedback tile.
+  ///
+  /// In ar, this message translates to:
+  /// **'خطأ، أو اقتراح، أو تصحيح في المحتوى'**
+  String get feedbackHint;
+
+  /// Subject line of the feedback email.
+  ///
+  /// In ar, this message translates to:
+  /// **'ملاحظات على تطبيق صُحبة'**
+  String get feedbackSubject;
+
+  /// Pre-filled body of the feedback email: short prompts for the user to answer.
+  ///
+  /// In ar, this message translates to:
+  /// **'ما الذي لاحظته؟\n\n\nفي أي شاشة أو نص؟\n\n\nنوع جهازك:\n'**
+  String get feedbackBody;
+
+  /// Shown when no mail app opens; the address was copied instead.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا يوجد تطبيق بريد. نُسخ العنوان: {email}'**
+  String feedbackCopied(String email);
+
   /// About: introduction.
   ///
   /// In ar, this message translates to:
@@ -1181,7 +1211,7 @@ abstract class AppLocalizations {
   /// About: privacy policy, in short. Must stay true to what the app does; keep in step with site/privacy.html.
   ///
   /// In ar, this message translates to:
-  /// **'لا يجمع التطبيق أي بيانات عنك ولا يرسلها إلى أي جهة: لا حساب فيه ولا إعلانات ولا أدوات تتبّع أو تحليل، ولا يتصل بالإنترنت.\n\nتُحفظ العناصر المحفوظة ومواضع القراءة والإعدادات ونتائج الاختبارات على جهازك فقط. يمكنك مسح المحفوظات ومواضع القراءة من الإعدادات، ويُزال كل شيء بحذف التطبيق. وقد يضمّنها نظام جهازك في نسخه الاحتياطية بحسب إعداداتك.\n\nلا يُقرأ موقعك إلا حين تطلب ترتيب الأماكن بحسب قربها منك، وبدقة تقريبية. يُستعمل على جهازك لهذا الترتيب فقط، ولا يُحفظ ولا يُرسل.\n\nعند مشاركة نص أو تصدير بياناتك يُسلَّم المحتوى إلى نافذة المشاركة في نظام جهازك، وأنت من يختار وجهته. وعند الاستيراد لا يقرأ التطبيق إلا الملف الذي تختاره.'**
+  /// **'لا يجمع التطبيق أي بيانات عنك ولا يرسلها إلى أي جهة: لا حساب فيه ولا إعلانات ولا أدوات تتبّع أو تحليل، ولا يتصل بالإنترنت.\n\nتُحفظ العناصر المحفوظة ومواضع القراءة والإعدادات ونتائج الاختبارات على جهازك فقط. يمكنك مسح المحفوظات ومواضع القراءة من الإعدادات، ويُزال كل شيء بحذف التطبيق. وقد يضمّنها نظام جهازك في نسخه الاحتياطية بحسب إعداداتك.\n\nلا يُقرأ موقعك إلا حين تطلب ترتيب الأماكن بحسب قربها منك، وبدقة تقريبية. يُستعمل على جهازك لهذا الترتيب فقط، ولا يُحفظ ولا يُرسل.\n\nعند مشاركة نص أو تصدير بياناتك يُسلَّم المحتوى إلى نافذة المشاركة في نظام جهازك، وأنت من يختار وجهته. وعند الاستيراد لا يقرأ التطبيق إلا الملف الذي تختاره.\n\nوعند «أرسل ملاحظاتك» يُفتح تطبيق البريد في جهازك برسالة إلى المطوّر، تكتبها وترسلها بنفسك.'**
   String get aboutPrivacyBody;
 
   /// Source group.

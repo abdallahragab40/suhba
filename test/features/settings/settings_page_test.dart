@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:suhba/core/design_system/tokens/palette.dart';
 import 'package:suhba/core/storage/settings_store.dart';
 import 'package:suhba/features/home/presentation/home_page.dart';
 import 'package:suhba/features/reading_progress/presentation/reading_history_page.dart';
+import 'package:suhba/features/settings/presentation/feedback_tile.dart';
 import 'package:suhba/features/settings/presentation/settings_page.dart';
 import 'package:suhba/features/sources/presentation/about_page.dart';
 import 'package:suhba/features/sources/presentation/sources_page.dart';
@@ -68,6 +70,68 @@ void main() {
     await tester.binding.handlePopRoute();
     await tester.pumpAndSettle();
     expect(app.location, '/home');
+  });
+
+  test('the feedback link is addressed and encoded for mail apps', () {
+    final uri = FeedbackTile.mailto(
+      subject: 'ملاحظات على صُحبة',
+      body: 'سطر\nثانٍ',
+    );
+    expect(uri.scheme, 'mailto');
+    expect(uri.path, feedbackEmail);
+    expect(uri.toString(), isNot(contains('+')));
+    expect(uri.queryParameters['subject'], 'ملاحظات على صُحبة');
+    expect(uri.queryParameters['body'], 'سطر\nثانٍ');
+  });
+
+  testApp('send feedback copies the address when no mail app opens', (
+    tester,
+  ) async {
+    tall(tester);
+    final copied = <Object?>[];
+    tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
+      SystemChannels.platform,
+      (call) async {
+        if (call.method == 'Clipboard.setData') copied.add(call.arguments);
+        return null;
+      },
+    );
+    addTearDown(
+      () => tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
+        SystemChannels.platform,
+        null,
+      ),
+    );
+    final opened = <Uri>[];
+    await AppUnderTest(
+      location: '/settings',
+      overrides: [
+        mailLauncherProvider.overrideWithValue((uri) async {
+          opened.add(uri);
+          return false;
+        }),
+      ],
+    ).pump(tester);
+    await tester.tap(find.text('أرسل ملاحظاتك'));
+    await tester.pumpAndSettle();
+    expect(opened.single.path, feedbackEmail);
+    expect(copied, [
+      {'text': feedbackEmail},
+    ]);
+    expect(find.textContaining(feedbackEmail), findsOneWidget);
+  });
+
+  testApp('send feedback opens the mail app when one is available', (
+    tester,
+  ) async {
+    tall(tester);
+    await AppUnderTest(
+      location: '/settings',
+      overrides: [mailLauncherProvider.overrideWithValue((uri) async => true)],
+    ).pump(tester);
+    await tester.tap(find.text('أرسل ملاحظاتك'));
+    await tester.pumpAndSettle();
+    expect(find.byType(SnackBar), findsNothing);
   });
 
   testApp('the content version and channel are shown', (tester) async {

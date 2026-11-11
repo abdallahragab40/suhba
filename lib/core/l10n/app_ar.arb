@@ -885,6 +885,31 @@
   "@settingsLicenses": {
     "description": "Opens the licence page."
   },
+  "feedbackTitle": "أرسل ملاحظاتك",
+  "@feedbackTitle": {
+    "description": "Settings tile that opens the mail app to send feedback."
+  },
+  "feedbackHint": "خطأ، أو اقتراح، أو تصحيح في المحتوى",
+  "@feedbackHint": {
+    "description": "Subtitle of the feedback tile."
+  },
+  "feedbackSubject": "ملاحظات على تطبيق صُحبة",
+  "@feedbackSubject": {
+    "description": "Subject line of the feedback email."
+  },
+  "feedbackBody": "ما الذي لاحظته؟\n\n\nفي أي شاشة أو نص؟\n\n\nنوع جهازك:\n",
+  "@feedbackBody": {
+    "description": "Pre-filled body of the feedback email: short prompts for the user to answer."
+  },
+  "feedbackCopied": "لا يوجد تطبيق بريد. نُسخ العنوان: {email}",
+  "@feedbackCopied": {
+    "description": "Shown when no mail app opens; the address was copied instead.",
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
   "aboutIntro": "صُحبة تطبيق تعليمي يعرض سيرة النبي ﷺ وسِيَر أصحابه وقصصهم، معزوّةً كلها إلى مصادرها.",
   "@aboutIntro": {
     "description": "About: introduction."
@@ -925,7 +950,7 @@
   "@aboutPrivacyTitle": {
     "description": "About section."
   },
-  "aboutPrivacyBody": "لا يجمع التطبيق أي بيانات عنك ولا يرسلها إلى أي جهة: لا حساب فيه ولا إعلانات ولا أدوات تتبّع أو تحليل، ولا يتصل بالإنترنت.\n\nتُحفظ العناصر المحفوظة ومواضع القراءة والإعدادات ونتائج الاختبارات على جهازك فقط. يمكنك مسح المحفوظات ومواضع القراءة من الإعدادات، ويُزال كل شيء بحذف التطبيق. وقد يضمّنها نظام جهازك في نسخه الاحتياطية بحسب إعداداتك.\n\nلا يُقرأ موقعك إلا حين تطلب ترتيب الأماكن بحسب قربها منك، وبدقة تقريبية. يُستعمل على جهازك لهذا الترتيب فقط، ولا يُحفظ ولا يُرسل.\n\nعند مشاركة نص أو تصدير بياناتك يُسلَّم المحتوى إلى نافذة المشاركة في نظام جهازك، وأنت من يختار وجهته. وعند الاستيراد لا يقرأ التطبيق إلا الملف الذي تختاره.",
+  "aboutPrivacyBody": "لا يجمع التطبيق أي بيانات عنك ولا يرسلها إلى أي جهة: لا حساب فيه ولا إعلانات ولا أدوات تتبّع أو تحليل، ولا يتصل بالإنترنت.\n\nتُحفظ العناصر المحفوظة ومواضع القراءة والإعدادات ونتائج الاختبارات على جهازك فقط. يمكنك مسح المحفوظات ومواضع القراءة من الإعدادات، ويُزال كل شيء بحذف التطبيق. وقد يضمّنها نظام جهازك في نسخه الاحتياطية بحسب إعداداتك.\n\nلا يُقرأ موقعك إلا حين تطلب ترتيب الأماكن بحسب قربها منك، وبدقة تقريبية. يُستعمل على جهازك لهذا الترتيب فقط، ولا يُحفظ ولا يُرسل.\n\nعند مشاركة نص أو تصدير بياناتك يُسلَّم المحتوى إلى نافذة المشاركة في نظام جهازك، وأنت من يختار وجهته. وعند الاستيراد لا يقرأ التطبيق إلا الملف الذي تختاره.\n\nوعند «أرسل ملاحظاتك» يُفتح تطبيق البريد في جهازك برسالة إلى المطوّر، تكتبها وترسلها بنفسك.",
   "@aboutPrivacyBody": {
     "description": "About: privacy policy, in short. Must stay true to what the app does; keep in step with site/privacy.html."
   },
