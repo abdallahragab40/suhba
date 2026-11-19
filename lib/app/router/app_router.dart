@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/app_shell.dart';
@@ -49,7 +50,12 @@ final appRouterProvider = Provider<GoRouter>((ref) {
 /// place and visual pages, so back always returns to where they were
 /// opened from).
 GoRouter buildAppRouter({String initialLocation = AppRoutes.home}) {
+  // Readers open on the root navigator, above the destination bar, so the
+  // text gets the whole screen (review F16, D6). Their paths still sit
+  // inside their destination, so deep links and Back are unchanged.
+  final root = GlobalKey<NavigatorState>(debugLabel: 'root');
   return ContentRouter(
+    navigatorKey: root,
     initialLocation: initialLocation,
     redirect: (context, state) => state.uri.path == '/' ? AppRoutes.home : null,
     errorBuilder: (context, state) => const NotFoundPage(),
@@ -209,6 +215,7 @@ GoRouter buildAppRouter({String initialLocation = AppRoutes.home}) {
                 routes: [
                   GoRoute(
                     path: 'chapters/:chid',
+                    parentNavigatorKey: root,
                     pageBuilder: (context, state) => fadeThroughPage(
                       context,
                       state,
@@ -219,6 +226,7 @@ GoRouter buildAppRouter({String initialLocation = AppRoutes.home}) {
                   ),
                   GoRoute(
                     path: 'topics/:tid',
+                    parentNavigatorKey: root,
                     pageBuilder: (context, state) => fadeThroughPage(
                       context,
                       state,
@@ -255,6 +263,7 @@ GoRouter buildAppRouter({String initialLocation = AppRoutes.home}) {
                     routes: [
                       GoRoute(
                         path: 'sections/:sid',
+                        parentNavigatorKey: root,
                         pageBuilder: (context, state) => fadeThroughPage(
                           context,
                           state,
@@ -289,6 +298,7 @@ GoRouter buildAppRouter({String initialLocation = AppRoutes.home}) {
                 routes: [
                   GoRoute(
                     path: 'chapters/:chid',
+                    parentNavigatorKey: root,
                     pageBuilder: (context, state) => fadeThroughPage(
                       context,
                       state,
