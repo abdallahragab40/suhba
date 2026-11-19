@@ -1374,6 +1374,10 @@
   "@mapSchematicNote": {
     "description": "Note under every map."
   },
+  "mapSpreadNote": "ورُسمت المواضع المتقاربة متباعدةً قليلًا لتظهر، مع حفظ جهاتها.",
+  "@mapSpreadNote": {
+    "description": "Under the schematic map, when places too close to tell apart were drawn further apart."
+  },
   "relationCompanion": "صاحبه",
   "@relationCompanion": {
     "description": "Relation type: companionship (e.g. the Prophet ﷺ and Abu Bakr)."

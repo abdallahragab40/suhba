@@ -1688,6 +1688,12 @@ abstract class AppLocalizations {
   /// **'خريطة تخطيطية للتوضيح، وليست رسمًا مساحيًّا دقيقًا.'**
   String get mapSchematicNote;
 
+  /// Under the schematic map, when places too close to tell apart were drawn further apart.
+  ///
+  /// In ar, this message translates to:
+  /// **'ورُسمت المواضع المتقاربة متباعدةً قليلًا لتظهر، مع حفظ جهاتها.'**
+  String get mapSpreadNote;
+
   /// Relation type: companionship (e.g. the Prophet ﷺ and Abu Bakr).
   ///
   /// In ar, this message translates to:

@@ -1001,6 +1001,10 @@ class AppLocalizationsAr extends AppLocalizations {
       'خريطة تخطيطية للتوضيح، وليست رسمًا مساحيًّا دقيقًا.';
 
   @override
+  String get mapSpreadNote =>
+      'ورُسمت المواضع المتقاربة متباعدةً قليلًا لتظهر، مع حفظ جهاتها.';
+
+  @override
   String get relationCompanion => 'صاحبه';
 
   @override

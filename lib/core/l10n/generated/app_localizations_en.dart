@@ -976,6 +976,10 @@ class AppLocalizationsEn extends AppLocalizations {
       'A schematic map for orientation, not a survey.';
 
   @override
+  String get mapSpreadNote =>
+      'Places close together are drawn a little apart, keeping their directions.';
+
+  @override
   String get relationCompanion => 'Companion of';
 
   @override
