@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "id": "start-here",
+  "order": 1,
+  "title": {
+    "ar": "ابدأ من هنا"
+  },
+  "description": {
+    "ar": "خمس قراءات قصيرة لمن يفتح التطبيق أول مرة: بدء الوحي، وأول من آمن، والصحبة في الهجرة، والأخوّة في المدينة، ورحمته ﷺ. ثم تختار طريقك."
+  },
+  "review": {
+    "status": "draft",
+    "coverage": "complete",
+    "authoredBy": "draft-start-here-e4"
+  },
+  "steps": [
+    {
+      "id": "start-here.revelation",
+      "title": {
+        "ar": "بدء الوحي"
+      },
+      "framing": {
+        "ar": "تبدأ من غار حراء: كيف نزل الوحي على النبي ﷺ."
+      },
+      "readings": [
+        {
+          "type": "seerahChapter",
+          "targetId": "beginning-of-revelation"
+        }
+      ],
+      "reflection": {
+        "ar": "ما أول ما لفتك في خبر بدء الوحي؟"
+      }
+    },
+    {
+      "id": "start-here.first-believer",
+      "title": {
+        "ar": "أول من آمن"
+      },
+      "framing": {
+        "ar": "تقرأ عن خديجة التي صدّقت النبي ﷺ في أول الطريق."
+      },
+      "readings": [
+        {
+          "type": "companionSection",
+          "targetId": "khadijah.first-believer",
+          "parentId": "khadijah"
+        }
+      ],
+      "reflection": {
+        "ar": "كيف كانت كلمات خديجة سندًا في تلك الساعة؟"
+      }
+    },
+    {
+      "id": "start-here.companion",
+      "title": {
+        "ar": "صاحبه في الهجرة"
+      },
+      "framing": {
+        "ar": "تقرأ كيف صحب أبو بكر النبيَّ ﷺ في هجرته إلى المدينة."
+      },
+      "readings": [
+        {
+          "type": "companionSection",
+          "targetId": "abu-bakr.hijrah",
+          "parentId": "abu-bakr"
+        }
+      ],
+      "reflection": {
+        "ar": "ما الذي تعنيه الصحبة حين يشتدّ الطريق؟"
+      }
+    },
+    {
+      "id": "start-here.brotherhood",
+      "title": {
+        "ar": "الأخوّة في المدينة"
+      },
+      "framing": {
+        "ar": "تقرأ كيف آخى النبي ﷺ بين المهاجرين والأنصار."
+      },
+      "readings": [
+        {
+          "type": "storyChapter",
+          "targetId": "brotherhood-of-the-ansar.1",
+          "parentId": "brotherhood-of-the-ansar"
+        },
+        {
+          "type": "storyChapter",
+          "targetId": "brotherhood-of-the-ansar.2",
+          "parentId": "brotherhood-of-the-ansar"
+        }
+      ],
+      "reflection": {
+        "ar": "ما الذي يجعل الغريب أخًا؟"
+      }
+    },
+    {
+      "id": "start-here.mercy",
+      "title": {
+        "ar": "رحمته ﷺ"
+      },
+      "framing": {
+        "ar": "تختم بمقالة عن رحمته ﷺ بالناس جميعًا."
+      },
+      "readings": [
+        {
+          "type": "seerahTopic",
+          "targetId": "mercy"
+        }
+      ],
+      "reflection": {
+        "ar": "أين ترى أثر رحمته ﷺ فيما قرأت في هذه الرحلة؟"
+      }
+    }
+  ]
+}

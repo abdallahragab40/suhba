@@ -3805,6 +3805,12 @@ abstract class AppLocalizations {
   /// **'الخريطة'**
   String get homeTileMap;
 
+  /// Home link for a reader with no history to the first journey; title is its name («ابدأ من هنا»).
+  ///
+  /// In ar, this message translates to:
+  /// **'جديد هنا؟ {title}'**
+  String startHereLink(String title);
+
   /// Kicker of the daily portion card on Home (K1).
   ///
   /// In ar, this message translates to:

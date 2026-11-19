@@ -2303,6 +2303,11 @@ class AppLocalizationsAr extends AppLocalizations {
   String get homeTileMap => 'الخريطة';
 
   @override
+  String startHereLink(String title) {
+    return 'جديد هنا؟ $title';
+  }
+
+  @override
   String get dailyPortionKicker => 'ورد اليوم';
 
   @override

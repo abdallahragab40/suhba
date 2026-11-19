@@ -2268,6 +2268,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get homeTileMap => 'Map';
 
   @override
+  String startHereLink(String title) {
+    return 'New here? $title';
+  }
+
+  @override
   String get dailyPortionKicker => 'Today\'s reading';
 
   @override

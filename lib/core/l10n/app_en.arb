@@ -686,6 +686,14 @@
   "homeTileJourney": "Today's journey",
   "homeTileReview": "Review",
   "homeTileMap": "Map",
+  "startHereLink": "New here? {title}",
+  "@startHereLink": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
   "dailyPortionKicker": "Today's reading",
   "dailyPortionRead": "Read",
   "dailyPortionDone": "I've read it",

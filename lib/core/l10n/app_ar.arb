@@ -2842,6 +2842,15 @@
   "@homeTileMap": {
     "description": "Quick tile on Home: opens the Seerah map."
   },
+  "startHereLink": "جديد هنا؟ {title}",
+  "@startHereLink": {
+    "description": "Home link for a reader with no history to the first journey; title is its name («ابدأ من هنا»).",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
   "dailyPortionKicker": "ورد اليوم",
   "@dailyPortionKicker": {
     "description": "Kicker of the daily portion card on Home (K1)."

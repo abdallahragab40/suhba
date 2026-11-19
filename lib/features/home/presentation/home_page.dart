@@ -178,6 +178,7 @@ class _Home extends ConsumerWidget {
           paper([
             const DailyPortionCard(),
             QuickTiles(seerah: seerah),
+            const StartHereLink(),
             const SizedBox(height: AppSpacing.lg),
           ]),
           if (seerah != null)

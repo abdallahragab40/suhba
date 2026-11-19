@@ -14,8 +14,36 @@ import 'package:suhba/features/review/presentation/review_providers.dart';
 import 'package:suhba/features/seerah/presentation/seerah_hub_page.dart';
 import 'package:suhba/shared/content/domain/content_target.dart';
 import 'package:suhba/shared/content/domain/seerah.dart';
+import 'package:suhba/shared/content/presentation/content_text.dart';
 import 'package:suhba/shared/content/presentation/target_description.dart';
 import 'package:suhba/shared/content/providers.dart';
+
+/// For a reader with nothing read and no journey started: a way into the
+/// journey the content orders first, «ابدأ من هنا» (review E4).
+class StartHereLink extends ConsumerWidget {
+  const StartHereLink({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final start = ref.watch(journeysProvider).value?.firstOrNull;
+    final read = ref.watch(allProgressProvider).value;
+    final started = ref.watch(journeyEnrollmentsProvider).value;
+    if (start == null || read == null || started == null) {
+      return const SizedBox.shrink();
+    }
+    if (read.isNotEmpty || started.isNotEmpty) return const SizedBox.shrink();
+    return Align(
+      alignment: AlignmentDirectional.centerStart,
+      child: TextButton.icon(
+        onPressed: () => context.push(AppRoutes.journey(start.id)),
+        icon: const Icon(Icons.flag_outlined),
+        label: Text(
+          AppLocalizations.of(context).startHereLink(start.title.of(context)),
+        ),
+      ),
+    );
+  }
+}
 
 /// Home's row of quick tiles (review K7): continue reading, the current
 /// journey, review, and the map. Each opens a real place; a tile with
