@@ -240,6 +240,7 @@ class ContentFixture {
     Map<String, dynamic> item, {
     String reviewerId = 'reviewer-a',
     bool fitnaSignOff = false,
+    bool sensitiveSignOff = false,
   }) => {
     'schemaVersion': 1,
     'kind': kind,
@@ -254,6 +255,7 @@ class ContentFixture {
       'reliabilityCorrect': true,
       'honorificsCorrect': true,
       'fitnaSignOff': fitnaSignOff,
+      'sensitiveSignOff': sensitiveSignOff,
     },
   };
 

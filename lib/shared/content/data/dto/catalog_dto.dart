@@ -217,6 +217,9 @@ abstract class ApprovalChecklistDto with _$ApprovalChecklistDto {
 
     /// Required for items flagged fitnaAdjacent.
     @Default(false) bool fitnaSignOff,
+
+    /// Required for items flagged sensitive.
+    @Default(false) bool sensitiveSignOff,
   }) = _ApprovalChecklistDto;
 
   factory ApprovalChecklistDto.fromJson(Map<String, dynamic> json) =>

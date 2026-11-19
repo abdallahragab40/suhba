@@ -49,6 +49,7 @@ void main(List<String> args) {
           'reliabilityCorrect': false,
           'honorificsCorrect': false,
           'fitnaSignOff': false,
+          'sensitiveSignOff': false,
         },
         'notes': '',
       }),

@@ -313,7 +313,9 @@
   ],
   "review": {
     "status": "preliminaryReview",
-    "editorialFlags": [],
+    "editorialFlags": [
+      "sensitive"
+    ],
     "coverage": "sample",
     "authoredBy": "short-profiles-1"
   },

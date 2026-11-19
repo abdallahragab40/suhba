@@ -286,6 +286,28 @@ void main() {
       expect(validate().issues, isEmpty);
     });
 
+    test('sensitive items need their own explicit sign-off (E1)', () {
+      fx.approve('companion', 'comp-a', fx.companionA);
+      fx.companionA['review'] = {
+        'status': 'approved',
+        'editorialFlags': ['sensitive'],
+      };
+      fx.files['reviews/companion.comp-a.json'] = fx.approvalFor(
+        'companion',
+        'comp-a',
+        fx.companionA,
+        fitnaSignOff: true, // the fitna box does not cover it
+      );
+      expectOnly('V8');
+      fx.files['reviews/companion.comp-a.json'] = fx.approvalFor(
+        'companion',
+        'comp-a',
+        fx.companionA,
+        sensitiveSignOff: true,
+      );
+      expect(validate().issues, isEmpty);
+    });
+
     test('an approval for an unapproved item is warned about', () {
       fx.files['reviews/companion.comp-b.json'] = fx.approvalFor(
         'companion',

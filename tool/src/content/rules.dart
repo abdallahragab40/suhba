@@ -1080,6 +1080,16 @@ class _Rules {
             'touches the fitna and needs the reviewer\'s explicit sign-off.',
       );
     }
+    if (item.review.editorialFlags.contains(EditorialFlag.sensitive) &&
+        !checklist.sensitiveSignOff) {
+      sink.error(
+        'V8',
+        record.file,
+        r'$.checklist.sensitiveSignOff',
+        'This item '
+            'is flagged sensitive and needs the reviewer\'s explicit sign-off.',
+      );
+    }
   }
 
   void _orphanApprovals() {

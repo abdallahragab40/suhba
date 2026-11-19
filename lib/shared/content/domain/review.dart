@@ -24,6 +24,11 @@ enum EditorialFlag {
   /// Touches the fitna; needs the reviewer's explicit sign-off.
   fitnaAdjacent,
 
+  /// A sensitive subject (review §4.4: the Prophet's ﷺ marriages, Banu
+  /// Qurayzah, the Ridda, miracle reports and the like); needs the
+  /// reviewer's explicit sign-off, as for the fitna.
+  sensitive,
+
   /// Some citation locators (volume, page, number) are still pending.
   needsLocators,
 

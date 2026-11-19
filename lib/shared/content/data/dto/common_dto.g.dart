@@ -363,6 +363,7 @@ const _$ReviewStatusEnumMap = {
 
 const _$EditorialFlagEnumMap = {
   EditorialFlag.fitnaAdjacent: 'fitnaAdjacent',
+  EditorialFlag.sensitive: 'sensitive',
   EditorialFlag.needsLocators: 'needsLocators',
   EditorialFlag.needsSourceText: 'needsSourceText',
 };

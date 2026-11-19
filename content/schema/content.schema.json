@@ -353,6 +353,7 @@
             "type": "string",
             "enum": [
               "fitnaAdjacent",
+              "sensitive",
               "needsLocators",
               "needsSourceText"
             ]
@@ -1350,6 +1351,10 @@
             },
             "fitnaSignOff": {
               "type": "boolean"
+            },
+            "sensitiveSignOff": {
+              "type": "boolean",
+              "description": "Required for items flagged sensitive (review §4.4)."
             }
           },
           "additionalProperties": false,

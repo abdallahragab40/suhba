@@ -360,7 +360,8 @@
   "review": {
     "status": "preliminaryReview",
     "editorialFlags": [
-      "needsLocators"
+      "needsLocators",
+      "sensitive"
     ],
     "authoredBy": "draft-revision-4",
     "coverage": "complete"

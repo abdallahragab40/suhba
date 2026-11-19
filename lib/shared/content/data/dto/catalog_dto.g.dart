@@ -569,6 +569,7 @@ _ApprovalChecklistDto _$ApprovalChecklistDtoFromJson(
       'reliabilityCorrect',
       'honorificsCorrect',
       'fitnaSignOff',
+      'sensitiveSignOff',
     ],
   );
   final val = _ApprovalChecklistDto(
@@ -578,6 +579,10 @@ _ApprovalChecklistDto _$ApprovalChecklistDtoFromJson(
     reliabilityCorrect: $checkedConvert('reliabilityCorrect', (v) => v as bool),
     honorificsCorrect: $checkedConvert('honorificsCorrect', (v) => v as bool),
     fitnaSignOff: $checkedConvert('fitnaSignOff', (v) => v as bool? ?? false),
+    sensitiveSignOff: $checkedConvert(
+      'sensitiveSignOff',
+      (v) => v as bool? ?? false,
+    ),
   );
   return val;
 });
@@ -591,6 +596,7 @@ Map<String, dynamic> _$ApprovalChecklistDtoToJson(
   'reliabilityCorrect': instance.reliabilityCorrect,
   'honorificsCorrect': instance.honorificsCorrect,
   'fitnaSignOff': instance.fitnaSignOff,
+  'sensitiveSignOff': instance.sensitiveSignOff,
 };
 
 _ApprovalDto _$ApprovalDtoFromJson(

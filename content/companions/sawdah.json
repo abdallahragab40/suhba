@@ -426,7 +426,9 @@
   ],
   "review": {
     "status": "sourced",
-    "editorialFlags": [],
+    "editorialFlags": [
+      "sensitive"
+    ],
     "coverage": "sample",
     "authoredBy": "ummahat-2"
   },

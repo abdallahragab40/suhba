@@ -151,11 +151,18 @@ Map<String, String> reviewPacket(ContentFiles files, SchemaSet schemas) {
       ..writeln('- [ ] noEmbellishment — خلو النص من الزيادات غير المسندة')
       ..writeln('- [ ] reliabilityCorrect — مناسبة درجات الثبوت والخلاف')
       ..writeln('- [ ] honorificsCorrect — صحة الأسماء وألفاظ الترضي والتوقير')
-      ..writeln('- [ ] fitnaSignOff — مراجعة صريحة لمادة الفتنة عند وجودها\n')
+      ..writeln('- [ ] fitnaSignOff — مراجعة صريحة لمادة الفتنة عند وجودها')
+      ..writeln(
+        '- [ ] sensitiveSignOff — مراجعة صريحة للمادة الحساسة عند وجودها\n',
+      )
       ..writeln(
         'Fitna sign-off required by current flags: '
-        '${item.review.editorialFlags.contains(EditorialFlag.fitnaAdjacent)}. '
-        'Also flag any sensitive material missed by those flags.\n',
+        '${item.review.editorialFlags.contains(EditorialFlag.fitnaAdjacent)}.  ',
+      )
+      ..writeln(
+        'Sensitive sign-off required by current flags: '
+        '${item.review.editorialFlags.contains(EditorialFlag.sensitive)}. '
+        'Also flag any sensitive material missed by those flags (§4.4).\n',
       )
       ..writeln('## Arabic text in content order\n');
     for (final (path, ar) in text) {
@@ -247,7 +254,7 @@ Map<String, String> reviewPacket(ContentFiles files, SchemaSet schemas) {
           'reviewerId': '<registered reviewer id>',
           'approvedAt': '<YYYY-MM-DD>',
           'contentHash': hash,
-          'checklist': {'sourcesMatch': false, 'gradingsCorrect': false, 'noEmbellishment': false, 'reliabilityCorrect': false, 'honorificsCorrect': false, 'fitnaSignOff': false},
+          'checklist': {'sourcesMatch': false, 'gradingsCorrect': false, 'noEmbellishment': false, 'reliabilityCorrect': false, 'honorificsCorrect': false, 'fitnaSignOff': false, 'sensitiveSignOff': false},
           'notes': '',
         })}\n';
     index.writeln(

@@ -80,6 +80,17 @@ void main() {
   ItemReadiness item(ReadinessReport r, String key) =>
       r.items.firstWhere((i) => i.key == key);
 
+  test('flags that need explicit sign-off are listed per item (E1)', () {
+    (fx.companionA['review'] as Map<String, dynamic>)['editorialFlags'] = [
+      'needsLocators',
+      'sensitive',
+    ];
+    final r = report();
+    expect(item(r, 'companion.comp-a').signOffs, ['sensitive']);
+    expect(item(r, 'story.story-a').signOffs, isEmpty);
+    expect(r.toMarkdown(), contains('| sensitive |'));
+  });
+
   test('draft content is not ready, and says why', () {
     final r = report();
     expect(r.editionReady, isFalse);
