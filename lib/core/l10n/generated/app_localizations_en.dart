@@ -2174,10 +2174,28 @@ class AppLocalizationsEn extends AppLocalizations {
   String get shareCardSquare => 'Square';
 
   @override
-  String get shareCardStory => 'Story';
+  String get shareCardPaper => 'Paper';
 
   @override
-  String get shareCardDark => 'Dark';
+  String get shareCardGreen => 'Green';
+
+  @override
+  String get shareCardNight => 'Night';
+
+  @override
+  String get shareCardAccent => 'Colour:';
+
+  @override
+  String get shareCardAccentGold => 'Gold';
+
+  @override
+  String get shareCardAccentGreen => 'Green';
+
+  @override
+  String get shareCardAccentPlain => 'Text colour';
+
+  @override
+  String get shareCardStory => 'Story';
 
   @override
   String get shareCardAction => 'Share card';

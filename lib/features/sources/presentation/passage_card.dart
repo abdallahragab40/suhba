@@ -16,6 +16,35 @@ enum PassageCardSize {
   final double height;
 }
 
+/// The card's ground (review K6): paper, Madinah green, or night.
+enum PassageCardTemplate {
+  paper(Palette.paperLowest, Palette.ink),
+  green(Palette.green, Palette.paper),
+  night(Palette.ink, Palette.paper);
+
+  const PassageCardTemplate(this.background, this.text);
+  final Color background;
+  final Color text;
+}
+
+/// The colour of the wordmark and the rule, chosen by the reader. Each
+/// template has its own shade of it, so every pairing stays legible.
+enum PassageCardAccent {
+  gold,
+  green,
+
+  /// The text colour: a plain card.
+  plain;
+
+  Color on(PassageCardTemplate t) => switch ((this, t)) {
+    (gold, PassageCardTemplate.paper) => Palette.goldText,
+    (gold, _) => Palette.goldOnInk,
+    (green, PassageCardTemplate.paper) => Palette.green,
+    (green, _) => Palette.greenWash,
+    (plain, _) => t.text,
+  };
+}
+
 class PassageCard extends StatelessWidget {
   const PassageCard({
     required this.excerpt,
@@ -23,19 +52,21 @@ class PassageCard extends StatelessWidget {
     required this.sources,
     required this.footer,
     required this.size,
-    required this.dark,
+    required this.template,
+    this.accent = PassageCardAccent.gold,
     this.notice,
     super.key,
   });
   final String excerpt, origin, sources, footer;
   final String? notice;
   final PassageCardSize size;
-  final bool dark;
+  final PassageCardTemplate template;
+  final PassageCardAccent accent;
 
   @override
   Widget build(BuildContext context) {
-    final ink = dark ? Palette.paper : Palette.ink;
-    final gold = dark ? Palette.goldOnInk : Palette.goldText;
+    final ink = template.text;
+    final gold = accent.on(template);
     Text text(
       String value,
       double font, {
@@ -60,7 +91,7 @@ class PassageCard extends StatelessWidget {
           width: 360,
           height: size.height,
           child: ColoredBox(
-            color: dark ? Palette.ink : Palette.paperLowest,
+            color: template.background,
             child: Padding(
               padding: const EdgeInsets.all(24),
               child: Column(

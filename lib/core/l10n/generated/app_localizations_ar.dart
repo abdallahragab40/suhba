@@ -2208,10 +2208,28 @@ class AppLocalizationsAr extends AppLocalizations {
   String get shareCardSquare => 'مربع';
 
   @override
-  String get shareCardStory => 'قصة';
+  String get shareCardPaper => 'ورقي';
 
   @override
-  String get shareCardDark => 'داكن';
+  String get shareCardGreen => 'أخضر';
+
+  @override
+  String get shareCardNight => 'ليلي';
+
+  @override
+  String get shareCardAccent => 'اللون:';
+
+  @override
+  String get shareCardAccentGold => 'ذهبي';
+
+  @override
+  String get shareCardAccentGreen => 'أخضر';
+
+  @override
+  String get shareCardAccentPlain => 'بلون النص';
+
+  @override
+  String get shareCardStory => 'قصة';
 
   @override
   String get shareCardAction => 'مشاركة البطاقة';

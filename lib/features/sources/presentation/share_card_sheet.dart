@@ -22,14 +22,20 @@ class ShareCardSheet extends ConsumerStatefulWidget {
 class _ShareCardSheetState extends ConsumerState<ShareCardSheet> {
   final _card = GlobalKey();
   PassageCardSize _size = PassageCardSize.square;
-  bool? _dark;
+  PassageCardTemplate? _template;
+  PassageCardAccent _accent = PassageCardAccent.gold;
   bool _busy = false;
   bool _failed = false;
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final dark = _dark ?? Theme.of(context).brightness == Brightness.dark;
+    // Paper by default, night in the dark theme, until the reader picks.
+    final template =
+        _template ??
+        (Theme.of(context).brightness == Brightness.dark
+            ? PassageCardTemplate.night
+            : PassageCardTemplate.paper);
     return SafeArea(
       child: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
@@ -56,13 +62,54 @@ class _ShareCardSheetState extends ConsumerState<ShareCardSheet> {
                         ? null
                         : (_) => setState(() => _size = size),
                   ),
-                FilterChip(
-                  label: Text(l10n.shareCardDark),
-                  selected: dark,
-                  onSelected: _busy
-                      ? null
-                      : (value) => setState(() => _dark = value),
-                ),
+              ],
+            ),
+            const SizedBox(height: 4),
+            Wrap(
+              spacing: 8,
+              children: [
+                for (final t in PassageCardTemplate.values)
+                  ChoiceChip(
+                    label: Text(switch (t) {
+                      PassageCardTemplate.paper => l10n.shareCardPaper,
+                      PassageCardTemplate.green => l10n.shareCardGreen,
+                      PassageCardTemplate.night => l10n.shareCardNight,
+                    }),
+                    selected: template == t,
+                    onSelected: _busy
+                        ? null
+                        : (_) => setState(() => _template = t),
+                  ),
+              ],
+            ),
+            const SizedBox(height: 4),
+            Wrap(
+              spacing: 8,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: [
+                Text(l10n.shareCardAccent),
+                for (final a in PassageCardAccent.values)
+                  ChoiceChip(
+                    avatar: ExcludeSemantics(
+                      child: CircleAvatar(
+                        radius: 7,
+                        backgroundColor: template.background,
+                        child: CircleAvatar(
+                          radius: 5,
+                          backgroundColor: a.on(template),
+                        ),
+                      ),
+                    ),
+                    label: Text(switch (a) {
+                      PassageCardAccent.gold => l10n.shareCardAccentGold,
+                      PassageCardAccent.green => l10n.shareCardAccentGreen,
+                      PassageCardAccent.plain => l10n.shareCardAccentPlain,
+                    }),
+                    selected: _accent == a,
+                    onSelected: _busy
+                        ? null
+                        : (_) => setState(() => _accent = a),
+                  ),
               ],
             ),
             const SizedBox(height: 12),
@@ -79,7 +126,8 @@ class _ShareCardSheetState extends ConsumerState<ShareCardSheet> {
                   footer: widget.footer,
                   notice: widget.notice,
                   size: _size,
-                  dark: dark,
+                  template: template,
+                  accent: _accent,
                 ),
               ),
             ),

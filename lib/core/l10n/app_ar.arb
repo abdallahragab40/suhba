@@ -2730,8 +2730,35 @@
   },
   "shareCardTitle": "بطاقة من صُحبة",
   "shareCardSquare": "مربع",
+  "shareCardPaper": "ورقي",
+  "@shareCardPaper": {
+    "description": "Share card template: paper."
+  },
+  "shareCardGreen": "أخضر",
+  "@shareCardGreen": {
+    "description": "Share card template: Madinah green."
+  },
+  "shareCardNight": "ليلي",
+  "@shareCardNight": {
+    "description": "Share card template: night."
+  },
+  "shareCardAccent": "اللون:",
+  "@shareCardAccent": {
+    "description": "Share card: label before the accent choices."
+  },
+  "shareCardAccentGold": "ذهبي",
+  "@shareCardAccentGold": {
+    "description": "Share card accent: gold."
+  },
+  "shareCardAccentGreen": "أخضر",
+  "@shareCardAccentGreen": {
+    "description": "Share card accent: green."
+  },
+  "shareCardAccentPlain": "بلون النص",
+  "@shareCardAccentPlain": {
+    "description": "Share card accent: the text colour."
+  },
   "shareCardStory": "قصة",
-  "shareCardDark": "داكن",
   "shareCardAction": "مشاركة البطاقة",
   "shareCardFailed": "تعذّر تجهيز البطاقة. حاول مرة أخرى.",
   "shareCardFooter": "تطبيق صُحبة • السيرة والصحابة\nGoogle Play",

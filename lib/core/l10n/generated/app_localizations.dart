@@ -3649,17 +3649,53 @@ abstract class AppLocalizations {
   /// **'مربع'**
   String get shareCardSquare;
 
+  /// Share card template: paper.
+  ///
+  /// In ar, this message translates to:
+  /// **'ورقي'**
+  String get shareCardPaper;
+
+  /// Share card template: Madinah green.
+  ///
+  /// In ar, this message translates to:
+  /// **'أخضر'**
+  String get shareCardGreen;
+
+  /// Share card template: night.
+  ///
+  /// In ar, this message translates to:
+  /// **'ليلي'**
+  String get shareCardNight;
+
+  /// Share card: label before the accent choices.
+  ///
+  /// In ar, this message translates to:
+  /// **'اللون:'**
+  String get shareCardAccent;
+
+  /// Share card accent: gold.
+  ///
+  /// In ar, this message translates to:
+  /// **'ذهبي'**
+  String get shareCardAccentGold;
+
+  /// Share card accent: green.
+  ///
+  /// In ar, this message translates to:
+  /// **'أخضر'**
+  String get shareCardAccentGreen;
+
+  /// Share card accent: the text colour.
+  ///
+  /// In ar, this message translates to:
+  /// **'بلون النص'**
+  String get shareCardAccentPlain;
+
   /// No description provided for @shareCardStory.
   ///
   /// In ar, this message translates to:
   /// **'قصة'**
   String get shareCardStory;
-
-  /// No description provided for @shareCardDark.
-  ///
-  /// In ar, this message translates to:
-  /// **'داكن'**
-  String get shareCardDark;
 
   /// No description provided for @shareCardAction.
   ///
