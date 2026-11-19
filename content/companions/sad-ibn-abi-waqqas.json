@@ -177,6 +177,116 @@
       ]
     }
   ],
+  "overview": [
+    {
+      "text": {
+        "ar": "هو سعد بن مالك بن أهيب بن عبد مناف، وأبوه مالك يُكنى أبا وقّاص، فعُرف بسعد بن أبي وقّاص، وهو من بني زهرة بن كلاب من قريش، ويُكنى أبا إسحاق."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "73"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "92"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "101"
+        }
+      ],
+      "sectionId": "sad-ibn-abi-waqqas.early-life"
+    },
+    {
+      "text": {
+        "ar": "وكان إسلامه وهو ابن سبع عشرة سنة على ما يذكره ابن سعد وغيره."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "103"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "96"
+        }
+      ],
+      "sectionId": "sad-ibn-abi-waqqas.conversion"
+    },
+    {
+      "text": {
+        "ar": "شهد أول سرية بعثها النبي ﷺ بعد الهجرة مع عبيدة بن الحارث نحو رابغ، فكان أول من رمى بسهم في سبيل الله، كما ذكر عن نفسه في صحيح البخاري."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3728"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "591"
+        }
+      ],
+      "sectionId": "sad-ibn-abi-waqqas.with-prophet"
+    },
+    {
+      "text": {
+        "ar": "وتروي عائشة أن النبي ﷺ سهر ليلة مقدمه المدينة، فتمنّى أن يحرسه رجل صالح من أصحابه، فسمعوا صوت سلاح، فإذا هو سعد جاء يحرسه، فدعا له النبي ﷺ ونام."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "2885"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "complete",
+          "hadithNumber": "2410"
+        }
+      ],
+      "sectionId": "sad-ibn-abi-waqqas.virtues"
+    },
+    {
+      "text": {
+        "ar": "ويروي ابن عبد البر وغيره أن عمر ألبس سراقة بن مالك سواري كسرى، تصديقًا لما بشّره به النبي ﷺ في طريق الهجرة، وكان ذلك من غنائم فتح سعد."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "istiab",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "581"
+        },
+        {
+          "sourceId": "al-bidaya",
+          "locatorStatus": "complete",
+          "volume": 9,
+          "page": "144"
+        }
+      ],
+      "sectionId": "sad-ibn-abi-waqqas.contributions"
+    }
+  ],
   "relations": [
     {
       "type": "relative",

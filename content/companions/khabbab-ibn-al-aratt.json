@@ -324,6 +324,58 @@
   },
   "titles": [],
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "أسلم خبّاب في أول الدعوة، ويذكر مجاهد أنه من أول من أظهر إسلامه، ويذكر ابن إسحاق أنه أسلم بعد تسعة عشر إنسانًا فكان تمام العشرين."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "324"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "324"
+        }
+      ],
+      "sectionId": "khabbab-ibn-al-aratt.islam"
+    },
+    {
+      "text": {
+        "ar": "وشهد بدرًا والمشاهد كلها مع رسول الله ﷺ."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "323"
+        }
+      ],
+      "sectionId": "khabbab-ibn-al-aratt.hijrah"
+    },
+    {
+      "text": {
+        "ar": "أصابه في آخر عمره مرض شديد، فاكتوى في بطنه سبع كيّات، فعاده أصحابه، فذكر أنه لولا أن النبي ﷺ نهاهم أن يدعوا بالموت لدعا به."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "5672"
+        }
+      ],
+      "sectionId": "khabbab-ibn-al-aratt.later-life"
+    }
+  ],
   "relations": [],
   "storyIds": []
 }

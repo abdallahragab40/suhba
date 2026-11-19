@@ -180,6 +180,98 @@
       ]
     }
   ],
+  "overview": [
+    {
+      "text": {
+        "ar": "هو عثمان بن عفان بن أبي العاص بن أمية بن عبد شمس بن عبد مناف، يلتقي نسبه بنسب النبي ﷺ في عبد مناف، ويُكنى أبا عبد الله بابنه من رقية."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "456"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "39"
+        }
+      ],
+      "sectionId": "uthman.early-life"
+    },
+    {
+      "text": {
+        "ar": "كان من السابقين الأولين، أسلم بدعوة أبي بكر الصديق في أول الدعوة."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "250"
+        },
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "456"
+        }
+      ],
+      "sectionId": "uthman.conversion"
+    },
+    {
+      "text": {
+        "ar": "تخلّف عن بدر بأمر النبي ﷺ ليمرّض رقية، وكانت مريضة، فتوفيت في تلك الأيام، فجعل له النبي ﷺ سهمه وأجره كمن شهدها."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3130"
+        }
+      ],
+      "sectionId": "uthman.with-prophet"
+    },
+    {
+      "text": {
+        "ar": "وروى عن النبي ﷺ أحاديث، منها حديث فضل من تعلّم القرآن وعلّمه، وكان يعلّم الناس صفة وضوء النبي ﷺ عملًا ليروه كما رآه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "5027"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "159"
+        }
+      ],
+      "sectionId": "uthman.virtues"
+    },
+    {
+      "text": {
+        "ar": "ويروي ابن سعد عن الحسن البصري أنه رأى عثمان ينام في المسجد متوسدًا رداءه."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "44"
+        }
+      ],
+      "sectionId": "uthman.character"
+    }
+  ],
   "relations": [
     {
       "type": "spouse",

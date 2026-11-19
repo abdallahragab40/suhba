@@ -346,6 +346,80 @@
     "authoredBy": "short-profiles-1"
   },
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "ويروى أن النبي ﷺ سأله هل يحسن السريانية، فتعلّمها في سبعة عشر يومًا."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "429"
+        }
+      ],
+      "sectionId": "zayd-ibn-thabit.youth"
+    },
+    {
+      "text": {
+        "ar": "كان زيد من كتّاب الوحي للنبي ﷺ، ووصفه أبو بكر بأنه شاب عاقل لا يُتّهم، وأنه كان يكتب الوحي لرسول الله ﷺ."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4986"
+        }
+      ],
+      "sectionId": "zayd-ibn-thabit.scribe"
+    },
+    {
+      "text": {
+        "ar": "ثم كان في خلافة عثمان فيمن أمرهم بنسخ المصاحف من صحف حفصة، مع عبد الله بن الزبير وسعيد بن العاص وعبد الرحمن بن الحارث بن هشام."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4987"
+        }
+      ],
+      "sectionId": "zayd-ibn-thabit.the-mushaf"
+    },
+    {
+      "text": {
+        "ar": "ويروي الترمذي عن أنس أن النبي ﷺ ذكر أن أفرض أصحابه، أي أعلمهم بالمواريث، زيد بن ثابت، ويصحّحه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "tirmidhi",
+          "locatorStatus": "complete",
+          "hadithNumber": "3791"
+        }
+      ],
+      "sectionId": "zayd-ibn-thabit.knowledge"
+    },
+    {
+      "text": {
+        "ar": "اختلف المؤرخون في سنة وفاته؛ فقال الواقدي سنة خمس وأربعين عن ست وخمسين سنة، وقال أحمد بن حنبل سنة إحدى وخمسين، وقيل غير ذلك."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "441"
+        }
+      ],
+      "sectionId": "zayd-ibn-thabit.death"
+    }
+  ],
   "relations": [],
   "storyIds": [
     "jam-al-quran"

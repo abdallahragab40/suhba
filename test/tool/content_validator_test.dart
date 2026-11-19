@@ -158,6 +158,61 @@ void main() {
     });
   });
 
+  group('E2 overview sentences come from cited paragraphs', () {
+    Map<String, dynamic> fact({
+      String text = 'خلاصة السيرة.',
+      String? section,
+    }) => {
+      'text': {'ar': text},
+      'reliability': 'established',
+      'citations': [
+        {'sourceId': 'bio-a', 'locatorStatus': 'pending'},
+      ],
+      'sectionId': section ?? 'comp-a.early',
+    };
+    void overview(List<Map<String, dynamic>> facts) =>
+        fx.companionA['overview'] = facts;
+    Iterable<Issue> fewer() => validate().issues.where(
+      (i) => i.message.contains('of the 3–5 sentences'),
+    );
+
+    test('a sentence copied with its paragraph\'s citations is valid', () {
+      overview([fact(), fact(), fact()]);
+      expect(validate().issues, isEmpty);
+    });
+
+    test('a sentence the biography does not make is rejected', () {
+      overview([fact(text: 'خبر جديد'), fact(), fact()]);
+      expectOnly('V3');
+    });
+
+    test('so is a citation the paragraph does not carry', () {
+      overview([
+        {
+          ...fact(),
+          'citations': [
+            {'sourceId': 'hadith-a', 'locatorStatus': 'pending'},
+          ],
+        },
+        fact(),
+        fact(),
+      ]);
+      expectOnly('V3');
+    });
+
+    test('and a section that does not exist', () {
+      overview([fact(section: 'comp-a.nowhere'), fact(), fact()]);
+      expectOnly('V2');
+    });
+
+    test('fewer than three sentences is pending work', () {
+      overview([fact()]);
+      expect(fewer(), hasLength(1));
+      overview([fact(), fact(), fact()]);
+      expect(fewer(), isEmpty);
+    });
+  });
+
   group('E7 lessons point to their passages', () {
     Map<String, dynamic> lesson() => block(1);
 

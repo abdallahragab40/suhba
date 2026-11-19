@@ -339,5 +339,58 @@
   },
   "titles": [],
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "كان ابن عمر شديد التحرّي في اتباع النبي ﷺ، ويروي نافع أن عمر لما خصّ أحد أبواب المسجد بالنساء لم يدخل منه ابن عمر حتى مات."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "213"
+        }
+      ],
+      "sectionId": "abdullah-ibn-umar.character"
+    },
+    {
+      "text": {
+        "ar": "وكان مكثرًا من الرواية عن النبي ﷺ مع شدة تحرّيه في الحديث، ويذكر الشعبي أنه جالسه سنة فما سمعه يحدّث عن النبي ﷺ إلا حديثًا واحدًا."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "214"
+        }
+      ],
+      "sectionId": "abdullah-ibn-umar.character"
+    },
+    {
+      "text": {
+        "ar": "توفي ابن عمر بمكة ودُفن بفخ، وقال ابنه سالم إن ذلك كان سنة أربع وسبعين وهو ابن أربع وثمانين، وأرّخه غيره بسنة ثلاث وسبعين."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "231"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "232"
+        }
+      ],
+      "sectionId": "abdullah-ibn-umar.death"
+    }
+  ],
   "storyIds": []
 }

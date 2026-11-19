@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:suhba/core/domain/historical_date.dart';
 import 'package:suhba/core/domain/quran_ref.dart';
 import 'package:suhba/core/domain/reliability.dart';
@@ -246,6 +248,59 @@ class _Rules {
 
   // ── Items ─────────────────────────────────────────────────────────────
 
+  /// E2: the overview repeats, word for word, sentences already made and
+  /// cited in the biography, with those paragraphs' own citations, so it
+  /// can add no new claim.
+  void _overview(Item<CompanionDto> item, CompanionDto c) {
+    String plain(String t) => t
+        .replaceAll(RegExp('[\u064B-\u0652\u0670\u0640]'), '')
+        .replaceAll(RegExp(r'\s+'), ' ')
+        .replaceAll(RegExp(r'[.،؛:!؟]+$'), '')
+        .trim();
+    for (var i = 0; i < c.overview.length; i++) {
+      final f = c.overview[i];
+      final path = '\$.overview[$i]';
+      final section = c.sections.where((s) => s.id == f.sectionId).firstOrNull;
+      if (section == null) {
+        sink.error(
+          'V2',
+          item.file,
+          '$path.sectionId',
+          '"${f.sectionId}" is not a section of this biography.',
+        );
+        continue;
+      }
+      final sentence = plain(f.text.ar);
+      final cites = {for (final x in f.citations) jsonEncode(x.toJson())};
+      final source = section.blocks.whereType<ParagraphBlockDto>().where(
+        (p) =>
+            plain(p.text.ar).contains(sentence) &&
+            p.reliability == f.reliability &&
+            cites.every(
+              {for (final x in p.citations) jsonEncode(x.toJson())}.contains,
+            ),
+      );
+      if (sentence.isEmpty || source.isEmpty) {
+        sink.error(
+          'V3',
+          item.file,
+          path,
+          'An overview sentence must be copied from a cited paragraph of '
+              '"${f.sectionId}", with that paragraph\'s reliability and '
+              'citations.',
+        );
+      }
+    }
+    if (c.sections.isNotEmpty && c.overview.length < 3) {
+      sink.warning(
+        'V9',
+        item.file,
+        r'$.overview',
+        'The overview has ${c.overview.length} of the 3–5 sentences it needs.',
+      );
+    }
+  }
+
   /// E7: a lesson points to passages of its own work, never to a missing
   /// one; [required] makes an unlinked lesson a warning (the Ten).
   void _lessonSources(
@@ -280,6 +335,7 @@ class _Rules {
   void _companion(Item<CompanionDto> item) {
     final c = item.dto;
     _fileNameMatchesId(item, 'companions');
+    _overview(item, c);
     _lessonSources(
       item,
       [

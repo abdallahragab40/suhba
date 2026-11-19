@@ -318,6 +318,70 @@
   },
   "titles": [],
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "وذكرت أسماء بنت عميس أن النبي ﷺ قال لأهل السفينة: لكم أنتم أهل السفينة هجرتان، فكان أبو موسى وأصحابه يأتونها يسألونها عن هذا الحديث."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4231"
+        }
+      ],
+      "sectionId": "abu-musa-al-ashari.journey"
+    },
+    {
+      "text": {
+        "ar": "سمع النبي ﷺ قراءته فقال له: يا أبا موسى، لقد أوتيت مزمارًا من مزامير آل داود."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "5048"
+        }
+      ],
+      "sectionId": "abu-musa-al-ashari.with-the-prophet"
+    },
+    {
+      "text": {
+        "ar": "بعثه النبي ﷺ مع معاذ بن جبل إلى اليمن، كلًّا منهما على مخلاف، وأوصاهما: يسّرا ولا تعسّرا، وبشّرا ولا تنفّرا."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4341"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3038"
+        }
+      ],
+      "sectionId": "abu-musa-al-ashari.yemen"
+    },
+    {
+      "text": {
+        "ar": "يذكر الهيثم بن عدي فيما يرويه ابن سعد أنه مات سنة اثنتين وأربعين، وفي سنته وموضعه أقوال أخرى."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "382"
+        }
+      ],
+      "sectionId": "abu-musa-al-ashari.death"
+    }
+  ],
   "relations": [],
   "storyIds": []
 }

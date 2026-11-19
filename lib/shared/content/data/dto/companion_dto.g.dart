@@ -152,6 +152,7 @@ _CompanionDto _$CompanionDtoFromJson(
       'death',
       'deathPlace',
       'atAGlance',
+      'overview',
       'memberships',
       'relations',
       'sections',
@@ -234,6 +235,14 @@ _CompanionDto _$CompanionDtoFromJson(
               .toList() ??
           const <FactDto>[],
     ),
+    overview: $checkedConvert(
+      'overview',
+      (v) =>
+          (v as List<dynamic>?)
+              ?.map((e) => OverviewFactDto.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <OverviewFactDto>[],
+    ),
     memberships: $checkedConvert(
       'memberships',
       (v) =>
@@ -297,6 +306,7 @@ Map<String, dynamic> _$CompanionDtoToJson(_CompanionDto instance) =>
       'death': ?instance.death?.toJson(),
       'deathPlace': ?instance.deathPlace?.toJson(),
       'atAGlance': instance.atAGlance.map((e) => e.toJson()).toList(),
+      'overview': instance.overview.map((e) => e.toJson()).toList(),
       'memberships': instance.memberships.map((e) => e.toJson()).toList(),
       'relations': instance.relations.map((e) => e.toJson()).toList(),
       'sections': instance.sections.map((e) => e.toJson()).toList(),

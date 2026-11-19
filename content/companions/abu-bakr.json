@@ -494,6 +494,91 @@
       ]
     }
   ],
+  "overview": [
+    {
+      "text": {
+        "ar": "هو عبد الله بن عثمان بن عامر، من بني تيم بن مرة من قريش، يلتقي نسبه بنسب النبي ﷺ في مرة بن كعب."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "169"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "125"
+        }
+      ],
+      "sectionId": "abu-bakr.early-life"
+    },
+    {
+      "text": {
+        "ar": "كان من أوائل من أسلم، وهو أول من أسلم من الرجال الأحرار على قول كثير من أهل العلم."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "174"
+        }
+      ],
+      "sectionId": "abu-bakr.conversion"
+    },
+    {
+      "text": {
+        "ar": "صحب النبيَّ ﷺ في هجرته من مكة إلى المدينة، واختبآ ثلاث ليالٍ في غارٍ بجبل ثور قبل أن يمضيا في طريقهما."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3905"
+        }
+      ],
+      "sectionId": "abu-bakr.hijrah"
+    },
+    {
+      "text": {
+        "ar": "ولما اشتد المرض بالنبي ﷺ أمر أن يصلي أبو بكر بالناس."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "664"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "complete",
+          "hadithNumber": "418"
+        }
+      ],
+      "sectionId": "abu-bakr.virtues"
+    },
+    {
+      "text": {
+        "ar": "وصفته عائشة بأنه رجل رقيق القلب، إذا قرأ القرآن لم يملك دمعه، ولذلك راجعت النبي ﷺ حين أمره أن يصلي بالناس."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "682"
+        }
+      ],
+      "sectionId": "abu-bakr.character"
+    }
+  ],
   "relations": [
     {
       "type": "child",

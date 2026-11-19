@@ -173,6 +173,118 @@
       ]
     }
   ],
+  "overview": [
+    {
+      "text": {
+        "ar": "ويذكر ابن سعد أنه شهد بدرًا وهو ابن إحدى وأربعين سنة، وأنه مات في طاعون عمواس سنة ثماني عشرة وهو ابن ثمان وخمسين سنة."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "316"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "23"
+        }
+      ],
+      "sectionId": "abu-ubaydah.early-life"
+    },
+    {
+      "text": {
+        "ar": "ويذكر ابن سعد أنه أسلم مع عثمان بن مظعون وعبد الرحمن بن عوف وأصحابهم قبل دخول النبي ﷺ دار الأرقم."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "313"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "252"
+        }
+      ],
+      "sectionId": "abu-ubaydah.conversion"
+    },
+    {
+      "text": {
+        "ar": "ويذكر ابن سعد أنه شهد بدرًا وأحدًا والخندق والمشاهد كلها مع النبي ﷺ، ويذكر الذهبي بلاءه يوم أحد."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "313"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "8"
+        }
+      ],
+      "sectionId": "abu-ubaydah.with-prophet"
+    },
+    {
+      "text": {
+        "ar": "ويوم السقيفة قال أبو بكر للأنصار إنه رضي لهم أحد هذين الرجلين، وأخذ بيد عمر وبيد أبي عبيدة، فقدّم عمرُ أبا بكر وبايعه، كما في حديث السقيفة في صحيح البخاري."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "6830"
+        }
+      ],
+      "sectionId": "abu-ubaydah.virtues"
+    },
+    {
+      "text": {
+        "ar": "ثم أرسل إلى معاذ بمثله، فلما بلغه ما فعلا حمد الله."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "17"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "18"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "315"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "316"
+        }
+      ],
+      "sectionId": "abu-ubaydah.character"
+    }
+  ],
   "sections": [
     {
       "id": "abu-ubaydah.early-life",

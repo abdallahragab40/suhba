@@ -355,6 +355,56 @@
     "authoredBy": "short-profiles-1"
   },
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "كان أبي بن كعب من الأنصار، شهد العقبة وبدرًا، وجمع القرآن في حياة النبي ﷺ، وكان يُكنى أبا المنذر، ويُكنى أيضًا أبا الطفيل، على ما يذكر الذهبي."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "390"
+        }
+      ],
+      "sectionId": "ubayy-ibn-kab.life"
+    },
+    {
+      "text": {
+        "ar": "أخبره النبي ﷺ أن الله أمره أن يقرأ عليه سورة البينة، فسأله أبي: وسمّاني لك؟"
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4959"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3809"
+        }
+      ],
+      "sectionId": "ubayy-ibn-kab.virtues"
+    },
+    {
+      "text": {
+        "ar": "خرج عمر بن الخطاب ليلة في رمضان إلى المسجد، فوجد الناس يصلّون متفرّقين، فرأى أن يجمعهم على قارئ واحد، فجمعهم على أبي بن كعب."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "2010"
+        }
+      ],
+      "sectionId": "ubayy-ibn-kab.after"
+    }
+  ],
   "relations": [],
   "storyIds": []
 }

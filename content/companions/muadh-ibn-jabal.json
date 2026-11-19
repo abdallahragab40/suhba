@@ -345,6 +345,87 @@
   },
   "titles": [],
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "أسلم معاذ شابًّا في المدينة، وشهد بيعة العقبة الثانية مع السبعين وهو أمرد، ثم شهد بدرًا وله عشرون سنة أو إحدى وعشرون، على ما يذكر ابن سعد والواقدي."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "444"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "444"
+        }
+      ],
+      "sectionId": "muadh-ibn-jabal.islam"
+    },
+    {
+      "text": {
+        "ar": "كان معاذ رديف النبي ﷺ على حمار، فسأله: أتدري ما حق الله على العباد؟"
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "7373"
+        }
+      ],
+      "sectionId": "muadh-ibn-jabal.with-the-prophet"
+    },
+    {
+      "text": {
+        "ar": "وتوفي النبي ﷺ ومعاذ عامله على الجَنَد من اليمن، على ما يذكر الواقدي."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "450"
+        }
+      ],
+      "sectionId": "muadh-ibn-jabal.yemen"
+    },
+    {
+      "text": {
+        "ar": "ويروي الترمذي عن أنس أن النبي ﷺ ذكر طائفة من أصحابه بخصالهم، وذكر أن أعلمهم بالحلال والحرام معاذ بن جبل، ويصحّحه الترمذي."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "tirmidhi",
+          "locatorStatus": "complete",
+          "hadithNumber": "3791"
+        }
+      ],
+      "sectionId": "muadh-ibn-jabal.virtues"
+    },
+    {
+      "text": {
+        "ar": "خرج معاذ إلى الشام، فلما وقع طاعون عمواس ماتت فيه ابنتاه، وطُعن ابنه عبد الرحمن، ثم مات هو فيه، على ما يذكر الذهبي."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "458"
+        }
+      ],
+      "sectionId": "muadh-ibn-jabal.death"
+    }
+  ],
   "relations": [],
   "storyIds": [
     "the-plague-at-sargh"

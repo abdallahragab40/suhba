@@ -148,6 +148,101 @@
       ]
     }
   ],
+  "overview": [
+    {
+      "text": {
+        "ar": "ويُستفاد مما يذكره ابن سعد من سنّه يوم وفاته أنه وُلد بمكة قبل البعثة بنحو عشر سنين أو أكثر؛ وهذا تقدير، لا تاريخ مولد مرويّ."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "294"
+        }
+      ],
+      "sectionId": "said-ibn-zayd.early-life"
+    },
+    {
+      "text": {
+        "ar": "أسلم سعيد قديمًا، هو وزوجه فاطمة بنت الخطاب، قبل أن يسلم عمر وقبل أن يدخل النبي ﷺ دار الأرقم، فكان من السابقين الأولين."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "253"
+        },
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "103"
+        }
+      ],
+      "sectionId": "said-ibn-zayd.conversion"
+    },
+    {
+      "text": {
+        "ar": "وشهد أحدًا والخندق والحديبية وبيعة الرضوان، والمشاهد كلها بعد بدر مع النبي ﷺ، على ما يذكره ابن سعد وغيره."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "103"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "293"
+        }
+      ],
+      "sectionId": "said-ibn-zayd.with-prophet"
+    },
+    {
+      "text": {
+        "ar": "وسكن العقيق، ويروي الذهبي أن مروان لما أراد البيعة ليزيد بالمدينة قال: حتى يجيء سعيد بن زيد فيبايع، فإنه سيد أهل البلد، وإذا بايع بايع الناس."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "139"
+        }
+      ],
+      "sectionId": "said-ibn-zayd.character"
+    },
+    {
+      "text": {
+        "ar": "وولّاه أبو عبيدة بن الجراح دمشق بعد فتحها، فكان أول من عمل نيابة دمشق من هذه الأمة على ما يذكره الذهبي."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "125"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "124"
+        }
+      ],
+      "sectionId": "said-ibn-zayd.contributions"
+    }
+  ],
   "relations": [
     {
       "type": "father",

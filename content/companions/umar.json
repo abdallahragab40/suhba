@@ -159,6 +159,116 @@
       ]
     }
   ],
+  "overview": [
+    {
+      "text": {
+        "ar": "هو عمر بن الخطاب بن نفيل، من بني عدي بن كعب من قريش، يلتقي نسبه بنسب النبي ﷺ في كعب بن لؤي، ويُكنى أبا حفص."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "588"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "201"
+        }
+      ],
+      "sectionId": "umar.early-life"
+    },
+    {
+      "text": {
+        "ar": "أسلم بمكة قبل الهجرة، وكان إسلامه قوةً للمسلمين."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "588"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3863"
+        }
+      ],
+      "sectionId": "umar.conversion"
+    },
+    {
+      "text": {
+        "ar": "هاجر عمر إلى المدينة قبل النبي ﷺ مع من هاجر من الصحابة، ونزل بها في عوالي المدينة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3925"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "89"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "474"
+        }
+      ],
+      "sectionId": "umar.with-prophet"
+    },
+    {
+      "text": {
+        "ar": "وكان من فقهاء الصحابة، ويروي ابن سعد عن رجل من أهل المدينة أنه رأى الفقهاء عند عمر مثل الصبيان، قد استعلى عليهم في فقهه وعلمه."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "256"
+        }
+      ],
+      "sectionId": "umar.virtues"
+    },
+    {
+      "text": {
+        "ar": "وفي عام الرمادة، حين أصاب الناس جدب شديد سنة ثماني عشرة، حلف ألا يذوق لحمًا ولا سمنًا حتى يحيا الناس، كما يرويه ابن سعد."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tarikh-al-tabari",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "96"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "215"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "238"
+        }
+      ],
+      "sectionId": "umar.character"
+    }
+  ],
   "relations": [
     {
       "type": "child",

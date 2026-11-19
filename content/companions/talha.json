@@ -152,6 +152,113 @@
       ]
     }
   ],
+  "overview": [
+    {
+      "text": {
+        "ar": "ويذكر ابن سعد أنه قُتل سنة ست وثلاثين، وينقل اختلافًا في عمره يومئذ: فقيل أربع وستون سنة، وقيل اثنتان وستون."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "168"
+        }
+      ],
+      "sectionId": "talha.early-life"
+    },
+    {
+      "text": {
+        "ar": "كان من الثمانية الذين سبقوا إلى الإسلام، وأحد الخمسة الذين أسلموا بدعوة أبي بكر الصديق، فكان من السابقين الأولين الذين ذكرهم القرآن بالثناء."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "250"
+        },
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "529"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 9,
+            "ayahFrom": 100
+          }
+        }
+      ],
+      "sectionId": "talha.conversion"
+    },
+    {
+      "text": {
+        "ar": "ثم شهد الخندق والمشاهد كلها مع النبي ﷺ، كما يذكر ابن سعد."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "530"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "163"
+        }
+      ],
+      "sectionId": "talha.with-prophet"
+    },
+    {
+      "text": {
+        "ar": "وهو أحد العشرة الذين سمّاهم النبي ﷺ في حديث واحد وبشّرهم بالجنة، وأحد الستة أهل الشورى الذين توفي النبي ﷺ وهو عنهم راضٍ، كما قال عمر بن الخطاب."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "tirmidhi",
+          "locatorStatus": "complete",
+          "hadithNumber": "3747"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3700"
+        }
+      ],
+      "sectionId": "talha.virtues"
+    },
+    {
+      "text": {
+        "ar": "ويروي أهل التراجم عن قبيصة بن جابر أنه ما رأى أحدًا أعطى للجزيل من غير مسألة من طلحة، وأنه كان يعطي قبل أن يُسأل."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "30"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "165"
+        }
+      ],
+      "sectionId": "talha.character"
+    }
+  ],
   "deathPlace": {
     "ar": "البصرة"
   },

@@ -96,6 +96,16 @@ class ContentFixture {
             'person': {'displayName': _t('شخص'), 'personId': 'person-a'},
           },
         ],
+        // «في سطور» (E2): sentences of the paragraph below.
+        'overview': [
+          for (var i = 0; i < 3; i++)
+            {
+              'text': _t('خلاصة السيرة.'),
+              'reliability': 'established',
+              'citations': [_pending('bio-a')],
+              'sectionId': 'comp-a.early',
+            },
+        ],
         'sections': [
           {
             'id': 'comp-a.early',
@@ -140,6 +150,14 @@ class ContentFixture {
                     'citations': [_pending('bio-a')],
                   },
                 ],
+              },
+              // Last, so tests that edit earlier blocks keep their
+              // indices: the paragraph the overview quotes.
+              {
+                'type': 'paragraph',
+                'text': _t('خلاصة السيرة.'),
+                'reliability': 'established',
+                'citations': [_pending('bio-a')],
               },
             ],
           },

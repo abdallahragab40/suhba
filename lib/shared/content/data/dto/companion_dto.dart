@@ -59,6 +59,9 @@ abstract class CompanionDto with _$CompanionDto {
     DatedClaimDto? death,
     LocalizedTextDto? deathPlace,
     @Default(<FactDto>[]) List<FactDto> atAGlance,
+
+    /// Three to five key sentences from the biography (E2).
+    @Default(<OverviewFactDto>[]) List<OverviewFactDto> overview,
     @Default(<MembershipDto>[]) List<MembershipDto> memberships,
     @Default(<RelationDto>[]) List<RelationDto> relations,
     @Default(<BiographySectionDto>[]) List<BiographySectionDto> sections,

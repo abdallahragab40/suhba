@@ -307,6 +307,58 @@
     "authoredBy": "short-profiles-1"
   },
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "وتوفي النبي ﷺ وابن عباس صغير، وكان يذكر أنه توفي وهو ابن عشر سنين وقد قرأ المحكم من القرآن."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "5035"
+        }
+      ],
+      "sectionId": "abdullah-ibn-abbas.childhood"
+    },
+    {
+      "text": {
+        "ar": "وكان عبد الله بن مسعود يقول: نِعم ترجمان القرآن ابن عباس."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "347"
+        }
+      ],
+      "sectionId": "abdullah-ibn-abbas.knowledge"
+    },
+    {
+      "text": {
+        "ar": "توفي ابن عباس بالطائف، وذكر علي بن المديني أنه توفي سنة ثمان أو سبع وستين، وقال الواقدي وغيره سنة ثمان وستين."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "358"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "359"
+        }
+      ],
+      "sectionId": "abdullah-ibn-abbas.death"
+    }
+  ],
   "storyIds": [],
   "memberships": []
 }

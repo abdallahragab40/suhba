@@ -165,6 +165,9 @@ abstract class Companion with _$Companion {
     DatedClaim? death,
     LocalizedText? deathPlace,
     @Default(<Fact>[]) List<Fact> atAGlance,
+
+    /// Three to five key sentences from the biography, each cited (E2).
+    @Default(<OverviewFact>[]) List<OverviewFact> overview,
     @Default(<Membership>[]) List<Membership> memberships,
     @Default(<Relation>[]) List<Relation> relations,
     @Default(<BiographySection>[]) List<BiographySection> sections,

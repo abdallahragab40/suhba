@@ -414,5 +414,79 @@
     "authoredBy": "ummahat-2"
   },
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "زينب بنت جحش ابنة عمة النبي ﷺ، أمها أميمة بنت عبد المطلب بن هاشم، وهي أخت حمنة وأبي أحمد، وكانت من المهاجرات الأُوَل، على ما يذكر الذهبي."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "211"
+        }
+      ],
+      "sectionId": "zaynab-bint-jahsh.early"
+    },
+    {
+      "text": {
+        "ar": "كانت زينب عند زيد بن حارثة مولى النبي ﷺ، وفي شأنها وشأن زيد نزل قوله تعالى في سورة الأحزاب، فلما قضى زيد منها وطرًا زوّجها الله نبيه ﷺ."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 33,
+            "ayahFrom": 37
+          }
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "7420"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "211"
+        }
+      ],
+      "sectionId": "zaynab-bint-jahsh.marriage"
+    },
+    {
+      "text": {
+        "ar": "قالت عائشة: وهي التي كانت تساميني من أزواج رسول الله ﷺ، فعصمها الله بالورع."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4750"
+        }
+      ],
+      "sectionId": "zaynab-bint-jahsh.virtues"
+    },
+    {
+      "text": {
+        "ar": "توفيت زينب سنة عشرين، وصلى عليها عمر، على ما يذكر الذهبي."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "212"
+        }
+      ],
+      "sectionId": "zaynab-bint-jahsh.death"
+    }
+  ],
   "storyIds": []
 }

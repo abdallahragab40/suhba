@@ -301,6 +301,51 @@
     "authoredBy": "short-profiles-1"
   },
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "وُلد أسامة في الإسلام، وأمه أم أيمن حاضنة النبي ﷺ، وتوفي النبي ﷺ وله عشرون سنة، وقيل ثماني عشرة، على ما يذكر ابن حجر."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "49"
+        }
+      ],
+      "sectionId": "usamah-ibn-zayd.beloved"
+    },
+    {
+      "text": {
+        "ar": "وجعل يكرّرها حتى تمنّى أسامة أنه لم يكن أسلم قبل ذلك اليوم."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4269"
+        }
+      ],
+      "sectionId": "usamah-ibn-zayd.lesson-of-the-shahadah"
+    },
+    {
+      "text": {
+        "ar": "بعث النبي ﷺ بعثًا وأمّر عليهم أسامة، فطعن بعض الناس في إمارته، فأخبر النبي ﷺ أنه خليق بالإمارة كما كان أبوه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3730"
+        }
+      ],
+      "sectionId": "usamah-ibn-zayd.the-army"
+    }
+  ],
   "storyIds": [],
   "memberships": []
 }

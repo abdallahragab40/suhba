@@ -260,6 +260,57 @@
     "authoredBy": "short-profiles-1"
   },
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "كان عبد الله بن رواحة من الأنصار، وأحد النقباء الاثني عشر ليلة العقبة، وشهد بدرًا، ويصفه الذهبي بالأمير السعيد الشهيد، البدري النقيب الشاعر."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "230"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "231"
+        }
+      ],
+      "sectionId": "abdullah-ibn-rawahah.naqib"
+    },
+    {
+      "text": {
+        "ar": "يوم الخندق كان النبي ﷺ ينقل التراب وهو يرتجز بكلمات ابن رواحة: اللهم لولا أنت ما اهتدينا، ولا تصدّقنا ولا صلّينا، كما يروي البراء بن عازب."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4106"
+        }
+      ],
+      "sectionId": "abdullah-ibn-rawahah.poet"
+    },
+    {
+      "text": {
+        "ar": "جعله النبي ﷺ ثالث الأمراء يوم مؤتة، فقال: إن قُتل زيد فجعفر، وإن قُتل جعفر فعبد الله بن رواحة، فأخذ الراية بعد جعفر فقاتل حتى قُتل."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4261"
+        }
+      ],
+      "sectionId": "abdullah-ibn-rawahah.mutah"
+    }
+  ],
   "relations": [],
   "storyIds": []
 }

@@ -159,6 +159,92 @@
       ]
     }
   ],
+  "overview": [
+    {
+      "text": {
+        "ar": "ويذكر الذهبي نقلًا عن ابن عبد البر أنه كان مجدودًا في التجارة، وأنه خلّف إبلًا وغنمًا وخيلًا، وكانت له زراعة بالجرف."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "92"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "2048"
+        }
+      ],
+      "sectionId": "abd-al-rahman-ibn-awf.early-life"
+    },
+    {
+      "text": {
+        "ar": "أسلم قديمًا قبل أن يدخل النبي ﷺ دار الأرقم، بدعوة أبي بكر الصديق، فكان أحد الخمسة الذين أسلموا على يديه، وأحد الثمانية الذين سبقوا إلى الإسلام."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "250"
+        },
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "346"
+        }
+      ],
+      "sectionId": "abd-al-rahman-ibn-awf.conversion"
+    },
+    {
+      "text": {
+        "ar": "وروى في البخاري أنه كاتب أمية بن خلف على أن يحفظه في صاغيته بمكة، ويحفظ أمية في صاغيته بالمدينة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "2301"
+        }
+      ],
+      "sectionId": "abd-al-rahman-ibn-awf.with-prophet"
+    },
+    {
+      "text": {
+        "ar": "وفي رواية المغيرة أن عبد الرحمن لما أحسّ بالنبي ﷺ أراد أن يتأخّر، فأومأ إليه النبي ﷺ أن يستمرّ في الصلاة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "complete",
+          "hadithNumber": "274"
+        }
+      ],
+      "sectionId": "abd-al-rahman-ibn-awf.virtues"
+    },
+    {
+      "text": {
+        "ar": "ويروي الذهبي عن جعفر بن بُرقان أنه بلغه أن عبد الرحمن أعتق ثلاثين ألف بيت، وهو بلاغ لا إسناد متصل له، فيُذكر على أنه رواية."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "92"
+        }
+      ],
+      "sectionId": "abd-al-rahman-ibn-awf.character"
+    }
+  ],
   "relations": [
     {
       "type": "brotherhood",

@@ -320,6 +320,54 @@
     "authoredBy": "short-profiles-1"
   },
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "كان زيد مملوكًا لخديجة، فوهبته للنبي ﷺ فأعتقه، على ما يذكر الذهبي."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "223"
+        }
+      ],
+      "sectionId": "zayd-ibn-harithah.early"
+    },
+    {
+      "text": {
+        "ar": "زيد هو الصحابي الوحيد الذي ذُكر باسمه في القرآن، في قوله تعالى: ﴿فلما قضى زيد منها وطرًا زوّجناكها﴾."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 33,
+            "ayahFrom": 37
+          }
+        }
+      ],
+      "sectionId": "zayd-ibn-harithah.virtues"
+    },
+    {
+      "text": {
+        "ar": "أمّره النبي ﷺ على جيش مؤتة، وقال: إن قُتل زيد فجعفر، وإن قُتل جعفر فعبد الله بن رواحة، فقاتل حتى قُتل."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4261"
+        }
+      ],
+      "sectionId": "zayd-ibn-harithah.mutah"
+    }
+  ],
   "storyIds": [
     "from-the-shib-to-taif"
   ]

@@ -441,6 +441,65 @@
   },
   "titles": [],
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "أسلم عمار في أول الدعوة، وكان يذكر أنه رأى رسول الله ﷺ وما معه إلا خمسة أعبد وامرأتان وأبو بكر."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3660"
+        }
+      ],
+      "sectionId": "ammar-ibn-yasir.islam-and-trial"
+    },
+    {
+      "text": {
+        "ar": "هاجر عمار إلى المدينة، وكان البراء بن عازب يعدّه في أوائل من قدموا عليهم من المهاجرين قبل النبي ﷺ، بعد مصعب بن عمير وابن أم مكتوم."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3925"
+        }
+      ],
+      "sectionId": "ammar-ibn-yasir.with-the-prophet"
+    },
+    {
+      "text": {
+        "ar": "واستأذن عمار يومًا على النبي ﷺ، فأمر أن يُؤذن له، ورحّب به ووصفه بالطيّب المطيَّب، فيما يرويه الترمذي ويصحّحه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "tirmidhi",
+          "locatorStatus": "complete",
+          "hadithNumber": "3798"
+        }
+      ],
+      "sectionId": "ammar-ibn-yasir.virtues"
+    },
+    {
+      "text": {
+        "ar": "وكان عمر يقرّب السابقين، فيُروى أن خبّاب بن الأرت جاءه، فأدناه وذكر أنه ما أحد أحق بذلك المجلس منه إلا عمار."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "421"
+        }
+      ],
+      "sectionId": "ammar-ibn-yasir.after"
+    }
+  ],
   "relations": [],
   "storyIds": [
     "the-prayers-of-sad"

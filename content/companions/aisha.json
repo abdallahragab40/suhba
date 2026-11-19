@@ -469,5 +469,95 @@
     "authoredBy": "short-profiles-1"
   },
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "تزوّجها النبي ﷺ بمكة بعد وفاة خديجة، ثم بنى بها في المدينة بعد الهجرة، ولم يتزوّج بكرًا غيرها."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3894"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4753"
+        }
+      ],
+      "sectionId": "aisha.marriage"
+    },
+    {
+      "text": {
+        "ar": "ابتُليت عائشة بحديث الإفك الذي أشاعه المنافقون، فأنزل الله براءتها في آيات من سورة النور تُتلى إلى يوم القيامة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 24,
+            "ayahFrom": 11
+          }
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4750"
+        }
+      ],
+      "sectionId": "aisha.trial"
+    },
+    {
+      "text": {
+        "ar": "استأذن النبي ﷺ أزواجه في مرضه الأخير أن يُمرَّض في بيت عائشة، فتوفي في بيتها وفي يومها، ورأسه بين سحرها ونحرها، ودُفن في بيتها."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4449"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "1389"
+        }
+      ],
+      "sectionId": "aisha.the-last-days"
+    },
+    {
+      "text": {
+        "ar": "كانت عائشة من أعلم الناس، ويذكر أبو موسى الأشعري أنهم ما أشكل عليهم حديث قط فسألوا عائشة إلا وجدوا عندها منه علمًا، فيما يرويه الترمذي."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "tirmidhi",
+          "locatorStatus": "complete",
+          "hadithNumber": "3883"
+        }
+      ],
+      "sectionId": "aisha.knowledge"
+    },
+    {
+      "text": {
+        "ar": "وكانت لا تمسك شيئًا مما جاءها من رزق الله إلا تصدّقت به، حتى رأى ابن أختها عبد الله بن الزبير أن يُؤخذ على يديها، كما يروي عروة بن الزبير."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3505"
+        }
+      ],
+      "sectionId": "aisha.generosity"
+    }
+  ],
   "storyIds": []
 }

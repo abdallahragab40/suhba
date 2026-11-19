@@ -101,6 +101,57 @@
       ]
     }
   ],
+  "overview": [
+    {
+      "text": {
+        "ar": "كان حمزة عمّ النبي ﷺ، وأخاه من الرضاعة، ولذلك ذكر النبي ﷺ أن ابنة حمزة لا تحلّ له لأنها ابنة أخيه من الرضاعة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "5100"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "172"
+        }
+      ],
+      "sectionId": "hamzah.islam"
+    },
+    {
+      "text": {
+        "ar": "ويذكر اختلافًا في أول راية عُقدت: أكانت لعبيدة بن الحارث أم لحمزة."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "595"
+        }
+      ],
+      "sectionId": "hamzah.badr"
+    },
+    {
+      "text": {
+        "ar": "خرج حمزة يوم أحد يقاتل، فكمن له وحشي خلف صخرة، ثم رماه بحربته فقتله."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4072"
+        }
+      ],
+      "sectionId": "hamzah.uhud"
+    }
+  ],
   "relations": [
     {
       "type": "relative",

@@ -664,7 +664,8 @@ $LocalizedTextDtoCopyWith<$Res>? get summary {
 /// @nodoc
 mixin _$CompanionDto {
 
- int get schemaVersion; String get id; Gender get gender; LocalizedTextDto get name; LocalizedTextDto get fullName; LocalizedTextDto get summary; ReviewDto get review; List<String> get references; int? get order; LocalizedTextDto? get lineage; LocalizedTextDto? get kunya; List<LocalizedTextDto> get titles; List<String> get aliases; DatedClaimDto? get birth; DatedClaimDto? get death; LocalizedTextDto? get deathPlace; List<FactDto> get atAGlance; List<MembershipDto> get memberships; List<RelationDto> get relations; List<BiographySectionDto> get sections; List<String> get storyIds; List<TimelineEventDto> get timeline;
+ int get schemaVersion; String get id; Gender get gender; LocalizedTextDto get name; LocalizedTextDto get fullName; LocalizedTextDto get summary; ReviewDto get review; List<String> get references; int? get order; LocalizedTextDto? get lineage; LocalizedTextDto? get kunya; List<LocalizedTextDto> get titles; List<String> get aliases; DatedClaimDto? get birth; DatedClaimDto? get death; LocalizedTextDto? get deathPlace; List<FactDto> get atAGlance;/// Three to five key sentences from the biography (E2).
+ List<OverviewFactDto> get overview; List<MembershipDto> get memberships; List<RelationDto> get relations; List<BiographySectionDto> get sections; List<String> get storyIds; List<TimelineEventDto> get timeline;
 /// Create a copy of CompanionDto
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -677,16 +678,16 @@ $CompanionDtoCopyWith<CompanionDto> get copyWith => _$CompanionDtoCopyWithImpl<C
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CompanionDto&&(identical(other.schemaVersion, schemaVersion) || other.schemaVersion == schemaVersion)&&(identical(other.id, id) || other.id == id)&&(identical(other.gender, gender) || other.gender == gender)&&(identical(other.name, name) || other.name == name)&&(identical(other.fullName, fullName) || other.fullName == fullName)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.review, review) || other.review == review)&&const DeepCollectionEquality().equals(other.references, references)&&(identical(other.order, order) || other.order == order)&&(identical(other.lineage, lineage) || other.lineage == lineage)&&(identical(other.kunya, kunya) || other.kunya == kunya)&&const DeepCollectionEquality().equals(other.titles, titles)&&const DeepCollectionEquality().equals(other.aliases, aliases)&&(identical(other.birth, birth) || other.birth == birth)&&(identical(other.death, death) || other.death == death)&&(identical(other.deathPlace, deathPlace) || other.deathPlace == deathPlace)&&const DeepCollectionEquality().equals(other.atAGlance, atAGlance)&&const DeepCollectionEquality().equals(other.memberships, memberships)&&const DeepCollectionEquality().equals(other.relations, relations)&&const DeepCollectionEquality().equals(other.sections, sections)&&const DeepCollectionEquality().equals(other.storyIds, storyIds)&&const DeepCollectionEquality().equals(other.timeline, timeline));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CompanionDto&&(identical(other.schemaVersion, schemaVersion) || other.schemaVersion == schemaVersion)&&(identical(other.id, id) || other.id == id)&&(identical(other.gender, gender) || other.gender == gender)&&(identical(other.name, name) || other.name == name)&&(identical(other.fullName, fullName) || other.fullName == fullName)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.review, review) || other.review == review)&&const DeepCollectionEquality().equals(other.references, references)&&(identical(other.order, order) || other.order == order)&&(identical(other.lineage, lineage) || other.lineage == lineage)&&(identical(other.kunya, kunya) || other.kunya == kunya)&&const DeepCollectionEquality().equals(other.titles, titles)&&const DeepCollectionEquality().equals(other.aliases, aliases)&&(identical(other.birth, birth) || other.birth == birth)&&(identical(other.death, death) || other.death == death)&&(identical(other.deathPlace, deathPlace) || other.deathPlace == deathPlace)&&const DeepCollectionEquality().equals(other.atAGlance, atAGlance)&&const DeepCollectionEquality().equals(other.overview, overview)&&const DeepCollectionEquality().equals(other.memberships, memberships)&&const DeepCollectionEquality().equals(other.relations, relations)&&const DeepCollectionEquality().equals(other.sections, sections)&&const DeepCollectionEquality().equals(other.storyIds, storyIds)&&const DeepCollectionEquality().equals(other.timeline, timeline));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,schemaVersion,id,gender,name,fullName,summary,review,const DeepCollectionEquality().hash(references),order,lineage,kunya,const DeepCollectionEquality().hash(titles),const DeepCollectionEquality().hash(aliases),birth,death,deathPlace,const DeepCollectionEquality().hash(atAGlance),const DeepCollectionEquality().hash(memberships),const DeepCollectionEquality().hash(relations),const DeepCollectionEquality().hash(sections),const DeepCollectionEquality().hash(storyIds),const DeepCollectionEquality().hash(timeline)]);
+int get hashCode => Object.hashAll([runtimeType,schemaVersion,id,gender,name,fullName,summary,review,const DeepCollectionEquality().hash(references),order,lineage,kunya,const DeepCollectionEquality().hash(titles),const DeepCollectionEquality().hash(aliases),birth,death,deathPlace,const DeepCollectionEquality().hash(atAGlance),const DeepCollectionEquality().hash(overview),const DeepCollectionEquality().hash(memberships),const DeepCollectionEquality().hash(relations),const DeepCollectionEquality().hash(sections),const DeepCollectionEquality().hash(storyIds),const DeepCollectionEquality().hash(timeline)]);
 
 @override
 String toString() {
-  return 'CompanionDto(schemaVersion: $schemaVersion, id: $id, gender: $gender, name: $name, fullName: $fullName, summary: $summary, review: $review, references: $references, order: $order, lineage: $lineage, kunya: $kunya, titles: $titles, aliases: $aliases, birth: $birth, death: $death, deathPlace: $deathPlace, atAGlance: $atAGlance, memberships: $memberships, relations: $relations, sections: $sections, storyIds: $storyIds, timeline: $timeline)';
+  return 'CompanionDto(schemaVersion: $schemaVersion, id: $id, gender: $gender, name: $name, fullName: $fullName, summary: $summary, review: $review, references: $references, order: $order, lineage: $lineage, kunya: $kunya, titles: $titles, aliases: $aliases, birth: $birth, death: $death, deathPlace: $deathPlace, atAGlance: $atAGlance, overview: $overview, memberships: $memberships, relations: $relations, sections: $sections, storyIds: $storyIds, timeline: $timeline)';
 }
 
 
@@ -697,7 +698,7 @@ abstract mixin class $CompanionDtoCopyWith<$Res>  {
   factory $CompanionDtoCopyWith(CompanionDto value, $Res Function(CompanionDto) _then) = _$CompanionDtoCopyWithImpl;
 @useResult
 $Res call({
- int schemaVersion, String id, Gender gender, LocalizedTextDto name, LocalizedTextDto fullName, LocalizedTextDto summary, ReviewDto review, List<String> references, int? order, LocalizedTextDto? lineage, LocalizedTextDto? kunya, List<LocalizedTextDto> titles, List<String> aliases, DatedClaimDto? birth, DatedClaimDto? death, LocalizedTextDto? deathPlace, List<FactDto> atAGlance, List<MembershipDto> memberships, List<RelationDto> relations, List<BiographySectionDto> sections, List<String> storyIds, List<TimelineEventDto> timeline
+ int schemaVersion, String id, Gender gender, LocalizedTextDto name, LocalizedTextDto fullName, LocalizedTextDto summary, ReviewDto review, List<String> references, int? order, LocalizedTextDto? lineage, LocalizedTextDto? kunya, List<LocalizedTextDto> titles, List<String> aliases, DatedClaimDto? birth, DatedClaimDto? death, LocalizedTextDto? deathPlace, List<FactDto> atAGlance, List<OverviewFactDto> overview, List<MembershipDto> memberships, List<RelationDto> relations, List<BiographySectionDto> sections, List<String> storyIds, List<TimelineEventDto> timeline
 });
 
 
@@ -714,7 +715,7 @@ class _$CompanionDtoCopyWithImpl<$Res>
 
 /// Create a copy of CompanionDto
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? schemaVersion = null,Object? id = null,Object? gender = null,Object? name = null,Object? fullName = null,Object? summary = null,Object? review = null,Object? references = null,Object? order = freezed,Object? lineage = freezed,Object? kunya = freezed,Object? titles = null,Object? aliases = null,Object? birth = freezed,Object? death = freezed,Object? deathPlace = freezed,Object? atAGlance = null,Object? memberships = null,Object? relations = null,Object? sections = null,Object? storyIds = null,Object? timeline = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? schemaVersion = null,Object? id = null,Object? gender = null,Object? name = null,Object? fullName = null,Object? summary = null,Object? review = null,Object? references = null,Object? order = freezed,Object? lineage = freezed,Object? kunya = freezed,Object? titles = null,Object? aliases = null,Object? birth = freezed,Object? death = freezed,Object? deathPlace = freezed,Object? atAGlance = null,Object? overview = null,Object? memberships = null,Object? relations = null,Object? sections = null,Object? storyIds = null,Object? timeline = null,}) {
   return _then(_self.copyWith(
 schemaVersion: null == schemaVersion ? _self.schemaVersion : schemaVersion // ignore: cast_nullable_to_non_nullable
 as int,id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
@@ -733,7 +734,8 @@ as List<String>,birth: freezed == birth ? _self.birth : birth // ignore: cast_nu
 as DatedClaimDto?,death: freezed == death ? _self.death : death // ignore: cast_nullable_to_non_nullable
 as DatedClaimDto?,deathPlace: freezed == deathPlace ? _self.deathPlace : deathPlace // ignore: cast_nullable_to_non_nullable
 as LocalizedTextDto?,atAGlance: null == atAGlance ? _self.atAGlance : atAGlance // ignore: cast_nullable_to_non_nullable
-as List<FactDto>,memberships: null == memberships ? _self.memberships : memberships // ignore: cast_nullable_to_non_nullable
+as List<FactDto>,overview: null == overview ? _self.overview : overview // ignore: cast_nullable_to_non_nullable
+as List<OverviewFactDto>,memberships: null == memberships ? _self.memberships : memberships // ignore: cast_nullable_to_non_nullable
 as List<MembershipDto>,relations: null == relations ? _self.relations : relations // ignore: cast_nullable_to_non_nullable
 as List<RelationDto>,sections: null == sections ? _self.sections : sections // ignore: cast_nullable_to_non_nullable
 as List<BiographySectionDto>,storyIds: null == storyIds ? _self.storyIds : storyIds // ignore: cast_nullable_to_non_nullable
@@ -919,10 +921,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int schemaVersion,  String id,  Gender gender,  LocalizedTextDto name,  LocalizedTextDto fullName,  LocalizedTextDto summary,  ReviewDto review,  List<String> references,  int? order,  LocalizedTextDto? lineage,  LocalizedTextDto? kunya,  List<LocalizedTextDto> titles,  List<String> aliases,  DatedClaimDto? birth,  DatedClaimDto? death,  LocalizedTextDto? deathPlace,  List<FactDto> atAGlance,  List<MembershipDto> memberships,  List<RelationDto> relations,  List<BiographySectionDto> sections,  List<String> storyIds,  List<TimelineEventDto> timeline)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int schemaVersion,  String id,  Gender gender,  LocalizedTextDto name,  LocalizedTextDto fullName,  LocalizedTextDto summary,  ReviewDto review,  List<String> references,  int? order,  LocalizedTextDto? lineage,  LocalizedTextDto? kunya,  List<LocalizedTextDto> titles,  List<String> aliases,  DatedClaimDto? birth,  DatedClaimDto? death,  LocalizedTextDto? deathPlace,  List<FactDto> atAGlance,  List<OverviewFactDto> overview,  List<MembershipDto> memberships,  List<RelationDto> relations,  List<BiographySectionDto> sections,  List<String> storyIds,  List<TimelineEventDto> timeline)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CompanionDto() when $default != null:
-return $default(_that.schemaVersion,_that.id,_that.gender,_that.name,_that.fullName,_that.summary,_that.review,_that.references,_that.order,_that.lineage,_that.kunya,_that.titles,_that.aliases,_that.birth,_that.death,_that.deathPlace,_that.atAGlance,_that.memberships,_that.relations,_that.sections,_that.storyIds,_that.timeline);case _:
+return $default(_that.schemaVersion,_that.id,_that.gender,_that.name,_that.fullName,_that.summary,_that.review,_that.references,_that.order,_that.lineage,_that.kunya,_that.titles,_that.aliases,_that.birth,_that.death,_that.deathPlace,_that.atAGlance,_that.overview,_that.memberships,_that.relations,_that.sections,_that.storyIds,_that.timeline);case _:
   return orElse();
 
 }
@@ -940,10 +942,10 @@ return $default(_that.schemaVersion,_that.id,_that.gender,_that.name,_that.fullN
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int schemaVersion,  String id,  Gender gender,  LocalizedTextDto name,  LocalizedTextDto fullName,  LocalizedTextDto summary,  ReviewDto review,  List<String> references,  int? order,  LocalizedTextDto? lineage,  LocalizedTextDto? kunya,  List<LocalizedTextDto> titles,  List<String> aliases,  DatedClaimDto? birth,  DatedClaimDto? death,  LocalizedTextDto? deathPlace,  List<FactDto> atAGlance,  List<MembershipDto> memberships,  List<RelationDto> relations,  List<BiographySectionDto> sections,  List<String> storyIds,  List<TimelineEventDto> timeline)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int schemaVersion,  String id,  Gender gender,  LocalizedTextDto name,  LocalizedTextDto fullName,  LocalizedTextDto summary,  ReviewDto review,  List<String> references,  int? order,  LocalizedTextDto? lineage,  LocalizedTextDto? kunya,  List<LocalizedTextDto> titles,  List<String> aliases,  DatedClaimDto? birth,  DatedClaimDto? death,  LocalizedTextDto? deathPlace,  List<FactDto> atAGlance,  List<OverviewFactDto> overview,  List<MembershipDto> memberships,  List<RelationDto> relations,  List<BiographySectionDto> sections,  List<String> storyIds,  List<TimelineEventDto> timeline)  $default,) {final _that = this;
 switch (_that) {
 case _CompanionDto():
-return $default(_that.schemaVersion,_that.id,_that.gender,_that.name,_that.fullName,_that.summary,_that.review,_that.references,_that.order,_that.lineage,_that.kunya,_that.titles,_that.aliases,_that.birth,_that.death,_that.deathPlace,_that.atAGlance,_that.memberships,_that.relations,_that.sections,_that.storyIds,_that.timeline);case _:
+return $default(_that.schemaVersion,_that.id,_that.gender,_that.name,_that.fullName,_that.summary,_that.review,_that.references,_that.order,_that.lineage,_that.kunya,_that.titles,_that.aliases,_that.birth,_that.death,_that.deathPlace,_that.atAGlance,_that.overview,_that.memberships,_that.relations,_that.sections,_that.storyIds,_that.timeline);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -960,10 +962,10 @@ return $default(_that.schemaVersion,_that.id,_that.gender,_that.name,_that.fullN
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int schemaVersion,  String id,  Gender gender,  LocalizedTextDto name,  LocalizedTextDto fullName,  LocalizedTextDto summary,  ReviewDto review,  List<String> references,  int? order,  LocalizedTextDto? lineage,  LocalizedTextDto? kunya,  List<LocalizedTextDto> titles,  List<String> aliases,  DatedClaimDto? birth,  DatedClaimDto? death,  LocalizedTextDto? deathPlace,  List<FactDto> atAGlance,  List<MembershipDto> memberships,  List<RelationDto> relations,  List<BiographySectionDto> sections,  List<String> storyIds,  List<TimelineEventDto> timeline)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int schemaVersion,  String id,  Gender gender,  LocalizedTextDto name,  LocalizedTextDto fullName,  LocalizedTextDto summary,  ReviewDto review,  List<String> references,  int? order,  LocalizedTextDto? lineage,  LocalizedTextDto? kunya,  List<LocalizedTextDto> titles,  List<String> aliases,  DatedClaimDto? birth,  DatedClaimDto? death,  LocalizedTextDto? deathPlace,  List<FactDto> atAGlance,  List<OverviewFactDto> overview,  List<MembershipDto> memberships,  List<RelationDto> relations,  List<BiographySectionDto> sections,  List<String> storyIds,  List<TimelineEventDto> timeline)?  $default,) {final _that = this;
 switch (_that) {
 case _CompanionDto() when $default != null:
-return $default(_that.schemaVersion,_that.id,_that.gender,_that.name,_that.fullName,_that.summary,_that.review,_that.references,_that.order,_that.lineage,_that.kunya,_that.titles,_that.aliases,_that.birth,_that.death,_that.deathPlace,_that.atAGlance,_that.memberships,_that.relations,_that.sections,_that.storyIds,_that.timeline);case _:
+return $default(_that.schemaVersion,_that.id,_that.gender,_that.name,_that.fullName,_that.summary,_that.review,_that.references,_that.order,_that.lineage,_that.kunya,_that.titles,_that.aliases,_that.birth,_that.death,_that.deathPlace,_that.atAGlance,_that.overview,_that.memberships,_that.relations,_that.sections,_that.storyIds,_that.timeline);case _:
   return null;
 
 }
@@ -975,7 +977,7 @@ return $default(_that.schemaVersion,_that.id,_that.gender,_that.name,_that.fullN
 @JsonSerializable()
 
 class _CompanionDto implements CompanionDto {
-  const _CompanionDto({required this.schemaVersion, required this.id, required this.gender, required this.name, required this.fullName, required this.summary, required this.review, required final  List<String> references, this.order, this.lineage, this.kunya, final  List<LocalizedTextDto> titles = const <LocalizedTextDto>[], final  List<String> aliases = const <String>[], this.birth, this.death, this.deathPlace, final  List<FactDto> atAGlance = const <FactDto>[], final  List<MembershipDto> memberships = const <MembershipDto>[], final  List<RelationDto> relations = const <RelationDto>[], final  List<BiographySectionDto> sections = const <BiographySectionDto>[], final  List<String> storyIds = const <String>[], final  List<TimelineEventDto> timeline = const <TimelineEventDto>[]}): _references = references,_titles = titles,_aliases = aliases,_atAGlance = atAGlance,_memberships = memberships,_relations = relations,_sections = sections,_storyIds = storyIds,_timeline = timeline;
+  const _CompanionDto({required this.schemaVersion, required this.id, required this.gender, required this.name, required this.fullName, required this.summary, required this.review, required final  List<String> references, this.order, this.lineage, this.kunya, final  List<LocalizedTextDto> titles = const <LocalizedTextDto>[], final  List<String> aliases = const <String>[], this.birth, this.death, this.deathPlace, final  List<FactDto> atAGlance = const <FactDto>[], final  List<OverviewFactDto> overview = const <OverviewFactDto>[], final  List<MembershipDto> memberships = const <MembershipDto>[], final  List<RelationDto> relations = const <RelationDto>[], final  List<BiographySectionDto> sections = const <BiographySectionDto>[], final  List<String> storyIds = const <String>[], final  List<TimelineEventDto> timeline = const <TimelineEventDto>[]}): _references = references,_titles = titles,_aliases = aliases,_atAGlance = atAGlance,_overview = overview,_memberships = memberships,_relations = relations,_sections = sections,_storyIds = storyIds,_timeline = timeline;
   factory _CompanionDto.fromJson(Map<String, dynamic> json) => _$CompanionDtoFromJson(json);
 
 @override final  int schemaVersion;
@@ -1017,6 +1019,15 @@ class _CompanionDto implements CompanionDto {
   if (_atAGlance is EqualUnmodifiableListView) return _atAGlance;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_atAGlance);
+}
+
+/// Three to five key sentences from the biography (E2).
+ final  List<OverviewFactDto> _overview;
+/// Three to five key sentences from the biography (E2).
+@override@JsonKey() List<OverviewFactDto> get overview {
+  if (_overview is EqualUnmodifiableListView) return _overview;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_overview);
 }
 
  final  List<MembershipDto> _memberships;
@@ -1068,16 +1079,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CompanionDto&&(identical(other.schemaVersion, schemaVersion) || other.schemaVersion == schemaVersion)&&(identical(other.id, id) || other.id == id)&&(identical(other.gender, gender) || other.gender == gender)&&(identical(other.name, name) || other.name == name)&&(identical(other.fullName, fullName) || other.fullName == fullName)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.review, review) || other.review == review)&&const DeepCollectionEquality().equals(other._references, _references)&&(identical(other.order, order) || other.order == order)&&(identical(other.lineage, lineage) || other.lineage == lineage)&&(identical(other.kunya, kunya) || other.kunya == kunya)&&const DeepCollectionEquality().equals(other._titles, _titles)&&const DeepCollectionEquality().equals(other._aliases, _aliases)&&(identical(other.birth, birth) || other.birth == birth)&&(identical(other.death, death) || other.death == death)&&(identical(other.deathPlace, deathPlace) || other.deathPlace == deathPlace)&&const DeepCollectionEquality().equals(other._atAGlance, _atAGlance)&&const DeepCollectionEquality().equals(other._memberships, _memberships)&&const DeepCollectionEquality().equals(other._relations, _relations)&&const DeepCollectionEquality().equals(other._sections, _sections)&&const DeepCollectionEquality().equals(other._storyIds, _storyIds)&&const DeepCollectionEquality().equals(other._timeline, _timeline));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CompanionDto&&(identical(other.schemaVersion, schemaVersion) || other.schemaVersion == schemaVersion)&&(identical(other.id, id) || other.id == id)&&(identical(other.gender, gender) || other.gender == gender)&&(identical(other.name, name) || other.name == name)&&(identical(other.fullName, fullName) || other.fullName == fullName)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.review, review) || other.review == review)&&const DeepCollectionEquality().equals(other._references, _references)&&(identical(other.order, order) || other.order == order)&&(identical(other.lineage, lineage) || other.lineage == lineage)&&(identical(other.kunya, kunya) || other.kunya == kunya)&&const DeepCollectionEquality().equals(other._titles, _titles)&&const DeepCollectionEquality().equals(other._aliases, _aliases)&&(identical(other.birth, birth) || other.birth == birth)&&(identical(other.death, death) || other.death == death)&&(identical(other.deathPlace, deathPlace) || other.deathPlace == deathPlace)&&const DeepCollectionEquality().equals(other._atAGlance, _atAGlance)&&const DeepCollectionEquality().equals(other._overview, _overview)&&const DeepCollectionEquality().equals(other._memberships, _memberships)&&const DeepCollectionEquality().equals(other._relations, _relations)&&const DeepCollectionEquality().equals(other._sections, _sections)&&const DeepCollectionEquality().equals(other._storyIds, _storyIds)&&const DeepCollectionEquality().equals(other._timeline, _timeline));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,schemaVersion,id,gender,name,fullName,summary,review,const DeepCollectionEquality().hash(_references),order,lineage,kunya,const DeepCollectionEquality().hash(_titles),const DeepCollectionEquality().hash(_aliases),birth,death,deathPlace,const DeepCollectionEquality().hash(_atAGlance),const DeepCollectionEquality().hash(_memberships),const DeepCollectionEquality().hash(_relations),const DeepCollectionEquality().hash(_sections),const DeepCollectionEquality().hash(_storyIds),const DeepCollectionEquality().hash(_timeline)]);
+int get hashCode => Object.hashAll([runtimeType,schemaVersion,id,gender,name,fullName,summary,review,const DeepCollectionEquality().hash(_references),order,lineage,kunya,const DeepCollectionEquality().hash(_titles),const DeepCollectionEquality().hash(_aliases),birth,death,deathPlace,const DeepCollectionEquality().hash(_atAGlance),const DeepCollectionEquality().hash(_overview),const DeepCollectionEquality().hash(_memberships),const DeepCollectionEquality().hash(_relations),const DeepCollectionEquality().hash(_sections),const DeepCollectionEquality().hash(_storyIds),const DeepCollectionEquality().hash(_timeline)]);
 
 @override
 String toString() {
-  return 'CompanionDto(schemaVersion: $schemaVersion, id: $id, gender: $gender, name: $name, fullName: $fullName, summary: $summary, review: $review, references: $references, order: $order, lineage: $lineage, kunya: $kunya, titles: $titles, aliases: $aliases, birth: $birth, death: $death, deathPlace: $deathPlace, atAGlance: $atAGlance, memberships: $memberships, relations: $relations, sections: $sections, storyIds: $storyIds, timeline: $timeline)';
+  return 'CompanionDto(schemaVersion: $schemaVersion, id: $id, gender: $gender, name: $name, fullName: $fullName, summary: $summary, review: $review, references: $references, order: $order, lineage: $lineage, kunya: $kunya, titles: $titles, aliases: $aliases, birth: $birth, death: $death, deathPlace: $deathPlace, atAGlance: $atAGlance, overview: $overview, memberships: $memberships, relations: $relations, sections: $sections, storyIds: $storyIds, timeline: $timeline)';
 }
 
 
@@ -1088,7 +1099,7 @@ abstract mixin class _$CompanionDtoCopyWith<$Res> implements $CompanionDtoCopyWi
   factory _$CompanionDtoCopyWith(_CompanionDto value, $Res Function(_CompanionDto) _then) = __$CompanionDtoCopyWithImpl;
 @override @useResult
 $Res call({
- int schemaVersion, String id, Gender gender, LocalizedTextDto name, LocalizedTextDto fullName, LocalizedTextDto summary, ReviewDto review, List<String> references, int? order, LocalizedTextDto? lineage, LocalizedTextDto? kunya, List<LocalizedTextDto> titles, List<String> aliases, DatedClaimDto? birth, DatedClaimDto? death, LocalizedTextDto? deathPlace, List<FactDto> atAGlance, List<MembershipDto> memberships, List<RelationDto> relations, List<BiographySectionDto> sections, List<String> storyIds, List<TimelineEventDto> timeline
+ int schemaVersion, String id, Gender gender, LocalizedTextDto name, LocalizedTextDto fullName, LocalizedTextDto summary, ReviewDto review, List<String> references, int? order, LocalizedTextDto? lineage, LocalizedTextDto? kunya, List<LocalizedTextDto> titles, List<String> aliases, DatedClaimDto? birth, DatedClaimDto? death, LocalizedTextDto? deathPlace, List<FactDto> atAGlance, List<OverviewFactDto> overview, List<MembershipDto> memberships, List<RelationDto> relations, List<BiographySectionDto> sections, List<String> storyIds, List<TimelineEventDto> timeline
 });
 
 
@@ -1105,7 +1116,7 @@ class __$CompanionDtoCopyWithImpl<$Res>
 
 /// Create a copy of CompanionDto
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? schemaVersion = null,Object? id = null,Object? gender = null,Object? name = null,Object? fullName = null,Object? summary = null,Object? review = null,Object? references = null,Object? order = freezed,Object? lineage = freezed,Object? kunya = freezed,Object? titles = null,Object? aliases = null,Object? birth = freezed,Object? death = freezed,Object? deathPlace = freezed,Object? atAGlance = null,Object? memberships = null,Object? relations = null,Object? sections = null,Object? storyIds = null,Object? timeline = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? schemaVersion = null,Object? id = null,Object? gender = null,Object? name = null,Object? fullName = null,Object? summary = null,Object? review = null,Object? references = null,Object? order = freezed,Object? lineage = freezed,Object? kunya = freezed,Object? titles = null,Object? aliases = null,Object? birth = freezed,Object? death = freezed,Object? deathPlace = freezed,Object? atAGlance = null,Object? overview = null,Object? memberships = null,Object? relations = null,Object? sections = null,Object? storyIds = null,Object? timeline = null,}) {
   return _then(_CompanionDto(
 schemaVersion: null == schemaVersion ? _self.schemaVersion : schemaVersion // ignore: cast_nullable_to_non_nullable
 as int,id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
@@ -1124,7 +1135,8 @@ as List<String>,birth: freezed == birth ? _self.birth : birth // ignore: cast_nu
 as DatedClaimDto?,death: freezed == death ? _self.death : death // ignore: cast_nullable_to_non_nullable
 as DatedClaimDto?,deathPlace: freezed == deathPlace ? _self.deathPlace : deathPlace // ignore: cast_nullable_to_non_nullable
 as LocalizedTextDto?,atAGlance: null == atAGlance ? _self._atAGlance : atAGlance // ignore: cast_nullable_to_non_nullable
-as List<FactDto>,memberships: null == memberships ? _self._memberships : memberships // ignore: cast_nullable_to_non_nullable
+as List<FactDto>,overview: null == overview ? _self._overview : overview // ignore: cast_nullable_to_non_nullable
+as List<OverviewFactDto>,memberships: null == memberships ? _self._memberships : memberships // ignore: cast_nullable_to_non_nullable
 as List<MembershipDto>,relations: null == relations ? _self._relations : relations // ignore: cast_nullable_to_non_nullable
 as List<RelationDto>,sections: null == sections ? _self._sections : sections // ignore: cast_nullable_to_non_nullable
 as List<BiographySectionDto>,storyIds: null == storyIds ? _self._storyIds : storyIds // ignore: cast_nullable_to_non_nullable

@@ -121,7 +121,7 @@ void main() {
     expect(
       r.editionProblems,
       containsAll([
-        'companion.comp-a: 8 of 1500 words.',
+        'companion.comp-a: 10 of 1500 words.',
         'companion.comp-a: 1 of 8 timeline entries.',
       ]),
     );

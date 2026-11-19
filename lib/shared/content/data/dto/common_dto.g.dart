@@ -311,6 +311,40 @@ Map<String, dynamic> _$FactDtoToJson(_FactDto instance) => <String, dynamic>{
   'citations': instance.citations.map((e) => e.toJson()).toList(),
 };
 
+_OverviewFactDto _$OverviewFactDtoFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('_OverviewFactDto', json, ($checkedConvert) {
+      $checkKeys(
+        json,
+        allowedKeys: const ['text', 'reliability', 'citations', 'sectionId'],
+      );
+      final val = _OverviewFactDto(
+        text: $checkedConvert(
+          'text',
+          (v) => LocalizedTextDto.fromJson(v as Map<String, dynamic>),
+        ),
+        reliability: $checkedConvert(
+          'reliability',
+          (v) => $enumDecode(_$ReliabilityEnumMap, v),
+        ),
+        citations: $checkedConvert(
+          'citations',
+          (v) => (v as List<dynamic>)
+              .map((e) => CitationDto.fromJson(e as Map<String, dynamic>))
+              .toList(),
+        ),
+        sectionId: $checkedConvert('sectionId', (v) => v as String),
+      );
+      return val;
+    });
+
+Map<String, dynamic> _$OverviewFactDtoToJson(_OverviewFactDto instance) =>
+    <String, dynamic>{
+      'text': instance.text.toJson(),
+      'reliability': _$ReliabilityEnumMap[instance.reliability]!,
+      'citations': instance.citations.map((e) => e.toJson()).toList(),
+      'sectionId': instance.sectionId,
+    };
+
 _ReviewDto _$ReviewDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
   '_ReviewDto',
   json,

@@ -56,6 +56,18 @@ abstract class DatedClaim with _$DatedClaim {
   }) = _DatedClaim;
 }
 
+/// One sentence of a companion's overview (E2): a statement already made,
+/// and cited, in the section [sectionId] of the biography.
+@freezed
+abstract class OverviewFact with _$OverviewFact {
+  const factory OverviewFact({
+    required LocalizedText text,
+    required Reliability reliability,
+    required List<Citation> citations,
+    required String sectionId,
+  }) = _OverviewFact;
+}
+
 /// One "at a glance" fact: a label with either a text or a date value.
 @freezed
 abstract class Fact with _$Fact {

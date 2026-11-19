@@ -418,6 +418,83 @@
     "authoredBy": "short-profiles-1"
   },
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "كانت خديجة من أشراف قريش وذوات المال فيهم، وكانت تُدعى في الجاهلية الطاهرة، على ما يذكر الزبير بن بكار، وكان النبي ﷺ يتّجر لها في مالها."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "111"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "110"
+        }
+      ],
+      "sectionId": "khadijah.before"
+    },
+    {
+      "text": {
+        "ar": "ويذكر الذهبي أنها أول من آمن به وصدّقه قبل كل أحد، وثبّتت جأشه، وكانت تنفق عليه من مالها."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "109"
+        }
+      ],
+      "sectionId": "khadijah.first-believer"
+    },
+    {
+      "text": {
+        "ar": "أخبر النبي ﷺ أن خير نسائها مريم ابنة عمران، وخير نسائها خديجة، أي خير نساء زمانها."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3815"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3432"
+        }
+      ],
+      "sectionId": "khadijah.virtues"
+    },
+    {
+      "text": {
+        "ar": "توفيت خديجة بمكة قبل خروج النبي ﷺ إلى المدينة بثلاث سنين، كما يروي عروة بن الزبير، في العام الذي توفي فيه أبو طالب، ودُفنت بالحجون."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3896"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "112"
+        }
+      ],
+      "sectionId": "khadijah.death"
+    }
+  ],
   "storyIds": [
     "from-the-shib-to-taif"
   ]

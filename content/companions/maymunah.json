@@ -470,5 +470,78 @@
     "authoredBy": "ummahat-2"
   },
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "ويروي مجاهد أن اسمها كان برّة، فسماها رسول الله ﷺ ميمونة."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "243"
+        }
+      ],
+      "sectionId": "maymunah.family"
+    },
+    {
+      "text": {
+        "ar": "وتزوجها النبي ﷺ عند فراغه من عمرة القضاء، سنة سبع في ذي القعدة، وبنى بها بسَرِف، على ما يذكر الذهبي، ويروي ابن سعد أنها جعلت أمرها إلى العباس فزوّجها إياه."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "239"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "240"
+        }
+      ],
+      "sectionId": "maymunah.marriage"
+    },
+    {
+      "text": {
+        "ar": "ويروي يزيد بن الأصم أن عائشة قالت له بعد وفاة ميمونة: ذهبت والله ميمونة، أما إنها كانت من أتقانا لله، وأوصلنا للرحم."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "243"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "244"
+        }
+      ],
+      "sectionId": "maymunah.character"
+    },
+    {
+      "text": {
+        "ar": "وحضر ابن عباس جنازة ميمونة بسَرِف، فقال: هذه زوجة النبي ﷺ، فإذا رفعتم نعشها فلا تزعزعوها ولا تزلزلوها، وارفقوا."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "5067"
+        }
+      ],
+      "sectionId": "maymunah.death"
+    }
+  ],
   "storyIds": []
 }

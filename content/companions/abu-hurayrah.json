@@ -285,6 +285,57 @@
   },
   "titles": [],
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "قدم أبو هريرة المدينة مهاجرًا والنبي ﷺ بخيبر، وكان مقدمه وإسلامه في أول سنة سبع عام خيبر على ما يذكر الذهبي، فلحق بالنبي ﷺ بعد فتحها."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "586"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "2827"
+        }
+      ],
+      "sectionId": "abu-hurayrah.arrival"
+    },
+    {
+      "text": {
+        "ar": "وشكا إليه أنه يسمع منه حديثًا كثيرًا فينساه، فأمره أن يبسط رداءه، فغرف بيديه فيه ثم أمره أن يضمّه، فما نسي شيئًا بعده."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "119"
+        }
+      ],
+      "sectionId": "abu-hurayrah.with-the-prophet"
+    },
+    {
+      "text": {
+        "ar": "توفي أبو هريرة بالمدينة، وأرّخ الواقدي وفاته سنة تسع وخمسين وله ثمان وسبعون سنة، وقيل سنة سبع أو ثمان وخمسين."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "626"
+        }
+      ],
+      "sectionId": "abu-hurayrah.death"
+    }
+  ],
   "relations": [],
   "storyIds": []
 }

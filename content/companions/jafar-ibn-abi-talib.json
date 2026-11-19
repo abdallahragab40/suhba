@@ -364,6 +364,56 @@
     "authoredBy": "short-profiles-1"
   },
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "أسلم جعفر قديمًا، وهاجر إلى الحبشة ومعه امرأته أسماء بنت عميس، فولدت له هناك عبد الله ومحمدًا وعونًا، على ما يذكر الذهبي."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "283"
+        }
+      ],
+      "sectionId": "jafar-ibn-abi-talib.abyssinia"
+    },
+    {
+      "text": {
+        "ar": "وقال له النبي ﷺ: أشبهت خَلقي وخُلقي."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4251"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "2699"
+        }
+      ],
+      "sectionId": "jafar-ibn-abi-talib.return"
+    },
+    {
+      "text": {
+        "ar": "أمّر النبي ﷺ على جيش مؤتة زيد بن حارثة، وقال: إن قُتل زيد فجعفر، وإن قُتل جعفر فعبد الله بن رواحة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4261"
+        }
+      ],
+      "sectionId": "jafar-ibn-abi-talib.mutah"
+    }
+  ],
   "storyIds": [
     "the-negus-and-the-emigrants"
   ]

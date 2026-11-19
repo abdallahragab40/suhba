@@ -208,6 +208,15 @@ extension CompanionDtoMapper on CompanionDto {
     death: death?.toDomain(),
     deathPlace: deathPlace?.toDomain(),
     atAGlance: [for (final f in atAGlance) f.toDomain()],
+    overview: [
+      for (final f in overview)
+        OverviewFact(
+          text: f.text.toDomain(),
+          reliability: f.reliability,
+          citations: _citations(f.citations),
+          sectionId: f.sectionId,
+        ),
+    ],
     memberships: [
       for (final m in memberships)
         Membership(

@@ -194,6 +194,114 @@
       ]
     }
   ],
+  "overview": [
+    {
+      "text": {
+        "ar": "هو علي بن أبي طالب بن عبد المطلب بن هاشم، ابن عم النبي ﷺ، وأمه فاطمة بنت أسد بن هاشم، فهو هاشمي الأبوين، ويُكنى أبا الحسن."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "564"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "13"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 6,
+          "page": "91"
+        }
+      ],
+      "sectionId": "ali.early-life"
+    },
+    {
+      "text": {
+        "ar": "يذكر ابن إسحاق أنه أول ذكر آمن بالنبي ﷺ وصلّى معه وصدّق بما جاءه من الله، ثم صحب النبي ﷺ في دعوته بمكة حتى الهجرة."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "245"
+        },
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "564"
+        }
+      ],
+      "sectionId": "ali.conversion"
+    },
+    {
+      "text": {
+        "ar": "تزوّج فاطمة بنت النبي ﷺ في المدينة في صفر سنة اثنتين، على ما يذكره ابن كثير، فولدت له الحسن والحسين وزينب وأم كلثوم."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "14"
+        },
+        {
+          "sourceId": "al-bidaya",
+          "locatorStatus": "complete",
+          "volume": 8,
+          "page": "243"
+        }
+      ],
+      "sectionId": "ali.with-prophet"
+    },
+    {
+      "text": {
+        "ar": "ولما نزلت آية المباهلة دعا النبي ﷺ عليًّا وفاطمة وحسنًا وحسينًا، على ما في حديث سعد بن أبي وقاص في صحيح مسلم."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "complete",
+          "hadithNumber": "2404"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 3,
+            "ayahFrom": 61
+          }
+        }
+      ],
+      "sectionId": "ali.virtues"
+    },
+    {
+      "text": {
+        "ar": "ويروي ابن سعد أنه رُئي عليه إزار مرقوع، فقيل له في ذلك، فقال: «يخشع القلب ويقتدي به المؤمن»."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "20"
+        }
+      ],
+      "sectionId": "ali.character"
+    }
+  ],
   "relations": [
     {
       "type": "father",

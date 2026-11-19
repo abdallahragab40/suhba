@@ -348,6 +348,51 @@
     "authoredBy": "short-profiles-1"
   },
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "لما بايع أهل يثرب النبي ﷺ بيعة العقبة الأولى، بعث معهم مصعب بن عمير، وأمره أن يقرئهم القرآن ويعلّمهم الإسلام ويفقّههم في الدين، على ما يذكر ابن إسحاق."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "434"
+        }
+      ],
+      "sectionId": "musab-ibn-umayr.teacher-of-madinah"
+    },
+    {
+      "text": {
+        "ar": "وكان البراء بن عازب يذكر أن أول من قدم عليهم من المهاجرين مصعب بن عمير وابن أم مكتوم، وأنهما كانا يقرئان الناس القرآن."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3925"
+        }
+      ],
+      "sectionId": "musab-ibn-umayr.teacher-of-madinah"
+    },
+    {
+      "text": {
+        "ar": "وكان عبد الرحمن بن عوف إذا قُدّم إليه طعامه وهو صائم ذكر مصعبًا، وأنه قُتل وهو خير منه فكُفّن في بردة، ثم بكى."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "1275"
+        }
+      ],
+      "sectionId": "musab-ibn-umayr.uhud"
+    }
+  ],
   "relations": [],
   "storyIds": [
     "the-archers-of-uhud",

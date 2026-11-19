@@ -838,6 +838,39 @@
             "$ref": "#/$defs/fact"
           }
         },
+        "overview": {
+          "type": "array",
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "properties": {
+              "text": {
+                "$ref": "#/$defs/localizedText"
+              },
+              "reliability": {
+                "$ref": "#/$defs/reliability"
+              },
+              "citations": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/citation"
+                },
+                "minItems": 1
+              },
+              "sectionId": {
+                "$ref": "#/$defs/id"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "text",
+              "reliability",
+              "citations",
+              "sectionId"
+            ]
+          },
+          "description": "«في سطور» (E2): three to five sentences copied from cited paragraphs of the named sections, with those paragraphs' citations. No new claims."
+        },
         "memberships": {
           "type": "array",
           "items": {

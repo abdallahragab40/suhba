@@ -171,6 +171,109 @@
       ]
     }
   ],
+  "overview": [
+    {
+      "text": {
+        "ar": "ويروي هشام بن عروة عن أبيه أن الزبير كان طويلًا تخطّ رجلاه الأرض إذا ركب الدابة، أشعر، كما ينقل الذهبي."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "45"
+        }
+      ],
+      "sectionId": "zubayr.early-life"
+    },
+    {
+      "text": {
+        "ar": "أسلم قديمًا بدعوة أبي بكر الصديق، فكان أحد الخمسة الذين أسلموا على يديه، ومن السابقين الأولين إلى الإسلام."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "250"
+        },
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "553"
+        }
+      ],
+      "sectionId": "zubayr.conversion"
+    },
+    {
+      "text": {
+        "ar": "شهد بدرًا، ويذكر أهل السير أنه كان على أحد جناحي جيش المسلمين، وأنه كان يقاتل يومئذ وعليه عمامة صفراء، وفي البخاري خبر طعنه أحد فرسان المشركين يومئذ في عينه."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3998"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "46"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "76"
+        }
+      ],
+      "sectionId": "zubayr.with-prophet"
+    },
+    {
+      "text": {
+        "ar": "وهو أحد العشرة الذين سمّاهم النبي ﷺ في حديث واحد وبشّرهم بالجنة، وأحد الستة أهل الشورى الذين توفي النبي ﷺ وهو عنهم راضٍ."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "tirmidhi",
+          "locatorStatus": "complete",
+          "hadithNumber": "3747"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3700"
+        }
+      ],
+      "sectionId": "zubayr.virtues"
+    },
+    {
+      "text": {
+        "ar": "وعدّه سفيان الثوري مع حمزة وعلي في نجدة الصحابة، كما ينقل الذهبي؛ ويروي عروة أنه كان يُدخل أصابعه وهو صغير في آثار الضربات التي على عاتق أبيه."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3975"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "52"
+        }
+      ],
+      "sectionId": "zubayr.character"
+    }
+  ],
   "relations": [
     {
       "type": "spouse",
