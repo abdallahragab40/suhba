@@ -41,7 +41,7 @@ class PassageProgressMarker extends StatelessWidget {
         percent,
         style: SuhbaTextStyles.of(
           context,
-        ).kicker.copyWith(color: colors.accentText),
+        ).kicker.copyWith(color: colors.onSurfaceDim),
       ),
     );
   }
@@ -140,7 +140,7 @@ class _ContentsSheet extends ConsumerWidget {
             ListTile(
               contentPadding: EdgeInsets.zero,
               selected: e.id == currentId,
-              selectedColor: colors.accentText,
+              selectedColor: colors.link,
               leading: ExcludeSemantics(child: Text(format.index(i + 1))),
               title: Text(e.title),
               subtitle: e.id == currentId ? Text(l10n.readerReadingNow) : null,

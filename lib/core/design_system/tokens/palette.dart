@@ -60,11 +60,22 @@ abstract final class Palette {
   static const establishedOnInk = Color(0xFF7BC4A0);
   static const disputedOnPaper = Color(0xFF784700);
   static const disputedOnInk = Color(0xFFF0B45A);
-  static const draftOnPaper = goldText;
-  static const draftWash = goldWash;
-  static const draftOnInk = goldOnInk;
-  static const draftWashOnInk = goldWashOnInk;
-  // Review status uses the same gold family on paper, ink and green.
-  static const draftOnGreen = goldOnInk;
-  static const draftWashOnGreen = goldWashOnInk;
+  // Review status is neutral: the icon and the words carry the meaning, and
+  // gold is kept for illumination (review §2.7, F12).
+  static const draftOnPaper = inkDim;
+  static const draftWash = paperAlt;
+  static const draftOnInk = paperDim;
+  static const draftWashOnInk = inkAlt;
+  static const draftOnGreen = paperDimOnGreen;
+  static const draftWashOnGreen = greenAlt;
+
+  // Clay: errors and destructive actions only (review §2.7).
+  static const clay = Color(0xFF8A3B2E);
+  static const clayWash = Color(0xFFF3E3DD);
+  static const clayOnInk = Color(0xFFF2B8A8);
+  static const clayWashOnInk = Color(0xFF2A1714);
+
+  /// The selected destination's pill on paper: a step stronger than
+  /// [greenWash], so the current tab reads at a glance.
+  static const greenWashStrong = Color(0xFFC3D6CB);
 }

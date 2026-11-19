@@ -51,6 +51,7 @@ class DraftBadge extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
         decoration: BoxDecoration(
           color: colors.draftSurface,
+          border: Border.all(color: colors.line),
           borderRadius: const BorderRadius.all(AppRadii.pill),
         ),
         child: Row(

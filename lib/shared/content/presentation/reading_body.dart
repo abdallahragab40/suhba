@@ -248,7 +248,7 @@ class _PassageLegend extends StatelessWidget {
             child: Icon(
               CitationMarker.glyphReported,
               size: MediaQuery.textScalerOf(context).scale(16),
-              color: colors.accentText,
+              color: colors.link,
             ),
           ),
           const SizedBox(width: AppSpacing.xxs),

@@ -12,6 +12,7 @@ class SuhbaColors extends ThemeExtension<SuhbaColors> {
     required this.line,
     required this.accent,
     required this.accentText,
+    required this.link,
     required this.established,
     required this.disputed,
     required this.draft,
@@ -34,6 +35,10 @@ class SuhbaColors extends ThemeExtension<SuhbaColors> {
   /// Gold for small text and links.
   final Color accentText;
 
+  /// Links and source marks: green on paper, gold on ink and green.
+  /// Gold text on paper is for illumination, not for things to tap.
+  final Color link;
+
   /// Reliability badge: established (ثابت).
   final Color established;
 
@@ -52,6 +57,7 @@ class SuhbaColors extends ThemeExtension<SuhbaColors> {
     line: Palette.lineOnPaper,
     accent: Palette.gold,
     accentText: Palette.goldText,
+    link: Palette.green,
     established: Palette.establishedOnPaper,
     disputed: Palette.disputedOnPaper,
     draft: Palette.draftOnPaper,
@@ -64,6 +70,7 @@ class SuhbaColors extends ThemeExtension<SuhbaColors> {
     line: Palette.lineOnInk,
     accent: Palette.gold,
     accentText: Palette.goldOnInk,
+    link: Palette.goldOnInk,
     established: Palette.establishedOnInk,
     disputed: Palette.disputedOnInk,
     draft: Palette.draftOnInk,
@@ -89,6 +96,7 @@ class SuhbaColors extends ThemeExtension<SuhbaColors> {
     Color? line,
     Color? accent,
     Color? accentText,
+    Color? link,
     Color? established,
     Color? disputed,
     Color? draft,
@@ -100,6 +108,7 @@ class SuhbaColors extends ThemeExtension<SuhbaColors> {
       line: line ?? this.line,
       accent: accent ?? this.accent,
       accentText: accentText ?? this.accentText,
+      link: link ?? this.link,
       established: established ?? this.established,
       disputed: disputed ?? this.disputed,
       draft: draft ?? this.draft,
@@ -116,6 +125,7 @@ class SuhbaColors extends ThemeExtension<SuhbaColors> {
       line: Color.lerp(line, other.line, t)!,
       accent: Color.lerp(accent, other.accent, t)!,
       accentText: Color.lerp(accentText, other.accentText, t)!,
+      link: Color.lerp(link, other.link, t)!,
       established: Color.lerp(established, other.established, t)!,
       disputed: Color.lerp(disputed, other.disputed, t)!,
       draft: Color.lerp(draft, other.draft, t)!,

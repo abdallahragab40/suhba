@@ -44,6 +44,10 @@ void main() {
         'disputed / surface': (c.disputed, s.surface),
         'disputed / surfaceAlt': (c.disputed, c.surfaceAlt),
         'draft / draftSurface': (c.draft, c.draftSurface),
+        'link / surface': (c.link, s.surface),
+        'link / surfaceAlt': (c.link, c.surfaceAlt),
+        'error / surface': (s.error, s.surface),
+        'error / errorContainer': (s.error, s.errorContainer),
         'draft / surface': (c.draft, s.surface),
         'onPrimary / primary': (s.onPrimary, s.primary),
         'onSecondary / secondary': (s.onSecondary, s.secondary),
@@ -69,6 +73,11 @@ void main() {
         });
       }
 
+      test('selected tab icon / its pill ≥ 3:1 (graphical object)', () {
+        final pill = theme.navigationBarTheme.indicatorColor!;
+        expect(contrast(s.onSecondaryContainer, pill), greaterThanOrEqualTo(3));
+      });
+
       test('outline / surface ≥ 3:1 (UI component boundary)', () {
         expect(contrast(s.outline, s.surface), greaterThanOrEqualTo(3));
       });
@@ -87,5 +96,19 @@ void main() {
       contrast(darkGold, dark.colorScheme.surface),
       greaterThanOrEqualTo(4.5),
     );
+  });
+
+  test('gold is not used for links, status or errors on paper', () {
+    final light = AppTheme.light;
+    final c = light.extension<SuhbaColors>()!;
+    final s = light.colorScheme;
+    for (final (role, color) in [
+      ('link', c.link),
+      ('draft', c.draft),
+      ('error', s.error),
+    ]) {
+      expect(color, isNot(c.accentText), reason: role);
+      expect(color, isNot(c.accent), reason: role);
+    }
   });
 }

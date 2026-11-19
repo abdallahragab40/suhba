@@ -95,7 +95,7 @@ class CompanionRow extends StatelessWidget {
                     depth,
                     style: SuhbaTextStyles.of(
                       context,
-                    ).kicker.copyWith(color: colors.accentText),
+                    ).kicker.copyWith(color: colors.onSurfaceDim),
                   ),
                 ],
                 if (isDraft) ...[

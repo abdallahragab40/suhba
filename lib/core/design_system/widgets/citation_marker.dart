@@ -64,14 +64,14 @@ class CitationMarker extends StatelessWidget {
         Icon(
           reported ? glyphReported : glyphSource,
           size: glyphSize,
-          color: colors.accentText,
+          color: colors.link,
         ),
         if (count > 1)
           Text(
             formatted,
             style: Theme.of(
               context,
-            ).textTheme.labelSmall?.copyWith(color: colors.accentText),
+            ).textTheme.labelSmall?.copyWith(color: colors.link),
           ),
       ],
     );
