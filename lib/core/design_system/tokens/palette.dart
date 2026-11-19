@@ -75,6 +75,12 @@ abstract final class Palette {
   static const clayOnInk = Color(0xFFF2B8A8);
   static const clayWashOnInk = Color(0xFF2A1714);
 
+  // Warm paper: the reader's optional page tone (review K5). The page is
+  // lighter and warmer than [paper]; cards and lines follow it.
+  static const warmPaper = Color(0xFFFAF6EC);
+  static const warmPaperAlt = Color(0xFFF0E9DA);
+  static const lineOnWarmPaper = Color(0xFFDAD2C1);
+
   /// The selected destination's pill on paper: a step stronger than
   /// [greenWash], so the current tab reads at a glance.
   static const greenWashStrong = Color(0xFFC3D6CB);

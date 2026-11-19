@@ -2325,4 +2325,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get searchBrowseCompanions => 'تصفّح الصحابة';
+
+  @override
+  String get readerTone => 'لون الصفحة';
+
+  @override
+  String get readerToneApp => 'حسب المظهر';
+
+  @override
+  String get readerToneWarmPaper => 'ورقي دافئ';
 }

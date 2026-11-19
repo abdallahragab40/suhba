@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:suhba/core/design_system/tokens/palette.dart';
+import 'package:suhba/core/storage/settings_store.dart';
 import 'package:suhba/features/settings/presentation/reading_settings.dart';
+import 'package:suhba/shared/content/presentation/reader_scaffold.dart';
 
 import '../../helpers/app_harness.dart';
 
@@ -74,5 +77,41 @@ void main() {
     await tester.tapAt(tester.getTopLeft(slider) + const Offset(30, 24));
     await tester.pumpAndSettle();
     expect(app.container.read(readingTextSizeProvider), greaterThan(20));
+  });
+
+  testApp('warm paper applies to the reader and is remembered', (tester) async {
+    tester.view
+      ..devicePixelRatio = 1
+      ..physicalSize = const Size(600, 3000);
+    addTearDown(tester.view.reset);
+    final store = MemorySettingsStore();
+    const location = '/companions/abu-bakr/sections/abu-bakr.death';
+    Color page() => Theme.of(
+      tester.element(find.byType(ReaderScaffold)),
+    ).colorScheme.surface;
+
+    await AppUnderTest(location: location, settings: store).pump(tester);
+    expect(page(), Palette.paper);
+    await tester.tap(find.byTooltip('إعدادات القراءة'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('ورقي دافئ'));
+    await tester.pumpAndSettle();
+    expect(page(), Palette.warmPaper);
+    expect(store.getString(SettingsKeys.readerTone), 'warmPaper');
+
+    // A fresh start reads the saved tone.
+    await tester.pumpWidget(const SizedBox());
+    await AppUnderTest(location: location, settings: store).pump(tester);
+    expect(page(), Palette.warmPaper);
+  });
+
+  testApp('the rest of the app keeps its own theme', (tester) async {
+    final store = MemorySettingsStore();
+    await store.setString(SettingsKeys.readerTone, 'warmPaper');
+    await AppUnderTest(location: '/companions', settings: store).pump(tester);
+    expect(
+      Theme.of(tester.element(find.byType(Scaffold).first)).colorScheme.surface,
+      Palette.paper,
+    );
   });
 }

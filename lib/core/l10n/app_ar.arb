@@ -2864,5 +2864,17 @@
   "searchBrowseCompanions": "تصفّح الصحابة",
   "@searchBrowseCompanions": {
     "description": "Search with no results: opens the Companions directory."
+  },
+  "readerTone": "لون الصفحة",
+  "@readerTone": {
+    "description": "Reading settings: heading over the page tone choice (review K5)."
+  },
+  "readerToneApp": "حسب المظهر",
+  "@readerToneApp": {
+    "description": "Reading settings: the page follows the app's light or dark theme."
+  },
+  "readerToneWarmPaper": "ورقي دافئ",
+  "@readerToneWarmPaper": {
+    "description": "Reading settings: a warm, light paper page for long reading."
   }
 }

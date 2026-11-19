@@ -27,6 +27,23 @@ abstract final class AppTheme {
     SuhbaColors.feature,
   );
 
+  /// The reader's warm paper tone (review K5): the light theme on a warmer,
+  /// lighter page. Readers only; the rest of the app keeps its theme.
+  static final ThemeData warmPaper = _build(
+    _lightScheme.copyWith(
+      surface: Palette.warmPaper,
+      surfaceContainerLowest: Palette.warmPaper,
+      surfaceContainerLow: Palette.warmPaper,
+      surfaceContainer: Palette.warmPaperAlt,
+      outlineVariant: Palette.lineOnWarmPaper,
+    ),
+    SuhbaColors.light.copyWith(
+      surfaceAlt: Palette.warmPaperAlt,
+      line: Palette.lineOnWarmPaper,
+      draftSurface: Palette.warmPaperAlt,
+    ),
+  );
+
   static const _lightScheme = ColorScheme(
     brightness: Brightness.light,
     primary: Palette.green,

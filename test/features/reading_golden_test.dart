@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:suhba/core/design_system/theme/app_theme.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/storage/settings_store.dart';
 import 'package:suhba/shared/content/presentation/reading_body.dart';
 import 'package:suhba/shared/content/providers.dart';
 
@@ -106,4 +107,18 @@ void main() {
       );
     });
   }
+
+  testApp('section_reader, warm paper', (tester) async {
+    sized(tester, const Size(400, 900));
+    final store = MemorySettingsStore();
+    await store.setString(SettingsKeys.readerTone, 'warmPaper');
+    await AppUnderTest(
+      location: '/companions/abu-bakr/sections/abu-bakr.hijrah',
+      settings: store,
+    ).pump(tester);
+    await expectLater(
+      find.byType(MaterialApp),
+      matchesGoldenFile('goldens/section_reader_warm_paper.png'),
+    );
+  });
 }

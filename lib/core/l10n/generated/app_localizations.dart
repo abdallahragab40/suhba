@@ -3816,6 +3816,24 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'تصفّح الصحابة'**
   String get searchBrowseCompanions;
+
+  /// Reading settings: heading over the page tone choice (review K5).
+  ///
+  /// In ar, this message translates to:
+  /// **'لون الصفحة'**
+  String get readerTone;
+
+  /// Reading settings: the page follows the app's light or dark theme.
+  ///
+  /// In ar, this message translates to:
+  /// **'حسب المظهر'**
+  String get readerToneApp;
+
+  /// Reading settings: a warm, light paper page for long reading.
+  ///
+  /// In ar, this message translates to:
+  /// **'ورقي دافئ'**
+  String get readerToneWarmPaper;
 }
 
 class _AppLocalizationsDelegate

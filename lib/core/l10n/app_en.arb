@@ -667,5 +667,8 @@
   "aboutCreditSources": "Sources",
   "searchSuggestions": "الهجرة، أبو بكر، بدر، خديجة",
   "searchNoResultsTip": "Try a single word, or the name without a title or kunya.",
-  "searchBrowseCompanions": "Browse the companions"
+  "searchBrowseCompanions": "Browse the companions",
+  "readerTone": "Page",
+  "readerToneApp": "Match the app",
+  "readerToneWarmPaper": "Warm paper"
 }

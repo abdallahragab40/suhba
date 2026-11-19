@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:suhba/core/design_system/theme/app_theme.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/tokens/typography.dart';
 import 'package:suhba/core/feedback/haptics.dart';
@@ -34,6 +35,45 @@ class ReadingTextSizeController extends Notifier<double> {
   }
 }
 
+/// The readers' page: the app's own theme, or warm paper (review K5).
+enum ReaderTone { app, warmPaper }
+
+final readerToneProvider = NotifierProvider<ReaderToneController, ReaderTone>(
+  ReaderToneController.new,
+);
+
+class ReaderToneController extends Notifier<ReaderTone> {
+  @override
+  ReaderTone build() {
+    final saved = ref
+        .read(settingsStoreProvider)
+        .getString(SettingsKeys.readerTone);
+    return ReaderTone.values.where((t) => t.name == saved).firstOrNull ??
+        ReaderTone.app;
+  }
+
+  void select(ReaderTone tone) {
+    state = tone;
+    ref
+        .read(settingsStoreProvider)
+        .setString(SettingsKeys.readerTone, tone.name);
+  }
+}
+
+/// [child] in the readers' chosen tone.
+class ReaderToneScope extends ConsumerWidget {
+  const ReaderToneScope({required this.child, super.key});
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) =>
+      switch (ref.watch(readerToneProvider)) {
+        ReaderTone.app => child,
+        ReaderTone.warmPaper => Theme(data: AppTheme.warmPaper, child: child),
+      };
+}
+
 /// The app-bar button that opens [ReadingSettingsSheet].
 class ReadingSettingsButton extends StatelessWidget {
   const ReadingSettingsButton({super.key});
@@ -62,6 +102,7 @@ class ReadingSettingsSheet extends ConsumerWidget {
     final l10n = AppLocalizations.of(context);
     final size = ref.watch(readingTextSizeProvider);
     final digits = ref.watch(digitStyleProvider);
+    final tone = ref.watch(readerToneProvider);
     final format = DisplayFormatter.of(context);
     final textTheme = Theme.of(context).textTheme;
 
@@ -101,6 +142,26 @@ class ReadingSettingsSheet extends ConsumerWidget {
           Text(
             l10n.readerTextSample,
             style: SuhbaTextStyles.of(context).reading.copyWith(fontSize: size),
+          ),
+          const SizedBox(height: AppSpacing.lg),
+          Text(l10n.readerTone, style: textTheme.labelLarge),
+          const SizedBox(height: AppSpacing.xs),
+          SegmentedButton<ReaderTone>(
+            segments: [
+              ButtonSegment(
+                value: ReaderTone.app,
+                label: Text(l10n.readerToneApp),
+              ),
+              ButtonSegment(
+                value: ReaderTone.warmPaper,
+                label: Text(l10n.readerToneWarmPaper),
+              ),
+            ],
+            selected: {tone},
+            onSelectionChanged: (s) {
+              Haptics.selection(context);
+              ref.read(readerToneProvider.notifier).select(s.single);
+            },
           ),
           const SizedBox(height: AppSpacing.lg),
           Text(l10n.readerDigits, style: textTheme.labelLarge),

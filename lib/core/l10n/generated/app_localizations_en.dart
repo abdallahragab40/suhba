@@ -2288,4 +2288,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get searchBrowseCompanions => 'Browse the companions';
+
+  @override
+  String get readerTone => 'Page';
+
+  @override
+  String get readerToneApp => 'Match the app';
+
+  @override
+  String get readerToneWarmPaper => 'Warm paper';
 }
