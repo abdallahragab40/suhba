@@ -13,6 +13,7 @@ import 'package:suhba/core/design_system/widgets/draft_badge.dart';
 import 'package:suhba/core/design_system/widgets/empty_state.dart';
 import 'package:suhba/core/design_system/widgets/error_view.dart';
 import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
+import 'package:suhba/core/design_system/widgets/progress_ring.dart';
 import 'package:suhba/core/design_system/widgets/scene_backdrop.dart';
 import 'package:suhba/core/design_system/widgets/section_header.dart';
 import 'package:suhba/core/format/display_formatter.dart';
@@ -256,6 +257,22 @@ class SeerahOpening extends ConsumerWidget {
     final s = index.collection;
     final resume = seerahResumeChapter(index.chapters, progress);
     final first = index.chapters.firstOrNull;
+    // How much of the Seerah is finished, for the ring (review K2).
+    final format = DisplayFormatter.of(context);
+    final total = index.chapters.length;
+    final done = index.chapters
+        .where((c) => progress[c.id]?.completed ?? false)
+        .length;
+    final finished = total > 0 && done == total;
+    final progressText = finished
+        ? l10n.seerahProgressDone
+        : done == 0
+        ? l10n.seerahProgressNone
+        : l10n.seerahProgressRead(
+            total,
+            format.integer(done),
+            format.integer(total),
+          );
     final introText = switch (s.introduction.firstOrNull) {
       ParagraphBlock(:final text) => text.of(context),
       _ => null,
@@ -325,7 +342,48 @@ class SeerahOpening extends ConsumerWidget {
                             ).reading.copyWith(color: Palette.paper),
                           ),
                         ],
-                        const SizedBox(height: AppSpacing.lg),
+                        if (total > 0) ...[
+                          const SizedBox(height: AppSpacing.md),
+                          Row(
+                            children: [
+                              ProgressRing(
+                                value: done / total,
+                                label: progressText,
+                                color: Palette.goldOnInk,
+                                trackColor: Palette.lineOnGreen,
+                                size: 44,
+                                child: finished
+                                    ? const Icon(
+                                        Icons.check,
+                                        size: 20,
+                                        color: Palette.goldOnInk,
+                                      )
+                                    // Empty at zero: the words say it.
+                                    : done == 0
+                                    ? null
+                                    : Text(
+                                        format.integer(done),
+                                        textScaler: TextScaler.noScaling,
+                                        style: textTheme.titleSmall?.copyWith(
+                                          color: Palette.paper,
+                                        ),
+                                      ),
+                              ),
+                              const SizedBox(width: AppSpacing.sm),
+                              Expanded(
+                                child: ExcludeSemantics(
+                                  child: Text(
+                                    progressText,
+                                    style: SuhbaTextStyles.of(
+                                      context,
+                                    ).kicker.copyWith(color: Palette.paper),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                        const SizedBox(height: AppSpacing.md),
                         if (resume case final c?)
                           FilledButton.icon(
                             onPressed: () =>
@@ -339,8 +397,14 @@ class SeerahOpening extends ConsumerWidget {
                           FilledButton.icon(
                             onPressed: () =>
                                 context.push(AppRoutes.seerahChapter(first.id)),
-                            icon: const Icon(Icons.auto_stories),
-                            label: Text(l10n.seerahStart),
+                            icon: Icon(
+                              finished ? Icons.replay : Icons.auto_stories,
+                            ),
+                            label: Text(
+                              finished
+                                  ? l10n.seerahReadAgain
+                                  : l10n.seerahStart,
+                            ),
                           ),
                         if (compact) ...[
                           const SizedBox(height: AppSpacing.xs),

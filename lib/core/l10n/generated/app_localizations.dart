@@ -1934,6 +1934,30 @@ abstract class AppLocalizations {
   /// **'افتح السيرة النبوية'**
   String get seerahOpenSection;
 
+  /// Seerah progress beside the ring: chapters finished out of all chapters. count is the total.
+  ///
+  /// In ar, this message translates to:
+  /// **'{count, plural, =1{قرأتَ {read} من فصل واحد} =2{قرأتَ {read} من فصلين} few{قرأتَ {read} من {n} فصول} other{قرأتَ {read} من {n} فصلًا}}'**
+  String seerahProgressRead(int count, String read, String n);
+
+  /// Seerah progress before any chapter is finished (Q4).
+  ///
+  /// In ar, this message translates to:
+  /// **'لم تبدأ بعد'**
+  String get seerahProgressNone;
+
+  /// Seerah progress once every chapter is finished.
+  ///
+  /// In ar, this message translates to:
+  /// **'أتممتَ السيرة'**
+  String get seerahProgressDone;
+
+  /// Button once the Seerah is finished: opens chapter one; nothing is reset.
+  ///
+  /// In ar, this message translates to:
+  /// **'اقرأها من جديد'**
+  String get seerahReadAgain;
+
   /// Small hint under the Seerah opening that more follows below.
   ///
   /// In ar, this message translates to:

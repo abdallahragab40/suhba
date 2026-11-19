@@ -1135,6 +1135,28 @@ class AppLocalizationsAr extends AppLocalizations {
   String get seerahOpenSection => 'افتح السيرة النبوية';
 
   @override
+  String seerahProgressRead(int count, String read, String n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'قرأتَ $read من $n فصلًا',
+      few: 'قرأتَ $read من $n فصول',
+      two: 'قرأتَ $read من فصلين',
+      one: 'قرأتَ $read من فصل واحد',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get seerahProgressNone => 'لم تبدأ بعد';
+
+  @override
+  String get seerahProgressDone => 'أتممتَ السيرة';
+
+  @override
+  String get seerahReadAgain => 'اقرأها من جديد';
+
+  @override
   String get seerahScrollHint => 'اثنا عشر فصلًا';
 
   @override

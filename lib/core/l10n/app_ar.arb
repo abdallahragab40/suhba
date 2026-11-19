@@ -1569,6 +1569,33 @@
   "@seerahOpenSection": {
     "description": "Button on Home opening the Seerah section."
   },
+  "seerahProgressRead": "{count, plural, =1{قرأتَ {read} من فصل واحد} =2{قرأتَ {read} من فصلين} few{قرأتَ {read} من {n} فصول} other{قرأتَ {read} من {n} فصلًا}}",
+  "@seerahProgressRead": {
+    "description": "Seerah progress beside the ring: chapters finished out of all chapters. count is the total.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "read": {
+        "type": "String"
+      },
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "seerahProgressNone": "لم تبدأ بعد",
+  "@seerahProgressNone": {
+    "description": "Seerah progress before any chapter is finished (Q4)."
+  },
+  "seerahProgressDone": "أتممتَ السيرة",
+  "@seerahProgressDone": {
+    "description": "Seerah progress once every chapter is finished."
+  },
+  "seerahReadAgain": "اقرأها من جديد",
+  "@seerahReadAgain": {
+    "description": "Button once the Seerah is finished: opens chapter one; nothing is reset."
+  },
   "seerahScrollHint": "اثنا عشر فصلًا",
   "@seerahScrollHint": {
     "description": "Small hint under the Seerah opening that more follows below."

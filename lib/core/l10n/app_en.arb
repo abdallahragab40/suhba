@@ -307,6 +307,23 @@
   "seerahContinue": "Continue: {title}",
   "seerahStart": "Begin the Seerah",
   "seerahOpenSection": "Open the Seerah",
+  "seerahProgressRead": "{count, plural, =1{You have read {read} of 1 chapter} other{You have read {read} of {n} chapters}}",
+  "@seerahProgressRead": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "read": {
+        "type": "String"
+      },
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "seerahProgressNone": "Not started yet",
+  "seerahProgressDone": "You have finished the Seerah",
+  "seerahReadAgain": "Read it again",
   "seerahScrollHint": "Twelve chapters",
   "seerahChapterLabel": "Chapter {number} · {date}",
   "seerahVisualCount": "{count, plural, =1{1 visual} other{{n} visuals}}",

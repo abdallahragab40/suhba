@@ -1110,6 +1110,26 @@ class AppLocalizationsEn extends AppLocalizations {
   String get seerahOpenSection => 'Open the Seerah';
 
   @override
+  String seerahProgressRead(int count, String read, String n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'You have read $read of $n chapters',
+      one: 'You have read $read of 1 chapter',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get seerahProgressNone => 'Not started yet';
+
+  @override
+  String get seerahProgressDone => 'You have finished the Seerah';
+
+  @override
+  String get seerahReadAgain => 'Read it again';
+
+  @override
   String get seerahScrollHint => 'Twelve chapters';
 
   @override
