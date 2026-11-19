@@ -2295,4 +2295,25 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get directoryOthers => 'صحابة آخرون';
+
+  @override
+  String get aboutCreditsTitle => 'شكر وإسناد';
+
+  @override
+  String get aboutCreditQuranBody =>
+      'الآيات بالرسم العثماني من مشروع تنزيل (tanzil.net)، منقولة كما هي دون تغيير، برخصة المشاع الإبداعي: نسب المصنَّف ٣٫٠. نص الترخيص كاملًا في صفحة المصادر.';
+
+  @override
+  String get aboutCreditFontsTitle => 'الخطوط';
+
+  @override
+  String get aboutCreditAmiri =>
+      'خط الأميري (Amiri) وخط الأميري قرآن (Amiri Quran)، من تصميم خالد حسني، لنصوص القراءة والأسماء والآيات. برخصة الخطوط المفتوحة SIL OFL 1.1.';
+
+  @override
+  String get aboutCreditZain =>
+      'خط زين (Zain)، من تصميم Boutros Fonts، لعناوين الواجهة ونصوصها. برخصة الخطوط المفتوحة SIL OFL 1.1.';
+
+  @override
+  String get aboutCreditSources => 'المصادر';
 }

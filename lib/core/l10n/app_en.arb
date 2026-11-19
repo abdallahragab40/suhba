@@ -658,5 +658,11 @@
   "listStatusNote": "This mark is on items a qualified reviewer has not yet approved. See About for the method.",
   "depthFull": "Full biography",
   "depthBrief": "Short introduction",
-  "directoryOthers": "Other companions"
+  "directoryOthers": "Other companions",
+  "aboutCreditsTitle": "Credits",
+  "aboutCreditQuranBody": "Qur'an text in the Uthmani script from the Tanzil project (tanzil.net), unchanged, under Creative Commons Attribution 3.0. The full notice is on the Sources page.",
+  "aboutCreditFontsTitle": "Fonts",
+  "aboutCreditAmiri": "Amiri and Amiri Quran, by Khaled Hosny, for reading text, names and verses. SIL Open Font License 1.1.",
+  "aboutCreditZain": "Zain, by Boutros Fonts, for interface titles and text. SIL Open Font License 1.1.",
+  "aboutCreditSources": "Sources"
 }

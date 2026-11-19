@@ -2828,5 +2828,29 @@
   "directoryOthers": "صحابة آخرون",
   "@directoryOthers": {
     "description": "Directory: heading over companions in no category."
+  },
+  "aboutCreditsTitle": "شكر وإسناد",
+  "@aboutCreditsTitle": {
+    "description": "About: credits for every bundled third-party resource (review K10)."
+  },
+  "aboutCreditQuranBody": "الآيات بالرسم العثماني من مشروع تنزيل (tanzil.net)، منقولة كما هي دون تغيير، برخصة المشاع الإبداعي: نسب المصنَّف ٣٫٠. نص الترخيص كاملًا في صفحة المصادر.",
+  "@aboutCreditQuranBody": {
+    "description": "About credits: the Qur'an text (Tanzil, CC BY 3.0)."
+  },
+  "aboutCreditFontsTitle": "الخطوط",
+  "@aboutCreditFontsTitle": {
+    "description": "About credits: heading for the bundled fonts."
+  },
+  "aboutCreditAmiri": "خط الأميري (Amiri) وخط الأميري قرآن (Amiri Quran)، من تصميم خالد حسني، لنصوص القراءة والأسماء والآيات. برخصة الخطوط المفتوحة SIL OFL 1.1.",
+  "@aboutCreditAmiri": {
+    "description": "About credits: Amiri and Amiri Quran (OFL 1.1)."
+  },
+  "aboutCreditZain": "خط زين (Zain)، من تصميم Boutros Fonts، لعناوين الواجهة ونصوصها. برخصة الخطوط المفتوحة SIL OFL 1.1.",
+  "@aboutCreditZain": {
+    "description": "About credits: Zain (OFL 1.1)."
+  },
+  "aboutCreditSources": "المصادر",
+  "@aboutCreditSources": {
+    "description": "About credits: button opening the sources page, where the full Tanzil notice is."
   }
 }

@@ -3762,6 +3762,42 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'صحابة آخرون'**
   String get directoryOthers;
+
+  /// About: credits for every bundled third-party resource (review K10).
+  ///
+  /// In ar, this message translates to:
+  /// **'شكر وإسناد'**
+  String get aboutCreditsTitle;
+
+  /// About credits: the Qur'an text (Tanzil, CC BY 3.0).
+  ///
+  /// In ar, this message translates to:
+  /// **'الآيات بالرسم العثماني من مشروع تنزيل (tanzil.net)، منقولة كما هي دون تغيير، برخصة المشاع الإبداعي: نسب المصنَّف ٣٫٠. نص الترخيص كاملًا في صفحة المصادر.'**
+  String get aboutCreditQuranBody;
+
+  /// About credits: heading for the bundled fonts.
+  ///
+  /// In ar, this message translates to:
+  /// **'الخطوط'**
+  String get aboutCreditFontsTitle;
+
+  /// About credits: Amiri and Amiri Quran (OFL 1.1).
+  ///
+  /// In ar, this message translates to:
+  /// **'خط الأميري (Amiri) وخط الأميري قرآن (Amiri Quran)، من تصميم خالد حسني، لنصوص القراءة والأسماء والآيات. برخصة الخطوط المفتوحة SIL OFL 1.1.'**
+  String get aboutCreditAmiri;
+
+  /// About credits: Zain (OFL 1.1).
+  ///
+  /// In ar, this message translates to:
+  /// **'خط زين (Zain)، من تصميم Boutros Fonts، لعناوين الواجهة ونصوصها. برخصة الخطوط المفتوحة SIL OFL 1.1.'**
+  String get aboutCreditZain;
+
+  /// About credits: button opening the sources page, where the full Tanzil notice is.
+  ///
+  /// In ar, this message translates to:
+  /// **'المصادر'**
+  String get aboutCreditSources;
 }
 
 class _AppLocalizationsDelegate

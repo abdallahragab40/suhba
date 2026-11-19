@@ -14,6 +14,7 @@ import 'package:suhba/core/design_system/widgets/draft_banner.dart';
 import 'package:suhba/core/design_system/widgets/error_view.dart';
 import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
 import 'package:suhba/core/design_system/widgets/section_header.dart';
+import 'package:suhba/core/design_system/widgets/wordmark.dart';
 import 'package:suhba/core/domain/umm_al_qura.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
@@ -55,7 +56,6 @@ class HomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = AppLocalizations.of(context);
     final manifest = ref.watch(contentManifestProvider);
     final index = ref.watch(companionIndexProvider);
     final categories = ref.watch(categoriesProvider);
@@ -93,10 +93,7 @@ class HomePage extends ConsumerWidget {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.appTitle),
-        actions: shellActions(context),
-      ),
+      appBar: AppBar(title: const Wordmark(), actions: shellActions(context)),
       body: body,
     );
   }

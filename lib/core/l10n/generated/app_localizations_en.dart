@@ -2257,4 +2257,25 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get directoryOthers => 'Other companions';
+
+  @override
+  String get aboutCreditsTitle => 'Credits';
+
+  @override
+  String get aboutCreditQuranBody =>
+      'Qur\'an text in the Uthmani script from the Tanzil project (tanzil.net), unchanged, under Creative Commons Attribution 3.0. The full notice is on the Sources page.';
+
+  @override
+  String get aboutCreditFontsTitle => 'Fonts';
+
+  @override
+  String get aboutCreditAmiri =>
+      'Amiri and Amiri Quran, by Khaled Hosny, for reading text, names and verses. SIL Open Font License 1.1.';
+
+  @override
+  String get aboutCreditZain =>
+      'Zain, by Boutros Fonts, for interface titles and text. SIL Open Font License 1.1.';
+
+  @override
+  String get aboutCreditSources => 'Sources';
 }
