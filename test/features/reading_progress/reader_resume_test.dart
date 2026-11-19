@@ -130,7 +130,7 @@ void main() {
 
   group('a passage shorter than the screen', () {
     testApp('is not finished by opening it', (tester) async {
-      view(tester, const Size(600, 2400));
+      view(tester, const Size(600, 3600));
       final app = AppUnderTest(location: lessons);
       await app.pump(tester);
       await tester.pump(const Duration(seconds: 3));
@@ -139,7 +139,7 @@ void main() {
     });
 
     testApp('is finished explicitly, and can be read again', (tester) async {
-      view(tester, const Size(600, 2400));
+      view(tester, const Size(600, 3600));
       final app = AppUnderTest(location: lessons);
       await app.pump(tester);
 

@@ -424,6 +424,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get lessonLabel => 'A lesson';
 
   @override
+  String lessonBasedOn(String title) {
+    return 'Drawn from: $title';
+  }
+
+  @override
   String get sectionNotFound => 'This section could not be found.';
 
   @override

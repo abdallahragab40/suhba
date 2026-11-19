@@ -625,6 +625,15 @@
   "@lessonLabel": {
     "description": "Kicker of an editorial lesson."
   },
+  "lessonBasedOn": "مبنيّ على: {title}",
+  "@lessonBasedOn": {
+    "description": "Link under a lesson to the passage it is drawn from.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
   "sectionNotFound": "لم نجد هذا القسم.",
   "@sectionNotFound": {
     "description": "Unknown section link."

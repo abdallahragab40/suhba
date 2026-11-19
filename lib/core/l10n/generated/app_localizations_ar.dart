@@ -430,6 +430,11 @@ class AppLocalizationsAr extends AppLocalizations {
   String get lessonLabel => 'درس وعبرة';
 
   @override
+  String lessonBasedOn(String title) {
+    return 'مبنيّ على: $title';
+  }
+
+  @override
   String get sectionNotFound => 'لم نجد هذا القسم.';
 
   @override

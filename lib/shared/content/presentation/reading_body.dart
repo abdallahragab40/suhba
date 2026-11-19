@@ -39,6 +39,8 @@ class ReadingBody extends StatelessWidget {
     required this.provisional,
     required this.onCitations,
     this.textSize,
+    this.passageTitles = const {},
+    this.onOpenPassage,
     super.key,
   });
 
@@ -50,6 +52,11 @@ class ReadingBody extends StatelessWidget {
 
   /// Reading font size before the system text scale; theme default if null.
   final double? textSize;
+
+  /// Titles of the passages lessons may point to, by ID (E7). A lesson's
+  /// link is shown only for passages named here and with [onOpenPassage].
+  final Map<String, String> passageTitles;
+  final ValueChanged<String>? onOpenPassage;
 
   /// Space after [block] when [next] follows (review §2.7, spacing rule 2):
   /// 16 between paragraphs, 32 before a heading, 12 under a heading, 24
@@ -150,10 +157,21 @@ class ReadingBody extends StatelessWidget {
         ),
       ],
     ),
-    LessonBlock(:final text) => _Callout(
+    LessonBlock(:final text, :final basedOn) => _Callout(
       kicker: AppLocalizations.of(context).lessonLabel,
       icon: Icons.lightbulb_outline,
-      child: Text(text.of(context), style: _reading(context)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(text.of(context), style: _reading(context)),
+          // The passages the lesson is drawn from (E7), so the reader can
+          // check a moral against its evidence.
+          if (onOpenPassage case final open?)
+            for (final id in basedOn)
+              if (passageTitles[id] case final title?)
+                _LessonSource(title: title, onTap: () => open(id)),
+        ],
+      ),
     ),
     QuranQuoteBlock(:final ref, :final note) => _QuranQuote(
       quranRef: ref,
@@ -597,6 +615,48 @@ class _DisputeNote extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+/// «مبنيّ على: …», a link from a lesson to a passage it is drawn from.
+class _LessonSource extends StatelessWidget {
+  const _LessonSource({required this.title, required this.onTap});
+
+  final String title;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final colors = SuhbaColors.of(context);
+    return Semantics(
+      link: true,
+      label: l10n.lessonBasedOn(title),
+      excludeSemantics: true,
+      onTap: onTap,
+      child: InkWell(
+        onTap: onTap,
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(
+            minHeight: kMinInteractiveDimension,
+          ),
+          child: Row(
+            children: [
+              Icon(Icons.subdirectory_arrow_left, size: 18, color: colors.link),
+              const SizedBox(width: AppSpacing.xxs),
+              Flexible(
+                child: Text(
+                  l10n.lessonBasedOn(title),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.labelMedium?.copyWith(color: colors.link),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

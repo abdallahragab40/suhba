@@ -158,6 +158,39 @@ void main() {
     });
   });
 
+  group('E7 lessons point to their passages', () {
+    Map<String, dynamic> lesson() => block(1);
+
+    test('a lesson may name a passage of its own work', () {
+      lesson()['basedOn'] = ['comp-a.early'];
+      expect(validate().issues, isEmpty);
+    });
+
+    test('but not a passage that does not exist', () {
+      lesson()['basedOn'] = ['comp-a.nowhere'];
+      expectOnly('V2');
+    });
+
+    test('in the Ten, an unlinked lesson is pending work', () {
+      // The fixture's one category becomes the Ten.
+      (fx.list('categories.json', 'categories')[0] as Map)['id'] =
+          'ashara-mubashshara';
+      ((fx.companionA['memberships'] as List)[0] as Map)['categoryId'] =
+          'ashara-mubashshara';
+      final warnings = validate().issues.where(
+        (i) => i.message.contains('does not yet point'),
+      );
+      expect(warnings, hasLength(1));
+      lesson()['basedOn'] = ['comp-a.early'];
+      expect(
+        validate().issues.where(
+          (i) => i.message.contains('does not yet point'),
+        ),
+        isEmpty,
+      );
+    });
+  });
+
   group('V3 citations', () {
     test('a biography needs references', () {
       fx.companionA['references'] = <String>[];

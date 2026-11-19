@@ -527,6 +527,14 @@
             },
             "text": {
               "$ref": "#/$defs/localizedText"
+            },
+            "basedOn": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/id"
+              },
+              "uniqueItems": true,
+              "description": "The passages of the same work (section or chapter IDs) the lesson is drawn from."
             }
           },
           "additionalProperties": false,

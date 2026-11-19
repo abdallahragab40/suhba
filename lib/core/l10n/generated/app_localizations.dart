@@ -752,6 +752,12 @@ abstract class AppLocalizations {
   /// **'درس وعبرة'**
   String get lessonLabel;
 
+  /// Link under a lesson to the passage it is drawn from.
+  ///
+  /// In ar, this message translates to:
+  /// **'مبنيّ على: {title}'**
+  String lessonBasedOn(String title);
+
   /// Unknown section link.
   ///
   /// In ar, this message translates to:

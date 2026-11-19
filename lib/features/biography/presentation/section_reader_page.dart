@@ -156,6 +156,10 @@ class _SectionReader extends ConsumerWidget {
           blocks: section.blocks,
           provisional: provisional,
           textSize: ref.watch(readingTextSizeProvider),
+          passageTitles: {
+            for (final s in c.sections) s.id: s.title.of(context),
+          },
+          onOpenPassage: (id) => context.push(AppRoutes.section(c.id, id)),
           onCitations: (cites, reliability, {passage}) => showCitationSheet(
             context,
             citations: cites,

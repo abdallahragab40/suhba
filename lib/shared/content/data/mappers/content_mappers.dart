@@ -110,7 +110,10 @@ extension ContentBlockDtoMapper on ContentBlockDto {
         reliability: reliability,
         citations: _citations(citations),
       ),
-    LessonBlockDto(:final text) => ContentBlock.lesson(text: text.toDomain()),
+    LessonBlockDto(:final text, :final basedOn) => ContentBlock.lesson(
+      text: text.toDomain(),
+      basedOn: basedOn,
+    ),
     QuranQuoteBlockDto(:final ref, :final note) => ContentBlock.quranQuote(
       ref: ref.toDomain(),
       note: note?.toDomain(),

@@ -109,6 +109,14 @@
   "disputeShowOpinions": "Show the opinions ({count})",
   "disputeOpinion": "Opinion {n}",
   "lessonLabel": "A lesson",
+  "lessonBasedOn": "Drawn from: {title}",
+  "@lessonBasedOn": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
   "sectionNotFound": "This section could not be found.",
   "storyNotFound": "This story could not be found.",
   "profileFullTimeline": "Full timeline",

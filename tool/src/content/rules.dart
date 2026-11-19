@@ -246,9 +246,50 @@ class _Rules {
 
   // ── Items ─────────────────────────────────────────────────────────────
 
+  /// E7: a lesson points to passages of its own work, never to a missing
+  /// one; [required] makes an unlinked lesson a warning (the Ten).
+  void _lessonSources(
+    Item<Object> item,
+    Iterable<(String, ContentBlockDto)> blocks,
+    Set<String> passages, {
+    bool required = false,
+  }) {
+    for (final (path, block) in blocks) {
+      if (block is! LessonBlockDto) continue;
+      for (var i = 0; i < block.basedOn.length; i++) {
+        if (!passages.contains(block.basedOn[i])) {
+          sink.error(
+            'V2',
+            item.file,
+            '$path.basedOn[$i]',
+            '"${block.basedOn[i]}" is not a passage of this work.',
+          );
+        }
+      }
+      if (required && block.basedOn.isEmpty) {
+        sink.warning(
+          'V9',
+          item.file,
+          path,
+          'This lesson does not yet point to the passage it is drawn from.',
+        );
+      }
+    }
+  }
+
   void _companion(Item<CompanionDto> item) {
     final c = item.dto;
     _fileNameMatchesId(item, 'companions');
+    _lessonSources(
+      item,
+      [
+        for (var s = 0; s < c.sections.length; s++)
+          for (var b = 0; b < c.sections[s].blocks.length; b++)
+            ('\$.sections[$s].blocks[$b]', c.sections[s].blocks[b]),
+      ],
+      {for (final s in c.sections) s.id},
+      required: c.memberships.any((m) => m.categoryId == 'ashara-mubashshara'),
+    );
     _childIds(item, r'$.sections', c.sections.map((s) => s.id));
     _childIds(item, r'$.timeline', c.timeline.map((t) => t.id));
 
@@ -352,6 +393,15 @@ class _Rules {
   void _story(Item<StoryDto> item) {
     final story = item.dto;
     _fileNameMatchesId(item, 'stories');
+    _lessonSources(
+      item,
+      [
+        for (var c = 0; c < story.chapters.length; c++)
+          for (var b = 0; b < story.chapters[c].blocks.length; b++)
+            ('\$.chapters[$c].blocks[$b]', story.chapters[c].blocks[b]),
+      ],
+      {for (final c in story.chapters) c.id},
+    );
     _childIds(item, r'$.chapters', story.chapters.map((c) => c.id));
     for (var i = 0; i < story.companionIds.length; i++) {
       _ref(
@@ -566,6 +616,9 @@ class _Rules {
   void _seerahChapter(Item<SeerahChapterDto> item) {
     final c = item.dto;
     _fileNameMatchesId(item, 'seerah/chapters');
+    _lessonSources(item, [
+      for (var b = 0; b < c.blocks.length; b++) ('\$.blocks[$b]', c.blocks[b]),
+    ], tree.seerahChapterById.keys.toSet());
     _workRefs(item, c.references);
     _refs(item, r'$.eventIds', c.eventIds, tree.eventById, ContentKind.event);
     _refs(item, r'$.placeIds', c.placeIds, tree.placeById, ContentKind.place);

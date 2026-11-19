@@ -26,8 +26,13 @@ sealed class ContentBlockDto with _$ContentBlockDto {
     required List<CitationDto> citations,
   }) = ParagraphBlockDto;
 
-  const factory ContentBlockDto.lesson({required LocalizedTextDto text}) =
-      LessonBlockDto;
+  const factory ContentBlockDto.lesson({
+    required LocalizedTextDto text,
+
+    /// The passages (section or chapter IDs of the same work) the lesson
+    /// is drawn from (review E7).
+    @JsonKey(toJson: _omitEmpty) @Default(<String>[]) List<String> basedOn,
+  }) = LessonBlockDto;
 
   const factory ContentBlockDto.quranQuote({
     required QuranRefDto ref,
@@ -66,3 +71,7 @@ sealed class ContentBlockDto with _$ContentBlockDto {
   factory ContentBlockDto.fromJson(Map<String, dynamic> json) =>
       _$ContentBlockDtoFromJson(json);
 }
+
+/// Leaves an empty list out of the JSON (with include_if_null: false), so
+/// lessons without links serialise as before.
+List<String>? _omitEmpty(List<String> list) => list.isEmpty ? null : list;
