@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "said-ibn-zayd-lifeline",
+  "type": "timeline",
+  "title": {
+    "ar": "حياة سعيد بن زيد على خط الزمن"
+  },
+  "takeaway": {
+    "ar": "أسلم سعيد بن زيد بمكة مع زوجه فاطمة، وشهد أحدًا وبيعة الشجرة، ثم شهد فتوح الشام في دمشق واليرموك، وتوفي بالعقيق نحو سنة خمسين."
+  },
+  "notes": [
+    {
+      "ar": "تاريخ مولده تقريبي."
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "sensitive"
+    ],
+    "authoredBy": "draft-lifelines-e6"
+  },
+  "companionId": "said-ibn-zayd"
+}

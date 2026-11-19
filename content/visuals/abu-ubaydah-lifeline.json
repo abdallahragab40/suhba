@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "abu-ubaydah-lifeline",
+  "type": "timeline",
+  "title": {
+    "ar": "حياة أبي عبيدة بن الجراح على خط الزمن"
+  },
+  "takeaway": {
+    "ar": "أسلم أبو عبيدة بمكة بدعوة أبي بكر، وشهد بدرًا وأحدًا، وأمّره النبي ﷺ على سرية وبعثه أمينًا إلى نجران، ثم كان من أمراء فتوح الشام حتى توفي في طاعون عمواس سنة ثماني عشرة."
+  },
+  "notes": [
+    {
+      "ar": "تاريخ مولده تقريبي."
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [
+      "sensitive"
+    ],
+    "authoredBy": "draft-lifelines-e6"
+  },
+  "companionId": "abu-ubaydah"
+}

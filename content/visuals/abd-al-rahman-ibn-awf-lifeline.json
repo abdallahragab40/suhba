@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "abd-al-rahman-ibn-awf-lifeline",
+  "type": "timeline",
+  "title": {
+    "ar": "حياة عبد الرحمن بن عوف على خط الزمن"
+  },
+  "takeaway": {
+    "ar": "من إسلامه بمكة بدعوة أبي بكر إلى وفاته بالمدينة سنة اثنتين وثلاثين: هجرة إلى الحبشة، ثم المؤاخاة في المدينة، وبدر وأحد، ثم إدارته الشورى سنة أربع وعشرين."
+  },
+  "notes": [
+    {
+      "ar": "تاريخ مولده تقريبي."
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "editorialFlags": [],
+    "authoredBy": "draft-lifelines-e6"
+  },
+  "companionId": "abd-al-rahman-ibn-awf"
+}
