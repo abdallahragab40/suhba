@@ -670,5 +670,6 @@
   "searchBrowseCompanions": "Browse the companions",
   "readerTone": "Page",
   "readerToneApp": "Match the app",
-  "readerToneWarmPaper": "Warm paper"
+  "readerToneWarmPaper": "Warm paper",
+  "journeyStepContinue": "Continue"
 }

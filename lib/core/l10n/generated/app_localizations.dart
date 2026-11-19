@@ -3834,6 +3834,12 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'ورقي دافئ'**
   String get readerToneWarmPaper;
+
+  /// Journey stepper: the one button, on the current step (review K4).
+  ///
+  /// In ar, this message translates to:
+  /// **'تابع'**
+  String get journeyStepContinue;
 }
 
 class _AppLocalizationsDelegate

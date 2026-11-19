@@ -2297,4 +2297,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get readerToneWarmPaper => 'Warm paper';
+
+  @override
+  String get journeyStepContinue => 'Continue';
 }

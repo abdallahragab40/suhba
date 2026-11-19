@@ -2876,5 +2876,9 @@
   "readerToneWarmPaper": "ورقي دافئ",
   "@readerToneWarmPaper": {
     "description": "Reading settings: a warm, light paper page for long reading."
+  },
+  "journeyStepContinue": "تابع",
+  "@journeyStepContinue": {
+    "description": "Journey stepper: the one button, on the current step (review K4)."
   }
 }

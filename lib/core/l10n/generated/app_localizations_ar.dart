@@ -2334,4 +2334,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get readerToneWarmPaper => 'ورقي دافئ';
+
+  @override
+  String get journeyStepContinue => 'تابع';
 }
