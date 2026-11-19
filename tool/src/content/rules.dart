@@ -494,6 +494,35 @@ class _Rules {
       tree.sourceById,
       ContentKind.source,
     );
+    // Home's feature is one of the Seerah's chapters, told by one of that
+    // chapter's own visuals; the map is one of the Seerah's visuals.
+    if (s.feature case final f?) {
+      if (!s.chapterIds.contains(f.chapterId)) {
+        sink.error(
+          'V2',
+          item.file,
+          r'$.feature.chapterId',
+          'Chapter "${f.chapterId}" is not in chapterIds.',
+        );
+      } else if (tree.seerahChapterById[f.chapterId] case final c?
+          when !c.dto.visualIds.contains(f.visualId)) {
+        sink.error(
+          'V2',
+          item.file,
+          r'$.feature.visualId',
+          'Visual "${f.visualId}" is not one of chapter "${f.chapterId}"\'s '
+              'visualIds.',
+        );
+      }
+    }
+    if (s.mapVisualId case final id? when !s.visualIds.contains(id)) {
+      sink.error(
+        'V2',
+        item.file,
+        r'$.mapVisualId',
+        'Visual "$id" is not in visualIds.',
+      );
+    }
     // Every chapter and topic must be in the reading order, or no screen
     // could reach it.
     for (final (items, listed, what) in [

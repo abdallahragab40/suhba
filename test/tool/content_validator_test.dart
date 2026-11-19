@@ -369,6 +369,41 @@ void main() {
       expectOnly('V2');
     });
 
+    group('Home\'s feature and the map (D7)', () {
+      Map<String, dynamic> seerah() => fx.files['seerah/seerah.json']!;
+
+      test('a chapter and one of its visuals is valid', () {
+        seerah()
+          ..['feature'] = {'chapterId': 'chapter-a', 'visualId': 'visual-a'}
+          ..['mapVisualId'] = 'visual-a';
+        final report = validate();
+        expect(report.issues, isEmpty, reason: report.issues.join('\n'));
+      });
+
+      test('the featured chapter must be in the reading order', () {
+        seerah()['feature'] = {
+          'chapterId': 'chapter-b',
+          'visualId': 'visual-a',
+        };
+        expectOnly('V2');
+      });
+
+      test('the featured visual must be one of that chapter\'s', () {
+        chapter()['visualIds'] = <String>[];
+        (chapter()['blocks'] as List).removeLast();
+        seerah()['feature'] = {
+          'chapterId': 'chapter-a',
+          'visualId': 'visual-a',
+        };
+        expectOnly('V2');
+      });
+
+      test('the map must be one of the Seerah\'s visuals', () {
+        seerah()['mapVisualId'] = 'visual-b';
+        expectOnly('V2');
+      });
+    });
+
     test('a chapter needs work-level references', () {
       chapter()['references'] = <String>[];
       expectOnly('V3');

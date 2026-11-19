@@ -170,6 +170,18 @@ BuildResult buildContent(
           featuredPlaceIds: keep(s.featuredPlaceIds, placeIds),
           companionIds: keep(s.companionIds, companionIds),
           visualIds: keep(s.visualIds, visualIds),
+          // Dropped, not broken, when its chapter or visual is not shipped.
+          feature: switch (s.feature) {
+            final f?
+                when chapters.any((c) => c.id == f.chapterId) &&
+                    visualIds.contains(f.visualId) =>
+              f,
+            _ => null,
+          },
+          mapVisualId: switch (s.mapVisualId) {
+            final id? when visualIds.contains(id) => id,
+            _ => null,
+          },
         ),
         chapters: [
           for (final c in chapters)

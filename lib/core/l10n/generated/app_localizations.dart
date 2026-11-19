@@ -1028,18 +1028,6 @@ abstract class AppLocalizations {
   /// **'{gender, select, female{اقرأ سيرتها} other{اقرأ سيرته}}'**
   String homeReadBiography(String gender);
 
-  /// Kicker above categories.
-  ///
-  /// In ar, this message translates to:
-  /// **'التصنيفات'**
-  String get homeCategoriesKicker;
-
-  /// Title above categories.
-  ///
-  /// In ar, this message translates to:
-  /// **'تصفّح الصحابة'**
-  String get homeCategoriesTitle;
-
   /// Kicker above stories.
   ///
   /// In ar, this message translates to:
@@ -1255,12 +1243,6 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'مصادر أخرى'**
   String get sourceTypeOther;
-
-  /// Number of companions in a category; n is the formatted number.
-  ///
-  /// In ar, this message translates to:
-  /// **'{count, plural, =0{لا صحابة بعد} =1{صحابي واحد} =2{صحابيان} few{{n} صحابة} other{{n} صحابيًّا}}'**
-  String homeCategoryCount(int count, String n);
 
   /// Saved screen: the saved items or positions failed to load.
   ///
@@ -1856,6 +1838,12 @@ abstract class AppLocalizations {
   /// **'السيرة على خط الزمن'**
   String get seerahOpenTimeline;
 
+  /// Button in the Seerah hub opening the Seerah map full screen.
+  ///
+  /// In ar, this message translates to:
+  /// **'أماكن السيرة على الخريطة'**
+  String get seerahOpenMap;
+
   /// Kicker above the thematic essays.
   ///
   /// In ar, this message translates to:
@@ -1982,16 +1970,10 @@ abstract class AppLocalizations {
   /// **'حدث فارق'**
   String get seerahFeatureKicker;
 
-  /// Title of the Hijrah feature band.
+  /// Button opening the featured chapter.
   ///
   /// In ar, this message translates to:
-  /// **'الهجرة: من مكة إلى المدينة'**
-  String get seerahFeatureTitle;
-
-  /// Button opening the Hijrah chapter.
-  ///
-  /// In ar, this message translates to:
-  /// **'اقرأ فصل الهجرة'**
+  /// **'اقرأ الفصل'**
   String get seerahFeatureRead;
 
   /// Seerah chapter not found.
@@ -2329,24 +2311,6 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'من موضوعات السيرة'**
   String get savedSeerahTopics;
-
-  /// Home section kicker.
-  ///
-  /// In ar, this message translates to:
-  /// **'السيرة النبوية'**
-  String get homeSeerahKicker;
-
-  /// Home: the next Seerah chapters to read.
-  ///
-  /// In ar, this message translates to:
-  /// **'الفصول القادمة'**
-  String get homeSeerahTitle;
-
-  /// Home link to the Seerah hub.
-  ///
-  /// In ar, this message translates to:
-  /// **'كل الفصول'**
-  String get homeAllChapters;
 
   /// Home: title over the featured companion, by gender (review F11).
   ///
@@ -3709,17 +3673,35 @@ abstract class AppLocalizations {
   /// **'{time} مساءً'**
   String timeEvening(String time);
 
-  /// Number of companions in a category whose members are all women, e.g. أمهات المؤمنين (review F11).
-  ///
-  /// In ar, this message translates to:
-  /// **'{count, plural, =0{لا صحابيات بعد} =1{صحابية واحدة} =2{صحابيتان} few{{n} صحابيات} other{{n} صحابيةً}}'**
-  String homeCategoryCountFemale(int count, String n);
-
   /// Home: link from the first stories to the full list in Explore.
   ///
   /// In ar, this message translates to:
   /// **'كل القصص'**
   String get homeAllStories;
+
+  /// Quick tile on Home: opens the passage read most recently, else the Seerah.
+  ///
+  /// In ar, this message translates to:
+  /// **'تابع القراءة'**
+  String get homeTileContinue;
+
+  /// Quick tile on Home: opens the current journey, else the list of journeys.
+  ///
+  /// In ar, this message translates to:
+  /// **'رحلة اليوم'**
+  String get homeTileJourney;
+
+  /// Quick tile on Home: opens review.
+  ///
+  /// In ar, this message translates to:
+  /// **'المراجعة'**
+  String get homeTileReview;
+
+  /// Quick tile on Home: opens the Seerah map.
+  ///
+  /// In ar, this message translates to:
+  /// **'الخريطة'**
+  String get homeTileMap;
 
   /// Source sheet: the edition a page or volume locator refers to (review F19).
   ///

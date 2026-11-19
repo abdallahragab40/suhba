@@ -4,6 +4,7 @@ import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/widgets/error_view.dart';
 import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/shared/content/domain/atlas.dart';
 import 'package:suhba/shared/content/providers.dart';
 import 'package:suhba/shared/visuals/presentation/infographic_view.dart';
 
@@ -16,6 +17,7 @@ class SeerahTimelinePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
     final index = ref.watch(seerahIndexProvider);
+    final visuals = ref.watch(visualsProvider).value;
     return Scaffold(
       appBar: AppBar(title: Text(l10n.seerahTimelineTitle)),
       body: switch (index) {
@@ -28,8 +30,12 @@ class SeerahTimelinePage extends ConsumerWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
+                    // The Seerah's visuals that are about time, whatever
+                    // their IDs: chosen by type, not named in code (D7).
                     for (final id in value.collection.visualIds)
-                      if (id == 'seerah-periods' || id == 'seerah-timeline')
+                      if (visuals?[id]?.type
+                          case InfographicType.periods ||
+                              InfographicType.timeline)
                         Padding(
                           padding: const EdgeInsetsDirectional.only(
                             bottom: AppSpacing.xl,

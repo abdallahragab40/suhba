@@ -360,9 +360,275 @@ $LocalizedTextDtoCopyWith<$Res> get summary {
 
 
 /// @nodoc
+mixin _$SeerahFeatureDto {
+
+ String get chapterId; String get visualId;
+/// Create a copy of SeerahFeatureDto
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$SeerahFeatureDtoCopyWith<SeerahFeatureDto> get copyWith => _$SeerahFeatureDtoCopyWithImpl<SeerahFeatureDto>(this as SeerahFeatureDto, _$identity);
+
+  /// Serializes this SeerahFeatureDto to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SeerahFeatureDto&&(identical(other.chapterId, chapterId) || other.chapterId == chapterId)&&(identical(other.visualId, visualId) || other.visualId == visualId));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,chapterId,visualId);
+
+@override
+String toString() {
+  return 'SeerahFeatureDto(chapterId: $chapterId, visualId: $visualId)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $SeerahFeatureDtoCopyWith<$Res>  {
+  factory $SeerahFeatureDtoCopyWith(SeerahFeatureDto value, $Res Function(SeerahFeatureDto) _then) = _$SeerahFeatureDtoCopyWithImpl;
+@useResult
+$Res call({
+ String chapterId, String visualId
+});
+
+
+
+
+}
+/// @nodoc
+class _$SeerahFeatureDtoCopyWithImpl<$Res>
+    implements $SeerahFeatureDtoCopyWith<$Res> {
+  _$SeerahFeatureDtoCopyWithImpl(this._self, this._then);
+
+  final SeerahFeatureDto _self;
+  final $Res Function(SeerahFeatureDto) _then;
+
+/// Create a copy of SeerahFeatureDto
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? chapterId = null,Object? visualId = null,}) {
+  return _then(_self.copyWith(
+chapterId: null == chapterId ? _self.chapterId : chapterId // ignore: cast_nullable_to_non_nullable
+as String,visualId: null == visualId ? _self.visualId : visualId // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [SeerahFeatureDto].
+extension SeerahFeatureDtoPatterns on SeerahFeatureDto {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _SeerahFeatureDto value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _SeerahFeatureDto() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _SeerahFeatureDto value)  $default,){
+final _that = this;
+switch (_that) {
+case _SeerahFeatureDto():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _SeerahFeatureDto value)?  $default,){
+final _that = this;
+switch (_that) {
+case _SeerahFeatureDto() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String chapterId,  String visualId)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _SeerahFeatureDto() when $default != null:
+return $default(_that.chapterId,_that.visualId);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String chapterId,  String visualId)  $default,) {final _that = this;
+switch (_that) {
+case _SeerahFeatureDto():
+return $default(_that.chapterId,_that.visualId);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String chapterId,  String visualId)?  $default,) {final _that = this;
+switch (_that) {
+case _SeerahFeatureDto() when $default != null:
+return $default(_that.chapterId,_that.visualId);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _SeerahFeatureDto implements SeerahFeatureDto {
+  const _SeerahFeatureDto({required this.chapterId, required this.visualId});
+  factory _SeerahFeatureDto.fromJson(Map<String, dynamic> json) => _$SeerahFeatureDtoFromJson(json);
+
+@override final  String chapterId;
+@override final  String visualId;
+
+/// Create a copy of SeerahFeatureDto
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$SeerahFeatureDtoCopyWith<_SeerahFeatureDto> get copyWith => __$SeerahFeatureDtoCopyWithImpl<_SeerahFeatureDto>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$SeerahFeatureDtoToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SeerahFeatureDto&&(identical(other.chapterId, chapterId) || other.chapterId == chapterId)&&(identical(other.visualId, visualId) || other.visualId == visualId));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,chapterId,visualId);
+
+@override
+String toString() {
+  return 'SeerahFeatureDto(chapterId: $chapterId, visualId: $visualId)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$SeerahFeatureDtoCopyWith<$Res> implements $SeerahFeatureDtoCopyWith<$Res> {
+  factory _$SeerahFeatureDtoCopyWith(_SeerahFeatureDto value, $Res Function(_SeerahFeatureDto) _then) = __$SeerahFeatureDtoCopyWithImpl;
+@override @useResult
+$Res call({
+ String chapterId, String visualId
+});
+
+
+
+
+}
+/// @nodoc
+class __$SeerahFeatureDtoCopyWithImpl<$Res>
+    implements _$SeerahFeatureDtoCopyWith<$Res> {
+  __$SeerahFeatureDtoCopyWithImpl(this._self, this._then);
+
+  final _SeerahFeatureDto _self;
+  final $Res Function(_SeerahFeatureDto) _then;
+
+/// Create a copy of SeerahFeatureDto
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? chapterId = null,Object? visualId = null,}) {
+  return _then(_SeerahFeatureDto(
+chapterId: null == chapterId ? _self.chapterId : chapterId // ignore: cast_nullable_to_non_nullable
+as String,visualId: null == visualId ? _self.visualId : visualId // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+
+/// @nodoc
 mixin _$SeerahDto {
 
- int get schemaVersion; LocalizedTextDto get title; LocalizedTextDto get subtitle; List<ContentBlockDto> get introduction; List<SeerahEraDto> get eras; List<String> get chapterIds; List<String> get topicIds; LocalizedTextDto get methodology; List<String> get references; ReviewDto get review; List<String> get featuredEventIds; List<String> get featuredPlaceIds; List<String> get companionIds; List<String> get visualIds;
+ int get schemaVersion; LocalizedTextDto get title; LocalizedTextDto get subtitle; List<ContentBlockDto> get introduction; List<SeerahEraDto> get eras; List<String> get chapterIds; List<String> get topicIds; LocalizedTextDto get methodology; List<String> get references; ReviewDto get review; List<String> get featuredEventIds; List<String> get featuredPlaceIds; List<String> get companionIds; List<String> get visualIds; SeerahFeatureDto? get feature; String? get mapVisualId;
 /// Create a copy of SeerahDto
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -375,16 +641,16 @@ $SeerahDtoCopyWith<SeerahDto> get copyWith => _$SeerahDtoCopyWithImpl<SeerahDto>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SeerahDto&&(identical(other.schemaVersion, schemaVersion) || other.schemaVersion == schemaVersion)&&(identical(other.title, title) || other.title == title)&&(identical(other.subtitle, subtitle) || other.subtitle == subtitle)&&const DeepCollectionEquality().equals(other.introduction, introduction)&&const DeepCollectionEquality().equals(other.eras, eras)&&const DeepCollectionEquality().equals(other.chapterIds, chapterIds)&&const DeepCollectionEquality().equals(other.topicIds, topicIds)&&(identical(other.methodology, methodology) || other.methodology == methodology)&&const DeepCollectionEquality().equals(other.references, references)&&(identical(other.review, review) || other.review == review)&&const DeepCollectionEquality().equals(other.featuredEventIds, featuredEventIds)&&const DeepCollectionEquality().equals(other.featuredPlaceIds, featuredPlaceIds)&&const DeepCollectionEquality().equals(other.companionIds, companionIds)&&const DeepCollectionEquality().equals(other.visualIds, visualIds));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SeerahDto&&(identical(other.schemaVersion, schemaVersion) || other.schemaVersion == schemaVersion)&&(identical(other.title, title) || other.title == title)&&(identical(other.subtitle, subtitle) || other.subtitle == subtitle)&&const DeepCollectionEquality().equals(other.introduction, introduction)&&const DeepCollectionEquality().equals(other.eras, eras)&&const DeepCollectionEquality().equals(other.chapterIds, chapterIds)&&const DeepCollectionEquality().equals(other.topicIds, topicIds)&&(identical(other.methodology, methodology) || other.methodology == methodology)&&const DeepCollectionEquality().equals(other.references, references)&&(identical(other.review, review) || other.review == review)&&const DeepCollectionEquality().equals(other.featuredEventIds, featuredEventIds)&&const DeepCollectionEquality().equals(other.featuredPlaceIds, featuredPlaceIds)&&const DeepCollectionEquality().equals(other.companionIds, companionIds)&&const DeepCollectionEquality().equals(other.visualIds, visualIds)&&(identical(other.feature, feature) || other.feature == feature)&&(identical(other.mapVisualId, mapVisualId) || other.mapVisualId == mapVisualId));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,schemaVersion,title,subtitle,const DeepCollectionEquality().hash(introduction),const DeepCollectionEquality().hash(eras),const DeepCollectionEquality().hash(chapterIds),const DeepCollectionEquality().hash(topicIds),methodology,const DeepCollectionEquality().hash(references),review,const DeepCollectionEquality().hash(featuredEventIds),const DeepCollectionEquality().hash(featuredPlaceIds),const DeepCollectionEquality().hash(companionIds),const DeepCollectionEquality().hash(visualIds));
+int get hashCode => Object.hash(runtimeType,schemaVersion,title,subtitle,const DeepCollectionEquality().hash(introduction),const DeepCollectionEquality().hash(eras),const DeepCollectionEquality().hash(chapterIds),const DeepCollectionEquality().hash(topicIds),methodology,const DeepCollectionEquality().hash(references),review,const DeepCollectionEquality().hash(featuredEventIds),const DeepCollectionEquality().hash(featuredPlaceIds),const DeepCollectionEquality().hash(companionIds),const DeepCollectionEquality().hash(visualIds),feature,mapVisualId);
 
 @override
 String toString() {
-  return 'SeerahDto(schemaVersion: $schemaVersion, title: $title, subtitle: $subtitle, introduction: $introduction, eras: $eras, chapterIds: $chapterIds, topicIds: $topicIds, methodology: $methodology, references: $references, review: $review, featuredEventIds: $featuredEventIds, featuredPlaceIds: $featuredPlaceIds, companionIds: $companionIds, visualIds: $visualIds)';
+  return 'SeerahDto(schemaVersion: $schemaVersion, title: $title, subtitle: $subtitle, introduction: $introduction, eras: $eras, chapterIds: $chapterIds, topicIds: $topicIds, methodology: $methodology, references: $references, review: $review, featuredEventIds: $featuredEventIds, featuredPlaceIds: $featuredPlaceIds, companionIds: $companionIds, visualIds: $visualIds, feature: $feature, mapVisualId: $mapVisualId)';
 }
 
 
@@ -395,11 +661,11 @@ abstract mixin class $SeerahDtoCopyWith<$Res>  {
   factory $SeerahDtoCopyWith(SeerahDto value, $Res Function(SeerahDto) _then) = _$SeerahDtoCopyWithImpl;
 @useResult
 $Res call({
- int schemaVersion, LocalizedTextDto title, LocalizedTextDto subtitle, List<ContentBlockDto> introduction, List<SeerahEraDto> eras, List<String> chapterIds, List<String> topicIds, LocalizedTextDto methodology, List<String> references, ReviewDto review, List<String> featuredEventIds, List<String> featuredPlaceIds, List<String> companionIds, List<String> visualIds
+ int schemaVersion, LocalizedTextDto title, LocalizedTextDto subtitle, List<ContentBlockDto> introduction, List<SeerahEraDto> eras, List<String> chapterIds, List<String> topicIds, LocalizedTextDto methodology, List<String> references, ReviewDto review, List<String> featuredEventIds, List<String> featuredPlaceIds, List<String> companionIds, List<String> visualIds, SeerahFeatureDto? feature, String? mapVisualId
 });
 
 
-$LocalizedTextDtoCopyWith<$Res> get title;$LocalizedTextDtoCopyWith<$Res> get subtitle;$LocalizedTextDtoCopyWith<$Res> get methodology;$ReviewDtoCopyWith<$Res> get review;
+$LocalizedTextDtoCopyWith<$Res> get title;$LocalizedTextDtoCopyWith<$Res> get subtitle;$LocalizedTextDtoCopyWith<$Res> get methodology;$ReviewDtoCopyWith<$Res> get review;$SeerahFeatureDtoCopyWith<$Res>? get feature;
 
 }
 /// @nodoc
@@ -412,7 +678,7 @@ class _$SeerahDtoCopyWithImpl<$Res>
 
 /// Create a copy of SeerahDto
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? schemaVersion = null,Object? title = null,Object? subtitle = null,Object? introduction = null,Object? eras = null,Object? chapterIds = null,Object? topicIds = null,Object? methodology = null,Object? references = null,Object? review = null,Object? featuredEventIds = null,Object? featuredPlaceIds = null,Object? companionIds = null,Object? visualIds = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? schemaVersion = null,Object? title = null,Object? subtitle = null,Object? introduction = null,Object? eras = null,Object? chapterIds = null,Object? topicIds = null,Object? methodology = null,Object? references = null,Object? review = null,Object? featuredEventIds = null,Object? featuredPlaceIds = null,Object? companionIds = null,Object? visualIds = null,Object? feature = freezed,Object? mapVisualId = freezed,}) {
   return _then(_self.copyWith(
 schemaVersion: null == schemaVersion ? _self.schemaVersion : schemaVersion // ignore: cast_nullable_to_non_nullable
 as int,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
@@ -428,7 +694,9 @@ as ReviewDto,featuredEventIds: null == featuredEventIds ? _self.featuredEventIds
 as List<String>,featuredPlaceIds: null == featuredPlaceIds ? _self.featuredPlaceIds : featuredPlaceIds // ignore: cast_nullable_to_non_nullable
 as List<String>,companionIds: null == companionIds ? _self.companionIds : companionIds // ignore: cast_nullable_to_non_nullable
 as List<String>,visualIds: null == visualIds ? _self.visualIds : visualIds // ignore: cast_nullable_to_non_nullable
-as List<String>,
+as List<String>,feature: freezed == feature ? _self.feature : feature // ignore: cast_nullable_to_non_nullable
+as SeerahFeatureDto?,mapVisualId: freezed == mapVisualId ? _self.mapVisualId : mapVisualId // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 /// Create a copy of SeerahDto
@@ -466,6 +734,18 @@ $ReviewDtoCopyWith<$Res> get review {
   
   return $ReviewDtoCopyWith<$Res>(_self.review, (value) {
     return _then(_self.copyWith(review: value));
+  });
+}/// Create a copy of SeerahDto
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$SeerahFeatureDtoCopyWith<$Res>? get feature {
+    if (_self.feature == null) {
+    return null;
+  }
+
+  return $SeerahFeatureDtoCopyWith<$Res>(_self.feature!, (value) {
+    return _then(_self.copyWith(feature: value));
   });
 }
 }
@@ -549,10 +829,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int schemaVersion,  LocalizedTextDto title,  LocalizedTextDto subtitle,  List<ContentBlockDto> introduction,  List<SeerahEraDto> eras,  List<String> chapterIds,  List<String> topicIds,  LocalizedTextDto methodology,  List<String> references,  ReviewDto review,  List<String> featuredEventIds,  List<String> featuredPlaceIds,  List<String> companionIds,  List<String> visualIds)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int schemaVersion,  LocalizedTextDto title,  LocalizedTextDto subtitle,  List<ContentBlockDto> introduction,  List<SeerahEraDto> eras,  List<String> chapterIds,  List<String> topicIds,  LocalizedTextDto methodology,  List<String> references,  ReviewDto review,  List<String> featuredEventIds,  List<String> featuredPlaceIds,  List<String> companionIds,  List<String> visualIds,  SeerahFeatureDto? feature,  String? mapVisualId)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _SeerahDto() when $default != null:
-return $default(_that.schemaVersion,_that.title,_that.subtitle,_that.introduction,_that.eras,_that.chapterIds,_that.topicIds,_that.methodology,_that.references,_that.review,_that.featuredEventIds,_that.featuredPlaceIds,_that.companionIds,_that.visualIds);case _:
+return $default(_that.schemaVersion,_that.title,_that.subtitle,_that.introduction,_that.eras,_that.chapterIds,_that.topicIds,_that.methodology,_that.references,_that.review,_that.featuredEventIds,_that.featuredPlaceIds,_that.companionIds,_that.visualIds,_that.feature,_that.mapVisualId);case _:
   return orElse();
 
 }
@@ -570,10 +850,10 @@ return $default(_that.schemaVersion,_that.title,_that.subtitle,_that.introductio
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int schemaVersion,  LocalizedTextDto title,  LocalizedTextDto subtitle,  List<ContentBlockDto> introduction,  List<SeerahEraDto> eras,  List<String> chapterIds,  List<String> topicIds,  LocalizedTextDto methodology,  List<String> references,  ReviewDto review,  List<String> featuredEventIds,  List<String> featuredPlaceIds,  List<String> companionIds,  List<String> visualIds)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int schemaVersion,  LocalizedTextDto title,  LocalizedTextDto subtitle,  List<ContentBlockDto> introduction,  List<SeerahEraDto> eras,  List<String> chapterIds,  List<String> topicIds,  LocalizedTextDto methodology,  List<String> references,  ReviewDto review,  List<String> featuredEventIds,  List<String> featuredPlaceIds,  List<String> companionIds,  List<String> visualIds,  SeerahFeatureDto? feature,  String? mapVisualId)  $default,) {final _that = this;
 switch (_that) {
 case _SeerahDto():
-return $default(_that.schemaVersion,_that.title,_that.subtitle,_that.introduction,_that.eras,_that.chapterIds,_that.topicIds,_that.methodology,_that.references,_that.review,_that.featuredEventIds,_that.featuredPlaceIds,_that.companionIds,_that.visualIds);case _:
+return $default(_that.schemaVersion,_that.title,_that.subtitle,_that.introduction,_that.eras,_that.chapterIds,_that.topicIds,_that.methodology,_that.references,_that.review,_that.featuredEventIds,_that.featuredPlaceIds,_that.companionIds,_that.visualIds,_that.feature,_that.mapVisualId);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -590,10 +870,10 @@ return $default(_that.schemaVersion,_that.title,_that.subtitle,_that.introductio
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int schemaVersion,  LocalizedTextDto title,  LocalizedTextDto subtitle,  List<ContentBlockDto> introduction,  List<SeerahEraDto> eras,  List<String> chapterIds,  List<String> topicIds,  LocalizedTextDto methodology,  List<String> references,  ReviewDto review,  List<String> featuredEventIds,  List<String> featuredPlaceIds,  List<String> companionIds,  List<String> visualIds)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int schemaVersion,  LocalizedTextDto title,  LocalizedTextDto subtitle,  List<ContentBlockDto> introduction,  List<SeerahEraDto> eras,  List<String> chapterIds,  List<String> topicIds,  LocalizedTextDto methodology,  List<String> references,  ReviewDto review,  List<String> featuredEventIds,  List<String> featuredPlaceIds,  List<String> companionIds,  List<String> visualIds,  SeerahFeatureDto? feature,  String? mapVisualId)?  $default,) {final _that = this;
 switch (_that) {
 case _SeerahDto() when $default != null:
-return $default(_that.schemaVersion,_that.title,_that.subtitle,_that.introduction,_that.eras,_that.chapterIds,_that.topicIds,_that.methodology,_that.references,_that.review,_that.featuredEventIds,_that.featuredPlaceIds,_that.companionIds,_that.visualIds);case _:
+return $default(_that.schemaVersion,_that.title,_that.subtitle,_that.introduction,_that.eras,_that.chapterIds,_that.topicIds,_that.methodology,_that.references,_that.review,_that.featuredEventIds,_that.featuredPlaceIds,_that.companionIds,_that.visualIds,_that.feature,_that.mapVisualId);case _:
   return null;
 
 }
@@ -605,7 +885,7 @@ return $default(_that.schemaVersion,_that.title,_that.subtitle,_that.introductio
 @JsonSerializable()
 
 class _SeerahDto implements SeerahDto {
-  const _SeerahDto({required this.schemaVersion, required this.title, required this.subtitle, required final  List<ContentBlockDto> introduction, required final  List<SeerahEraDto> eras, required final  List<String> chapterIds, required final  List<String> topicIds, required this.methodology, required final  List<String> references, required this.review, final  List<String> featuredEventIds = const <String>[], final  List<String> featuredPlaceIds = const <String>[], final  List<String> companionIds = const <String>[], final  List<String> visualIds = const <String>[]}): _introduction = introduction,_eras = eras,_chapterIds = chapterIds,_topicIds = topicIds,_references = references,_featuredEventIds = featuredEventIds,_featuredPlaceIds = featuredPlaceIds,_companionIds = companionIds,_visualIds = visualIds;
+  const _SeerahDto({required this.schemaVersion, required this.title, required this.subtitle, required final  List<ContentBlockDto> introduction, required final  List<SeerahEraDto> eras, required final  List<String> chapterIds, required final  List<String> topicIds, required this.methodology, required final  List<String> references, required this.review, final  List<String> featuredEventIds = const <String>[], final  List<String> featuredPlaceIds = const <String>[], final  List<String> companionIds = const <String>[], final  List<String> visualIds = const <String>[], this.feature, this.mapVisualId}): _introduction = introduction,_eras = eras,_chapterIds = chapterIds,_topicIds = topicIds,_references = references,_featuredEventIds = featuredEventIds,_featuredPlaceIds = featuredPlaceIds,_companionIds = companionIds,_visualIds = visualIds;
   factory _SeerahDto.fromJson(Map<String, dynamic> json) => _$SeerahDtoFromJson(json);
 
 @override final  int schemaVersion;
@@ -676,6 +956,8 @@ class _SeerahDto implements SeerahDto {
   return EqualUnmodifiableListView(_visualIds);
 }
 
+@override final  SeerahFeatureDto? feature;
+@override final  String? mapVisualId;
 
 /// Create a copy of SeerahDto
 /// with the given fields replaced by the non-null parameter values.
@@ -690,16 +972,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SeerahDto&&(identical(other.schemaVersion, schemaVersion) || other.schemaVersion == schemaVersion)&&(identical(other.title, title) || other.title == title)&&(identical(other.subtitle, subtitle) || other.subtitle == subtitle)&&const DeepCollectionEquality().equals(other._introduction, _introduction)&&const DeepCollectionEquality().equals(other._eras, _eras)&&const DeepCollectionEquality().equals(other._chapterIds, _chapterIds)&&const DeepCollectionEquality().equals(other._topicIds, _topicIds)&&(identical(other.methodology, methodology) || other.methodology == methodology)&&const DeepCollectionEquality().equals(other._references, _references)&&(identical(other.review, review) || other.review == review)&&const DeepCollectionEquality().equals(other._featuredEventIds, _featuredEventIds)&&const DeepCollectionEquality().equals(other._featuredPlaceIds, _featuredPlaceIds)&&const DeepCollectionEquality().equals(other._companionIds, _companionIds)&&const DeepCollectionEquality().equals(other._visualIds, _visualIds));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SeerahDto&&(identical(other.schemaVersion, schemaVersion) || other.schemaVersion == schemaVersion)&&(identical(other.title, title) || other.title == title)&&(identical(other.subtitle, subtitle) || other.subtitle == subtitle)&&const DeepCollectionEquality().equals(other._introduction, _introduction)&&const DeepCollectionEquality().equals(other._eras, _eras)&&const DeepCollectionEquality().equals(other._chapterIds, _chapterIds)&&const DeepCollectionEquality().equals(other._topicIds, _topicIds)&&(identical(other.methodology, methodology) || other.methodology == methodology)&&const DeepCollectionEquality().equals(other._references, _references)&&(identical(other.review, review) || other.review == review)&&const DeepCollectionEquality().equals(other._featuredEventIds, _featuredEventIds)&&const DeepCollectionEquality().equals(other._featuredPlaceIds, _featuredPlaceIds)&&const DeepCollectionEquality().equals(other._companionIds, _companionIds)&&const DeepCollectionEquality().equals(other._visualIds, _visualIds)&&(identical(other.feature, feature) || other.feature == feature)&&(identical(other.mapVisualId, mapVisualId) || other.mapVisualId == mapVisualId));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,schemaVersion,title,subtitle,const DeepCollectionEquality().hash(_introduction),const DeepCollectionEquality().hash(_eras),const DeepCollectionEquality().hash(_chapterIds),const DeepCollectionEquality().hash(_topicIds),methodology,const DeepCollectionEquality().hash(_references),review,const DeepCollectionEquality().hash(_featuredEventIds),const DeepCollectionEquality().hash(_featuredPlaceIds),const DeepCollectionEquality().hash(_companionIds),const DeepCollectionEquality().hash(_visualIds));
+int get hashCode => Object.hash(runtimeType,schemaVersion,title,subtitle,const DeepCollectionEquality().hash(_introduction),const DeepCollectionEquality().hash(_eras),const DeepCollectionEquality().hash(_chapterIds),const DeepCollectionEquality().hash(_topicIds),methodology,const DeepCollectionEquality().hash(_references),review,const DeepCollectionEquality().hash(_featuredEventIds),const DeepCollectionEquality().hash(_featuredPlaceIds),const DeepCollectionEquality().hash(_companionIds),const DeepCollectionEquality().hash(_visualIds),feature,mapVisualId);
 
 @override
 String toString() {
-  return 'SeerahDto(schemaVersion: $schemaVersion, title: $title, subtitle: $subtitle, introduction: $introduction, eras: $eras, chapterIds: $chapterIds, topicIds: $topicIds, methodology: $methodology, references: $references, review: $review, featuredEventIds: $featuredEventIds, featuredPlaceIds: $featuredPlaceIds, companionIds: $companionIds, visualIds: $visualIds)';
+  return 'SeerahDto(schemaVersion: $schemaVersion, title: $title, subtitle: $subtitle, introduction: $introduction, eras: $eras, chapterIds: $chapterIds, topicIds: $topicIds, methodology: $methodology, references: $references, review: $review, featuredEventIds: $featuredEventIds, featuredPlaceIds: $featuredPlaceIds, companionIds: $companionIds, visualIds: $visualIds, feature: $feature, mapVisualId: $mapVisualId)';
 }
 
 
@@ -710,11 +992,11 @@ abstract mixin class _$SeerahDtoCopyWith<$Res> implements $SeerahDtoCopyWith<$Re
   factory _$SeerahDtoCopyWith(_SeerahDto value, $Res Function(_SeerahDto) _then) = __$SeerahDtoCopyWithImpl;
 @override @useResult
 $Res call({
- int schemaVersion, LocalizedTextDto title, LocalizedTextDto subtitle, List<ContentBlockDto> introduction, List<SeerahEraDto> eras, List<String> chapterIds, List<String> topicIds, LocalizedTextDto methodology, List<String> references, ReviewDto review, List<String> featuredEventIds, List<String> featuredPlaceIds, List<String> companionIds, List<String> visualIds
+ int schemaVersion, LocalizedTextDto title, LocalizedTextDto subtitle, List<ContentBlockDto> introduction, List<SeerahEraDto> eras, List<String> chapterIds, List<String> topicIds, LocalizedTextDto methodology, List<String> references, ReviewDto review, List<String> featuredEventIds, List<String> featuredPlaceIds, List<String> companionIds, List<String> visualIds, SeerahFeatureDto? feature, String? mapVisualId
 });
 
 
-@override $LocalizedTextDtoCopyWith<$Res> get title;@override $LocalizedTextDtoCopyWith<$Res> get subtitle;@override $LocalizedTextDtoCopyWith<$Res> get methodology;@override $ReviewDtoCopyWith<$Res> get review;
+@override $LocalizedTextDtoCopyWith<$Res> get title;@override $LocalizedTextDtoCopyWith<$Res> get subtitle;@override $LocalizedTextDtoCopyWith<$Res> get methodology;@override $ReviewDtoCopyWith<$Res> get review;@override $SeerahFeatureDtoCopyWith<$Res>? get feature;
 
 }
 /// @nodoc
@@ -727,7 +1009,7 @@ class __$SeerahDtoCopyWithImpl<$Res>
 
 /// Create a copy of SeerahDto
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? schemaVersion = null,Object? title = null,Object? subtitle = null,Object? introduction = null,Object? eras = null,Object? chapterIds = null,Object? topicIds = null,Object? methodology = null,Object? references = null,Object? review = null,Object? featuredEventIds = null,Object? featuredPlaceIds = null,Object? companionIds = null,Object? visualIds = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? schemaVersion = null,Object? title = null,Object? subtitle = null,Object? introduction = null,Object? eras = null,Object? chapterIds = null,Object? topicIds = null,Object? methodology = null,Object? references = null,Object? review = null,Object? featuredEventIds = null,Object? featuredPlaceIds = null,Object? companionIds = null,Object? visualIds = null,Object? feature = freezed,Object? mapVisualId = freezed,}) {
   return _then(_SeerahDto(
 schemaVersion: null == schemaVersion ? _self.schemaVersion : schemaVersion // ignore: cast_nullable_to_non_nullable
 as int,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
@@ -743,7 +1025,9 @@ as ReviewDto,featuredEventIds: null == featuredEventIds ? _self._featuredEventId
 as List<String>,featuredPlaceIds: null == featuredPlaceIds ? _self._featuredPlaceIds : featuredPlaceIds // ignore: cast_nullable_to_non_nullable
 as List<String>,companionIds: null == companionIds ? _self._companionIds : companionIds // ignore: cast_nullable_to_non_nullable
 as List<String>,visualIds: null == visualIds ? _self._visualIds : visualIds // ignore: cast_nullable_to_non_nullable
-as List<String>,
+as List<String>,feature: freezed == feature ? _self.feature : feature // ignore: cast_nullable_to_non_nullable
+as SeerahFeatureDto?,mapVisualId: freezed == mapVisualId ? _self.mapVisualId : mapVisualId // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 
@@ -782,6 +1066,18 @@ $ReviewDtoCopyWith<$Res> get review {
   
   return $ReviewDtoCopyWith<$Res>(_self.review, (value) {
     return _then(_self.copyWith(review: value));
+  });
+}/// Create a copy of SeerahDto
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$SeerahFeatureDtoCopyWith<$Res>? get feature {
+    if (_self.feature == null) {
+    return null;
+  }
+
+  return $SeerahFeatureDtoCopyWith<$Res>(_self.feature!, (value) {
+    return _then(_self.copyWith(feature: value));
   });
 }
 }

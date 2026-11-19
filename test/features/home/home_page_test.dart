@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:suhba/core/design_system/widgets/draft_banner.dart';
 import 'package:suhba/features/atlas/presentation/event_page.dart';
-import 'package:suhba/features/companions/presentation/directory/directory_page.dart';
 import 'package:suhba/features/companions/presentation/profile/companion_profile_page.dart';
 import 'package:suhba/features/explore/presentation/explore_page.dart';
+import 'package:suhba/features/home/presentation/quick_tiles.dart';
 import 'package:suhba/features/search/presentation/search_page.dart';
 import 'package:suhba/features/seerah/presentation/seerah_chapter_page.dart';
 import 'package:suhba/features/stories/presentation/story_page.dart';
@@ -110,15 +110,51 @@ void main() {
     expect(find.text('أبو بكر الصديق'), findsOneWidget);
   });
 
-  testApp('categories show their sizes and open the directory', (tester) async {
-    final app = await open(tester);
-    await reveal(tester, find.text('الخلفاء الراشدون'));
-    expect(find.text('١٠ صحابة'), findsOneWidget); // the Ten
-    expect(find.text('٤ صحابة'), findsWidgets); // the caliphs
-    await tester.tap(find.text('الخلفاء الراشدون'));
+  group('quick tiles (K7)', () {
+    for (final (label, location) in [
+      ('الخريطة', '/visuals/seerah-atlas'),
+      ('المراجعة', '/review'),
+      // No journey started yet: the list of journeys.
+      ('رحلة اليوم', '/journeys'),
+      // Nothing read yet: the Seerah from its first chapter.
+      ('تابع القراءة', '/seerah/chapters/makkah-lineage-birth'),
+    ]) {
+      testApp('«$label» opens $location', (tester) async {
+        final app = await open(tester);
+        await tester.tap(
+          find.descendant(
+            of: find.byType(QuickTiles),
+            matching: find.text(label),
+          ),
+        );
+        await tester.pumpAndSettle();
+        expect(app.location, location);
+      });
+    }
+
+    testApp('each tile is one button for screen readers', (tester) async {
+      await open(tester);
+      for (final label in ['تابع القراءة', 'رحلة اليوم', 'المراجعة']) {
+        expect(find.semantics.byLabel(label), findsOne, reason: label);
+      }
+    });
+  });
+
+  testApp('the featured episode is the one the content names', (tester) async {
+    await open(tester);
+    // seerah.json: feature.chapterId is hijrah-to-madinah.
+    await reveal(tester, find.text('اقرأ الفصل'));
+    expect(find.text('الهجرة إلى المدينة'), findsWidgets);
+    await tester.tap(find.text('اقرأ الفصل'));
     await tester.pumpAndSettle();
-    expect(find.byType(DirectoryPage), findsOneWidget);
-    expect(app.location, '/companions?category=khulafa-rashidun');
+    expect(find.byType(SeerahChapterPage), findsOneWidget);
+  });
+
+  testApp('Home does not repeat the hub or the directory', (tester) async {
+    await open(tester);
+    // The chapter list and the categories live elsewhere (D7).
+    expect(find.text('الفصول القادمة'), findsNothing);
+    expect(find.text('الخلفاء الراشدون'), findsNothing);
   });
 
   testApp('stories open from home', (tester) async {

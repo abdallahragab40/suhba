@@ -32,12 +32,12 @@ import 'package:suhba/shared/content/presentation/content_text.dart';
 import 'package:suhba/shared/content/presentation/reading_body.dart';
 import 'package:suhba/shared/content/presentation/record_links.dart';
 import 'package:suhba/shared/content/providers.dart';
-import 'package:suhba/shared/visuals/presentation/infographic_view.dart';
 
 /// The Seerah hub (S15): محمد رسول الله ﷺ. An opening scene with a way to
-/// start or continue; the chapter journey grouped by period; an ink band
-/// on the Hijrah; thematic essays; selected events and places; related
-/// companions; and how the section is sourced.
+/// start or continue; the chapter journey grouped by period; thematic
+/// essays; selected events; places with the map; related companions; and
+/// how the section is sourced. The featured episode is Home's, not
+/// repeated here (review D7).
 class SeerahHubPage extends ConsumerWidget {
   const SeerahHubPage({super.key});
 
@@ -105,6 +105,10 @@ class _Hub extends ConsumerWidget {
         const <String, ReadingProgress>{};
     final s = index.collection;
     final byId = {for (final c in index.chapters) c.id: c};
+    // The chapter to read next: where the reader stopped, else the first.
+    final next =
+        seerahResumeChapter(index.chapters, progress) ??
+        (progress.isEmpty ? index.chapters.firstOrNull : null);
     var section = 0;
     Widget header(String kicker, String title, {String? note}) => Padding(
       padding: const EdgeInsetsDirectional.only(
@@ -171,6 +175,7 @@ class _Hub extends ConsumerWidget {
                     chapter: c,
                     progress: progress[c.id],
                     last: id == period.chapterIds.last,
+                    expanded: c == next,
                   ),
             ],
             const SizedBox(height: AppSpacing.sm),
@@ -180,9 +185,6 @@ class _Hub extends ConsumerWidget {
               label: Text(l10n.seerahOpenTimeline),
             ),
           ]),
-          const SizedBox(height: AppSpacing.xl),
-          if (s.visualIds.contains('hijrah-route'))
-            const _InkFeature(visualId: 'hijrah-route'),
           paper([
             if (index.topics.isNotEmpty) ...[
               header(l10n.seerahTopicsKicker, l10n.seerahTopicsTitle),
@@ -195,9 +197,15 @@ class _Hub extends ConsumerWidget {
             if (s.featuredPlaceIds.isNotEmpty) ...[
               header(l10n.seerahPlacesKicker, l10n.seerahPlacesTitle),
               PlaceChips(ids: s.featuredPlaceIds),
-              const SizedBox(height: AppSpacing.md),
-              if (s.visualIds.contains('seerah-atlas'))
-                const InfographicView(visualId: 'seerah-atlas', inline: true),
+              // The map opens full screen, where it can be read (D7, D8).
+              if (s.mapVisualId case final map?) ...[
+                const SizedBox(height: AppSpacing.sm),
+                OutlinedButton.icon(
+                  onPressed: () => context.push(AppRoutes.visual(map)),
+                  icon: const Icon(Icons.map_outlined),
+                  label: Text(l10n.seerahOpenMap),
+                ),
+              ],
             ],
             if (s.companionIds.isNotEmpty) ...[
               header(l10n.seerahCompanionsKicker, l10n.seerahCompanionsTitle),
@@ -423,20 +431,27 @@ class _PeriodHeading extends StatelessWidget {
   }
 }
 
-/// One chapter in the journey: its number in large outline, its time
-/// label, title and abstract, how far the reader got, and whether it is a
-/// short sample. Joined to the next chapter by a vertical line.
+/// One chapter in the journey: its number in a ring, its time label and
+/// reading time, its title, how far the reader got, and whether it is a
+/// short sample. The chapter to read next also shows its abstract and its
+/// visuals; the others stay to one line of label and a title, so twelve
+/// chapters fit in a few screens (review D7). Joined to the next chapter
+/// by a vertical line.
 class ChapterJourneyTile extends StatelessWidget {
   const ChapterJourneyTile({
     required this.chapter,
     required this.progress,
     this.last = false,
+    this.expanded = true,
     super.key,
   });
 
   final SeerahChapterSummary chapter;
   final ReadingProgress? progress;
   final bool last;
+
+  /// Whether to show the abstract and the visual count.
+  final bool expanded;
 
   @override
   Widget build(BuildContext context) {
@@ -493,57 +508,61 @@ class ChapterJourneyTile extends StatelessWidget {
                   children: [
                     Row(
                       children: [
+                        // Label and reading time wrap as whole units,
+                        // never mid-phrase.
                         Expanded(
-                          child: Text(
-                            l10n.seerahChapterLabel(
-                              format.integer(c.number),
-                              format.historicalDate(c.date),
-                            ),
-                            style: SuhbaTextStyles.of(
-                              context,
-                            ).kicker.copyWith(color: colors.accentText),
+                          child: Wrap(
+                            spacing: AppSpacing.sm,
+                            children: [
+                              Text(
+                                l10n.seerahChapterLabel(
+                                  format.integer(c.number),
+                                  format.historicalDate(c.date),
+                                ),
+                                style: SuhbaTextStyles.of(
+                                  context,
+                                ).kicker.copyWith(color: colors.accentText),
+                              ),
+                              Text(
+                                l10n.storyReadingMinutes(
+                                  readingMinutes(c.wordCount),
+                                  format.integer(readingMinutes(c.wordCount)),
+                                ),
+                                style: SuhbaTextStyles.of(context).kicker,
+                              ),
+                            ],
                           ),
                         ),
                         PassageProgressMarker(progress: progress),
                       ],
                     ),
                     Text(c.title.of(context), style: textTheme.titleLarge),
-                    const SizedBox(height: AppSpacing.xxs),
-                    Text(
-                      c.abstract.of(context),
-                      style: textTheme.bodyMedium?.copyWith(
-                        color: colors.onSurfaceDim,
+                    if (c.review.coverage == Coverage.sample)
+                      Text(
+                        l10n.coverageSampleShort,
+                        style: SuhbaTextStyles.of(
+                          context,
+                        ).kicker.copyWith(color: colors.draft),
                       ),
-                    ),
-                    const SizedBox(height: AppSpacing.xxs),
-                    Wrap(
-                      spacing: AppSpacing.sm,
-                      crossAxisAlignment: WrapCrossAlignment.center,
-                      children: [
+                    if (expanded) ...[
+                      const SizedBox(height: AppSpacing.xxs),
+                      Text(
+                        c.abstract.of(context),
+                        style: textTheme.bodyMedium?.copyWith(
+                          color: colors.onSurfaceDim,
+                        ),
+                      ),
+                      if (c.visualIds.isNotEmpty) ...[
+                        const SizedBox(height: AppSpacing.xxs),
                         Text(
-                          l10n.storyReadingMinutes(
-                            readingMinutes(c.wordCount),
-                            format.integer(readingMinutes(c.wordCount)),
+                          l10n.seerahVisualCount(
+                            c.visualIds.length,
+                            format.integer(c.visualIds.length),
                           ),
                           style: SuhbaTextStyles.of(context).kicker,
                         ),
-                        if (c.visualIds.isNotEmpty)
-                          Text(
-                            l10n.seerahVisualCount(
-                              c.visualIds.length,
-                              format.integer(c.visualIds.length),
-                            ),
-                            style: SuhbaTextStyles.of(context).kicker,
-                          ),
-                        if (c.review.coverage == Coverage.sample)
-                          Text(
-                            l10n.coverageSampleShort,
-                            style: SuhbaTextStyles.of(
-                              context,
-                            ).kicker.copyWith(color: colors.draft),
-                          ),
                       ],
-                    ),
+                    ],
                   ],
                 ),
               ),
@@ -559,56 +578,6 @@ class ChapterJourneyTile extends StatelessWidget {
 /// words a minute, at least one minute.
 int readingMinutes(int words) => (words / 130).ceil().clamp(1, 999);
 
-/// The contrasting ink band: one decisive episode with its visual.
-class _InkFeature extends StatelessWidget {
-  const _InkFeature({required this.visualId});
-
-  final String visualId;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context);
-    return Theme(
-      data: AppTheme.feature,
-      child: Builder(
-        builder: (context) => Material(
-          color: Palette.green,
-          child: Padding(
-            padding: const EdgeInsets.all(AppSpacing.gutter),
-            child: Center(
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 760),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    SectionHeader(
-                      kicker: l10n.seerahFeatureKicker,
-                      title: l10n.seerahFeatureTitle,
-                    ),
-                    const SizedBox(height: AppSpacing.md),
-                    InfographicView(visualId: visualId, inline: true),
-                    const SizedBox(height: AppSpacing.md),
-                    Align(
-                      alignment: AlignmentDirectional.centerStart,
-                      child: FilledButton.tonalIcon(
-                        onPressed: () => context.push(
-                          AppRoutes.seerahChapter('hijrah-to-madinah'),
-                        ),
-                        icon: const Icon(Icons.auto_stories),
-                        label: Text(l10n.seerahFeatureRead),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
 class _TopicGrid extends StatelessWidget {
   const _TopicGrid({required this.topics});
 
@@ -620,7 +589,9 @@ class _TopicGrid extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     return LayoutBuilder(
       builder: (context, constraints) {
-        final columns = constraints.maxWidth >= 560 ? 2 : 1;
+        // Two across even on a phone (review D7); one at large text sizes.
+        final large = MediaQuery.textScalerOf(context).scale(15) > 15 * 1.3;
+        final columns = large || constraints.maxWidth < 320 ? 1 : 2;
         final width =
             (constraints.maxWidth - AppSpacing.sm * (columns - 1)) / columns;
         return Wrap(

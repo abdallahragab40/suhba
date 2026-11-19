@@ -1600,6 +1600,27 @@
           },
           "uniqueItems": true
         },
+        "feature": {
+          "type": "object",
+          "properties": {
+            "chapterId": {
+              "$ref": "#/$defs/id"
+            },
+            "visualId": {
+              "$ref": "#/$defs/id"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "chapterId",
+            "visualId"
+          ],
+          "description": "The one episode Home features: a chapter in chapterIds and one of that chapter's visualIds."
+        },
+        "mapVisualId": {
+          "$ref": "#/$defs/id",
+          "description": "The Seerah's map: one of visualIds. Opened from Home's map tile and shown in the hub."
+        },
         "methodology": {
           "$ref": "#/$defs/localizedText"
         },

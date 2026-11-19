@@ -578,12 +578,6 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get homeCategoriesKicker => 'Categories';
-
-  @override
-  String get homeCategoriesTitle => 'Browse the companions';
-
-  @override
   String get homeStoriesKicker => 'Stories';
 
   @override
@@ -702,17 +696,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get sourceTypeOther => 'Other sources';
-
-  @override
-  String homeCategoryCount(int count, String n) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$n companions',
-      one: '1 companion',
-    );
-    return '$_temp0';
-  }
 
   @override
   String get savedLoadErrorMessage =>
@@ -1076,6 +1059,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get seerahOpenTimeline => 'The Seerah on a timeline';
 
   @override
+  String get seerahOpenMap => 'The Seerah on the map';
+
+  @override
   String get seerahTopicsKicker => 'Themes';
 
   @override
@@ -1152,10 +1138,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get seerahFeatureKicker => 'A turning point';
 
   @override
-  String get seerahFeatureTitle => 'The Hijrah: Makkah to Madinah';
-
-  @override
-  String get seerahFeatureRead => 'Read the Hijrah chapter';
+  String get seerahFeatureRead => 'Read the chapter';
 
   @override
   String get seerahChapterNotFound => 'This chapter does not exist.';
@@ -1332,15 +1315,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get savedSeerahTopics => 'Seerah themes';
-
-  @override
-  String get homeSeerahKicker => 'The Seerah';
-
-  @override
-  String get homeSeerahTitle => 'Next chapters';
-
-  @override
-  String get homeAllChapters => 'All chapters';
 
   @override
   String homeDiscoverTitle(String gender) {
@@ -2216,19 +2190,19 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String homeCategoryCountFemale(int count, String n) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$n companions',
-      one: '1 companion',
-      zero: 'No companions yet',
-    );
-    return '$_temp0';
-  }
+  String get homeAllStories => 'All stories';
 
   @override
-  String get homeAllStories => 'All stories';
+  String get homeTileContinue => 'Continue reading';
+
+  @override
+  String get homeTileJourney => 'Today\'s journey';
+
+  @override
+  String get homeTileReview => 'Review';
+
+  @override
+  String get homeTileMap => 'Map';
 
   @override
   String citationEdition(String edition) {

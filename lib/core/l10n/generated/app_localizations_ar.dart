@@ -596,12 +596,6 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get homeCategoriesKicker => 'التصنيفات';
-
-  @override
-  String get homeCategoriesTitle => 'تصفّح الصحابة';
-
-  @override
   String get homeStoriesKicker => 'حكايات';
 
   @override
@@ -720,20 +714,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get sourceTypeOther => 'مصادر أخرى';
-
-  @override
-  String homeCategoryCount(int count, String n) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$n صحابيًّا',
-      few: '$n صحابة',
-      two: 'صحابيان',
-      one: 'صحابي واحد',
-      zero: 'لا صحابة بعد',
-    );
-    return '$_temp0';
-  }
 
   @override
   String get savedLoadErrorMessage =>
@@ -1104,6 +1084,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get seerahOpenTimeline => 'السيرة على خط الزمن';
 
   @override
+  String get seerahOpenMap => 'أماكن السيرة على الخريطة';
+
+  @override
   String get seerahTopicsKicker => 'موضوعات';
 
   @override
@@ -1182,10 +1165,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get seerahFeatureKicker => 'حدث فارق';
 
   @override
-  String get seerahFeatureTitle => 'الهجرة: من مكة إلى المدينة';
-
-  @override
-  String get seerahFeatureRead => 'اقرأ فصل الهجرة';
+  String get seerahFeatureRead => 'اقرأ الفصل';
 
   @override
   String get seerahChapterNotFound => 'هذا الفصل غير موجود.';
@@ -1362,15 +1342,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get savedSeerahTopics => 'من موضوعات السيرة';
-
-  @override
-  String get homeSeerahKicker => 'السيرة النبوية';
-
-  @override
-  String get homeSeerahTitle => 'الفصول القادمة';
-
-  @override
-  String get homeAllChapters => 'كل الفصول';
 
   @override
   String homeDiscoverTitle(String gender) {
@@ -2252,21 +2223,19 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String homeCategoryCountFemale(int count, String n) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$n صحابيةً',
-      few: '$n صحابيات',
-      two: 'صحابيتان',
-      one: 'صحابية واحدة',
-      zero: 'لا صحابيات بعد',
-    );
-    return '$_temp0';
-  }
+  String get homeAllStories => 'كل القصص';
 
   @override
-  String get homeAllStories => 'كل القصص';
+  String get homeTileContinue => 'تابع القراءة';
+
+  @override
+  String get homeTileJourney => 'رحلة اليوم';
+
+  @override
+  String get homeTileReview => 'المراجعة';
+
+  @override
+  String get homeTileMap => 'الخريطة';
 
   @override
   String citationEdition(String edition) {

@@ -34,6 +34,11 @@ extension SeerahDtoMapper on SeerahDto {
     featuredPlaceIds: featuredPlaceIds,
     companionIds: companionIds,
     visualIds: visualIds,
+    feature: switch (feature) {
+      final f? => SeerahFeature(chapterId: f.chapterId, visualId: f.visualId),
+      null => null,
+    },
+    mapVisualId: mapVisualId,
   );
 }
 

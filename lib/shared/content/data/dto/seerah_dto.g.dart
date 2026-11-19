@@ -70,6 +70,22 @@ const _$ReliabilityEnumMap = {
   Reliability.unknown: 'unknown',
 };
 
+_SeerahFeatureDto _$SeerahFeatureDtoFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('_SeerahFeatureDto', json, ($checkedConvert) {
+      $checkKeys(json, allowedKeys: const ['chapterId', 'visualId']);
+      final val = _SeerahFeatureDto(
+        chapterId: $checkedConvert('chapterId', (v) => v as String),
+        visualId: $checkedConvert('visualId', (v) => v as String),
+      );
+      return val;
+    });
+
+Map<String, dynamic> _$SeerahFeatureDtoToJson(_SeerahFeatureDto instance) =>
+    <String, dynamic>{
+      'chapterId': instance.chapterId,
+      'visualId': instance.visualId,
+    };
+
 _SeerahDto _$SeerahDtoFromJson(Map<String, dynamic> json) =>
     $checkedCreate('_SeerahDto', json, ($checkedConvert) {
       $checkKeys(
@@ -89,6 +105,8 @@ _SeerahDto _$SeerahDtoFromJson(Map<String, dynamic> json) =>
           'featuredPlaceIds',
           'companionIds',
           'visualIds',
+          'feature',
+          'mapVisualId',
         ],
       );
       final val = _SeerahDto(
@@ -160,6 +178,13 @@ _SeerahDto _$SeerahDtoFromJson(Map<String, dynamic> json) =>
               (v as List<dynamic>?)?.map((e) => e as String).toList() ??
               const <String>[],
         ),
+        feature: $checkedConvert(
+          'feature',
+          (v) => v == null
+              ? null
+              : SeerahFeatureDto.fromJson(v as Map<String, dynamic>),
+        ),
+        mapVisualId: $checkedConvert('mapVisualId', (v) => v as String?),
       );
       return val;
     });
@@ -180,6 +205,8 @@ Map<String, dynamic> _$SeerahDtoToJson(_SeerahDto instance) =>
       'featuredPlaceIds': instance.featuredPlaceIds,
       'companionIds': instance.companionIds,
       'visualIds': instance.visualIds,
+      'feature': ?instance.feature?.toJson(),
+      'mapVisualId': ?instance.mapVisualId,
     };
 
 _SeerahChapterDto _$SeerahChapterDtoFromJson(Map<String, dynamic> json) =>

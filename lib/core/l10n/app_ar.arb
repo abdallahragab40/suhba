@@ -850,14 +850,6 @@
       }
     }
   },
-  "homeCategoriesKicker": "التصنيفات",
-  "@homeCategoriesKicker": {
-    "description": "Kicker above categories."
-  },
-  "homeCategoriesTitle": "تصفّح الصحابة",
-  "@homeCategoriesTitle": {
-    "description": "Title above categories."
-  },
   "homeStoriesKicker": "حكايات",
   "@homeStoriesKicker": {
     "description": "Kicker above stories."
@@ -1011,18 +1003,6 @@
   "sourceTypeOther": "مصادر أخرى",
   "@sourceTypeOther": {
     "description": "Source group."
-  },
-  "homeCategoryCount": "{count, plural, =0{لا صحابة بعد} =1{صحابي واحد} =2{صحابيان} few{{n} صحابة} other{{n} صحابيًّا}}",
-  "@homeCategoryCount": {
-    "description": "Number of companions in a category; n is the formatted number.",
-    "placeholders": {
-      "count": {
-        "type": "int"
-      },
-      "n": {
-        "type": "String"
-      }
-    }
   },
   "savedLoadErrorMessage": "تعذّر تحميل المحفوظات. لم يُحذف شيء منها؛ حاول مرة أخرى.",
   "@savedLoadErrorMessage": {
@@ -1520,6 +1500,10 @@
   "@seerahOpenTimeline": {
     "description": "Button opening the Seerah timeline."
   },
+  "seerahOpenMap": "أماكن السيرة على الخريطة",
+  "@seerahOpenMap": {
+    "description": "Button in the Seerah hub opening the Seerah map full screen."
+  },
   "seerahTopicsKicker": "موضوعات",
   "@seerahTopicsKicker": {
     "description": "Kicker above the thematic essays."
@@ -1625,13 +1609,9 @@
   "@seerahFeatureKicker": {
     "description": "Kicker of the ink feature band."
   },
-  "seerahFeatureTitle": "الهجرة: من مكة إلى المدينة",
-  "@seerahFeatureTitle": {
-    "description": "Title of the Hijrah feature band."
-  },
-  "seerahFeatureRead": "اقرأ فصل الهجرة",
+  "seerahFeatureRead": "اقرأ الفصل",
   "@seerahFeatureRead": {
-    "description": "Button opening the Hijrah chapter."
+    "description": "Button opening the featured chapter."
   },
   "seerahChapterNotFound": "هذا الفصل غير موجود.",
   "@seerahChapterNotFound": {
@@ -1880,18 +1860,6 @@
   "savedSeerahTopics": "من موضوعات السيرة",
   "@savedSeerahTopics": {
     "description": "Saved group: Seerah themes."
-  },
-  "homeSeerahKicker": "السيرة النبوية",
-  "@homeSeerahKicker": {
-    "description": "Home section kicker."
-  },
-  "homeSeerahTitle": "الفصول القادمة",
-  "@homeSeerahTitle": {
-    "description": "Home: the next Seerah chapters to read."
-  },
-  "homeAllChapters": "كل الفصول",
-  "@homeAllChapters": {
-    "description": "Home link to the Seerah hub."
   },
   "homeDiscoverTitle": "{gender, select, female{تعرّف على صحابية} other{تعرّف على صحابي}}",
   "@homeDiscoverTitle": {
@@ -2767,21 +2735,25 @@
       }
     }
   },
-  "homeCategoryCountFemale": "{count, plural, =0{لا صحابيات بعد} =1{صحابية واحدة} =2{صحابيتان} few{{n} صحابيات} other{{n} صحابيةً}}",
-  "@homeCategoryCountFemale": {
-    "description": "Number of companions in a category whose members are all women, e.g. أمهات المؤمنين (review F11).",
-    "placeholders": {
-      "count": {
-        "type": "int"
-      },
-      "n": {
-        "type": "String"
-      }
-    }
-  },
   "homeAllStories": "كل القصص",
   "@homeAllStories": {
     "description": "Home: link from the first stories to the full list in Explore."
+  },
+  "homeTileContinue": "تابع القراءة",
+  "@homeTileContinue": {
+    "description": "Quick tile on Home: opens the passage read most recently, else the Seerah."
+  },
+  "homeTileJourney": "رحلة اليوم",
+  "@homeTileJourney": {
+    "description": "Quick tile on Home: opens the current journey, else the list of journeys."
+  },
+  "homeTileReview": "المراجعة",
+  "@homeTileReview": {
+    "description": "Quick tile on Home: opens review."
+  },
+  "homeTileMap": "الخريطة",
+  "@homeTileMap": {
+    "description": "Quick tile on Home: opens the Seerah map."
   },
   "citationEdition": "الطبعة: {edition}",
   "@citationEdition": {
