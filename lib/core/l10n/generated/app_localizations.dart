@@ -1124,6 +1124,12 @@ abstract class AppLocalizations {
   /// **'محتوى منشور'**
   String get settingsChannelPublished;
 
+  /// Settings content channel line in the debug-only preview where all content reads as approved.
+  ///
+  /// In ar, this message translates to:
+  /// **'معاينة للمطوّر: يُعرض المحتوى كأنه معتمد، ولم يُراجَع بعد.'**
+  String get settingsChannelPreview;
+
   /// Opens the about page.
   ///
   /// In ar, this message translates to:

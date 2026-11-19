@@ -632,6 +632,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsChannelPublished => 'Published content';
 
   @override
+  String get settingsChannelPreview =>
+      'Developer preview: content is shown as if approved; it has not been reviewed.';
+
+  @override
   String get settingsAbout => 'About and methodology';
 
   @override

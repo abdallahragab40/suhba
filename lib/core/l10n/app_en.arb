@@ -178,6 +178,7 @@
   "settingsContentVersion": "Content version: {version}",
   "settingsChannelDraft": "Sample content (draft)",
   "settingsChannelPublished": "Published content",
+  "settingsChannelPreview": "Developer preview: content is shown as if approved; it has not been reviewed.",
   "settingsAbout": "About and methodology",
   "settingsSources": "Sources",
   "settingsLicenses": "Licences",

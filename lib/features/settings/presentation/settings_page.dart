@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/config/preview_approved.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/tokens/typography.dart';
 import 'package:suhba/core/feedback/haptics.dart';
@@ -156,7 +157,10 @@ class SettingsPage extends ConsumerWidget {
                 l10n.settingsContentVersion(manifest.contentVersion),
               ),
               subtitle: Text(
-                manifest.isDraft
+                // The debug preview says so: nothing here was reviewed.
+                previewApproved
+                    ? l10n.settingsChannelPreview
+                    : manifest.isDraft
                     ? l10n.settingsChannelDraft
                     : l10n.settingsChannelPublished,
               ),

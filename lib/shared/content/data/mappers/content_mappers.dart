@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:suhba/core/config/preview_approved.dart';
 import 'package:suhba/core/domain/historical_date.dart';
 import 'package:suhba/core/domain/quran_ref.dart';
 import 'package:suhba/shared/content/data/dto/block_dto.dart';
@@ -87,8 +88,10 @@ extension FactDtoMapper on FactDto {
 }
 
 extension ReviewDtoMapper on ReviewDto {
-  ReviewInfo toDomain() => ReviewInfo(
-    status: status,
+  /// With [preview] (the debug-only [previewApproved]), every item reads
+  /// as approved; its flags and coverage are kept.
+  ReviewInfo toDomain({bool preview = previewApproved}) => ReviewInfo(
+    status: preview ? ReviewStatus.approved : status,
     editorialFlags: editorialFlags.toSet(),
     coverage: coverage,
   );
@@ -377,17 +380,19 @@ extension PersonDtoMapper on PersonDto {
 }
 
 extension ManifestDtoMapper on ManifestDto {
-  ContentManifest toDomain() => ContentManifest(
+  /// With [preview] (the debug-only [previewApproved]), the build reads as
+  /// published and fully approved.
+  ContentManifest toDomain({bool preview = previewApproved}) => ContentManifest(
     contentVersion: contentVersion,
     schemaVersion: schemaVersion,
-    channel: channel,
+    channel: preview ? ContentChannel.published : channel,
     companionCount: companionCount,
     storyCount: storyCount,
     seerahChapterCount: seerahChapterCount,
     seerahTopicCount: seerahTopicCount,
     placeCount: placeCount,
     visualCount: visualCount,
-    approvedCount: approvedCount,
-    unapprovedCount: unapprovedCount,
+    approvedCount: preview ? approvedCount + unapprovedCount : approvedCount,
+    unapprovedCount: preview ? 0 : unapprovedCount,
   );
 }

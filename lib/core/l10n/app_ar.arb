@@ -924,6 +924,10 @@
   "@settingsChannelPublished": {
     "description": "Content channel."
   },
+  "settingsChannelPreview": "معاينة للمطوّر: يُعرض المحتوى كأنه معتمد، ولم يُراجَع بعد.",
+  "@settingsChannelPreview": {
+    "description": "Settings content channel line in the debug-only preview where all content reads as approved."
+  },
   "settingsAbout": "عن التطبيق والمنهج",
   "@settingsAbout": {
     "description": "Opens the about page."

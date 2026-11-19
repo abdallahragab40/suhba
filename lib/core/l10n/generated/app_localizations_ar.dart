@@ -650,6 +650,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsChannelPublished => 'محتوى منشور';
 
   @override
+  String get settingsChannelPreview =>
+      'معاينة للمطوّر: يُعرض المحتوى كأنه معتمد، ولم يُراجَع بعد.';
+
+  @override
   String get settingsAbout => 'عن التطبيق والمنهج';
 
   @override
