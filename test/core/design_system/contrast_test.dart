@@ -18,6 +18,7 @@ void main() {
     ('dark', AppTheme.dark),
     ('feature', AppTheme.feature),
     ('warm paper', AppTheme.warmPaper),
+    ('warm night', AppTheme.warmNight),
   ]) {
     group('$name theme', () {
       final s = theme.colorScheme;

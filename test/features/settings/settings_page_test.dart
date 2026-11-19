@@ -40,7 +40,7 @@ void main() {
     final background = Theme.of(
       tester.element(find.byType(HomePage)),
     ).scaffoldBackgroundColor;
-    expect(background, Palette.ink);
+    expect(background, Palette.night);
   });
 
   testApp('back from a Settings page returns to Settings, then home', (

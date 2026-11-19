@@ -65,16 +65,16 @@ class SuhbaColors extends ThemeExtension<SuhbaColors> {
   );
 
   static const dark = SuhbaColors(
-    surfaceAlt: Palette.inkAlt,
-    onSurfaceDim: Palette.paperDim,
-    line: Palette.lineOnInk,
+    surfaceAlt: Palette.nightAlt,
+    onSurfaceDim: Palette.dimOnNight,
+    line: Palette.lineOnNight,
     accent: Palette.gold,
     accentText: Palette.goldOnInk,
     link: Palette.goldOnInk,
     established: Palette.establishedOnInk,
     disputed: Palette.disputedOnInk,
-    draft: Palette.draftOnInk,
-    draftSurface: Palette.draftWashOnInk,
+    draft: Palette.dimOnNight,
+    draftSurface: Palette.nightHigh,
   );
 
   /// The feature sections: dark text roles on Madinah green.

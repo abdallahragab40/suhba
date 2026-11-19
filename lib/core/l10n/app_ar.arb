@@ -3055,6 +3055,10 @@
   "@readerToneWarmPaper": {
     "description": "Reading settings: a warm, light paper page for long reading."
   },
+  "readerToneWarmNight": "ليلي دافئ",
+  "@readerToneWarmNight": {
+    "description": "Reader tone in the dark theme: a warm night page."
+  },
   "journeyStepContinue": "تابع",
   "@journeyStepContinue": {
     "description": "Journey stepper: the one button, on the current step (review K4)."

@@ -23,6 +23,26 @@ abstract final class Palette {
   static const inkHigh = Color(0xFF16241D);
   static const inkHighest = Color(0xFF1C2C24);
 
+  // Night: the dark theme's surfaces. A step lighter and greener than
+  // [ink], with clearer steps, so cards stand off the page; text is a
+  // warm off-white rather than [paper], which glares on a dark page.
+  static const nightLowest = Color(0xFF080F0C);
+  static const night = Color(0xFF0C1612);
+  static const nightLow = Color(0xFF101B16);
+  static const nightAlt = Color(0xFF15211B);
+  static const nightHigh = Color(0xFF1B2A22);
+  static const nightHighest = Color(0xFF223329);
+  static const lineOnNight = Color(0xFF2C3D34);
+  static const textOnNight = Color(0xFFE6E2D8);
+  static const dimOnNight = Color(0xFFA5A29B);
+
+  // Warm night: the reader's warm tone in the dark theme (K5 at night).
+  static const warmNight = Color(0xFF16130E);
+  static const warmNightAlt = Color(0xFF211C15);
+  static const lineOnWarmNight = Color(0xFF382F23);
+  static const textOnWarmNight = Color(0xFFE8DECB);
+  static const dimOnWarmNight = Color(0xFFB0A590);
+
   // Secondary text, hairlines and outlines.
   static const inkDim = Color(0xFF565553);
   static const paperDim = Color(0xFF989694);

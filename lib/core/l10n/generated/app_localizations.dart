@@ -4027,6 +4027,12 @@ abstract class AppLocalizations {
   /// **'ورقي دافئ'**
   String get readerToneWarmPaper;
 
+  /// Reader tone in the dark theme: a warm night page.
+  ///
+  /// In ar, this message translates to:
+  /// **'ليلي دافئ'**
+  String get readerToneWarmNight;
+
   /// Journey stepper: the one button, on the current step (review K4).
   ///
   /// In ar, this message translates to:

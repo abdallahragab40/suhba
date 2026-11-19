@@ -70,7 +70,14 @@ class ReaderToneScope extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) =>
       switch (ref.watch(readerToneProvider)) {
         ReaderTone.app => child,
-        ReaderTone.warmPaper => Theme(data: AppTheme.warmPaper, child: child),
+        // The warm tone follows the theme: warm paper by day, warm night
+        // in the dark theme, so a reader never flashes bright at night.
+        ReaderTone.warmPaper => Theme(
+          data: Theme.of(context).brightness == Brightness.dark
+              ? AppTheme.warmNight
+              : AppTheme.warmPaper,
+          child: child,
+        ),
       };
 }
 
@@ -154,7 +161,11 @@ class ReadingSettingsSheet extends ConsumerWidget {
               ),
               ButtonSegment(
                 value: ReaderTone.warmPaper,
-                label: Text(l10n.readerToneWarmPaper),
+                label: Text(
+                  Theme.of(context).brightness == Brightness.dark
+                      ? l10n.readerToneWarmNight
+                      : l10n.readerToneWarmPaper,
+                ),
               ),
             ],
             selected: {tone},

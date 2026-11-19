@@ -190,8 +190,12 @@ class _Tile extends StatelessWidget {
       onTap: () => context.push(route),
       child: Material(
         color: colors.surfaceAlt,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(AppRadii.md),
+        // Edged like a card at night, where tone alone separates too little.
+        shape: RoundedRectangleBorder(
+          borderRadius: const BorderRadius.all(AppRadii.md),
+          side: Theme.of(context).brightness == Brightness.dark
+              ? BorderSide(color: colors.line)
+              : BorderSide.none,
         ),
         clipBehavior: Clip.antiAlias,
         child: InkWell(

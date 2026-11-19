@@ -13,6 +13,7 @@ abstract final class AppTheme {
   static final ThemeData feature = _build(
     _darkScheme.copyWith(
       surface: Palette.green,
+      onSurface: Palette.paper,
       surfaceContainerLowest: Palette.greenLowest,
       surfaceContainerLow: Palette.greenLow,
       surfaceContainer: Palette.greenAlt,
@@ -41,6 +42,27 @@ abstract final class AppTheme {
       surfaceAlt: Palette.warmPaperAlt,
       line: Palette.lineOnWarmPaper,
       draftSurface: Palette.warmPaperAlt,
+    ),
+  );
+
+  /// The warm tone at night: [warmPaper]'s counterpart in the dark theme,
+  /// a warm near-black page with cream text (K5).
+  static final ThemeData warmNight = _build(
+    _darkScheme.copyWith(
+      surface: Palette.warmNight,
+      surfaceContainerLowest: Palette.warmNight,
+      surfaceContainerLow: Palette.warmNight,
+      surfaceContainer: Palette.warmNightAlt,
+      onSurface: Palette.textOnWarmNight,
+      onSurfaceVariant: Palette.dimOnWarmNight,
+      outlineVariant: Palette.lineOnWarmNight,
+    ),
+    SuhbaColors.dark.copyWith(
+      surfaceAlt: Palette.warmNightAlt,
+      onSurfaceDim: Palette.dimOnWarmNight,
+      line: Palette.lineOnWarmNight,
+      draft: Palette.dimOnWarmNight,
+      draftSurface: Palette.warmNightAlt,
     ),
   );
 
@@ -85,8 +107,8 @@ abstract final class AppTheme {
     // stays distinct from the green of the "established" label.
     primary: Palette.goldOnInk,
     onPrimary: Palette.ink,
-    primaryContainer: Palette.inkHighest,
-    onPrimaryContainer: Palette.paper,
+    primaryContainer: Palette.nightHighest,
+    onPrimaryContainer: Palette.textOnNight,
     secondary: Palette.goldOnInk,
     onSecondary: Palette.ink,
     secondaryContainer: Palette.greenWashOnInk,
@@ -97,19 +119,21 @@ abstract final class AppTheme {
     onError: Palette.clayWashOnInk,
     errorContainer: Palette.clayWashOnInk,
     onErrorContainer: Palette.clayOnInk,
-    surface: Palette.ink,
-    onSurface: Palette.paper,
-    onSurfaceVariant: Palette.paperDim,
-    surfaceContainerLowest: Palette.inkLowest,
-    surfaceContainerLow: Palette.inkLow,
-    surfaceContainer: Palette.inkAlt,
-    surfaceContainerHigh: Palette.inkHigh,
-    surfaceContainerHighest: Palette.inkHighest,
+    surface: Palette.night,
+    onSurface: Palette.textOnNight,
+    onSurfaceVariant: Palette.dimOnNight,
+    surfaceContainerLowest: Palette.nightLowest,
+    surfaceContainerLow: Palette.nightLow,
+    surfaceContainer: Palette.nightAlt,
+    surfaceContainerHigh: Palette.nightHigh,
+    surfaceContainerHighest: Palette.nightHighest,
     outline: Palette.outlineOnInk,
-    outlineVariant: Palette.lineOnInk,
-    inverseSurface: Palette.paper,
-    onInverseSurface: Palette.ink,
-    inversePrimary: Palette.goldText,
+    outlineVariant: Palette.lineOnNight,
+    // Snack bars at night: paper on Madinah green with a gold action,
+    // not a bright paper bar across a dark screen.
+    inverseSurface: Palette.greenHigh,
+    onInverseSurface: Palette.paper,
+    inversePrimary: Palette.goldOnInk,
     shadow: Colors.black,
     scrim: Colors.black,
     surfaceTint: Colors.transparent,
@@ -121,6 +145,7 @@ abstract final class AppTheme {
       borderRadius: BorderRadius.all(AppRadii.pill),
     );
     final buttonText = WidgetStatePropertyAll(textTheme.labelLarge);
+    final dark = scheme.brightness == Brightness.dark;
 
     return ThemeData(
       useMaterial3: true,
@@ -147,8 +172,11 @@ abstract final class AppTheme {
         color: colors.surfaceAlt,
         elevation: 0,
         margin: EdgeInsets.zero,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(AppRadii.md),
+        // At night a hairline edges each card: tone alone separates
+        // too little on a dark page.
+        shape: RoundedRectangleBorder(
+          borderRadius: const BorderRadius.all(AppRadii.md),
+          side: dark ? BorderSide(color: colors.line) : BorderSide.none,
         ),
       ),
       chipTheme: ChipThemeData(
@@ -159,7 +187,8 @@ abstract final class AppTheme {
         selectedColor: scheme.secondaryContainer,
       ),
       navigationBarTheme: NavigationBarThemeData(
-        backgroundColor: scheme.surface,
+        // At night the bar sits a step above the page.
+        backgroundColor: dark ? scheme.surfaceContainerLow : scheme.surface,
         surfaceTintColor: Colors.transparent,
         elevation: 0,
         indicatorColor: scheme.brightness == Brightness.light

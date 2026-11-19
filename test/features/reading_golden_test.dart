@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:suhba/core/design_system/theme/app_theme.dart';
+import 'package:suhba/core/design_system/tokens/palette.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/storage/settings_store.dart';
 import 'package:suhba/shared/content/presentation/reading_body.dart';
@@ -119,6 +120,26 @@ void main() {
     await expectLater(
       find.byType(MaterialApp),
       matchesGoldenFile('goldens/section_reader_warm_paper.png'),
+    );
+  });
+
+  // In the dark theme the warm tone is a warm night page, never paper.
+  testApp('section_reader, warm night', (tester) async {
+    sized(tester, const Size(400, 900));
+    final store = MemorySettingsStore();
+    await store.setString(SettingsKeys.readerTone, 'warmPaper');
+    await store.setString(SettingsKeys.themeMode, 'dark');
+    await AppUnderTest(
+      location: '/companions/abu-bakr/sections/abu-bakr.hijrah',
+      settings: store,
+    ).pump(tester);
+    expect(
+      Theme.of(tester.element(find.byType(ReadingBody))).colorScheme.surface,
+      Palette.warmNight,
+    );
+    await expectLater(
+      find.byType(MaterialApp),
+      matchesGoldenFile('goldens/section_reader_warm_night.png'),
     );
   });
 }

@@ -2418,5 +2418,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get readerToneWarmPaper => 'Warm paper';
 
   @override
+  String get readerToneWarmNight => 'Warm night';
+
+  @override
   String get journeyStepContinue => 'Continue';
 }
