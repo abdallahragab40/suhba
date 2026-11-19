@@ -87,6 +87,7 @@ _JourneyDto _$JourneyDtoFromJson(Map<String, dynamic> json) =>
           'title',
           'description',
           'steps',
+          'order',
           'review',
         ],
       );
@@ -110,6 +111,7 @@ _JourneyDto _$JourneyDtoFromJson(Map<String, dynamic> json) =>
               .map((e) => JourneyStepDto.fromJson(e as Map<String, dynamic>))
               .toList(),
         ),
+        order: $checkedConvert('order', (v) => (v as num?)?.toInt()),
         review: $checkedConvert(
           'review',
           (v) => ReviewDto.fromJson(v as Map<String, dynamic>),
@@ -125,5 +127,6 @@ Map<String, dynamic> _$JourneyDtoToJson(_JourneyDto instance) =>
       'title': instance.title.toJson(),
       'description': instance.description.toJson(),
       'steps': instance.steps.map((e) => e.toJson()).toList(),
+      'order': ?instance.order,
       'review': instance.review.toJson(),
     };

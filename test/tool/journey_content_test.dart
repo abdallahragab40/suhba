@@ -34,6 +34,7 @@ void main() {
     journey = {
       'schemaVersion': 1,
       'id': 'journey-a',
+      'order': 1,
       'title': {'ar': 'رحلة'},
       'description': {'ar': 'قراءات قصيرة'},
       'steps': [step],
@@ -120,6 +121,45 @@ void main() {
       );
     },
   );
+
+  test('order is required and must be unique', () {
+    journey.remove('order');
+    expect(validate().issues.any((i) => i.rule == 'V1'), isTrue);
+
+    journey['order'] = 1;
+    fx.files['journeys/journey-b.json'] = {
+      ...journey,
+      'id': 'journey-b',
+      'steps': [
+        {...step, 'id': 'journey-b.first'},
+      ],
+    };
+    final dup = validate();
+    expect(
+      dup.issues.where((i) => i.rule == 'V2').map((i) => i.message),
+      contains(contains('already used by "journey-a"')),
+    );
+  });
+
+  test('the index lists journeys by order, not by id', () {
+    journey['order'] = 2;
+    fx.files['journeys/journey-b.json'] = {
+      ...journey,
+      'id': 'journey-b',
+      'order': 1,
+      'steps': [
+        {...step, 'id': 'journey-b.first'},
+      ],
+    };
+    final result = buildContent(
+      fx.toFiles(),
+      schemas,
+      channel: ContentChannel.draft,
+    );
+    expect(result.report.hasErrors, isFalse, reason: '${result.report}');
+    final index = jsonDecode(result.outputs['index/journeys.json']!) as Map;
+    expect(index['journeyIds'], ['journey-b', 'journey-a']);
+  });
 
   test('an approved journey cannot publish a draft passage', () {
     fx.approve('journey', 'journey-a', journey);

@@ -2384,6 +2384,11 @@
         "id": {
           "$ref": "#/$defs/id"
         },
+        "order": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Position in the journey catalog, 1 first. Unique across journeys."
+        },
         "title": {
           "$ref": "#/$defs/localizedText"
         },
@@ -2405,6 +2410,7 @@
       "required": [
         "schemaVersion",
         "id",
+        "order",
         "title",
         "description",
         "steps",

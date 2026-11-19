@@ -84,6 +84,10 @@ abstract class CompanionSummaryDto with _$CompanionSummaryDto {
     @Default(<String>[]) List<String> aliases,
     @Default(<String>[]) List<String> categoryIds,
     HistoricalDateDto? death,
+
+    /// Arabic words in the biography's sections, set by the content build
+    /// so lists can say how deep each biography is. Null in older bundles.
+    int? wordCount,
   }) = _CompanionSummaryDto;
 
   factory CompanionSummaryDto.fromJson(Map<String, dynamic> json) =>

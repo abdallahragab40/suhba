@@ -76,6 +76,7 @@ void main() {
       fx.files['journeys/journey-a.json'] = {
         'schemaVersion': 1,
         'id': 'journey-a',
+        'order': 1,
         'title': {'ar': 'رحلة تجريبية'},
         'description': {'ar': 'قراءات'},
         'steps': [

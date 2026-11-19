@@ -1500,7 +1500,8 @@ $LocalizedTextCopyWith<$Res>? get summary {
 mixin _$CompanionSummary {
 
  String get id; Gender get gender; LocalizedText get name; LocalizedText get summary; ReviewInfo get review;/// Display order in lists (lower first); null sorts last.
- int? get order; LocalizedText? get kunya; List<LocalizedText> get titles; List<String> get aliases; List<String> get categoryIds; HistoricalDate? get death;
+ int? get order; LocalizedText? get kunya; List<LocalizedText> get titles; List<String> get aliases; List<String> get categoryIds; HistoricalDate? get death;/// Arabic words in the biography; null when the bundle predates it.
+ int? get wordCount;
 /// Create a copy of CompanionSummary
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1511,16 +1512,16 @@ $CompanionSummaryCopyWith<CompanionSummary> get copyWith => _$CompanionSummaryCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CompanionSummary&&(identical(other.id, id) || other.id == id)&&(identical(other.gender, gender) || other.gender == gender)&&(identical(other.name, name) || other.name == name)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.review, review) || other.review == review)&&(identical(other.order, order) || other.order == order)&&(identical(other.kunya, kunya) || other.kunya == kunya)&&const DeepCollectionEquality().equals(other.titles, titles)&&const DeepCollectionEquality().equals(other.aliases, aliases)&&const DeepCollectionEquality().equals(other.categoryIds, categoryIds)&&(identical(other.death, death) || other.death == death));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CompanionSummary&&(identical(other.id, id) || other.id == id)&&(identical(other.gender, gender) || other.gender == gender)&&(identical(other.name, name) || other.name == name)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.review, review) || other.review == review)&&(identical(other.order, order) || other.order == order)&&(identical(other.kunya, kunya) || other.kunya == kunya)&&const DeepCollectionEquality().equals(other.titles, titles)&&const DeepCollectionEquality().equals(other.aliases, aliases)&&const DeepCollectionEquality().equals(other.categoryIds, categoryIds)&&(identical(other.death, death) || other.death == death)&&(identical(other.wordCount, wordCount) || other.wordCount == wordCount));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,id,gender,name,summary,review,order,kunya,const DeepCollectionEquality().hash(titles),const DeepCollectionEquality().hash(aliases),const DeepCollectionEquality().hash(categoryIds),death);
+int get hashCode => Object.hash(runtimeType,id,gender,name,summary,review,order,kunya,const DeepCollectionEquality().hash(titles),const DeepCollectionEquality().hash(aliases),const DeepCollectionEquality().hash(categoryIds),death,wordCount);
 
 @override
 String toString() {
-  return 'CompanionSummary(id: $id, gender: $gender, name: $name, summary: $summary, review: $review, order: $order, kunya: $kunya, titles: $titles, aliases: $aliases, categoryIds: $categoryIds, death: $death)';
+  return 'CompanionSummary(id: $id, gender: $gender, name: $name, summary: $summary, review: $review, order: $order, kunya: $kunya, titles: $titles, aliases: $aliases, categoryIds: $categoryIds, death: $death, wordCount: $wordCount)';
 }
 
 
@@ -1531,7 +1532,7 @@ abstract mixin class $CompanionSummaryCopyWith<$Res>  {
   factory $CompanionSummaryCopyWith(CompanionSummary value, $Res Function(CompanionSummary) _then) = _$CompanionSummaryCopyWithImpl;
 @useResult
 $Res call({
- String id, Gender gender, LocalizedText name, LocalizedText summary, ReviewInfo review, int? order, LocalizedText? kunya, List<LocalizedText> titles, List<String> aliases, List<String> categoryIds, HistoricalDate? death
+ String id, Gender gender, LocalizedText name, LocalizedText summary, ReviewInfo review, int? order, LocalizedText? kunya, List<LocalizedText> titles, List<String> aliases, List<String> categoryIds, HistoricalDate? death, int? wordCount
 });
 
 
@@ -1548,7 +1549,7 @@ class _$CompanionSummaryCopyWithImpl<$Res>
 
 /// Create a copy of CompanionSummary
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? gender = null,Object? name = null,Object? summary = null,Object? review = null,Object? order = freezed,Object? kunya = freezed,Object? titles = null,Object? aliases = null,Object? categoryIds = null,Object? death = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? gender = null,Object? name = null,Object? summary = null,Object? review = null,Object? order = freezed,Object? kunya = freezed,Object? titles = null,Object? aliases = null,Object? categoryIds = null,Object? death = freezed,Object? wordCount = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,gender: null == gender ? _self.gender : gender // ignore: cast_nullable_to_non_nullable
@@ -1561,7 +1562,8 @@ as LocalizedText?,titles: null == titles ? _self.titles : titles // ignore: cast
 as List<LocalizedText>,aliases: null == aliases ? _self.aliases : aliases // ignore: cast_nullable_to_non_nullable
 as List<String>,categoryIds: null == categoryIds ? _self.categoryIds : categoryIds // ignore: cast_nullable_to_non_nullable
 as List<String>,death: freezed == death ? _self.death : death // ignore: cast_nullable_to_non_nullable
-as HistoricalDate?,
+as HistoricalDate?,wordCount: freezed == wordCount ? _self.wordCount : wordCount // ignore: cast_nullable_to_non_nullable
+as int?,
   ));
 }
 /// Create a copy of CompanionSummary
@@ -1685,10 +1687,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  Gender gender,  LocalizedText name,  LocalizedText summary,  ReviewInfo review,  int? order,  LocalizedText? kunya,  List<LocalizedText> titles,  List<String> aliases,  List<String> categoryIds,  HistoricalDate? death)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  Gender gender,  LocalizedText name,  LocalizedText summary,  ReviewInfo review,  int? order,  LocalizedText? kunya,  List<LocalizedText> titles,  List<String> aliases,  List<String> categoryIds,  HistoricalDate? death,  int? wordCount)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CompanionSummary() when $default != null:
-return $default(_that.id,_that.gender,_that.name,_that.summary,_that.review,_that.order,_that.kunya,_that.titles,_that.aliases,_that.categoryIds,_that.death);case _:
+return $default(_that.id,_that.gender,_that.name,_that.summary,_that.review,_that.order,_that.kunya,_that.titles,_that.aliases,_that.categoryIds,_that.death,_that.wordCount);case _:
   return orElse();
 
 }
@@ -1706,10 +1708,10 @@ return $default(_that.id,_that.gender,_that.name,_that.summary,_that.review,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  Gender gender,  LocalizedText name,  LocalizedText summary,  ReviewInfo review,  int? order,  LocalizedText? kunya,  List<LocalizedText> titles,  List<String> aliases,  List<String> categoryIds,  HistoricalDate? death)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  Gender gender,  LocalizedText name,  LocalizedText summary,  ReviewInfo review,  int? order,  LocalizedText? kunya,  List<LocalizedText> titles,  List<String> aliases,  List<String> categoryIds,  HistoricalDate? death,  int? wordCount)  $default,) {final _that = this;
 switch (_that) {
 case _CompanionSummary():
-return $default(_that.id,_that.gender,_that.name,_that.summary,_that.review,_that.order,_that.kunya,_that.titles,_that.aliases,_that.categoryIds,_that.death);case _:
+return $default(_that.id,_that.gender,_that.name,_that.summary,_that.review,_that.order,_that.kunya,_that.titles,_that.aliases,_that.categoryIds,_that.death,_that.wordCount);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -1726,10 +1728,10 @@ return $default(_that.id,_that.gender,_that.name,_that.summary,_that.review,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  Gender gender,  LocalizedText name,  LocalizedText summary,  ReviewInfo review,  int? order,  LocalizedText? kunya,  List<LocalizedText> titles,  List<String> aliases,  List<String> categoryIds,  HistoricalDate? death)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  Gender gender,  LocalizedText name,  LocalizedText summary,  ReviewInfo review,  int? order,  LocalizedText? kunya,  List<LocalizedText> titles,  List<String> aliases,  List<String> categoryIds,  HistoricalDate? death,  int? wordCount)?  $default,) {final _that = this;
 switch (_that) {
 case _CompanionSummary() when $default != null:
-return $default(_that.id,_that.gender,_that.name,_that.summary,_that.review,_that.order,_that.kunya,_that.titles,_that.aliases,_that.categoryIds,_that.death);case _:
+return $default(_that.id,_that.gender,_that.name,_that.summary,_that.review,_that.order,_that.kunya,_that.titles,_that.aliases,_that.categoryIds,_that.death,_that.wordCount);case _:
   return null;
 
 }
@@ -1741,7 +1743,7 @@ return $default(_that.id,_that.gender,_that.name,_that.summary,_that.review,_tha
 
 
 class _CompanionSummary implements CompanionSummary {
-  const _CompanionSummary({required this.id, required this.gender, required this.name, required this.summary, required this.review, this.order, this.kunya, final  List<LocalizedText> titles = const <LocalizedText>[], final  List<String> aliases = const <String>[], final  List<String> categoryIds = const <String>[], this.death}): _titles = titles,_aliases = aliases,_categoryIds = categoryIds;
+  const _CompanionSummary({required this.id, required this.gender, required this.name, required this.summary, required this.review, this.order, this.kunya, final  List<LocalizedText> titles = const <LocalizedText>[], final  List<String> aliases = const <String>[], final  List<String> categoryIds = const <String>[], this.death, this.wordCount}): _titles = titles,_aliases = aliases,_categoryIds = categoryIds;
   
 
 @override final  String id;
@@ -1774,6 +1776,8 @@ class _CompanionSummary implements CompanionSummary {
 }
 
 @override final  HistoricalDate? death;
+/// Arabic words in the biography; null when the bundle predates it.
+@override final  int? wordCount;
 
 /// Create a copy of CompanionSummary
 /// with the given fields replaced by the non-null parameter values.
@@ -1785,16 +1789,16 @@ _$CompanionSummaryCopyWith<_CompanionSummary> get copyWith => __$CompanionSummar
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CompanionSummary&&(identical(other.id, id) || other.id == id)&&(identical(other.gender, gender) || other.gender == gender)&&(identical(other.name, name) || other.name == name)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.review, review) || other.review == review)&&(identical(other.order, order) || other.order == order)&&(identical(other.kunya, kunya) || other.kunya == kunya)&&const DeepCollectionEquality().equals(other._titles, _titles)&&const DeepCollectionEquality().equals(other._aliases, _aliases)&&const DeepCollectionEquality().equals(other._categoryIds, _categoryIds)&&(identical(other.death, death) || other.death == death));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CompanionSummary&&(identical(other.id, id) || other.id == id)&&(identical(other.gender, gender) || other.gender == gender)&&(identical(other.name, name) || other.name == name)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.review, review) || other.review == review)&&(identical(other.order, order) || other.order == order)&&(identical(other.kunya, kunya) || other.kunya == kunya)&&const DeepCollectionEquality().equals(other._titles, _titles)&&const DeepCollectionEquality().equals(other._aliases, _aliases)&&const DeepCollectionEquality().equals(other._categoryIds, _categoryIds)&&(identical(other.death, death) || other.death == death)&&(identical(other.wordCount, wordCount) || other.wordCount == wordCount));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,id,gender,name,summary,review,order,kunya,const DeepCollectionEquality().hash(_titles),const DeepCollectionEquality().hash(_aliases),const DeepCollectionEquality().hash(_categoryIds),death);
+int get hashCode => Object.hash(runtimeType,id,gender,name,summary,review,order,kunya,const DeepCollectionEquality().hash(_titles),const DeepCollectionEquality().hash(_aliases),const DeepCollectionEquality().hash(_categoryIds),death,wordCount);
 
 @override
 String toString() {
-  return 'CompanionSummary(id: $id, gender: $gender, name: $name, summary: $summary, review: $review, order: $order, kunya: $kunya, titles: $titles, aliases: $aliases, categoryIds: $categoryIds, death: $death)';
+  return 'CompanionSummary(id: $id, gender: $gender, name: $name, summary: $summary, review: $review, order: $order, kunya: $kunya, titles: $titles, aliases: $aliases, categoryIds: $categoryIds, death: $death, wordCount: $wordCount)';
 }
 
 
@@ -1805,7 +1809,7 @@ abstract mixin class _$CompanionSummaryCopyWith<$Res> implements $CompanionSumma
   factory _$CompanionSummaryCopyWith(_CompanionSummary value, $Res Function(_CompanionSummary) _then) = __$CompanionSummaryCopyWithImpl;
 @override @useResult
 $Res call({
- String id, Gender gender, LocalizedText name, LocalizedText summary, ReviewInfo review, int? order, LocalizedText? kunya, List<LocalizedText> titles, List<String> aliases, List<String> categoryIds, HistoricalDate? death
+ String id, Gender gender, LocalizedText name, LocalizedText summary, ReviewInfo review, int? order, LocalizedText? kunya, List<LocalizedText> titles, List<String> aliases, List<String> categoryIds, HistoricalDate? death, int? wordCount
 });
 
 
@@ -1822,7 +1826,7 @@ class __$CompanionSummaryCopyWithImpl<$Res>
 
 /// Create a copy of CompanionSummary
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? gender = null,Object? name = null,Object? summary = null,Object? review = null,Object? order = freezed,Object? kunya = freezed,Object? titles = null,Object? aliases = null,Object? categoryIds = null,Object? death = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? gender = null,Object? name = null,Object? summary = null,Object? review = null,Object? order = freezed,Object? kunya = freezed,Object? titles = null,Object? aliases = null,Object? categoryIds = null,Object? death = freezed,Object? wordCount = freezed,}) {
   return _then(_CompanionSummary(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,gender: null == gender ? _self.gender : gender // ignore: cast_nullable_to_non_nullable
@@ -1835,7 +1839,8 @@ as LocalizedText?,titles: null == titles ? _self._titles : titles // ignore: cas
 as List<LocalizedText>,aliases: null == aliases ? _self._aliases : aliases // ignore: cast_nullable_to_non_nullable
 as List<String>,categoryIds: null == categoryIds ? _self._categoryIds : categoryIds // ignore: cast_nullable_to_non_nullable
 as List<String>,death: freezed == death ? _self.death : death // ignore: cast_nullable_to_non_nullable
-as HistoricalDate?,
+as HistoricalDate?,wordCount: freezed == wordCount ? _self.wordCount : wordCount // ignore: cast_nullable_to_non_nullable
+as int?,
   ));
 }
 

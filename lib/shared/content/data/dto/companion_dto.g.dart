@@ -323,6 +323,7 @@ _CompanionSummaryDto _$CompanionSummaryDtoFromJson(
       'aliases',
       'categoryIds',
       'death',
+      'wordCount',
     ],
   );
   final val = _CompanionSummaryDto(
@@ -373,6 +374,7 @@ _CompanionSummaryDto _$CompanionSummaryDtoFromJson(
           ? null
           : HistoricalDateDto.fromJson(v as Map<String, dynamic>),
     ),
+    wordCount: $checkedConvert('wordCount', (v) => (v as num?)?.toInt()),
   );
   return val;
 });
@@ -391,6 +393,7 @@ Map<String, dynamic> _$CompanionSummaryDtoToJson(
   'aliases': instance.aliases,
   'categoryIds': instance.categoryIds,
   'death': ?instance.death?.toJson(),
+  'wordCount': ?instance.wordCount,
 };
 
 _CompanionIndexDto _$CompanionIndexDtoFromJson(

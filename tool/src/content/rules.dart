@@ -50,6 +50,7 @@ class _Rules {
       sink.error('V2', 'meta.json', '', 'meta.json is missing or invalid.');
     }
     _duplicates();
+    _journeyOrder();
     for (final item in tree.journeys) {
       _journey(item);
     }
@@ -112,6 +113,25 @@ class _Rules {
     check(tree.seerahChapters);
     check(tree.seerahTopics);
     check(tree.visuals);
+  }
+
+  /// Two journeys may not claim the same catalog position.
+  void _journeyOrder() {
+    final byOrder = <int, String>{};
+    for (final item in tree.journeys) {
+      final order = item.dto.order;
+      if (order == null) continue; // the schema requires it
+      if (byOrder[order] case final other?) {
+        sink.error(
+          'V2',
+          item.file,
+          r'$.order',
+          'Journey order $order is already used by "$other".',
+        );
+      } else {
+        byOrder[order] = item.id;
+      }
+    }
   }
 
   Item<Object>? _readingItem(StepRefDto r) => switch (r.type) {

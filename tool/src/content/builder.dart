@@ -239,8 +239,15 @@ BuildResult buildContent(
     ).toJson(),
   );
 
+  // The catalog order is editorial (`order`), not alphabetical.
   final journeys = [...tree.journeys.where(include)]
-    ..sort((a, b) => a.id.compareTo(b.id));
+    ..sort(
+      (a, b) =>
+          switch ((a.dto.order ?? 1 << 30).compareTo(b.dto.order ?? 1 << 30)) {
+            0 => a.id.compareTo(b.id),
+            final c => c,
+          },
+    );
   for (final j in journeys) {
     outputs['journeys/${j.id}.json'] = encode(
       j.dto

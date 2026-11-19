@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:suhba/core/domain/historical_date.dart';
 import 'package:suhba/core/domain/quran_ref.dart';
 import 'package:suhba/shared/content/data/dto/block_dto.dart';
@@ -237,8 +239,17 @@ extension CompanionDtoMapper on CompanionDto {
     aliases: aliases,
     categoryIds: [for (final m in memberships) m.categoryId],
     death: death?.date,
+    wordCount: _arabicWords(jsonDecode(jsonEncode(sections))),
   );
 }
+
+/// Words in every Arabic string (`ar`) inside [json].
+int _arabicWords(Object? json) => switch (json) {
+  {'ar': final String text} => RegExp(r'\S+').allMatches(text).length,
+  Map<String, Object?>() => json.values.fold(0, (n, v) => n + _arabicWords(v)),
+  List<Object?>() => json.fold(0, (n, v) => n + _arabicWords(v)),
+  _ => 0,
+};
 
 extension CompanionSummaryDtoMapper on CompanionSummaryDto {
   CompanionSummary toDomain() => CompanionSummary(
@@ -253,6 +264,7 @@ extension CompanionSummaryDtoMapper on CompanionSummaryDto {
     aliases: aliases,
     categoryIds: categoryIds,
     death: death?.toDomain(),
+    wordCount: wordCount,
   );
 }
 

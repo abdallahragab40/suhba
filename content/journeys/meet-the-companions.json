@@ -1,6 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "meet-the-companions",
+  "order": 2,
   "title": {
     "ar": "تعرّف على الصحابة"
   },

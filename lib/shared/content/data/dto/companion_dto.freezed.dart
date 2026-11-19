@@ -1236,7 +1236,9 @@ $LocalizedTextDtoCopyWith<$Res>? get deathPlace {
 /// @nodoc
 mixin _$CompanionSummaryDto {
 
- String get id; Gender get gender; LocalizedTextDto get name; LocalizedTextDto get summary; ReviewDto get review; int? get order; LocalizedTextDto? get kunya; List<LocalizedTextDto> get titles; List<String> get aliases; List<String> get categoryIds; HistoricalDateDto? get death;
+ String get id; Gender get gender; LocalizedTextDto get name; LocalizedTextDto get summary; ReviewDto get review; int? get order; LocalizedTextDto? get kunya; List<LocalizedTextDto> get titles; List<String> get aliases; List<String> get categoryIds; HistoricalDateDto? get death;/// Arabic words in the biography's sections, set by the content build
+/// so lists can say how deep each biography is. Null in older bundles.
+ int? get wordCount;
 /// Create a copy of CompanionSummaryDto
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1249,16 +1251,16 @@ $CompanionSummaryDtoCopyWith<CompanionSummaryDto> get copyWith => _$CompanionSum
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CompanionSummaryDto&&(identical(other.id, id) || other.id == id)&&(identical(other.gender, gender) || other.gender == gender)&&(identical(other.name, name) || other.name == name)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.review, review) || other.review == review)&&(identical(other.order, order) || other.order == order)&&(identical(other.kunya, kunya) || other.kunya == kunya)&&const DeepCollectionEquality().equals(other.titles, titles)&&const DeepCollectionEquality().equals(other.aliases, aliases)&&const DeepCollectionEquality().equals(other.categoryIds, categoryIds)&&(identical(other.death, death) || other.death == death));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CompanionSummaryDto&&(identical(other.id, id) || other.id == id)&&(identical(other.gender, gender) || other.gender == gender)&&(identical(other.name, name) || other.name == name)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.review, review) || other.review == review)&&(identical(other.order, order) || other.order == order)&&(identical(other.kunya, kunya) || other.kunya == kunya)&&const DeepCollectionEquality().equals(other.titles, titles)&&const DeepCollectionEquality().equals(other.aliases, aliases)&&const DeepCollectionEquality().equals(other.categoryIds, categoryIds)&&(identical(other.death, death) || other.death == death)&&(identical(other.wordCount, wordCount) || other.wordCount == wordCount));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,gender,name,summary,review,order,kunya,const DeepCollectionEquality().hash(titles),const DeepCollectionEquality().hash(aliases),const DeepCollectionEquality().hash(categoryIds),death);
+int get hashCode => Object.hash(runtimeType,id,gender,name,summary,review,order,kunya,const DeepCollectionEquality().hash(titles),const DeepCollectionEquality().hash(aliases),const DeepCollectionEquality().hash(categoryIds),death,wordCount);
 
 @override
 String toString() {
-  return 'CompanionSummaryDto(id: $id, gender: $gender, name: $name, summary: $summary, review: $review, order: $order, kunya: $kunya, titles: $titles, aliases: $aliases, categoryIds: $categoryIds, death: $death)';
+  return 'CompanionSummaryDto(id: $id, gender: $gender, name: $name, summary: $summary, review: $review, order: $order, kunya: $kunya, titles: $titles, aliases: $aliases, categoryIds: $categoryIds, death: $death, wordCount: $wordCount)';
 }
 
 
@@ -1269,7 +1271,7 @@ abstract mixin class $CompanionSummaryDtoCopyWith<$Res>  {
   factory $CompanionSummaryDtoCopyWith(CompanionSummaryDto value, $Res Function(CompanionSummaryDto) _then) = _$CompanionSummaryDtoCopyWithImpl;
 @useResult
 $Res call({
- String id, Gender gender, LocalizedTextDto name, LocalizedTextDto summary, ReviewDto review, int? order, LocalizedTextDto? kunya, List<LocalizedTextDto> titles, List<String> aliases, List<String> categoryIds, HistoricalDateDto? death
+ String id, Gender gender, LocalizedTextDto name, LocalizedTextDto summary, ReviewDto review, int? order, LocalizedTextDto? kunya, List<LocalizedTextDto> titles, List<String> aliases, List<String> categoryIds, HistoricalDateDto? death, int? wordCount
 });
 
 
@@ -1286,7 +1288,7 @@ class _$CompanionSummaryDtoCopyWithImpl<$Res>
 
 /// Create a copy of CompanionSummaryDto
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? gender = null,Object? name = null,Object? summary = null,Object? review = null,Object? order = freezed,Object? kunya = freezed,Object? titles = null,Object? aliases = null,Object? categoryIds = null,Object? death = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? gender = null,Object? name = null,Object? summary = null,Object? review = null,Object? order = freezed,Object? kunya = freezed,Object? titles = null,Object? aliases = null,Object? categoryIds = null,Object? death = freezed,Object? wordCount = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,gender: null == gender ? _self.gender : gender // ignore: cast_nullable_to_non_nullable
@@ -1299,7 +1301,8 @@ as LocalizedTextDto?,titles: null == titles ? _self.titles : titles // ignore: c
 as List<LocalizedTextDto>,aliases: null == aliases ? _self.aliases : aliases // ignore: cast_nullable_to_non_nullable
 as List<String>,categoryIds: null == categoryIds ? _self.categoryIds : categoryIds // ignore: cast_nullable_to_non_nullable
 as List<String>,death: freezed == death ? _self.death : death // ignore: cast_nullable_to_non_nullable
-as HistoricalDateDto?,
+as HistoricalDateDto?,wordCount: freezed == wordCount ? _self.wordCount : wordCount // ignore: cast_nullable_to_non_nullable
+as int?,
   ));
 }
 /// Create a copy of CompanionSummaryDto
@@ -1435,10 +1438,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  Gender gender,  LocalizedTextDto name,  LocalizedTextDto summary,  ReviewDto review,  int? order,  LocalizedTextDto? kunya,  List<LocalizedTextDto> titles,  List<String> aliases,  List<String> categoryIds,  HistoricalDateDto? death)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  Gender gender,  LocalizedTextDto name,  LocalizedTextDto summary,  ReviewDto review,  int? order,  LocalizedTextDto? kunya,  List<LocalizedTextDto> titles,  List<String> aliases,  List<String> categoryIds,  HistoricalDateDto? death,  int? wordCount)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CompanionSummaryDto() when $default != null:
-return $default(_that.id,_that.gender,_that.name,_that.summary,_that.review,_that.order,_that.kunya,_that.titles,_that.aliases,_that.categoryIds,_that.death);case _:
+return $default(_that.id,_that.gender,_that.name,_that.summary,_that.review,_that.order,_that.kunya,_that.titles,_that.aliases,_that.categoryIds,_that.death,_that.wordCount);case _:
   return orElse();
 
 }
@@ -1456,10 +1459,10 @@ return $default(_that.id,_that.gender,_that.name,_that.summary,_that.review,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  Gender gender,  LocalizedTextDto name,  LocalizedTextDto summary,  ReviewDto review,  int? order,  LocalizedTextDto? kunya,  List<LocalizedTextDto> titles,  List<String> aliases,  List<String> categoryIds,  HistoricalDateDto? death)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  Gender gender,  LocalizedTextDto name,  LocalizedTextDto summary,  ReviewDto review,  int? order,  LocalizedTextDto? kunya,  List<LocalizedTextDto> titles,  List<String> aliases,  List<String> categoryIds,  HistoricalDateDto? death,  int? wordCount)  $default,) {final _that = this;
 switch (_that) {
 case _CompanionSummaryDto():
-return $default(_that.id,_that.gender,_that.name,_that.summary,_that.review,_that.order,_that.kunya,_that.titles,_that.aliases,_that.categoryIds,_that.death);case _:
+return $default(_that.id,_that.gender,_that.name,_that.summary,_that.review,_that.order,_that.kunya,_that.titles,_that.aliases,_that.categoryIds,_that.death,_that.wordCount);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -1476,10 +1479,10 @@ return $default(_that.id,_that.gender,_that.name,_that.summary,_that.review,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  Gender gender,  LocalizedTextDto name,  LocalizedTextDto summary,  ReviewDto review,  int? order,  LocalizedTextDto? kunya,  List<LocalizedTextDto> titles,  List<String> aliases,  List<String> categoryIds,  HistoricalDateDto? death)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  Gender gender,  LocalizedTextDto name,  LocalizedTextDto summary,  ReviewDto review,  int? order,  LocalizedTextDto? kunya,  List<LocalizedTextDto> titles,  List<String> aliases,  List<String> categoryIds,  HistoricalDateDto? death,  int? wordCount)?  $default,) {final _that = this;
 switch (_that) {
 case _CompanionSummaryDto() when $default != null:
-return $default(_that.id,_that.gender,_that.name,_that.summary,_that.review,_that.order,_that.kunya,_that.titles,_that.aliases,_that.categoryIds,_that.death);case _:
+return $default(_that.id,_that.gender,_that.name,_that.summary,_that.review,_that.order,_that.kunya,_that.titles,_that.aliases,_that.categoryIds,_that.death,_that.wordCount);case _:
   return null;
 
 }
@@ -1491,7 +1494,7 @@ return $default(_that.id,_that.gender,_that.name,_that.summary,_that.review,_tha
 @JsonSerializable()
 
 class _CompanionSummaryDto implements CompanionSummaryDto {
-  const _CompanionSummaryDto({required this.id, required this.gender, required this.name, required this.summary, required this.review, this.order, this.kunya, final  List<LocalizedTextDto> titles = const <LocalizedTextDto>[], final  List<String> aliases = const <String>[], final  List<String> categoryIds = const <String>[], this.death}): _titles = titles,_aliases = aliases,_categoryIds = categoryIds;
+  const _CompanionSummaryDto({required this.id, required this.gender, required this.name, required this.summary, required this.review, this.order, this.kunya, final  List<LocalizedTextDto> titles = const <LocalizedTextDto>[], final  List<String> aliases = const <String>[], final  List<String> categoryIds = const <String>[], this.death, this.wordCount}): _titles = titles,_aliases = aliases,_categoryIds = categoryIds;
   factory _CompanionSummaryDto.fromJson(Map<String, dynamic> json) => _$CompanionSummaryDtoFromJson(json);
 
 @override final  String id;
@@ -1523,6 +1526,9 @@ class _CompanionSummaryDto implements CompanionSummaryDto {
 }
 
 @override final  HistoricalDateDto? death;
+/// Arabic words in the biography's sections, set by the content build
+/// so lists can say how deep each biography is. Null in older bundles.
+@override final  int? wordCount;
 
 /// Create a copy of CompanionSummaryDto
 /// with the given fields replaced by the non-null parameter values.
@@ -1537,16 +1543,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CompanionSummaryDto&&(identical(other.id, id) || other.id == id)&&(identical(other.gender, gender) || other.gender == gender)&&(identical(other.name, name) || other.name == name)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.review, review) || other.review == review)&&(identical(other.order, order) || other.order == order)&&(identical(other.kunya, kunya) || other.kunya == kunya)&&const DeepCollectionEquality().equals(other._titles, _titles)&&const DeepCollectionEquality().equals(other._aliases, _aliases)&&const DeepCollectionEquality().equals(other._categoryIds, _categoryIds)&&(identical(other.death, death) || other.death == death));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CompanionSummaryDto&&(identical(other.id, id) || other.id == id)&&(identical(other.gender, gender) || other.gender == gender)&&(identical(other.name, name) || other.name == name)&&(identical(other.summary, summary) || other.summary == summary)&&(identical(other.review, review) || other.review == review)&&(identical(other.order, order) || other.order == order)&&(identical(other.kunya, kunya) || other.kunya == kunya)&&const DeepCollectionEquality().equals(other._titles, _titles)&&const DeepCollectionEquality().equals(other._aliases, _aliases)&&const DeepCollectionEquality().equals(other._categoryIds, _categoryIds)&&(identical(other.death, death) || other.death == death)&&(identical(other.wordCount, wordCount) || other.wordCount == wordCount));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,gender,name,summary,review,order,kunya,const DeepCollectionEquality().hash(_titles),const DeepCollectionEquality().hash(_aliases),const DeepCollectionEquality().hash(_categoryIds),death);
+int get hashCode => Object.hash(runtimeType,id,gender,name,summary,review,order,kunya,const DeepCollectionEquality().hash(_titles),const DeepCollectionEquality().hash(_aliases),const DeepCollectionEquality().hash(_categoryIds),death,wordCount);
 
 @override
 String toString() {
-  return 'CompanionSummaryDto(id: $id, gender: $gender, name: $name, summary: $summary, review: $review, order: $order, kunya: $kunya, titles: $titles, aliases: $aliases, categoryIds: $categoryIds, death: $death)';
+  return 'CompanionSummaryDto(id: $id, gender: $gender, name: $name, summary: $summary, review: $review, order: $order, kunya: $kunya, titles: $titles, aliases: $aliases, categoryIds: $categoryIds, death: $death, wordCount: $wordCount)';
 }
 
 
@@ -1557,7 +1563,7 @@ abstract mixin class _$CompanionSummaryDtoCopyWith<$Res> implements $CompanionSu
   factory _$CompanionSummaryDtoCopyWith(_CompanionSummaryDto value, $Res Function(_CompanionSummaryDto) _then) = __$CompanionSummaryDtoCopyWithImpl;
 @override @useResult
 $Res call({
- String id, Gender gender, LocalizedTextDto name, LocalizedTextDto summary, ReviewDto review, int? order, LocalizedTextDto? kunya, List<LocalizedTextDto> titles, List<String> aliases, List<String> categoryIds, HistoricalDateDto? death
+ String id, Gender gender, LocalizedTextDto name, LocalizedTextDto summary, ReviewDto review, int? order, LocalizedTextDto? kunya, List<LocalizedTextDto> titles, List<String> aliases, List<String> categoryIds, HistoricalDateDto? death, int? wordCount
 });
 
 
@@ -1574,7 +1580,7 @@ class __$CompanionSummaryDtoCopyWithImpl<$Res>
 
 /// Create a copy of CompanionSummaryDto
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? gender = null,Object? name = null,Object? summary = null,Object? review = null,Object? order = freezed,Object? kunya = freezed,Object? titles = null,Object? aliases = null,Object? categoryIds = null,Object? death = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? gender = null,Object? name = null,Object? summary = null,Object? review = null,Object? order = freezed,Object? kunya = freezed,Object? titles = null,Object? aliases = null,Object? categoryIds = null,Object? death = freezed,Object? wordCount = freezed,}) {
   return _then(_CompanionSummaryDto(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,gender: null == gender ? _self.gender : gender // ignore: cast_nullable_to_non_nullable
@@ -1587,7 +1593,8 @@ as LocalizedTextDto?,titles: null == titles ? _self._titles : titles // ignore: 
 as List<LocalizedTextDto>,aliases: null == aliases ? _self._aliases : aliases // ignore: cast_nullable_to_non_nullable
 as List<String>,categoryIds: null == categoryIds ? _self._categoryIds : categoryIds // ignore: cast_nullable_to_non_nullable
 as List<String>,death: freezed == death ? _self.death : death // ignore: cast_nullable_to_non_nullable
-as HistoricalDateDto?,
+as HistoricalDateDto?,wordCount: freezed == wordCount ? _self.wordCount : wordCount // ignore: cast_nullable_to_non_nullable
+as int?,
   ));
 }
 
