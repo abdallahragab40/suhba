@@ -56,7 +56,7 @@ void main() {
     addTearDown(tester.view.reset);
     await open(tester);
     await type(tester, 'الهجره');
-    expect(heading('أقسام السيرة'), findsOneWidget);
+    expect(heading('سِيَر الصحابة'), findsOneWidget);
     await tester.tap(result('صاحبه في الهجرة'));
     await tester.pumpAndSettle();
     expect(find.byType(SectionReaderPage), findsOneWidget);

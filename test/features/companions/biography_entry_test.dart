@@ -43,7 +43,7 @@ void main() {
     tall(tester);
     await AppUnderTest(location: '/companions/abu-bakr').pump(tester);
     expect(find.text('٨ أقسام'), findsOneWidget);
-    await tester.tap(find.text('ابدأ قراءة السيرة'));
+    await tester.tap(find.text('ابدأ قراءة سيرته'));
     await tester.pumpAndSettle();
     expect(reader(tester).sectionId, 'abu-bakr.early-life');
   });
@@ -55,7 +55,7 @@ void main() {
     final app = AppUnderTest(location: '/companions/abu-bakr');
     await save(app, 'abu-bakr.hijrah');
     await app.pump(tester);
-    expect(find.text('صاحبه في الهجرة · قُرئ ٤٠٪'), findsOneWidget);
+    expect(find.text('صاحبه في الهجرة، قُرئ ٤٠٪'), findsOneWidget);
     await tester.tap(find.text('تابع القراءة'));
     await tester.pumpAndSettle();
     expect(reader(tester).sectionId, 'abu-bakr.hijrah');
@@ -90,7 +90,7 @@ void main() {
       bundle: MemoryAssetBundle.withSkeleton('talha'),
     ).pump(tester);
     expect(find.textContaining('لم تُكتب سيرته المفصّلة بعد'), findsOneWidget);
-    expect(find.text('ابدأ قراءة السيرة'), findsNothing);
+    expect(find.text('ابدأ قراءة سيرته'), findsNothing);
   });
 
   testApp('the section list shows finished and started sections', (
@@ -120,7 +120,7 @@ void main() {
       tall(tester);
       final app = AppUnderTest(location: '/companions/abu-bakr');
       await app.pump(tester);
-      await tester.tap(find.text('ابدأ قراءة السيرة'));
+      await tester.tap(find.text('ابدأ قراءة سيرته'));
       await tester.pumpAndSettle();
 
       await tester.tap(find.byTooltip('فهرس الأقسام'));

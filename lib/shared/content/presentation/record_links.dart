@@ -95,13 +95,14 @@ class EventRow extends StatelessWidget {
                         color: colors.onSurfaceDim,
                       ),
                     ),
-                  if (!e.review.isApproved) ...[
-                    const SizedBox(height: AppSpacing.xs),
-                    DraftBadge(preliminary: e.review.isPreliminary),
-                  ],
                 ],
               ),
             ),
+            // In a list the status is a mark at the row's end (F09).
+            if (!e.review.isApproved) ...[
+              const SizedBox(width: AppSpacing.xs),
+              DraftBadge.mark(preliminary: e.review.isPreliminary),
+            ],
           ],
         ),
       ),
@@ -170,7 +171,6 @@ class CompanionChips extends ConsumerWidget {
         for (final id in ids)
           if (byId[id] case final c?)
             ActionChip(
-              avatar: const Icon(Icons.person_outline, size: 18),
               label: Text(c.name.of(context)),
               onPressed: () => context.push(AppRoutes.companion(c.id)),
             ),

@@ -51,17 +51,49 @@ class ReadingBody extends StatelessWidget {
   /// Reading font size before the system text scale; theme default if null.
   final double? textSize;
 
+  /// Space after [block] when [next] follows (review §2.7, spacing rule 2):
+  /// 16 between paragraphs, 32 before a heading, 12 under a heading, 24
+  /// around a framed block. Space, not chrome, separates claims.
+  static double gapAfter(ContentBlock block, ContentBlock? next) =>
+      switch ((block, next)) {
+        (_, null) => AppSpacing.lg,
+        (_, HeadingBlock()) => AppSpacing.xl,
+        (HeadingBlock(), _) => AppSpacing.sm,
+        (ParagraphBlock(), ParagraphBlock()) => AppSpacing.md,
+        _ => AppSpacing.lg,
+      };
+
+  /// A paragraph whose sources open from a mark after its last word:
+  /// established or reported claims with sources. Disputed and unknown
+  /// claims keep their explicit badge (decision 1).
+  static bool _marked(ContentBlock block) =>
+      block is ParagraphBlock &&
+      block.citations.isNotEmpty &&
+      (block.reliability == Reliability.established ||
+          block.reliability == Reliability.reported);
+
   @override
   Widget build(BuildContext context) {
+    final hasReported = blocks.any(
+      (b) =>
+          _marked(b) &&
+          (b as ParagraphBlock).reliability == Reliability.reported,
+    );
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        if (hasReported) const _PassageLegend(),
         for (final (index, block) in blocks.indexed)
           // In a reader, each block anchors saved positions.
           ReaderAnchor(
             index: index,
             child: Padding(
-              padding: const EdgeInsetsDirectional.only(bottom: AppSpacing.lg),
+              padding: EdgeInsetsDirectional.only(
+                bottom: gapAfter(
+                  block,
+                  index + 1 < blocks.length ? blocks[index + 1] : null,
+                ),
+              ),
               child: _block(context, block),
             ),
           ),
@@ -76,6 +108,34 @@ class ReadingBody extends StatelessWidget {
   }
 
   Widget _block(BuildContext context, ContentBlock block) => switch (block) {
+    ParagraphBlock(:final text, :final reliability, :final citations)
+        when _marked(block) =>
+      // The mark follows the last word, like a footnote mark: it belongs
+      // unmistakably to this paragraph and costs no row (review F03).
+      Text.rich(
+        TextSpan(
+          text: text.of(context),
+          children: [
+            const TextSpan(text: ' '),
+            WidgetSpan(
+              alignment: PlaceholderAlignment.middle,
+              child: CitationMarker.inline(
+                count: citations.length,
+                lineHeight:
+                    _reading(context).fontSize! *
+                    (_reading(context).height ?? 1),
+                reported: reliability == Reliability.reported,
+                onPressed: () => onCitations(
+                  citations,
+                  reliability,
+                  passage: text.of(context),
+                ),
+              ),
+            ),
+          ],
+        ),
+        style: _reading(context),
+      ),
     ParagraphBlock(:final text, :final reliability, :final citations) => Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -152,14 +212,11 @@ class ReadingBody extends StatelessWidget {
       provisional: provisional,
       onCitations: onCitations,
     ),
-    HeadingBlock(:final text) => Padding(
-      padding: const EdgeInsetsDirectional.only(top: AppSpacing.sm),
-      child: Semantics(
-        header: true,
-        child: Text(
-          text.of(context),
-          style: Theme.of(context).textTheme.headlineSmall,
-        ),
+    HeadingBlock(:final text) => Semantics(
+      header: true,
+      child: Text(
+        text.of(context),
+        style: Theme.of(context).textTheme.headlineSmall,
       ),
     ),
     InfographicBlock(:final visualId, :final caption) => InfographicView(
@@ -168,6 +225,46 @@ class ReadingBody extends StatelessWidget {
       caption: caption?.of(context),
     ),
   };
+}
+
+/// One line at the top of a passage explaining the reported mark, so the
+/// label need not repeat under every paragraph (review F10).
+class _PassageLegend extends StatelessWidget {
+  const _PassageLegend();
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final colors = SuhbaColors.of(context);
+    final style = Theme.of(
+      context,
+    ).textTheme.bodySmall?.copyWith(color: colors.onSurfaceDim);
+    return Padding(
+      padding: const EdgeInsetsDirectional.only(bottom: AppSpacing.md),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ExcludeSemantics(
+            child: Icon(
+              CitationMarker.glyphReported,
+              size: MediaQuery.textScalerOf(context).scale(16),
+              color: colors.accentText,
+            ),
+          ),
+          const SizedBox(width: AppSpacing.xxs),
+          Expanded(
+            child: Text(
+              l10n.readerLegendReported(
+                l10n.reliabilityReported,
+                l10n.reliabilityExplainReported,
+              ),
+              style: style,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }
 
 /// Badge and source marker under a claim.
@@ -192,6 +289,7 @@ class _ClaimFooter extends StatelessWidget {
   Widget build(BuildContext context) {
     if (!showBadge && citations.isEmpty) return const SizedBox.shrink();
     return Row(
+      mainAxisSize: MainAxisSize.min,
       children: [
         if (showBadge)
           Flexible(
@@ -215,11 +313,16 @@ class _Callout extends StatelessWidget {
     required this.child,
     this.icon,
     this.accent,
+    this.trailing,
   });
 
   final String kicker;
   final Widget child;
   final IconData? icon;
+
+  /// At the end of the kicker row: a quotation's badge and source mark,
+  /// which there cost no row of their own.
+  final Widget? trailing;
 
   /// The start-edge rule colour; the hairline colour by default.
   final Color? accent;
@@ -257,12 +360,13 @@ class _Callout extends StatelessWidget {
                       Icon(icon, size: 18, color: colors.accentText),
                       const SizedBox(width: AppSpacing.xxs),
                     ],
-                    Flexible(
+                    Expanded(
                       child: Text(
                         kicker,
                         style: SuhbaTextStyles.of(context).kicker,
                       ),
                     ),
+                    ?trailing,
                   ],
                 ),
                 const SizedBox(height: AppSpacing.xs),
@@ -376,6 +480,7 @@ class _Quote extends StatelessWidget {
       kicker: kicker,
       icon: Icons.format_quote_outlined,
       accent: colors.established,
+      trailing: footer,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -409,7 +514,6 @@ class _Quote extends StatelessWidget {
               }, grading.gradedBy.of(context)),
               style: textTheme.bodySmall?.copyWith(color: colors.established),
             ),
-          footer,
         ],
       ),
     );

@@ -70,6 +70,10 @@ class ExplorePage extends ConsumerWidget {
         visuals: v.values.toList(),
         stories: stories.value ?? const [],
         showJourneys: journeys.value?.isNotEmpty ?? false,
+        showStatusNote:
+            e.values.any((x) => !x.review.isApproved) ||
+            v.values.any((x) => !x.review.isApproved) ||
+            (stories.value ?? const []).any((x) => !x.review.isApproved),
       );
     } else {
       body = const Padding(
@@ -95,6 +99,7 @@ class _Explore extends StatefulWidget {
     required this.visuals,
     required this.stories,
     required this.showJourneys,
+    this.showStatusNote = false,
   });
 
   final ExploreFilter initial;
@@ -103,6 +108,9 @@ class _Explore extends StatefulWidget {
   final List<Infographic> visuals;
   final List<StorySummary> stories;
   final bool showJourneys;
+
+  /// Some rows carry the draft mark: explain it once, above the lists.
+  final bool showStatusNote;
 
   @override
   State<_Explore> createState() => _ExploreState();
@@ -159,6 +167,10 @@ class _ExploreState extends State<_Explore> {
       ),
       children: [
         Text(l10n.exploreIntro, style: Theme.of(context).textTheme.bodyLarge),
+        if (widget.showStatusNote) ...[
+          const SizedBox(height: AppSpacing.xs),
+          const ListStatusNote(),
+        ],
         const SizedBox(height: AppSpacing.sm),
         Wrap(
           spacing: AppSpacing.xs,
@@ -279,9 +291,7 @@ class _VisualTile extends StatelessWidget {
                 ),
               ),
               if (!v.review.isApproved)
-                Flexible(
-                  child: DraftBadge(preliminary: v.review.isPreliminary),
-                ),
+                DraftBadge.mark(preliminary: v.review.isPreliminary),
             ],
           ),
         ),
@@ -304,7 +314,7 @@ class _PlaceTile extends StatelessWidget {
       leading: const Icon(Icons.place_outlined),
       title: Text(p.name.of(context)),
       subtitle: Text(
-        '${geoPrecisionLabel(l10n, p.location.precision)} · '
+        '${geoPrecisionLabel(l10n, p.location.precision)}، '
         '${p.summary.of(context)}',
         maxLines: 2,
         overflow: TextOverflow.ellipsis,

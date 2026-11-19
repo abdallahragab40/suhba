@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/design_system/tokens/app_icons.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/widgets/empty_state.dart';
 import 'package:suhba/core/design_system/widgets/error_view.dart';
@@ -43,7 +44,7 @@ class CompanionProfilePage extends ConsumerWidget {
       body: switch (companion) {
         AsyncData(:final value) => _Profile(companion: value),
         AsyncError(error: NotFoundFailure()) => EmptyState(
-          icon: Icons.person_search_outlined,
+          icon: AppIcons.companionMissing,
           title: l10n.companionNotFound,
           action: FilledButton(
             onPressed: () => context.go(AppRoutes.companions),
@@ -108,7 +109,10 @@ class _Profile extends ConsumerWidget {
             header(l10n.profileAtAGlanceKicker, l10n.profileAtAGlance),
             ProfileFacts(companion: c, provisional: provisional),
             if (c.sections.isNotEmpty) ...[
-              header(l10n.profileSectionsKicker, l10n.profileSectionsTitle),
+              header(
+                l10n.profileSectionsKicker,
+                l10n.profileSectionsTitle(c.gender.name),
+              ),
               SectionIndex(companionId: c.id, sections: c.sections),
             ],
             if (c.timeline.isNotEmpty) ...[
@@ -148,7 +152,10 @@ class _Profile extends ConsumerWidget {
                 ),
               ),
             ],
-            header(l10n.profileReferencesKicker, l10n.profileReferencesTitle),
+            header(
+              l10n.profileReferencesKicker,
+              l10n.profileReferencesTitle(c.gender.name),
+            ),
             ReferenceList(sourceIds: c.references),
           ],
         ),

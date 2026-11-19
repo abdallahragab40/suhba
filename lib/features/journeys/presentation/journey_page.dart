@@ -11,6 +11,7 @@ import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/core/result/failure.dart';
 import 'package:suhba/features/journeys/domain/journey_progress.dart';
 import 'package:suhba/features/journeys/domain/journey_runtime.dart';
+import 'package:suhba/features/journeys/presentation/journey_progress_text.dart';
 import 'package:suhba/features/journeys/presentation/journey_providers.dart';
 import 'package:suhba/features/quiz/domain/quiz_question.dart';
 import 'package:suhba/features/quiz/presentation/quiz_providers.dart';
@@ -157,10 +158,11 @@ class _JourneyPageState extends ConsumerState<JourneyPage> {
         Text(l10n.journeyPacing),
         const SizedBox(height: AppSpacing.md),
         Text(
-          l10n.journeyProgress(
-            format.integer(finished.length),
-            j.steps.length,
-            format.integer(j.steps.length),
+          journeyProgressText(
+            l10n,
+            format,
+            done: finished.length,
+            total: j.steps.length,
           ),
         ),
         const SizedBox(height: AppSpacing.xs),
@@ -272,7 +274,7 @@ class _JourneyPageState extends ConsumerState<JourneyPage> {
                     ? const Icon(Icons.skip_next_outlined)
                     : finished.contains(step.id)
                     ? const Icon(Icons.check_circle_outline)
-                    : Text(format.padded(index + 1)),
+                    : Text(format.index(index + 1)),
               ),
               title: Text(step.title.of(context)),
               subtitle: Text(

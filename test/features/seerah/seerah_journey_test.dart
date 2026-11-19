@@ -313,8 +313,8 @@ void main() {
     await AppUnderTest(location: '/visuals/abu-bakr-family').pump(tester);
     await tester.tap(find.text('قائمة'));
     await tester.pumpAndSettle();
-    expect(find.text('من الأبناء · أبو بكر الصديق'), findsNWidgets(3));
-    expect(find.text('صاحبه · محمد رسول الله ﷺ'), findsOneWidget);
+    expect(find.text('من الأبناء، أبو بكر الصديق'), findsNWidgets(3));
+    expect(find.text('صاحبه، محمد رسول الله ﷺ'), findsOneWidget);
   });
 
   testApp(

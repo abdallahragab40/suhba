@@ -13,6 +13,7 @@ import 'package:suhba/core/design_system/widgets/empty_state.dart';
 import 'package:suhba/core/design_system/widgets/error_view.dart';
 import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
 import 'package:suhba/core/design_system/widgets/scene_backdrop.dart';
+import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/features/atlas/domain/visiting.dart';
 import 'package:suhba/features/sources/presentation/citation_sheet.dart';
@@ -166,7 +167,7 @@ class _Place extends ConsumerWidget {
                             geoPrecisionLabel(l10n, p.location.precision),
                             if (p.modernName case final m?)
                               l10n.placeToday(m.of(context)),
-                          ].join(' · '),
+                          ].join(DisplayFormatter.separator),
                           style: SuhbaTextStyles.of(
                             context,
                           ).kicker.copyWith(color: colors.accentText),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:suhba/app/router/app_shell.dart';
 import 'package:suhba/app/router/routes.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
@@ -65,6 +66,7 @@ class SavedPage extends ConsumerWidget {
             icon: const Icon(Icons.history),
             onPressed: () => context.go(AppRoutes.readingHistory),
           ),
+          ...shellActions(context),
         ],
       ),
       body: body,

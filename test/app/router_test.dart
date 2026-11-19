@@ -73,6 +73,17 @@ void main() {
       await tester.pumpAndSettle();
     }
 
+    testApp('every destination root offers search and settings', (
+      tester,
+    ) async {
+      await pumpRouter(tester);
+      for (final tab in ['الرئيسية', 'السيرة', 'الصحابة', 'استكشف', 'مكتبتي']) {
+        await tapTab(tester, tab);
+        expect(find.byTooltip('بحث'), findsOneWidget, reason: tab);
+        expect(find.byTooltip('الإعدادات'), findsOneWidget, reason: tab);
+      }
+    });
+
     testApp('/ redirects to Home', (tester) async {
       await pumpRouter(tester, initialLocation: '/');
       expect(find.byType(HomePage), findsOneWidget);
@@ -86,7 +97,7 @@ void main() {
       expect(find.byType(DirectoryPage), findsOneWidget);
       await tapTab(tester, 'استكشف');
       expect(find.byType(ExplorePage), findsOneWidget);
-      await tapTab(tester, 'المحفوظات');
+      await tapTab(tester, 'مكتبتي');
       expect(find.byType(SavedPage), findsOneWidget);
       await tapTab(tester, 'الرئيسية');
       expect(find.byType(HomePage), findsOneWidget);
@@ -107,7 +118,7 @@ void main() {
       expect(x('الرئيسية'), greaterThan(x('السيرة')));
       expect(x('السيرة'), greaterThan(x('الصحابة')));
       expect(x('الصحابة'), greaterThan(x('استكشف')));
-      expect(x('استكشف'), greaterThan(x('المحفوظات')));
+      expect(x('استكشف'), greaterThan(x('مكتبتي')));
     });
 
     testApp('on a wide screen the destinations move to a rail', (tester) async {

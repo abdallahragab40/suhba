@@ -259,7 +259,7 @@ class _VisitRow extends StatelessWidget {
                   km < 1
                       ? l10n.visitUnderOneKm
                       : l10n.visitKmAway(format.integer(km.round())),
-              ].join(' · '),
+              ].join(DisplayFormatter.separator),
               style: SuhbaTextStyles.of(
                 context,
               ).kicker.copyWith(color: colors.accentText),

@@ -190,14 +190,13 @@ class _Home extends ConsumerWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          // The draft notice comes first, before anything it applies to.
+          if (manifest.isDraft)
+            paper([const SizedBox(height: AppSpacing.md), const DraftBanner()]),
           paper([const NextStepCard()]),
           if (seerah != null)
             SeerahOpening(index: seerah, progress: progress, compact: true),
           paper([
-            if (manifest.isDraft) ...[
-              const SizedBox(height: AppSpacing.md),
-              const DraftBanner(),
-            ],
             if (nextChapters.isNotEmpty) ...[
               header(l10n.homeSeerahKicker, l10n.homeSeerahTitle),
               for (final c in nextChapters)
@@ -239,37 +238,34 @@ class _Home extends ConsumerWidget {
               for (final e in thisMonth) EventRow(event: e),
             ],
             if (featured != null) ...[
-              header(l10n.homeFeaturedKicker, l10n.homeDiscoverTitle),
+              header(
+                l10n.homeFeaturedKicker(featured.gender.name),
+                l10n.homeDiscoverTitle(featured.gender.name),
+              ),
               _FeaturedCompanion(companion: featured),
             ],
             const SizedBox(height: AppSpacing.xl),
             const QuizBanner(),
-            if (seerah?.collection.visualIds.contains('seerah-atlas') ??
-                false) ...[
-              header(l10n.homeAtlasKicker, l10n.homeAtlasTitle),
-              const InfographicView(visualId: 'seerah-atlas', inline: true),
-            ],
-            if (seerah?.collection.featuredEventIds case final ids?
-                when ids.isNotEmpty) ...[
-              header(l10n.homeArchiveKicker, l10n.homeArchiveTitle),
-              EventRows(ids: ids),
-              Align(
-                alignment: AlignmentDirectional.centerStart,
-                child: TextButton.icon(
-                  onPressed: () =>
-                      context.go('${AppRoutes.explore}?show=events'),
-                  icon: const Icon(Icons.arrow_back),
-                  label: Text(l10n.homeAllEvents),
-                ),
-              ),
-            ],
+            // The atlas and the featured events live in the Seerah hub, and
+            // the full archive in Explore: Home does not repeat them (F05).
           ]),
           const SizedBox(height: AppSpacing.xl),
           _CategoryBand(categories: categories, companions: companions),
           paper([
             if (stories.isNotEmpty) ...[
               header(l10n.homeStoriesKicker, l10n.homeStoriesTitle),
-              for (final s in stories) StoryCard(story: s),
+              // A taste, not the catalog: Explore lists them all.
+              for (final s in stories.take(homeStoryCount)) StoryCard(story: s),
+              if (stories.length > homeStoryCount)
+                Align(
+                  alignment: AlignmentDirectional.centerStart,
+                  child: TextButton.icon(
+                    onPressed: () =>
+                        context.go('${AppRoutes.explore}?show=stories'),
+                    icon: const Icon(Icons.arrow_back),
+                    label: Text(l10n.homeAllStories),
+                  ),
+                ),
             ],
             const SizedBox(height: AppSpacing.md),
             Align(
@@ -286,6 +282,9 @@ class _Home extends ConsumerWidget {
     );
   }
 }
+
+/// How many stories Home shows before linking to the full list.
+const homeStoryCount = 3;
 
 /// The ink band: one decisive episode told as a sequence.
 class _InkEpisode extends StatelessWidget {
@@ -381,6 +380,7 @@ class _FeaturedCompanion extends ConsumerWidget {
             ),
           ),
         ),
+        const SizedBox(height: CompanionCard.nameGap),
         Text(
           companionHonorific(c.gender),
           style: SuhbaTextStyles.of(context).kicker,
@@ -414,7 +414,7 @@ class _FeaturedCompanion extends ConsumerWidget {
           alignment: AlignmentDirectional.centerStart,
           child: FilledButton(
             onPressed: () => context.push(AppRoutes.companion(c.id)),
-            child: Text(l10n.homeReadBiography),
+            child: Text(l10n.homeReadBiography(c.gender.name)),
           ),
         ),
       ],
@@ -488,13 +488,21 @@ class _CategoryBand extends StatelessWidget {
                                 const SizedBox(width: AppSpacing.sm),
                                 Builder(
                                   builder: (context) {
-                                    final n = companions
-                                        .where(
-                                          (c) => c.categoryIds.contains(cat.id),
-                                        )
-                                        .length;
+                                    final members = companions.where(
+                                      (c) => c.categoryIds.contains(cat.id),
+                                    );
+                                    final n = members.length;
+                                    // A category of women only (أمهات
+                                    // المؤمنين) is counted in the feminine.
+                                    final women =
+                                        n > 0 &&
+                                        members.every(
+                                          (c) => c.gender == Gender.female,
+                                        );
                                     return Text(
-                                      l10n.homeCategoryCount(
+                                      (women
+                                          ? l10n.homeCategoryCountFemale
+                                          : l10n.homeCategoryCount)(
                                         n,
                                         format.integer(n),
                                       ),

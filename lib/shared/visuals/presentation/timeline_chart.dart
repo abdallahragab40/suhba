@@ -198,6 +198,7 @@ class _MarkLabel extends StatelessWidget {
       button: true,
       label: '$date، $title',
       excludeSemantics: true,
+      onTap: onTap,
       child: InkWell(
         onTap: onTap,
         child: Align(

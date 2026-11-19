@@ -249,16 +249,16 @@ void main() {
     Finder heading(String text) =>
         find.descendant(of: find.byType(ListView), matching: find.text(text));
     expect(heading('فصول القصص'), findsOneWidget);
-    expect(heading('أقسام السيرة'), findsOneWidget);
+    expect(heading('سِيَر الصحابة'), findsOneWidget);
 
-    await tester.tap(find.widgetWithText(ChoiceChip, 'السِّيَر'));
+    await tester.tap(find.widgetWithText(ChoiceChip, 'سِيَر الصحابة'));
     await tester.pumpAndSettle();
     expect(heading('فصول القصص'), findsNothing);
-    expect(heading('أقسام السيرة'), findsOneWidget);
+    expect(heading('سِيَر الصحابة'), findsOneWidget);
 
     await tester.tap(find.widgetWithText(ChoiceChip, 'القصص'));
     await tester.pumpAndSettle();
     expect(heading('فصول القصص'), findsOneWidget);
-    expect(heading('أقسام السيرة'), findsNothing);
+    expect(heading('سِيَر الصحابة'), findsNothing);
   });
 }

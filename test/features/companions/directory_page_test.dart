@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:suhba/core/design_system/widgets/companion_card.dart';
+import 'package:suhba/core/design_system/widgets/companion_row.dart';
 import 'package:suhba/core/design_system/widgets/draft_badge.dart';
 import 'package:suhba/core/design_system/widgets/draft_banner.dart';
 import 'package:suhba/core/design_system/widgets/error_view.dart';
@@ -14,9 +14,7 @@ import '../../helpers/app_harness.dart';
 import '../../helpers/content_bundle.dart';
 
 List<String> _cardNames(WidgetTester tester) => [
-  for (final card in tester.widgetList<CompanionCard>(
-    find.byType(CompanionCard),
-  ))
+  for (final card in tester.widgetList<CompanionRow>(find.byType(CompanionRow)))
     card.name,
 ];
 
@@ -144,7 +142,7 @@ void main() {
     bundle.files['assets/content/index/companions.json'] = index;
     await tester.tap(find.text('إعادة المحاولة'));
     await tester.pumpAndSettle();
-    expect(find.byType(CompanionCard), findsWidgets);
+    expect(find.byType(CompanionRow), findsWidgets);
   });
 
   testApp('approved companions carry no draft badge', (tester) async {
@@ -165,7 +163,7 @@ void main() {
     expect(find.byType(DraftBadge), findsNWidgets(9));
     expect(
       find.descendant(
-        of: find.widgetWithText(CompanionCard, 'أبو بكر الصديق'),
+        of: find.widgetWithText(CompanionRow, 'أبو بكر الصديق'),
         matching: find.byType(DraftBadge),
       ),
       findsNothing,
@@ -177,7 +175,7 @@ void main() {
     addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
     await AppUnderTest(location: '/companions').pump(tester);
     expect(tester.takeException(), isNull);
-    expect(find.byType(CompanionCard), findsWidgets);
+    expect(find.byType(CompanionRow), findsWidgets);
   });
 
   testApp('meets tap-target and labelling guidelines', (tester) async {

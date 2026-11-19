@@ -146,10 +146,10 @@ abstract class AppLocalizations {
   /// **'الصحابة'**
   String get tabCompanions;
 
-  /// Bottom navigation: bookmarks and continue-reading tab.
+  /// Bottom navigation: the reader's own tab (continue reading and saved items). Kept short so it never wraps in the bar.
   ///
   /// In ar, this message translates to:
-  /// **'المحفوظات'**
+  /// **'مكتبتي'**
   String get tabSaved;
 
   /// Bottom navigation: settings tab.
@@ -413,14 +413,14 @@ abstract class AppLocalizations {
   /// Kicker above the list of biography sections.
   ///
   /// In ar, this message translates to:
-  /// **'السيرة'**
+  /// **'الفصول'**
   String get profileSectionsKicker;
 
-  /// Title of the list of biography sections.
+  /// Profile: title over the biography's sections (review F11).
   ///
   /// In ar, this message translates to:
-  /// **'فصول السيرة'**
-  String get profileSectionsTitle;
+  /// **'{gender, select, female{فصول سيرتها} other{فصول سيرته}}'**
+  String profileSectionsTitle(String gender);
 
   /// Kicker above the timeline preview.
   ///
@@ -470,11 +470,11 @@ abstract class AppLocalizations {
   /// **'المصادر'**
   String get profileReferencesKicker;
 
-  /// Title of the reference list.
+  /// Profile: title over the biography's references (review F11).
   ///
   /// In ar, this message translates to:
-  /// **'مراجع هذه السيرة'**
-  String get profileReferencesTitle;
+  /// **'{gender, select, female{مراجع سيرتها} other{مراجع سيرته}}'**
+  String profileReferencesTitle(String gender);
 
   /// Relation label.
   ///
@@ -806,11 +806,11 @@ abstract class AppLocalizations {
   /// **'المرحلة'**
   String get eraKicker;
 
-  /// Opens the biography section linked to a timeline entry.
+  /// Timeline entry: opens the linked section of the companion's biography (review F11).
   ///
   /// In ar, this message translates to:
-  /// **'اقرأ في السيرة'**
-  String get timelineOpenSection;
+  /// **'{gender, select, female{اقرأ في سيرتها} other{اقرأ في سيرته}}'**
+  String timelineOpenSection(String gender);
 
   /// Names the historical event linked to a timeline entry.
   ///
@@ -929,7 +929,7 @@ abstract class AppLocalizations {
   /// Saved group.
   ///
   /// In ar, this message translates to:
-  /// **'أقسام السيرة'**
+  /// **'من سِيَر الصحابة'**
   String get savedSections;
 
   /// Saved group.
@@ -953,7 +953,7 @@ abstract class AppLocalizations {
   /// Empty saved screen message.
   ///
   /// In ar, this message translates to:
-  /// **'احفظ صحابيًّا أو قسمًا من السيرة أو قصة لتجده هنا.'**
+  /// **'احفظ ما تحب من سِيَر الصحابة وفصول السيرة النبوية والقصص لتجده هنا.'**
   String get savedEmptyMessage;
 
   /// Search button tooltip.
@@ -971,7 +971,7 @@ abstract class AppLocalizations {
   /// Shown before typing.
   ///
   /// In ar, this message translates to:
-  /// **'ابحث في أسماء الصحابة وألقابهم وكناهم، وفي عناوين السيرة والقصص ونصوصها.'**
+  /// **'ابحث في أسماء الصحابة وألقابهم وكناهم، وفي سِيَرهم والسيرة النبوية والقصص.'**
   String get searchStart;
 
   /// No search results.
@@ -1007,7 +1007,7 @@ abstract class AppLocalizations {
   /// Search result group.
   ///
   /// In ar, this message translates to:
-  /// **'أقسام السيرة'**
+  /// **'سِيَر الصحابة'**
   String get searchKindSections;
 
   /// Search result group.
@@ -1016,17 +1016,17 @@ abstract class AppLocalizations {
   /// **'فصول القصص'**
   String get searchKindChapters;
 
-  /// Kicker on the home hero (changes daily).
+  /// Home: kicker over the featured companion, by gender (review F11).
   ///
   /// In ar, this message translates to:
-  /// **'صحابي اليوم'**
-  String get homeFeaturedKicker;
+  /// **'{gender, select, female{صحابية اليوم} other{صحابي اليوم}}'**
+  String homeFeaturedKicker(String gender);
 
-  /// Opens the featured companion.
+  /// Home: button opening the featured companion's biography. Not "السيرة", which means the Prophetic Seerah (review F11).
   ///
   /// In ar, this message translates to:
-  /// **'اقرأ السيرة'**
-  String get homeReadBiography;
+  /// **'{gender, select, female{اقرأ سيرتها} other{اقرأ سيرته}}'**
+  String homeReadBiography(String gender);
 
   /// Kicker above categories.
   ///
@@ -1340,11 +1340,11 @@ abstract class AppLocalizations {
   /// **'اقرأه من جديد'**
   String get readerReadAgain;
 
-  /// Profile: start the biography at its first section.
+  /// Profile: button that opens the first section (review F11).
   ///
   /// In ar, this message translates to:
-  /// **'ابدأ قراءة السيرة'**
-  String get profileStartReading;
+  /// **'{gender, select, female{ابدأ قراءة سيرتها} other{ابدأ قراءة سيرته}}'**
+  String profileStartReading(String gender);
 
   /// Profile: resume the biography.
   ///
@@ -1415,7 +1415,7 @@ abstract class AppLocalizations {
   /// Profile: the section to resume and how much of it was read (percent is formatted).
   ///
   /// In ar, this message translates to:
-  /// **'{title} · قُرئ {percent}'**
+  /// **'{title}، قُرئ {percent}'**
   String profileResumeDetail(String title, String percent);
 
   /// Search filter chip: every kind of result.
@@ -1427,13 +1427,13 @@ abstract class AppLocalizations {
   /// Search filter chip: companions only.
   ///
   /// In ar, this message translates to:
-  /// **'الصحابة'**
+  /// **'أسماء الصحابة'**
   String get searchScopeCompanions;
 
   /// Search filter chip: biography sections only.
   ///
   /// In ar, this message translates to:
-  /// **'السِّيَر'**
+  /// **'سِيَر الصحابة'**
   String get searchScopeBiographies;
 
   /// Search filter chip: stories and their chapters.
@@ -1529,7 +1529,7 @@ abstract class AppLocalizations {
   /// Subtitle: how much review and journey data there is.
   ///
   /// In ar, this message translates to:
-  /// **'أسئلة المراجعة: {reviews} · الرحلات: {journeys}'**
+  /// **'أسئلة المراجعة: {reviews}، الرحلات: {journeys}'**
   String settingsLearningCounts(String reviews, String journeys);
 
   /// Confirmation dialog title.
@@ -1814,10 +1814,10 @@ abstract class AppLocalizations {
   /// **'من {from} إلى {to}'**
   String mapRouteLeg(String from, String to);
 
-  /// Relation in list form: the relation label, then the other person; e.g. "من الأبناء · أبو بكر الصديق".
+  /// Relation in list form: the relation label, then the other person; e.g. "من الأبناء، أبو بكر الصديق".
   ///
   /// In ar, this message translates to:
-  /// **'{relation} · {person}'**
+  /// **'{relation}، {person}'**
   String visualRelationOf(String relation, String person);
 
   /// Name of the Seerah section (app bar).
@@ -1949,7 +1949,7 @@ abstract class AppLocalizations {
   /// Chapter number and time label in lists.
   ///
   /// In ar, this message translates to:
-  /// **'الفصل {number} · {date}'**
+  /// **'الفصل {number}، {date}'**
   String seerahChapterLabel(String number, String date);
 
   /// Number of visuals in a chapter; n is the formatted number.
@@ -2009,7 +2009,7 @@ abstract class AppLocalizations {
   /// Kicker in the chapter reader.
   ///
   /// In ar, this message translates to:
-  /// **'الفصل {number} من {total} · {date}'**
+  /// **'الفصل {number} من {total}، {date}'**
   String seerahChapterOf(String number, String total, String date);
 
   /// Kicker in the topic reader.
@@ -2348,41 +2348,11 @@ abstract class AppLocalizations {
   /// **'كل الفصول'**
   String get homeAllChapters;
 
-  /// Home: the companion-of-the-day section title.
+  /// Home: title over the featured companion, by gender (review F11).
   ///
   /// In ar, this message translates to:
-  /// **'تعرّف على صحابي'**
-  String get homeDiscoverTitle;
-
-  /// Home section kicker.
-  ///
-  /// In ar, this message translates to:
-  /// **'الأطلس'**
-  String get homeAtlasKicker;
-
-  /// Home: the atlas section title.
-  ///
-  /// In ar, this message translates to:
-  /// **'أين جرت الأحداث'**
-  String get homeAtlasTitle;
-
-  /// Home section kicker.
-  ///
-  /// In ar, this message translates to:
-  /// **'الأرشيف'**
-  String get homeArchiveKicker;
-
-  /// Home: selected events title.
-  ///
-  /// In ar, this message translates to:
-  /// **'أحداث مختارة'**
-  String get homeArchiveTitle;
-
-  /// Home link to the event archive.
-  ///
-  /// In ar, this message translates to:
-  /// **'سجل الأحداث كاملًا'**
-  String get homeAllEvents;
+  /// **'{gender, select, female{تعرّف على صحابية} other{تعرّف على صحابي}}'**
+  String homeDiscoverTitle(String gender);
 
   /// Search result group.
   ///
@@ -3720,6 +3690,78 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'بطاقة'**
   String get shareCardOption;
+
+  /// Guided journeys: progress when no step is done yet. Zero is written in words, never as ٠ (review F06).
+  ///
+  /// In ar, this message translates to:
+  /// **'لم تبدأ بعد، {totalCount, plural, =1{خطوة واحدة} =2{خطوتان} few{{total} خطوات} other{{total} خطوة}}'**
+  String journeyNotStarted(int totalCount, String total);
+
+  /// A clock time before noon, e.g. "٧ صباحًا" or "٧:٣٠ صباحًا".
+  ///
+  /// In ar, this message translates to:
+  /// **'{time} صباحًا'**
+  String timeMorning(String time);
+
+  /// A clock time from noon, e.g. "٩ مساءً" or "٩:١٥ مساءً".
+  ///
+  /// In ar, this message translates to:
+  /// **'{time} مساءً'**
+  String timeEvening(String time);
+
+  /// Number of companions in a category whose members are all women, e.g. أمهات المؤمنين (review F11).
+  ///
+  /// In ar, this message translates to:
+  /// **'{count, plural, =0{لا صحابيات بعد} =1{صحابية واحدة} =2{صحابيتان} few{{n} صحابيات} other{{n} صحابيةً}}'**
+  String homeCategoryCountFemale(int count, String n);
+
+  /// Home: link from the first stories to the full list in Explore.
+  ///
+  /// In ar, this message translates to:
+  /// **'كل القصص'**
+  String get homeAllStories;
+
+  /// Source sheet: the edition a page or volume locator refers to (review F19).
+  ///
+  /// In ar, this message translates to:
+  /// **'الطبعة: {edition}'**
+  String citationEdition(String edition);
+
+  /// Source sheet: the numbering scheme a hadith number refers to.
+  ///
+  /// In ar, this message translates to:
+  /// **'الترقيم: {scheme}'**
+  String citationNumbering(String scheme);
+
+  /// Reader: legend at the top of a passage that has reported claims; label is "رواية تاريخية", explanation its meaning (review F10).
+  ///
+  /// In ar, this message translates to:
+  /// **'{label}: {explanation}'**
+  String readerLegendReported(String label, String explanation);
+
+  /// One note above a list whose items carry the compact draft mark (review F09).
+  ///
+  /// In ar, this message translates to:
+  /// **'تدل هذه العلامة على ما لم يعتمده المراجع المختص بعد. تفاصيل المنهج في «عن التطبيق».'**
+  String get listStatusNote;
+
+  /// Directory row: the biography is at standard depth (review F07, C1).
+  ///
+  /// In ar, this message translates to:
+  /// **'سيرة كاملة'**
+  String get depthFull;
+
+  /// Directory row: the biography is a short introduction, to be deepened (review F07, C1).
+  ///
+  /// In ar, this message translates to:
+  /// **'تعريف موجز'**
+  String get depthBrief;
+
+  /// Directory: heading over companions in no category.
+  ///
+  /// In ar, this message translates to:
+  /// **'صحابة آخرون'**
+  String get directoryOthers;
 }
 
 class _AppLocalizationsDelegate

@@ -36,13 +36,21 @@ class StoryCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              if (!s.review.isApproved) ...[
-                DraftBadge(preliminary: s.review.isPreliminary),
-                const SizedBox(height: AppSpacing.xs),
-              ],
-              Text(
-                s.title.of(context),
-                style: Theme.of(context).textTheme.titleLarge,
+              // In a list the status is a mark beside the title (F09).
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: Text(
+                      s.title.of(context),
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                  ),
+                  if (!s.review.isApproved) ...[
+                    const SizedBox(width: AppSpacing.xs),
+                    DraftBadge.mark(preliminary: s.review.isPreliminary),
+                  ],
+                ],
               ),
               Text(
                 s.synopsis.of(context),

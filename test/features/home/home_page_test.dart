@@ -4,6 +4,7 @@ import 'package:suhba/core/design_system/widgets/draft_banner.dart';
 import 'package:suhba/features/atlas/presentation/event_page.dart';
 import 'package:suhba/features/companions/presentation/directory/directory_page.dart';
 import 'package:suhba/features/companions/presentation/profile/companion_profile_page.dart';
+import 'package:suhba/features/explore/presentation/explore_page.dart';
 import 'package:suhba/features/search/presentation/search_page.dart';
 import 'package:suhba/features/seerah/presentation/seerah_chapter_page.dart';
 import 'package:suhba/features/stories/presentation/story_page.dart';
@@ -51,8 +52,8 @@ void main() {
     // Companion from the catalogue.
     for (var day = 0; day < 10; day++) {
       await open(tester, now: DateTime(2026, 10, 9 + day));
-      await reveal(tester, find.text('صحابي اليوم'));
-      expect(find.text('اقرأ السيرة'), findsOneWidget);
+      await reveal(tester, find.textContaining(RegExp(r'^صحابية? اليوم$')));
+      expect(find.textContaining(RegExp(r'^اقرأ سيرتها?$')), findsOneWidget);
     }
   });
 
@@ -78,7 +79,7 @@ void main() {
   ) async {
     // 9 October 2026 is in Rabi al-Akhir, when no event is dated.
     await open(tester);
-    await reveal(tester, find.text('صحابي اليوم'));
+    await reveal(tester, find.textContaining(RegExp(r'^صحابية? اليوم$')));
     expect(find.text('هذا الشهر'), findsNothing);
   });
 
@@ -86,24 +87,24 @@ void main() {
     // 9 October 2026 is day 20735 since 1970; 20735 % 47 = 8 → Sa'id ibn
     // Zayd.
     await open(tester);
-    await reveal(tester, find.text('صحابي اليوم'));
-    expect(find.text('صحابي اليوم'), findsOneWidget);
+    await reveal(tester, find.textContaining(RegExp(r'^صحابية? اليوم$')));
+    expect(find.textContaining(RegExp(r'^صحابية? اليوم$')), findsOneWidget);
     expect(find.text('سعيد بن زيد'), findsOneWidget);
   });
 
   testApp('the next day features someone else', (tester) async {
     await open(tester, now: DateTime(2026, 10, 10));
-    await reveal(tester, find.text('صحابي اليوم'));
+    await reveal(tester, find.textContaining(RegExp(r'^صحابية? اليوم$')));
     expect(find.text('أبو عبيدة بن الجراح'), findsOneWidget);
     expect(find.text('سعيد بن زيد'), findsNothing);
   });
 
   testApp('"read the biography" opens the featured profile', (tester) async {
     await open(tester, now: DateTime(2026, 10)); // Abu Bakr's day
-    await reveal(tester, find.text('اقرأ السيرة'));
+    await reveal(tester, find.textContaining(RegExp(r'^اقرأ سيرتها?$')));
     // A real passage from his biography, not only a label.
     expect(find.textContaining('عبد الله بن عثمان بن عامر'), findsWidgets);
-    await tester.tap(find.text('اقرأ السيرة'));
+    await tester.tap(find.textContaining(RegExp(r'^اقرأ سيرتها?$')));
     await tester.pumpAndSettle();
     expect(find.byType(CompanionProfilePage), findsOneWidget);
     expect(find.text('أبو بكر الصديق'), findsOneWidget);
@@ -122,10 +123,22 @@ void main() {
 
   testApp('stories open from home', (tester) async {
     await open(tester);
-    await reveal(tester, find.text('ثاني اثنين'));
-    await tester.tap(find.text('ثاني اثنين'));
+    await reveal(tester, find.text('جيش العسرة'));
+    await tester.tap(find.text('جيش العسرة'));
     await tester.pumpAndSettle();
     expect(find.byType(StoryPage), findsOneWidget);
+  });
+
+  testApp('home shows three stories and links to the rest', (tester) async {
+    await open(tester);
+    await reveal(tester, find.text('كل القصص'));
+    expect(find.text('ثاني اثنين'), findsNothing);
+    await tester.tap(find.text('كل القصص'));
+    await tester.pumpAndSettle();
+    expect(
+      tester.widget<ExplorePage>(find.byType(ExplorePage)).filter,
+      'stories',
+    );
   });
 
   testApp('search opens from the app bar, above the tabs', (tester) async {

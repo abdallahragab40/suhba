@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/design_system/tokens/app_icons.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
 import 'package:suhba/core/design_system/widgets/citation_marker.dart';
@@ -143,7 +144,7 @@ class _RelationsState extends ConsumerState<_Relations> {
           Align(
             alignment: AlignmentDirectional.centerStart,
             child: TextButton.icon(
-              icon: const Icon(Icons.people_outline),
+              icon: const Icon(AppIcons.companions),
               label: Text(l10n.relationsShowEveryone),
               onPressed: () => context.replace(AppRoutes.relations()),
             ),
@@ -190,7 +191,7 @@ class _RelationsState extends ConsumerState<_Relations> {
           ),
         ],
         if (groups.isEmpty)
-          EmptyState(icon: Icons.people_outline, title: l10n.relationsEmpty),
+          EmptyState(icon: AppIcons.companions, title: l10n.relationsEmpty),
         for (final (subject, entries) in groups) ...[
           _SubjectHeader(subject: subject, names: names),
           for (final e in entries) _RelationRow(entry: e, names: names),

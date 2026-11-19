@@ -141,7 +141,7 @@ class _ContentsSheet extends ConsumerWidget {
               contentPadding: EdgeInsets.zero,
               selected: e.id == currentId,
               selectedColor: colors.accentText,
-              leading: ExcludeSemantics(child: Text(format.padded(i + 1))),
+              leading: ExcludeSemantics(child: Text(format.index(i + 1))),
               title: Text(e.title),
               subtitle: e.id == currentId ? Text(l10n.readerReadingNow) : null,
               trailing: PassageProgressMarker(progress: progress[e.id]),

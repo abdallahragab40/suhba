@@ -20,7 +20,7 @@ void main() {
       tester.widget<SwitchListTile>(find.byType(SwitchListTile)).value,
       isFalse,
     );
-    expect(find.text('٢١:٠٠'), findsOneWidget);
+    expect(find.text('٩ مساءً'), findsOneWidget);
     await tester.tap(find.text('وقت التذكير'));
     await tester.pumpAndSettle();
     final dialog = tester.widget<TimePickerDialog>(
@@ -30,7 +30,7 @@ void main() {
     final context = tester.element(find.byType(TimePickerDialog));
     Navigator.of(context).pop(const TimeOfDay(hour: 18, minute: 5));
     await tester.pumpAndSettle();
-    expect(find.text('١٨:٠٥'), findsOneWidget);
+    expect(find.text('٦:٠٥ مساءً'), findsOneWidget);
     expect(service.requests, 0);
     expect(service.scheduled, isNull);
     await tester.tap(find.byType(SwitchListTile));

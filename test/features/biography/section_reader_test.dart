@@ -28,7 +28,8 @@ void main() {
   ) async {
     await open(tester, '/companions/abu-bakr/sections/abu-bakr.hijrah');
     expect(find.text('صاحبه في الهجرة'), findsOneWidget);
-    expect(find.text('٠٣'), findsOneWidget); // third section
+    expect(find.text('٣'), findsWidgets); // third section, unpadded
+    expect(find.text('٠٣'), findsNothing);
     expect(find.byType(DraftBadge), findsOneWidget);
     expect(find.text('قال الله تعالى — التوبة: ٤٠'), findsOneWidget);
     // The cave hadith in its verbatim wording (from the pinned dataset).

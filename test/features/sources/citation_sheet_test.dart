@@ -65,10 +65,60 @@ void main() {
     expect(find.text('الجامع الصحيح (صحيح البخاري)'), findsOneWidget);
     expect(find.text('محمد بن إسماعيل البخاري (ت ٢٥٦ هـ)'), findsOneWidget);
     expect(
-      find.text('كتاب فضائل أصحاب النبي ﷺ · ج ٥ · ص ١٢–١٣ · رقم ٣٦٥٣'),
+      find.text('كتاب فضائل أصحاب النبي ﷺ، ج ٥، ص ١٢–١٣، رقم ٣٦٥٣'),
       findsOneWidget,
     );
     expect(find.text('صحيح — البخاري'), findsOneWidget);
+  });
+
+  testWidgets('one entry per work, with the edition its pages refer to', (
+    tester,
+  ) async {
+    await pumpSheet(tester, [
+      const Citation(
+        sourceId: 'isabah',
+        locatorStatus: LocatorStatus.complete,
+        volume: 4,
+        page: '144',
+      ),
+      const Citation(
+        sourceId: 'bukhari',
+        locatorStatus: LocatorStatus.complete,
+        hadithNumber: '3653',
+      ),
+      const Citation(
+        sourceId: 'isabah',
+        locatorStatus: LocatorStatus.complete,
+        volume: 4,
+        page: '146',
+      ),
+    ]);
+    // Two works, not three entries.
+    expect(find.text('الإصابة في تمييز الصحابة'), findsOneWidget);
+    expect(find.text('ج ٤، ص ١٤٤'), findsOneWidget);
+    expect(find.text('ج ٤، ص ١٤٦'), findsOneWidget);
+    expect(
+      find.text(
+        'الطبعة: تحقيق علي محمد البجاوي، الطبعة الأولى، ١٤١٢هـ / ١٩٩٢م، '
+        'في ثمانية مجلدات',
+      ),
+      findsOneWidget,
+    );
+    // A hadith number refers to a numbering scheme, not an edition.
+    expect(
+      find.text('الترقيم: ترقيم فتح الباري المتداول (١–٧٥٦٣)'),
+      findsOneWidget,
+    );
+    expect(find.textContaining('الطبعة: '), findsOneWidget);
+  });
+
+  testWidgets('no edition line when the locator is still pending', (
+    tester,
+  ) async {
+    await pumpSheet(tester, [
+      const Citation(sourceId: 'isabah', locatorStatus: LocatorStatus.pending),
+    ]);
+    expect(find.textContaining('الطبعة: '), findsNothing);
   });
 
   testWidgets('a pending locator says it awaits verification', (tester) async {

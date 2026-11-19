@@ -92,7 +92,10 @@ class _HistoryTile extends ConsumerWidget {
                 : l10n.savedItemLoading),
       ),
       subtitle: Text(
-        [?parent, l10n.historyFinishedOn(date)].join(' · '),
+        [
+          ?parent,
+          l10n.historyFinishedOn(date),
+        ].join(DisplayFormatter.separator),
         style: dim,
       ),
       onTap: route == null ? null : () => context.push(route),

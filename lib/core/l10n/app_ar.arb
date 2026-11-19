@@ -32,9 +32,9 @@
   "@tabCompanions": {
     "description": "Bottom navigation: companions directory tab."
   },
-  "tabSaved": "المحفوظات",
+  "tabSaved": "مكتبتي",
   "@tabSaved": {
-    "description": "Bottom navigation: bookmarks and continue-reading tab."
+    "description": "Bottom navigation: the reader's own tab (continue reading and saved items). Kept short so it never wraps in the bar."
   },
   "tabSettings": "الإعدادات",
   "@tabSettings": {
@@ -321,13 +321,19 @@
   "@profileDeathPlace": {
     "description": "Fact label."
   },
-  "profileSectionsKicker": "السيرة",
+  "profileSectionsKicker": "الفصول",
   "@profileSectionsKicker": {
     "description": "Kicker above the list of biography sections."
   },
-  "profileSectionsTitle": "فصول السيرة",
+  "profileSectionsTitle": "{gender, select, female{فصول سيرتها} other{فصول سيرته}}",
   "@profileSectionsTitle": {
-    "description": "Title of the list of biography sections."
+    "description": "Profile: title over the biography's sections (review F11).",
+    "placeholders": {
+      "gender": {
+        "type": "String",
+        "description": "'female' or 'male' (the companion's gender)."
+      }
+    }
   },
   "profileTimelineKicker": "التسلسل",
   "@profileTimelineKicker": {
@@ -361,9 +367,15 @@
   "@profileReferencesKicker": {
     "description": "Kicker above the reference list."
   },
-  "profileReferencesTitle": "مراجع هذه السيرة",
+  "profileReferencesTitle": "{gender, select, female{مراجع سيرتها} other{مراجع سيرته}}",
   "@profileReferencesTitle": {
-    "description": "Title of the reference list."
+    "description": "Profile: title over the biography's references (review F11).",
+    "placeholders": {
+      "gender": {
+        "type": "String",
+        "description": "'female' or 'male' (the companion's gender)."
+      }
+    }
   },
   "relationFather": "الأب",
   "@relationFather": {
@@ -649,9 +661,15 @@
   "@eraKicker": {
     "description": "Kicker above each era of the timeline."
   },
-  "timelineOpenSection": "اقرأ في السيرة",
+  "timelineOpenSection": "{gender, select, female{اقرأ في سيرتها} other{اقرأ في سيرته}}",
   "@timelineOpenSection": {
-    "description": "Opens the biography section linked to a timeline entry."
+    "description": "Timeline entry: opens the linked section of the companion's biography (review F11).",
+    "placeholders": {
+      "gender": {
+        "type": "String",
+        "description": "'female' or 'male' (the companion's gender)."
+      }
+    }
   },
   "timelineEvent": "الحدث: {name}",
   "@timelineEvent": {
@@ -747,7 +765,7 @@
   "@savedCompanions": {
     "description": "Saved group."
   },
-  "savedSections": "أقسام السيرة",
+  "savedSections": "من سِيَر الصحابة",
   "@savedSections": {
     "description": "Saved group."
   },
@@ -763,7 +781,7 @@
   "@savedEmptyTitle": {
     "description": "Empty saved screen title."
   },
-  "savedEmptyMessage": "احفظ صحابيًّا أو قسمًا من السيرة أو قصة لتجده هنا.",
+  "savedEmptyMessage": "احفظ ما تحب من سِيَر الصحابة وفصول السيرة النبوية والقصص لتجده هنا.",
   "@savedEmptyMessage": {
     "description": "Empty saved screen message."
   },
@@ -775,7 +793,7 @@
   "@searchHint": {
     "description": "Search field hint."
   },
-  "searchStart": "ابحث في أسماء الصحابة وألقابهم وكناهم، وفي عناوين السيرة والقصص ونصوصها.",
+  "searchStart": "ابحث في أسماء الصحابة وألقابهم وكناهم، وفي سِيَرهم والسيرة النبوية والقصص.",
   "@searchStart": {
     "description": "Shown before typing."
   },
@@ -804,7 +822,7 @@
   "@searchKindStories": {
     "description": "Search result group."
   },
-  "searchKindSections": "أقسام السيرة",
+  "searchKindSections": "سِيَر الصحابة",
   "@searchKindSections": {
     "description": "Search result group."
   },
@@ -812,13 +830,25 @@
   "@searchKindChapters": {
     "description": "Search result group."
   },
-  "homeFeaturedKicker": "صحابي اليوم",
+  "homeFeaturedKicker": "{gender, select, female{صحابية اليوم} other{صحابي اليوم}}",
   "@homeFeaturedKicker": {
-    "description": "Kicker on the home hero (changes daily)."
+    "description": "Home: kicker over the featured companion, by gender (review F11).",
+    "placeholders": {
+      "gender": {
+        "type": "String",
+        "description": "'female' or 'male' (the companion's gender)."
+      }
+    }
   },
-  "homeReadBiography": "اقرأ السيرة",
+  "homeReadBiography": "{gender, select, female{اقرأ سيرتها} other{اقرأ سيرته}}",
   "@homeReadBiography": {
-    "description": "Opens the featured companion."
+    "description": "Home: button opening the featured companion's biography. Not \"السيرة\", which means the Prophetic Seerah (review F11).",
+    "placeholders": {
+      "gender": {
+        "type": "String",
+        "description": "'female' or 'male' (the companion's gender)."
+      }
+    }
   },
   "homeCategoriesKicker": "التصنيفات",
   "@homeCategoriesKicker": {
@@ -1046,9 +1076,15 @@
   "@readerReadAgain": {
     "description": "Button: forget the progress of a finished passage and start over."
   },
-  "profileStartReading": "ابدأ قراءة السيرة",
+  "profileStartReading": "{gender, select, female{ابدأ قراءة سيرتها} other{ابدأ قراءة سيرته}}",
   "@profileStartReading": {
-    "description": "Profile: start the biography at its first section."
+    "description": "Profile: button that opens the first section (review F11).",
+    "placeholders": {
+      "gender": {
+        "type": "String",
+        "description": "'female' or 'male' (the companion's gender)."
+      }
+    }
   },
   "profileContinueReading": "تابع القراءة",
   "@profileContinueReading": {
@@ -1102,7 +1138,7 @@
       }
     }
   },
-  "profileResumeDetail": "{title} · قُرئ {percent}",
+  "profileResumeDetail": "{title}، قُرئ {percent}",
   "@profileResumeDetail": {
     "description": "Profile: the section to resume and how much of it was read (percent is formatted).",
     "placeholders": {
@@ -1118,11 +1154,11 @@
   "@searchScopeAll": {
     "description": "Search filter chip: every kind of result."
   },
-  "searchScopeCompanions": "الصحابة",
+  "searchScopeCompanions": "أسماء الصحابة",
   "@searchScopeCompanions": {
     "description": "Search filter chip: companions only."
   },
-  "searchScopeBiographies": "السِّيَر",
+  "searchScopeBiographies": "سِيَر الصحابة",
   "@searchScopeBiographies": {
     "description": "Search filter chip: biography sections only."
   },
@@ -1196,7 +1232,7 @@
   "@settingsClearLearning": {
     "description": "Settings: delete review history and journey progress."
   },
-  "settingsLearningCounts": "أسئلة المراجعة: {reviews} · الرحلات: {journeys}",
+  "settingsLearningCounts": "أسئلة المراجعة: {reviews}، الرحلات: {journeys}",
   "@settingsLearningCounts": {
     "description": "Subtitle: how much review and journey data there is.",
     "placeholders": {"reviews": {"type": "String"}, "journeys": {"type": "String"}}
@@ -1443,9 +1479,9 @@
       }
     }
   },
-  "visualRelationOf": "{relation} · {person}",
+  "visualRelationOf": "{relation}، {person}",
   "@visualRelationOf": {
-    "description": "Relation in list form: the relation label, then the other person; e.g. \"من الأبناء · أبو بكر الصديق\".",
+    "description": "Relation in list form: the relation label, then the other person; e.g. \"من الأبناء، أبو بكر الصديق\".",
     "placeholders": {
       "relation": {
         "type": "String"
@@ -1549,7 +1585,7 @@
   "@seerahScrollHint": {
     "description": "Small hint under the Seerah opening that more follows below."
   },
-  "seerahChapterLabel": "الفصل {number} · {date}",
+  "seerahChapterLabel": "الفصل {number}، {date}",
   "@seerahChapterLabel": {
     "description": "Chapter number and time label in lists.",
     "placeholders": {
@@ -1605,7 +1641,7 @@
   "@seerahTopicNotFound": {
     "description": "Seerah topic not found."
   },
-  "seerahChapterOf": "الفصل {number} من {total} · {date}",
+  "seerahChapterOf": "الفصل {number} من {total}، {date}",
   "@seerahChapterOf": {
     "description": "Kicker in the chapter reader.",
     "placeholders": {
@@ -1857,29 +1893,15 @@
   "@homeAllChapters": {
     "description": "Home link to the Seerah hub."
   },
-  "homeDiscoverTitle": "تعرّف على صحابي",
+  "homeDiscoverTitle": "{gender, select, female{تعرّف على صحابية} other{تعرّف على صحابي}}",
   "@homeDiscoverTitle": {
-    "description": "Home: the companion-of-the-day section title."
-  },
-  "homeAtlasKicker": "الأطلس",
-  "@homeAtlasKicker": {
-    "description": "Home section kicker."
-  },
-  "homeAtlasTitle": "أين جرت الأحداث",
-  "@homeAtlasTitle": {
-    "description": "Home: the atlas section title."
-  },
-  "homeArchiveKicker": "الأرشيف",
-  "@homeArchiveKicker": {
-    "description": "Home section kicker."
-  },
-  "homeArchiveTitle": "أحداث مختارة",
-  "@homeArchiveTitle": {
-    "description": "Home: selected events title."
-  },
-  "homeAllEvents": "سجل الأحداث كاملًا",
-  "@homeAllEvents": {
-    "description": "Home link to the event archive."
+    "description": "Home: title over the featured companion, by gender (review F11).",
+    "placeholders": {
+      "gender": {
+        "type": "String",
+        "description": "'female' or 'male' (the companion's gender)."
+      }
+    }
   },
   "searchKindSeerahChapters": "فصول السيرة النبوية",
   "@searchKindSeerahChapters": {
@@ -2714,5 +2736,97 @@
   "shareCardAction": "مشاركة البطاقة",
   "shareCardFailed": "تعذّر تجهيز البطاقة. حاول مرة أخرى.",
   "shareCardFooter": "تطبيق صُحبة • السيرة والصحابة\nGoogle Play",
-  "shareCardOption": "بطاقة"
+  "shareCardOption": "بطاقة",
+  "journeyNotStarted": "لم تبدأ بعد، {totalCount, plural, =1{خطوة واحدة} =2{خطوتان} few{{total} خطوات} other{{total} خطوة}}",
+  "@journeyNotStarted": {
+    "description": "Guided journeys: progress when no step is done yet. Zero is written in words, never as ٠ (review F06).",
+    "placeholders": {
+      "totalCount": {
+        "type": "int"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "timeMorning": "{time} صباحًا",
+  "@timeMorning": {
+    "description": "A clock time before noon, e.g. \"٧ صباحًا\" or \"٧:٣٠ صباحًا\".",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "timeEvening": "{time} مساءً",
+  "@timeEvening": {
+    "description": "A clock time from noon, e.g. \"٩ مساءً\" or \"٩:١٥ مساءً\".",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "homeCategoryCountFemale": "{count, plural, =0{لا صحابيات بعد} =1{صحابية واحدة} =2{صحابيتان} few{{n} صحابيات} other{{n} صحابيةً}}",
+  "@homeCategoryCountFemale": {
+    "description": "Number of companions in a category whose members are all women, e.g. أمهات المؤمنين (review F11).",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "homeAllStories": "كل القصص",
+  "@homeAllStories": {
+    "description": "Home: link from the first stories to the full list in Explore."
+  },
+  "citationEdition": "الطبعة: {edition}",
+  "@citationEdition": {
+    "description": "Source sheet: the edition a page or volume locator refers to (review F19).",
+    "placeholders": {
+      "edition": {
+        "type": "String"
+      }
+    }
+  },
+  "citationNumbering": "الترقيم: {scheme}",
+  "@citationNumbering": {
+    "description": "Source sheet: the numbering scheme a hadith number refers to.",
+    "placeholders": {
+      "scheme": {
+        "type": "String"
+      }
+    }
+  },
+  "readerLegendReported": "{label}: {explanation}",
+  "@readerLegendReported": {
+    "description": "Reader: legend at the top of a passage that has reported claims; label is \"رواية تاريخية\", explanation its meaning (review F10).",
+    "placeholders": {
+      "label": {
+        "type": "String"
+      },
+      "explanation": {
+        "type": "String"
+      }
+    }
+  },
+  "listStatusNote": "تدل هذه العلامة على ما لم يعتمده المراجع المختص بعد. تفاصيل المنهج في «عن التطبيق».",
+  "@listStatusNote": {
+    "description": "One note above a list whose items carry the compact draft mark (review F09)."
+  },
+  "depthFull": "سيرة كاملة",
+  "@depthFull": {
+    "description": "Directory row: the biography is at standard depth (review F07, C1)."
+  },
+  "depthBrief": "تعريف موجز",
+  "@depthBrief": {
+    "description": "Directory row: the biography is a short introduction, to be deepened (review F07, C1)."
+  },
+  "directoryOthers": "صحابة آخرون",
+  "@directoryOthers": {
+    "description": "Directory: heading over companions in no category."
+  }
 }

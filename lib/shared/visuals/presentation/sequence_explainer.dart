@@ -150,7 +150,7 @@ class _Step extends StatelessWidget {
                         if (date != null) format.historicalDate(date),
                         ?place?.name.of(context),
                         if (step.orderUncertain) l10n.sequenceOrderUncertain,
-                      ].join(' · '),
+                      ].join(DisplayFormatter.separator),
                       style: SuhbaTextStyles.of(context).kicker,
                     ),
                     children: [

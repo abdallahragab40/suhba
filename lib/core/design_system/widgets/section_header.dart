@@ -18,7 +18,7 @@ class SectionHeader extends StatelessWidget {
 
   final String title;
 
-  /// Shown zero-padded in the current digit style. Decorative: the title
+  /// Shown with [DisplayFormatter.index]. Decorative: the title
   /// carries the meaning, so the index is hidden from screen readers.
   final int? index;
 
@@ -47,7 +47,7 @@ class SectionHeader extends StatelessWidget {
               if (index != null)
                 ExcludeSemantics(
                   child: Text(
-                    DisplayFormatter.of(context).padded(index),
+                    DisplayFormatter.of(context).index(index),
                     style: styles.kicker.copyWith(color: colors.accentText),
                   ),
                 ),

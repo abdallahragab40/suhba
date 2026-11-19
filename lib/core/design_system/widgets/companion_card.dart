@@ -43,9 +43,14 @@ class CompanionCard extends StatelessWidget {
   final Object? heroTag;
 
   /// Display style for companion names on cards and in the profile header.
+  /// Amiri's descenders (ج، ع، ي) need the taller line, or they touch the
+  /// honorific below.
   static TextStyle? nameStyle(BuildContext context) => Theme.of(
     context,
-  ).textTheme.displaySmall?.copyWith(fontSize: 30, height: 1.35);
+  ).textTheme.displaySmall?.copyWith(fontSize: 30, height: 1.5);
+
+  /// Space between a name and its honorific, wherever both appear.
+  static const nameGap = 6.0;
 
   @override
   Widget build(BuildContext context) {
@@ -90,6 +95,7 @@ class CompanionCard extends StatelessWidget {
                       const SizedBox(height: AppSpacing.xs),
                     ],
                     nameText,
+                    const SizedBox(height: nameGap),
                     Text(honorific, style: SuhbaTextStyles.of(context).kicker),
                     if (subtitle != null && subtitle.isNotEmpty) ...[
                       const SizedBox(height: AppSpacing.xxs),

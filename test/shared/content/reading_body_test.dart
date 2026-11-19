@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/semantics.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/misc.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -12,6 +13,7 @@ import 'package:suhba/core/domain/quran_ref.dart';
 import 'package:suhba/core/domain/reliability.dart';
 import 'package:suhba/shared/content/domain/citation.dart';
 import 'package:suhba/shared/content/domain/content_block.dart';
+import 'package:suhba/shared/content/domain/localized_text.dart';
 import 'package:suhba/shared/content/domain/quran_verses.dart';
 import 'package:suhba/shared/content/presentation/reading_body.dart';
 import 'package:suhba/shared/content/providers.dart';
@@ -50,6 +52,8 @@ void main() {
           theme: AppTheme.light,
           child: Scaffold(
             body: SingleChildScrollView(
+              // The reader's gutter.
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: ReadingBody(
                 blocks: blocks ?? specimenBlocks,
                 provisional: provisional,
@@ -67,14 +71,101 @@ void main() {
     await tester.pumpAndSettle();
   }
 
-  testWidgets('paragraphs: badge only when not established', (tester) async {
+  testWidgets('paragraphs: a quiet mark, reported explained once at the top', (
+    tester,
+  ) async {
+    final handle = tester.ensureSemantics();
     await pump(tester, blocks: specimenBlocks.sublist(0, 2));
+    // No pill under established or reported paragraphs (review F10).
+    expect(find.byType(ReliabilityBadge), findsNothing);
+    final markers = tester
+        .widgetList<CitationMarker>(find.byType(CitationMarker))
+        .toList();
+    expect(markers.map((m) => m.reported), [false, true]);
+    // The reported mark has its own shape, not only its own colour.
+    expect(find.byIcon(CitationMarker.glyphReported), findsNWidgets(2));
+    expect(find.byIcon(CitationMarker.glyphSource), findsOneWidget);
+    // The legend, once, at the top of the passage.
+    expect(
+      find.text(
+        'رواية تاريخية: وردت في كتب السيرة والتاريخ، ولم يُحكم على إسنادها.',
+      ),
+      findsOneWidget,
+    );
+    // Screen readers hear the label on the mark itself.
+    expect(
+      find.bySemanticsLabel('رواية تاريخية، عرض المصادر (١)'),
+      findsOneWidget,
+    );
+    // Two sources show their count; one shows the glyph alone.
+    expect(find.text('٢'), findsOneWidget);
+    expect(find.text('١'), findsNothing);
+    handle.dispose();
+  });
+
+  testWidgets('the mark follows the last word and costs no row', (
+    tester,
+  ) async {
+    final handle = tester.ensureSemantics();
+    // Below a heading, as in a reader: not against the top of the screen,
+    // which would clip the touch area.
+    await pump(tester, blocks: [_heading, _short]);
+    final text = tester.getRect(find.textContaining('فقرة قصيرة'));
+    final marker = tester.getRect(find.byType(CitationMarker));
+    // Inside the paragraph's own line box, not on a row below it.
+    expect(text.contains(marker.center), isTrue);
+    final body = tester.getRect(find.byType(ReadingBody));
+    expect(body.bottom, text.bottom + ReadingBody.gapAfter(_short, null));
+    // Letter-sized on screen, but a full 48 × 48 target for TalkBack.
+    expect(marker.height, lessThan(48));
+    final node = tester.getSemantics(find.bySemanticsLabel('عرض المصادر (٢)'));
+    expect(node.rect.width, greaterThanOrEqualTo(48));
+    expect(node.rect.height, greaterThanOrEqualTo(48));
+    expect(node.getSemanticsData().hasAction(SemanticsAction.tap), isTrue);
+    handle.dispose();
+  });
+
+  testWidgets('a tap just beside the small mark still opens the sources', (
+    tester,
+  ) async {
+    await pump(tester, blocks: [_heading, _short]);
+    final glyph = tester.getRect(find.byIcon(CitationMarker.glyphSource));
+    // Just past the glyph, on the side away from the text: inside the touch
+    // area, outside the drawn mark.
+    await tester.tapAt(glyph.centerLeft - const Offset(6, 0));
+    expect(opened, hasLength(1));
+  });
+
+  testWidgets('disputed and unknown paragraphs keep their explicit badge', (
+    tester,
+  ) async {
+    await pump(
+      tester,
+      blocks: const [
+        ContentBlock.paragraph(
+          text: LocalizedText(ar: 'فقرة مختلف فيها.'),
+          reliability: Reliability.disputed,
+          citations: [
+            Citation(sourceId: 's', locatorStatus: LocatorStatus.pending),
+          ],
+        ),
+        ContentBlock.paragraph(
+          text: LocalizedText(ar: 'فقرة لم تثبت.'),
+          reliability: Reliability.unknown,
+          citations: [
+            Citation(sourceId: 's', locatorStatus: LocatorStatus.pending),
+          ],
+        ),
+      ],
+    );
     final badges = tester.widgetList<ReliabilityBadge>(
       find.byType(ReliabilityBadge),
     );
-    expect(badges.map((b) => b.reliability), [Reliability.reported]);
-    expect(badges.single.provisional, isTrue);
-    expect(find.byType(CitationMarker), findsNWidgets(2));
+    expect(badges.map((b) => b.reliability), [
+      Reliability.disputed,
+      Reliability.unknown,
+    ]);
+    expect(badges.every((b) => b.provisional), isTrue);
   });
 
   testWidgets('a marker passes its citations and reliability', (tester) async {
@@ -139,7 +230,7 @@ void main() {
 
   testWidgets('the reading size applies to body text', (tester) async {
     await pump(tester, blocks: specimenBlocks.sublist(0, 1), textSize: 26);
-    final text = tester.widget<Text>(find.text('فقرة ثابتة بلا شارة ظاهرة.'));
+    final text = tester.widget<Text>(find.textContaining('فقرة ثابتة'));
     expect(text.style!.fontSize, 26);
     expect(text.style!.fontFamily, 'Amiri');
   });
@@ -224,3 +315,16 @@ void main() {
 }
 
 const quranPendingAr = 'تعذّر عرض نص الآية الآن، والمرجع أعلاه.';
+
+const _heading = ContentBlock.heading(text: LocalizedText(ar: 'عنوان'));
+
+/// Short enough that its mark stays on the line with the test font, whose
+/// square glyphs are much wider than Arabic letters.
+const _short = ContentBlock.paragraph(
+  text: LocalizedText(ar: 'فقرة قصيرة.'),
+  reliability: Reliability.established,
+  citations: [
+    Citation(sourceId: 's', locatorStatus: LocatorStatus.pending),
+    Citation(sourceId: 't', locatorStatus: LocatorStatus.pending),
+  ],
+);

@@ -33,7 +33,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tabCompanions => 'Companions';
 
   @override
-  String get tabSaved => 'Saved';
+  String get tabSaved => 'My library';
 
   @override
   String get tabSettings => 'Settings';
@@ -219,7 +219,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profileSectionsKicker => 'Biography';
 
   @override
-  String get profileSectionsTitle => 'Chapters of the biography';
+  String profileSectionsTitle(String gender) {
+    return 'Chapters of the biography';
+  }
 
   @override
   String get profileTimelineKicker => 'Chronology';
@@ -246,7 +248,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profileReferencesKicker => 'Sources';
 
   @override
-  String get profileReferencesTitle => 'References for this biography';
+  String profileReferencesTitle(String gender) {
+    return 'References for this biography';
+  }
 
   @override
   String get relationFather => 'Father';
@@ -447,7 +451,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get eraKicker => 'Period';
 
   @override
-  String get timelineOpenSection => 'Read in the biography';
+  String timelineOpenSection(String gender) {
+    return 'Read in the biography';
+  }
 
   @override
   String timelineEvent(String name) {
@@ -562,10 +568,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String get searchKindChapters => 'Story chapters';
 
   @override
-  String get homeFeaturedKicker => 'Companion of the day';
+  String homeFeaturedKicker(String gender) {
+    return 'Companion of the day';
+  }
 
   @override
-  String get homeReadBiography => 'Read the biography';
+  String homeReadBiography(String gender) {
+    return 'Read the biography';
+  }
 
   @override
   String get homeCategoriesKicker => 'Categories';
@@ -749,7 +759,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get readerReadAgain => 'Read it again';
 
   @override
-  String get profileStartReading => 'Start reading';
+  String profileStartReading(String gender) {
+    return 'Start reading';
+  }
 
   @override
   String get profileContinueReading => 'Continue reading';
@@ -1331,22 +1343,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get homeAllChapters => 'All chapters';
 
   @override
-  String get homeDiscoverTitle => 'Meet a companion';
-
-  @override
-  String get homeAtlasKicker => 'Atlas';
-
-  @override
-  String get homeAtlasTitle => 'Where it happened';
-
-  @override
-  String get homeArchiveKicker => 'Archive';
-
-  @override
-  String get homeArchiveTitle => 'Selected events';
-
-  @override
-  String get homeAllEvents => 'The full archive';
+  String homeDiscoverTitle(String gender) {
+    return 'Meet a companion';
+  }
 
   @override
   String get searchKindSeerahChapters => 'Seerah chapters';
@@ -2194,4 +2193,68 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get shareCardOption => 'Card';
+
+  @override
+  String journeyNotStarted(int totalCount, String total) {
+    String _temp0 = intl.Intl.pluralLogic(
+      totalCount,
+      locale: localeName,
+      other: '$total steps',
+      one: '1 step',
+    );
+    return 'Not started, $_temp0';
+  }
+
+  @override
+  String timeMorning(String time) {
+    return '$time AM';
+  }
+
+  @override
+  String timeEvening(String time) {
+    return '$time PM';
+  }
+
+  @override
+  String homeCategoryCountFemale(int count, String n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$n companions',
+      one: '1 companion',
+      zero: 'No companions yet',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get homeAllStories => 'All stories';
+
+  @override
+  String citationEdition(String edition) {
+    return 'Edition: $edition';
+  }
+
+  @override
+  String citationNumbering(String scheme) {
+    return 'Numbering: $scheme';
+  }
+
+  @override
+  String readerLegendReported(String label, String explanation) {
+    return '$label: $explanation';
+  }
+
+  @override
+  String get listStatusNote =>
+      'This mark is on items a qualified reviewer has not yet approved. See About for the method.';
+
+  @override
+  String get depthFull => 'Full biography';
+
+  @override
+  String get depthBrief => 'Short introduction';
+
+  @override
+  String get directoryOthers => 'Other companions';
 }

@@ -19,10 +19,12 @@ void main() {
       ('integer', f.integer(13), '١٣'),
       ('integer zero', f.integer(0), '٠'),
       ('integer western', western.integer(13), '13'),
-      ('padded single digit', f.padded(1), '٠١'),
-      ('padded two digits', f.padded(12), '١٢'),
-      ('padded width 3', f.padded(5, width: 3), '٠٠٥'),
-      ('padded western', western.padded(7), '07'),
+      // A leading ٠ reads as a dot, so Arabic-Indic indices are not padded.
+      ('index single digit', f.index(1), '١'),
+      ('index two digits', f.index(12), '١٢'),
+      ('index width 3', f.index(5, width: 3), '٥'),
+      ('index western', western.index(7), '07'),
+      ('index western width 3', western.index(5, width: 3), '005'),
       ('percent', f.percent(42), '٤٢٪'),
       ('percent western', western.percent(42), '42٪'),
     ];
@@ -301,5 +303,36 @@ void main() {
     for (final (name, ref, formatter, expected) in cases) {
       test(name, () => expect(formatter.quranRef(ref), expected));
     }
+  });
+
+  group('timeOfDay', () {
+    final cases = <(String, String, String)>[
+      ('evening on the hour', f.timeOfDay(21, 0), '٩ مساءً'),
+      ('morning with minutes', f.timeOfDay(7, 30), '٧:٣٠ صباحًا'),
+      ('minutes are padded', f.timeOfDay(9, 5), '٩:٠٥ صباحًا'),
+      ('midnight', f.timeOfDay(0, 0), '١٢ صباحًا'),
+      ('noon', f.timeOfDay(12, 0), '١٢ مساءً'),
+      ('western', western.timeOfDay(21, 15), '9:15 مساءً'),
+    ];
+    for (final (name, actual, expected) in cases) {
+      test(name, () => expect(actual, expected));
+    }
+    test('on the hour shows no minutes, so no "٠٠"', () {
+      for (var h = 0; h < 24; h++) {
+        expect(f.timeOfDay(h, 0), isNot(contains(':')), reason: '$h:00');
+      }
+    });
+  });
+
+  group('join', () {
+    test('uses the Arabic comma and skips empty parts', () {
+      expect(
+        DisplayFormatter.join(['الفصل ٣', null, '', '٢ هـ']),
+        'الفصل ٣، ٢ هـ',
+      );
+    });
+    test('never uses the middle dot', () {
+      expect(DisplayFormatter.separator, isNot(contains('·')));
+    });
   });
 }

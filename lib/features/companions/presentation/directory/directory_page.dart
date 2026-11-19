@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:suhba/app/router/app_shell.dart';
 import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/design_system/tokens/app_icons.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
-import 'package:suhba/core/design_system/widgets/companion_card.dart';
+import 'package:suhba/core/design_system/widgets/companion_row.dart';
+import 'package:suhba/core/design_system/widgets/draft_badge.dart';
 import 'package:suhba/core/design_system/widgets/empty_state.dart';
 import 'package:suhba/core/design_system/widgets/error_view.dart';
 import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
+import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/features/companions/domain/directory_filter.dart';
 import 'package:suhba/features/companions/presentation/directory/category_filter_bar.dart';
@@ -55,13 +59,7 @@ class DirectoryPage extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(l10n.tabCompanions),
-        actions: [
-          IconButton(
-            tooltip: l10n.searchTooltip,
-            icon: const Icon(Icons.search),
-            onPressed: () => context.push(AppRoutes.search),
-          ),
-        ],
+        actions: shellActions(context),
       ),
       body: body,
     );
@@ -83,9 +81,6 @@ class _DirectoryList extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final shown = filterCompanions(companions, selected);
-    final categoryNames = {
-      for (final c in categories) c.id: c.name.of(context),
-    };
 
     return Align(
       alignment: Alignment.topCenter,
@@ -105,43 +100,77 @@ class _DirectoryList extends StatelessWidget {
               SliverFillRemaining(
                 hasScrollBody: false,
                 child: EmptyState(
-                  icon: Icons.people_alt_outlined,
+                  icon: AppIcons.companions,
                   title: l10n.directoryEmpty,
                 ),
               )
-            else
-              SliverPadding(
-                padding: const EdgeInsetsDirectional.fromSTEB(
-                  AppSpacing.gutter,
-                  0,
-                  AppSpacing.gutter,
-                  AppSpacing.xl,
+            else ...[
+              if (shown.any((c) => !c.review.isApproved))
+                const SliverPadding(
+                  padding: EdgeInsetsDirectional.fromSTEB(
+                    AppSpacing.gutter,
+                    AppSpacing.xs,
+                    AppSpacing.gutter,
+                    AppSpacing.xs,
+                  ),
+                  sliver: SliverToBoxAdapter(child: ListStatusNote()),
                 ),
-                sliver: SliverList.separated(
-                  itemCount: shown.length,
-                  separatorBuilder: (_, _) =>
-                      const SizedBox(height: AppSpacing.sm),
-                  itemBuilder: (context, i) {
-                    final c = shown[i];
-                    return CompanionCard(
-                      key: ValueKey(c.id),
-                      name: c.name.of(context),
-                      honorific: companionHonorific(c.gender),
-                      subtitle: [
-                        if (c.kunya case final k?) k.of(context),
-                        for (final t in c.titles) t.of(context),
-                      ].join(' · '),
-                      tags: [
-                        for (final id in c.categoryIds) ?categoryNames[id],
-                      ],
-                      isDraft: !c.review.isApproved,
-                      isPreliminary: c.review.isPreliminary,
-                      heroTag: DirectoryPage.heroTag(c.id),
-                      onTap: () => context.push(AppRoutes.companion(c.id)),
-                    );
-                  },
+              // All companions: grouped by category. One category: a list.
+              for (final (category, members)
+                  in selected == null
+                      ? groupByCategory(shown, categories)
+                      : [(null, shown)]) ...[
+                if (selected == null)
+                  SliverPadding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                      AppSpacing.gutter,
+                      AppSpacing.lg,
+                      AppSpacing.gutter,
+                      AppSpacing.xxs,
+                    ),
+                    sliver: SliverToBoxAdapter(
+                      child: Semantics(
+                        header: true,
+                        child: Text(
+                          category?.name.of(context) ?? l10n.directoryOthers,
+                          style: Theme.of(context).textTheme.titleMedium,
+                        ),
+                      ),
+                    ),
+                  ),
+                SliverPadding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppSpacing.gutter,
+                  ),
+                  sliver: SliverList.separated(
+                    itemCount: members.length,
+                    separatorBuilder: (_, _) => const Divider(height: 1),
+                    itemBuilder: (context, i) {
+                      final c = members[i];
+                      return CompanionRow(
+                        key: ValueKey(c.id),
+                        name: c.name.of(context),
+                        honorific: companionHonorific(c.gender),
+                        subtitle: [
+                          if (c.kunya case final k?) k.of(context),
+                          for (final t in c.titles) t.of(context),
+                        ].join(DisplayFormatter.separator),
+                        depth: switch (BiographyDepth.of(c)) {
+                          BiographyDepth.full => l10n.depthFull,
+                          BiographyDepth.brief => l10n.depthBrief,
+                          null => null,
+                        },
+                        isDraft: !c.review.isApproved,
+                        isPreliminary: c.review.isPreliminary,
+                        heroTag: DirectoryPage.heroTag(c.id),
+                        onTap: () => context.push(AppRoutes.companion(c.id)),
+                      );
+                    },
+                  ),
                 ),
-              ),
+              ],
+              const SliverToBoxAdapter(child: SizedBox(height: AppSpacing.xl)),
+            ],
           ],
         ),
       ),

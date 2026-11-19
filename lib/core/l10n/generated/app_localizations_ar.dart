@@ -33,7 +33,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get tabCompanions => 'الصحابة';
 
   @override
-  String get tabSaved => 'المحفوظات';
+  String get tabSaved => 'مكتبتي';
 
   @override
   String get tabSettings => 'الإعدادات';
@@ -214,10 +214,16 @@ class AppLocalizationsAr extends AppLocalizations {
   String get profileDeathPlace => 'مكان الوفاة';
 
   @override
-  String get profileSectionsKicker => 'السيرة';
+  String get profileSectionsKicker => 'الفصول';
 
   @override
-  String get profileSectionsTitle => 'فصول السيرة';
+  String profileSectionsTitle(String gender) {
+    String _temp0 = intl.Intl.selectLogic(gender, {
+      'female': 'فصول سيرتها',
+      'other': 'فصول سيرته',
+    });
+    return '$_temp0';
+  }
 
   @override
   String get profileTimelineKicker => 'التسلسل';
@@ -244,7 +250,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get profileReferencesKicker => 'المصادر';
 
   @override
-  String get profileReferencesTitle => 'مراجع هذه السيرة';
+  String profileReferencesTitle(String gender) {
+    String _temp0 = intl.Intl.selectLogic(gender, {
+      'female': 'مراجع سيرتها',
+      'other': 'مراجع سيرته',
+    });
+    return '$_temp0';
+  }
 
   @override
   String get relationFather => 'الأب';
@@ -445,7 +457,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get eraKicker => 'المرحلة';
 
   @override
-  String get timelineOpenSection => 'اقرأ في السيرة';
+  String timelineOpenSection(String gender) {
+    String _temp0 = intl.Intl.selectLogic(gender, {
+      'female': 'اقرأ في سيرتها',
+      'other': 'اقرأ في سيرته',
+    });
+    return '$_temp0';
+  }
 
   @override
   String timelineEvent(String name) {
@@ -511,7 +529,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get savedCompanions => 'الصحابة';
 
   @override
-  String get savedSections => 'أقسام السيرة';
+  String get savedSections => 'من سِيَر الصحابة';
 
   @override
   String get savedStories => 'القصص';
@@ -524,7 +542,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get savedEmptyMessage =>
-      'احفظ صحابيًّا أو قسمًا من السيرة أو قصة لتجده هنا.';
+      'احفظ ما تحب من سِيَر الصحابة وفصول السيرة النبوية والقصص لتجده هنا.';
 
   @override
   String get searchTooltip => 'بحث';
@@ -534,7 +552,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get searchStart =>
-      'ابحث في أسماء الصحابة وألقابهم وكناهم، وفي عناوين السيرة والقصص ونصوصها.';
+      'ابحث في أسماء الصحابة وألقابهم وكناهم، وفي سِيَرهم والسيرة النبوية والقصص.';
 
   @override
   String searchNoResults(String query) {
@@ -554,16 +572,28 @@ class AppLocalizationsAr extends AppLocalizations {
   String get searchKindStories => 'القصص';
 
   @override
-  String get searchKindSections => 'أقسام السيرة';
+  String get searchKindSections => 'سِيَر الصحابة';
 
   @override
   String get searchKindChapters => 'فصول القصص';
 
   @override
-  String get homeFeaturedKicker => 'صحابي اليوم';
+  String homeFeaturedKicker(String gender) {
+    String _temp0 = intl.Intl.selectLogic(gender, {
+      'female': 'صحابية اليوم',
+      'other': 'صحابي اليوم',
+    });
+    return '$_temp0';
+  }
 
   @override
-  String get homeReadBiography => 'اقرأ السيرة';
+  String homeReadBiography(String gender) {
+    String _temp0 = intl.Intl.selectLogic(gender, {
+      'female': 'اقرأ سيرتها',
+      'other': 'اقرأ سيرته',
+    });
+    return '$_temp0';
+  }
 
   @override
   String get homeCategoriesKicker => 'التصنيفات';
@@ -749,7 +779,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get readerReadAgain => 'اقرأه من جديد';
 
   @override
-  String get profileStartReading => 'ابدأ قراءة السيرة';
+  String profileStartReading(String gender) {
+    String _temp0 = intl.Intl.selectLogic(gender, {
+      'female': 'ابدأ قراءة سيرتها',
+      'other': 'ابدأ قراءة سيرته',
+    });
+    return '$_temp0';
+  }
 
   @override
   String get profileContinueReading => 'تابع القراءة';
@@ -798,17 +834,17 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String profileResumeDetail(String title, String percent) {
-    return '$title · قُرئ $percent';
+    return '$title، قُرئ $percent';
   }
 
   @override
   String get searchScopeAll => 'الكل';
 
   @override
-  String get searchScopeCompanions => 'الصحابة';
+  String get searchScopeCompanions => 'أسماء الصحابة';
 
   @override
-  String get searchScopeBiographies => 'السِّيَر';
+  String get searchScopeBiographies => 'سِيَر الصحابة';
 
   @override
   String get searchScopeStories => 'القصص';
@@ -862,7 +898,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String settingsLearningCounts(String reviews, String journeys) {
-    return 'أسئلة المراجعة: $reviews · الرحلات: $journeys';
+    return 'أسئلة المراجعة: $reviews، الرحلات: $journeys';
   }
 
   @override
@@ -1044,7 +1080,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String visualRelationOf(String relation, String person) {
-    return '$relation · $person';
+    return '$relation، $person';
   }
 
   @override
@@ -1116,7 +1152,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String seerahChapterLabel(String number, String date) {
-    return 'الفصل $number · $date';
+    return 'الفصل $number، $date';
   }
 
   @override
@@ -1159,7 +1195,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String seerahChapterOf(String number, String total, String date) {
-    return 'الفصل $number من $total · $date';
+    return 'الفصل $number من $total، $date';
   }
 
   @override
@@ -1337,22 +1373,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get homeAllChapters => 'كل الفصول';
 
   @override
-  String get homeDiscoverTitle => 'تعرّف على صحابي';
-
-  @override
-  String get homeAtlasKicker => 'الأطلس';
-
-  @override
-  String get homeAtlasTitle => 'أين جرت الأحداث';
-
-  @override
-  String get homeArchiveKicker => 'الأرشيف';
-
-  @override
-  String get homeArchiveTitle => 'أحداث مختارة';
-
-  @override
-  String get homeAllEvents => 'سجل الأحداث كاملًا';
+  String homeDiscoverTitle(String gender) {
+    String _temp0 = intl.Intl.selectLogic(gender, {
+      'female': 'تعرّف على صحابية',
+      'other': 'تعرّف على صحابي',
+    });
+    return '$_temp0';
+  }
 
   @override
   String get searchKindSeerahChapters => 'فصول السيرة النبوية';
@@ -2200,4 +2227,72 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get shareCardOption => 'بطاقة';
+
+  @override
+  String journeyNotStarted(int totalCount, String total) {
+    String _temp0 = intl.Intl.pluralLogic(
+      totalCount,
+      locale: localeName,
+      other: '$total خطوة',
+      few: '$total خطوات',
+      two: 'خطوتان',
+      one: 'خطوة واحدة',
+    );
+    return 'لم تبدأ بعد، $_temp0';
+  }
+
+  @override
+  String timeMorning(String time) {
+    return '$time صباحًا';
+  }
+
+  @override
+  String timeEvening(String time) {
+    return '$time مساءً';
+  }
+
+  @override
+  String homeCategoryCountFemale(int count, String n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$n صحابيةً',
+      few: '$n صحابيات',
+      two: 'صحابيتان',
+      one: 'صحابية واحدة',
+      zero: 'لا صحابيات بعد',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get homeAllStories => 'كل القصص';
+
+  @override
+  String citationEdition(String edition) {
+    return 'الطبعة: $edition';
+  }
+
+  @override
+  String citationNumbering(String scheme) {
+    return 'الترقيم: $scheme';
+  }
+
+  @override
+  String readerLegendReported(String label, String explanation) {
+    return '$label: $explanation';
+  }
+
+  @override
+  String get listStatusNote =>
+      'تدل هذه العلامة على ما لم يعتمده المراجع المختص بعد. تفاصيل المنهج في «عن التطبيق».';
+
+  @override
+  String get depthFull => 'سيرة كاملة';
+
+  @override
+  String get depthBrief => 'تعريف موجز';
+
+  @override
+  String get directoryOthers => 'صحابة آخرون';
 }
