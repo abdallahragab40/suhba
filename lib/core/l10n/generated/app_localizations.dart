@@ -3798,6 +3798,24 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'المصادر'**
   String get aboutCreditSources;
+
+  /// Search, before anything is typed: suggested queries separated by "، "; each must find something in the content.
+  ///
+  /// In ar, this message translates to:
+  /// **'الهجرة، أبو بكر، بدر، خديجة'**
+  String get searchSuggestions;
+
+  /// Search with no results: a tip.
+  ///
+  /// In ar, this message translates to:
+  /// **'جرّب كلمة واحدة، أو الاسم دون لقب أو كنية.'**
+  String get searchNoResultsTip;
+
+  /// Search with no results: opens the Companions directory.
+  ///
+  /// In ar, this message translates to:
+  /// **'تصفّح الصحابة'**
+  String get searchBrowseCompanions;
 }
 
 class _AppLocalizationsDelegate

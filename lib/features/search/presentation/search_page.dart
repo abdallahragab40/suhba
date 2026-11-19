@@ -135,7 +135,20 @@ class _StartState extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     if (recent.isEmpty) {
-      return EmptyState(icon: Icons.search, title: l10n.searchStart);
+      // Something to try, rather than an empty page (review F20).
+      return EmptyState(
+        icon: Icons.search,
+        title: l10n.searchStart,
+        action: Wrap(
+          alignment: WrapAlignment.center,
+          spacing: AppSpacing.xs,
+          runSpacing: AppSpacing.xs,
+          children: [
+            for (final q in l10n.searchSuggestions.split('، '))
+              ActionChip(label: Text(q), onPressed: () => onPick(q)),
+          ],
+        ),
+      );
     }
     return ListView(
       padding: const EdgeInsets.all(AppSpacing.gutter),
@@ -281,6 +294,11 @@ class _ResultsView extends ConsumerWidget {
                   title: incomplete
                       ? l10n.searchNoResultsIncomplete(query)
                       : l10n.searchNoResults(query),
+                  message: l10n.searchNoResultsTip,
+                  action: OutlinedButton(
+                    onPressed: () => context.go(AppRoutes.companions),
+                    child: Text(l10n.searchBrowseCompanions),
+                  ),
                 )
               : _Results(hits: hits, onOpen: onOpen),
         ),

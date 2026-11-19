@@ -2278,4 +2278,14 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutCreditSources => 'Sources';
+
+  @override
+  String get searchSuggestions => 'الهجرة، أبو بكر، بدر، خديجة';
+
+  @override
+  String get searchNoResultsTip =>
+      'Try a single word, or the name without a title or kunya.';
+
+  @override
+  String get searchBrowseCompanions => 'Browse the companions';
 }

@@ -52,6 +52,12 @@ class SavedPage extends ConsumerWidget {
         icon: Icons.bookmark_border,
         title: l10n.savedEmptyTitle,
         message: l10n.savedEmptyMessage,
+        // Never a dead end (review F20): the obvious first read.
+        action: FilledButton.icon(
+          icon: const Icon(Icons.auto_stories_outlined),
+          label: Text(l10n.seerahStart),
+          onPressed: () => context.go(AppRoutes.seerah),
+        ),
       );
     } else {
       body = _SavedList(bookmarks: bookmarksAsync.requireValue);

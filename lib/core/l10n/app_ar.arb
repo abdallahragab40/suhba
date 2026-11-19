@@ -2852,5 +2852,17 @@
   "aboutCreditSources": "المصادر",
   "@aboutCreditSources": {
     "description": "About credits: button opening the sources page, where the full Tanzil notice is."
+  },
+  "searchSuggestions": "الهجرة، أبو بكر، بدر، خديجة",
+  "@searchSuggestions": {
+    "description": "Search, before anything is typed: suggested queries separated by \"، \"; each must find something in the content."
+  },
+  "searchNoResultsTip": "جرّب كلمة واحدة، أو الاسم دون لقب أو كنية.",
+  "@searchNoResultsTip": {
+    "description": "Search with no results: a tip."
+  },
+  "searchBrowseCompanions": "تصفّح الصحابة",
+  "@searchBrowseCompanions": {
+    "description": "Search with no results: opens the Companions directory."
   }
 }

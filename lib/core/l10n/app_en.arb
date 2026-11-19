@@ -664,5 +664,8 @@
   "aboutCreditFontsTitle": "Fonts",
   "aboutCreditAmiri": "Amiri and Amiri Quran, by Khaled Hosny, for reading text, names and verses. SIL Open Font License 1.1.",
   "aboutCreditZain": "Zain, by Boutros Fonts, for interface titles and text. SIL Open Font License 1.1.",
-  "aboutCreditSources": "Sources"
+  "aboutCreditSources": "Sources",
+  "searchSuggestions": "الهجرة، أبو بكر، بدر، خديجة",
+  "searchNoResultsTip": "Try a single word, or the name without a title or kunya.",
+  "searchBrowseCompanions": "Browse the companions"
 }

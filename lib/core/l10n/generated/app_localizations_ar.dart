@@ -2316,4 +2316,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get aboutCreditSources => 'المصادر';
+
+  @override
+  String get searchSuggestions => 'الهجرة، أبو بكر، بدر، خديجة';
+
+  @override
+  String get searchNoResultsTip => 'جرّب كلمة واحدة، أو الاسم دون لقب أو كنية.';
+
+  @override
+  String get searchBrowseCompanions => 'تصفّح الصحابة';
 }
