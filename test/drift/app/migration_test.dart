@@ -11,6 +11,7 @@ import 'generated/schema_v2.dart' as v2;
 import 'generated/schema_v3.dart' as v3;
 import 'generated/schema_v4.dart' as v4;
 import 'generated/schema_v5.dart' as v5;
+import 'generated/schema_v6.dart' as v6;
 
 void main() {
   driftRuntimeOptions.dontWarnAboutMultipleDatabases = true;
@@ -277,6 +278,85 @@ void main() {
           ]);
           expect(await db.select(db.journeyEnrollments).get(), isEmpty);
           expect(await db.select(db.journeyProgressEntries).get(), isEmpty);
+        },
+      );
+    },
+  );
+  test(
+    'v5 to v6 keeps journeys and progress and adds an empty reading plan',
+    () async {
+      await verifier.testWithDataIntegrity(
+        oldVersion: 5,
+        newVersion: 6,
+        createOld: v5.DatabaseAtV5.new,
+        createNew: v6.DatabaseAtV6.new,
+        openTestedDatabase: AppDatabase.new,
+        createItems: (batch, db) {
+          batch
+            ..insertAll(db.journeyEnrollments, [
+              const v5.JourneyEnrollmentsData(
+                journeyId: 'meet-the-companions',
+                startedAt: 1760000000,
+                updatedAt: 1760000100,
+                paused: 0,
+              ),
+            ])
+            ..insertAll(db.journeyProgressEntries, [
+              const v5.JourneyProgressEntriesData(
+                journeyId: 'meet-the-companions',
+                stepId: 'meet-the-companions.abu-bakr',
+                startedAt: 1760000000,
+                updatedAt: 1760000200,
+                completedAt: 1760000200,
+                skipped: 0,
+                answeredKeys: '["kunya:abu-bakr"]',
+              ),
+            ])
+            ..insertAll(db.readingProgressEntries, [
+              const v5.ReadingProgressEntriesData(
+                targetType: 'seerahChapter',
+                targetId: 'hijrah-to-madinah',
+                parentId: 'seerah',
+                fraction: 1,
+                completed: 1,
+                contentVersion: '0.3.0',
+                updatedAt: 1760000300,
+              ),
+            ]);
+        },
+        validateItems: (db) async {
+          expect(await db.select(db.journeyEnrollments).get(), [
+            const v6.JourneyEnrollmentsData(
+              journeyId: 'meet-the-companions',
+              startedAt: 1760000000,
+              updatedAt: 1760000100,
+              paused: 0,
+            ),
+          ]);
+          expect(await db.select(db.journeyProgressEntries).get(), [
+            const v6.JourneyProgressEntriesData(
+              journeyId: 'meet-the-companions',
+              stepId: 'meet-the-companions.abu-bakr',
+              startedAt: 1760000000,
+              updatedAt: 1760000200,
+              completedAt: 1760000200,
+              skipped: 0,
+              answeredKeys: '["kunya:abu-bakr"]',
+            ),
+          ]);
+          expect(await db.select(db.readingProgressEntries).get(), [
+            const v6.ReadingProgressEntriesData(
+              targetType: 'seerahChapter',
+              targetId: 'hijrah-to-madinah',
+              parentId: 'seerah',
+              fraction: 1,
+              completed: 1,
+              contentVersion: '0.3.0',
+              updatedAt: 1760000300,
+            ),
+          ]);
+          // No plan until the reader chooses a pace.
+          expect(await db.select(db.readingPlans).get(), isEmpty);
         },
       );
     },

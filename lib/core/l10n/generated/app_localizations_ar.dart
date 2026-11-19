@@ -2145,7 +2145,7 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get reminderGroup => 'التذكير';
+  String get reminderGroup => 'الورد والتذكير';
 
   @override
   String get reminderTitle => 'تذكير يومي';
@@ -2281,6 +2281,64 @@ class AppLocalizationsAr extends AppLocalizations {
   String reminderPortionBody(String title, String minutes) {
     return 'ورد اليوم: $title، $minutes';
   }
+
+  @override
+  String dailyPortionOf(String n, String total) {
+    return 'ورد اليوم: $n من $total';
+  }
+
+  @override
+  String get dailyPortionComplete => 'تمّ ورد اليوم';
+
+  @override
+  String dailyPortionTomorrow(String title) {
+    return 'وغدًا: $title';
+  }
+
+  @override
+  String get dailyPortionReadAhead => 'اقرأه الآن';
+
+  @override
+  String dailyPortionBehind(int count, String n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'بقي من الأيام الماضية $n فصلًا.',
+      few: 'بقي من الأيام الماضية $n فصول.',
+      two: 'بقي من الأيام الماضية فصلان.',
+      one: 'بقي من الأيام الماضية فصل واحد.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get planContinueFromHere => 'تابع من حيث توقفت';
+
+  @override
+  String get planCatchUp => 'تدارك تدريجيًا';
+
+  @override
+  String get planTitle => 'الورد اليومي من السيرة';
+
+  @override
+  String get planNone => 'بلا خطة';
+
+  @override
+  String planPace(int count, String n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$n فصلًا',
+      few: '$n فصول',
+      two: 'فصلان',
+      one: 'فصل',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get planNote =>
+      'عدد فصول السيرة في اليوم. إن فات يوم، تختار أن تتابع من حيث توقفت أو أن تتدارك تدريجيًا.';
 
   @override
   String citationEdition(String edition) {

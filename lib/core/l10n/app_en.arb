@@ -635,7 +635,7 @@
   "learnedLearning": "Learning",
   "learnedRevisit": "Worth revisiting",
   "reviewDueCount": "{count, plural, =1{One question to review today} other{{n} questions to review today}}",
-  "reminderGroup": "Reminders",
+  "reminderGroup": "Daily reading and reminder",
   "reminderTitle": "Daily reminder",
   "reminderIntro": "Choose a time for a reading or review. The reminder stays off until you enable it.",
   "reminderSwitch": "Enable reminder",
@@ -689,6 +689,54 @@
       }
     }
   },
+  "dailyPortionOf": "Today's reading: {n} of {total}",
+  "@dailyPortionOf": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "dailyPortionComplete": "Today's reading is done",
+  "dailyPortionTomorrow": "Tomorrow: {title}",
+  "@dailyPortionTomorrow": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "dailyPortionReadAhead": "Read it now",
+  "dailyPortionBehind": "{count, plural, =1{One chapter remains from earlier days.} other{{n} chapters remain from earlier days.}}",
+  "@dailyPortionBehind": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "planContinueFromHere": "Continue where I stopped",
+  "planCatchUp": "Catch up gradually",
+  "planTitle": "Daily Seerah reading",
+  "planNone": "No plan",
+  "planPace": "{count, plural, =1{1 chapter} other{{n} chapters}}",
+  "@planPace": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "planNote": "Seerah chapters a day. After a missed day you choose to continue where you stopped or to catch up gradually.",
   "citationEdition": "Edition: {edition}",
   "citationNumbering": "Numbering: {scheme}",
   "readerLegendReported": "{label}: {explanation}",

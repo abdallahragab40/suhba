@@ -2654,7 +2654,7 @@
       }
     }
   },
-  "reminderGroup": "التذكير",
+  "reminderGroup": "الورد والتذكير",
   "@reminderGroup": {
     "description": "Optional reading reminder: reminderGroup"
   },
@@ -2818,6 +2818,79 @@
         "type": "String"
       }
     }
+  },
+  "dailyPortionOf": "ورد اليوم: {n} من {total}",
+  "@dailyPortionOf": {
+    "description": "Kicker when today's plan has more than one chapter: which one this is.",
+    "placeholders": {
+      "n": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "dailyPortionComplete": "تمّ ورد اليوم",
+  "@dailyPortionComplete": {
+    "description": "Title once today's planned chapters are read."
+  },
+  "dailyPortionTomorrow": "وغدًا: {title}",
+  "@dailyPortionTomorrow": {
+    "description": "Tomorrow's chapter, under the completed card.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "dailyPortionReadAhead": "اقرأه الآن",
+  "@dailyPortionReadAhead": {
+    "description": "Optional: read tomorrow's chapter today."
+  },
+  "dailyPortionBehind": "{count, plural, =1{بقي من الأيام الماضية فصل واحد.} =2{بقي من الأيام الماضية فصلان.} few{بقي من الأيام الماضية {n} فصول.} other{بقي من الأيام الماضية {n} فصلًا.}}",
+  "@dailyPortionBehind": {
+    "description": "After a missed day: chapters the plan expected and not yet read. Neutral wording, no guilt.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "planContinueFromHere": "تابع من حيث توقفت",
+  "@planContinueFromHere": {
+    "description": "After a missed day: restart the plan from today, nothing owed. The default."
+  },
+  "planCatchUp": "تدارك تدريجيًا",
+  "@planCatchUp": {
+    "description": "After a missed day: one extra chapter a day until caught up."
+  },
+  "planTitle": "الورد اليومي من السيرة",
+  "@planTitle": {
+    "description": "Settings: the reading plan."
+  },
+  "planNone": "بلا خطة",
+  "@planNone": {
+    "description": "Settings: no reading plan."
+  },
+  "planPace": "{count, plural, =1{فصل} =2{فصلان} few{{n} فصول} other{{n} فصلًا}}",
+  "@planPace": {
+    "description": "Settings: a pace choice, chapters a day.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "planNote": "عدد فصول السيرة في اليوم. إن فات يوم، تختار أن تتابع من حيث توقفت أو أن تتدارك تدريجيًا.",
+  "@planNote": {
+    "description": "Settings: what the plan does."
   },
   "citationEdition": "الطبعة: {edition}",
   "@citationEdition": {

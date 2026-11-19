@@ -2110,7 +2110,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get reminderGroup => 'Reminders';
+  String get reminderGroup => 'Daily reading and reminder';
 
   @override
   String get reminderTitle => 'Daily reminder';
@@ -2246,6 +2246,60 @@ class AppLocalizationsEn extends AppLocalizations {
   String reminderPortionBody(String title, String minutes) {
     return 'Today\'s reading: $title, $minutes';
   }
+
+  @override
+  String dailyPortionOf(String n, String total) {
+    return 'Today\'s reading: $n of $total';
+  }
+
+  @override
+  String get dailyPortionComplete => 'Today\'s reading is done';
+
+  @override
+  String dailyPortionTomorrow(String title) {
+    return 'Tomorrow: $title';
+  }
+
+  @override
+  String get dailyPortionReadAhead => 'Read it now';
+
+  @override
+  String dailyPortionBehind(int count, String n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$n chapters remain from earlier days.',
+      one: 'One chapter remains from earlier days.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get planContinueFromHere => 'Continue where I stopped';
+
+  @override
+  String get planCatchUp => 'Catch up gradually';
+
+  @override
+  String get planTitle => 'Daily Seerah reading';
+
+  @override
+  String get planNone => 'No plan';
+
+  @override
+  String planPace(int count, String n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$n chapters',
+      one: '1 chapter',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get planNote =>
+      'Seerah chapters a day. After a missed day you choose to continue where you stopped or to catch up gradually.';
 
   @override
   String citationEdition(String edition) {

@@ -98,6 +98,34 @@ class JourneyProgressEntries extends Table {
   Set<Column> get primaryKey => {journeyId, stepId};
 }
 
+/// The reader's daily reading plan (review K3): at most one row. A
+/// preference, like the reminder: not part of reading-data exports.
+@DataClassName('ReadingPlanRow')
+class ReadingPlans extends Table {
+  /// Always 1: there is one plan.
+  IntColumn get id => integer()();
+
+  /// Seerah chapters a day, 1–3.
+  // Drift resolves column references inside check expressions at generation.
+  // ignore: recursive_getters
+  IntColumn get pace => integer().check(pace.isBetweenValues(1, 3))();
+
+  /// UTC midnight encoding the local date the plan (re)started.
+  DateTimeColumn get startedOn => dateTime()();
+
+  /// Seerah chapters already finished on that date.
+  IntColumn get baseline =>
+      // ignore: recursive_getters
+      integer().check(baseline.isBiggerOrEqualValue(0))();
+
+  /// After a missed day, add one chapter a day until caught up.
+  BoolColumn get catchUp => boolean().withDefault(const Constant(false))();
+  DateTimeColumn get updatedAt => dateTime()();
+
+  @override
+  Set<Column> get primaryKey => {id};
+}
+
 /// User data only; exported solely at the reader's request.
 @DriftDatabase(
   tables: [
@@ -106,6 +134,7 @@ class JourneyProgressEntries extends Table {
     ReviewItems,
     JourneyEnrollments,
     JourneyProgressEntries,
+    ReadingPlans,
   ],
 )
 class AppDatabase extends _$AppDatabase {
@@ -115,7 +144,7 @@ class AppDatabase extends _$AppDatabase {
   factory AppDatabase.open() => AppDatabase(driftDatabase(name: 'suhba'));
 
   @override
-  int get schemaVersion => 5;
+  int get schemaVersion => 6;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -144,6 +173,7 @@ class AppDatabase extends _$AppDatabase {
         await m.createTable(schema.journeyEnrollments);
         await m.createTable(schema.journeyProgressEntries);
       },
+      from5To6: (m, schema) => m.createTable(schema.readingPlans),
     ),
   );
 }

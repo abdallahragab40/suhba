@@ -2255,6 +2255,412 @@ class JourneyProgressEntriesCompanion
   }
 }
 
+class $ReadingPlansTable extends ReadingPlans
+    with TableInfo<$ReadingPlansTable, ReadingPlanRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $ReadingPlansTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<int> id = GeneratedColumn<int>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _paceMeta = const VerificationMeta('pace');
+  @override
+  late final GeneratedColumn<int> pace = GeneratedColumn<int>(
+    'pace',
+    aliasedName,
+    false,
+    check: () => ComparableExpr(pace).isBetweenValues(1, 3),
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _startedOnMeta = const VerificationMeta(
+    'startedOn',
+  );
+  @override
+  late final GeneratedColumn<DateTime> startedOn = GeneratedColumn<DateTime>(
+    'started_on',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _baselineMeta = const VerificationMeta(
+    'baseline',
+  );
+  @override
+  late final GeneratedColumn<int> baseline = GeneratedColumn<int>(
+    'baseline',
+    aliasedName,
+    false,
+    check: () => ComparableExpr(baseline).isBiggerOrEqualValue(0),
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _catchUpMeta = const VerificationMeta(
+    'catchUp',
+  );
+  @override
+  late final GeneratedColumn<bool> catchUp = GeneratedColumn<bool>(
+    'catch_up',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("catch_up" IN (0, 1))',
+    ),
+    defaultValue: const Constant(false),
+  );
+  static const VerificationMeta _updatedAtMeta = const VerificationMeta(
+    'updatedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> updatedAt = GeneratedColumn<DateTime>(
+    'updated_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    pace,
+    startedOn,
+    baseline,
+    catchUp,
+    updatedAt,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'reading_plans';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<ReadingPlanRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    }
+    if (data.containsKey('pace')) {
+      context.handle(
+        _paceMeta,
+        pace.isAcceptableOrUnknown(data['pace']!, _paceMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_paceMeta);
+    }
+    if (data.containsKey('started_on')) {
+      context.handle(
+        _startedOnMeta,
+        startedOn.isAcceptableOrUnknown(data['started_on']!, _startedOnMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_startedOnMeta);
+    }
+    if (data.containsKey('baseline')) {
+      context.handle(
+        _baselineMeta,
+        baseline.isAcceptableOrUnknown(data['baseline']!, _baselineMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_baselineMeta);
+    }
+    if (data.containsKey('catch_up')) {
+      context.handle(
+        _catchUpMeta,
+        catchUp.isAcceptableOrUnknown(data['catch_up']!, _catchUpMeta),
+      );
+    }
+    if (data.containsKey('updated_at')) {
+      context.handle(
+        _updatedAtMeta,
+        updatedAt.isAcceptableOrUnknown(data['updated_at']!, _updatedAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_updatedAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  ReadingPlanRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return ReadingPlanRow(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}id'],
+      )!,
+      pace: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}pace'],
+      )!,
+      startedOn: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}started_on'],
+      )!,
+      baseline: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}baseline'],
+      )!,
+      catchUp: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}catch_up'],
+      )!,
+      updatedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}updated_at'],
+      )!,
+    );
+  }
+
+  @override
+  $ReadingPlansTable createAlias(String alias) {
+    return $ReadingPlansTable(attachedDatabase, alias);
+  }
+}
+
+class ReadingPlanRow extends DataClass implements Insertable<ReadingPlanRow> {
+  /// Always 1: there is one plan.
+  final int id;
+
+  /// Seerah chapters a day, 1–3.
+  final int pace;
+
+  /// UTC midnight encoding the local date the plan (re)started.
+  final DateTime startedOn;
+
+  /// Seerah chapters already finished on that date.
+  final int baseline;
+
+  /// After a missed day, add one chapter a day until caught up.
+  final bool catchUp;
+  final DateTime updatedAt;
+  const ReadingPlanRow({
+    required this.id,
+    required this.pace,
+    required this.startedOn,
+    required this.baseline,
+    required this.catchUp,
+    required this.updatedAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<int>(id);
+    map['pace'] = Variable<int>(pace);
+    map['started_on'] = Variable<DateTime>(startedOn);
+    map['baseline'] = Variable<int>(baseline);
+    map['catch_up'] = Variable<bool>(catchUp);
+    map['updated_at'] = Variable<DateTime>(updatedAt);
+    return map;
+  }
+
+  ReadingPlansCompanion toCompanion(bool nullToAbsent) {
+    return ReadingPlansCompanion(
+      id: Value(id),
+      pace: Value(pace),
+      startedOn: Value(startedOn),
+      baseline: Value(baseline),
+      catchUp: Value(catchUp),
+      updatedAt: Value(updatedAt),
+    );
+  }
+
+  factory ReadingPlanRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return ReadingPlanRow(
+      id: serializer.fromJson<int>(json['id']),
+      pace: serializer.fromJson<int>(json['pace']),
+      startedOn: serializer.fromJson<DateTime>(json['startedOn']),
+      baseline: serializer.fromJson<int>(json['baseline']),
+      catchUp: serializer.fromJson<bool>(json['catchUp']),
+      updatedAt: serializer.fromJson<DateTime>(json['updatedAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<int>(id),
+      'pace': serializer.toJson<int>(pace),
+      'startedOn': serializer.toJson<DateTime>(startedOn),
+      'baseline': serializer.toJson<int>(baseline),
+      'catchUp': serializer.toJson<bool>(catchUp),
+      'updatedAt': serializer.toJson<DateTime>(updatedAt),
+    };
+  }
+
+  ReadingPlanRow copyWith({
+    int? id,
+    int? pace,
+    DateTime? startedOn,
+    int? baseline,
+    bool? catchUp,
+    DateTime? updatedAt,
+  }) => ReadingPlanRow(
+    id: id ?? this.id,
+    pace: pace ?? this.pace,
+    startedOn: startedOn ?? this.startedOn,
+    baseline: baseline ?? this.baseline,
+    catchUp: catchUp ?? this.catchUp,
+    updatedAt: updatedAt ?? this.updatedAt,
+  );
+  ReadingPlanRow copyWithCompanion(ReadingPlansCompanion data) {
+    return ReadingPlanRow(
+      id: data.id.present ? data.id.value : this.id,
+      pace: data.pace.present ? data.pace.value : this.pace,
+      startedOn: data.startedOn.present ? data.startedOn.value : this.startedOn,
+      baseline: data.baseline.present ? data.baseline.value : this.baseline,
+      catchUp: data.catchUp.present ? data.catchUp.value : this.catchUp,
+      updatedAt: data.updatedAt.present ? data.updatedAt.value : this.updatedAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('ReadingPlanRow(')
+          ..write('id: $id, ')
+          ..write('pace: $pace, ')
+          ..write('startedOn: $startedOn, ')
+          ..write('baseline: $baseline, ')
+          ..write('catchUp: $catchUp, ')
+          ..write('updatedAt: $updatedAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(id, pace, startedOn, baseline, catchUp, updatedAt);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is ReadingPlanRow &&
+          other.id == this.id &&
+          other.pace == this.pace &&
+          other.startedOn == this.startedOn &&
+          other.baseline == this.baseline &&
+          other.catchUp == this.catchUp &&
+          other.updatedAt == this.updatedAt);
+}
+
+class ReadingPlansCompanion extends UpdateCompanion<ReadingPlanRow> {
+  final Value<int> id;
+  final Value<int> pace;
+  final Value<DateTime> startedOn;
+  final Value<int> baseline;
+  final Value<bool> catchUp;
+  final Value<DateTime> updatedAt;
+  const ReadingPlansCompanion({
+    this.id = const Value.absent(),
+    this.pace = const Value.absent(),
+    this.startedOn = const Value.absent(),
+    this.baseline = const Value.absent(),
+    this.catchUp = const Value.absent(),
+    this.updatedAt = const Value.absent(),
+  });
+  ReadingPlansCompanion.insert({
+    this.id = const Value.absent(),
+    required int pace,
+    required DateTime startedOn,
+    required int baseline,
+    this.catchUp = const Value.absent(),
+    required DateTime updatedAt,
+  }) : pace = Value(pace),
+       startedOn = Value(startedOn),
+       baseline = Value(baseline),
+       updatedAt = Value(updatedAt);
+  static Insertable<ReadingPlanRow> custom({
+    Expression<int>? id,
+    Expression<int>? pace,
+    Expression<DateTime>? startedOn,
+    Expression<int>? baseline,
+    Expression<bool>? catchUp,
+    Expression<DateTime>? updatedAt,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (pace != null) 'pace': pace,
+      if (startedOn != null) 'started_on': startedOn,
+      if (baseline != null) 'baseline': baseline,
+      if (catchUp != null) 'catch_up': catchUp,
+      if (updatedAt != null) 'updated_at': updatedAt,
+    });
+  }
+
+  ReadingPlansCompanion copyWith({
+    Value<int>? id,
+    Value<int>? pace,
+    Value<DateTime>? startedOn,
+    Value<int>? baseline,
+    Value<bool>? catchUp,
+    Value<DateTime>? updatedAt,
+  }) {
+    return ReadingPlansCompanion(
+      id: id ?? this.id,
+      pace: pace ?? this.pace,
+      startedOn: startedOn ?? this.startedOn,
+      baseline: baseline ?? this.baseline,
+      catchUp: catchUp ?? this.catchUp,
+      updatedAt: updatedAt ?? this.updatedAt,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<int>(id.value);
+    }
+    if (pace.present) {
+      map['pace'] = Variable<int>(pace.value);
+    }
+    if (startedOn.present) {
+      map['started_on'] = Variable<DateTime>(startedOn.value);
+    }
+    if (baseline.present) {
+      map['baseline'] = Variable<int>(baseline.value);
+    }
+    if (catchUp.present) {
+      map['catch_up'] = Variable<bool>(catchUp.value);
+    }
+    if (updatedAt.present) {
+      map['updated_at'] = Variable<DateTime>(updatedAt.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('ReadingPlansCompanion(')
+          ..write('id: $id, ')
+          ..write('pace: $pace, ')
+          ..write('startedOn: $startedOn, ')
+          ..write('baseline: $baseline, ')
+          ..write('catchUp: $catchUp, ')
+          ..write('updatedAt: $updatedAt')
+          ..write(')'))
+        .toString();
+  }
+}
+
 abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
   $AppDatabaseManager get managers => $AppDatabaseManager(this);
@@ -2266,6 +2672,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
       $JourneyEnrollmentsTable(this);
   late final $JourneyProgressEntriesTable journeyProgressEntries =
       $JourneyProgressEntriesTable(this);
+  late final $ReadingPlansTable readingPlans = $ReadingPlansTable(this);
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
@@ -2276,6 +2683,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     reviewItems,
     journeyEnrollments,
     journeyProgressEntries,
+    readingPlans,
   ];
 }
 
@@ -3481,6 +3889,219 @@ typedef $$JourneyProgressEntriesTableProcessedTableManager =
       JourneyStepProgressRow,
       PrefetchHooks Function()
     >;
+typedef $$ReadingPlansTableCreateCompanionBuilder =
+    ReadingPlansCompanion Function({
+      Value<int> id,
+      required int pace,
+      required DateTime startedOn,
+      required int baseline,
+      Value<bool> catchUp,
+      required DateTime updatedAt,
+    });
+typedef $$ReadingPlansTableUpdateCompanionBuilder =
+    ReadingPlansCompanion Function({
+      Value<int> id,
+      Value<int> pace,
+      Value<DateTime> startedOn,
+      Value<int> baseline,
+      Value<bool> catchUp,
+      Value<DateTime> updatedAt,
+    });
+
+class $$ReadingPlansTableFilterComposer
+    extends Composer<_$AppDatabase, $ReadingPlansTable> {
+  $$ReadingPlansTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get pace => $composableBuilder(
+    column: $table.pace,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get startedOn => $composableBuilder(
+    column: $table.startedOn,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get baseline => $composableBuilder(
+    column: $table.baseline,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get catchUp => $composableBuilder(
+    column: $table.catchUp,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$ReadingPlansTableOrderingComposer
+    extends Composer<_$AppDatabase, $ReadingPlansTable> {
+  $$ReadingPlansTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get pace => $composableBuilder(
+    column: $table.pace,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get startedOn => $composableBuilder(
+    column: $table.startedOn,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get baseline => $composableBuilder(
+    column: $table.baseline,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get catchUp => $composableBuilder(
+    column: $table.catchUp,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$ReadingPlansTableAnnotationComposer
+    extends Composer<_$AppDatabase, $ReadingPlansTable> {
+  $$ReadingPlansTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<int> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<int> get pace =>
+      $composableBuilder(column: $table.pace, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get startedOn =>
+      $composableBuilder(column: $table.startedOn, builder: (column) => column);
+
+  GeneratedColumn<int> get baseline =>
+      $composableBuilder(column: $table.baseline, builder: (column) => column);
+
+  GeneratedColumn<bool> get catchUp =>
+      $composableBuilder(column: $table.catchUp, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+}
+
+class $$ReadingPlansTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $ReadingPlansTable,
+          ReadingPlanRow,
+          $$ReadingPlansTableFilterComposer,
+          $$ReadingPlansTableOrderingComposer,
+          $$ReadingPlansTableAnnotationComposer,
+          $$ReadingPlansTableCreateCompanionBuilder,
+          $$ReadingPlansTableUpdateCompanionBuilder,
+          (
+            ReadingPlanRow,
+            BaseReferences<_$AppDatabase, $ReadingPlansTable, ReadingPlanRow>,
+          ),
+          ReadingPlanRow,
+          PrefetchHooks Function()
+        > {
+  $$ReadingPlansTableTableManager(_$AppDatabase db, $ReadingPlansTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$ReadingPlansTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$ReadingPlansTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$ReadingPlansTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<int> id = const Value.absent(),
+                Value<int> pace = const Value.absent(),
+                Value<DateTime> startedOn = const Value.absent(),
+                Value<int> baseline = const Value.absent(),
+                Value<bool> catchUp = const Value.absent(),
+                Value<DateTime> updatedAt = const Value.absent(),
+              }) => ReadingPlansCompanion(
+                id: id,
+                pace: pace,
+                startedOn: startedOn,
+                baseline: baseline,
+                catchUp: catchUp,
+                updatedAt: updatedAt,
+              ),
+          createCompanionCallback:
+              ({
+                Value<int> id = const Value.absent(),
+                required int pace,
+                required DateTime startedOn,
+                required int baseline,
+                Value<bool> catchUp = const Value.absent(),
+                required DateTime updatedAt,
+              }) => ReadingPlansCompanion.insert(
+                id: id,
+                pace: pace,
+                startedOn: startedOn,
+                baseline: baseline,
+                catchUp: catchUp,
+                updatedAt: updatedAt,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$ReadingPlansTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $ReadingPlansTable,
+      ReadingPlanRow,
+      $$ReadingPlansTableFilterComposer,
+      $$ReadingPlansTableOrderingComposer,
+      $$ReadingPlansTableAnnotationComposer,
+      $$ReadingPlansTableCreateCompanionBuilder,
+      $$ReadingPlansTableUpdateCompanionBuilder,
+      (
+        ReadingPlanRow,
+        BaseReferences<_$AppDatabase, $ReadingPlansTable, ReadingPlanRow>,
+      ),
+      ReadingPlanRow,
+      PrefetchHooks Function()
+    >;
 
 class $AppDatabaseManager {
   final _$AppDatabase _db;
@@ -3501,4 +4122,6 @@ class $AppDatabaseManager {
         _db,
         _db.journeyProgressEntries,
       );
+  $$ReadingPlansTableTableManager get readingPlans =>
+      $$ReadingPlansTableTableManager(_db, _db.readingPlans);
 }

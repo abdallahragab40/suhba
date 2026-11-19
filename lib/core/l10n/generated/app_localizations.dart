@@ -3544,7 +3544,7 @@ abstract class AppLocalizations {
   /// Optional reading reminder: reminderGroup
   ///
   /// In ar, this message translates to:
-  /// **'التذكير'**
+  /// **'الورد والتذكير'**
   String get reminderGroup;
 
   /// Optional reading reminder: reminderTitle
@@ -3762,6 +3762,72 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'ورد اليوم: {title}، {minutes}'**
   String reminderPortionBody(String title, String minutes);
+
+  /// Kicker when today's plan has more than one chapter: which one this is.
+  ///
+  /// In ar, this message translates to:
+  /// **'ورد اليوم: {n} من {total}'**
+  String dailyPortionOf(String n, String total);
+
+  /// Title once today's planned chapters are read.
+  ///
+  /// In ar, this message translates to:
+  /// **'تمّ ورد اليوم'**
+  String get dailyPortionComplete;
+
+  /// Tomorrow's chapter, under the completed card.
+  ///
+  /// In ar, this message translates to:
+  /// **'وغدًا: {title}'**
+  String dailyPortionTomorrow(String title);
+
+  /// Optional: read tomorrow's chapter today.
+  ///
+  /// In ar, this message translates to:
+  /// **'اقرأه الآن'**
+  String get dailyPortionReadAhead;
+
+  /// After a missed day: chapters the plan expected and not yet read. Neutral wording, no guilt.
+  ///
+  /// In ar, this message translates to:
+  /// **'{count, plural, =1{بقي من الأيام الماضية فصل واحد.} =2{بقي من الأيام الماضية فصلان.} few{بقي من الأيام الماضية {n} فصول.} other{بقي من الأيام الماضية {n} فصلًا.}}'**
+  String dailyPortionBehind(int count, String n);
+
+  /// After a missed day: restart the plan from today, nothing owed. The default.
+  ///
+  /// In ar, this message translates to:
+  /// **'تابع من حيث توقفت'**
+  String get planContinueFromHere;
+
+  /// After a missed day: one extra chapter a day until caught up.
+  ///
+  /// In ar, this message translates to:
+  /// **'تدارك تدريجيًا'**
+  String get planCatchUp;
+
+  /// Settings: the reading plan.
+  ///
+  /// In ar, this message translates to:
+  /// **'الورد اليومي من السيرة'**
+  String get planTitle;
+
+  /// Settings: no reading plan.
+  ///
+  /// In ar, this message translates to:
+  /// **'بلا خطة'**
+  String get planNone;
+
+  /// Settings: a pace choice, chapters a day.
+  ///
+  /// In ar, this message translates to:
+  /// **'{count, plural, =1{فصل} =2{فصلان} few{{n} فصول} other{{n} فصلًا}}'**
+  String planPace(int count, String n);
+
+  /// Settings: what the plan does.
+  ///
+  /// In ar, this message translates to:
+  /// **'عدد فصول السيرة في اليوم. إن فات يوم، تختار أن تتابع من حيث توقفت أو أن تتدارك تدريجيًا.'**
+  String get planNote;
 
   /// Source sheet: the edition a page or volume locator refers to (review F19).
   ///

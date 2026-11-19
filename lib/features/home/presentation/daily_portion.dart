@@ -14,6 +14,8 @@ import 'package:suhba/features/home/domain/next_step.dart';
 import 'package:suhba/features/home/presentation/next_step_card.dart';
 import 'package:suhba/features/journeys/domain/journey.dart';
 import 'package:suhba/features/journeys/presentation/journey_providers.dart';
+import 'package:suhba/features/reading_plan/domain/reading_plan.dart';
+import 'package:suhba/features/reading_plan/presentation/reading_plan_providers.dart';
 import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
 import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
 import 'package:suhba/features/seerah/presentation/seerah_hub_page.dart';
@@ -50,11 +52,18 @@ class JourneyPortion extends DailyPortion {
 
 /// A Seerah chapter, which can be marked read with one tap.
 class SeerahPortion extends DailyPortion {
-  const SeerahPortion(this.chapter, {this.progress});
+  const SeerahPortion(this.chapter, {this.progress, this.target});
   final SeerahChapterSummary chapter;
 
   /// How far the reader got in it, if they started.
   final ReadingProgress? progress;
+
+  /// Today's share under the reader's plan (K3); null without a plan,
+  /// when every tap simply moves on to the next chapter.
+  final DailyTarget? target;
+
+  /// The plan's chapters for today are read; [chapter] is tomorrow's.
+  bool get doneForToday => target?.done ?? false;
   @override
   int get minutes => readingMinutes(chapter.wordCount);
   @override
@@ -111,9 +120,22 @@ final dailyPortionProvider = FutureProvider<DailyPortion?>((ref) async {
   final chapter =
       seerahResumeChapter(index.chapters, progress) ??
       (progress.isEmpty ? index.chapters.firstOrNull : null);
-  return chapter == null
-      ? null
-      : SeerahPortion(chapter, progress: progress[chapter.id]);
+  if (chapter == null) return null;
+  final plan = await ref.watch(readingPlanProvider.future);
+  final counts = seerahFinished(progress.values, today);
+  return SeerahPortion(
+    chapter,
+    progress: progress[chapter.id],
+    target: plan == null
+        ? null
+        : dailyTarget(
+            plan: plan,
+            today: today,
+            finished: counts.finished,
+            finishedToday: counts.finishedToday,
+            total: index.chapters.length,
+          ),
+  );
 });
 
 /// Home's first card: today's item, how long it takes, a way into it and,
@@ -149,6 +171,19 @@ class DailyPortionCard extends ConsumerWidget {
       portion.minutes,
       format.integer(portion.minutes),
     );
+    final target = switch (portion) {
+      SeerahPortion(:final target) => target,
+      JourneyPortion() => null,
+    };
+    if (portion case SeerahPortion(doneForToday: true)) {
+      return _doneCard(context, portion, title);
+    }
+    final kicker = target != null && target.chapters > 1
+        ? l10n.dailyPortionOf(
+            format.integer(target.doneToday + 1),
+            format.integer(target.chapters),
+          )
+        : l10n.dailyPortionKicker;
     final started = switch (portion) {
       SeerahPortion(progress: final p?) when !p.completed && p.fraction > 0 =>
         l10n.progressRead(format.percent((p.fraction * 100).round())),
@@ -162,10 +197,7 @@ class DailyPortionCard extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              l10n.dailyPortionKicker,
-              style: SuhbaTextStyles.of(context).kicker,
-            ),
+            Text(kicker, style: SuhbaTextStyles.of(context).kicker),
             const SizedBox(height: AppSpacing.xs),
             Semantics(
               header: true,
@@ -175,6 +207,32 @@ class DailyPortionCard extends ConsumerWidget {
               DisplayFormatter.join([source, minutes, started]),
               style: textTheme.bodyMedium?.copyWith(color: colors.onSurfaceDim),
             ),
+            // A missed day: two neutral ways on, the first the default.
+            // No streak, no count of days, no red (K3).
+            if (target != null && target.askHowToContinue) ...[
+              const SizedBox(height: AppSpacing.sm),
+              Text(
+                l10n.dailyPortionBehind(
+                  target.behind,
+                  format.integer(target.behind),
+                ),
+              ),
+              Wrap(
+                spacing: AppSpacing.sm,
+                children: [
+                  TextButton(
+                    onPressed: () =>
+                        ref.read(readingPlanActionsProvider).continueFromHere(),
+                    child: Text(l10n.planContinueFromHere),
+                  ),
+                  TextButton(
+                    onPressed: () =>
+                        ref.read(readingPlanActionsProvider).catchUpGradually(),
+                    child: Text(l10n.planCatchUp),
+                  ),
+                ],
+              ),
+            ],
             const SizedBox(height: AppSpacing.sm),
             Wrap(
               spacing: AppSpacing.sm,
@@ -192,6 +250,47 @@ class DailyPortionCard extends ConsumerWidget {
                     label: Text(l10n.dailyPortionDone),
                   ),
               ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  /// Today's chapters are read: a calm close, and tomorrow's chapter for
+  /// anyone who wants to read ahead.
+  Widget _doneCard(BuildContext context, SeerahPortion portion, String next) {
+    final l10n = AppLocalizations.of(context);
+    final colors = SuhbaColors.of(context);
+    final textTheme = Theme.of(context).textTheme;
+    return Card(
+      margin: const EdgeInsets.only(top: AppSpacing.md),
+      child: Padding(
+        padding: const EdgeInsets.all(AppSpacing.md),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              l10n.dailyPortionKicker,
+              style: SuhbaTextStyles.of(context).kicker,
+            ),
+            const SizedBox(height: AppSpacing.xs),
+            Semantics(
+              header: true,
+              child: Text(
+                l10n.dailyPortionComplete,
+                style: textTheme.titleLarge,
+              ),
+            ),
+            Text(
+              l10n.dailyPortionTomorrow(next),
+              style: textTheme.bodyMedium?.copyWith(color: colors.onSurfaceDim),
+            ),
+            const SizedBox(height: AppSpacing.xs),
+            TextButton.icon(
+              onPressed: () => context.push(portion.route),
+              icon: const Icon(Icons.menu_book_outlined),
+              label: Text(l10n.dailyPortionReadAhead),
             ),
           ],
         ),

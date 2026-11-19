@@ -33,7 +33,8 @@ final reminderCopyProvider = Provider<ReminderCopy>((ref) {
   final format = DisplayFormatter(l10n, ref.watch(digitStyleProvider));
   return ReminderCopy(
     title: l10n.reminderNotificationTitle,
-    body: portion == null
+    // Once today's chapters are read, the general wording.
+    body: portion == null || portion is SeerahPortion && portion.doneForToday
         ? l10n.reminderNotificationBody
         : l10n.reminderPortionBody(
             portion.title.ar,
