@@ -4,6 +4,7 @@ import 'package:suhba/shared/content/domain/atlas.dart';
 import 'package:suhba/shared/content/domain/catalog.dart';
 import 'package:suhba/shared/content/domain/companion.dart';
 import 'package:suhba/shared/content/domain/content_manifest.dart';
+import 'package:suhba/shared/content/domain/glossary.dart';
 import 'package:suhba/shared/content/domain/quran_verses.dart';
 import 'package:suhba/shared/content/domain/seerah.dart';
 import 'package:suhba/shared/content/domain/story.dart';
@@ -44,6 +45,9 @@ abstract interface class ContentRepository {
   Future<Result<SeerahTopic>> seerahTopic(String id);
 
   Future<Result<Map<String, HistoricalPlace>>> places();
+
+  /// The glossary (E3), or `NotFoundFailure` in a build without one.
+  Future<Result<Map<String, GlossaryTerm>>> glossary();
 
   /// The verified text of the quoted ayahs (`quran.json`).
   Future<Result<QuranVerses>> quranVerses();

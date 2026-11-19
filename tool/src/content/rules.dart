@@ -75,6 +75,7 @@ class _Rules {
     for (final item in tree.places) {
       _place(item);
     }
+    _glossary();
     if (tree.seerah case final seerah?) _seerah(seerah);
     for (final item in tree.seerahChapters) {
       _seerahChapter(item);
@@ -564,6 +565,69 @@ class _Rules {
     if (basis == null) return;
     _block(item, r'$.basis', basis);
     _citations(item, _blockCitations(r'$.basis', basis));
+  }
+
+  /// E3: every term is cited, no spelling belongs to two terms, and a
+  /// term no passage uses is reported (it would never be linked).
+  void _glossary() {
+    if (tree.glossary.isEmpty) return;
+    String plain(String t) =>
+        t.replaceAll(RegExp('[\u064B-\u0652\u0670\u0640]'), '');
+    final corpus = StringBuffer();
+    void add(Iterable<ContentBlockDto> blocks) {
+      for (final b in blocks) {
+        switch (b) {
+          case ParagraphBlockDto(:final text):
+          case LessonBlockDto(:final text):
+            corpus.writeln(plain(text.ar));
+          case _:
+        }
+      }
+    }
+
+    for (final c in tree.companions) {
+      for (final s in c.dto.sections) {
+        add(s.blocks);
+      }
+    }
+    for (final st in tree.stories) {
+      for (final ch in st.dto.chapters) {
+        add(ch.blocks);
+      }
+    }
+    for (final ch in tree.seerahChapters) {
+      add(ch.dto.blocks);
+    }
+    for (final t in tree.seerahTopics) {
+      add(t.dto.blocks);
+    }
+    final text = corpus.toString();
+    final owner = <String, String>{};
+    for (final item in tree.glossary) {
+      final t = item.dto;
+      _needsCitations(item, r'$', t.citations, t.reliability);
+      _citations(item, _list(r'$', t.citations));
+      for (final (i, form) in t.forms.indexed) {
+        final f = plain(form);
+        if (owner[f] case final other? when other != t.id) {
+          sink.error(
+            'V2',
+            item.file,
+            '\$.forms[$i]',
+            '"$form" already belongs to the term "$other".',
+          );
+        }
+        owner[f] = t.id;
+      }
+      if (!t.forms.any((f) => text.contains(plain(f)))) {
+        sink.warning(
+          'V9',
+          item.file,
+          r'$.forms',
+          'No passage uses "${t.term.ar}", so it is never linked.',
+        );
+      }
+    }
   }
 
   void _place(Item<PlaceDto> item) {

@@ -158,6 +158,60 @@ void main() {
     });
   });
 
+  group('E3 glossary', () {
+    Map<String, dynamic> term(String id, List<String> forms) => {
+      'id': id,
+      'term': {'ar': forms.first},
+      'forms': forms,
+      'definition': {'ar': 'تعريف'},
+      'reliability': 'established',
+      'citations': [
+        {'sourceId': 'bio-a', 'locatorStatus': 'pending'},
+      ],
+      'review': {'status': 'draft'},
+    };
+    void glossary(List<Map<String, dynamic>> terms) =>
+        fx.files['glossary.json'] = {'schemaVersion': 1, 'terms': terms};
+
+    test('a cited term the text uses is valid', () {
+      glossary([
+        term('nass', ['نص']),
+      ]);
+      expect(
+        validate().issues.where((i) => i.file == 'glossary.json'),
+        isEmpty,
+      );
+    });
+
+    test('a definition needs a citation', () {
+      glossary([
+        {
+          ...term('nass', ['نص']),
+          'citations': <Object>[],
+        },
+      ]);
+      expect(codes(validate()), contains('V3'));
+    });
+
+    test('a spelling belongs to one term', () {
+      glossary([
+        term('nass', ['نص']),
+        term('other', ['نص']),
+      ]);
+      expect(codes(validate()), contains('V2'));
+    });
+
+    test('a term no passage uses is reported', () {
+      glossary([
+        term('absent', ['كلمة غائبة']),
+      ]);
+      expect(
+        validate().issues.where((i) => i.message.contains('never linked')),
+        hasLength(1),
+      );
+    });
+  });
+
   group('E2 overview sentences come from cited paragraphs', () {
     Map<String, dynamic> fact({
       String text = 'خلاصة السيرة.',

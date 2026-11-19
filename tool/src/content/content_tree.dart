@@ -6,6 +6,7 @@ import 'package:suhba/shared/content/data/dto/atlas_dto.dart';
 import 'package:suhba/shared/content/data/dto/catalog_dto.dart';
 import 'package:suhba/shared/content/data/dto/common_dto.dart';
 import 'package:suhba/shared/content/data/dto/companion_dto.dart';
+import 'package:suhba/shared/content/data/dto/glossary_dto.dart';
 import 'package:suhba/shared/content/data/dto/seerah_dto.dart';
 import 'package:suhba/shared/content/data/dto/story_dto.dart';
 import 'package:suhba/shared/content/domain/review.dart';
@@ -63,6 +64,7 @@ class ContentTree {
   final journeys = <Item<JourneyDto>>[];
   final stories = <Item<StoryDto>>[];
   final places = <Item<PlaceDto>>[];
+  final glossary = <Item<GlossaryTermDto>>[];
   final seerahChapters = <Item<SeerahChapterDto>>[];
   final seerahTopics = <Item<SeerahTopicDto>>[];
   final visuals = <Item<VisualDto>>[];
@@ -93,6 +95,7 @@ class ContentTree {
     ...stories,
     ...journeys,
     ...places,
+    ...glossary,
     ?seerah,
     ...seerahChapters,
     ...seerahTopics,
@@ -110,6 +113,7 @@ class ContentTree {
   late final companionById = _byId(companions);
   late final storyById = _byId(stories);
   late final placeById = _byId(places);
+  late final glossaryById = _byId(glossary);
   late final seerahChapterById = _byId(seerahChapters);
   late final seerahTopicById = _byId(seerahTopics);
   late final visualById = _byId(visuals);
@@ -270,6 +274,18 @@ ContentTree parseContent(
           idOf: (d) => d.id,
           reviewOf: (d) => d.review,
           into: tree.places,
+        );
+      case 'glossary.json':
+        list(
+          file: file,
+          def: 'glossaryFile',
+          key: 'terms',
+          kind: ContentKind.glossaryTerm,
+          fromJson: GlossaryFileDto.fromJson,
+          itemsOf: (f) => f.terms,
+          idOf: (d) => d.id,
+          reviewOf: (d) => d.review,
+          into: tree.glossary,
         );
       case 'release/edition.json':
         final json = load(file, 'editionFile');

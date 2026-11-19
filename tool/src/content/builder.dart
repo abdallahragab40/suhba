@@ -6,6 +6,7 @@ import 'package:suhba/shared/content/data/dto/atlas_dto.dart';
 import 'package:suhba/shared/content/data/dto/catalog_dto.dart';
 import 'package:suhba/shared/content/data/dto/common_dto.dart';
 import 'package:suhba/shared/content/data/dto/companion_dto.dart';
+import 'package:suhba/shared/content/data/dto/glossary_dto.dart';
 import 'package:suhba/shared/content/data/dto/quran_dto.dart';
 import 'package:suhba/shared/content/data/dto/seerah_dto.dart';
 import 'package:suhba/shared/content/data/dto/story_dto.dart';
@@ -237,6 +238,18 @@ BuildResult buildContent(
   outputs['places.json'] = encode(
     PlacesFileDto(schemaVersion: outputSchemaVersion, places: places).toJson(),
   );
+  final terms = [
+    for (final t in tree.glossary.where(include))
+      t.dto.copyWith(review: shipped(t.dto.review)),
+  ]..sort((a, b) => a.id.compareTo(b.id));
+  if (terms.isNotEmpty) {
+    outputs['glossary.json'] = encode(
+      GlossaryFileDto(
+        schemaVersion: outputSchemaVersion,
+        terms: terms,
+      ).toJson(),
+    );
+  }
   final visuals = [
     for (final v in tree.visuals.where(include))
       v.dto.copyWith(

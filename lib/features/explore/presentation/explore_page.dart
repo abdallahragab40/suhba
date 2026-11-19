@@ -222,6 +222,13 @@ class _ExploreState extends State<_Explore> {
             body: l10n.exploreRelationsBody,
             onTap: () => context.push(AppRoutes.relations()),
           ),
+          const SizedBox(height: AppSpacing.sm),
+          _EntryTile(
+            icon: Icons.menu_book_outlined,
+            title: l10n.glossaryTitle,
+            body: l10n.exploreGlossaryBody,
+            onTap: () => context.push(AppRoutes.glossary),
+          ),
         ],
         if (show(ExploreFilter.visuals)) ...[
           header(l10n.exploreVisualsKicker, l10n.exploreVisualsTitle),

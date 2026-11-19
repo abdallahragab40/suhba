@@ -634,6 +634,26 @@
       }
     }
   },
+  "glossaryTitle": "المصطلحات",
+  "@glossaryTitle": {
+    "description": "The glossary page and its Explore entry."
+  },
+  "glossaryKicker": "مصطلح",
+  "@glossaryKicker": {
+    "description": "Kicker of a term sheet."
+  },
+  "glossaryAll": "كل المصطلحات",
+  "@glossaryAll": {
+    "description": "Opens the glossary from a term sheet."
+  },
+  "glossaryEmpty": "لا مصطلحات في هذا الإصدار.",
+  "@glossaryEmpty": {
+    "description": "Glossary empty state."
+  },
+  "exploreGlossaryBody": "معاني الكلمات التي تتكرر في السيرة، مع مصادرها.",
+  "@exploreGlossaryBody": {
+    "description": "Explore entry body for the glossary."
+  },
   "sectionNotFound": "لم نجد هذا القسم.",
   "@sectionNotFound": {
     "description": "Unknown section link."

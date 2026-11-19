@@ -656,6 +656,7 @@ const _$ContentKindEnumMap = {
   ContentKind.seerahChapter: 'seerahChapter',
   ContentKind.seerahTopic: 'seerahTopic',
   ContentKind.visual: 'visual',
+  ContentKind.glossaryTerm: 'glossaryTerm',
 };
 
 _EditionCompanionsDto _$EditionCompanionsDtoFromJson(

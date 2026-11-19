@@ -76,6 +76,9 @@ abstract final class AppRoutes {
   static String source(String id) => '/sources/${_id(id)}';
   static const search = '/search';
 
+  /// The glossary (E3), above the tabs.
+  static const glossary = '/glossary';
+
   /// The quiz, and a round in one of its modes.
   static const review = '/review';
   static const learned = '$review/learned';

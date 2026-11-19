@@ -15,6 +15,7 @@ import 'package:suhba/features/bookmarks/presentation/saved_page.dart';
 import 'package:suhba/features/companions/presentation/directory/directory_page.dart';
 import 'package:suhba/features/companions/presentation/profile/companion_profile_page.dart';
 import 'package:suhba/features/explore/presentation/explore_page.dart';
+import 'package:suhba/features/glossary/presentation/glossary_page.dart';
 import 'package:suhba/features/home/presentation/home_page.dart';
 import 'package:suhba/features/journeys/presentation/journey_page.dart';
 import 'package:suhba/features/journeys/presentation/journeys_page.dart';
@@ -105,6 +106,11 @@ GoRouter buildAppRouter({String initialLocation = AppRoutes.home}) {
         path: AppRoutes.search,
         pageBuilder: (context, state) =>
             fadeThroughPage(context, state, const SearchPage()),
+      ),
+      GoRoute(
+        path: AppRoutes.glossary,
+        pageBuilder: (context, state) =>
+            fadeThroughPage(context, state, const GlossaryPage()),
       ),
       GoRoute(
         path: AppRoutes.quiz,

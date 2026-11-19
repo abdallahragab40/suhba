@@ -204,6 +204,7 @@ enum ContentKind {
   seerahChapter,
   seerahTopic,
   visual,
+  glossaryTerm,
 }
 
 @freezed

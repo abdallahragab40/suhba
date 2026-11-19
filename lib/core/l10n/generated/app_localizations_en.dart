@@ -429,6 +429,22 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get glossaryTitle => 'Glossary';
+
+  @override
+  String get glossaryKicker => 'Term';
+
+  @override
+  String get glossaryAll => 'All terms';
+
+  @override
+  String get glossaryEmpty => 'No terms in this build.';
+
+  @override
+  String get exploreGlossaryBody =>
+      'What recurring words in the Seerah mean, with sources.';
+
+  @override
   String get sectionNotFound => 'This section could not be found.';
 
   @override

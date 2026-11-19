@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:suhba/core/design_system/tokens/radii.dart';
@@ -13,6 +14,7 @@ import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/shared/content/domain/citation.dart';
 import 'package:suhba/shared/content/domain/content_block.dart';
 import 'package:suhba/shared/content/presentation/content_text.dart';
+import 'package:suhba/shared/content/presentation/glossary_links.dart';
 import 'package:suhba/shared/content/presentation/reader_scaffold.dart';
 import 'package:suhba/shared/content/providers.dart';
 import 'package:suhba/shared/visuals/presentation/infographic_view.dart';
@@ -86,6 +88,16 @@ class ReadingBody extends StatelessWidget {
           _marked(b) &&
           (b as ParagraphBlock).reliability == Reliability.reported,
     );
+    // Glossary terms are linked at their first use in the passage (E3).
+    final matcher = GlossaryScope.maybeOf(context);
+    final seen = <String>{};
+    final terms = [
+      for (final b in blocks)
+        if (matcher != null && b is ParagraphBlock)
+          matcher.firstMatches(b.text.of(context), seen)
+        else
+          const <TermMatch>[],
+    ];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -101,7 +113,7 @@ class ReadingBody extends StatelessWidget {
                   index + 1 < blocks.length ? blocks[index + 1] : null,
                 ),
               ),
-              child: _block(context, block),
+              child: _block(context, block, terms[index]),
             ),
           ),
       ],
@@ -114,39 +126,45 @@ class ReadingBody extends StatelessWidget {
     return textSize == null ? base : base.copyWith(fontSize: textSize);
   }
 
-  Widget _block(BuildContext context, ContentBlock block) => switch (block) {
+  Widget _block(
+    BuildContext context,
+    ContentBlock block,
+    List<TermMatch> terms,
+  ) => switch (block) {
     ParagraphBlock(:final text, :final reliability, :final citations)
         when _marked(block) =>
       // The mark follows the last word, like a footnote mark: it belongs
       // unmistakably to this paragraph and costs no row (review F03).
-      Text.rich(
-        TextSpan(
-          text: text.of(context),
-          children: [
-            const TextSpan(text: ' '),
-            WidgetSpan(
-              alignment: PlaceholderAlignment.middle,
-              child: CitationMarker.inline(
-                count: citations.length,
-                lineHeight:
-                    _reading(context).fontSize! *
-                    (_reading(context).height ?? 1),
-                reported: reliability == Reliability.reported,
-                onPressed: () => onCitations(
-                  citations,
-                  reliability,
-                  passage: text.of(context),
-                ),
+      _ParagraphText(
+        text: text.of(context),
+        terms: terms,
+        style: _reading(context),
+        trailing: [
+          const TextSpan(text: ' '),
+          WidgetSpan(
+            alignment: PlaceholderAlignment.middle,
+            child: CitationMarker.inline(
+              count: citations.length,
+              lineHeight:
+                  _reading(context).fontSize! * (_reading(context).height ?? 1),
+              reported: reliability == Reliability.reported,
+              onPressed: () => onCitations(
+                citations,
+                reliability,
+                passage: text.of(context),
               ),
             ),
-          ],
-        ),
-        style: _reading(context),
+          ),
+        ],
       ),
     ParagraphBlock(:final text, :final reliability, :final citations) => Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(text.of(context), style: _reading(context)),
+        _ParagraphText(
+          text: text.of(context),
+          terms: terms,
+          style: _reading(context),
+        ),
         _ClaimFooter(
           reliability: reliability,
           citations: citations,
@@ -658,6 +676,59 @@ class _LessonSource extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+/// A paragraph's text with its glossary links (E3) and any [trailing]
+/// spans (the source mark). Owns the links' tap recognizers.
+class _ParagraphText extends StatefulWidget {
+  const _ParagraphText({
+    required this.text,
+    required this.terms,
+    required this.style,
+    this.trailing = const [],
+  });
+
+  final String text;
+  final List<TermMatch> terms;
+  final TextStyle style;
+  final List<InlineSpan> trailing;
+
+  @override
+  State<_ParagraphText> createState() => _ParagraphTextState();
+}
+
+class _ParagraphTextState extends State<_ParagraphText> {
+  final _recognizers = <TapGestureRecognizer>[];
+
+  void _release() {
+    for (final r in _recognizers) {
+      r.dispose();
+    }
+    _recognizers.clear();
+  }
+
+  @override
+  void dispose() {
+    _release();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    _release();
+    if (widget.terms.isEmpty && widget.trailing.isEmpty) {
+      return Text(widget.text, style: widget.style);
+    }
+    return Text.rich(
+      TextSpan(
+        children: [
+          ...linkedSpans(context, widget.text, widget.terms, _recognizers),
+          ...widget.trailing,
+        ],
+      ),
+      style: widget.style,
     );
   }
 }

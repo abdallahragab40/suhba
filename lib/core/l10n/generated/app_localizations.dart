@@ -758,6 +758,36 @@ abstract class AppLocalizations {
   /// **'مبنيّ على: {title}'**
   String lessonBasedOn(String title);
 
+  /// The glossary page and its Explore entry.
+  ///
+  /// In ar, this message translates to:
+  /// **'المصطلحات'**
+  String get glossaryTitle;
+
+  /// Kicker of a term sheet.
+  ///
+  /// In ar, this message translates to:
+  /// **'مصطلح'**
+  String get glossaryKicker;
+
+  /// Opens the glossary from a term sheet.
+  ///
+  /// In ar, this message translates to:
+  /// **'كل المصطلحات'**
+  String get glossaryAll;
+
+  /// Glossary empty state.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا مصطلحات في هذا الإصدار.'**
+  String get glossaryEmpty;
+
+  /// Explore entry body for the glossary.
+  ///
+  /// In ar, this message translates to:
+  /// **'معاني الكلمات التي تتكرر في السيرة، مع مصادرها.'**
+  String get exploreGlossaryBody;
+
   /// Unknown section link.
   ///
   /// In ar, this message translates to:

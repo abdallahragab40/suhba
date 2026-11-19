@@ -117,6 +117,11 @@
       }
     }
   },
+  "glossaryTitle": "Glossary",
+  "glossaryKicker": "Term",
+  "glossaryAll": "All terms",
+  "glossaryEmpty": "No terms in this build.",
+  "exploreGlossaryBody": "What recurring words in the Seerah mean, with sources.",
   "sectionNotFound": "This section could not be found.",
   "storyNotFound": "This story could not be found.",
   "profileFullTimeline": "Full timeline",

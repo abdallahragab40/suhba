@@ -435,6 +435,22 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
+  String get glossaryTitle => 'المصطلحات';
+
+  @override
+  String get glossaryKicker => 'مصطلح';
+
+  @override
+  String get glossaryAll => 'كل المصطلحات';
+
+  @override
+  String get glossaryEmpty => 'لا مصطلحات في هذا الإصدار.';
+
+  @override
+  String get exploreGlossaryBody =>
+      'معاني الكلمات التي تتكرر في السيرة، مع مصادرها.';
+
+  @override
   String get sectionNotFound => 'لم نجد هذا القسم.';
 
   @override

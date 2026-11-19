@@ -1,5 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:suhba/core/result/failure.dart';
+import 'package:suhba/core/result/result.dart';
 import 'package:suhba/shared/content/data/asset_content_repository.dart';
 import 'package:suhba/shared/content/data/asset_content_source.dart';
 import 'package:suhba/shared/content/domain/atlas.dart';
@@ -8,6 +10,7 @@ import 'package:suhba/shared/content/domain/companion.dart';
 import 'package:suhba/shared/content/domain/content_manifest.dart';
 import 'package:suhba/shared/content/domain/content_repository.dart';
 import 'package:suhba/shared/content/domain/content_target.dart';
+import 'package:suhba/shared/content/domain/glossary.dart';
 import 'package:suhba/shared/content/domain/quran_verses.dart';
 import 'package:suhba/shared/content/domain/seerah.dart';
 import 'package:suhba/shared/content/domain/story.dart';
@@ -76,6 +79,13 @@ final seerahIndexProvider = FutureProvider<SeerahIndex>(
   (ref) async =>
       (await ref.watch(contentRepositoryProvider).seerahIndex()).getOrThrow(),
 );
+
+/// The glossary; empty in a build without one (E3).
+final glossaryProvider = FutureProvider<Map<String, GlossaryTerm>>((ref) async {
+  final result = await ref.watch(contentRepositoryProvider).glossary();
+  if (result case Err(failure: NotFoundFailure())) return const {};
+  return result.getOrThrow();
+});
 
 final placesProvider = FutureProvider<Map<String, HistoricalPlace>>(
   (ref) async =>
