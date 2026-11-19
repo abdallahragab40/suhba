@@ -53,6 +53,7 @@ class _Rules {
     }
     _duplicates();
     _journeyOrder();
+    _journeyWords();
     for (final item in tree.journeys) {
       _journey(item);
     }
@@ -118,6 +119,39 @@ class _Rules {
   }
 
   /// Two journeys may not claim the same catalog position.
+  /// E5 (review C4): each step has its own framing line and its own
+  /// reflection; a prompt repeated across steps reads as generated.
+  void _journeyWords() {
+    final reflections = <String, String>{};
+    String plain(String t) => t.replaceAll(RegExp(r'[\u064B-\u0652\s]'), '');
+    for (final item in tree.journeys) {
+      for (final (i, step) in item.dto.steps.indexed) {
+        final path = '\$.steps[$i]';
+        if (step.framing == null || step.reflection == null) {
+          sink.warning(
+            'V9',
+            item.file,
+            path,
+            'Step "${step.id}" needs a framing line and a reflection.',
+          );
+        }
+        if (step.reflection case final r?) {
+          final key = plain(r.ar);
+          if (reflections[key] case final other?) {
+            sink.error(
+              'V5',
+              item.file,
+              '$path.reflection',
+              'Step "${step.id}" repeats the reflection of "$other".',
+            );
+          } else {
+            reflections[key] = step.id;
+          }
+        }
+      }
+    }
+  }
+
   void _journeyOrder() {
     final byOrder = <int, String>{};
     for (final item in tree.journeys) {

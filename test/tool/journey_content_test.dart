@@ -179,4 +179,24 @@ void main() {
     step['framing'] = {'ar': 'اقرأ وتأمل'};
     expect(validate().issues.any((i) => i.rule == 'V7'), isTrue);
   });
+
+  test('each step needs its own framing and reflection (E5)', () {
+    bool pending() => validate().issues.any(
+      (i) => i.rule == 'V9' && i.message.contains('framing line'),
+    );
+    expect(pending(), isTrue);
+    step
+      ..['framing'] = {'ar': 'تقرأ في هذه الخطوة عن النشأة.'}
+      ..['reflection'] = {'ar': 'ما الذي بقي معك من هذه القراءة؟'};
+    expect(pending(), isFalse);
+    expect(validate().hasErrors, isFalse);
+
+    (journey['steps'] as List).add({
+      ...step,
+      'id': 'journey-a.second',
+      'framing': {'ar': 'خطوة ثانية.'},
+    });
+    final repeated = validate().issues.where((i) => i.rule == 'V5');
+    expect(repeated.single.message, contains('journey-a.first'));
+  });
 }
