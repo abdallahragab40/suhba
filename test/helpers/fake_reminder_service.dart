@@ -15,6 +15,9 @@ class FakeReminderService implements ReminderService {
   int cancelFailures = 0;
   Completer<bool>? permissionResult;
   ReadingReminder? scheduled;
+
+  /// The words of the last reminder scheduled.
+  ReminderCopy? copy;
   void Function()? onTap;
   @override
   bool get supported => true;
@@ -55,6 +58,7 @@ class FakeReminderService implements ReminderService {
       throw StateError('schedule failed');
     }
     scheduled = settings;
+    this.copy = copy;
   }
 
   @override

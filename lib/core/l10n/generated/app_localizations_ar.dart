@@ -2264,6 +2264,25 @@ class AppLocalizationsAr extends AppLocalizations {
   String get homeTileMap => 'الخريطة';
 
   @override
+  String get dailyPortionKicker => 'ورد اليوم';
+
+  @override
+  String get dailyPortionRead => 'اقرأ';
+
+  @override
+  String get dailyPortionDone => 'قرأتُه';
+
+  @override
+  String dailyPortionMarked(String title) {
+    return 'عُلّم «$title» مقروءًا';
+  }
+
+  @override
+  String reminderPortionBody(String title, String minutes) {
+    return 'ورد اليوم: $title، $minutes';
+  }
+
+  @override
   String citationEdition(String edition) {
     return 'الطبعة: $edition';
   }

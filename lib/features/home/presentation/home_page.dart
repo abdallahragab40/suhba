@@ -22,7 +22,7 @@ import 'package:suhba/core/time/local_day_provider.dart';
 import 'package:suhba/features/companions/presentation/directory/directory_page.dart';
 import 'package:suhba/features/home/domain/daily_featured.dart';
 import 'package:suhba/features/home/domain/this_month.dart';
-import 'package:suhba/features/home/presentation/next_step_card.dart';
+import 'package:suhba/features/home/presentation/daily_portion.dart';
 import 'package:suhba/features/home/presentation/quick_tiles.dart';
 import 'package:suhba/features/quiz/presentation/quiz_banner.dart';
 import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
@@ -176,7 +176,7 @@ class _Home extends ConsumerWidget {
           if (manifest.isDraft)
             paper([const SizedBox(height: AppSpacing.md), const DraftBanner()]),
           paper([
-            const NextStepCard(),
+            const DailyPortionCard(),
             QuickTiles(seerah: seerah),
             const SizedBox(height: AppSpacing.lg),
           ]),

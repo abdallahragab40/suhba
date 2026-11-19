@@ -3733,6 +3733,36 @@ abstract class AppLocalizations {
   /// **'الخريطة'**
   String get homeTileMap;
 
+  /// Kicker of the daily portion card on Home (K1).
+  ///
+  /// In ar, this message translates to:
+  /// **'ورد اليوم'**
+  String get dailyPortionKicker;
+
+  /// Opens today's portion.
+  ///
+  /// In ar, this message translates to:
+  /// **'اقرأ'**
+  String get dailyPortionRead;
+
+  /// Marks today's Seerah chapter read and moves to the next.
+  ///
+  /// In ar, this message translates to:
+  /// **'قرأتُه'**
+  String get dailyPortionDone;
+
+  /// Snack bar after marking today's chapter read, with undo.
+  ///
+  /// In ar, this message translates to:
+  /// **'عُلّم «{title}» مقروءًا'**
+  String dailyPortionMarked(String title);
+
+  /// Evening reminder naming today's portion; minutes is the reading-time phrase.
+  ///
+  /// In ar, this message translates to:
+  /// **'ورد اليوم: {title}، {minutes}'**
+  String reminderPortionBody(String title, String minutes);
+
   /// Source sheet: the edition a page or volume locator refers to (review F19).
   ///
   /// In ar, this message translates to:

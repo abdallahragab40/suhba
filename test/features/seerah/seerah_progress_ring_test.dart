@@ -62,9 +62,7 @@ void main() {
     expect(find.semantics.byLabel('قرأتَ ٣ من ١٢ فصلًا'), findsOne);
   });
 
-  testApp('finished: a calm close, and a way to read it again', (
-    tester,
-  ) async {
+  testApp('finished: a calm close, and a way to read it again', (tester) async {
     final app = await open(tester, finished: 12);
     expect(ringValue(tester), 1);
     expect(find.semantics.byLabel('أتممتَ السيرة'), findsOne);

@@ -2229,6 +2229,25 @@ class AppLocalizationsEn extends AppLocalizations {
   String get homeTileMap => 'Map';
 
   @override
+  String get dailyPortionKicker => 'Today\'s reading';
+
+  @override
+  String get dailyPortionRead => 'Read';
+
+  @override
+  String get dailyPortionDone => 'I\'ve read it';
+
+  @override
+  String dailyPortionMarked(String title) {
+    return 'Marked “$title” as read';
+  }
+
+  @override
+  String reminderPortionBody(String title, String minutes) {
+    return 'Today\'s reading: $title, $minutes';
+  }
+
+  @override
   String citationEdition(String edition) {
     return 'Edition: $edition';
   }

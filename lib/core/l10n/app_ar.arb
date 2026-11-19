@@ -2786,6 +2786,39 @@
   "@homeTileMap": {
     "description": "Quick tile on Home: opens the Seerah map."
   },
+  "dailyPortionKicker": "ورد اليوم",
+  "@dailyPortionKicker": {
+    "description": "Kicker of the daily portion card on Home (K1)."
+  },
+  "dailyPortionRead": "اقرأ",
+  "@dailyPortionRead": {
+    "description": "Opens today's portion."
+  },
+  "dailyPortionDone": "قرأتُه",
+  "@dailyPortionDone": {
+    "description": "Marks today's Seerah chapter read and moves to the next."
+  },
+  "dailyPortionMarked": "عُلّم «{title}» مقروءًا",
+  "@dailyPortionMarked": {
+    "description": "Snack bar after marking today's chapter read, with undo.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "reminderPortionBody": "ورد اليوم: {title}، {minutes}",
+  "@reminderPortionBody": {
+    "description": "Evening reminder naming today's portion; minutes is the reading-time phrase.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
   "citationEdition": "الطبعة: {edition}",
   "@citationEdition": {
     "description": "Source sheet: the edition a page or volume locator refers to (review F19).",

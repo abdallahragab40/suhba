@@ -155,9 +155,11 @@ void main() {
     app.router.go('/home');
     await tester.pumpAndSettle();
     expect(find.text('تابع: الهجرة إلى المدينة'), findsOneWidget);
-    // Continue reading names the Seerah as its source.
-    await reveal(tester, find.text('السيرة النبوية').last);
-    expect(find.text('قُرئ ٤٠٪'), findsOneWidget);
+    // Today's portion is that chapter, with how far the reader got.
+    expect(
+      find.text('السيرة النبوية، الفصل ٨ من ١٢، ٦ دقائق قراءة، قُرئ ٤٠٪'),
+      findsOneWidget,
+    );
 
     await tester.tap(find.text('تابع: الهجرة إلى المدينة'));
     await tester.pumpAndSettle();

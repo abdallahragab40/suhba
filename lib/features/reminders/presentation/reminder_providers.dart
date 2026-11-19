@@ -2,9 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/core/storage/settings_store.dart';
+import 'package:suhba/features/home/presentation/daily_portion.dart';
 import 'package:suhba/features/reminders/domain/reading_reminder.dart';
+import 'package:suhba/features/settings/presentation/digit_style_controller.dart';
 
 /// Bootstrap supplies the native implementation. Host tests have no platform
 /// calls unless they explicitly override this with a fake service.
@@ -22,11 +25,23 @@ class ReminderTapController extends Notifier<int> {
   void received() => state++;
 }
 
+/// The reminder's words. Its body names today's portion when there is one
+/// (review K1), the same item as Home's first card.
 final reminderCopyProvider = Provider<ReminderCopy>((ref) {
   final l10n = lookupAppLocalizations(const Locale('ar'));
+  final portion = ref.watch(dailyPortionProvider).value;
+  final format = DisplayFormatter(l10n, ref.watch(digitStyleProvider));
   return ReminderCopy(
     title: l10n.reminderNotificationTitle,
-    body: l10n.reminderNotificationBody,
+    body: portion == null
+        ? l10n.reminderNotificationBody
+        : l10n.reminderPortionBody(
+            portion.title.ar,
+            l10n.storyReadingMinutes(
+              portion.minutes,
+              format.integer(portion.minutes),
+            ),
+          ),
     channel: l10n.reminderChannel,
     channelDescription: l10n.reminderChannelDescription,
   );
@@ -61,7 +76,14 @@ class ReminderController extends AsyncNotifier<ReminderState>
   Future<ReminderState> build() async {
     _store = ref.watch(settingsStoreProvider);
     _service = ref.watch(reminderServiceProvider);
-    _copy = ref.watch(reminderCopyProvider);
+    // Listened to, not watched: rebuilding would dispose the service.
+    // When today's portion changes, the scheduled reminder is renewed.
+    _copy = ref.read(reminderCopyProvider);
+    ref.listen(reminderCopyProvider, (_, next) {
+      if (next.body == _copy.body && next.title == _copy.title) return;
+      _copy = next;
+      if (_ready && _service.supported) synchronize();
+    });
     _alive = true;
     ref.onDispose(() {
       _alive = false;

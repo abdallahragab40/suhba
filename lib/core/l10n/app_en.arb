@@ -667,6 +667,28 @@
   "homeTileJourney": "Today's journey",
   "homeTileReview": "Review",
   "homeTileMap": "Map",
+  "dailyPortionKicker": "Today's reading",
+  "dailyPortionRead": "Read",
+  "dailyPortionDone": "I've read it",
+  "dailyPortionMarked": "Marked “{title}” as read",
+  "@dailyPortionMarked": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "reminderPortionBody": "Today's reading: {title}, {minutes}",
+  "@reminderPortionBody": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
   "citationEdition": "Edition: {edition}",
   "citationNumbering": "Numbering: {scheme}",
   "readerLegendReported": "{label}: {explanation}",
