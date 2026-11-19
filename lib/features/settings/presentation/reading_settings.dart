@@ -19,7 +19,7 @@ final readingTextSizeProvider =
 class ReadingTextSizeController extends Notifier<double> {
   static const min = 16.0;
   static const max = 28.0;
-  static const initial = 19.0;
+  static const initial = SuhbaTextStyles.readingSize;
 
   @override
   double build() =>

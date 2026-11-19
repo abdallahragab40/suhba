@@ -108,7 +108,7 @@ abstract final class AppTheme {
     return ThemeData(
       useMaterial3: true,
       colorScheme: scheme,
-      fontFamily: AppFonts.cairo,
+      fontFamily: AppFonts.zain,
       fontFamilyFallback: const [AppFonts.amiri],
       textTheme: textTheme,
       scaffoldBackgroundColor: scheme.surface,
@@ -146,7 +146,10 @@ abstract final class AppTheme {
         surfaceTintColor: Colors.transparent,
         elevation: 0,
         indicatorColor: scheme.secondaryContainer,
-        labelTextStyle: WidgetStatePropertyAll(textTheme.labelMedium),
+        // Five labels share a phone's width: the floor size, 13 (F01).
+        labelTextStyle: WidgetStatePropertyAll(
+          textTheme.labelMedium?.copyWith(fontSize: 13),
+        ),
       ),
       bottomSheetTheme: BottomSheetThemeData(
         backgroundColor: scheme.surface,

@@ -29,7 +29,7 @@ void main() {
     await tester.tap(find.text('داكن'));
     await tester.tap(find.text('غربية (123)'));
     await tester.pumpAndSettle();
-    expect(find.text('حجم خط القراءة: 19'), findsOneWidget);
+    expect(find.text('حجم خط القراءة: 20'), findsOneWidget);
 
     expect(store.getString(SettingsKeys.themeMode), 'dark');
     expect(store.getString(SettingsKeys.digitStyle), 'western');

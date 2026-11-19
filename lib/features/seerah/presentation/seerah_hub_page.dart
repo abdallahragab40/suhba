@@ -308,7 +308,9 @@ class SeerahOpening extends ConsumerWidget {
                           const SizedBox(height: AppSpacing.md),
                           Text(
                             introText,
-                            maxLines: compact ? 4 : null,
+                            // Room for the whole introduction at the
+                            // default reading size (20 since D3).
+                            maxLines: compact ? 5 : null,
                             overflow: compact ? TextOverflow.ellipsis : null,
                             style: SuhbaTextStyles.of(
                               context,

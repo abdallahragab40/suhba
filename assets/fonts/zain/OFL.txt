@@ -1,8 +1,8 @@
-Copyright 2009 The Cairo Project Authors (https://github.com/Gue3bara/Cairo)
+Copyright 2024 The Zain Project Authors (https://github.com/googlefonts/zain)
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
-https://openfontlicense.org
+http://scripts.sil.org/OFL
 
 
 -----------------------------------------------------------

@@ -216,7 +216,7 @@ class ReadingBody extends StatelessWidget {
       header: true,
       child: Text(
         text.of(context),
-        style: Theme.of(context).textTheme.headlineSmall,
+        style: SuhbaTextStyles.of(context).readingHeading,
       ),
     ),
     InfographicBlock(:final visualId, :final caption) => InfographicView(
@@ -398,7 +398,13 @@ class _QuranQuote extends ConsumerWidget {
     final base = SuhbaTextStyles.of(context).quran;
     final style = textSize == null
         ? base
-        : base.copyWith(fontSize: textSize! * 21 / 19);
+        // Verses keep their step above the reader's chosen size.
+        : base.copyWith(
+            fontSize:
+                textSize! *
+                base.fontSize! /
+                SuhbaTextStyles.of(context).reading.fontSize!,
+          );
     final note = this.note;
     final verses = ref.watch(quranVersesProvider);
     final passage = verses.value?.passage(quranRef);

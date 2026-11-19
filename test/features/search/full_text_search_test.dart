@@ -256,6 +256,9 @@ void main() {
     expect(heading('فصول القصص'), findsNothing);
     expect(heading('سِيَر الصحابة'), findsOneWidget);
 
+    // The scope chips scroll sideways; bring this one into view.
+    await tester.ensureVisible(find.widgetWithText(ChoiceChip, 'القصص'));
+    await tester.pumpAndSettle();
     await tester.tap(find.widgetWithText(ChoiceChip, 'القصص'));
     await tester.pumpAndSettle();
     expect(heading('فصول القصص'), findsOneWidget);

@@ -21,7 +21,7 @@ class AppShell extends StatelessWidget {
   /// Largest text scale for destination labels. Five labels share a phone's
   /// width; past this they wrap mid-word. Screen readers still get the full
   /// label, and every other screen keeps the reader's text size.
-  static const maxLabelScale = 1.2;
+  static const maxLabelScale = 1.1;
 
   void _select(BuildContext context, int index) {
     Haptics.selection(context);

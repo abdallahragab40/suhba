@@ -23,11 +23,11 @@ void main() {
       .style!
       .fontSize!;
 
-  test('the size starts at 19 and is clamped and rounded', () {
+  test('the size starts at 20 and is clamped and rounded', () {
     final container = ProviderContainer();
     addTearDown(container.dispose);
     final size = readingTextSizeProvider;
-    expect(container.read(size), 19);
+    expect(container.read(size), 20);
     container.read(size.notifier).select(10);
     expect(container.read(size), 16);
     container.read(size.notifier).select(30);
@@ -38,7 +38,7 @@ void main() {
 
   testApp('changing the size applies live to the open reader', (tester) async {
     final app = await openReader(tester);
-    expect(paragraphSize(tester), 19);
+    expect(paragraphSize(tester), 20);
 
     app.container.read(readingTextSizeProvider.notifier).select(24.4);
     await tester.pumpAndSettle();
@@ -56,11 +56,11 @@ void main() {
     await tester.tap(find.byTooltip('إعدادات القراءة'));
     await tester.pumpAndSettle();
     expect(find.byType(ReadingSettingsSheet), findsOneWidget);
-    expect(find.text('حجم خط القراءة: ١٩'), findsOneWidget);
+    expect(find.text('حجم خط القراءة: ٢٠'), findsOneWidget);
 
     await tester.tap(find.text('غربية (123)'));
     await tester.pumpAndSettle();
-    expect(find.text('حجم خط القراءة: 19'), findsOneWidget);
+    expect(find.text('حجم خط القراءة: 20'), findsOneWidget);
     // The page behind the sheet follows too.
     expect(find.text('07'), findsOneWidget);
   });
@@ -73,6 +73,6 @@ void main() {
     // RTL: the slider's maximum is on the left.
     await tester.tapAt(tester.getTopLeft(slider) + const Offset(30, 24));
     await tester.pumpAndSettle();
-    expect(app.container.read(readingTextSizeProvider), greaterThan(19));
+    expect(app.container.read(readingTextSizeProvider), greaterThan(20));
   });
 }
