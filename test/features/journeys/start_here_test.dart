@@ -54,5 +54,10 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.byType(WelcomePage), findsNothing);
     expect(app.location, '/journeys/start-here');
+    // Home lies beneath: Back returns to it rather than leaving the app.
+    expect(app.router.canPop(), isTrue);
+    app.router.pop();
+    await tester.pumpAndSettle();
+    expect(app.location, '/home');
   });
 }

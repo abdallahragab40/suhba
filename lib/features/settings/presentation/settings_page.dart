@@ -129,7 +129,7 @@ class SettingsPage extends ConsumerWidget {
             segments: [
               ButtonSegment(
                 value: DigitStyle.arabicIndic,
-                label: Text(l10n.digitsArabicIndic),
+                label: TrueDigitsText(l10n.digitsArabicIndic),
               ),
               ButtonSegment(
                 value: DigitStyle.western,

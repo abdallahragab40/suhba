@@ -203,10 +203,21 @@ class _WelcomePageState extends ConsumerState<WelcomePage> {
                                     ),
                                     child: TextButton(
                                       onPressed: () {
+                                        // The router is not mounted while
+                                        // these screens cover the app; a
+                                        // push now would replace Home rather
+                                        // than open above it. Push once the
+                                        // next frame has brought it back.
+                                        final router = ref.read(
+                                          appRouterProvider,
+                                        );
                                         _finish();
-                                        ref
-                                            .read(appRouterProvider)
-                                            .push(AppRoutes.journey(start.id));
+                                        WidgetsBinding.instance
+                                            .addPostFrameCallback(
+                                              (_) => router.push<void>(
+                                                AppRoutes.journey(start.id),
+                                              ),
+                                            );
                                       },
                                       child: Text(start.title.of(context)),
                                     ),

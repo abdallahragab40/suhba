@@ -31,7 +31,7 @@ void main() {
                   sources: 'نص تجريبي لا ينسب إلى مصدر تاريخي.',
                   footer: 'تطبيق صُحبة',
                   size: PassageCardSize.square,
-                  dark: false,
+                  template: PassageCardTemplate.paper,
                 ),
               ),
             ),
