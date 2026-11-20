@@ -44,19 +44,36 @@ void main() {
         expect(theme.extension<SuhbaTextStyles>(), isNotNull);
       });
 
-      test('display roles use Amiri; all other roles use Cairo', () {
+      test('display roles use Amiri; all other roles use Zain', () {
         for (final (role, style) in _roles(theme.textTheme)) {
           final expected = role.startsWith('display')
               ? AppFonts.amiri
-              : AppFonts.cairo;
+              : AppFonts.zain;
           expect(style!.fontFamily, expected, reason: role);
         }
       });
 
-      test('Cairo falls back to Amiri for glyphs it lacks (e.g. ﷺ)', () {
+      test('Zain falls back to Amiri for glyphs it lacks (e.g. ﷺ)', () {
         for (final (role, style) in _roles(theme.textTheme)) {
-          if (style!.fontFamily != AppFonts.cairo) continue;
+          if (style!.fontFamily != AppFonts.zain) continue;
           expect(style.fontFamilyFallback, [AppFonts.amiri], reason: role);
+        }
+      });
+
+      test('Zain only in its bundled weights, nothing below 13', () {
+        final styles = theme.extension<SuhbaTextStyles>()!;
+        for (final (role, style) in [
+          ..._roles(theme.textTheme),
+          ('kicker', styles.kicker),
+          ('numeral', styles.numeral),
+        ]) {
+          expect(style!.fontSize, greaterThanOrEqualTo(13), reason: role);
+          if (style.fontFamily != AppFonts.zain) continue;
+          expect(
+            [FontWeight.w400, FontWeight.w700, FontWeight.w800],
+            contains(style.fontWeight),
+            reason: '$role: Zain ships 400, 700 and 800 only',
+          );
         }
       });
 
@@ -64,6 +81,13 @@ void main() {
         final styles = theme.extension<SuhbaTextStyles>()!;
         expect(styles.reading.fontFamily, AppFonts.amiri);
         expect(styles.readingStrong.fontFamily, AppFonts.amiri);
+        expect(styles.readingHeading.fontFamily, AppFonts.amiri);
+        // Quoted wording is larger, not bolder.
+        expect(styles.readingStrong.fontWeight, FontWeight.w400);
+        expect(
+          styles.readingStrong.fontSize,
+          greaterThan(styles.reading.fontSize!),
+        );
         expect(styles.quran.fontFamily, AppFonts.amiriQuran);
       });
     });

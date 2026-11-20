@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "sad-ibn-abi-waqqas-lifeline",
+  "type": "timeline",
+  "title": {
+    "ar": "حياة سعد بن أبي وقاص على خط الزمن"
+  },
+  "takeaway": {
+    "ar": "أسلم سعد بمكة ثالث ثلاثة، وكان أول من رمى بسهم في سبيل الله، ثم قاد جيش القادسية وفتح المدائن، وجعله عمر في أهل الشورى، وتوفي بالعقيق سنة خمس وخمسين."
+  },
+  "notes": [
+    {
+      "ar": "تاريخ مولده تقريبي."
+    }
+  ],
+  "review": {
+    "status": "approved",
+    "editorialFlags": [
+      "sensitive"
+    ],
+    "authoredBy": "draft-lifelines-e6"
+  },
+  "companionId": "sad-ibn-abi-waqqas"
+}

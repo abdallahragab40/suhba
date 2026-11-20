@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:suhba/app/router/app_shell.dart';
 import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/design_system/tokens/radii.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
 import 'package:suhba/core/design_system/tokens/typography.dart';
@@ -51,6 +53,12 @@ class SavedPage extends ConsumerWidget {
         icon: Icons.bookmark_border,
         title: l10n.savedEmptyTitle,
         message: l10n.savedEmptyMessage,
+        // Never a dead end (review F20): the obvious first read.
+        action: FilledButton.icon(
+          icon: const Icon(Icons.auto_stories_outlined),
+          label: Text(l10n.seerahStart),
+          onPressed: () => context.go(AppRoutes.seerah),
+        ),
       );
     } else {
       body = _SavedList(bookmarks: bookmarksAsync.requireValue);
@@ -59,15 +67,17 @@ class SavedPage extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(l10n.tabSaved),
-        actions: [
-          IconButton(
-            tooltip: l10n.historyTitle,
-            icon: const Icon(Icons.history),
-            onPressed: () => context.go(AppRoutes.readingHistory),
-          ),
+        actions: shellActions(context),
+      ),
+      // «مكتبتي» (decision 2): the reader's own things, one tap each, above
+      // what they saved.
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          const LibraryShelf(),
+          Expanded(child: body),
         ],
       ),
-      body: body,
     );
   }
 }
@@ -228,6 +238,65 @@ class SavedTile extends ConsumerWidget {
       l10n,
       message: l10n.bookmarkRemovedUndo,
       onUndo: () => repository.restore(bookmark),
+    );
+  }
+}
+
+/// Journeys, review and reading history, one tap each from «مكتبتي»
+/// (review D6, decision 2).
+class LibraryShelf extends StatelessWidget {
+  const LibraryShelf({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    Widget entry(IconData icon, String label, VoidCallback onTap) => Expanded(
+      child: OutlinedButton(
+        style: OutlinedButton.styleFrom(
+          padding: const EdgeInsets.symmetric(vertical: AppSpacing.sm),
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(AppRadii.md),
+          ),
+        ),
+        onPressed: onTap,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(icon),
+            const SizedBox(height: AppSpacing.xxs),
+            Text(label, textAlign: TextAlign.center),
+          ],
+        ),
+      ),
+    );
+    return Padding(
+      padding: const EdgeInsetsDirectional.fromSTEB(
+        AppSpacing.gutter,
+        AppSpacing.sm,
+        AppSpacing.gutter,
+        0,
+      ),
+      child: Row(
+        children: [
+          entry(
+            Icons.route_outlined,
+            l10n.journeysTitle,
+            () => context.push(AppRoutes.journeys),
+          ),
+          const SizedBox(width: AppSpacing.xs),
+          entry(
+            Icons.event_repeat_outlined,
+            l10n.reviewTitle,
+            () => context.push(AppRoutes.review),
+          ),
+          const SizedBox(width: AppSpacing.xs),
+          entry(
+            Icons.history,
+            l10n.historyTitle,
+            () => context.go(AppRoutes.readingHistory),
+          ),
+        ],
+      ),
     );
   }
 }

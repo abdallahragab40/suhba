@@ -631,7 +631,10 @@ $LocalizedTextDtoCopyWith<$Res>? get reflection {
 /// @nodoc
 mixin _$JourneyDto {
 
- int get schemaVersion; String get id; LocalizedTextDto get title; LocalizedTextDto get description; List<JourneyStepDto> get steps; ReviewDto get review;
+ int get schemaVersion; String get id; LocalizedTextDto get title; LocalizedTextDto get description; List<JourneyStepDto> get steps;/// Position in the catalog, 1 first. The builder orders the index by it;
+/// the app reads the order from the index. Null only in bundles built
+/// before the field existed.
+ int? get order; ReviewDto get review;
 /// Create a copy of JourneyDto
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -644,16 +647,16 @@ $JourneyDtoCopyWith<JourneyDto> get copyWith => _$JourneyDtoCopyWithImpl<Journey
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is JourneyDto&&(identical(other.schemaVersion, schemaVersion) || other.schemaVersion == schemaVersion)&&(identical(other.id, id) || other.id == id)&&(identical(other.title, title) || other.title == title)&&(identical(other.description, description) || other.description == description)&&const DeepCollectionEquality().equals(other.steps, steps)&&(identical(other.review, review) || other.review == review));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is JourneyDto&&(identical(other.schemaVersion, schemaVersion) || other.schemaVersion == schemaVersion)&&(identical(other.id, id) || other.id == id)&&(identical(other.title, title) || other.title == title)&&(identical(other.description, description) || other.description == description)&&const DeepCollectionEquality().equals(other.steps, steps)&&(identical(other.order, order) || other.order == order)&&(identical(other.review, review) || other.review == review));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,schemaVersion,id,title,description,const DeepCollectionEquality().hash(steps),review);
+int get hashCode => Object.hash(runtimeType,schemaVersion,id,title,description,const DeepCollectionEquality().hash(steps),order,review);
 
 @override
 String toString() {
-  return 'JourneyDto(schemaVersion: $schemaVersion, id: $id, title: $title, description: $description, steps: $steps, review: $review)';
+  return 'JourneyDto(schemaVersion: $schemaVersion, id: $id, title: $title, description: $description, steps: $steps, order: $order, review: $review)';
 }
 
 
@@ -664,7 +667,7 @@ abstract mixin class $JourneyDtoCopyWith<$Res>  {
   factory $JourneyDtoCopyWith(JourneyDto value, $Res Function(JourneyDto) _then) = _$JourneyDtoCopyWithImpl;
 @useResult
 $Res call({
- int schemaVersion, String id, LocalizedTextDto title, LocalizedTextDto description, List<JourneyStepDto> steps, ReviewDto review
+ int schemaVersion, String id, LocalizedTextDto title, LocalizedTextDto description, List<JourneyStepDto> steps, int? order, ReviewDto review
 });
 
 
@@ -681,14 +684,15 @@ class _$JourneyDtoCopyWithImpl<$Res>
 
 /// Create a copy of JourneyDto
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? schemaVersion = null,Object? id = null,Object? title = null,Object? description = null,Object? steps = null,Object? review = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? schemaVersion = null,Object? id = null,Object? title = null,Object? description = null,Object? steps = null,Object? order = freezed,Object? review = null,}) {
   return _then(_self.copyWith(
 schemaVersion: null == schemaVersion ? _self.schemaVersion : schemaVersion // ignore: cast_nullable_to_non_nullable
 as int,id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as LocalizedTextDto,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as LocalizedTextDto,steps: null == steps ? _self.steps : steps // ignore: cast_nullable_to_non_nullable
-as List<JourneyStepDto>,review: null == review ? _self.review : review // ignore: cast_nullable_to_non_nullable
+as List<JourneyStepDto>,order: freezed == order ? _self.order : order // ignore: cast_nullable_to_non_nullable
+as int?,review: null == review ? _self.review : review // ignore: cast_nullable_to_non_nullable
 as ReviewDto,
   ));
 }
@@ -801,10 +805,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int schemaVersion,  String id,  LocalizedTextDto title,  LocalizedTextDto description,  List<JourneyStepDto> steps,  ReviewDto review)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int schemaVersion,  String id,  LocalizedTextDto title,  LocalizedTextDto description,  List<JourneyStepDto> steps,  int? order,  ReviewDto review)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _JourneyDto() when $default != null:
-return $default(_that.schemaVersion,_that.id,_that.title,_that.description,_that.steps,_that.review);case _:
+return $default(_that.schemaVersion,_that.id,_that.title,_that.description,_that.steps,_that.order,_that.review);case _:
   return orElse();
 
 }
@@ -822,10 +826,10 @@ return $default(_that.schemaVersion,_that.id,_that.title,_that.description,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int schemaVersion,  String id,  LocalizedTextDto title,  LocalizedTextDto description,  List<JourneyStepDto> steps,  ReviewDto review)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int schemaVersion,  String id,  LocalizedTextDto title,  LocalizedTextDto description,  List<JourneyStepDto> steps,  int? order,  ReviewDto review)  $default,) {final _that = this;
 switch (_that) {
 case _JourneyDto():
-return $default(_that.schemaVersion,_that.id,_that.title,_that.description,_that.steps,_that.review);case _:
+return $default(_that.schemaVersion,_that.id,_that.title,_that.description,_that.steps,_that.order,_that.review);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -842,10 +846,10 @@ return $default(_that.schemaVersion,_that.id,_that.title,_that.description,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int schemaVersion,  String id,  LocalizedTextDto title,  LocalizedTextDto description,  List<JourneyStepDto> steps,  ReviewDto review)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int schemaVersion,  String id,  LocalizedTextDto title,  LocalizedTextDto description,  List<JourneyStepDto> steps,  int? order,  ReviewDto review)?  $default,) {final _that = this;
 switch (_that) {
 case _JourneyDto() when $default != null:
-return $default(_that.schemaVersion,_that.id,_that.title,_that.description,_that.steps,_that.review);case _:
+return $default(_that.schemaVersion,_that.id,_that.title,_that.description,_that.steps,_that.order,_that.review);case _:
   return null;
 
 }
@@ -857,7 +861,7 @@ return $default(_that.schemaVersion,_that.id,_that.title,_that.description,_that
 @JsonSerializable()
 
 class _JourneyDto implements JourneyDto {
-  const _JourneyDto({required this.schemaVersion, required this.id, required this.title, required this.description, required final  List<JourneyStepDto> steps, required this.review}): _steps = steps;
+  const _JourneyDto({required this.schemaVersion, required this.id, required this.title, required this.description, required final  List<JourneyStepDto> steps, this.order, required this.review}): _steps = steps;
   factory _JourneyDto.fromJson(Map<String, dynamic> json) => _$JourneyDtoFromJson(json);
 
 @override final  int schemaVersion;
@@ -871,6 +875,10 @@ class _JourneyDto implements JourneyDto {
   return EqualUnmodifiableListView(_steps);
 }
 
+/// Position in the catalog, 1 first. The builder orders the index by it;
+/// the app reads the order from the index. Null only in bundles built
+/// before the field existed.
+@override final  int? order;
 @override final  ReviewDto review;
 
 /// Create a copy of JourneyDto
@@ -886,16 +894,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _JourneyDto&&(identical(other.schemaVersion, schemaVersion) || other.schemaVersion == schemaVersion)&&(identical(other.id, id) || other.id == id)&&(identical(other.title, title) || other.title == title)&&(identical(other.description, description) || other.description == description)&&const DeepCollectionEquality().equals(other._steps, _steps)&&(identical(other.review, review) || other.review == review));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _JourneyDto&&(identical(other.schemaVersion, schemaVersion) || other.schemaVersion == schemaVersion)&&(identical(other.id, id) || other.id == id)&&(identical(other.title, title) || other.title == title)&&(identical(other.description, description) || other.description == description)&&const DeepCollectionEquality().equals(other._steps, _steps)&&(identical(other.order, order) || other.order == order)&&(identical(other.review, review) || other.review == review));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,schemaVersion,id,title,description,const DeepCollectionEquality().hash(_steps),review);
+int get hashCode => Object.hash(runtimeType,schemaVersion,id,title,description,const DeepCollectionEquality().hash(_steps),order,review);
 
 @override
 String toString() {
-  return 'JourneyDto(schemaVersion: $schemaVersion, id: $id, title: $title, description: $description, steps: $steps, review: $review)';
+  return 'JourneyDto(schemaVersion: $schemaVersion, id: $id, title: $title, description: $description, steps: $steps, order: $order, review: $review)';
 }
 
 
@@ -906,7 +914,7 @@ abstract mixin class _$JourneyDtoCopyWith<$Res> implements $JourneyDtoCopyWith<$
   factory _$JourneyDtoCopyWith(_JourneyDto value, $Res Function(_JourneyDto) _then) = __$JourneyDtoCopyWithImpl;
 @override @useResult
 $Res call({
- int schemaVersion, String id, LocalizedTextDto title, LocalizedTextDto description, List<JourneyStepDto> steps, ReviewDto review
+ int schemaVersion, String id, LocalizedTextDto title, LocalizedTextDto description, List<JourneyStepDto> steps, int? order, ReviewDto review
 });
 
 
@@ -923,14 +931,15 @@ class __$JourneyDtoCopyWithImpl<$Res>
 
 /// Create a copy of JourneyDto
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? schemaVersion = null,Object? id = null,Object? title = null,Object? description = null,Object? steps = null,Object? review = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? schemaVersion = null,Object? id = null,Object? title = null,Object? description = null,Object? steps = null,Object? order = freezed,Object? review = null,}) {
   return _then(_JourneyDto(
 schemaVersion: null == schemaVersion ? _self.schemaVersion : schemaVersion // ignore: cast_nullable_to_non_nullable
 as int,id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as LocalizedTextDto,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as LocalizedTextDto,steps: null == steps ? _self._steps : steps // ignore: cast_nullable_to_non_nullable
-as List<JourneyStepDto>,review: null == review ? _self.review : review // ignore: cast_nullable_to_non_nullable
+as List<JourneyStepDto>,order: freezed == order ? _self.order : order // ignore: cast_nullable_to_non_nullable
+as int?,review: null == review ? _self.review : review // ignore: cast_nullable_to_non_nullable
 as ReviewDto,
   ));
 }

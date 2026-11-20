@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:suhba/core/design_system/tokens/radii.dart';
@@ -13,6 +14,7 @@ import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/shared/content/domain/citation.dart';
 import 'package:suhba/shared/content/domain/content_block.dart';
 import 'package:suhba/shared/content/presentation/content_text.dart';
+import 'package:suhba/shared/content/presentation/glossary_links.dart';
 import 'package:suhba/shared/content/presentation/reader_scaffold.dart';
 import 'package:suhba/shared/content/providers.dart';
 import 'package:suhba/shared/visuals/presentation/infographic_view.dart';
@@ -39,6 +41,8 @@ class ReadingBody extends StatelessWidget {
     required this.provisional,
     required this.onCitations,
     this.textSize,
+    this.passageTitles = const {},
+    this.onOpenPassage,
     super.key,
   });
 
@@ -51,18 +55,65 @@ class ReadingBody extends StatelessWidget {
   /// Reading font size before the system text scale; theme default if null.
   final double? textSize;
 
+  /// Titles of the passages lessons may point to, by ID (E7). A lesson's
+  /// link is shown only for passages named here and with [onOpenPassage].
+  final Map<String, String> passageTitles;
+  final ValueChanged<String>? onOpenPassage;
+
+  /// Space after [block] when [next] follows (review §2.7, spacing rule 2):
+  /// 16 between paragraphs, 32 before a heading, 12 under a heading, 24
+  /// around a framed block. Space, not chrome, separates claims.
+  static double gapAfter(ContentBlock block, ContentBlock? next) =>
+      switch ((block, next)) {
+        (_, null) => AppSpacing.lg,
+        (_, HeadingBlock()) => AppSpacing.xl,
+        (HeadingBlock(), _) => AppSpacing.sm,
+        (ParagraphBlock(), ParagraphBlock()) => AppSpacing.md,
+        _ => AppSpacing.lg,
+      };
+
+  /// A paragraph whose sources open from a mark after its last word:
+  /// established or reported claims with sources. Disputed and unknown
+  /// claims keep their explicit badge (decision 1).
+  static bool _marked(ContentBlock block) =>
+      block is ParagraphBlock &&
+      block.citations.isNotEmpty &&
+      (block.reliability == Reliability.established ||
+          block.reliability == Reliability.reported);
+
   @override
   Widget build(BuildContext context) {
+    final hasReported = blocks.any(
+      (b) =>
+          _marked(b) &&
+          (b as ParagraphBlock).reliability == Reliability.reported,
+    );
+    // Glossary terms are linked at their first use in the passage (E3).
+    final matcher = GlossaryScope.maybeOf(context);
+    final seen = <String>{};
+    final terms = [
+      for (final b in blocks)
+        if (matcher != null && b is ParagraphBlock)
+          matcher.firstMatches(b.text.of(context), seen)
+        else
+          const <TermMatch>[],
+    ];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        if (hasReported) const _PassageLegend(),
         for (final (index, block) in blocks.indexed)
           // In a reader, each block anchors saved positions.
           ReaderAnchor(
             index: index,
             child: Padding(
-              padding: const EdgeInsetsDirectional.only(bottom: AppSpacing.lg),
-              child: _block(context, block),
+              padding: EdgeInsetsDirectional.only(
+                bottom: gapAfter(
+                  block,
+                  index + 1 < blocks.length ? blocks[index + 1] : null,
+                ),
+              ),
+              child: _block(context, block, terms[index]),
             ),
           ),
       ],
@@ -75,11 +126,45 @@ class ReadingBody extends StatelessWidget {
     return textSize == null ? base : base.copyWith(fontSize: textSize);
   }
 
-  Widget _block(BuildContext context, ContentBlock block) => switch (block) {
+  Widget _block(
+    BuildContext context,
+    ContentBlock block,
+    List<TermMatch> terms,
+  ) => switch (block) {
+    ParagraphBlock(:final text, :final reliability, :final citations)
+        when _marked(block) =>
+      // The mark follows the last word, like a footnote mark: it belongs
+      // unmistakably to this paragraph and costs no row (review F03).
+      _ParagraphText(
+        text: text.of(context),
+        terms: terms,
+        style: _reading(context),
+        trailing: [
+          const TextSpan(text: ' '),
+          WidgetSpan(
+            alignment: PlaceholderAlignment.middle,
+            child: CitationMarker.inline(
+              count: citations.length,
+              lineHeight:
+                  _reading(context).fontSize! * (_reading(context).height ?? 1),
+              reported: reliability == Reliability.reported,
+              onPressed: () => onCitations(
+                citations,
+                reliability,
+                passage: text.of(context),
+              ),
+            ),
+          ),
+        ],
+      ),
     ParagraphBlock(:final text, :final reliability, :final citations) => Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(text.of(context), style: _reading(context)),
+        _ParagraphText(
+          text: text.of(context),
+          terms: terms,
+          style: _reading(context),
+        ),
         _ClaimFooter(
           reliability: reliability,
           citations: citations,
@@ -90,10 +175,21 @@ class ReadingBody extends StatelessWidget {
         ),
       ],
     ),
-    LessonBlock(:final text) => _Callout(
+    LessonBlock(:final text, :final basedOn) => _Callout(
       kicker: AppLocalizations.of(context).lessonLabel,
       icon: Icons.lightbulb_outline,
-      child: Text(text.of(context), style: _reading(context)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(text.of(context), style: _reading(context)),
+          // The passages the lesson is drawn from (E7), so the reader can
+          // check a moral against its evidence.
+          if (onOpenPassage case final open?)
+            for (final id in basedOn)
+              if (passageTitles[id] case final title?)
+                _LessonSource(title: title, onTap: () => open(id)),
+        ],
+      ),
     ),
     QuranQuoteBlock(:final ref, :final note) => _QuranQuote(
       quranRef: ref,
@@ -152,14 +248,11 @@ class ReadingBody extends StatelessWidget {
       provisional: provisional,
       onCitations: onCitations,
     ),
-    HeadingBlock(:final text) => Padding(
-      padding: const EdgeInsetsDirectional.only(top: AppSpacing.sm),
-      child: Semantics(
-        header: true,
-        child: Text(
-          text.of(context),
-          style: Theme.of(context).textTheme.headlineSmall,
-        ),
+    HeadingBlock(:final text) => Semantics(
+      header: true,
+      child: Text(
+        text.of(context),
+        style: SuhbaTextStyles.of(context).readingHeading,
       ),
     ),
     InfographicBlock(:final visualId, :final caption) => InfographicView(
@@ -168,6 +261,46 @@ class ReadingBody extends StatelessWidget {
       caption: caption?.of(context),
     ),
   };
+}
+
+/// One line at the top of a passage explaining the reported mark, so the
+/// label need not repeat under every paragraph (review F10).
+class _PassageLegend extends StatelessWidget {
+  const _PassageLegend();
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final colors = SuhbaColors.of(context);
+    final style = Theme.of(
+      context,
+    ).textTheme.bodySmall?.copyWith(color: colors.onSurfaceDim);
+    return Padding(
+      padding: const EdgeInsetsDirectional.only(bottom: AppSpacing.md),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ExcludeSemantics(
+            child: Icon(
+              CitationMarker.glyphReported,
+              size: MediaQuery.textScalerOf(context).scale(16),
+              color: colors.link,
+            ),
+          ),
+          const SizedBox(width: AppSpacing.xxs),
+          Expanded(
+            child: Text(
+              l10n.readerLegendReported(
+                l10n.reliabilityReported,
+                l10n.reliabilityExplainReported,
+              ),
+              style: style,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }
 
 /// Badge and source marker under a claim.
@@ -192,6 +325,7 @@ class _ClaimFooter extends StatelessWidget {
   Widget build(BuildContext context) {
     if (!showBadge && citations.isEmpty) return const SizedBox.shrink();
     return Row(
+      mainAxisSize: MainAxisSize.min,
       children: [
         if (showBadge)
           Flexible(
@@ -215,11 +349,16 @@ class _Callout extends StatelessWidget {
     required this.child,
     this.icon,
     this.accent,
+    this.trailing,
   });
 
   final String kicker;
   final Widget child;
   final IconData? icon;
+
+  /// At the end of the kicker row: a quotation's badge and source mark,
+  /// which there cost no row of their own.
+  final Widget? trailing;
 
   /// The start-edge rule colour; the hairline colour by default.
   final Color? accent;
@@ -257,12 +396,13 @@ class _Callout extends StatelessWidget {
                       Icon(icon, size: 18, color: colors.accentText),
                       const SizedBox(width: AppSpacing.xxs),
                     ],
-                    Flexible(
+                    Expanded(
                       child: Text(
                         kicker,
                         style: SuhbaTextStyles.of(context).kicker,
                       ),
                     ),
+                    ?trailing,
                   ],
                 ),
                 const SizedBox(height: AppSpacing.xs),
@@ -294,7 +434,13 @@ class _QuranQuote extends ConsumerWidget {
     final base = SuhbaTextStyles.of(context).quran;
     final style = textSize == null
         ? base
-        : base.copyWith(fontSize: textSize! * 21 / 19);
+        // Verses keep their step above the reader's chosen size.
+        : base.copyWith(
+            fontSize:
+                textSize! *
+                base.fontSize! /
+                SuhbaTextStyles.of(context).reading.fontSize!,
+          );
     final note = this.note;
     final verses = ref.watch(quranVersesProvider);
     final passage = verses.value?.passage(quranRef);
@@ -376,6 +522,7 @@ class _Quote extends StatelessWidget {
       kicker: kicker,
       icon: Icons.format_quote_outlined,
       accent: colors.established,
+      trailing: footer,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -409,7 +556,6 @@ class _Quote extends StatelessWidget {
               }, grading.gradedBy.of(context)),
               style: textTheme.bodySmall?.copyWith(color: colors.established),
             ),
-          footer,
         ],
       ),
     );
@@ -488,6 +634,101 @@ class _DisputeNote extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+/// «مبنيّ على: …», a link from a lesson to a passage it is drawn from.
+class _LessonSource extends StatelessWidget {
+  const _LessonSource({required this.title, required this.onTap});
+
+  final String title;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final colors = SuhbaColors.of(context);
+    return Semantics(
+      link: true,
+      label: l10n.lessonBasedOn(title),
+      excludeSemantics: true,
+      onTap: onTap,
+      child: InkWell(
+        onTap: onTap,
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(
+            minHeight: kMinInteractiveDimension,
+          ),
+          child: Row(
+            children: [
+              Icon(Icons.subdirectory_arrow_left, size: 18, color: colors.link),
+              const SizedBox(width: AppSpacing.xxs),
+              Flexible(
+                child: Text(
+                  l10n.lessonBasedOn(title),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.labelMedium?.copyWith(color: colors.link),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// A paragraph's text with its glossary links (E3) and any [trailing]
+/// spans (the source mark). Owns the links' tap recognizers.
+class _ParagraphText extends StatefulWidget {
+  const _ParagraphText({
+    required this.text,
+    required this.terms,
+    required this.style,
+    this.trailing = const [],
+  });
+
+  final String text;
+  final List<TermMatch> terms;
+  final TextStyle style;
+  final List<InlineSpan> trailing;
+
+  @override
+  State<_ParagraphText> createState() => _ParagraphTextState();
+}
+
+class _ParagraphTextState extends State<_ParagraphText> {
+  final _recognizers = <TapGestureRecognizer>[];
+
+  void _release() {
+    for (final r in _recognizers) {
+      r.dispose();
+    }
+    _recognizers.clear();
+  }
+
+  @override
+  void dispose() {
+    _release();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    _release();
+    if (widget.terms.isEmpty && widget.trailing.isEmpty) {
+      return Text(widget.text, style: widget.style);
+    }
+    return Text.rich(
+      TextSpan(
+        children: [
+          ...linkedSpans(context, widget.text, widget.terms, _recognizers),
+          ...widget.trailing,
+        ],
+      ),
+      style: widget.style,
     );
   }
 }

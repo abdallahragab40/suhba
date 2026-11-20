@@ -31,11 +31,11 @@ class ProfileHeader extends ConsumerWidget {
     final subtitle = [
       if (c.kunya case final k?) k.of(context),
       for (final t in c.titles) t.of(context),
-    ].join(' · ');
+    ].join(DisplayFormatter.separator);
     final meta = [
       if (c.deathPlace case final p?) p.of(context),
       if (death != null && !death.isUnknown) format.historicalDate(death),
-    ].join(' · ');
+    ].join(DisplayFormatter.separator);
 
     return LandscapeHero(
       child: Builder(
@@ -64,6 +64,7 @@ class ProfileHeader extends ConsumerWidget {
                       ),
                     ),
                   ),
+                  const SizedBox(height: CompanionCard.nameGap),
                   Text(
                     companionHonorific(c.gender),
                     style: SuhbaTextStyles.of(context).kicker,

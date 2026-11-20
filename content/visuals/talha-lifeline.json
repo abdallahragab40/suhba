@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "talha-lifeline",
+  "type": "timeline",
+  "title": {
+    "ar": "حياة طلحة بن عبيد الله على خط الزمن"
+  },
+  "takeaway": {
+    "ar": "أسلم طلحة بمكة بدعوة أبي بكر، ووقى النبي ﷺ بنفسه يوم أحد، وشهد الحديبية، وجعله عمر في أهل الشورى، وقُتل يوم الجمل سنة ست وثلاثين."
+  },
+  "notes": [
+    {
+      "ar": "تاريخ مولده تقريبي."
+    }
+  ],
+  "review": {
+    "status": "approved",
+    "editorialFlags": [
+      "fitnaAdjacent"
+    ],
+    "authoredBy": "draft-lifelines-e6"
+  },
+  "companionId": "talha"
+}

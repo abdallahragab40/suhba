@@ -9,6 +9,7 @@ import 'package:suhba/shared/content/domain/review.dart';
 import 'package:suhba/shared/content/providers.dart';
 
 import '../../helpers/app_harness.dart';
+import '../../helpers/content_bundle.dart';
 import '../../helpers/pump_app.dart';
 
 /// The welcome screens: on the first launch only, until finished or
@@ -22,6 +23,7 @@ void main() {
     ContentManifest? manifest,
   }) async {
     final app = AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
       welcome: true,
       settings: store,
       overrides: [
@@ -106,7 +108,11 @@ void main() {
     expect(find.byType(HomePage), findsOneWidget);
     expect(store.getString(SettingsKeys.welcomeSeen), WelcomeController.seen);
 
-    final second = AppUnderTest(welcome: true, settings: store);
+    final second = AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      welcome: true,
+      settings: store,
+    );
     await second.pump(tester);
     expect(find.byType(WelcomePage), findsNothing);
   });
@@ -125,7 +131,11 @@ void main() {
     await tester.tap(find.text('تخطَّ'));
     await tester.pumpAndSettle();
 
-    final second = AppUnderTest(welcome: true, settings: store);
+    final second = AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      welcome: true,
+      settings: store,
+    );
     await second.pump(tester);
     expect(find.byType(WelcomePage), findsNothing);
     expect(find.byType(HomePage), findsOneWidget);

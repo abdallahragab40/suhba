@@ -10,7 +10,7 @@ import 'package:suhba/features/reminders/presentation/reminder_providers.dart';
 
 String reminderTimeLabel(BuildContext context, ReadingReminder settings) {
   final format = DisplayFormatter.of(context);
-  return '${format.padded(settings.hour)}:${format.padded(settings.minute)}';
+  return format.timeOfDay(settings.hour, settings.minute);
 }
 
 /// One shared entry, available from Settings and journey overviews.

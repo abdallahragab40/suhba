@@ -14,6 +14,7 @@ import 'package:suhba/core/design_system/widgets/draft_banner.dart';
 import 'package:suhba/core/design_system/widgets/error_view.dart';
 import 'package:suhba/core/design_system/widgets/loading_skeleton.dart';
 import 'package:suhba/core/design_system/widgets/section_header.dart';
+import 'package:suhba/core/design_system/widgets/wordmark.dart';
 import 'package:suhba/core/domain/umm_al_qura.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
@@ -21,7 +22,8 @@ import 'package:suhba/core/time/local_day_provider.dart';
 import 'package:suhba/features/companions/presentation/directory/directory_page.dart';
 import 'package:suhba/features/home/domain/daily_featured.dart';
 import 'package:suhba/features/home/domain/this_month.dart';
-import 'package:suhba/features/home/presentation/next_step_card.dart';
+import 'package:suhba/features/home/presentation/daily_portion.dart';
+import 'package:suhba/features/home/presentation/quick_tiles.dart';
 import 'package:suhba/features/quiz/presentation/quiz_banner.dart';
 import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
 import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
@@ -40,47 +42,39 @@ import 'package:suhba/shared/content/providers.dart';
 import 'package:suhba/shared/visuals/presentation/infographic_view.dart';
 
 /// Home (S02): the next-step card (today's journey step, due review, or the
-/// most recent unfinished reading; the full list of positions is in Saved)
-/// precedes an editorial front page. Editorial order: the Seerah's opening
-/// scene with begin/continue; the next Seerah chapters on paper; one
-/// decisive episode on ink with its visual; what happened in the current
-/// Hijri month; the companion of the day with a passage from their
-/// biography; the atlas; selected events from the archive; then the
-/// collections.
+/// most recent unfinished reading; the full list of positions is in
+/// «مكتبتي») and a row of quick tiles, then a short front page: the
+/// Seerah's opening scene with begin/continue; the one episode the content
+/// features, on ink with its visual; what happened in the current Hijri
+/// month; the companion of the day with a passage from their biography;
+/// the quiz; three stories.
 ///
-/// Sections alternate between paper and ink, and each has its own
-/// composition, rather than one repeated card.
+/// Each block lives in one place (review D7): the chapter list, the atlas
+/// and the featured events are in the Seerah hub, the categories in the
+/// Companions tab, and the full archive in Explore.
 class HomePage extends ConsumerWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = AppLocalizations.of(context);
     final manifest = ref.watch(contentManifestProvider);
     final index = ref.watch(companionIndexProvider);
-    final categories = ref.watch(categoriesProvider);
     final stories = ref.watch(storyIndexProvider);
     // The Seerah is optional: a build without it still has a Home.
     final seerah = ref.watch(seerahIndexProvider);
 
     final Widget body;
-    if (manifest.hasError || index.hasError || categories.hasError) {
+    if (manifest.hasError || index.hasError) {
       body = ErrorView(
-        error: manifest.error ?? index.error ?? categories.error,
+        error: manifest.error ?? index.error,
         onRetry: () => ref
           ..invalidate(contentManifestProvider)
-          ..invalidate(companionIndexProvider)
-          ..invalidate(categoriesProvider),
+          ..invalidate(companionIndexProvider),
       );
-    } else if ((manifest.value, index.value, categories.value) case (
-      final m?,
-      final i?,
-      final c?,
-    )) {
+    } else if ((manifest.value, index.value) case (final m?, final i?)) {
       body = _Home(
         manifest: m,
         companions: i,
-        categories: c,
         stories: stories.value ?? const [],
         seerah: seerah.value,
         today: ref.watch(localDayProvider),
@@ -93,10 +87,7 @@ class HomePage extends ConsumerWidget {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.appTitle),
-        actions: shellActions(context),
-      ),
+      appBar: AppBar(title: const Wordmark(), actions: shellActions(context)),
       body: body,
     );
   }
@@ -106,7 +97,6 @@ class _Home extends ConsumerWidget {
   const _Home({
     required this.manifest,
     required this.companions,
-    required this.categories,
     required this.stories,
     required this.seerah,
     required this.today,
@@ -114,7 +104,6 @@ class _Home extends ConsumerWidget {
 
   final ContentManifest manifest;
   final List<CompanionSummary> companions;
-  final List<CompanionCategory> categories;
   final List<StorySummary> stories;
   final SeerahIndex? seerah;
   final DateTime today;
@@ -145,6 +134,10 @@ class _Home extends ConsumerWidget {
             .value ??
         const <String, ReadingProgress>{};
     final seerah = this.seerah;
+    final feature = seerah?.collection.feature;
+    final featureChapter = feature == null
+        ? null
+        : seerah!.chapters.where((c) => c.id == feature.chapterId).firstOrNull;
     var index = 0;
     Widget header(String kicker, String title, {String? note}) => Padding(
       padding: const EdgeInsetsDirectional.only(
@@ -171,17 +164,6 @@ class _Home extends ConsumerWidget {
       ),
     );
 
-    // The next chapters to read: from where the reader is, else the start.
-    final resume = seerah == null
-        ? null
-        : seerahResumeChapter(seerah.chapters, progress);
-    final from = seerah == null || resume == null
-        ? 0
-        : seerah.chapters.indexOf(resume);
-    final nextChapters = seerah == null
-        ? const <SeerahChapterSummary>[]
-        : seerah.chapters.skip(from).take(3).toList();
-
     // Laid out in full rather than lazily: the page is finite, and its
     // sections (visuals, excerpts) must not reload and shift as they
     // scroll back into view.
@@ -190,37 +172,19 @@ class _Home extends ConsumerWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          paper([const NextStepCard()]),
+          // The draft notice comes first, before anything it applies to.
+          if (manifest.isDraft)
+            paper([const SizedBox(height: AppSpacing.md), const DraftBanner()]),
+          paper([
+            const DailyPortionCard(),
+            QuickTiles(seerah: seerah),
+            const StartHereLink(),
+            const SizedBox(height: AppSpacing.lg),
+          ]),
           if (seerah != null)
             SeerahOpening(index: seerah, progress: progress, compact: true),
-          paper([
-            if (manifest.isDraft) ...[
-              const SizedBox(height: AppSpacing.md),
-              const DraftBanner(),
-            ],
-            if (nextChapters.isNotEmpty) ...[
-              header(l10n.homeSeerahKicker, l10n.homeSeerahTitle),
-              for (final c in nextChapters)
-                ChapterJourneyTile(
-                  chapter: c,
-                  progress: progress[c.id],
-                  last: c == nextChapters.last,
-                ),
-              Align(
-                alignment: AlignmentDirectional.centerStart,
-                child: TextButton.icon(
-                  onPressed: () => context.go(AppRoutes.seerah),
-                  icon: const Icon(Icons.arrow_back),
-                  label: Text(l10n.homeAllChapters),
-                ),
-              ),
-            ],
-          ]),
-          if (seerah?.collection.visualIds.contains('hijrah-route') ??
-              false) ...[
-            const SizedBox(height: AppSpacing.xl),
-            const _InkEpisode(),
-          ],
+          if ((feature, featureChapter) case (final f?, final c?))
+            _InkEpisode(feature: f, chapter: c),
           paper([
             // Only in a month the sources date something to.
             if ((hijri, monthName) case (
@@ -239,37 +203,29 @@ class _Home extends ConsumerWidget {
               for (final e in thisMonth) EventRow(event: e),
             ],
             if (featured != null) ...[
-              header(l10n.homeFeaturedKicker, l10n.homeDiscoverTitle),
+              header(
+                l10n.homeFeaturedKicker(featured.gender.name),
+                l10n.homeDiscoverTitle(featured.gender.name),
+              ),
               _FeaturedCompanion(companion: featured),
             ],
             const SizedBox(height: AppSpacing.xl),
             const QuizBanner(),
-            if (seerah?.collection.visualIds.contains('seerah-atlas') ??
-                false) ...[
-              header(l10n.homeAtlasKicker, l10n.homeAtlasTitle),
-              const InfographicView(visualId: 'seerah-atlas', inline: true),
-            ],
-            if (seerah?.collection.featuredEventIds case final ids?
-                when ids.isNotEmpty) ...[
-              header(l10n.homeArchiveKicker, l10n.homeArchiveTitle),
-              EventRows(ids: ids),
-              Align(
-                alignment: AlignmentDirectional.centerStart,
-                child: TextButton.icon(
-                  onPressed: () =>
-                      context.go('${AppRoutes.explore}?show=events'),
-                  icon: const Icon(Icons.arrow_back),
-                  label: Text(l10n.homeAllEvents),
-                ),
-              ),
-            ],
-          ]),
-          const SizedBox(height: AppSpacing.xl),
-          _CategoryBand(categories: categories, companions: companions),
-          paper([
+
             if (stories.isNotEmpty) ...[
               header(l10n.homeStoriesKicker, l10n.homeStoriesTitle),
-              for (final s in stories) StoryCard(story: s),
+              // A taste, not the catalog: Explore lists them all.
+              for (final s in stories.take(homeStoryCount)) StoryCard(story: s),
+              if (stories.length > homeStoryCount)
+                Align(
+                  alignment: AlignmentDirectional.centerStart,
+                  child: TextButton.icon(
+                    onPressed: () =>
+                        context.go('${AppRoutes.explore}?show=stories'),
+                    icon: const Icon(Icons.arrow_back),
+                    label: Text(l10n.homeAllStories),
+                  ),
+                ),
             ],
             const SizedBox(height: AppSpacing.md),
             Align(
@@ -287,9 +243,16 @@ class _Home extends ConsumerWidget {
   }
 }
 
-/// The ink band: one decisive episode told as a sequence.
+/// How many stories Home shows before linking to the full list.
+const homeStoryCount = 3;
+
+/// The ink band: the one episode the content features (`feature` in
+/// `seerah.json`), told by its visual, with a way into its chapter.
 class _InkEpisode extends StatelessWidget {
-  const _InkEpisode();
+  const _InkEpisode({required this.feature, required this.chapter});
+
+  final SeerahFeature feature;
+  final SeerahChapterSummary chapter;
 
   @override
   Widget build(BuildContext context) {
@@ -309,20 +272,16 @@ class _InkEpisode extends StatelessWidget {
                   children: [
                     SectionHeader(
                       kicker: l10n.seerahFeatureKicker,
-                      title: l10n.seerahFeatureTitle,
+                      title: chapter.title.of(context),
                     ),
                     const SizedBox(height: AppSpacing.md),
-                    const InfographicView(
-                      visualId: 'hijrah-sequence',
-                      inline: true,
-                    ),
+                    InfographicView(visualId: feature.visualId, inline: true),
                     const SizedBox(height: AppSpacing.md),
                     Align(
                       alignment: AlignmentDirectional.centerStart,
                       child: FilledButton.tonalIcon(
-                        onPressed: () => context.push(
-                          AppRoutes.seerahChapter('hijrah-to-madinah'),
-                        ),
+                        onPressed: () =>
+                            context.push(AppRoutes.seerahChapter(chapter.id)),
                         icon: const Icon(Icons.auto_stories),
                         label: Text(l10n.seerahFeatureRead),
                       ),
@@ -381,6 +340,7 @@ class _FeaturedCompanion extends ConsumerWidget {
             ),
           ),
         ),
+        const SizedBox(height: CompanionCard.nameGap),
         Text(
           companionHonorific(c.gender),
           style: SuhbaTextStyles.of(context).kicker,
@@ -414,107 +374,10 @@ class _FeaturedCompanion extends ConsumerWidget {
           alignment: AlignmentDirectional.centerStart,
           child: FilledButton(
             onPressed: () => context.push(AppRoutes.companion(c.id)),
-            child: Text(l10n.homeReadBiography),
+            child: Text(l10n.homeReadBiography(c.gender.name)),
           ),
         ),
       ],
-    );
-  }
-}
-
-/// The reference site's alternating dark section: categories on ink.
-class _CategoryBand extends StatelessWidget {
-  const _CategoryBand({required this.categories, required this.companions});
-
-  final List<CompanionCategory> categories;
-  final List<CompanionSummary> companions;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context);
-    return Theme(
-      data: AppTheme.feature,
-      child: Builder(
-        builder: (context) {
-          final format = DisplayFormatter.of(context);
-          final colors = SuhbaColors.of(context);
-          final textTheme = Theme.of(context).textTheme;
-          return Material(
-            color: Palette.green,
-            child: Padding(
-              padding: const EdgeInsets.all(AppSpacing.gutter),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  SectionHeader(
-                    kicker: l10n.homeCategoriesKicker,
-                    title: l10n.homeCategoriesTitle,
-                  ),
-                  const SizedBox(height: AppSpacing.sm),
-                  for (final cat in categories)
-                    Padding(
-                      padding: const EdgeInsetsDirectional.only(
-                        bottom: AppSpacing.sm,
-                      ),
-                      child: Card(
-                        clipBehavior: Clip.antiAlias,
-                        child: InkWell(
-                          onTap: () => context.go(
-                            AppRoutes.companionsInCategory(cat.id),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(AppSpacing.md),
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        cat.name.of(context),
-                                        style: textTheme.titleLarge,
-                                      ),
-                                      if (cat.description case final d?)
-                                        Text(
-                                          d.of(context),
-                                          style: textTheme.bodySmall?.copyWith(
-                                            color: colors.onSurfaceDim,
-                                          ),
-                                        ),
-                                    ],
-                                  ),
-                                ),
-                                const SizedBox(width: AppSpacing.sm),
-                                Builder(
-                                  builder: (context) {
-                                    final n = companions
-                                        .where(
-                                          (c) => c.categoryIds.contains(cat.id),
-                                        )
-                                        .length;
-                                    return Text(
-                                      l10n.homeCategoryCount(
-                                        n,
-                                        format.integer(n),
-                                      ),
-                                      style: SuhbaTextStyles.of(context).kicker
-                                          .copyWith(color: colors.accentText),
-                                    );
-                                  },
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                ],
-              ),
-            ),
-          );
-        },
-      ),
     );
   }
 }

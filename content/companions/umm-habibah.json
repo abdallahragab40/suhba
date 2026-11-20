@@ -412,11 +412,59 @@
     "siyar"
   ],
   "review": {
-    "status": "sourced",
-    "editorialFlags": [],
+    "status": "approved",
+    "editorialFlags": [
+      "sensitive"
+    ],
     "coverage": "sample",
     "authoredBy": "ummahat-2"
   },
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "ويذكر الذهبي أنه ليس في أزواج النبي ﷺ من هي أقرب نسبًا إليه منها، ولا أكثر صداقًا، ولا من تزوّج بها وهي نائية الدار أبعد منها."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "219"
+        }
+      ],
+      "sectionId": "umm-habibah.marriage"
+    },
+    {
+      "text": {
+        "ar": "روت أم حبيبة عن النبي ﷺ قوله: من صلى اثنتي عشرة ركعة في يوم وليلة بُني له بهن بيت في الجنة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "complete",
+          "hadithNumber": "728"
+        }
+      ],
+      "sectionId": "umm-habibah.narration"
+    },
+    {
+      "text": {
+        "ar": "ويروي الواقدي عن عائشة أن أم حبيبة دعتها عند موتها فقالت: قد كان يكون بيننا ما يكون بين الضرائر، فغفر الله لي ولك ما كان من ذلك."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "223"
+        }
+      ],
+      "sectionId": "umm-habibah.death"
+    }
+  ],
   "storyIds": []
 }

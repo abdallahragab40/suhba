@@ -33,7 +33,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tabCompanions => 'Companions';
 
   @override
-  String get tabSaved => 'Saved';
+  String get tabSaved => 'My library';
 
   @override
   String get tabSettings => 'Settings';
@@ -219,7 +219,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profileSectionsKicker => 'Biography';
 
   @override
-  String get profileSectionsTitle => 'Chapters of the biography';
+  String profileSectionsTitle(String gender) {
+    return 'Chapters of the biography';
+  }
 
   @override
   String get profileTimelineKicker => 'Chronology';
@@ -246,7 +248,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profileReferencesKicker => 'Sources';
 
   @override
-  String get profileReferencesTitle => 'References for this biography';
+  String profileReferencesTitle(String gender) {
+    return 'References for this biography';
+  }
 
   @override
   String get relationFather => 'Father';
@@ -420,6 +424,27 @@ class AppLocalizationsEn extends AppLocalizations {
   String get lessonLabel => 'A lesson';
 
   @override
+  String lessonBasedOn(String title) {
+    return 'Drawn from: $title';
+  }
+
+  @override
+  String get glossaryTitle => 'Glossary';
+
+  @override
+  String get glossaryKicker => 'Term';
+
+  @override
+  String get glossaryAll => 'All terms';
+
+  @override
+  String get glossaryEmpty => 'No terms in this build.';
+
+  @override
+  String get exploreGlossaryBody =>
+      'What recurring words in the Seerah mean, with sources.';
+
+  @override
   String get sectionNotFound => 'This section could not be found.';
 
   @override
@@ -447,7 +472,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get eraKicker => 'Period';
 
   @override
-  String get timelineOpenSection => 'Read in the biography';
+  String timelineOpenSection(String gender) {
+    return 'Read in the biography';
+  }
 
   @override
   String timelineEvent(String name) {
@@ -562,16 +589,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String get searchKindChapters => 'Story chapters';
 
   @override
-  String get homeFeaturedKicker => 'Companion of the day';
+  String homeFeaturedKicker(String gender) {
+    return 'Companion of the day';
+  }
 
   @override
-  String get homeReadBiography => 'Read the biography';
-
-  @override
-  String get homeCategoriesKicker => 'Categories';
-
-  @override
-  String get homeCategoriesTitle => 'Browse the companions';
+  String homeReadBiography(String gender) {
+    return 'Read the biography';
+  }
 
   @override
   String get homeStoriesKicker => 'Stories';
@@ -605,6 +630,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settingsChannelPublished => 'Published content';
+
+  @override
+  String get settingsChannelPreview =>
+      'Developer preview: content is shown as if approved; it has not been reviewed.';
 
   @override
   String get settingsAbout => 'About and methodology';
@@ -694,17 +723,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get sourceTypeOther => 'Other sources';
 
   @override
-  String homeCategoryCount(int count, String n) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$n companions',
-      one: '1 companion',
-    );
-    return '$_temp0';
-  }
-
-  @override
   String get savedLoadErrorMessage =>
       'Your saved items could not be loaded. Nothing was deleted; try again.';
 
@@ -749,7 +767,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get readerReadAgain => 'Read it again';
 
   @override
-  String get profileStartReading => 'Start reading';
+  String profileStartReading(String gender) {
+    return 'Start reading';
+  }
 
   @override
   String get profileContinueReading => 'Continue reading';
@@ -981,6 +1001,10 @@ class AppLocalizationsEn extends AppLocalizations {
       'A schematic map for orientation, not a survey.';
 
   @override
+  String get mapSpreadNote =>
+      'Places close together are drawn a little apart, keeping their directions.';
+
+  @override
   String get relationCompanion => 'Companion of';
 
   @override
@@ -1064,6 +1088,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get seerahOpenTimeline => 'The Seerah on a timeline';
 
   @override
+  String get seerahOpenMap => 'The Seerah on the map';
+
+  @override
   String get seerahTopicsKicker => 'Themes';
 
   @override
@@ -1108,6 +1135,26 @@ class AppLocalizationsEn extends AppLocalizations {
   String get seerahOpenSection => 'Open the Seerah';
 
   @override
+  String seerahProgressRead(int count, String read, String n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'You have read $read of $n chapters',
+      one: 'You have read $read of 1 chapter',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get seerahProgressNone => 'Not started yet';
+
+  @override
+  String get seerahProgressDone => 'You have finished the Seerah';
+
+  @override
+  String get seerahReadAgain => 'Read it again';
+
+  @override
   String get seerahScrollHint => 'Twelve chapters';
 
   @override
@@ -1140,10 +1187,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get seerahFeatureKicker => 'A turning point';
 
   @override
-  String get seerahFeatureTitle => 'The Hijrah: Makkah to Madinah';
-
-  @override
-  String get seerahFeatureRead => 'Read the Hijrah chapter';
+  String get seerahFeatureRead => 'Read the chapter';
 
   @override
   String get seerahChapterNotFound => 'This chapter does not exist.';
@@ -1322,31 +1366,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get savedSeerahTopics => 'Seerah themes';
 
   @override
-  String get homeSeerahKicker => 'The Seerah';
-
-  @override
-  String get homeSeerahTitle => 'Next chapters';
-
-  @override
-  String get homeAllChapters => 'All chapters';
-
-  @override
-  String get homeDiscoverTitle => 'Meet a companion';
-
-  @override
-  String get homeAtlasKicker => 'Atlas';
-
-  @override
-  String get homeAtlasTitle => 'Where it happened';
-
-  @override
-  String get homeArchiveKicker => 'Archive';
-
-  @override
-  String get homeArchiveTitle => 'Selected events';
-
-  @override
-  String get homeAllEvents => 'The full archive';
+  String homeDiscoverTitle(String gender) {
+    return 'Meet a companion';
+  }
 
   @override
   String get searchKindSeerahChapters => 'Seerah chapters';
@@ -2113,7 +2135,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get reminderGroup => 'Reminders';
+  String get reminderGroup => 'Daily reading and reminder';
 
   @override
   String get reminderTitle => 'Daily reminder';
@@ -2177,10 +2199,28 @@ class AppLocalizationsEn extends AppLocalizations {
   String get shareCardSquare => 'Square';
 
   @override
-  String get shareCardStory => 'Story';
+  String get shareCardPaper => 'Paper';
 
   @override
-  String get shareCardDark => 'Dark';
+  String get shareCardGreen => 'Green';
+
+  @override
+  String get shareCardNight => 'Night';
+
+  @override
+  String get shareCardAccent => 'Colour:';
+
+  @override
+  String get shareCardAccentGold => 'Gold';
+
+  @override
+  String get shareCardAccentGreen => 'Green';
+
+  @override
+  String get shareCardAccentPlain => 'Text colour';
+
+  @override
+  String get shareCardStory => 'Story';
 
   @override
   String get shareCardAction => 'Share card';
@@ -2194,4 +2234,192 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get shareCardOption => 'Card';
+
+  @override
+  String journeyNotStarted(int totalCount, String total) {
+    String _temp0 = intl.Intl.pluralLogic(
+      totalCount,
+      locale: localeName,
+      other: '$total steps',
+      one: '1 step',
+    );
+    return 'Not started, $_temp0';
+  }
+
+  @override
+  String timeMorning(String time) {
+    return '$time AM';
+  }
+
+  @override
+  String timeEvening(String time) {
+    return '$time PM';
+  }
+
+  @override
+  String get homeAllStories => 'All stories';
+
+  @override
+  String get homeTileContinue => 'Continue reading';
+
+  @override
+  String get homeTileJourney => 'Today\'s journey';
+
+  @override
+  String get homeTileReview => 'Review';
+
+  @override
+  String get homeTileMap => 'Map';
+
+  @override
+  String startHereLink(String title) {
+    return 'New here? $title';
+  }
+
+  @override
+  String get dailyPortionKicker => 'Today\'s reading';
+
+  @override
+  String get dailyPortionRead => 'Read';
+
+  @override
+  String get dailyPortionDone => 'I\'ve read it';
+
+  @override
+  String dailyPortionMarked(String title) {
+    return 'Marked “$title” as read';
+  }
+
+  @override
+  String reminderPortionBody(String title, String minutes) {
+    return 'Today\'s reading: $title, $minutes';
+  }
+
+  @override
+  String dailyPortionOf(String n, String total) {
+    return 'Today\'s reading: $n of $total';
+  }
+
+  @override
+  String get dailyPortionComplete => 'Today\'s reading is done';
+
+  @override
+  String dailyPortionTomorrow(String title) {
+    return 'Tomorrow: $title';
+  }
+
+  @override
+  String get dailyPortionReadAhead => 'Read it now';
+
+  @override
+  String dailyPortionBehind(int count, String n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$n chapters remain from earlier days.',
+      one: 'One chapter remains from earlier days.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get planContinueFromHere => 'Continue where I stopped';
+
+  @override
+  String get planCatchUp => 'Catch up gradually';
+
+  @override
+  String get planTitle => 'Daily Seerah reading';
+
+  @override
+  String get planNone => 'No plan';
+
+  @override
+  String planPace(int count, String n) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$n chapters',
+      one: '1 chapter',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get planNote =>
+      'Seerah chapters a day. After a missed day you choose to continue where you stopped or to catch up gradually.';
+
+  @override
+  String citationEdition(String edition) {
+    return 'Edition: $edition';
+  }
+
+  @override
+  String citationNumbering(String scheme) {
+    return 'Numbering: $scheme';
+  }
+
+  @override
+  String readerLegendReported(String label, String explanation) {
+    return '$label: $explanation';
+  }
+
+  @override
+  String get listStatusNote =>
+      'This mark is on items a qualified reviewer has not yet approved. See About for the method.';
+
+  @override
+  String get depthFull => 'Full biography';
+
+  @override
+  String get depthBrief => 'Short introduction';
+
+  @override
+  String get directoryOthers => 'Other companions';
+
+  @override
+  String get aboutCreditsTitle => 'Credits';
+
+  @override
+  String get aboutCreditQuranBody =>
+      'Qur\'an text in the Uthmani script from the Tanzil project (tanzil.net), unchanged, under Creative Commons Attribution 3.0. The full notice is on the Sources page.';
+
+  @override
+  String get aboutCreditFontsTitle => 'Fonts';
+
+  @override
+  String get aboutCreditAmiri =>
+      'Amiri and Amiri Quran, by Khaled Hosny, for reading text, names and verses. SIL Open Font License 1.1.';
+
+  @override
+  String get aboutCreditZain =>
+      'Zain, by Boutros Fonts, for interface titles and text. SIL Open Font License 1.1.';
+
+  @override
+  String get aboutCreditSources => 'Sources';
+
+  @override
+  String get searchSuggestions => 'الهجرة، أبو بكر، بدر، خديجة';
+
+  @override
+  String get searchNoResultsTip =>
+      'Try a single word, or the name without a title or kunya.';
+
+  @override
+  String get searchBrowseCompanions => 'Browse the companions';
+
+  @override
+  String get readerTone => 'Page';
+
+  @override
+  String get readerToneApp => 'Match the app';
+
+  @override
+  String get readerToneWarmPaper => 'Warm paper';
+
+  @override
+  String get readerToneWarmNight => 'Warm night';
+
+  @override
+  String get journeyStepContinue => 'Continue';
 }

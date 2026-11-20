@@ -41,6 +41,7 @@ void main() {
     journey = {
       'schemaVersion': 1,
       'id': 'journey-a',
+      'order': 1,
       'title': {'ar': 'رحلة'},
       'description': {'ar': 'قراءات قصيرة'},
       'steps': [

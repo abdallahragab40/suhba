@@ -23,6 +23,18 @@ abstract class SeerahEraDto with _$SeerahEraDto {
       _$SeerahEraDtoFromJson(json);
 }
 
+/// The one episode Home features: a chapter and one of its visuals.
+@freezed
+abstract class SeerahFeatureDto with _$SeerahFeatureDto {
+  const factory SeerahFeatureDto({
+    required String chapterId,
+    required String visualId,
+  }) = _SeerahFeatureDto;
+
+  factory SeerahFeatureDto.fromJson(Map<String, dynamic> json) =>
+      _$SeerahFeatureDtoFromJson(json);
+}
+
 /// `content/seerah/seerah.json`: the Seerah section.
 @freezed
 abstract class SeerahDto with _$SeerahDto {
@@ -41,6 +53,8 @@ abstract class SeerahDto with _$SeerahDto {
     @Default(<String>[]) List<String> featuredPlaceIds,
     @Default(<String>[]) List<String> companionIds,
     @Default(<String>[]) List<String> visualIds,
+    SeerahFeatureDto? feature,
+    String? mapVisualId,
   }) = _SeerahDto;
 
   factory SeerahDto.fromJson(Map<String, dynamic> json) =>

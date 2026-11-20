@@ -11,6 +11,7 @@ import 'package:suhba/features/sources/presentation/citation_sheet.dart';
 import 'package:suhba/shared/content/presentation/reader_scaffold.dart';
 
 import '../../helpers/app_harness.dart';
+import '../../helpers/content_bundle.dart';
 
 void main() {
   Future<AppUnderTest> open(WidgetTester tester, String path) async {
@@ -18,7 +19,10 @@ void main() {
       ..devicePixelRatio = 1
       ..physicalSize = const Size(600, 4000);
     addTearDown(tester.view.reset);
-    final app = AppUnderTest(location: path);
+    final app = AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      location: path,
+    );
     await app.pump(tester);
     return app;
   }
@@ -28,7 +32,8 @@ void main() {
   ) async {
     await open(tester, '/companions/abu-bakr/sections/abu-bakr.hijrah');
     expect(find.text('صاحبه في الهجرة'), findsOneWidget);
-    expect(find.text('٠٣'), findsOneWidget); // third section
+    expect(find.text('٣'), findsWidgets); // third section, unpadded
+    expect(find.text('٠٣'), findsNothing);
     expect(find.byType(DraftBadge), findsOneWidget);
     expect(find.text('قال الله تعالى — التوبة: ٤٠'), findsOneWidget);
     // The cave hadith in its verbatim wording (from the pinned dataset).

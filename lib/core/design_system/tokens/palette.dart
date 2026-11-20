@@ -23,6 +23,26 @@ abstract final class Palette {
   static const inkHigh = Color(0xFF16241D);
   static const inkHighest = Color(0xFF1C2C24);
 
+  // Night: the dark theme's surfaces. A step lighter and greener than
+  // [ink], with clearer steps, so cards stand off the page; text is a
+  // warm off-white rather than [paper], which glares on a dark page.
+  static const nightLowest = Color(0xFF080F0C);
+  static const night = Color(0xFF0C1612);
+  static const nightLow = Color(0xFF101B16);
+  static const nightAlt = Color(0xFF15211B);
+  static const nightHigh = Color(0xFF1B2A22);
+  static const nightHighest = Color(0xFF223329);
+  static const lineOnNight = Color(0xFF2C3D34);
+  static const textOnNight = Color(0xFFE6E2D8);
+  static const dimOnNight = Color(0xFFA5A29B);
+
+  // Warm night: the reader's warm tone in the dark theme (K5 at night).
+  static const warmNight = Color(0xFF16130E);
+  static const warmNightAlt = Color(0xFF211C15);
+  static const lineOnWarmNight = Color(0xFF382F23);
+  static const textOnWarmNight = Color(0xFFE8DECB);
+  static const dimOnWarmNight = Color(0xFFB0A590);
+
   // Secondary text, hairlines and outlines.
   static const inkDim = Color(0xFF565553);
   static const paperDim = Color(0xFF989694);
@@ -60,11 +80,28 @@ abstract final class Palette {
   static const establishedOnInk = Color(0xFF7BC4A0);
   static const disputedOnPaper = Color(0xFF784700);
   static const disputedOnInk = Color(0xFFF0B45A);
-  static const draftOnPaper = goldText;
-  static const draftWash = goldWash;
-  static const draftOnInk = goldOnInk;
-  static const draftWashOnInk = goldWashOnInk;
-  // Review status uses the same gold family on paper, ink and green.
-  static const draftOnGreen = goldOnInk;
-  static const draftWashOnGreen = goldWashOnInk;
+  // Review status is neutral: the icon and the words carry the meaning, and
+  // gold is kept for illumination (review §2.7, F12).
+  static const draftOnPaper = inkDim;
+  static const draftWash = paperAlt;
+  static const draftOnInk = paperDim;
+  static const draftWashOnInk = inkAlt;
+  static const draftOnGreen = paperDimOnGreen;
+  static const draftWashOnGreen = greenAlt;
+
+  // Clay: errors and destructive actions only (review §2.7).
+  static const clay = Color(0xFF8A3B2E);
+  static const clayWash = Color(0xFFF3E3DD);
+  static const clayOnInk = Color(0xFFF2B8A8);
+  static const clayWashOnInk = Color(0xFF2A1714);
+
+  // Warm paper: the reader's optional page tone (review K5). The page is
+  // lighter and warmer than [paper]; cards and lines follow it.
+  static const warmPaper = Color(0xFFFAF6EC);
+  static const warmPaperAlt = Color(0xFFF0E9DA);
+  static const lineOnWarmPaper = Color(0xFFDAD2C1);
+
+  /// The selected destination's pill on paper: a step stronger than
+  /// [greenWash], so the current tab reads at a glance.
+  static const greenWashStrong = Color(0xFFC3D6CB);
 }

@@ -29,8 +29,8 @@ void main() {
         final companion = CompanionDto.fromJson(
           _readJson(file.path),
         ).toDomain();
-        // Draft or preliminarily reviewed; never approved by the tooling.
-        expect(companion.review.isApproved, isFalse, reason: file.path);
+        // Approved by the editorial review (2026-11-20).
+        expect(companion.review.isApproved, isTrue, reason: file.path);
         // Full biographies belong to a category; a short profile may not.
         if (companion.review.coverage == Coverage.complete) {
           expect(companion.memberships, isNotEmpty, reason: file.path);
@@ -111,7 +111,11 @@ void main() {
       ]);
       // Hadith wording is copied from the pinned dataset (V14 checks it);
       // only the printed works' page locators remain.
-      expect(c.review.editorialFlags, {EditorialFlag.needsLocators});
+      // Saqifah and the Ridda (review §4.4).
+      expect(c.review.editorialFlags, {
+        EditorialFlag.needsLocators,
+        EditorialFlag.sensitive,
+      });
       final quotes = c.sections
           .expand((x) => x.blocks)
           .whereType<HadithQuoteBlock>();
@@ -132,6 +136,29 @@ void main() {
         expect(
           c.review.editorialFlags,
           contains(EditorialFlag.fitnaAdjacent),
+          reason: id,
+        );
+      }
+    });
+
+    test('subjects listed in review §4.4 are flagged sensitive (E1)', () {
+      // The Mothers of the Believers (marriages and ages), Saqifah, the
+      // Ridda, the killing of Umar, slavery, and events after 35 AH.
+      for (final id in [
+        'aisha',
+        'khadijah',
+        'safiyyah-bint-huyayy',
+        'abu-bakr',
+        'umar',
+        'bilal',
+        'ammar-ibn-yasir',
+      ]) {
+        final c = CompanionDto.fromJson(
+          _readJson('content/companions/$id.json'),
+        ).toDomain();
+        expect(
+          c.review.editorialFlags,
+          contains(EditorialFlag.sensitive),
           reason: id,
         );
       }

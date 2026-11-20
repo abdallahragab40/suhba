@@ -26,6 +26,16 @@ abstract class SeerahPeriod with _$SeerahPeriod {
   }) = _SeerahPeriod;
 }
 
+/// The one episode Home features (review D7): a chapter and the visual
+/// that tells it. Chosen in content, so changing it needs no release.
+@freezed
+abstract class SeerahFeature with _$SeerahFeature {
+  const factory SeerahFeature({
+    required String chapterId,
+    required String visualId,
+  }) = _SeerahFeature;
+}
+
 /// The Seerah section (محمد رسول الله ﷺ): its opening, periods, and the
 /// reading order of its chapters and topics.
 ///
@@ -50,6 +60,12 @@ abstract class SeerahCollection with _$SeerahCollection {
     @Default(<String>[]) List<String> featuredPlaceIds,
     @Default(<String>[]) List<String> companionIds,
     @Default(<String>[]) List<String> visualIds,
+
+    /// Home's featured episode, if any.
+    SeerahFeature? feature,
+
+    /// The Seerah's map, opened from Home's map tile and shown in the hub.
+    String? mapVisualId,
   }) = _SeerahCollection;
 }
 

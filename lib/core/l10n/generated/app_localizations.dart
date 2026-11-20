@@ -146,10 +146,10 @@ abstract class AppLocalizations {
   /// **'الصحابة'**
   String get tabCompanions;
 
-  /// Bottom navigation: bookmarks and continue-reading tab.
+  /// Bottom navigation: the reader's own tab (continue reading and saved items). Kept short so it never wraps in the bar.
   ///
   /// In ar, this message translates to:
-  /// **'المحفوظات'**
+  /// **'مكتبتي'**
   String get tabSaved;
 
   /// Bottom navigation: settings tab.
@@ -413,14 +413,14 @@ abstract class AppLocalizations {
   /// Kicker above the list of biography sections.
   ///
   /// In ar, this message translates to:
-  /// **'السيرة'**
+  /// **'الفصول'**
   String get profileSectionsKicker;
 
-  /// Title of the list of biography sections.
+  /// Profile: title over the biography's sections (review F11).
   ///
   /// In ar, this message translates to:
-  /// **'فصول السيرة'**
-  String get profileSectionsTitle;
+  /// **'{gender, select, female{فصول سيرتها} other{فصول سيرته}}'**
+  String profileSectionsTitle(String gender);
 
   /// Kicker above the timeline preview.
   ///
@@ -470,11 +470,11 @@ abstract class AppLocalizations {
   /// **'المصادر'**
   String get profileReferencesKicker;
 
-  /// Title of the reference list.
+  /// Profile: title over the biography's references (review F11).
   ///
   /// In ar, this message translates to:
-  /// **'مراجع هذه السيرة'**
-  String get profileReferencesTitle;
+  /// **'{gender, select, female{مراجع سيرتها} other{مراجع سيرته}}'**
+  String profileReferencesTitle(String gender);
 
   /// Relation label.
   ///
@@ -752,6 +752,42 @@ abstract class AppLocalizations {
   /// **'درس وعبرة'**
   String get lessonLabel;
 
+  /// Link under a lesson to the passage it is drawn from.
+  ///
+  /// In ar, this message translates to:
+  /// **'مبنيّ على: {title}'**
+  String lessonBasedOn(String title);
+
+  /// The glossary page and its Explore entry.
+  ///
+  /// In ar, this message translates to:
+  /// **'المصطلحات'**
+  String get glossaryTitle;
+
+  /// Kicker of a term sheet.
+  ///
+  /// In ar, this message translates to:
+  /// **'مصطلح'**
+  String get glossaryKicker;
+
+  /// Opens the glossary from a term sheet.
+  ///
+  /// In ar, this message translates to:
+  /// **'كل المصطلحات'**
+  String get glossaryAll;
+
+  /// Glossary empty state.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا مصطلحات في هذا الإصدار.'**
+  String get glossaryEmpty;
+
+  /// Explore entry body for the glossary.
+  ///
+  /// In ar, this message translates to:
+  /// **'معاني الكلمات التي تتكرر في السيرة، مع مصادرها.'**
+  String get exploreGlossaryBody;
+
   /// Unknown section link.
   ///
   /// In ar, this message translates to:
@@ -806,11 +842,11 @@ abstract class AppLocalizations {
   /// **'المرحلة'**
   String get eraKicker;
 
-  /// Opens the biography section linked to a timeline entry.
+  /// Timeline entry: opens the linked section of the companion's biography (review F11).
   ///
   /// In ar, this message translates to:
-  /// **'اقرأ في السيرة'**
-  String get timelineOpenSection;
+  /// **'{gender, select, female{اقرأ في سيرتها} other{اقرأ في سيرته}}'**
+  String timelineOpenSection(String gender);
 
   /// Names the historical event linked to a timeline entry.
   ///
@@ -929,7 +965,7 @@ abstract class AppLocalizations {
   /// Saved group.
   ///
   /// In ar, this message translates to:
-  /// **'أقسام السيرة'**
+  /// **'من سِيَر الصحابة'**
   String get savedSections;
 
   /// Saved group.
@@ -953,7 +989,7 @@ abstract class AppLocalizations {
   /// Empty saved screen message.
   ///
   /// In ar, this message translates to:
-  /// **'احفظ صحابيًّا أو قسمًا من السيرة أو قصة لتجده هنا.'**
+  /// **'احفظ ما تحب من سِيَر الصحابة وفصول السيرة النبوية والقصص لتجده هنا.'**
   String get savedEmptyMessage;
 
   /// Search button tooltip.
@@ -971,7 +1007,7 @@ abstract class AppLocalizations {
   /// Shown before typing.
   ///
   /// In ar, this message translates to:
-  /// **'ابحث في أسماء الصحابة وألقابهم وكناهم، وفي عناوين السيرة والقصص ونصوصها.'**
+  /// **'ابحث في أسماء الصحابة وألقابهم وكناهم، وفي سِيَرهم والسيرة النبوية والقصص.'**
   String get searchStart;
 
   /// No search results.
@@ -1007,7 +1043,7 @@ abstract class AppLocalizations {
   /// Search result group.
   ///
   /// In ar, this message translates to:
-  /// **'أقسام السيرة'**
+  /// **'سِيَر الصحابة'**
   String get searchKindSections;
 
   /// Search result group.
@@ -1016,29 +1052,17 @@ abstract class AppLocalizations {
   /// **'فصول القصص'**
   String get searchKindChapters;
 
-  /// Kicker on the home hero (changes daily).
+  /// Home: kicker over the featured companion, by gender (review F11).
   ///
   /// In ar, this message translates to:
-  /// **'صحابي اليوم'**
-  String get homeFeaturedKicker;
+  /// **'{gender, select, female{صحابية اليوم} other{صحابي اليوم}}'**
+  String homeFeaturedKicker(String gender);
 
-  /// Opens the featured companion.
+  /// Home: button opening the featured companion's biography. Not "السيرة", which means the Prophetic Seerah (review F11).
   ///
   /// In ar, this message translates to:
-  /// **'اقرأ السيرة'**
-  String get homeReadBiography;
-
-  /// Kicker above categories.
-  ///
-  /// In ar, this message translates to:
-  /// **'التصنيفات'**
-  String get homeCategoriesKicker;
-
-  /// Title above categories.
-  ///
-  /// In ar, this message translates to:
-  /// **'تصفّح الصحابة'**
-  String get homeCategoriesTitle;
+  /// **'{gender, select, female{اقرأ سيرتها} other{اقرأ سيرته}}'**
+  String homeReadBiography(String gender);
 
   /// Kicker above stories.
   ///
@@ -1099,6 +1123,12 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'محتوى منشور'**
   String get settingsChannelPublished;
+
+  /// Settings content channel line in the debug-only preview where all content reads as approved.
+  ///
+  /// In ar, this message translates to:
+  /// **'معاينة للمطوّر: يُعرض المحتوى كأنه معتمد، ولم يُراجَع بعد.'**
+  String get settingsChannelPreview;
 
   /// Opens the about page.
   ///
@@ -1256,12 +1286,6 @@ abstract class AppLocalizations {
   /// **'مصادر أخرى'**
   String get sourceTypeOther;
 
-  /// Number of companions in a category; n is the formatted number.
-  ///
-  /// In ar, this message translates to:
-  /// **'{count, plural, =0{لا صحابة بعد} =1{صحابي واحد} =2{صحابيان} few{{n} صحابة} other{{n} صحابيًّا}}'**
-  String homeCategoryCount(int count, String n);
-
   /// Saved screen: the saved items or positions failed to load.
   ///
   /// In ar, this message translates to:
@@ -1340,11 +1364,11 @@ abstract class AppLocalizations {
   /// **'اقرأه من جديد'**
   String get readerReadAgain;
 
-  /// Profile: start the biography at its first section.
+  /// Profile: button that opens the first section (review F11).
   ///
   /// In ar, this message translates to:
-  /// **'ابدأ قراءة السيرة'**
-  String get profileStartReading;
+  /// **'{gender, select, female{ابدأ قراءة سيرتها} other{ابدأ قراءة سيرته}}'**
+  String profileStartReading(String gender);
 
   /// Profile: resume the biography.
   ///
@@ -1415,7 +1439,7 @@ abstract class AppLocalizations {
   /// Profile: the section to resume and how much of it was read (percent is formatted).
   ///
   /// In ar, this message translates to:
-  /// **'{title} · قُرئ {percent}'**
+  /// **'{title}، قُرئ {percent}'**
   String profileResumeDetail(String title, String percent);
 
   /// Search filter chip: every kind of result.
@@ -1427,13 +1451,13 @@ abstract class AppLocalizations {
   /// Search filter chip: companions only.
   ///
   /// In ar, this message translates to:
-  /// **'الصحابة'**
+  /// **'أسماء الصحابة'**
   String get searchScopeCompanions;
 
   /// Search filter chip: biography sections only.
   ///
   /// In ar, this message translates to:
-  /// **'السِّيَر'**
+  /// **'سِيَر الصحابة'**
   String get searchScopeBiographies;
 
   /// Search filter chip: stories and their chapters.
@@ -1529,7 +1553,7 @@ abstract class AppLocalizations {
   /// Subtitle: how much review and journey data there is.
   ///
   /// In ar, this message translates to:
-  /// **'أسئلة المراجعة: {reviews} · الرحلات: {journeys}'**
+  /// **'أسئلة المراجعة: {reviews}، الرحلات: {journeys}'**
   String settingsLearningCounts(String reviews, String journeys);
 
   /// Confirmation dialog title.
@@ -1706,6 +1730,12 @@ abstract class AppLocalizations {
   /// **'خريطة تخطيطية للتوضيح، وليست رسمًا مساحيًّا دقيقًا.'**
   String get mapSchematicNote;
 
+  /// Under the schematic map, when places too close to tell apart were drawn further apart.
+  ///
+  /// In ar, this message translates to:
+  /// **'ورُسمت المواضع المتقاربة متباعدةً قليلًا لتظهر، مع حفظ جهاتها.'**
+  String get mapSpreadNote;
+
   /// Relation type: companionship (e.g. the Prophet ﷺ and Abu Bakr).
   ///
   /// In ar, this message translates to:
@@ -1814,10 +1844,10 @@ abstract class AppLocalizations {
   /// **'من {from} إلى {to}'**
   String mapRouteLeg(String from, String to);
 
-  /// Relation in list form: the relation label, then the other person; e.g. "من الأبناء · أبو بكر الصديق".
+  /// Relation in list form: the relation label, then the other person; e.g. "من الأبناء، أبو بكر الصديق".
   ///
   /// In ar, this message translates to:
-  /// **'{relation} · {person}'**
+  /// **'{relation}، {person}'**
   String visualRelationOf(String relation, String person);
 
   /// Name of the Seerah section (app bar).
@@ -1855,6 +1885,12 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'السيرة على خط الزمن'**
   String get seerahOpenTimeline;
+
+  /// Button in the Seerah hub opening the Seerah map full screen.
+  ///
+  /// In ar, this message translates to:
+  /// **'أماكن السيرة على الخريطة'**
+  String get seerahOpenMap;
 
   /// Kicker above the thematic essays.
   ///
@@ -1940,6 +1976,30 @@ abstract class AppLocalizations {
   /// **'افتح السيرة النبوية'**
   String get seerahOpenSection;
 
+  /// Seerah progress beside the ring: chapters finished out of all chapters. count is the total.
+  ///
+  /// In ar, this message translates to:
+  /// **'{count, plural, =1{قرأتَ {read} من فصل واحد} =2{قرأتَ {read} من فصلين} few{قرأتَ {read} من {n} فصول} other{قرأتَ {read} من {n} فصلًا}}'**
+  String seerahProgressRead(int count, String read, String n);
+
+  /// Seerah progress before any chapter is finished (Q4).
+  ///
+  /// In ar, this message translates to:
+  /// **'لم تبدأ بعد'**
+  String get seerahProgressNone;
+
+  /// Seerah progress once every chapter is finished.
+  ///
+  /// In ar, this message translates to:
+  /// **'أتممتَ السيرة'**
+  String get seerahProgressDone;
+
+  /// Button once the Seerah is finished: opens chapter one; nothing is reset.
+  ///
+  /// In ar, this message translates to:
+  /// **'اقرأها من جديد'**
+  String get seerahReadAgain;
+
   /// Small hint under the Seerah opening that more follows below.
   ///
   /// In ar, this message translates to:
@@ -1949,7 +2009,7 @@ abstract class AppLocalizations {
   /// Chapter number and time label in lists.
   ///
   /// In ar, this message translates to:
-  /// **'الفصل {number} · {date}'**
+  /// **'الفصل {number}، {date}'**
   String seerahChapterLabel(String number, String date);
 
   /// Number of visuals in a chapter; n is the formatted number.
@@ -1982,16 +2042,10 @@ abstract class AppLocalizations {
   /// **'حدث فارق'**
   String get seerahFeatureKicker;
 
-  /// Title of the Hijrah feature band.
+  /// Button opening the featured chapter.
   ///
   /// In ar, this message translates to:
-  /// **'الهجرة: من مكة إلى المدينة'**
-  String get seerahFeatureTitle;
-
-  /// Button opening the Hijrah chapter.
-  ///
-  /// In ar, this message translates to:
-  /// **'اقرأ فصل الهجرة'**
+  /// **'اقرأ الفصل'**
   String get seerahFeatureRead;
 
   /// Seerah chapter not found.
@@ -2009,7 +2063,7 @@ abstract class AppLocalizations {
   /// Kicker in the chapter reader.
   ///
   /// In ar, this message translates to:
-  /// **'الفصل {number} من {total} · {date}'**
+  /// **'الفصل {number} من {total}، {date}'**
   String seerahChapterOf(String number, String total, String date);
 
   /// Kicker in the topic reader.
@@ -2330,59 +2384,11 @@ abstract class AppLocalizations {
   /// **'من موضوعات السيرة'**
   String get savedSeerahTopics;
 
-  /// Home section kicker.
+  /// Home: title over the featured companion, by gender (review F11).
   ///
   /// In ar, this message translates to:
-  /// **'السيرة النبوية'**
-  String get homeSeerahKicker;
-
-  /// Home: the next Seerah chapters to read.
-  ///
-  /// In ar, this message translates to:
-  /// **'الفصول القادمة'**
-  String get homeSeerahTitle;
-
-  /// Home link to the Seerah hub.
-  ///
-  /// In ar, this message translates to:
-  /// **'كل الفصول'**
-  String get homeAllChapters;
-
-  /// Home: the companion-of-the-day section title.
-  ///
-  /// In ar, this message translates to:
-  /// **'تعرّف على صحابي'**
-  String get homeDiscoverTitle;
-
-  /// Home section kicker.
-  ///
-  /// In ar, this message translates to:
-  /// **'الأطلس'**
-  String get homeAtlasKicker;
-
-  /// Home: the atlas section title.
-  ///
-  /// In ar, this message translates to:
-  /// **'أين جرت الأحداث'**
-  String get homeAtlasTitle;
-
-  /// Home section kicker.
-  ///
-  /// In ar, this message translates to:
-  /// **'الأرشيف'**
-  String get homeArchiveKicker;
-
-  /// Home: selected events title.
-  ///
-  /// In ar, this message translates to:
-  /// **'أحداث مختارة'**
-  String get homeArchiveTitle;
-
-  /// Home link to the event archive.
-  ///
-  /// In ar, this message translates to:
-  /// **'سجل الأحداث كاملًا'**
-  String get homeAllEvents;
+  /// **'{gender, select, female{تعرّف على صحابية} other{تعرّف على صحابي}}'**
+  String homeDiscoverTitle(String gender);
 
   /// Search result group.
   ///
@@ -3580,7 +3586,7 @@ abstract class AppLocalizations {
   /// Optional reading reminder: reminderGroup
   ///
   /// In ar, this message translates to:
-  /// **'التذكير'**
+  /// **'الورد والتذكير'**
   String get reminderGroup;
 
   /// Optional reading reminder: reminderTitle
@@ -3685,17 +3691,53 @@ abstract class AppLocalizations {
   /// **'مربع'**
   String get shareCardSquare;
 
+  /// Share card template: paper.
+  ///
+  /// In ar, this message translates to:
+  /// **'ورقي'**
+  String get shareCardPaper;
+
+  /// Share card template: Madinah green.
+  ///
+  /// In ar, this message translates to:
+  /// **'أخضر'**
+  String get shareCardGreen;
+
+  /// Share card template: night.
+  ///
+  /// In ar, this message translates to:
+  /// **'ليلي'**
+  String get shareCardNight;
+
+  /// Share card: label before the accent choices.
+  ///
+  /// In ar, this message translates to:
+  /// **'اللون:'**
+  String get shareCardAccent;
+
+  /// Share card accent: gold.
+  ///
+  /// In ar, this message translates to:
+  /// **'ذهبي'**
+  String get shareCardAccentGold;
+
+  /// Share card accent: green.
+  ///
+  /// In ar, this message translates to:
+  /// **'أخضر'**
+  String get shareCardAccentGreen;
+
+  /// Share card accent: the text colour.
+  ///
+  /// In ar, this message translates to:
+  /// **'بلون النص'**
+  String get shareCardAccentPlain;
+
   /// No description provided for @shareCardStory.
   ///
   /// In ar, this message translates to:
   /// **'قصة'**
   String get shareCardStory;
-
-  /// No description provided for @shareCardDark.
-  ///
-  /// In ar, this message translates to:
-  /// **'داكن'**
-  String get shareCardDark;
 
   /// No description provided for @shareCardAction.
   ///
@@ -3720,6 +3762,282 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'بطاقة'**
   String get shareCardOption;
+
+  /// Guided journeys: progress when no step is done yet. Zero is written in words, never as ٠ (review F06).
+  ///
+  /// In ar, this message translates to:
+  /// **'لم تبدأ بعد، {totalCount, plural, =1{خطوة واحدة} =2{خطوتان} few{{total} خطوات} other{{total} خطوة}}'**
+  String journeyNotStarted(int totalCount, String total);
+
+  /// A clock time before noon, e.g. "٧ صباحًا" or "٧:٣٠ صباحًا".
+  ///
+  /// In ar, this message translates to:
+  /// **'{time} صباحًا'**
+  String timeMorning(String time);
+
+  /// A clock time from noon, e.g. "٩ مساءً" or "٩:١٥ مساءً".
+  ///
+  /// In ar, this message translates to:
+  /// **'{time} مساءً'**
+  String timeEvening(String time);
+
+  /// Home: link from the first stories to the full list in Explore.
+  ///
+  /// In ar, this message translates to:
+  /// **'كل القصص'**
+  String get homeAllStories;
+
+  /// Quick tile on Home: opens the passage read most recently, else the Seerah.
+  ///
+  /// In ar, this message translates to:
+  /// **'تابع القراءة'**
+  String get homeTileContinue;
+
+  /// Quick tile on Home: opens the current journey, else the list of journeys.
+  ///
+  /// In ar, this message translates to:
+  /// **'رحلة اليوم'**
+  String get homeTileJourney;
+
+  /// Quick tile on Home: opens review.
+  ///
+  /// In ar, this message translates to:
+  /// **'المراجعة'**
+  String get homeTileReview;
+
+  /// Quick tile on Home: opens the Seerah map.
+  ///
+  /// In ar, this message translates to:
+  /// **'الخريطة'**
+  String get homeTileMap;
+
+  /// Home link for a reader with no history to the first journey; title is its name («ابدأ من هنا»).
+  ///
+  /// In ar, this message translates to:
+  /// **'جديد هنا؟ {title}'**
+  String startHereLink(String title);
+
+  /// Kicker of the daily portion card on Home (K1).
+  ///
+  /// In ar, this message translates to:
+  /// **'ورد اليوم'**
+  String get dailyPortionKicker;
+
+  /// Opens today's portion.
+  ///
+  /// In ar, this message translates to:
+  /// **'اقرأ'**
+  String get dailyPortionRead;
+
+  /// Marks today's Seerah chapter read and moves to the next.
+  ///
+  /// In ar, this message translates to:
+  /// **'قرأتُه'**
+  String get dailyPortionDone;
+
+  /// Snack bar after marking today's chapter read, with undo.
+  ///
+  /// In ar, this message translates to:
+  /// **'عُلّم «{title}» مقروءًا'**
+  String dailyPortionMarked(String title);
+
+  /// Evening reminder naming today's portion; minutes is the reading-time phrase.
+  ///
+  /// In ar, this message translates to:
+  /// **'ورد اليوم: {title}، {minutes}'**
+  String reminderPortionBody(String title, String minutes);
+
+  /// Kicker when today's plan has more than one chapter: which one this is.
+  ///
+  /// In ar, this message translates to:
+  /// **'ورد اليوم: {n} من {total}'**
+  String dailyPortionOf(String n, String total);
+
+  /// Title once today's planned chapters are read.
+  ///
+  /// In ar, this message translates to:
+  /// **'تمّ ورد اليوم'**
+  String get dailyPortionComplete;
+
+  /// Tomorrow's chapter, under the completed card.
+  ///
+  /// In ar, this message translates to:
+  /// **'وغدًا: {title}'**
+  String dailyPortionTomorrow(String title);
+
+  /// Optional: read tomorrow's chapter today.
+  ///
+  /// In ar, this message translates to:
+  /// **'اقرأه الآن'**
+  String get dailyPortionReadAhead;
+
+  /// After a missed day: chapters the plan expected and not yet read. Neutral wording, no guilt.
+  ///
+  /// In ar, this message translates to:
+  /// **'{count, plural, =1{بقي من الأيام الماضية فصل واحد.} =2{بقي من الأيام الماضية فصلان.} few{بقي من الأيام الماضية {n} فصول.} other{بقي من الأيام الماضية {n} فصلًا.}}'**
+  String dailyPortionBehind(int count, String n);
+
+  /// After a missed day: restart the plan from today, nothing owed. The default.
+  ///
+  /// In ar, this message translates to:
+  /// **'تابع من حيث توقفت'**
+  String get planContinueFromHere;
+
+  /// After a missed day: one extra chapter a day until caught up.
+  ///
+  /// In ar, this message translates to:
+  /// **'تدارك تدريجيًا'**
+  String get planCatchUp;
+
+  /// Settings: the reading plan.
+  ///
+  /// In ar, this message translates to:
+  /// **'الورد اليومي من السيرة'**
+  String get planTitle;
+
+  /// Settings: no reading plan.
+  ///
+  /// In ar, this message translates to:
+  /// **'بلا خطة'**
+  String get planNone;
+
+  /// Settings: a pace choice, chapters a day.
+  ///
+  /// In ar, this message translates to:
+  /// **'{count, plural, =1{فصل} =2{فصلان} few{{n} فصول} other{{n} فصلًا}}'**
+  String planPace(int count, String n);
+
+  /// Settings: what the plan does.
+  ///
+  /// In ar, this message translates to:
+  /// **'عدد فصول السيرة في اليوم. إن فات يوم، تختار أن تتابع من حيث توقفت أو أن تتدارك تدريجيًا.'**
+  String get planNote;
+
+  /// Source sheet: the edition a page or volume locator refers to (review F19).
+  ///
+  /// In ar, this message translates to:
+  /// **'الطبعة: {edition}'**
+  String citationEdition(String edition);
+
+  /// Source sheet: the numbering scheme a hadith number refers to.
+  ///
+  /// In ar, this message translates to:
+  /// **'الترقيم: {scheme}'**
+  String citationNumbering(String scheme);
+
+  /// Reader: legend at the top of a passage that has reported claims; label is "رواية تاريخية", explanation its meaning (review F10).
+  ///
+  /// In ar, this message translates to:
+  /// **'{label}: {explanation}'**
+  String readerLegendReported(String label, String explanation);
+
+  /// One note above a list whose items carry the compact draft mark (review F09).
+  ///
+  /// In ar, this message translates to:
+  /// **'تدل هذه العلامة على ما لم يعتمده المراجع المختص بعد. تفاصيل المنهج في «عن التطبيق».'**
+  String get listStatusNote;
+
+  /// Directory row: the biography is at standard depth (review F07, C1).
+  ///
+  /// In ar, this message translates to:
+  /// **'سيرة كاملة'**
+  String get depthFull;
+
+  /// Directory row: the biography is a short introduction, to be deepened (review F07, C1).
+  ///
+  /// In ar, this message translates to:
+  /// **'تعريف موجز'**
+  String get depthBrief;
+
+  /// Directory: heading over companions in no category.
+  ///
+  /// In ar, this message translates to:
+  /// **'صحابة آخرون'**
+  String get directoryOthers;
+
+  /// About: credits for every bundled third-party resource (review K10).
+  ///
+  /// In ar, this message translates to:
+  /// **'شكر وإسناد'**
+  String get aboutCreditsTitle;
+
+  /// About credits: the Qur'an text (Tanzil, CC BY 3.0).
+  ///
+  /// In ar, this message translates to:
+  /// **'الآيات بالرسم العثماني من مشروع تنزيل (tanzil.net)، منقولة كما هي دون تغيير، برخصة المشاع الإبداعي: نسب المصنَّف ٣٫٠. نص الترخيص كاملًا في صفحة المصادر.'**
+  String get aboutCreditQuranBody;
+
+  /// About credits: heading for the bundled fonts.
+  ///
+  /// In ar, this message translates to:
+  /// **'الخطوط'**
+  String get aboutCreditFontsTitle;
+
+  /// About credits: Amiri and Amiri Quran (OFL 1.1).
+  ///
+  /// In ar, this message translates to:
+  /// **'خط الأميري (Amiri) وخط الأميري قرآن (Amiri Quran)، من تصميم خالد حسني، لنصوص القراءة والأسماء والآيات. برخصة الخطوط المفتوحة SIL OFL 1.1.'**
+  String get aboutCreditAmiri;
+
+  /// About credits: Zain (OFL 1.1).
+  ///
+  /// In ar, this message translates to:
+  /// **'خط زين (Zain)، من تصميم Boutros Fonts، لعناوين الواجهة ونصوصها. برخصة الخطوط المفتوحة SIL OFL 1.1.'**
+  String get aboutCreditZain;
+
+  /// About credits: button opening the sources page, where the full Tanzil notice is.
+  ///
+  /// In ar, this message translates to:
+  /// **'المصادر'**
+  String get aboutCreditSources;
+
+  /// Search, before anything is typed: suggested queries separated by "، "; each must find something in the content.
+  ///
+  /// In ar, this message translates to:
+  /// **'الهجرة، أبو بكر، بدر، خديجة'**
+  String get searchSuggestions;
+
+  /// Search with no results: a tip.
+  ///
+  /// In ar, this message translates to:
+  /// **'جرّب كلمة واحدة، أو الاسم دون لقب أو كنية.'**
+  String get searchNoResultsTip;
+
+  /// Search with no results: opens the Companions directory.
+  ///
+  /// In ar, this message translates to:
+  /// **'تصفّح الصحابة'**
+  String get searchBrowseCompanions;
+
+  /// Reading settings: heading over the page tone choice (review K5).
+  ///
+  /// In ar, this message translates to:
+  /// **'لون الصفحة'**
+  String get readerTone;
+
+  /// Reading settings: the page follows the app's light or dark theme.
+  ///
+  /// In ar, this message translates to:
+  /// **'حسب المظهر'**
+  String get readerToneApp;
+
+  /// Reading settings: a warm, light paper page for long reading.
+  ///
+  /// In ar, this message translates to:
+  /// **'ورقي دافئ'**
+  String get readerToneWarmPaper;
+
+  /// Reader tone in the dark theme: a warm night page.
+  ///
+  /// In ar, this message translates to:
+  /// **'ليلي دافئ'**
+  String get readerToneWarmNight;
+
+  /// Journey stepper: the one button, on the current step (review K4).
+  ///
+  /// In ar, this message translates to:
+  /// **'تابع'**
+  String get journeyStepContinue;
 }
 
 class _AppLocalizationsDelegate

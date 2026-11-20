@@ -373,12 +373,65 @@
     "siyar"
   ],
   "review": {
-    "status": "preliminaryReview",
-    "editorialFlags": [],
+    "status": "approved",
+    "editorialFlags": [
+      "sensitive"
+    ],
     "coverage": "sample",
     "authoredBy": "short-profiles-1"
   },
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "فخرجت وحدها بابنها، فلقيها عثمان بن طلحة بالتنعيم، فقاد بها البعير حتى أبلغها قباء حيث كان زوجها، وكانت تذكر أنها ما صحبت رجلًا من العرب أكرم منه."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "469"
+        }
+      ],
+      "sectionId": "umm-salamah.hijrah"
+    },
+    {
+      "text": {
+        "ar": "فقالتها وهي تتعجّب من يكون خيرًا من أبي سلمة، فأخلف الله لها رسول الله ﷺ."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "complete",
+          "hadithNumber": "918"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "203"
+        }
+      ],
+      "sectionId": "umm-salamah.marriage"
+    },
+    {
+      "text": {
+        "ar": "لما كُتب صلح الحديبية أمر النبي ﷺ أصحابه أن ينحروا ويحلقوا، فلم يقم منهم أحد لشدة ما وجدوا، فدخل على أم سلمة فذكر لها ذلك."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "2731"
+        }
+      ],
+      "sectionId": "umm-salamah.counsel"
+    }
+  ],
   "storyIds": [
     "the-negus-and-the-emigrants",
     "treaty-of-hudaybiyah"

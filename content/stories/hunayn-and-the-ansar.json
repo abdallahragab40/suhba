@@ -307,9 +307,10 @@
     }
   ],
   "review": {
-    "status": "preliminaryReview",
+    "status": "approved",
     "editorialFlags": [
-      "needsLocators"
+      "needsLocators",
+      "sensitive"
     ],
     "authoredBy": "draft-revision-4",
     "coverage": "complete"

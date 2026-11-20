@@ -13,9 +13,10 @@
     "ar": "أحد العشرة المبشرين بالجنة، ومن المهاجرين."
   },
   "review": {
-    "status": "preliminaryReview",
+    "status": "approved",
     "editorialFlags": [
-      "needsLocators"
+      "needsLocators",
+      "sensitive"
     ],
     "coverage": "complete",
     "authoredBy": "draft-revision-4"
@@ -170,6 +171,118 @@
           "page": "570"
         }
       ]
+    }
+  ],
+  "overview": [
+    {
+      "text": {
+        "ar": "ويذكر ابن سعد أنه شهد بدرًا وهو ابن إحدى وأربعين سنة، وأنه مات في طاعون عمواس سنة ثماني عشرة وهو ابن ثمان وخمسين سنة."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "316"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "23"
+        }
+      ],
+      "sectionId": "abu-ubaydah.early-life"
+    },
+    {
+      "text": {
+        "ar": "ويذكر ابن سعد أنه أسلم مع عثمان بن مظعون وعبد الرحمن بن عوف وأصحابهم قبل دخول النبي ﷺ دار الأرقم."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "313"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "252"
+        }
+      ],
+      "sectionId": "abu-ubaydah.conversion"
+    },
+    {
+      "text": {
+        "ar": "ويذكر ابن سعد أنه شهد بدرًا وأحدًا والخندق والمشاهد كلها مع النبي ﷺ، ويذكر الذهبي بلاءه يوم أحد."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "313"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "8"
+        }
+      ],
+      "sectionId": "abu-ubaydah.with-prophet"
+    },
+    {
+      "text": {
+        "ar": "ويوم السقيفة قال أبو بكر للأنصار إنه رضي لهم أحد هذين الرجلين، وأخذ بيد عمر وبيد أبي عبيدة، فقدّم عمرُ أبا بكر وبايعه، كما في حديث السقيفة في صحيح البخاري."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "6830"
+        }
+      ],
+      "sectionId": "abu-ubaydah.virtues"
+    },
+    {
+      "text": {
+        "ar": "ثم أرسل إلى معاذ بمثله، فلما بلغه ما فعلا حمد الله."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "17"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "18"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "315"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "316"
+        }
+      ],
+      "sectionId": "abu-ubaydah.character"
     }
   ],
   "sections": [
@@ -1141,49 +1254,73 @@
           "type": "lesson",
           "text": {
             "ar": "شهد النبي ﷺ لأبي عبيدة بالأمانة من بين الصحابة؛ فالأمانة صفة تُبنى عليها الثقة في القيادة، وبها اختاره النبي ﷺ لأهل نجران."
-          }
+          },
+          "basedOn": [
+            "abu-ubaydah.with-prophet"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي توزيعه التمر تمرة تمرة على جيشه، ثم صبرهم على الجوع، صورة للقائد الذي يعيش ما يعيشه جنده، ويقسم بينهم بالسوية."
-          }
+          },
+          "basedOn": [
+            "abu-ubaydah.with-prophet"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي تنازله عن الإمرة لعمرو بن العاص في ذات السلاسل تقديم لوحدة الصف على المكانة الشخصية، وهو من أصعب ما يقدّمه القادة."
-          }
+          },
+          "basedOn": [
+            "abu-ubaydah.with-prophet"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي بقائه مع جنده في الطاعون ورفضه أن ينجو بنفسه دونهم وفاء بالمسؤولية حتى الموت، وتسليم لقضاء الله بعد الأخذ بالأسباب."
-          }
+          },
+          "basedOn": [
+            "abu-ubaydah.death"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي إجراء الصلح على دمشق كلها، وقد دُخل بعضها عنوة، على ما في خبر الطبري، ترجيح للرفق بالناس، وأن العهد إذا أُعطي حُفظ ولو كان في الأخذ بالقوة سعة."
-          }
+          },
+          "basedOn": [
+            "abu-ubaydah.contributions"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي رفضه أن يُبايَع قبل أبي بكر معرفة بأقدار الرجال، وأن الأمين لا يطلب ما يرى غيره أحق به."
-          }
+          },
+          "basedOn": [
+            "abu-ubaydah.virtues"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي تأخيره إظهار كتاب الإمارة حياءً من خالد، على رواية ابن إسحاق، أدب في إدارة الخلاف: أن تُراعى مشاعر الناس ومصلحة العمل معًا، وأن يُختار للخبر وقته."
-          }
+          },
+          "basedOn": [
+            "abu-ubaydah.contributions"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي سيرته كلها أن من عرف قدر الأمانة عاش بها ومات عليها، فكانت شهادة النبي ﷺ له عنوان حياته من أولها إلى آخرها."
-          }
+          },
+          "basedOn": [
+            "abu-ubaydah.virtues"
+          ]
         }
       ]
     }

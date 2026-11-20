@@ -13,9 +13,10 @@
     "ar": "أحد العشرة المبشرين بالجنة، ومن المهاجرين."
   },
   "review": {
-    "status": "preliminaryReview",
+    "status": "approved",
     "editorialFlags": [
-      "needsLocators"
+      "needsLocators",
+      "sensitive"
     ],
     "coverage": "complete",
     "authoredBy": "draft-revision-4"
@@ -145,6 +146,101 @@
           "page": "254"
         }
       ]
+    }
+  ],
+  "overview": [
+    {
+      "text": {
+        "ar": "ويُستفاد مما يذكره ابن سعد من سنّه يوم وفاته أنه وُلد بمكة قبل البعثة بنحو عشر سنين أو أكثر؛ وهذا تقدير، لا تاريخ مولد مرويّ."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "294"
+        }
+      ],
+      "sectionId": "said-ibn-zayd.early-life"
+    },
+    {
+      "text": {
+        "ar": "أسلم سعيد قديمًا، هو وزوجه فاطمة بنت الخطاب، قبل أن يسلم عمر وقبل أن يدخل النبي ﷺ دار الأرقم، فكان من السابقين الأولين."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "253"
+        },
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "103"
+        }
+      ],
+      "sectionId": "said-ibn-zayd.conversion"
+    },
+    {
+      "text": {
+        "ar": "وشهد أحدًا والخندق والحديبية وبيعة الرضوان، والمشاهد كلها بعد بدر مع النبي ﷺ، على ما يذكره ابن سعد وغيره."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "103"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "293"
+        }
+      ],
+      "sectionId": "said-ibn-zayd.with-prophet"
+    },
+    {
+      "text": {
+        "ar": "وسكن العقيق، ويروي الذهبي أن مروان لما أراد البيعة ليزيد بالمدينة قال: حتى يجيء سعيد بن زيد فيبايع، فإنه سيد أهل البلد، وإذا بايع بايع الناس."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "139"
+        }
+      ],
+      "sectionId": "said-ibn-zayd.character"
+    },
+    {
+      "text": {
+        "ar": "وولّاه أبو عبيدة بن الجراح دمشق بعد فتحها، فكان أول من عمل نيابة دمشق من هذه الأمة على ما يذكره الذهبي."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "125"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "124"
+        }
+      ],
+      "sectionId": "said-ibn-zayd.contributions"
     }
   ],
   "relations": [
@@ -1033,67 +1129,101 @@
           "type": "lesson",
           "text": {
             "ar": "نشأ سعيد في بيت أبٍ بحث عن الحق قبل أن يُبعث النبي ﷺ؛ فالبحث الصادق يورث الأبناء استعدادًا لقبول الحق إذا جاء."
-          }
+          },
+          "basedOn": [
+            "said-ibn-zayd.early-life"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي إحياء زيد للموءودة مثال على أن الفطرة السليمة تستنكر الظلم ولو شاع في المجتمع، وأن الفرد قد يقف وحده في وجه عادة قومه."
-          }
+          },
+          "basedOn": [
+            "said-ibn-zayd.early-life"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي قصة أروى تعليم بأن الصالح قد يترك حقه ليتّقي الخصومة، ويكل أمره إلى الله، وأن الظلم في الأرض من أعظم الظلم."
-          }
+          },
+          "basedOn": [
+            "said-ibn-zayd.virtues"
+          ]
         },
         {
           "type": "lesson",
           "text": {
-            "ar": "وفي تركه ولاية دمشق ليخرج مع المجاهدين بيان أن المناصب لم تكن مطلوبة عند السابقين، وأن العمل في الصف قد يكون أحبّ إليهم من الصدارة."
-          }
+            "ar": "وفي خروجه مع جيوش المسلمين إلى الشام، ثم رجوعه إلى أرضه بالعقيق يقيم بها بقية عمره، بيان أن السابقين كانوا يخدمون حيث احتيج إليهم، ولم تكن الصدارة غايتهم."
+          },
+          "basedOn": [
+            "said-ibn-zayd.contributions"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي غضبه لعلي وهو بعيد عن السلطة إنصاف لأهل الفضل، وتذكير بأن الشهادة لأصحاب النبي ﷺ لا تتبع الأهواء السياسية."
-          }
+          },
+          "basedOn": [
+            "said-ibn-zayd.character"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي روايته حديث «من قُتل دون ماله» مع تركه أرضه لأروى بيان للفرق بين الحق الذي يُدافع عنه والحق الذي يُتنازل عنه ابتغاء الأجر وحسم الخصومة."
-          }
+          },
+          "basedOn": [
+            "said-ibn-zayd.virtues"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي اعتزاله الفتنة، مع أنه من العشرة، اقتداء بمن رأى أن السلامة في ترك القتال بين المسلمين."
-          }
+          },
+          "basedOn": [
+            "said-ibn-zayd.character"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وما وصلنا من أخبار سعيد قليل إذا قيس بمنزلته؛ وفي ذلك تذكير بأن الله قد يرفع عبدًا لم تكثر أخباره، وأن العبرة بالصدق لا بكثرة الذكر."
-          }
+          },
+          "basedOn": [
+            "said-ibn-zayd.virtues"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي رواية سعيد حديث العشرة وهو منهم أدب في ذكر الفضل؛ فقد ذكر نفسه في آخرهم وبعد أن سُئل، لا مفاخرة ولا تزكية."
-          }
+          },
+          "basedOn": [
+            "said-ibn-zayd.virtues"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وتعلّمنا سيرة زيد وابنه أن الحق قد يُطلب طويلًا قبل أن يُعرف، وأن من صدق في طلبه هدي إليه، ولو أدركه في أبنائه."
-          }
+          },
+          "basedOn": [
+            "said-ibn-zayd.early-life",
+            "said-ibn-zayd.conversion"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي اجتماع سعد وابن عمر عند قبره صورة لوفاء الصحابة بعضهم لبعض حتى آخر العمر، فالأخوة في الله لا تنقطع بتفرّق الأيام."
-          }
+          },
+          "basedOn": [
+            "said-ibn-zayd.death"
+          ]
         }
       ]
     }

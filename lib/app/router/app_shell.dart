@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/design_system/tokens/app_icons.dart';
 import 'package:suhba/core/feedback/haptics.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 
@@ -16,6 +17,11 @@ class AppShell extends StatelessWidget {
 
   /// From this width the destinations move to a side rail.
   static const railBreakpoint = 840.0;
+
+  /// Largest text scale for destination labels. Five labels share a phone's
+  /// width; past this they wrap mid-word. Screen readers still get the full
+  /// label, and every other screen keeps the reader's text size.
+  static const maxLabelScale = 1.1;
 
   void _select(BuildContext context, int index) {
     Haptics.selection(context);
@@ -33,7 +39,7 @@ class AppShell extends StatelessWidget {
     final destinations = [
       (Icons.home_outlined, Icons.home, l10n.tabHome),
       (Icons.auto_stories_outlined, Icons.auto_stories, l10n.tabSeerah),
-      (Icons.people_alt_outlined, Icons.people_alt, l10n.tabCompanions),
+      (AppIcons.companions, AppIcons.companionsSelected, l10n.tabCompanions),
       (Icons.explore_outlined, Icons.explore, l10n.tabExplore),
       (Icons.bookmark_border, Icons.bookmark, l10n.tabSaved),
     ];
@@ -49,18 +55,21 @@ class AppShell extends StatelessWidget {
           ? Scaffold(
               body: Row(
                 children: [
-                  NavigationRail(
-                    selectedIndex: navigationShell.currentIndex,
-                    onDestinationSelected: (i) => _select(context, i),
-                    labelType: NavigationRailLabelType.all,
-                    destinations: [
-                      for (final (icon, selected, label) in destinations)
-                        NavigationRailDestination(
-                          icon: Icon(icon),
-                          selectedIcon: Icon(selected),
-                          label: Text(label),
-                        ),
-                    ],
+                  MediaQuery.withClampedTextScaling(
+                    maxScaleFactor: maxLabelScale,
+                    child: NavigationRail(
+                      selectedIndex: navigationShell.currentIndex,
+                      onDestinationSelected: (i) => _select(context, i),
+                      labelType: NavigationRailLabelType.all,
+                      destinations: [
+                        for (final (icon, selected, label) in destinations)
+                          NavigationRailDestination(
+                            icon: Icon(icon),
+                            selectedIcon: Icon(selected),
+                            label: Text(label),
+                          ),
+                      ],
+                    ),
                   ),
                   const VerticalDivider(width: 1),
                   Expanded(child: navigationShell),
@@ -69,17 +78,20 @@ class AppShell extends StatelessWidget {
             )
           : Scaffold(
               body: navigationShell,
-              bottomNavigationBar: NavigationBar(
-                selectedIndex: navigationShell.currentIndex,
-                onDestinationSelected: (i) => _select(context, i),
-                destinations: [
-                  for (final (icon, selected, label) in destinations)
-                    NavigationDestination(
-                      icon: Icon(icon),
-                      selectedIcon: Icon(selected),
-                      label: label,
-                    ),
-                ],
+              bottomNavigationBar: MediaQuery.withClampedTextScaling(
+                maxScaleFactor: maxLabelScale,
+                child: NavigationBar(
+                  selectedIndex: navigationShell.currentIndex,
+                  onDestinationSelected: (i) => _select(context, i),
+                  destinations: [
+                    for (final (icon, selected, label) in destinations)
+                      NavigationDestination(
+                        icon: Icon(icon),
+                        selectedIcon: Icon(selected),
+                        label: label,
+                      ),
+                  ],
+                ),
               ),
             ),
     );

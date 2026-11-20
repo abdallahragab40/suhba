@@ -353,6 +353,7 @@
             "type": "string",
             "enum": [
               "fitnaAdjacent",
+              "sensitive",
               "needsLocators",
               "needsSourceText"
             ]
@@ -526,6 +527,14 @@
             },
             "text": {
               "$ref": "#/$defs/localizedText"
+            },
+            "basedOn": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/id"
+              },
+              "uniqueItems": true,
+              "description": "The passages of the same work (section or chapter IDs) the lesson is drawn from."
             }
           },
           "additionalProperties": false,
@@ -828,6 +837,39 @@
           "items": {
             "$ref": "#/$defs/fact"
           }
+        },
+        "overview": {
+          "type": "array",
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "properties": {
+              "text": {
+                "$ref": "#/$defs/localizedText"
+              },
+              "reliability": {
+                "$ref": "#/$defs/reliability"
+              },
+              "citations": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/citation"
+                },
+                "minItems": 1
+              },
+              "sectionId": {
+                "$ref": "#/$defs/id"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "text",
+              "reliability",
+              "citations",
+              "sectionId"
+            ]
+          },
+          "description": "«في سطور» (E2): three to five sentences copied from cited paragraphs of the named sections, with those paragraphs' citations. No new claims."
         },
         "memberships": {
           "type": "array",
@@ -1313,7 +1355,8 @@
             "seerahChapter",
             "seerahTopic",
             "visual",
-            "journey"
+            "journey",
+            "glossaryTerm"
           ]
         },
         "id": {
@@ -1350,6 +1393,10 @@
             },
             "fitnaSignOff": {
               "type": "boolean"
+            },
+            "sensitiveSignOff": {
+              "type": "boolean",
+              "description": "Required for items flagged sensitive (review §4.4)."
             }
           },
           "additionalProperties": false,
@@ -1472,6 +1519,69 @@
         "citations",
         "review"
       ]
+    },
+    "glossaryTerm": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "term": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "forms": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 2
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Spellings linked in passages, without tashkeel."
+        },
+        "definition": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "reliability": {
+          "$ref": "#/$defs/reliability"
+        },
+        "citations": {
+          "$ref": "#/$defs/citations"
+        },
+        "review": {
+          "$ref": "#/$defs/review"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "term",
+        "forms",
+        "definition",
+        "reliability",
+        "citations",
+        "review"
+      ]
+    },
+    "glossaryFile": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "terms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/glossaryTerm"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "terms"
+      ],
+      "description": "content/glossary.json: terms linked from passages (review E3)."
     },
     "placesFile": {
       "type": "object",
@@ -1599,6 +1709,27 @@
             "$ref": "#/$defs/id"
           },
           "uniqueItems": true
+        },
+        "feature": {
+          "type": "object",
+          "properties": {
+            "chapterId": {
+              "$ref": "#/$defs/id"
+            },
+            "visualId": {
+              "$ref": "#/$defs/id"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "chapterId",
+            "visualId"
+          ],
+          "description": "The one episode Home features: a chapter in chapterIds and one of that chapter's visualIds."
+        },
+        "mapVisualId": {
+          "$ref": "#/$defs/id",
+          "description": "The Seerah's map: one of visualIds. Opened from Home's map tile and shown in the hub."
         },
         "methodology": {
           "$ref": "#/$defs/localizedText"
@@ -2384,6 +2515,11 @@
         "id": {
           "$ref": "#/$defs/id"
         },
+        "order": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Position in the journey catalog, 1 first. Unique across journeys."
+        },
         "title": {
           "$ref": "#/$defs/localizedText"
         },
@@ -2405,6 +2541,7 @@
       "required": [
         "schemaVersion",
         "id",
+        "order",
         "title",
         "description",
         "steps",

@@ -147,6 +147,7 @@ void main() {
         'meet-the-companions': 14,
         'moments-and-lessons': 10,
         'seerah-in-thirty-steps': 30,
+        'start-here': 5,
       },
     );
     final actions = app.container.read(journeyActionsProvider);
@@ -193,9 +194,9 @@ void main() {
     final repo = app.container.read(journeyRepositoryProvider);
     expect(
       (await repo.steps()).where((s) => s.completedAt != null),
-      hasLength(54),
+      hasLength(59),
     );
-    expect(await repo.enrollments(), hasLength(3));
+    expect(await repo.enrollments(), hasLength(4));
   });
 
   testApp(
@@ -334,6 +335,10 @@ void main() {
   testApp('journeys can be opened from Explore and direct links stay locked', (
     tester,
   ) async {
+    tester.view
+      ..devicePixelRatio = 1
+      ..physicalSize = const Size(600, 2400);
+    addTearDown(tester.view.reset);
     final app = AppUnderTest(location: AppRoutes.explore);
     await app.pump(tester);
     await tester.tap(find.text('الرحلات'));

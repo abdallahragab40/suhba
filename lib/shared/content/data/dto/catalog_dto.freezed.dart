@@ -3784,7 +3784,8 @@ as List<ReviewerDto>,
 mixin _$ApprovalChecklistDto {
 
  bool get sourcesMatch; bool get gradingsCorrect; bool get noEmbellishment; bool get reliabilityCorrect; bool get honorificsCorrect;/// Required for items flagged fitnaAdjacent.
- bool get fitnaSignOff;
+ bool get fitnaSignOff;/// Required for items flagged sensitive.
+ bool get sensitiveSignOff;
 /// Create a copy of ApprovalChecklistDto
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -3797,16 +3798,16 @@ $ApprovalChecklistDtoCopyWith<ApprovalChecklistDto> get copyWith => _$ApprovalCh
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ApprovalChecklistDto&&(identical(other.sourcesMatch, sourcesMatch) || other.sourcesMatch == sourcesMatch)&&(identical(other.gradingsCorrect, gradingsCorrect) || other.gradingsCorrect == gradingsCorrect)&&(identical(other.noEmbellishment, noEmbellishment) || other.noEmbellishment == noEmbellishment)&&(identical(other.reliabilityCorrect, reliabilityCorrect) || other.reliabilityCorrect == reliabilityCorrect)&&(identical(other.honorificsCorrect, honorificsCorrect) || other.honorificsCorrect == honorificsCorrect)&&(identical(other.fitnaSignOff, fitnaSignOff) || other.fitnaSignOff == fitnaSignOff));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ApprovalChecklistDto&&(identical(other.sourcesMatch, sourcesMatch) || other.sourcesMatch == sourcesMatch)&&(identical(other.gradingsCorrect, gradingsCorrect) || other.gradingsCorrect == gradingsCorrect)&&(identical(other.noEmbellishment, noEmbellishment) || other.noEmbellishment == noEmbellishment)&&(identical(other.reliabilityCorrect, reliabilityCorrect) || other.reliabilityCorrect == reliabilityCorrect)&&(identical(other.honorificsCorrect, honorificsCorrect) || other.honorificsCorrect == honorificsCorrect)&&(identical(other.fitnaSignOff, fitnaSignOff) || other.fitnaSignOff == fitnaSignOff)&&(identical(other.sensitiveSignOff, sensitiveSignOff) || other.sensitiveSignOff == sensitiveSignOff));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,sourcesMatch,gradingsCorrect,noEmbellishment,reliabilityCorrect,honorificsCorrect,fitnaSignOff);
+int get hashCode => Object.hash(runtimeType,sourcesMatch,gradingsCorrect,noEmbellishment,reliabilityCorrect,honorificsCorrect,fitnaSignOff,sensitiveSignOff);
 
 @override
 String toString() {
-  return 'ApprovalChecklistDto(sourcesMatch: $sourcesMatch, gradingsCorrect: $gradingsCorrect, noEmbellishment: $noEmbellishment, reliabilityCorrect: $reliabilityCorrect, honorificsCorrect: $honorificsCorrect, fitnaSignOff: $fitnaSignOff)';
+  return 'ApprovalChecklistDto(sourcesMatch: $sourcesMatch, gradingsCorrect: $gradingsCorrect, noEmbellishment: $noEmbellishment, reliabilityCorrect: $reliabilityCorrect, honorificsCorrect: $honorificsCorrect, fitnaSignOff: $fitnaSignOff, sensitiveSignOff: $sensitiveSignOff)';
 }
 
 
@@ -3817,7 +3818,7 @@ abstract mixin class $ApprovalChecklistDtoCopyWith<$Res>  {
   factory $ApprovalChecklistDtoCopyWith(ApprovalChecklistDto value, $Res Function(ApprovalChecklistDto) _then) = _$ApprovalChecklistDtoCopyWithImpl;
 @useResult
 $Res call({
- bool sourcesMatch, bool gradingsCorrect, bool noEmbellishment, bool reliabilityCorrect, bool honorificsCorrect, bool fitnaSignOff
+ bool sourcesMatch, bool gradingsCorrect, bool noEmbellishment, bool reliabilityCorrect, bool honorificsCorrect, bool fitnaSignOff, bool sensitiveSignOff
 });
 
 
@@ -3834,7 +3835,7 @@ class _$ApprovalChecklistDtoCopyWithImpl<$Res>
 
 /// Create a copy of ApprovalChecklistDto
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? sourcesMatch = null,Object? gradingsCorrect = null,Object? noEmbellishment = null,Object? reliabilityCorrect = null,Object? honorificsCorrect = null,Object? fitnaSignOff = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? sourcesMatch = null,Object? gradingsCorrect = null,Object? noEmbellishment = null,Object? reliabilityCorrect = null,Object? honorificsCorrect = null,Object? fitnaSignOff = null,Object? sensitiveSignOff = null,}) {
   return _then(_self.copyWith(
 sourcesMatch: null == sourcesMatch ? _self.sourcesMatch : sourcesMatch // ignore: cast_nullable_to_non_nullable
 as bool,gradingsCorrect: null == gradingsCorrect ? _self.gradingsCorrect : gradingsCorrect // ignore: cast_nullable_to_non_nullable
@@ -3842,6 +3843,7 @@ as bool,noEmbellishment: null == noEmbellishment ? _self.noEmbellishment : noEmb
 as bool,reliabilityCorrect: null == reliabilityCorrect ? _self.reliabilityCorrect : reliabilityCorrect // ignore: cast_nullable_to_non_nullable
 as bool,honorificsCorrect: null == honorificsCorrect ? _self.honorificsCorrect : honorificsCorrect // ignore: cast_nullable_to_non_nullable
 as bool,fitnaSignOff: null == fitnaSignOff ? _self.fitnaSignOff : fitnaSignOff // ignore: cast_nullable_to_non_nullable
+as bool,sensitiveSignOff: null == sensitiveSignOff ? _self.sensitiveSignOff : sensitiveSignOff // ignore: cast_nullable_to_non_nullable
 as bool,
   ));
 }
@@ -3927,10 +3929,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( bool sourcesMatch,  bool gradingsCorrect,  bool noEmbellishment,  bool reliabilityCorrect,  bool honorificsCorrect,  bool fitnaSignOff)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( bool sourcesMatch,  bool gradingsCorrect,  bool noEmbellishment,  bool reliabilityCorrect,  bool honorificsCorrect,  bool fitnaSignOff,  bool sensitiveSignOff)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ApprovalChecklistDto() when $default != null:
-return $default(_that.sourcesMatch,_that.gradingsCorrect,_that.noEmbellishment,_that.reliabilityCorrect,_that.honorificsCorrect,_that.fitnaSignOff);case _:
+return $default(_that.sourcesMatch,_that.gradingsCorrect,_that.noEmbellishment,_that.reliabilityCorrect,_that.honorificsCorrect,_that.fitnaSignOff,_that.sensitiveSignOff);case _:
   return orElse();
 
 }
@@ -3948,10 +3950,10 @@ return $default(_that.sourcesMatch,_that.gradingsCorrect,_that.noEmbellishment,_
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( bool sourcesMatch,  bool gradingsCorrect,  bool noEmbellishment,  bool reliabilityCorrect,  bool honorificsCorrect,  bool fitnaSignOff)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( bool sourcesMatch,  bool gradingsCorrect,  bool noEmbellishment,  bool reliabilityCorrect,  bool honorificsCorrect,  bool fitnaSignOff,  bool sensitiveSignOff)  $default,) {final _that = this;
 switch (_that) {
 case _ApprovalChecklistDto():
-return $default(_that.sourcesMatch,_that.gradingsCorrect,_that.noEmbellishment,_that.reliabilityCorrect,_that.honorificsCorrect,_that.fitnaSignOff);case _:
+return $default(_that.sourcesMatch,_that.gradingsCorrect,_that.noEmbellishment,_that.reliabilityCorrect,_that.honorificsCorrect,_that.fitnaSignOff,_that.sensitiveSignOff);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -3968,10 +3970,10 @@ return $default(_that.sourcesMatch,_that.gradingsCorrect,_that.noEmbellishment,_
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( bool sourcesMatch,  bool gradingsCorrect,  bool noEmbellishment,  bool reliabilityCorrect,  bool honorificsCorrect,  bool fitnaSignOff)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( bool sourcesMatch,  bool gradingsCorrect,  bool noEmbellishment,  bool reliabilityCorrect,  bool honorificsCorrect,  bool fitnaSignOff,  bool sensitiveSignOff)?  $default,) {final _that = this;
 switch (_that) {
 case _ApprovalChecklistDto() when $default != null:
-return $default(_that.sourcesMatch,_that.gradingsCorrect,_that.noEmbellishment,_that.reliabilityCorrect,_that.honorificsCorrect,_that.fitnaSignOff);case _:
+return $default(_that.sourcesMatch,_that.gradingsCorrect,_that.noEmbellishment,_that.reliabilityCorrect,_that.honorificsCorrect,_that.fitnaSignOff,_that.sensitiveSignOff);case _:
   return null;
 
 }
@@ -3983,7 +3985,7 @@ return $default(_that.sourcesMatch,_that.gradingsCorrect,_that.noEmbellishment,_
 @JsonSerializable()
 
 class _ApprovalChecklistDto implements ApprovalChecklistDto {
-  const _ApprovalChecklistDto({required this.sourcesMatch, required this.gradingsCorrect, required this.noEmbellishment, required this.reliabilityCorrect, required this.honorificsCorrect, this.fitnaSignOff = false});
+  const _ApprovalChecklistDto({required this.sourcesMatch, required this.gradingsCorrect, required this.noEmbellishment, required this.reliabilityCorrect, required this.honorificsCorrect, this.fitnaSignOff = false, this.sensitiveSignOff = false});
   factory _ApprovalChecklistDto.fromJson(Map<String, dynamic> json) => _$ApprovalChecklistDtoFromJson(json);
 
 @override final  bool sourcesMatch;
@@ -3993,6 +3995,8 @@ class _ApprovalChecklistDto implements ApprovalChecklistDto {
 @override final  bool honorificsCorrect;
 /// Required for items flagged fitnaAdjacent.
 @override@JsonKey() final  bool fitnaSignOff;
+/// Required for items flagged sensitive.
+@override@JsonKey() final  bool sensitiveSignOff;
 
 /// Create a copy of ApprovalChecklistDto
 /// with the given fields replaced by the non-null parameter values.
@@ -4007,16 +4011,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ApprovalChecklistDto&&(identical(other.sourcesMatch, sourcesMatch) || other.sourcesMatch == sourcesMatch)&&(identical(other.gradingsCorrect, gradingsCorrect) || other.gradingsCorrect == gradingsCorrect)&&(identical(other.noEmbellishment, noEmbellishment) || other.noEmbellishment == noEmbellishment)&&(identical(other.reliabilityCorrect, reliabilityCorrect) || other.reliabilityCorrect == reliabilityCorrect)&&(identical(other.honorificsCorrect, honorificsCorrect) || other.honorificsCorrect == honorificsCorrect)&&(identical(other.fitnaSignOff, fitnaSignOff) || other.fitnaSignOff == fitnaSignOff));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ApprovalChecklistDto&&(identical(other.sourcesMatch, sourcesMatch) || other.sourcesMatch == sourcesMatch)&&(identical(other.gradingsCorrect, gradingsCorrect) || other.gradingsCorrect == gradingsCorrect)&&(identical(other.noEmbellishment, noEmbellishment) || other.noEmbellishment == noEmbellishment)&&(identical(other.reliabilityCorrect, reliabilityCorrect) || other.reliabilityCorrect == reliabilityCorrect)&&(identical(other.honorificsCorrect, honorificsCorrect) || other.honorificsCorrect == honorificsCorrect)&&(identical(other.fitnaSignOff, fitnaSignOff) || other.fitnaSignOff == fitnaSignOff)&&(identical(other.sensitiveSignOff, sensitiveSignOff) || other.sensitiveSignOff == sensitiveSignOff));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,sourcesMatch,gradingsCorrect,noEmbellishment,reliabilityCorrect,honorificsCorrect,fitnaSignOff);
+int get hashCode => Object.hash(runtimeType,sourcesMatch,gradingsCorrect,noEmbellishment,reliabilityCorrect,honorificsCorrect,fitnaSignOff,sensitiveSignOff);
 
 @override
 String toString() {
-  return 'ApprovalChecklistDto(sourcesMatch: $sourcesMatch, gradingsCorrect: $gradingsCorrect, noEmbellishment: $noEmbellishment, reliabilityCorrect: $reliabilityCorrect, honorificsCorrect: $honorificsCorrect, fitnaSignOff: $fitnaSignOff)';
+  return 'ApprovalChecklistDto(sourcesMatch: $sourcesMatch, gradingsCorrect: $gradingsCorrect, noEmbellishment: $noEmbellishment, reliabilityCorrect: $reliabilityCorrect, honorificsCorrect: $honorificsCorrect, fitnaSignOff: $fitnaSignOff, sensitiveSignOff: $sensitiveSignOff)';
 }
 
 
@@ -4027,7 +4031,7 @@ abstract mixin class _$ApprovalChecklistDtoCopyWith<$Res> implements $ApprovalCh
   factory _$ApprovalChecklistDtoCopyWith(_ApprovalChecklistDto value, $Res Function(_ApprovalChecklistDto) _then) = __$ApprovalChecklistDtoCopyWithImpl;
 @override @useResult
 $Res call({
- bool sourcesMatch, bool gradingsCorrect, bool noEmbellishment, bool reliabilityCorrect, bool honorificsCorrect, bool fitnaSignOff
+ bool sourcesMatch, bool gradingsCorrect, bool noEmbellishment, bool reliabilityCorrect, bool honorificsCorrect, bool fitnaSignOff, bool sensitiveSignOff
 });
 
 
@@ -4044,7 +4048,7 @@ class __$ApprovalChecklistDtoCopyWithImpl<$Res>
 
 /// Create a copy of ApprovalChecklistDto
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? sourcesMatch = null,Object? gradingsCorrect = null,Object? noEmbellishment = null,Object? reliabilityCorrect = null,Object? honorificsCorrect = null,Object? fitnaSignOff = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? sourcesMatch = null,Object? gradingsCorrect = null,Object? noEmbellishment = null,Object? reliabilityCorrect = null,Object? honorificsCorrect = null,Object? fitnaSignOff = null,Object? sensitiveSignOff = null,}) {
   return _then(_ApprovalChecklistDto(
 sourcesMatch: null == sourcesMatch ? _self.sourcesMatch : sourcesMatch // ignore: cast_nullable_to_non_nullable
 as bool,gradingsCorrect: null == gradingsCorrect ? _self.gradingsCorrect : gradingsCorrect // ignore: cast_nullable_to_non_nullable
@@ -4052,6 +4056,7 @@ as bool,noEmbellishment: null == noEmbellishment ? _self.noEmbellishment : noEmb
 as bool,reliabilityCorrect: null == reliabilityCorrect ? _self.reliabilityCorrect : reliabilityCorrect // ignore: cast_nullable_to_non_nullable
 as bool,honorificsCorrect: null == honorificsCorrect ? _self.honorificsCorrect : honorificsCorrect // ignore: cast_nullable_to_non_nullable
 as bool,fitnaSignOff: null == fitnaSignOff ? _self.fitnaSignOff : fitnaSignOff // ignore: cast_nullable_to_non_nullable
+as bool,sensitiveSignOff: null == sensitiveSignOff ? _self.sensitiveSignOff : sensitiveSignOff // ignore: cast_nullable_to_non_nullable
 as bool,
   ));
 }

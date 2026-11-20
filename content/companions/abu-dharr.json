@@ -240,13 +240,67 @@
     "siyar"
   ],
   "review": {
-    "status": "preliminaryReview",
-    "editorialFlags": [],
+    "status": "approved",
+    "editorialFlags": [
+      "sensitive"
+    ],
     "coverage": "sample",
     "authoredBy": "short-profiles-1"
   },
   "titles": [],
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "بلغ أبا ذر وهو في قومه غفار خبر رجل بمكة يزعم أنه نبي، فبعث أخاه يتعرّف خبره، ثم قدم بنفسه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3522"
+        }
+      ],
+      "sectionId": "abu-dharr.islam"
+    },
+    {
+      "text": {
+        "ar": "سأل أبو ذر النبي ﷺ أن يستعمله على عمل، فضرب بيده على منكبه وأخبره أنه ضعيف، وأنها أمانة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "complete",
+          "hadithNumber": "1825"
+        }
+      ],
+      "sectionId": "abu-dharr.with-the-prophet"
+    },
+    {
+      "text": {
+        "ar": "ويروي زيد بن وهب أنه مرّ بأبي ذر في الربذة فسأله عمّا أنزله بها، فذكر أنه كان بالشام فاختلف هو ومعاوية في تأويل آية الكنز."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "1406"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 9,
+            "ayahFrom": 34
+          }
+        }
+      ],
+      "sectionId": "abu-dharr.rabadhah"
+    }
+  ],
   "relations": [],
   "storyIds": [
     "islam-of-abu-dharr"

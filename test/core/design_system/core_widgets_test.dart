@@ -35,9 +35,10 @@ void main() {
   }
 
   group('SectionHeader', () {
-    testWidgets('shows a padded index in the digit style', (tester) async {
+    testWidgets('shows the index in the digit style, padded only in Western '
+        'digits', (tester) async {
       await pump(tester, const SectionHeader(index: 1, title: 'عنوان'));
-      expect(find.text('٠١'), findsOneWidget);
+      expect(find.text('١'), findsOneWidget);
 
       await pump(
         tester,

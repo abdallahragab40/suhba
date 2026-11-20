@@ -301,13 +301,72 @@
     "siyar"
   ],
   "review": {
-    "status": "preliminaryReview",
+    "status": "approved",
     "editorialFlags": [],
     "coverage": "sample",
     "authoredBy": "short-profiles-1"
   },
   "titles": [],
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "ونزل النبي ﷺ في السُّفل وأبو أيوب في العُلو، فانتبه أبو أيوب ليلة فقال: نمشي فوق رأس رسول الله ﷺ!"
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "complete",
+          "hadithNumber": "2053"
+        }
+      ],
+      "sectionId": "abu-ayyub-al-ansari.the-host"
+    },
+    {
+      "text": {
+        "ar": "فتحوّلوا فباتوا في جانب، ثم سأل النبي ﷺ أن يتحوّل إلى العلو، فتحوّل، كما في صحيح مسلم."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "complete",
+          "hadithNumber": "2053"
+        }
+      ],
+      "sectionId": "abu-ayyub-al-ansari.the-host"
+    },
+    {
+      "text": {
+        "ar": "شهد أبو أيوب العقبة الثانية وبدرًا، ويروي محمد بن سيرين أنه لم يتخلّف عن غزاة للمسلمين إلا عامًا استُعمل فيه على الجيش شاب فقعد، ثم ندم."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "404"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "405"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 9,
+            "ayahFrom": 41
+          }
+        }
+      ],
+      "sectionId": "abu-ayyub-al-ansari.jihad"
+    }
+  ],
   "relations": [],
   "storyIds": []
 }

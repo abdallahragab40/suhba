@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+import 'package:suhba/app/router/routes.dart';
 import 'package:suhba/core/design_system/tokens/radii.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
 import 'package:suhba/core/design_system/widgets/reliability_badge.dart';
 import 'package:suhba/core/design_system/widgets/section_header.dart';
+import 'package:suhba/core/design_system/widgets/wordmark.dart';
 import 'package:suhba/core/domain/reliability.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/shared/content/providers.dart';
@@ -56,6 +59,7 @@ class AboutPage extends ConsumerWidget {
           AppSpacing.xxl,
         ),
         children: [
+          const Wordmark(size: 40),
           Text(l10n.aboutIntro, style: textTheme.bodyLarge),
           section(
             l10n.aboutReviewTitle,
@@ -95,6 +99,30 @@ class AboutPage extends ConsumerWidget {
                       ],
                     ),
                   ),
+              ],
+            ),
+          ),
+          // Every bundled third-party resource, its origin and its terms
+          // (review K10). A test keeps this in step with the fonts and
+          // images actually bundled.
+          section(
+            l10n.aboutCreditsTitle,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(l10n.sourcesQuranTextTitle, style: textTheme.titleSmall),
+                Text(l10n.aboutCreditQuranBody, style: textTheme.bodyMedium),
+                TextButton.icon(
+                  style: TextButton.styleFrom(padding: EdgeInsets.zero),
+                  icon: const Icon(Icons.menu_book_outlined, size: 18),
+                  label: Text(l10n.aboutCreditSources),
+                  onPressed: () => context.push(AppRoutes.sourcesDirectory),
+                ),
+                const SizedBox(height: AppSpacing.xs),
+                Text(l10n.aboutCreditFontsTitle, style: textTheme.titleSmall),
+                Text(l10n.aboutCreditAmiri, style: textTheme.bodyMedium),
+                const SizedBox(height: AppSpacing.xxs),
+                Text(l10n.aboutCreditZain, style: textTheme.bodyMedium),
               ],
             ),
           ),

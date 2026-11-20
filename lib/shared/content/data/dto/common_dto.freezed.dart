@@ -2169,6 +2169,302 @@ $HistoricalDateDtoCopyWith<$Res>? get date {
 
 
 /// @nodoc
+mixin _$OverviewFactDto {
+
+ LocalizedTextDto get text; Reliability get reliability; List<CitationDto> get citations; String get sectionId;
+/// Create a copy of OverviewFactDto
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$OverviewFactDtoCopyWith<OverviewFactDto> get copyWith => _$OverviewFactDtoCopyWithImpl<OverviewFactDto>(this as OverviewFactDto, _$identity);
+
+  /// Serializes this OverviewFactDto to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is OverviewFactDto&&(identical(other.text, text) || other.text == text)&&(identical(other.reliability, reliability) || other.reliability == reliability)&&const DeepCollectionEquality().equals(other.citations, citations)&&(identical(other.sectionId, sectionId) || other.sectionId == sectionId));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,text,reliability,const DeepCollectionEquality().hash(citations),sectionId);
+
+@override
+String toString() {
+  return 'OverviewFactDto(text: $text, reliability: $reliability, citations: $citations, sectionId: $sectionId)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $OverviewFactDtoCopyWith<$Res>  {
+  factory $OverviewFactDtoCopyWith(OverviewFactDto value, $Res Function(OverviewFactDto) _then) = _$OverviewFactDtoCopyWithImpl;
+@useResult
+$Res call({
+ LocalizedTextDto text, Reliability reliability, List<CitationDto> citations, String sectionId
+});
+
+
+$LocalizedTextDtoCopyWith<$Res> get text;
+
+}
+/// @nodoc
+class _$OverviewFactDtoCopyWithImpl<$Res>
+    implements $OverviewFactDtoCopyWith<$Res> {
+  _$OverviewFactDtoCopyWithImpl(this._self, this._then);
+
+  final OverviewFactDto _self;
+  final $Res Function(OverviewFactDto) _then;
+
+/// Create a copy of OverviewFactDto
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? text = null,Object? reliability = null,Object? citations = null,Object? sectionId = null,}) {
+  return _then(_self.copyWith(
+text: null == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
+as LocalizedTextDto,reliability: null == reliability ? _self.reliability : reliability // ignore: cast_nullable_to_non_nullable
+as Reliability,citations: null == citations ? _self.citations : citations // ignore: cast_nullable_to_non_nullable
+as List<CitationDto>,sectionId: null == sectionId ? _self.sectionId : sectionId // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+/// Create a copy of OverviewFactDto
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$LocalizedTextDtoCopyWith<$Res> get text {
+  
+  return $LocalizedTextDtoCopyWith<$Res>(_self.text, (value) {
+    return _then(_self.copyWith(text: value));
+  });
+}
+}
+
+
+/// Adds pattern-matching-related methods to [OverviewFactDto].
+extension OverviewFactDtoPatterns on OverviewFactDto {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _OverviewFactDto value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _OverviewFactDto() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _OverviewFactDto value)  $default,){
+final _that = this;
+switch (_that) {
+case _OverviewFactDto():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _OverviewFactDto value)?  $default,){
+final _that = this;
+switch (_that) {
+case _OverviewFactDto() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( LocalizedTextDto text,  Reliability reliability,  List<CitationDto> citations,  String sectionId)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _OverviewFactDto() when $default != null:
+return $default(_that.text,_that.reliability,_that.citations,_that.sectionId);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( LocalizedTextDto text,  Reliability reliability,  List<CitationDto> citations,  String sectionId)  $default,) {final _that = this;
+switch (_that) {
+case _OverviewFactDto():
+return $default(_that.text,_that.reliability,_that.citations,_that.sectionId);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( LocalizedTextDto text,  Reliability reliability,  List<CitationDto> citations,  String sectionId)?  $default,) {final _that = this;
+switch (_that) {
+case _OverviewFactDto() when $default != null:
+return $default(_that.text,_that.reliability,_that.citations,_that.sectionId);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class _OverviewFactDto implements OverviewFactDto {
+  const _OverviewFactDto({required this.text, required this.reliability, required final  List<CitationDto> citations, required this.sectionId}): _citations = citations;
+  factory _OverviewFactDto.fromJson(Map<String, dynamic> json) => _$OverviewFactDtoFromJson(json);
+
+@override final  LocalizedTextDto text;
+@override final  Reliability reliability;
+ final  List<CitationDto> _citations;
+@override List<CitationDto> get citations {
+  if (_citations is EqualUnmodifiableListView) return _citations;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_citations);
+}
+
+@override final  String sectionId;
+
+/// Create a copy of OverviewFactDto
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$OverviewFactDtoCopyWith<_OverviewFactDto> get copyWith => __$OverviewFactDtoCopyWithImpl<_OverviewFactDto>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$OverviewFactDtoToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _OverviewFactDto&&(identical(other.text, text) || other.text == text)&&(identical(other.reliability, reliability) || other.reliability == reliability)&&const DeepCollectionEquality().equals(other._citations, _citations)&&(identical(other.sectionId, sectionId) || other.sectionId == sectionId));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,text,reliability,const DeepCollectionEquality().hash(_citations),sectionId);
+
+@override
+String toString() {
+  return 'OverviewFactDto(text: $text, reliability: $reliability, citations: $citations, sectionId: $sectionId)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$OverviewFactDtoCopyWith<$Res> implements $OverviewFactDtoCopyWith<$Res> {
+  factory _$OverviewFactDtoCopyWith(_OverviewFactDto value, $Res Function(_OverviewFactDto) _then) = __$OverviewFactDtoCopyWithImpl;
+@override @useResult
+$Res call({
+ LocalizedTextDto text, Reliability reliability, List<CitationDto> citations, String sectionId
+});
+
+
+@override $LocalizedTextDtoCopyWith<$Res> get text;
+
+}
+/// @nodoc
+class __$OverviewFactDtoCopyWithImpl<$Res>
+    implements _$OverviewFactDtoCopyWith<$Res> {
+  __$OverviewFactDtoCopyWithImpl(this._self, this._then);
+
+  final _OverviewFactDto _self;
+  final $Res Function(_OverviewFactDto) _then;
+
+/// Create a copy of OverviewFactDto
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? text = null,Object? reliability = null,Object? citations = null,Object? sectionId = null,}) {
+  return _then(_OverviewFactDto(
+text: null == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
+as LocalizedTextDto,reliability: null == reliability ? _self.reliability : reliability // ignore: cast_nullable_to_non_nullable
+as Reliability,citations: null == citations ? _self._citations : citations // ignore: cast_nullable_to_non_nullable
+as List<CitationDto>,sectionId: null == sectionId ? _self.sectionId : sectionId // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+/// Create a copy of OverviewFactDto
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$LocalizedTextDtoCopyWith<$Res> get text {
+  
+  return $LocalizedTextDtoCopyWith<$Res>(_self.text, (value) {
+    return _then(_self.copyWith(text: value));
+  });
+}
+}
+
+
+/// @nodoc
 mixin _$ReviewDto {
 
  ReviewStatus get status; List<EditorialFlag> get editorialFlags; Coverage? get coverage;/// Who drafted it (team member or "sample-content"); not shipped to UI.

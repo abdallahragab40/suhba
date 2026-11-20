@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/design_system/tokens/app_icons.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/tokens/typography.dart';
 import 'package:suhba/core/design_system/widgets/draft_badge.dart';
@@ -59,7 +60,7 @@ class SectionReaderPage extends ConsumerWidget {
       },
       AsyncError(error: NotFoundFailure()) => message(
         EmptyState(
-          icon: Icons.person_search_outlined,
+          icon: AppIcons.companionMissing,
           title: l10n.companionNotFound,
         ),
       ),
@@ -139,7 +140,7 @@ class _SectionReader extends ConsumerWidget {
         // meaning for screen readers.
         ExcludeSemantics(
           child: Text(
-            format.padded(index + 1),
+            format.index(index + 1),
             style: SuhbaTextStyles.of(context).kicker,
           ),
         ),
@@ -155,6 +156,10 @@ class _SectionReader extends ConsumerWidget {
           blocks: section.blocks,
           provisional: provisional,
           textSize: ref.watch(readingTextSizeProvider),
+          passageTitles: {
+            for (final s in c.sections) s.id: s.title.of(context),
+          },
+          onOpenPassage: (id) => context.push(AppRoutes.section(c.id, id)),
           onCitations: (cites, reliability, {passage}) => showCitationSheet(
             context,
             citations: cites,

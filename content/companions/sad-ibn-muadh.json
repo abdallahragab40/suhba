@@ -359,12 +359,90 @@
     "sirat-ibn-hisham"
   ],
   "review": {
-    "status": "preliminaryReview",
-    "editorialFlags": [],
+    "status": "approved",
+    "editorialFlags": [
+      "sensitive"
+    ],
     "coverage": "sample",
     "authoredBy": "short-profiles-1"
   },
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "وشهد سعد بدرًا وأحدًا والخندق، على ما يذكر الزهري فيما ينقله الذهبي."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "281"
+        }
+      ],
+      "sectionId": "sad-ibn-muadh.badr"
+    },
+    {
+      "text": {
+        "ar": "أصيب سعد يوم الخندق بسهم رماه رجل من قريش فقطع الأكحل، فضرب له النبي ﷺ خيمة في المسجد ليعوده من قريب."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4122"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "463"
+        }
+      ],
+      "sectionId": "sad-ibn-muadh.qurayza"
+    },
+    {
+      "text": {
+        "ar": "أخبر النبي ﷺ أن العرش اهتزّ لموت سعد بن معاذ."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3803"
+        }
+      ],
+      "sectionId": "sad-ibn-muadh.virtues"
+    },
+    {
+      "text": {
+        "ar": "انفجر جرحه بعد الحكم في بني قريظة فمات منه، وذلك سنة خمس من الهجرة، وهو ابن سبع وثلاثين سنة، وصلّى عليه النبي ﷺ، على ما يذكر الذهبي."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4122"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "289"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "290"
+        }
+      ],
+      "sectionId": "sad-ibn-muadh.death"
+    }
+  ],
   "relations": [],
   "storyIds": []
 }

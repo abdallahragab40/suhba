@@ -116,7 +116,30 @@ abstract class CompanionSummary with _$CompanionSummary {
     @Default(<String>[]) List<String> aliases,
     @Default(<String>[]) List<String> categoryIds,
     HistoricalDate? death,
+
+    /// Arabic words in the biography; null when the bundle predates it.
+    int? wordCount,
   }) = _CompanionSummary;
+}
+
+/// How deep a biography goes, as lists show it (review F07, C1).
+enum BiographyDepth {
+  /// A standard biography, like the Ten's.
+  full,
+
+  /// A short introduction, to be deepened (decision 3).
+  brief;
+
+  /// From this many words a biography counts as full. Today's full
+  /// biographies run 1,569–1,803 words and the short ones 180–449.
+  static const fullFromWords = 1000;
+
+  /// The depth of [c], or null when the bundle does not say.
+  static BiographyDepth? of(CompanionSummary c) => switch (c.wordCount) {
+    null => null,
+    >= fullFromWords => full,
+    _ => brief,
+  };
 }
 
 @freezed
@@ -142,6 +165,9 @@ abstract class Companion with _$Companion {
     DatedClaim? death,
     LocalizedText? deathPlace,
     @Default(<Fact>[]) List<Fact> atAGlance,
+
+    /// Three to five key sentences from the biography, each cited (E2).
+    @Default(<OverviewFact>[]) List<OverviewFact> overview,
     @Default(<Membership>[]) List<Membership> memberships,
     @Default(<Relation>[]) List<Relation> relations,
     @Default(<BiographySection>[]) List<BiographySection> sections,

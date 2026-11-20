@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:suhba/core/config/preview_approved.dart';
 import 'package:suhba/core/domain/historical_date.dart';
 import 'package:suhba/core/domain/quran_ref.dart';
 import 'package:suhba/shared/content/data/dto/block_dto.dart';
@@ -85,8 +88,10 @@ extension FactDtoMapper on FactDto {
 }
 
 extension ReviewDtoMapper on ReviewDto {
-  ReviewInfo toDomain() => ReviewInfo(
-    status: status,
+  /// With [preview] (the debug-only [previewApproved]), every item reads
+  /// as approved; its flags and coverage are kept.
+  ReviewInfo toDomain({bool preview = previewApproved}) => ReviewInfo(
+    status: preview ? ReviewStatus.approved : status,
     editorialFlags: editorialFlags.toSet(),
     coverage: coverage,
   );
@@ -108,7 +113,10 @@ extension ContentBlockDtoMapper on ContentBlockDto {
         reliability: reliability,
         citations: _citations(citations),
       ),
-    LessonBlockDto(:final text) => ContentBlock.lesson(text: text.toDomain()),
+    LessonBlockDto(:final text, :final basedOn) => ContentBlock.lesson(
+      text: text.toDomain(),
+      basedOn: basedOn,
+    ),
     QuranQuoteBlockDto(:final ref, :final note) => ContentBlock.quranQuote(
       ref: ref.toDomain(),
       note: note?.toDomain(),
@@ -203,6 +211,15 @@ extension CompanionDtoMapper on CompanionDto {
     death: death?.toDomain(),
     deathPlace: deathPlace?.toDomain(),
     atAGlance: [for (final f in atAGlance) f.toDomain()],
+    overview: [
+      for (final f in overview)
+        OverviewFact(
+          text: f.text.toDomain(),
+          reliability: f.reliability,
+          citations: _citations(f.citations),
+          sectionId: f.sectionId,
+        ),
+    ],
     memberships: [
       for (final m in memberships)
         Membership(
@@ -237,8 +254,17 @@ extension CompanionDtoMapper on CompanionDto {
     aliases: aliases,
     categoryIds: [for (final m in memberships) m.categoryId],
     death: death?.date,
+    wordCount: _arabicWords(jsonDecode(jsonEncode(sections))),
   );
 }
+
+/// Words in every Arabic string (`ar`) inside [json].
+int _arabicWords(Object? json) => switch (json) {
+  {'ar': final String text} => RegExp(r'\S+').allMatches(text).length,
+  Map<String, Object?>() => json.values.fold(0, (n, v) => n + _arabicWords(v)),
+  List<Object?>() => json.fold(0, (n, v) => n + _arabicWords(v)),
+  _ => 0,
+};
 
 extension CompanionSummaryDtoMapper on CompanionSummaryDto {
   CompanionSummary toDomain() => CompanionSummary(
@@ -253,6 +279,7 @@ extension CompanionSummaryDtoMapper on CompanionSummaryDto {
     aliases: aliases,
     categoryIds: categoryIds,
     death: death?.toDomain(),
+    wordCount: wordCount,
   );
 }
 
@@ -353,17 +380,19 @@ extension PersonDtoMapper on PersonDto {
 }
 
 extension ManifestDtoMapper on ManifestDto {
-  ContentManifest toDomain() => ContentManifest(
+  /// With [preview] (the debug-only [previewApproved]), the build reads as
+  /// published and fully approved.
+  ContentManifest toDomain({bool preview = previewApproved}) => ContentManifest(
     contentVersion: contentVersion,
     schemaVersion: schemaVersion,
-    channel: channel,
+    channel: preview ? ContentChannel.published : channel,
     companionCount: companionCount,
     storyCount: storyCount,
     seerahChapterCount: seerahChapterCount,
     seerahTopicCount: seerahTopicCount,
     placeCount: placeCount,
     visualCount: visualCount,
-    approvedCount: approvedCount,
-    unapprovedCount: unapprovedCount,
+    approvedCount: preview ? approvedCount + unapprovedCount : approvedCount,
+    unapprovedCount: preview ? 0 : unapprovedCount,
   );
 }

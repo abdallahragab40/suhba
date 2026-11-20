@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/design_system/tokens/app_icons.dart';
 import 'package:suhba/core/design_system/tokens/motion.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
@@ -52,7 +53,7 @@ class TimelinePage extends ConsumerWidget {
         ),
         AsyncData(:final value) => _Timeline(companion: value),
         AsyncError(error: NotFoundFailure()) => EmptyState(
-          icon: Icons.person_search_outlined,
+          icon: AppIcons.companionMissing,
           title: l10n.companionNotFound,
         ),
         AsyncError(:final error) => ErrorView(
@@ -159,6 +160,7 @@ class _TimelineState extends State<_Timeline> {
                           key: _keyFor(entry.id),
                           entry: entry,
                           companionId: c.id,
+                          gender: c.gender,
                           provisional: provisional,
                         ),
                     ],
@@ -180,11 +182,15 @@ class TimelineEntryTile extends ConsumerWidget {
     required this.entry,
     required this.companionId,
     required this.provisional,
+    this.gender = Gender.male,
     super.key,
   });
 
   final TimelineEvent entry;
   final String companionId;
+
+  /// The companion's gender, for "اقرأ في سيرته / سيرتها".
+  final Gender gender;
   final bool provisional;
 
   @override
@@ -262,7 +268,7 @@ class TimelineEntryTile extends ConsumerWidget {
             TextButton.icon(
               style: TextButton.styleFrom(padding: EdgeInsets.zero),
               icon: const Icon(Icons.menu_book_outlined, size: 18),
-              label: Text(l10n.timelineOpenSection),
+              label: Text(l10n.timelineOpenSection(gender.name)),
               onPressed: () =>
                   context.push(AppRoutes.section(companionId, sectionId)),
             ),
@@ -301,6 +307,7 @@ class EraStrip extends StatelessWidget {
                   '${format.historicalDate(e.date, withGregorian: false)}، '
                   '${e.title.of(context)}',
               excludeSemantics: true,
+              onTap: () => onSelected(e),
               child: InkWell(
                 onTap: () => onSelected(e),
                 borderRadius: BorderRadius.circular(8),

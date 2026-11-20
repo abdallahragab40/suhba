@@ -32,9 +32,9 @@
   "@tabCompanions": {
     "description": "Bottom navigation: companions directory tab."
   },
-  "tabSaved": "المحفوظات",
+  "tabSaved": "مكتبتي",
   "@tabSaved": {
-    "description": "Bottom navigation: bookmarks and continue-reading tab."
+    "description": "Bottom navigation: the reader's own tab (continue reading and saved items). Kept short so it never wraps in the bar."
   },
   "tabSettings": "الإعدادات",
   "@tabSettings": {
@@ -321,13 +321,19 @@
   "@profileDeathPlace": {
     "description": "Fact label."
   },
-  "profileSectionsKicker": "السيرة",
+  "profileSectionsKicker": "الفصول",
   "@profileSectionsKicker": {
     "description": "Kicker above the list of biography sections."
   },
-  "profileSectionsTitle": "فصول السيرة",
+  "profileSectionsTitle": "{gender, select, female{فصول سيرتها} other{فصول سيرته}}",
   "@profileSectionsTitle": {
-    "description": "Title of the list of biography sections."
+    "description": "Profile: title over the biography's sections (review F11).",
+    "placeholders": {
+      "gender": {
+        "type": "String",
+        "description": "'female' or 'male' (the companion's gender)."
+      }
+    }
   },
   "profileTimelineKicker": "التسلسل",
   "@profileTimelineKicker": {
@@ -361,9 +367,15 @@
   "@profileReferencesKicker": {
     "description": "Kicker above the reference list."
   },
-  "profileReferencesTitle": "مراجع هذه السيرة",
+  "profileReferencesTitle": "{gender, select, female{مراجع سيرتها} other{مراجع سيرته}}",
   "@profileReferencesTitle": {
-    "description": "Title of the reference list."
+    "description": "Profile: title over the biography's references (review F11).",
+    "placeholders": {
+      "gender": {
+        "type": "String",
+        "description": "'female' or 'male' (the companion's gender)."
+      }
+    }
   },
   "relationFather": "الأب",
   "@relationFather": {
@@ -613,6 +625,35 @@
   "@lessonLabel": {
     "description": "Kicker of an editorial lesson."
   },
+  "lessonBasedOn": "مبنيّ على: {title}",
+  "@lessonBasedOn": {
+    "description": "Link under a lesson to the passage it is drawn from.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "glossaryTitle": "المصطلحات",
+  "@glossaryTitle": {
+    "description": "The glossary page and its Explore entry."
+  },
+  "glossaryKicker": "مصطلح",
+  "@glossaryKicker": {
+    "description": "Kicker of a term sheet."
+  },
+  "glossaryAll": "كل المصطلحات",
+  "@glossaryAll": {
+    "description": "Opens the glossary from a term sheet."
+  },
+  "glossaryEmpty": "لا مصطلحات في هذا الإصدار.",
+  "@glossaryEmpty": {
+    "description": "Glossary empty state."
+  },
+  "exploreGlossaryBody": "معاني الكلمات التي تتكرر في السيرة، مع مصادرها.",
+  "@exploreGlossaryBody": {
+    "description": "Explore entry body for the glossary."
+  },
   "sectionNotFound": "لم نجد هذا القسم.",
   "@sectionNotFound": {
     "description": "Unknown section link."
@@ -649,9 +690,15 @@
   "@eraKicker": {
     "description": "Kicker above each era of the timeline."
   },
-  "timelineOpenSection": "اقرأ في السيرة",
+  "timelineOpenSection": "{gender, select, female{اقرأ في سيرتها} other{اقرأ في سيرته}}",
   "@timelineOpenSection": {
-    "description": "Opens the biography section linked to a timeline entry."
+    "description": "Timeline entry: opens the linked section of the companion's biography (review F11).",
+    "placeholders": {
+      "gender": {
+        "type": "String",
+        "description": "'female' or 'male' (the companion's gender)."
+      }
+    }
   },
   "timelineEvent": "الحدث: {name}",
   "@timelineEvent": {
@@ -747,7 +794,7 @@
   "@savedCompanions": {
     "description": "Saved group."
   },
-  "savedSections": "أقسام السيرة",
+  "savedSections": "من سِيَر الصحابة",
   "@savedSections": {
     "description": "Saved group."
   },
@@ -763,7 +810,7 @@
   "@savedEmptyTitle": {
     "description": "Empty saved screen title."
   },
-  "savedEmptyMessage": "احفظ صحابيًّا أو قسمًا من السيرة أو قصة لتجده هنا.",
+  "savedEmptyMessage": "احفظ ما تحب من سِيَر الصحابة وفصول السيرة النبوية والقصص لتجده هنا.",
   "@savedEmptyMessage": {
     "description": "Empty saved screen message."
   },
@@ -775,7 +822,7 @@
   "@searchHint": {
     "description": "Search field hint."
   },
-  "searchStart": "ابحث في أسماء الصحابة وألقابهم وكناهم، وفي عناوين السيرة والقصص ونصوصها.",
+  "searchStart": "ابحث في أسماء الصحابة وألقابهم وكناهم، وفي سِيَرهم والسيرة النبوية والقصص.",
   "@searchStart": {
     "description": "Shown before typing."
   },
@@ -804,7 +851,7 @@
   "@searchKindStories": {
     "description": "Search result group."
   },
-  "searchKindSections": "أقسام السيرة",
+  "searchKindSections": "سِيَر الصحابة",
   "@searchKindSections": {
     "description": "Search result group."
   },
@@ -812,21 +859,25 @@
   "@searchKindChapters": {
     "description": "Search result group."
   },
-  "homeFeaturedKicker": "صحابي اليوم",
+  "homeFeaturedKicker": "{gender, select, female{صحابية اليوم} other{صحابي اليوم}}",
   "@homeFeaturedKicker": {
-    "description": "Kicker on the home hero (changes daily)."
+    "description": "Home: kicker over the featured companion, by gender (review F11).",
+    "placeholders": {
+      "gender": {
+        "type": "String",
+        "description": "'female' or 'male' (the companion's gender)."
+      }
+    }
   },
-  "homeReadBiography": "اقرأ السيرة",
+  "homeReadBiography": "{gender, select, female{اقرأ سيرتها} other{اقرأ سيرته}}",
   "@homeReadBiography": {
-    "description": "Opens the featured companion."
-  },
-  "homeCategoriesKicker": "التصنيفات",
-  "@homeCategoriesKicker": {
-    "description": "Kicker above categories."
-  },
-  "homeCategoriesTitle": "تصفّح الصحابة",
-  "@homeCategoriesTitle": {
-    "description": "Title above categories."
+    "description": "Home: button opening the featured companion's biography. Not \"السيرة\", which means the Prophetic Seerah (review F11).",
+    "placeholders": {
+      "gender": {
+        "type": "String",
+        "description": "'female' or 'male' (the companion's gender)."
+      }
+    }
   },
   "homeStoriesKicker": "حكايات",
   "@homeStoriesKicker": {
@@ -872,6 +923,10 @@
   "settingsChannelPublished": "محتوى منشور",
   "@settingsChannelPublished": {
     "description": "Content channel."
+  },
+  "settingsChannelPreview": "معاينة للمطوّر: يُعرض المحتوى كأنه معتمد، ولم يُراجَع بعد.",
+  "@settingsChannelPreview": {
+    "description": "Settings content channel line in the debug-only preview where all content reads as approved."
   },
   "settingsAbout": "عن التطبيق والمنهج",
   "@settingsAbout": {
@@ -934,7 +989,7 @@
   "@aboutReviewDraft": {
     "description": "About: draft status."
   },
-  "aboutReviewPublished": "راجع المحتوى المنشور مختصون مؤهلون قبل نشره.",
+  "aboutReviewPublished": "راجع فريق التحرير المحتوى المنشور قبل نشره: طابق كل خبر بمصدره، وبيّن درجة ثبوته، وتحقّق من نصوص الآيات والأحاديث المنقولة. وهي مراجعة تحريرية، لا اعتماد من عالم مختص، ولا حكم على أسانيد جميع الروايات؛ فإن وجدت خطأ فأخبرنا من «أرسل ملاحظاتك» في الإعدادات.",
   "@aboutReviewPublished": {
     "description": "About: published status."
   },
@@ -981,18 +1036,6 @@
   "sourceTypeOther": "مصادر أخرى",
   "@sourceTypeOther": {
     "description": "Source group."
-  },
-  "homeCategoryCount": "{count, plural, =0{لا صحابة بعد} =1{صحابي واحد} =2{صحابيان} few{{n} صحابة} other{{n} صحابيًّا}}",
-  "@homeCategoryCount": {
-    "description": "Number of companions in a category; n is the formatted number.",
-    "placeholders": {
-      "count": {
-        "type": "int"
-      },
-      "n": {
-        "type": "String"
-      }
-    }
   },
   "savedLoadErrorMessage": "تعذّر تحميل المحفوظات. لم يُحذف شيء منها؛ حاول مرة أخرى.",
   "@savedLoadErrorMessage": {
@@ -1046,9 +1089,15 @@
   "@readerReadAgain": {
     "description": "Button: forget the progress of a finished passage and start over."
   },
-  "profileStartReading": "ابدأ قراءة السيرة",
+  "profileStartReading": "{gender, select, female{ابدأ قراءة سيرتها} other{ابدأ قراءة سيرته}}",
   "@profileStartReading": {
-    "description": "Profile: start the biography at its first section."
+    "description": "Profile: button that opens the first section (review F11).",
+    "placeholders": {
+      "gender": {
+        "type": "String",
+        "description": "'female' or 'male' (the companion's gender)."
+      }
+    }
   },
   "profileContinueReading": "تابع القراءة",
   "@profileContinueReading": {
@@ -1102,7 +1151,7 @@
       }
     }
   },
-  "profileResumeDetail": "{title} · قُرئ {percent}",
+  "profileResumeDetail": "{title}، قُرئ {percent}",
   "@profileResumeDetail": {
     "description": "Profile: the section to resume and how much of it was read (percent is formatted).",
     "placeholders": {
@@ -1118,11 +1167,11 @@
   "@searchScopeAll": {
     "description": "Search filter chip: every kind of result."
   },
-  "searchScopeCompanions": "الصحابة",
+  "searchScopeCompanions": "أسماء الصحابة",
   "@searchScopeCompanions": {
     "description": "Search filter chip: companions only."
   },
-  "searchScopeBiographies": "السِّيَر",
+  "searchScopeBiographies": "سِيَر الصحابة",
   "@searchScopeBiographies": {
     "description": "Search filter chip: biography sections only."
   },
@@ -1196,7 +1245,7 @@
   "@settingsClearLearning": {
     "description": "Settings: delete review history and journey progress."
   },
-  "settingsLearningCounts": "أسئلة المراجعة: {reviews} · الرحلات: {journeys}",
+  "settingsLearningCounts": "أسئلة المراجعة: {reviews}، الرحلات: {journeys}",
   "@settingsLearningCounts": {
     "description": "Subtitle: how much review and journey data there is.",
     "placeholders": {"reviews": {"type": "String"}, "journeys": {"type": "String"}}
@@ -1358,6 +1407,10 @@
   "@mapSchematicNote": {
     "description": "Note under every map."
   },
+  "mapSpreadNote": "ورُسمت المواضع المتقاربة متباعدةً قليلًا لتظهر، مع حفظ جهاتها.",
+  "@mapSpreadNote": {
+    "description": "Under the schematic map, when places too close to tell apart were drawn further apart."
+  },
   "relationCompanion": "صاحبه",
   "@relationCompanion": {
     "description": "Relation type: companionship (e.g. the Prophet ﷺ and Abu Bakr)."
@@ -1443,9 +1496,9 @@
       }
     }
   },
-  "visualRelationOf": "{relation} · {person}",
+  "visualRelationOf": "{relation}، {person}",
   "@visualRelationOf": {
-    "description": "Relation in list form: the relation label, then the other person; e.g. \"من الأبناء · أبو بكر الصديق\".",
+    "description": "Relation in list form: the relation label, then the other person; e.g. \"من الأبناء، أبو بكر الصديق\".",
     "placeholders": {
       "relation": {
         "type": "String"
@@ -1483,6 +1536,10 @@
   "seerahOpenTimeline": "السيرة على خط الزمن",
   "@seerahOpenTimeline": {
     "description": "Button opening the Seerah timeline."
+  },
+  "seerahOpenMap": "أماكن السيرة على الخريطة",
+  "@seerahOpenMap": {
+    "description": "Button in the Seerah hub opening the Seerah map full screen."
   },
   "seerahTopicsKicker": "موضوعات",
   "@seerahTopicsKicker": {
@@ -1545,11 +1602,38 @@
   "@seerahOpenSection": {
     "description": "Button on Home opening the Seerah section."
   },
+  "seerahProgressRead": "{count, plural, =1{قرأتَ {read} من فصل واحد} =2{قرأتَ {read} من فصلين} few{قرأتَ {read} من {n} فصول} other{قرأتَ {read} من {n} فصلًا}}",
+  "@seerahProgressRead": {
+    "description": "Seerah progress beside the ring: chapters finished out of all chapters. count is the total.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "read": {
+        "type": "String"
+      },
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "seerahProgressNone": "لم تبدأ بعد",
+  "@seerahProgressNone": {
+    "description": "Seerah progress before any chapter is finished (Q4)."
+  },
+  "seerahProgressDone": "أتممتَ السيرة",
+  "@seerahProgressDone": {
+    "description": "Seerah progress once every chapter is finished."
+  },
+  "seerahReadAgain": "اقرأها من جديد",
+  "@seerahReadAgain": {
+    "description": "Button once the Seerah is finished: opens chapter one; nothing is reset."
+  },
   "seerahScrollHint": "اثنا عشر فصلًا",
   "@seerahScrollHint": {
     "description": "Small hint under the Seerah opening that more follows below."
   },
-  "seerahChapterLabel": "الفصل {number} · {date}",
+  "seerahChapterLabel": "الفصل {number}، {date}",
   "@seerahChapterLabel": {
     "description": "Chapter number and time label in lists.",
     "placeholders": {
@@ -1589,13 +1673,9 @@
   "@seerahFeatureKicker": {
     "description": "Kicker of the ink feature band."
   },
-  "seerahFeatureTitle": "الهجرة: من مكة إلى المدينة",
-  "@seerahFeatureTitle": {
-    "description": "Title of the Hijrah feature band."
-  },
-  "seerahFeatureRead": "اقرأ فصل الهجرة",
+  "seerahFeatureRead": "اقرأ الفصل",
   "@seerahFeatureRead": {
-    "description": "Button opening the Hijrah chapter."
+    "description": "Button opening the featured chapter."
   },
   "seerahChapterNotFound": "هذا الفصل غير موجود.",
   "@seerahChapterNotFound": {
@@ -1605,7 +1685,7 @@
   "@seerahTopicNotFound": {
     "description": "Seerah topic not found."
   },
-  "seerahChapterOf": "الفصل {number} من {total} · {date}",
+  "seerahChapterOf": "الفصل {number} من {total}، {date}",
   "@seerahChapterOf": {
     "description": "Kicker in the chapter reader.",
     "placeholders": {
@@ -1845,41 +1925,15 @@
   "@savedSeerahTopics": {
     "description": "Saved group: Seerah themes."
   },
-  "homeSeerahKicker": "السيرة النبوية",
-  "@homeSeerahKicker": {
-    "description": "Home section kicker."
-  },
-  "homeSeerahTitle": "الفصول القادمة",
-  "@homeSeerahTitle": {
-    "description": "Home: the next Seerah chapters to read."
-  },
-  "homeAllChapters": "كل الفصول",
-  "@homeAllChapters": {
-    "description": "Home link to the Seerah hub."
-  },
-  "homeDiscoverTitle": "تعرّف على صحابي",
+  "homeDiscoverTitle": "{gender, select, female{تعرّف على صحابية} other{تعرّف على صحابي}}",
   "@homeDiscoverTitle": {
-    "description": "Home: the companion-of-the-day section title."
-  },
-  "homeAtlasKicker": "الأطلس",
-  "@homeAtlasKicker": {
-    "description": "Home section kicker."
-  },
-  "homeAtlasTitle": "أين جرت الأحداث",
-  "@homeAtlasTitle": {
-    "description": "Home: the atlas section title."
-  },
-  "homeArchiveKicker": "الأرشيف",
-  "@homeArchiveKicker": {
-    "description": "Home section kicker."
-  },
-  "homeArchiveTitle": "أحداث مختارة",
-  "@homeArchiveTitle": {
-    "description": "Home: selected events title."
-  },
-  "homeAllEvents": "سجل الأحداث كاملًا",
-  "@homeAllEvents": {
-    "description": "Home link to the event archive."
+    "description": "Home: title over the featured companion, by gender (review F11).",
+    "placeholders": {
+      "gender": {
+        "type": "String",
+        "description": "'female' or 'male' (the companion's gender)."
+      }
+    }
   },
   "searchKindSeerahChapters": "فصول السيرة النبوية",
   "@searchKindSeerahChapters": {
@@ -2181,7 +2235,7 @@
   "welcome4Kicker": "المنهج",
   "welcome4Title": "كلّ خبر بمصدره",
   "welcome4Body": "تُعزى الأخبار إلى كتب الحديث والسيرة، وتُبيَّن درجتها: ثابت، أو رواية تاريخية، أو مختلف فيه. والمحتوى في مراجعة أولية، ولا يُعتمد قبل أن يعتمده عالم مختص. ويعمل التطبيق كلّه دون اتصال.",
-  "welcome4BodyPublished": "تُعزى الأخبار إلى كتب الحديث والسيرة، وتُبيَّن درجتها: ثابت، أو رواية تاريخية، أو مختلف فيه. وقد راجع المحتوى مختصون مؤهلون قبل نشره. ويعمل التطبيق كلّه دون اتصال.",
+  "welcome4BodyPublished": "تُعزى الأخبار إلى كتب الحديث والسيرة، وتُبيَّن درجتها: ثابت، أو رواية تاريخية، أو مختلف فيه. وقد روجع المحتوى تحريريًا بمطابقة كل خبر بمصدره قبل نشره. ويعمل التطبيق كلّه دون اتصال.",
   "quizTitle": "اختبر معلوماتك",
   "quizSubtitle": "أسئلة جديدة في كل جولة، من الصحابة والسيرة، وكل إجابة تُحيلك إلى موضعها.",
   "quizModeMixed": "جولة منوّعة",
@@ -2633,7 +2687,7 @@
       }
     }
   },
-  "reminderGroup": "التذكير",
+  "reminderGroup": "الورد والتذكير",
   "@reminderGroup": {
     "description": "Optional reading reminder: reminderGroup"
   },
@@ -2709,10 +2763,304 @@
   },
   "shareCardTitle": "بطاقة من صُحبة",
   "shareCardSquare": "مربع",
+  "shareCardPaper": "ورقي",
+  "@shareCardPaper": {
+    "description": "Share card template: paper."
+  },
+  "shareCardGreen": "أخضر",
+  "@shareCardGreen": {
+    "description": "Share card template: Madinah green."
+  },
+  "shareCardNight": "ليلي",
+  "@shareCardNight": {
+    "description": "Share card template: night."
+  },
+  "shareCardAccent": "اللون:",
+  "@shareCardAccent": {
+    "description": "Share card: label before the accent choices."
+  },
+  "shareCardAccentGold": "ذهبي",
+  "@shareCardAccentGold": {
+    "description": "Share card accent: gold."
+  },
+  "shareCardAccentGreen": "أخضر",
+  "@shareCardAccentGreen": {
+    "description": "Share card accent: green."
+  },
+  "shareCardAccentPlain": "بلون النص",
+  "@shareCardAccentPlain": {
+    "description": "Share card accent: the text colour."
+  },
   "shareCardStory": "قصة",
-  "shareCardDark": "داكن",
   "shareCardAction": "مشاركة البطاقة",
   "shareCardFailed": "تعذّر تجهيز البطاقة. حاول مرة أخرى.",
   "shareCardFooter": "تطبيق صُحبة • السيرة والصحابة\nGoogle Play",
-  "shareCardOption": "بطاقة"
+  "shareCardOption": "بطاقة",
+  "journeyNotStarted": "لم تبدأ بعد، {totalCount, plural, =1{خطوة واحدة} =2{خطوتان} few{{total} خطوات} other{{total} خطوة}}",
+  "@journeyNotStarted": {
+    "description": "Guided journeys: progress when no step is done yet. Zero is written in words, never as ٠ (review F06).",
+    "placeholders": {
+      "totalCount": {
+        "type": "int"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "timeMorning": "{time} صباحًا",
+  "@timeMorning": {
+    "description": "A clock time before noon, e.g. \"٧ صباحًا\" or \"٧:٣٠ صباحًا\".",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "timeEvening": "{time} مساءً",
+  "@timeEvening": {
+    "description": "A clock time from noon, e.g. \"٩ مساءً\" or \"٩:١٥ مساءً\".",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "homeAllStories": "كل القصص",
+  "@homeAllStories": {
+    "description": "Home: link from the first stories to the full list in Explore."
+  },
+  "homeTileContinue": "تابع القراءة",
+  "@homeTileContinue": {
+    "description": "Quick tile on Home: opens the passage read most recently, else the Seerah."
+  },
+  "homeTileJourney": "رحلة اليوم",
+  "@homeTileJourney": {
+    "description": "Quick tile on Home: opens the current journey, else the list of journeys."
+  },
+  "homeTileReview": "المراجعة",
+  "@homeTileReview": {
+    "description": "Quick tile on Home: opens review."
+  },
+  "homeTileMap": "الخريطة",
+  "@homeTileMap": {
+    "description": "Quick tile on Home: opens the Seerah map."
+  },
+  "startHereLink": "جديد هنا؟ {title}",
+  "@startHereLink": {
+    "description": "Home link for a reader with no history to the first journey; title is its name («ابدأ من هنا»).",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "dailyPortionKicker": "ورد اليوم",
+  "@dailyPortionKicker": {
+    "description": "Kicker of the daily portion card on Home (K1)."
+  },
+  "dailyPortionRead": "اقرأ",
+  "@dailyPortionRead": {
+    "description": "Opens today's portion."
+  },
+  "dailyPortionDone": "قرأتُه",
+  "@dailyPortionDone": {
+    "description": "Marks today's Seerah chapter read and moves to the next."
+  },
+  "dailyPortionMarked": "عُلّم «{title}» مقروءًا",
+  "@dailyPortionMarked": {
+    "description": "Snack bar after marking today's chapter read, with undo.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "reminderPortionBody": "ورد اليوم: {title}، {minutes}",
+  "@reminderPortionBody": {
+    "description": "Evening reminder naming today's portion; minutes is the reading-time phrase.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "dailyPortionOf": "ورد اليوم: {n} من {total}",
+  "@dailyPortionOf": {
+    "description": "Kicker when today's plan has more than one chapter: which one this is.",
+    "placeholders": {
+      "n": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "dailyPortionComplete": "تمّ ورد اليوم",
+  "@dailyPortionComplete": {
+    "description": "Title once today's planned chapters are read."
+  },
+  "dailyPortionTomorrow": "وغدًا: {title}",
+  "@dailyPortionTomorrow": {
+    "description": "Tomorrow's chapter, under the completed card.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "dailyPortionReadAhead": "اقرأه الآن",
+  "@dailyPortionReadAhead": {
+    "description": "Optional: read tomorrow's chapter today."
+  },
+  "dailyPortionBehind": "{count, plural, =1{بقي من الأيام الماضية فصل واحد.} =2{بقي من الأيام الماضية فصلان.} few{بقي من الأيام الماضية {n} فصول.} other{بقي من الأيام الماضية {n} فصلًا.}}",
+  "@dailyPortionBehind": {
+    "description": "After a missed day: chapters the plan expected and not yet read. Neutral wording, no guilt.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "planContinueFromHere": "تابع من حيث توقفت",
+  "@planContinueFromHere": {
+    "description": "After a missed day: restart the plan from today, nothing owed. The default."
+  },
+  "planCatchUp": "تدارك تدريجيًا",
+  "@planCatchUp": {
+    "description": "After a missed day: one extra chapter a day until caught up."
+  },
+  "planTitle": "الورد اليومي من السيرة",
+  "@planTitle": {
+    "description": "Settings: the reading plan."
+  },
+  "planNone": "بلا خطة",
+  "@planNone": {
+    "description": "Settings: no reading plan."
+  },
+  "planPace": "{count, plural, =1{فصل} =2{فصلان} few{{n} فصول} other{{n} فصلًا}}",
+  "@planPace": {
+    "description": "Settings: a pace choice, chapters a day.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "planNote": "عدد فصول السيرة في اليوم. إن فات يوم، تختار أن تتابع من حيث توقفت أو أن تتدارك تدريجيًا.",
+  "@planNote": {
+    "description": "Settings: what the plan does."
+  },
+  "citationEdition": "الطبعة: {edition}",
+  "@citationEdition": {
+    "description": "Source sheet: the edition a page or volume locator refers to (review F19).",
+    "placeholders": {
+      "edition": {
+        "type": "String"
+      }
+    }
+  },
+  "citationNumbering": "الترقيم: {scheme}",
+  "@citationNumbering": {
+    "description": "Source sheet: the numbering scheme a hadith number refers to.",
+    "placeholders": {
+      "scheme": {
+        "type": "String"
+      }
+    }
+  },
+  "readerLegendReported": "{label}: {explanation}",
+  "@readerLegendReported": {
+    "description": "Reader: legend at the top of a passage that has reported claims; label is \"رواية تاريخية\", explanation its meaning (review F10).",
+    "placeholders": {
+      "label": {
+        "type": "String"
+      },
+      "explanation": {
+        "type": "String"
+      }
+    }
+  },
+  "listStatusNote": "تدل هذه العلامة على ما لم يعتمده المراجع المختص بعد. تفاصيل المنهج في «عن التطبيق».",
+  "@listStatusNote": {
+    "description": "One note above a list whose items carry the compact draft mark (review F09)."
+  },
+  "depthFull": "سيرة كاملة",
+  "@depthFull": {
+    "description": "Directory row: the biography is at standard depth (review F07, C1)."
+  },
+  "depthBrief": "تعريف موجز",
+  "@depthBrief": {
+    "description": "Directory row: the biography is a short introduction, to be deepened (review F07, C1)."
+  },
+  "directoryOthers": "صحابة آخرون",
+  "@directoryOthers": {
+    "description": "Directory: heading over companions in no category."
+  },
+  "aboutCreditsTitle": "شكر وإسناد",
+  "@aboutCreditsTitle": {
+    "description": "About: credits for every bundled third-party resource (review K10)."
+  },
+  "aboutCreditQuranBody": "الآيات بالرسم العثماني من مشروع تنزيل (tanzil.net)، منقولة كما هي دون تغيير، برخصة المشاع الإبداعي: نسب المصنَّف ٣٫٠. نص الترخيص كاملًا في صفحة المصادر.",
+  "@aboutCreditQuranBody": {
+    "description": "About credits: the Qur'an text (Tanzil, CC BY 3.0)."
+  },
+  "aboutCreditFontsTitle": "الخطوط",
+  "@aboutCreditFontsTitle": {
+    "description": "About credits: heading for the bundled fonts."
+  },
+  "aboutCreditAmiri": "خط الأميري (Amiri) وخط الأميري قرآن (Amiri Quran)، من تصميم خالد حسني، لنصوص القراءة والأسماء والآيات. برخصة الخطوط المفتوحة SIL OFL 1.1.",
+  "@aboutCreditAmiri": {
+    "description": "About credits: Amiri and Amiri Quran (OFL 1.1)."
+  },
+  "aboutCreditZain": "خط زين (Zain)، من تصميم Boutros Fonts، لعناوين الواجهة ونصوصها. برخصة الخطوط المفتوحة SIL OFL 1.1.",
+  "@aboutCreditZain": {
+    "description": "About credits: Zain (OFL 1.1)."
+  },
+  "aboutCreditSources": "المصادر",
+  "@aboutCreditSources": {
+    "description": "About credits: button opening the sources page, where the full Tanzil notice is."
+  },
+  "searchSuggestions": "الهجرة، أبو بكر، بدر، خديجة",
+  "@searchSuggestions": {
+    "description": "Search, before anything is typed: suggested queries separated by \"، \"; each must find something in the content."
+  },
+  "searchNoResultsTip": "جرّب كلمة واحدة، أو الاسم دون لقب أو كنية.",
+  "@searchNoResultsTip": {
+    "description": "Search with no results: a tip."
+  },
+  "searchBrowseCompanions": "تصفّح الصحابة",
+  "@searchBrowseCompanions": {
+    "description": "Search with no results: opens the Companions directory."
+  },
+  "readerTone": "لون الصفحة",
+  "@readerTone": {
+    "description": "Reading settings: heading over the page tone choice (review K5)."
+  },
+  "readerToneApp": "حسب المظهر",
+  "@readerToneApp": {
+    "description": "Reading settings: the page follows the app's light or dark theme."
+  },
+  "readerToneWarmPaper": "ورقي دافئ",
+  "@readerToneWarmPaper": {
+    "description": "Reading settings: a warm, light paper page for long reading."
+  },
+  "readerToneWarmNight": "ليلي دافئ",
+  "@readerToneWarmNight": {
+    "description": "Reader tone in the dark theme: a warm night page."
+  },
+  "journeyStepContinue": "تابع",
+  "@journeyStepContinue": {
+    "description": "Journey stepper: the one button, on the current step (review K4)."
+  }
 }

@@ -7,6 +7,7 @@ import 'package:suhba/shared/content/data/asset_content_source.dart';
 import 'package:suhba/shared/content/data/dto/atlas_dto.dart';
 import 'package:suhba/shared/content/data/dto/catalog_dto.dart';
 import 'package:suhba/shared/content/data/dto/companion_dto.dart';
+import 'package:suhba/shared/content/data/dto/glossary_dto.dart';
 import 'package:suhba/shared/content/data/dto/quran_dto.dart';
 import 'package:suhba/shared/content/data/dto/seerah_dto.dart';
 import 'package:suhba/shared/content/data/dto/story_dto.dart';
@@ -18,6 +19,7 @@ import 'package:suhba/shared/content/domain/companion.dart';
 import 'package:suhba/shared/content/domain/content_format.dart';
 import 'package:suhba/shared/content/domain/content_manifest.dart';
 import 'package:suhba/shared/content/domain/content_repository.dart';
+import 'package:suhba/shared/content/domain/glossary.dart';
 import 'package:suhba/shared/content/domain/quran_verses.dart';
 import 'package:suhba/shared/content/domain/seerah.dart';
 import 'package:suhba/shared/content/domain/story.dart';
@@ -149,6 +151,23 @@ class AssetContentRepository implements ContentRepository {
     'places.json',
     (json) => {
       for (final p in PlacesFileDto.fromJson(json).places) p.id: p.toDomain(),
+    },
+  );
+
+  @override
+  Future<Result<Map<String, GlossaryTerm>>> glossary() => _load(
+    'glossary.json',
+    (json) => {
+      for (final t in GlossaryFileDto.fromJson(json).terms)
+        t.id: GlossaryTerm(
+          id: t.id,
+          term: t.term.toDomain(),
+          forms: t.forms,
+          definition: t.definition.toDomain(),
+          reliability: t.reliability,
+          citations: citationsToDomain(t.citations),
+          review: t.review.toDomain(),
+        ),
     },
   );
 

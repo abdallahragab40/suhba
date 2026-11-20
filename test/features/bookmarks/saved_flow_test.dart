@@ -52,7 +52,7 @@ void main() {
           parentId: 'abu-bakr',
         );
     await tester.pumpAndSettle();
-    expect(find.text('أقسام السيرة'), findsOneWidget);
+    expect(find.text('من سِيَر الصحابة'), findsOneWidget);
     expect(find.text('صاحبه في الهجرة'), findsOneWidget);
     await tester.tap(find.text('صاحبه في الهجرة'));
     await tester.pumpAndSettle();

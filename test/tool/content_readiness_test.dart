@@ -80,6 +80,17 @@ void main() {
   ItemReadiness item(ReadinessReport r, String key) =>
       r.items.firstWhere((i) => i.key == key);
 
+  test('flags that need explicit sign-off are listed per item (E1)', () {
+    (fx.companionA['review'] as Map<String, dynamic>)['editorialFlags'] = [
+      'needsLocators',
+      'sensitive',
+    ];
+    final r = report();
+    expect(item(r, 'companion.comp-a').signOffs, ['sensitive']);
+    expect(item(r, 'story.story-a').signOffs, isEmpty);
+    expect(r.toMarkdown(), contains('| sensitive |'));
+  });
+
   test('draft content is not ready, and says why', () {
     final r = report();
     expect(r.editionReady, isFalse);
@@ -110,7 +121,7 @@ void main() {
     expect(
       r.editionProblems,
       containsAll([
-        'companion.comp-a: 8 of 1500 words.',
+        'companion.comp-a: 10 of 1500 words.',
         'companion.comp-a: 1 of 8 timeline entries.',
       ]),
     );
@@ -247,7 +258,7 @@ void main() {
     expect(report().toJsonString(), report().toJsonString());
   });
 
-  test('the committed content: every companion is listed, none ready yet', () {
+  test('the committed content: every companion is listed, the edition ready', () {
     final r = contentReadiness(
       ContentFiles.fromDirectory(Directory('content')),
       schemas,
@@ -255,14 +266,12 @@ void main() {
     final companions = r.items.where((i) => i.key.startsWith('companion.'));
     expect(companions, hasLength(47));
     expect(r.editionId, 'expanded-edition-1');
-    expect(r.editionReady, isFalse);
+    expect(r.editionReady, isTrue, reason: r.editionProblems.join('\n'));
     expect(
-      r.items.where((i) => i.approval != ApprovalState.notApproved),
+      r.items.where((i) => i.approval == ApprovalState.notApproved),
       isEmpty,
-      reason: 'no reviewer is registered yet',
     );
-    // The first wave: the Hijrah chapter and Abu Bakr meet the checklist's
-    // coverage; only review is missing.
+    // The first wave meets the checklist's coverage.
     for (final key in [
       'companion.abu-bakr',
       'seerahChapter.hijrah-to-madinah',

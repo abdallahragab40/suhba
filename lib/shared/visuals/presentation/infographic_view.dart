@@ -329,7 +329,7 @@ class _InfographicViewState extends ConsumerState<InfographicView> {
           if (r.places[id] case final p?)
             row(
               p.name.of(context),
-              '${precision(p.location.precision)} · ${p.summary.of(context)}',
+              '${precision(p.location.precision)}، ${p.summary.of(context)}',
               onTap: () => context.push(AppRoutes.place(p.id)),
             ),
         if (route.isNotEmpty) ...[
@@ -344,7 +344,7 @@ class _InfographicViewState extends ConsumerState<InfographicView> {
               [
                 if (leg.approximate) l10n.mapApproximatePath,
                 ?leg.note?.of(context),
-              ].join(' · '),
+              ].join(DisplayFormatter.separator),
               lead: format.integer(i + 1),
               onTap: () =>
                   _citations(leg.citations, leg.reliability, provisional),
@@ -369,7 +369,7 @@ class _InfographicViewState extends ConsumerState<InfographicView> {
             [
               s.text.of(context),
               if (s.orderUncertain) l10n.sequenceOrderUncertain,
-            ].join(' · '),
+            ].join(DisplayFormatter.separator),
             lead: format.integer(i + 1),
             onTap: () => _citations(s.citations, s.reliability, provisional),
           ),
@@ -378,7 +378,10 @@ class _InfographicViewState extends ConsumerState<InfographicView> {
         for (final (i, b) in bands.indexed)
           row(
             b.label.of(context),
-            [format.historicalDate(b.date), ?b.note?.of(context)].join(' · '),
+            [
+              format.historicalDate(b.date),
+              ?b.note?.of(context),
+            ].join(DisplayFormatter.separator),
             lead: format.integer(i + 1),
             onTap: () => _citations(b.citations, b.reliability, provisional),
           ),

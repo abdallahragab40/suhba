@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/routes.dart';
 import 'package:suhba/core/design_system/theme/app_theme.dart';
+import 'package:suhba/core/design_system/tokens/app_icons.dart';
 import 'package:suhba/core/design_system/tokens/motion.dart';
 import 'package:suhba/core/design_system/tokens/palette.dart';
 import 'package:suhba/core/design_system/tokens/radii.dart';
@@ -66,7 +67,7 @@ class _QuizHomePageState extends ConsumerState<QuizHomePage>
         QuizMode.companions,
         l10n.quizModeCompanions,
         l10n.quizModeCompanionsHint,
-        Icons.groups_outlined,
+        AppIcons.companions,
       ),
       (
         QuizMode.seerah,

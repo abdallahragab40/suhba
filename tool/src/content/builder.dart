@@ -6,6 +6,7 @@ import 'package:suhba/shared/content/data/dto/atlas_dto.dart';
 import 'package:suhba/shared/content/data/dto/catalog_dto.dart';
 import 'package:suhba/shared/content/data/dto/common_dto.dart';
 import 'package:suhba/shared/content/data/dto/companion_dto.dart';
+import 'package:suhba/shared/content/data/dto/glossary_dto.dart';
 import 'package:suhba/shared/content/data/dto/quran_dto.dart';
 import 'package:suhba/shared/content/data/dto/seerah_dto.dart';
 import 'package:suhba/shared/content/data/dto/story_dto.dart';
@@ -170,6 +171,18 @@ BuildResult buildContent(
           featuredPlaceIds: keep(s.featuredPlaceIds, placeIds),
           companionIds: keep(s.companionIds, companionIds),
           visualIds: keep(s.visualIds, visualIds),
+          // Dropped, not broken, when its chapter or visual is not shipped.
+          feature: switch (s.feature) {
+            final f?
+                when chapters.any((c) => c.id == f.chapterId) &&
+                    visualIds.contains(f.visualId) =>
+              f,
+            _ => null,
+          },
+          mapVisualId: switch (s.mapVisualId) {
+            final id? when visualIds.contains(id) => id,
+            _ => null,
+          },
         ),
         chapters: [
           for (final c in chapters)
@@ -225,6 +238,18 @@ BuildResult buildContent(
   outputs['places.json'] = encode(
     PlacesFileDto(schemaVersion: outputSchemaVersion, places: places).toJson(),
   );
+  final terms = [
+    for (final t in tree.glossary.where(include))
+      t.dto.copyWith(review: shipped(t.dto.review)),
+  ]..sort((a, b) => a.id.compareTo(b.id));
+  if (terms.isNotEmpty) {
+    outputs['glossary.json'] = encode(
+      GlossaryFileDto(
+        schemaVersion: outputSchemaVersion,
+        terms: terms,
+      ).toJson(),
+    );
+  }
   final visuals = [
     for (final v in tree.visuals.where(include))
       v.dto.copyWith(
@@ -239,8 +264,15 @@ BuildResult buildContent(
     ).toJson(),
   );
 
+  // The catalog order is editorial (`order`), not alphabetical.
   final journeys = [...tree.journeys.where(include)]
-    ..sort((a, b) => a.id.compareTo(b.id));
+    ..sort(
+      (a, b) =>
+          switch ((a.dto.order ?? 1 << 30).compareTo(b.dto.order ?? 1 << 30)) {
+            0 => a.id.compareTo(b.id),
+            final c => c,
+          },
+    );
   for (final j in journeys) {
     outputs['journeys/${j.id}.json'] = encode(
       j.dto

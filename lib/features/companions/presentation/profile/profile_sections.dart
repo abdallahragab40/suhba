@@ -57,7 +57,7 @@ class SectionIndex extends ConsumerWidget {
                 children: [
                   ExcludeSemantics(
                     child: Text(
-                      format.padded(i + 1),
+                      format.index(i + 1),
                       style: textTheme.titleMedium?.copyWith(
                         color: colors.accentText,
                       ),

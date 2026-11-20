@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "zubayr-lifeline",
+  "type": "timeline",
+  "title": {
+    "ar": "حياة الزبير بن العوام على خط الزمن"
+  },
+  "takeaway": {
+    "ar": "أسلم الزبير بمكة بدعوة أبي بكر، وهاجر إلى الحبشة ثم إلى المدينة، وشهد بدرًا والخندق والفتح واليرموك، وكان من أهل الشورى، وقُتل بوادي السباع سنة ست وثلاثين."
+  },
+  "notes": [
+    {
+      "ar": "تاريخ مولده تقريبي."
+    }
+  ],
+  "review": {
+    "status": "approved",
+    "editorialFlags": [
+      "fitnaAdjacent"
+    ],
+    "authoredBy": "draft-lifelines-e6"
+  },
+  "companionId": "zubayr"
+}

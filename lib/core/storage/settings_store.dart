@@ -23,6 +23,9 @@ abstract final class SettingsKeys {
   static const digitStyle = 'digitStyle';
   static const readingTextSize = 'readingTextSize';
 
+  /// The readers' page tone: 'app' (the default) or 'warmPaper'.
+  static const readerTone = 'readerTone';
+
   /// Touch feedback: 'on' (the default) or 'off'.
   static const haptics = 'haptics';
 
@@ -44,6 +47,7 @@ abstract final class SettingsKeys {
     themeMode,
     digitStyle,
     readingTextSize,
+    readerTone,
     haptics,
     reconciledContent,
     welcomeSeen,

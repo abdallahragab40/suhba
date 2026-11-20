@@ -14,6 +14,7 @@ import 'package:suhba/features/settings/presentation/digit_style_controller.dart
 import 'package:suhba/features/settings/presentation/theme_mode_controller.dart';
 import 'package:suhba/features/welcome/presentation/welcome_controller.dart';
 import 'package:suhba/features/welcome/presentation/welcome_page.dart';
+import 'package:suhba/shared/content/presentation/glossary_links.dart';
 
 /// The app is Arabic-first: the locale is fixed to Arabic (and so RTL)
 /// whatever the device language. English strings exist for later use.
@@ -67,11 +68,14 @@ class SuhbaApp extends ConsumerWidget {
       // they are finished or skipped; the router keeps its state beneath.
       builder: (context, child) => DisplayFormatterScope(
         formatter: DisplayFormatter(AppLocalizations.of(context), digitStyle),
-        child: AnimatedSwitcher(
-          duration: AppMotion.resolve(context, AppMotion.long),
-          child: welcome == WelcomeMode.hidden
-              ? child!
-              : WelcomePage(mode: welcome),
+        child: GlossaryScope(
+          matcher: ref.watch(glossaryMatcherProvider),
+          child: AnimatedSwitcher(
+            duration: AppMotion.resolve(context, AppMotion.long),
+            child: welcome == WelcomeMode.hidden
+                ? child!
+                : WelcomePage(mode: welcome),
+          ),
         ),
       ),
     );

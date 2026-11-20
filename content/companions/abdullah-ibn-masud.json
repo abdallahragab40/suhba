@@ -346,12 +346,99 @@
     "siyar"
   ],
   "review": {
-    "status": "preliminaryReview",
+    "status": "approved",
     "editorialFlags": [],
     "coverage": "sample",
     "authoredBy": "short-profiles-1"
   },
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "أسلم عبد الله بن مسعود قديمًا، وكان يذكر أنه رأى نفسه سادس ستة وما على ظهر الأرض مسلم غيرهم، على ما يرويه الذهبي."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "464"
+        }
+      ],
+      "sectionId": "abdullah-ibn-masud.islam"
+    },
+    {
+      "text": {
+        "ar": "كان ابن مسعود ملازمًا للنبي ﷺ، حتى عرفه الناس بصاحب السواك والوساد والنعلين، وكان أبو الدرداء يذكر ذلك لأهل الكوفة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3742"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "470"
+        }
+      ],
+      "sectionId": "abdullah-ibn-masud.with-the-prophet"
+    },
+    {
+      "text": {
+        "ar": "أمر النبي ﷺ أصحابه أن يأخذوا القرآن من أربعة، وبدأ بعبد الله بن مسعود."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3758"
+        }
+      ],
+      "sectionId": "abdullah-ibn-masud.the-quran"
+    },
+    {
+      "text": {
+        "ar": "بعثه عمر بن الخطاب إلى الكوفة معلّمًا ووزيرًا مع عمار بن ياسر، وكتب إلى أهلها أنه آثرهم به على نفسه، فكان من أعظم من نشر العلم والقرآن في العراق."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "422"
+        }
+      ],
+      "sectionId": "abdullah-ibn-masud.kufa"
+    },
+    {
+      "text": {
+        "ar": "قدم ابن مسعود المدينة في آخر عمره، وتوفي بها سنة اثنتين وثلاثين على ما يذكر الذهبي، ولما مات قال أحد أصحابه لصاحبه: أتراه ترك بعده مثله؟"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "462"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "468"
+        }
+      ],
+      "sectionId": "abdullah-ibn-masud.death"
+    }
+  ],
   "relations": [],
   "storyIds": []
 }

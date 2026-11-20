@@ -13,7 +13,7 @@
     "ar": "أحد العشرة المبشرين بالجنة، ومن المهاجرين."
   },
   "review": {
-    "status": "preliminaryReview",
+    "status": "approved",
     "editorialFlags": [
       "needsLocators",
       "fitnaAdjacent"
@@ -150,6 +150,113 @@
           "page": "168"
         }
       ]
+    }
+  ],
+  "overview": [
+    {
+      "text": {
+        "ar": "ويذكر ابن سعد أنه قُتل سنة ست وثلاثين، وينقل اختلافًا في عمره يومئذ: فقيل أربع وستون سنة، وقيل اثنتان وستون."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "168"
+        }
+      ],
+      "sectionId": "talha.early-life"
+    },
+    {
+      "text": {
+        "ar": "كان من الثمانية الذين سبقوا إلى الإسلام، وأحد الخمسة الذين أسلموا بدعوة أبي بكر الصديق، فكان من السابقين الأولين الذين ذكرهم القرآن بالثناء."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "250"
+        },
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "529"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 9,
+            "ayahFrom": 100
+          }
+        }
+      ],
+      "sectionId": "talha.conversion"
+    },
+    {
+      "text": {
+        "ar": "ثم شهد الخندق والمشاهد كلها مع النبي ﷺ، كما يذكر ابن سعد."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "530"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "163"
+        }
+      ],
+      "sectionId": "talha.with-prophet"
+    },
+    {
+      "text": {
+        "ar": "وهو أحد العشرة الذين سمّاهم النبي ﷺ في حديث واحد وبشّرهم بالجنة، وأحد الستة أهل الشورى الذين توفي النبي ﷺ وهو عنهم راضٍ، كما قال عمر بن الخطاب."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "tirmidhi",
+          "locatorStatus": "complete",
+          "hadithNumber": "3747"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3700"
+        }
+      ],
+      "sectionId": "talha.virtues"
+    },
+    {
+      "text": {
+        "ar": "ويروي أهل التراجم عن قبيصة بن جابر أنه ما رأى أحدًا أعطى للجزيل من غير مسألة من طلحة، وأنه كان يعطي قبل أن يُسأل."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "30"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "165"
+        }
+      ],
+      "sectionId": "talha.character"
     }
   ],
   "deathPlace": {
@@ -1168,7 +1275,10 @@
           "type": "lesson",
           "text": {
             "ar": "ما وقع بين الصحابة في الفتنة يُذكر بقدر ما يثبت، ومنهج أهل السنة فيه الكفّ عمّا لم يثبت، والترضّي عنهم جميعًا، وحمل ما وقع على الاجتهاد."
-          }
+          },
+          "basedOn": [
+            "talha.death"
+          ]
         }
       ]
     },
@@ -1183,61 +1293,92 @@
           "type": "lesson",
           "text": {
             "ar": "جعل طلحة جسده درعًا دون النبي ﷺ يوم أحد، فدلّ على أن المحبة الصادقة تُعرف ساعة الشدة لا في أيام الرخاء."
-          }
+          },
+          "basedOn": [
+            "talha.with-prophet"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وكان ماله في يده لا في قلبه؛ يبيت لا ينام حتى يقسمه، فالمال عنده أمانة تُصرف في الخير، لا كنز يُحرس."
-          }
+          },
+          "basedOn": [
+            "talha.character"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي حزن علي عليه ورجائه أن يجمعهما الله إخوانًا بيان أن الخلاف بين أهل الفضل لا يُسقط حرمتهم ولا يمحو سابقتهم."
-          }
+          },
+          "basedOn": [
+            "talha.death"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي خروجه في طريق الشام يتحسّس الخبر قبيل بدر درس في أن من حبسه عن الخير عمل كُلّف به، فله أجر العامل."
-          }
+          },
+          "basedOn": [
+            "talha.with-prophet"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي روايته حديث الأعرابي تعليم بأن الفلاح في الصدق مع الفرائض، وأن الدين يسير على من صدق فيه."
-          }
+          },
+          "basedOn": [
+            "talha.virtues"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي سعي الصحابة إلى الصلح قبل الجمل دليل على أن الفتنة قد تقع على غير إرادة أهلها، وأن الحذر من أسبابها أولى من معالجة نتائجها."
-          }
+          },
+          "basedOn": [
+            "talha.death"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي سيرته أن العبادة والجود يجتمعان؛ فقد ربّى ابنًا عُرف بالسجّاد، وعُرف هو بالفيّاض، فالبيت الصالح يورث أهله الخير."
-          }
+          },
+          "basedOn": [
+            "talha.character"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي اجتماع الثناء عليه من النبي ﷺ ومن صاحبيه بيان أن الأعمال الكبيرة تبدأ بمواقف صادقة في ساعات صغيرة، كوقفة على صخرة أو كفّ ممدودة دون سهم."
-          }
+          },
+          "basedOn": [
+            "talha.with-prophet"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وتعلّمنا سيرته أن ننظر إلى الصحابة بسابقتهم وجملة أعمالهم، فلا تختصر حياة رجل في يوم واحد من أيام الفتنة."
-          }
+          },
+          "basedOn": [
+            "talha.virtues",
+            "talha.death"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "ومن سيرته نتعلّم أن السبق إلى الخير يحتاج إلى قلب يقظ؛ فقد سمع خبرًا في سوق بعيد فلم يتركه حتى بلغ حقيقته، ثم لم يتردد حين عرف الحق."
-          }
+          },
+          "basedOn": [
+            "talha.conversion"
+          ]
         }
       ]
     }

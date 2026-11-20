@@ -4,6 +4,7 @@ library;
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:suhba/core/design_system/theme/app_theme.dart';
+import 'package:suhba/core/design_system/tokens/app_icons.dart';
 
 import '../../helpers/pump_app.dart';
 
@@ -126,7 +127,7 @@ void main() {
                     label: 'السيرة',
                   ),
                   NavigationDestination(
-                    icon: Icon(Icons.people),
+                    icon: Icon(AppIcons.companions),
                     label: 'الصحابة',
                   ),
                 ],

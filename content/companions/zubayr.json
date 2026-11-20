@@ -13,7 +13,7 @@
     "ar": "أحد العشرة المبشرين بالجنة، ومن المهاجرين."
   },
   "review": {
-    "status": "preliminaryReview",
+    "status": "approved",
     "editorialFlags": [
       "needsLocators",
       "fitnaAdjacent"
@@ -169,6 +169,109 @@
           "hadithNumber": "5224"
         }
       ]
+    }
+  ],
+  "overview": [
+    {
+      "text": {
+        "ar": "ويروي هشام بن عروة عن أبيه أن الزبير كان طويلًا تخطّ رجلاه الأرض إذا ركب الدابة، أشعر، كما ينقل الذهبي."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "45"
+        }
+      ],
+      "sectionId": "zubayr.early-life"
+    },
+    {
+      "text": {
+        "ar": "أسلم قديمًا بدعوة أبي بكر الصديق، فكان أحد الخمسة الذين أسلموا على يديه، ومن السابقين الأولين إلى الإسلام."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "250"
+        },
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "553"
+        }
+      ],
+      "sectionId": "zubayr.conversion"
+    },
+    {
+      "text": {
+        "ar": "شهد بدرًا، ويذكر أهل السير أنه كان على أحد جناحي جيش المسلمين، وأنه كان يقاتل يومئذ وعليه عمامة صفراء، وفي البخاري خبر طعنه أحد فرسان المشركين يومئذ في عينه."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3998"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "46"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "76"
+        }
+      ],
+      "sectionId": "zubayr.with-prophet"
+    },
+    {
+      "text": {
+        "ar": "وهو أحد العشرة الذين سمّاهم النبي ﷺ في حديث واحد وبشّرهم بالجنة، وأحد الستة أهل الشورى الذين توفي النبي ﷺ وهو عنهم راضٍ."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "tirmidhi",
+          "locatorStatus": "complete",
+          "hadithNumber": "3747"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3700"
+        }
+      ],
+      "sectionId": "zubayr.virtues"
+    },
+    {
+      "text": {
+        "ar": "وعدّه سفيان الثوري مع حمزة وعلي في نجدة الصحابة، كما ينقل الذهبي؛ ويروي عروة أنه كان يُدخل أصابعه وهو صغير في آثار الضربات التي على عاتق أبيه."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3975"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "52"
+        }
+      ],
+      "sectionId": "zubayr.character"
     }
   ],
   "relations": [
@@ -1253,7 +1356,10 @@
           "type": "lesson",
           "text": {
             "ar": "ما وقع بين الصحابة في الفتنة يُذكر بقدر ما يثبت، ومنهج أهل السنة فيه الكفّ عمّا لم يثبت، والترضّي عنهم جميعًا، وحمل ما وقع على الاجتهاد."
-          }
+          },
+          "basedOn": [
+            "zubayr.death"
+          ]
         }
       ]
     },
@@ -1268,43 +1374,64 @@
           "type": "lesson",
           "text": {
             "ar": "صنعت أمّ الزبير منه فارسًا، فكانت التربية الحازمة في الصغر سببًا في رجولة الكبر؛ والتربية القوية الرحيمة تثمر رجالًا يُعتمد عليهم."
-          }
+          },
+          "basedOn": [
+            "zubayr.early-life"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي ورعه عن كثرة الرواية مع طول صحبته بيان أن العلم أمانة، وأن التحرّز في نقله من تعظيم صاحبه ﷺ."
-          }
+          },
+          "basedOn": [
+            "zubayr.character"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي وصيته في دينه، وتوكّله على مولاه، وقضاء ابنه عنه بالصدق والأمانة، صورة من صور البر بعد الموت، وأن حقوق الناس لا تسقط بمكانة صاحبها."
-          }
+          },
+          "basedOn": [
+            "zubayr.death"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي انصرافه عن القتال حين ذُكّر بأمر من النبي ﷺ، على ما ترويه كتب التاريخ، تعليم بأن الرجوع إلى الحق خير من التمادي، ولو كان ذلك في ساحة القتال."
-          }
+          },
+          "basedOn": [
+            "zubayr.death"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي كونه حواريّ النبي ﷺ، يتقدّم حين يتأخّر الناس، دعوة إلى أن يكون المرء سبّاقًا إلى المهمات الصعبة في نصرة الحق."
-          }
+          },
+          "basedOn": [
+            "zubayr.virtues"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي جمع الزبير بين الثراء والأمانة، حتى جعل الودائع دينًا عليه لئلا تضيع، بيان أن الأمين يحتمل الضرر على نفسه حفظًا لأموال الناس."
-          }
+          },
+          "basedOn": [
+            "zubayr.death"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي سرعة استجابته يوم الخندق ثلاث مرات حين سكت الناس صورة للمبادرة؛ فالشجاعة الحقيقية أن تتقدّم حين يكون التقدّم صعبًا."
-          }
+          },
+          "basedOn": [
+            "zubayr.with-prophet"
+          ]
         }
       ]
     }

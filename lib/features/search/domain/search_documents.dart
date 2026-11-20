@@ -32,7 +32,7 @@ List<SearchDocument> buildSearchDocuments({
         kind: SearchKind.companion,
         id: c.id,
         title: c.name.ar,
-        subtitle: [?c.kunya?.ar, ...c.titles.map((t) => t.ar)].join(' · '),
+        subtitle: [?c.kunya?.ar, ...c.titles.map((t) => t.ar)].join('، '),
         fields: [
           SearchField(c.name.ar, SearchField.nameWeight),
           SearchField(c.fullName.ar, SearchField.aliasWeight),

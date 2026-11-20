@@ -6,6 +6,7 @@ import 'package:suhba/features/stories/presentation/chapter_page.dart';
 import 'package:suhba/features/stories/presentation/story_page.dart';
 
 import '../../helpers/app_harness.dart';
+import '../../helpers/content_bundle.dart';
 
 void main() {
   Future<AppUnderTest> open(WidgetTester tester, String path) async {
@@ -13,7 +14,10 @@ void main() {
       ..devicePixelRatio = 1
       ..physicalSize = const Size(600, 3000);
     addTearDown(tester.view.reset);
-    final app = AppUnderTest(location: path);
+    final app = AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      location: path,
+    );
     await app.pump(tester);
     return app;
   }

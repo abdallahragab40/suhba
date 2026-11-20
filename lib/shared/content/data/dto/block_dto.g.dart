@@ -73,11 +73,17 @@ const _$ReliabilityEnumMap = {
 
 LessonBlockDto _$LessonBlockDtoFromJson(Map<String, dynamic> json) =>
     $checkedCreate('LessonBlockDto', json, ($checkedConvert) {
-      $checkKeys(json, allowedKeys: const ['text', 'type']);
+      $checkKeys(json, allowedKeys: const ['text', 'basedOn', 'type']);
       final val = LessonBlockDto(
         text: $checkedConvert(
           'text',
           (v) => LocalizedTextDto.fromJson(v as Map<String, dynamic>),
+        ),
+        basedOn: $checkedConvert(
+          'basedOn',
+          (v) =>
+              (v as List<dynamic>?)?.map((e) => e as String).toList() ??
+              const <String>[],
         ),
         $type: $checkedConvert('type', (v) => v as String?),
       );
@@ -85,7 +91,11 @@ LessonBlockDto _$LessonBlockDtoFromJson(Map<String, dynamic> json) =>
     }, fieldKeyMap: const {r'$type': 'type'});
 
 Map<String, dynamic> _$LessonBlockDtoToJson(LessonBlockDto instance) =>
-    <String, dynamic>{'text': instance.text.toJson(), 'type': instance.$type};
+    <String, dynamic>{
+      'text': instance.text.toJson(),
+      'basedOn': ?_omitEmpty(instance.basedOn),
+      'type': instance.$type,
+    };
 
 QuranQuoteBlockDto _$QuranQuoteBlockDtoFromJson(Map<String, dynamic> json) =>
     $checkedCreate('QuranQuoteBlockDto', json, ($checkedConvert) {

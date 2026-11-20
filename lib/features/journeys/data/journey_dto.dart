@@ -38,6 +38,11 @@ abstract class JourneyDto with _$JourneyDto {
     required LocalizedTextDto title,
     required LocalizedTextDto description,
     required List<JourneyStepDto> steps,
+
+    /// Position in the catalog, 1 first. The builder orders the index by it;
+    /// the app reads the order from the index. Null only in bundles built
+    /// before the field existed.
+    int? order,
     required ReviewDto review,
   }) = _JourneyDto;
   factory JourneyDto.fromJson(Map<String, dynamic> json) =>

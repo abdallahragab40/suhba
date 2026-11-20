@@ -28,7 +28,7 @@ class _MapBundle extends CachingAssetBundle {
   }
 }
 
-/// The committed draft build, read from disk.
+/// The committed (published) build, read from disk.
 Map<String, String> _builtAssets() => {
   for (final f
       in Directory('assets/content')
@@ -51,10 +51,10 @@ void main() {
 
   test('reads the manifest', () async {
     final manifest = (await repo.manifest()).getOrThrow();
-    expect(manifest.channel, ContentChannel.draft);
-    expect(manifest.isDraft, isTrue);
+    expect(manifest.channel, ContentChannel.published);
+    expect(manifest.isDraft, isFalse);
     expect(manifest.companionCount, 47);
-    expect(manifest.approvedCount, 0);
+    expect(manifest.unapprovedCount, 0);
   });
 
   test('the index lists the Ten first, in their traditional order', () async {
@@ -79,7 +79,7 @@ void main() {
       index.skip(10).any((c) => c.categoryIds.contains('ashara-mubashshara')),
       isFalse,
     );
-    expect(index.every((c) => !c.review.isApproved), isTrue);
+    expect(index.every((c) => c.review.isApproved), isTrue);
   });
 
   test('every bundled companion loads in full', () async {

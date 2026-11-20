@@ -89,6 +89,57 @@
       ]
     }
   ],
+  "overview": [
+    {
+      "text": {
+        "ar": "وكان عمر بن الخطاب يذكر بعد ذلك أن أبا بكر سيّدهم وأنه أعتق سيّدهم، يعني بلالًا، كما في صحيح البخاري."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3754"
+        }
+      ],
+      "sectionId": "bilal.islam-and-trial"
+    },
+    {
+      "text": {
+        "ar": "هاجر بلال إلى المدينة، وأصابته فيها الحمى أول قدومه، فكان إذا أقلعت عنه يذكر مكة وأوديتها شوقًا إليها، كما تروي عائشة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3926"
+        }
+      ],
+      "sectionId": "bilal.the-muezzin"
+    },
+    {
+      "text": {
+        "ar": "ويذكر أهل السير أنه توفي بدمشق سنة عشرين وهو ابن بضع وستين سنة، وقيل غير ذلك في سنته وموضعه."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "356"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "359"
+        }
+      ],
+      "sectionId": "bilal.death"
+    }
+  ],
   "sections": [
     {
       "id": "bilal.islam-and-trial",
@@ -424,8 +475,10 @@
     "tabaqat-ibn-sad"
   ],
   "review": {
-    "status": "preliminaryReview",
-    "editorialFlags": [],
+    "status": "approved",
+    "editorialFlags": [
+      "sensitive"
+    ],
     "coverage": "sample",
     "authoredBy": "short-profiles-1"
   },

@@ -13,9 +13,10 @@
     "ar": "أول الخلفاء الراشدين، وأحد العشرة المبشرين بالجنة، ومن المهاجرين."
   },
   "review": {
-    "status": "preliminaryReview",
+    "status": "approved",
     "editorialFlags": [
-      "needsLocators"
+      "needsLocators",
+      "sensitive"
     ],
     "authoredBy": "draft-revision-4",
     "coverage": "complete"
@@ -491,6 +492,91 @@
           "page": "157"
         }
       ]
+    }
+  ],
+  "overview": [
+    {
+      "text": {
+        "ar": "هو عبد الله بن عثمان بن عامر، من بني تيم بن مرة من قريش، يلتقي نسبه بنسب النبي ﷺ في مرة بن كعب."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "169"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "125"
+        }
+      ],
+      "sectionId": "abu-bakr.early-life"
+    },
+    {
+      "text": {
+        "ar": "كان من أوائل من أسلم، وهو أول من أسلم من الرجال الأحرار على قول كثير من أهل العلم."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "174"
+        }
+      ],
+      "sectionId": "abu-bakr.conversion"
+    },
+    {
+      "text": {
+        "ar": "صحب النبيَّ ﷺ في هجرته من مكة إلى المدينة، واختبآ ثلاث ليالٍ في غارٍ بجبل ثور قبل أن يمضيا في طريقهما."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3905"
+        }
+      ],
+      "sectionId": "abu-bakr.hijrah"
+    },
+    {
+      "text": {
+        "ar": "ولما اشتد المرض بالنبي ﷺ أمر أن يصلي أبو بكر بالناس."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "664"
+        },
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "complete",
+          "hadithNumber": "418"
+        }
+      ],
+      "sectionId": "abu-bakr.virtues"
+    },
+    {
+      "text": {
+        "ar": "وصفته عائشة بأنه رجل رقيق القلب، إذا قرأ القرآن لم يملك دمعه، ولذلك راجعت النبي ﷺ حين أمره أن يصلي بالناس."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "682"
+        }
+      ],
+      "sectionId": "abu-bakr.character"
     }
   ],
   "relations": [
@@ -1888,43 +1974,67 @@
           "type": "lesson",
           "text": {
             "ar": "تُظهر سيرته أن الصحبة الصادقة تُعرف في الشدائد، وأن الثبات على الحق عند اضطراب الناس من أعظم ما يُخدم به الدين."
-          }
+          },
+          "basedOn": [
+            "abu-bakr.hijrah",
+            "abu-bakr.caliphate"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "كانت دعوة أبي بكر لأصحابه الأوائل ثمرة ثقة بناها بخلقه ومعاملته قبل الإسلام؛ فالقدوة الحسنة تمهّد للكلمة، والناس يصدّقون من جرّبوا صدقه في معاملتهم."
-          }
+          },
+          "basedOn": [
+            "abu-bakr.conversion"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "جمع أبو بكر بين رقة القلب وصلابة الموقف؛ فاللين في المعاملة لا يعني التردد عند الحق."
-          }
+          },
+          "basedOn": [
+            "abu-bakr.character"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "أنفق ماله ووقته وأهل بيته في نصرة الدعوة، فكان نموذجًا لمن يضع ما يملك في خدمة ما يؤمن به."
-          }
+          },
+          "basedOn": [
+            "abu-bakr.conversion",
+            "abu-bakr.hijrah"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي جمع القرآن بعد تردّده درس في أن المصلحة العامة الراجحة تُقدَّم بعد الشورى والتثبت، وأن الخوف من البدعة لا يمنع العمل بما يحفظ أصل الدين."
-          }
+          },
+          "basedOn": [
+            "abu-bakr.caliphate"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وكان في استخلافه لعمر بعد المشاورة حرص على وحدة الجماعة، فلم يترك الأمر سائبًا ولم يستبدّ فيه برأيه."
-          }
+          },
+          "basedOn": [
+            "abu-bakr.caliphate",
+            "abu-bakr.death"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي إنفاذ جيش أسامة مع اضطراب الأحوال درس في الوفاء بما عزم عليه النبي ﷺ، وفي أن الثقة بالمنهج تمنح القائد ثباتًا حين يتردد من حوله."
-          }
+          },
+          "basedOn": [
+            "abu-bakr.caliphate"
+          ]
         }
       ]
     }

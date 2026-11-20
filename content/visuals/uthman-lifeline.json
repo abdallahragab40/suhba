@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "uthman-lifeline",
+  "type": "timeline",
+  "title": {
+    "ar": "حياة عثمان بن عفان على خط الزمن"
+  },
+  "takeaway": {
+    "ar": "أسلم عثمان بمكة بدعوة أبي بكر، وهاجر إلى الحبشة ثم إلى المدينة، وجهّز جيش العسرة، وبويع بالخلافة سنة أربع وعشرين، وجمع الناس على مصحف واحد، وقُتل بالمدينة سنة خمس وثلاثين."
+  },
+  "notes": [
+    {
+      "ar": "تاريخ مولده تقريبي."
+    }
+  ],
+  "review": {
+    "status": "approved",
+    "editorialFlags": [
+      "fitnaAdjacent"
+    ],
+    "authoredBy": "draft-lifelines-e6"
+  },
+  "companionId": "uthman"
+}

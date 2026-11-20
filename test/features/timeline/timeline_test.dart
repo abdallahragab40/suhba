@@ -105,7 +105,7 @@ void main() {
 
     testApp('"read in the biography" opens the linked section', (tester) async {
       final app = await open(tester, 'abu-bakr');
-      await tester.tap(find.text('اقرأ في السيرة').first);
+      await tester.tap(find.text('اقرأ في سيرته').first);
       await tester.pumpAndSettle();
       expect(find.byType(SectionReaderPage), findsOneWidget);
       expect(app.location, '/companions/abu-bakr/sections/abu-bakr.early-life');

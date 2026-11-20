@@ -13,7 +13,7 @@
     "ar": "أحد العشرة المبشرين بالجنة، ومن المهاجرين."
   },
   "review": {
-    "status": "preliminaryReview",
+    "status": "approved",
     "editorialFlags": [
       "needsLocators"
     ],
@@ -157,6 +157,92 @@
           "page": "92"
         }
       ]
+    }
+  ],
+  "overview": [
+    {
+      "text": {
+        "ar": "ويذكر الذهبي نقلًا عن ابن عبد البر أنه كان مجدودًا في التجارة، وأنه خلّف إبلًا وغنمًا وخيلًا، وكانت له زراعة بالجرف."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "92"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "2048"
+        }
+      ],
+      "sectionId": "abd-al-rahman-ibn-awf.early-life"
+    },
+    {
+      "text": {
+        "ar": "أسلم قديمًا قبل أن يدخل النبي ﷺ دار الأرقم، بدعوة أبي بكر الصديق، فكان أحد الخمسة الذين أسلموا على يديه، وأحد الثمانية الذين سبقوا إلى الإسلام."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "250"
+        },
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "346"
+        }
+      ],
+      "sectionId": "abd-al-rahman-ibn-awf.conversion"
+    },
+    {
+      "text": {
+        "ar": "وروى في البخاري أنه كاتب أمية بن خلف على أن يحفظه في صاغيته بمكة، ويحفظ أمية في صاغيته بالمدينة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "2301"
+        }
+      ],
+      "sectionId": "abd-al-rahman-ibn-awf.with-prophet"
+    },
+    {
+      "text": {
+        "ar": "وفي رواية المغيرة أن عبد الرحمن لما أحسّ بالنبي ﷺ أراد أن يتأخّر، فأومأ إليه النبي ﷺ أن يستمرّ في الصلاة."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "complete",
+          "hadithNumber": "274"
+        }
+      ],
+      "sectionId": "abd-al-rahman-ibn-awf.virtues"
+    },
+    {
+      "text": {
+        "ar": "ويروي الذهبي عن جعفر بن بُرقان أنه بلغه أن عبد الرحمن أعتق ثلاثين ألف بيت، وهو بلاغ لا إسناد متصل له، فيُذكر على أنه رواية."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "92"
+        }
+      ],
+      "sectionId": "abd-al-rahman-ibn-awf.character"
     }
   ],
   "relations": [
@@ -1042,49 +1128,73 @@
           "type": "lesson",
           "text": {
             "ar": "رفض عبد الرحمن أن يأخذ من مال أخيه الأنصاري، وطلب أن يُدلّ على السوق؛ فعزّة النفس والعمل باليد أكرم من الاعتماد على عطاء الناس ولو كان صادقًا."
-          }
+          },
+          "basedOn": [
+            "abd-al-rahman-ibn-awf.conversion"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي بكائه وهو صائم حين ذكر مصعب بن عمير بيان أن الغنى لا يُفسد صاحبه إذا بقي قلبه معلّقًا بالآخرة، خائفًا أن تكون الدنيا جزاءه."
-          }
+          },
+          "basedOn": [
+            "abd-al-rahman-ibn-awf.character"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي إدارته للشورى ثلاثة أيام، وإخراجه نفسه من الأمر، مثال للنزاهة في الشأن العام: أن يكون من يدير الاختيار بعيدًا عن المصلحة فيه."
-          }
+          },
+          "basedOn": [
+            "abd-al-rahman-ibn-awf.contributions"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي شهادته عند عمر بحديث الطاعون وبأمر الجزية بيان أن العلم الدقيق في وقته قد يحسم أمرًا عظيمًا، وأن الخليفة يرجع إلى الحديث متى بلغه."
-          }
+          },
+          "basedOn": [
+            "abd-al-rahman-ibn-awf.contributions"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي سبب حديث «لا تسبّوا أصحابي» تعليم بأن مكانة السابقين محفوظة، وأن الخلاف بين المؤمنين لا يبيح الانتقاص من أهل الفضل."
-          }
+          },
+          "basedOn": [
+            "abd-al-rahman-ibn-awf.virtues"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي نصيحته لعمر بمنى أن يؤخّر الكلام في أمر عظيم إلى موضع يفهمه فيه أهل العلم والرأي حكمة في اختيار المقام المناسب للكلمة."
-          }
+          },
+          "basedOn": [
+            "abd-al-rahman-ibn-awf.contributions"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي سيرته أن المال الحلال إذا كسبه صاحبه بعمله وأنفقه في الخير كان من أسباب الرفعة، وأن الغنى والزهد يجتمعان في قلب واحد."
-          }
+          },
+          "basedOn": [
+            "abd-al-rahman-ibn-awf.character"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وفي رحيله قبل الفتنة، كما قال علي، تذكير بأن من نعم الله على العبد أن يُعافى من الفتن، فيلقى ربه وقد سلم دينه."
-          }
+          },
+          "basedOn": [
+            "abd-al-rahman-ibn-awf.death"
+          ]
         }
       ]
     }

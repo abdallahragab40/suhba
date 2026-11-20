@@ -8,7 +8,7 @@
   "changeThemeTooltip": "Change theme",
   "tabHome": "Home",
   "tabCompanions": "Companions",
-  "tabSaved": "Saved",
+  "tabSaved": "My library",
   "tabSettings": "Settings",
   "underConstructionTitle": "Coming soon",
   "underConstructionMessage": "This screen will be added in a later development stage.",
@@ -109,6 +109,19 @@
   "disputeShowOpinions": "Show the opinions ({count})",
   "disputeOpinion": "Opinion {n}",
   "lessonLabel": "A lesson",
+  "lessonBasedOn": "Drawn from: {title}",
+  "@lessonBasedOn": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "glossaryTitle": "Glossary",
+  "glossaryKicker": "Term",
+  "glossaryAll": "All terms",
+  "glossaryEmpty": "No terms in this build.",
+  "exploreGlossaryBody": "What recurring words in the Seerah mean, with sources.",
   "sectionNotFound": "This section could not be found.",
   "storyNotFound": "This story could not be found.",
   "profileFullTimeline": "Full timeline",
@@ -155,8 +168,6 @@
   "searchKindChapters": "Story chapters",
   "homeFeaturedKicker": "Companion of the day",
   "homeReadBiography": "Read the biography",
-  "homeCategoriesKicker": "Categories",
-  "homeCategoriesTitle": "Browse the companions",
   "homeStoriesKicker": "Stories",
   "homeStoriesTitle": "Selected stories",
   "settingsAppearance": "Appearance",
@@ -167,6 +178,7 @@
   "settingsContentVersion": "Content version: {version}",
   "settingsChannelDraft": "Sample content (draft)",
   "settingsChannelPublished": "Published content",
+  "settingsChannelPreview": "Developer preview: content is shown as if approved; it has not been reviewed.",
   "settingsAbout": "About and methodology",
   "settingsSources": "Sources",
   "settingsLicenses": "Licences",
@@ -181,7 +193,7 @@
   "aboutReliabilityTitle": "Reliability levels",
   "aboutReviewTitle": "Review status",
   "aboutReviewDraft": "No qualified specialist has approved the content yet. “Preliminary review” indicates editorial checks and comparisons of reports with sources; it does not mean every claim or chain of transmission has been verified. “Draft” indicates content that has not yet had this review. Final approval remains with a qualified specialist.",
-  "aboutReviewPublished": "The published content was checked by qualified reviewers before publication.",
+  "aboutReviewPublished": "Before publication the editors checked the published content: each report against its source, its stated standing, and the quoted text of every verse and hadith. This is an editorial review, not approval by a qualified scholar, and it does not judge every chain of transmission; if you find an error, tell us through “Send feedback” in Settings.",
   "aboutImagesTitle": "Images",
   "aboutImagesBody": "The app contains no images or drawings of the Companions or of the Prophet ﷺ; geometric ornament and Arabic calligraphy are used instead. It currently includes no photographs.",
   "aboutPrivacyTitle": "Privacy",
@@ -193,7 +205,6 @@
   "sourceTypeSira": "Sira works",
   "sourceTypeTafsir": "Tafsir works",
   "sourceTypeOther": "Other sources",
-  "homeCategoryCount": "{count, plural, =1{1 companion} other{{n} companions}}",
   "savedLoadErrorMessage": "Your saved items could not be loaded. Nothing was deleted; try again.",
   "savedItemLoading": "Loading…",
   "savedItemLoadError": "This item could not be loaded",
@@ -269,6 +280,7 @@
   "mapLegendUncertain": "Disputed site",
   "mapApproximatePath": "Link between stops, not the actual path",
   "mapSchematicNote": "A schematic map for orientation, not a survey.",
+  "mapSpreadNote": "Places close together are drawn a little apart, keeping their directions.",
   "relationCompanion": "Companion of",
   "sequenceStep": "Step {n}",
   "sequenceOrderUncertain": "Its place in the order is not settled",
@@ -294,6 +306,7 @@
   "seerahJourneyTitle": "The chapters in order",
   "seerahJourneyNote": "{n} chapters from birth to passing, by period.",
   "seerahOpenTimeline": "The Seerah on a timeline",
+  "seerahOpenMap": "The Seerah on the map",
   "seerahTopicsKicker": "Themes",
   "seerahTopicsTitle": "His character and guidance ﷺ",
   "seerahEventsKicker": "Archive",
@@ -308,6 +321,23 @@
   "seerahContinue": "Continue: {title}",
   "seerahStart": "Begin the Seerah",
   "seerahOpenSection": "Open the Seerah",
+  "seerahProgressRead": "{count, plural, =1{You have read {read} of 1 chapter} other{You have read {read} of {n} chapters}}",
+  "@seerahProgressRead": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "read": {
+        "type": "String"
+      },
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "seerahProgressNone": "Not started yet",
+  "seerahProgressDone": "You have finished the Seerah",
+  "seerahReadAgain": "Read it again",
   "seerahScrollHint": "Twelve chapters",
   "seerahChapterLabel": "Chapter {number} · {date}",
   "seerahVisualCount": "{count, plural, =1{1 visual} other{{n} visuals}}",
@@ -315,8 +345,7 @@
   "coverageSkeleton": "This text has not been written yet.",
   "coverageSampleShort": "Pilot text",
   "seerahFeatureKicker": "A turning point",
-  "seerahFeatureTitle": "The Hijrah: Makkah to Madinah",
-  "seerahFeatureRead": "Read the Hijrah chapter",
+  "seerahFeatureRead": "Read the chapter",
   "seerahChapterNotFound": "This chapter does not exist.",
   "seerahTopicNotFound": "This theme does not exist.",
   "seerahChapterOf": "Chapter {number} of {total} · {date}",
@@ -373,15 +402,7 @@
   "exploreStoriesTitle": "Stories",
   "savedSeerahChapters": "Seerah chapters",
   "savedSeerahTopics": "Seerah themes",
-  "homeSeerahKicker": "The Seerah",
-  "homeSeerahTitle": "Next chapters",
-  "homeAllChapters": "All chapters",
   "homeDiscoverTitle": "Meet a companion",
-  "homeAtlasKicker": "Atlas",
-  "homeAtlasTitle": "Where it happened",
-  "homeArchiveKicker": "Archive",
-  "homeArchiveTitle": "Selected events",
-  "homeAllEvents": "The full archive",
   "searchKindSeerahChapters": "Seerah chapters",
   "searchKindSeerahTopics": "Seerah themes",
   "searchKindEvents": "Events",
@@ -459,7 +480,7 @@
   "welcomeJourneysBody": "Short journeys through the Seerah and the lives of the Companions, read one step at a time, with review questions that bring back what you read when it is due, and a daily reminder if you want one.",
   "welcome4Title": "Every report with its source",
   "welcome4Body": "Reports are attributed to the books of hadith and Seerah, and their standing is shown: established, historical report or disputed. The content has had a preliminary review and is not final until a qualified scholar approves it. The whole app works offline.",
-  "welcome4BodyPublished": "Reports are attributed to the books of hadith and Seerah, and their standing is shown: established, historical report or disputed. Qualified specialists reviewed the content before it was published. The whole app works offline.",
+  "welcome4BodyPublished": "Reports are attributed to the books of hadith and Seerah, and their standing is shown: established, historical report or disputed. The content was reviewed editorially against its sources before it was published. The whole app works offline.",
   "quizTitle": "Test your knowledge",
   "quizSubtitle": "New questions every round, on the Companions and the Seerah, each answer pointing to its place.",
   "quizModeMixed": "Mixed round",
@@ -628,7 +649,7 @@
   "learnedLearning": "Learning",
   "learnedRevisit": "Worth revisiting",
   "reviewDueCount": "{count, plural, =1{One question to review today} other{{n} questions to review today}}",
-  "reminderGroup": "Reminders",
+  "reminderGroup": "Daily reading and reminder",
   "reminderTitle": "Daily reminder",
   "reminderIntro": "Choose a time for a reading or review. The reminder stays off until you enable it.",
   "reminderSwitch": "Enable reminder",
@@ -646,10 +667,123 @@
   "reminderChannelDescription": "An optional daily reminder to read or review.",
   "shareCardTitle": "A card from Suhba",
   "shareCardSquare": "Square",
+  "shareCardPaper": "Paper",
+  "shareCardGreen": "Green",
+  "shareCardNight": "Night",
+  "shareCardAccent": "Colour:",
+  "shareCardAccentGold": "Gold",
+  "shareCardAccentGreen": "Green",
+  "shareCardAccentPlain": "Text colour",
   "shareCardStory": "Story",
-  "shareCardDark": "Dark",
   "shareCardAction": "Share card",
   "shareCardFailed": "Could not prepare the card. Try again.",
   "shareCardFooter": "Suhba app • Seerah and Companions\nGoogle Play",
-  "shareCardOption": "Card"
+  "shareCardOption": "Card",
+  "journeyNotStarted": "Not started, {totalCount, plural, =1{1 step} other{{total} steps}}",
+  "timeMorning": "{time} AM",
+  "timeEvening": "{time} PM",
+  "homeAllStories": "All stories",
+  "homeTileContinue": "Continue reading",
+  "homeTileJourney": "Today's journey",
+  "homeTileReview": "Review",
+  "homeTileMap": "Map",
+  "startHereLink": "New here? {title}",
+  "@startHereLink": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "dailyPortionKicker": "Today's reading",
+  "dailyPortionRead": "Read",
+  "dailyPortionDone": "I've read it",
+  "dailyPortionMarked": "Marked “{title}” as read",
+  "@dailyPortionMarked": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "reminderPortionBody": "Today's reading: {title}, {minutes}",
+  "@reminderPortionBody": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "dailyPortionOf": "Today's reading: {n} of {total}",
+  "@dailyPortionOf": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "dailyPortionComplete": "Today's reading is done",
+  "dailyPortionTomorrow": "Tomorrow: {title}",
+  "@dailyPortionTomorrow": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "dailyPortionReadAhead": "Read it now",
+  "dailyPortionBehind": "{count, plural, =1{One chapter remains from earlier days.} other{{n} chapters remain from earlier days.}}",
+  "@dailyPortionBehind": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "planContinueFromHere": "Continue where I stopped",
+  "planCatchUp": "Catch up gradually",
+  "planTitle": "Daily Seerah reading",
+  "planNone": "No plan",
+  "planPace": "{count, plural, =1{1 chapter} other{{n} chapters}}",
+  "@planPace": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "planNote": "Seerah chapters a day. After a missed day you choose to continue where you stopped or to catch up gradually.",
+  "citationEdition": "Edition: {edition}",
+  "citationNumbering": "Numbering: {scheme}",
+  "readerLegendReported": "{label}: {explanation}",
+  "listStatusNote": "This mark is on items a qualified reviewer has not yet approved. See About for the method.",
+  "depthFull": "Full biography",
+  "depthBrief": "Short introduction",
+  "directoryOthers": "Other companions",
+  "aboutCreditsTitle": "Credits",
+  "aboutCreditQuranBody": "Qur'an text in the Uthmani script from the Tanzil project (tanzil.net), unchanged, under Creative Commons Attribution 3.0. The full notice is on the Sources page.",
+  "aboutCreditFontsTitle": "Fonts",
+  "aboutCreditAmiri": "Amiri and Amiri Quran, by Khaled Hosny, for reading text, names and verses. SIL Open Font License 1.1.",
+  "aboutCreditZain": "Zain, by Boutros Fonts, for interface titles and text. SIL Open Font License 1.1.",
+  "aboutCreditSources": "Sources",
+  "searchSuggestions": "الهجرة، أبو بكر، بدر، خديجة",
+  "searchNoResultsTip": "Try a single word, or the name without a title or kunya.",
+  "searchBrowseCompanions": "Browse the companions",
+  "readerTone": "Page",
+  "readerToneApp": "Match the app",
+  "readerToneWarmPaper": "Warm paper",
+  "readerToneWarmNight": "Warm night",
+  "journeyStepContinue": "Continue"
 }

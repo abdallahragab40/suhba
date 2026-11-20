@@ -57,7 +57,7 @@ String citationLocatorText(BuildContext context, Citation c) {
     if (c.page case final p?) l10n.citationPage(format.digits(p)),
     if (c.hadithNumber case final n?)
       l10n.citationHadithNumber(format.digits(n)),
-  ].join(' · ');
+  ].join(DisplayFormatter.separator);
 }
 
 String _gradeLabel(AppLocalizations l10n, HadithGrade g) => switch (g) {
@@ -203,8 +203,9 @@ class CitationSheet extends ConsumerWidget {
             AsyncData(:final value) => Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                for (final c in citations)
-                  _CitationTile(citation: c, source: value[c.sourceId]),
+                // One entry per work, its locators beneath it (F19).
+                for (final (sourceId, cites) in groupBySource(citations))
+                  _WorkTile(source: value[sourceId], citations: cites),
               ],
             ),
             AsyncError() => Text(l10n.errorMessage),
@@ -263,11 +264,23 @@ class CitationSheet extends ConsumerWidget {
   }
 }
 
-class _CitationTile extends StatelessWidget {
-  const _CitationTile({required this.citation, required this.source});
+/// [citations] grouped by work, each work once, in order of first mention.
+List<(String, List<Citation>)> groupBySource(List<Citation> citations) {
+  final groups = <String, List<Citation>>{};
+  for (final c in citations) {
+    (groups[c.sourceId] ??= []).add(c);
+  }
+  return [for (final e in groups.entries) (e.key, e.value)];
+}
 
-  final Citation citation;
+/// One work: its title, author and, when any locator depends on it, the
+/// edition (for volumes and pages) or numbering scheme (for hadith
+/// numbers). Then each place in it that the claim cites.
+class _WorkTile extends StatelessWidget {
+  const _WorkTile({required this.source, required this.citations});
+
   final SourceReference? source;
+  final List<Citation> citations;
 
   @override
   Widget build(BuildContext context) {
@@ -275,8 +288,8 @@ class _CitationTile extends StatelessWidget {
     final format = DisplayFormatter.of(context);
     final textTheme = Theme.of(context).textTheme;
     final colors = SuhbaColors.of(context);
-    final c = citation;
     final source = this.source;
+    final dim = textTheme.bodySmall?.copyWith(color: colors.onSurfaceDim);
 
     final author = source?.author;
     final authorLine = author == null
@@ -288,9 +301,17 @@ class _CitationTile extends StatelessWidget {
             format.integer(source.authorDeathAH!),
           );
 
-    final locator = citationLocatorText(context, c);
+    bool located(Citation c) =>
+        c.locatorStatus == LocatorStatus.complete && c.hasLocator;
+    final usesPages = citations.any(
+      (c) => located(c) && (c.page != null || c.volume != null),
+    );
+    final usesNumbers = citations.any(
+      (c) => located(c) && c.hadithNumber != null,
+    );
+    final edition = usesPages ? source?.edition : null;
+    final numbering = usesNumbers ? source?.numberingScheme : null;
 
-    final grading = c.grading;
     return Container(
       padding: const EdgeInsets.symmetric(vertical: AppSpacing.sm),
       decoration: BoxDecoration(
@@ -303,26 +324,24 @@ class _CitationTile extends StatelessWidget {
             source?.title.of(context) ?? l10n.citationUnknownSource,
             style: textTheme.titleSmall,
           ),
-          if (authorLine != null)
-            Text(
-              authorLine,
-              style: textTheme.bodySmall?.copyWith(color: colors.onSurfaceDim),
-            ),
-          const SizedBox(height: AppSpacing.xxs),
-          Text(locator, style: textTheme.bodyMedium),
-          if (grading != null)
-            Text(
-              l10n.citationGrading(
-                _gradeLabel(l10n, grading.grade),
-                grading.gradedBy.of(context),
+          if (authorLine != null) Text(authorLine, style: dim),
+          if (edition != null)
+            Text(l10n.citationEdition(edition.of(context)), style: dim),
+          if (numbering != null)
+            Text(l10n.citationNumbering(numbering.of(context)), style: dim),
+          for (final c in citations) ...[
+            const SizedBox(height: AppSpacing.xxs),
+            Text(citationLocatorText(context, c), style: textTheme.bodyMedium),
+            if (c.grading case final grading?)
+              Text(
+                l10n.citationGrading(
+                  _gradeLabel(l10n, grading.grade),
+                  grading.gradedBy.of(context),
+                ),
+                style: textTheme.bodySmall?.copyWith(color: colors.established),
               ),
-              style: textTheme.bodySmall?.copyWith(color: colors.established),
-            ),
-          if (c.note case final note?)
-            Text(
-              note.of(context),
-              style: textTheme.bodySmall?.copyWith(color: colors.onSurfaceDim),
-            ),
+            if (c.note case final note?) Text(note.of(context), style: dim),
+          ],
         ],
       ),
     );

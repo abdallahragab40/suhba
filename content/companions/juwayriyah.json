@@ -318,11 +318,64 @@
     "siyar"
   ],
   "review": {
-    "status": "sourced",
-    "editorialFlags": [],
+    "status": "approved",
+    "editorialFlags": [
+      "sensitive"
+    ],
     "coverage": "sample",
     "authoredBy": "ummahat-2"
   },
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "سُبيت جويرية بنت الحارث يوم غزوة المريسيع، ويذكر الذهبي أن ذلك كان في السنة الخامسة، وأن أباها كان سيدًا مطاعًا في قومه."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "261"
+        }
+      ],
+      "sectionId": "juwayriyah.marriage"
+    },
+    {
+      "text": {
+        "ar": "قالت عائشة: فما رأينا امرأة كانت أعظم بركة على قومها منها، أُعتق في سببها مائة أهل بيت من بني المصطلق."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "abu-dawud",
+          "locatorStatus": "complete",
+          "hadithNumber": "3931"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "265"
+        }
+      ],
+      "sectionId": "juwayriyah.marriage"
+    },
+    {
+      "text": {
+        "ar": "خرج النبي ﷺ من عندها بكرة حين صلى الصبح وهي في مسجدها، ثم رجع بعد أن أضحى وهي جالسة، فقال: ما زلت على الحال التي فارقتك عليها؟"
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "muslim",
+          "locatorStatus": "complete",
+          "hadithNumber": "2726"
+        }
+      ],
+      "sectionId": "juwayriyah.worship"
+    }
+  ],
   "storyIds": []
 }

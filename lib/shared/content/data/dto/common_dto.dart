@@ -105,6 +105,21 @@ abstract class FactDto with _$FactDto {
       _$FactDtoFromJson(json);
 }
 
+/// One sentence of a companion's overview («في سطور», review E2), copied
+/// from a cited paragraph of [sectionId] with that paragraph's citations.
+@freezed
+abstract class OverviewFactDto with _$OverviewFactDto {
+  const factory OverviewFactDto({
+    required LocalizedTextDto text,
+    required Reliability reliability,
+    required List<CitationDto> citations,
+    required String sectionId,
+  }) = _OverviewFactDto;
+
+  factory OverviewFactDto.fromJson(Map<String, dynamic> json) =>
+      _$OverviewFactDtoFromJson(json);
+}
+
 @freezed
 abstract class ReviewDto with _$ReviewDto {
   const factory ReviewDto({

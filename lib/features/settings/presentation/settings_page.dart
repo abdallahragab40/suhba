@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/config/preview_approved.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/tokens/typography.dart';
 import 'package:suhba/core/feedback/haptics.dart';
 import 'package:suhba/core/format/digits.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/features/reading_plan/presentation/reading_plan_setting.dart';
 import 'package:suhba/features/reminders/presentation/reminder_page.dart';
 import 'package:suhba/features/settings/presentation/digit_style_controller.dart';
 import 'package:suhba/features/settings/presentation/feedback_tile.dart';
@@ -141,6 +143,7 @@ class SettingsPage extends ConsumerWidget {
             },
           ),
           group(l10n.reminderGroup),
+          const ReadingPlanSetting(),
           const ReminderSettingsTile(),
           group(l10n.settingsYourData),
           const PersonalDataSection(),
@@ -154,7 +157,10 @@ class SettingsPage extends ConsumerWidget {
                 l10n.settingsContentVersion(manifest.contentVersion),
               ),
               subtitle: Text(
-                manifest.isDraft
+                // The debug preview says so: nothing here was reviewed.
+                previewApproved
+                    ? l10n.settingsChannelPreview
+                    : manifest.isDraft
                     ? l10n.settingsChannelDraft
                     : l10n.settingsChannelPublished,
               ),

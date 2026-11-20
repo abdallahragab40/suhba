@@ -41,6 +41,7 @@ class ItemReadiness {
     this.coverage,
     this.words,
     this.gaps = const [],
+    this.signOffs = const [],
   });
 
   /// `kind.id`, e.g. `companion.abu-bakr`.
@@ -66,6 +67,10 @@ class ItemReadiness {
   /// missing or the item is not checked.
   final List<String> gaps;
 
+  /// The flags that need the reviewer's explicit sign-off (fitnaAdjacent,
+  /// sensitive), so they are visible before review starts (E1).
+  final List<String> signOffs;
+
   Map<String, Object?> toJson() => {
     'key': key,
     'approval': approval.name,
@@ -74,6 +79,7 @@ class ItemReadiness {
     if (coverage != null) 'coverage': coverage!.name,
     if (words != null) 'words': words,
     if (gaps.isNotEmpty) 'gaps': gaps,
+    if (signOffs.isNotEmpty) 'signOffs': signOffs,
   };
 }
 
@@ -142,14 +148,15 @@ class ReadinessReport {
     b
       ..writeln('## Items\n')
       ..writeln(
-        '| Item | Approval | Pending checks | Coverage | Words | Gaps |',
+        '| Item | Approval | Pending checks | Coverage | Words | Gaps | '
+        'Sign-off |',
       )
-      ..writeln('|---|---|---|---|---|---|');
+      ..writeln('|---|---|---|---|---|---|---|');
     for (final i in items) {
       b.writeln(
         '| `${i.key}` | ${i.approval.name} | ${i.pendingChecks} | '
         '${i.coverage?.name ?? ''} | ${i.words ?? ''} | '
-        '${i.gaps.join('; ')} |',
+        '${i.gaps.join('; ')} | ${i.signOffs.join(', ')} |',
       );
     }
     return b.toString();
@@ -250,6 +257,11 @@ ReadinessReport contentReadiness(
       coverage: item.review.coverage,
       words: words,
       gaps: gapsFor(item, words),
+      signOffs: [
+        for (final f in item.review.editorialFlags)
+          if (f == EditorialFlag.fitnaAdjacent || f == EditorialFlag.sensitive)
+            f.name,
+      ],
     );
   }
 

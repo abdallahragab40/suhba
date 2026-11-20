@@ -316,12 +316,68 @@
     "siyar"
   ],
   "review": {
-    "status": "preliminaryReview",
+    "status": "approved",
     "editorialFlags": [],
     "coverage": "sample",
     "authoredBy": "short-profiles-1"
   },
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "لما أراد النبي ﷺ وأبو بكر الهجرة صنعت أسماء سفرتهما في بيت أبيها، فلم تجد ما تربط به السفرة والسقاء، فشقّت نطاقها باثنين، فربطت بأحدهما، فسُمّيت ذات النطاقين."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "2979"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3907"
+        }
+      ],
+      "sectionId": "asma-bint-abi-bakr.hijrah"
+    },
+    {
+      "text": {
+        "ar": "ولدت عبد الله بن الزبير بقباء، ثم أتت به النبي ﷺ فوضعه في حجره، وحنّكه بتمرة ودعا له."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3909"
+        }
+      ],
+      "sectionId": "asma-bint-abi-bakr.in-madinah"
+    },
+    {
+      "text": {
+        "ar": "عُمّرت أسماء حتى بلغت مئة سنة وذهب بصرها، ويذكر ابن سعد أنها ماتت بعد ابنها عبد الله بليال، وكان قتله في جمادى الأولى سنة ثلاث وسبعين، فكانت خاتمة المهاجرين والمهاجرات."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "293"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "295"
+        }
+      ],
+      "sectionId": "asma-bint-abi-bakr.death"
+    }
+  ],
   "storyIds": [
     "the-cave"
   ]

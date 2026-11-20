@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:suhba/app/router/routes.dart';
+import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
 import 'package:suhba/core/design_system/widgets/citation_marker.dart';
 import 'package:suhba/core/design_system/widgets/fact_tile.dart';
 import 'package:suhba/core/design_system/widgets/reliability_badge.dart';
@@ -10,7 +14,8 @@ import 'package:suhba/shared/content/domain/citation.dart';
 import 'package:suhba/shared/content/domain/companion.dart';
 import 'package:suhba/shared/content/presentation/content_text.dart';
 
-/// "في سطور": birth, death and the companion's at-a-glance facts, each with
+/// "في سطور": key sentences from the biography (E2), then birth, death and
+/// the companion's at-a-glance facts, each with
 /// its reliability and sources.
 class ProfileFacts extends StatelessWidget {
   const ProfileFacts({
@@ -55,6 +60,15 @@ class ProfileFacts extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        // Layer 1 (E2): key sentences from the biography, each opening
+        // the section it comes from, with that section's own sources.
+        for (final f in c.overview)
+          _OverviewLine(
+            fact: f,
+            provisional: provisional,
+            onOpen: () => context.push(AppRoutes.section(c.id, f.sectionId)),
+          ),
+        if (c.overview.isNotEmpty) const SizedBox(height: AppSpacing.sm),
         if (c.birth case final b?)
           tile(
             l10n.profileBirth,
@@ -78,6 +92,65 @@ class ProfileFacts extends StatelessWidget {
             f.citations,
           ),
       ],
+    );
+  }
+}
+
+class _OverviewLine extends StatelessWidget {
+  const _OverviewLine({
+    required this.fact,
+    required this.provisional,
+    required this.onOpen,
+  });
+
+  final OverviewFact fact;
+  final bool provisional;
+  final VoidCallback onOpen;
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = SuhbaColors.of(context);
+    return InkWell(
+      onTap: onOpen,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: AppSpacing.xs),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsetsDirectional.only(
+                top: 10,
+                end: AppSpacing.sm,
+              ),
+              child: ExcludeSemantics(
+                child: Container(
+                  width: 6,
+                  height: 6,
+                  decoration: BoxDecoration(
+                    color: colors.accent,
+                    shape: BoxShape.circle,
+                  ),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Text(
+                fact.text.of(context),
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+            ),
+            CitationMarker(
+              count: fact.citations.length,
+              onPressed: () => showCitationSheet(
+                context,
+                citations: fact.citations,
+                reliability: fact.reliability,
+                provisional: provisional,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

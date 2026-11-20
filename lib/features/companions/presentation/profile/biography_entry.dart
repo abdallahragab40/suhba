@@ -71,7 +71,7 @@ class BiographyEntry extends ConsumerWidget {
         button: FilledButton.icon(
           onPressed: () => open(passageId),
           icon: const Icon(Icons.menu_book_outlined),
-          label: Text(l10n.profileStartReading),
+          label: Text(l10n.profileStartReading(c.gender.name)),
         ),
       ),
       ResumeReading(:final passageId, :final fraction) => _EntryRow(

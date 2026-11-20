@@ -121,7 +121,7 @@ class _Event extends ConsumerWidget {
                         [
                           eventTypeLabel(l10n, e.type),
                           format.historicalDate(e.date),
-                        ].join(' · '),
+                        ].join(DisplayFormatter.separator),
                         style: SuhbaTextStyles.of(
                           context,
                         ).kicker.copyWith(color: colors.accentText),
@@ -182,7 +182,6 @@ class _Event extends ConsumerWidget {
                       for (final p in e.participants)
                         if (p.companionId case final id?)
                           ActionChip(
-                            avatar: const Icon(Icons.person_outline, size: 18),
                             label: Text(p.displayName.of(context)),
                             onPressed: () =>
                                 context.push(AppRoutes.companion(id)),

@@ -30,9 +30,33 @@ class DisplayFormatter {
   /// current digit style.
   String digits(String text) => Digits.apply(text, digitStyle);
 
-  /// [value] zero-padded to [width] digits, e.g. ٠١ for section indices.
-  String padded(int value, {int width = 2}) =>
-      Digits.apply('$value'.padLeft(width, '0'), digitStyle);
+  /// A position in a sequence (section, step, chapter). Western digits are
+  /// zero-padded to [width] ("01"); Arabic-Indic ones are not ("١"), because
+  /// a leading ٠ is a small dot that reads as punctuation (review F06).
+  String index(int value, {int width = 2}) => switch (digitStyle) {
+    DigitStyle.western => '$value'.padLeft(width, '0'),
+    DigitStyle.arabicIndic => integer(value),
+  };
+
+  /// Separator between short items on one line ("الفصل ٣، ٢ هـ"). Not "·",
+  /// which is easily confused with the Arabic-Indic zero (review F06).
+  static const separator = '، ';
+
+  /// [parts] joined with [separator], skipping nulls and empty strings.
+  static String join(Iterable<String?> parts) => [
+    for (final p in parts)
+      if (p != null && p.isNotEmpty) p,
+  ].join(separator);
+
+  /// A clock time on the 12-hour clock with its period, minutes only when
+  /// not on the hour: "٩ مساءً", "٧:٣٠ صباحًا". [hour] is 0–23.
+  String timeOfDay(int hour, int minute) {
+    final twelve = hour % 12 == 0 ? 12 : hour % 12;
+    final clock = minute == 0
+        ? integer(twelve)
+        : '${integer(twelve)}:${Digits.apply('$minute'.padLeft(2, '0'), digitStyle)}';
+    return hour < 12 ? _l10n.timeMorning(clock) : _l10n.timeEvening(clock);
+  }
 
   /// [value] as a percentage, e.g. ٤٢٪.
   String percent(int value) => _l10n.percent(integer(value));

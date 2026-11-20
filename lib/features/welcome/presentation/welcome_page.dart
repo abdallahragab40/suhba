@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:suhba/app/router/app_router.dart';
+import 'package:suhba/app/router/routes.dart';
 import 'package:suhba/core/design_system/theme/app_theme.dart';
 import 'package:suhba/core/design_system/tokens/motion.dart';
 import 'package:suhba/core/design_system/tokens/palette.dart';
@@ -10,7 +12,9 @@ import 'package:suhba/core/design_system/widgets/brand_mark.dart';
 import 'package:suhba/core/design_system/widgets/scene_backdrop.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/features/journeys/presentation/journey_providers.dart';
 import 'package:suhba/features/welcome/presentation/welcome_controller.dart';
+import 'package:suhba/shared/content/presentation/content_text.dart';
 import 'package:suhba/shared/content/providers.dart';
 
 /// The welcome screens shown on the first launch: what the app is, the
@@ -185,6 +189,39 @@ class _WelcomePageState extends ConsumerState<WelcomePage> {
                                   ),
                                 ),
                               const Spacer(),
+                              // A new reader's first journey (E4): the
+                              // journey the content orders first.
+                              if (last && widget.mode != WelcomeMode.whatsNew)
+                                if (ref
+                                        .watch(journeysProvider)
+                                        .value
+                                        ?.firstOrNull
+                                    case final start?)
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.only(
+                                      end: AppSpacing.xs,
+                                    ),
+                                    child: TextButton(
+                                      onPressed: () {
+                                        // The router is not mounted while
+                                        // these screens cover the app; a
+                                        // push now would replace Home rather
+                                        // than open above it. Push once the
+                                        // next frame has brought it back.
+                                        final router = ref.read(
+                                          appRouterProvider,
+                                        );
+                                        _finish();
+                                        WidgetsBinding.instance
+                                            .addPostFrameCallback(
+                                              (_) => router.push<void>(
+                                                AppRoutes.journey(start.id),
+                                              ),
+                                            );
+                                      },
+                                      child: Text(start.title.of(context)),
+                                    ),
+                                  ),
                               FilledButton(
                                 onPressed: () => _next(pages.length),
                                 child: Text(

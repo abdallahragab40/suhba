@@ -10,6 +10,7 @@ import 'package:suhba/features/sources/presentation/passage_share.dart';
 import 'package:suhba/features/sources/presentation/share_card_sheet.dart';
 
 import '../../helpers/app_harness.dart';
+import '../../helpers/content_bundle.dart';
 import '../../helpers/pump_app.dart';
 import '../../helpers/recording_share.dart';
 
@@ -27,7 +28,7 @@ void main() {
         passage: passage,
         sources: [
           (title: 'صحيح البخاري', locator: 'رقم ٣٩٠٥', grading: null),
-          (title: 'الإصابة', locator: 'ج ٤ · ص ١٧٤', grading: 'صحيح — البخاري'),
+          (title: 'الإصابة', locator: 'ج ٤، ص ١٧٤', grading: 'صحيح — البخاري'),
         ],
         sourcesHeading: 'المصادر:',
         reliabilityLine: 'درجة الخبر: ثابت',
@@ -40,7 +41,7 @@ void main() {
         '',
         'المصادر:',
         '• صحيح البخاري، رقم ٣٩٠٥',
-        '• الإصابة، ج ٤ · ص ١٧٤ (صحيح — البخاري)',
+        '• الإصابة، ج ٤، ص ١٧٤ (صحيح — البخاري)',
         '',
         'درجة الخبر: ثابت',
         'تنبيه: مسودة.',
@@ -69,6 +70,7 @@ void main() {
     addTearDown(tester.view.reset);
     final share = RecordingShare();
     await AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
       location: '/companions/abu-bakr/sections/abu-bakr.hijrah',
       overrides: [shareServiceProvider.overrideWithValue(share)],
     ).pump(tester);
@@ -102,6 +104,7 @@ void main() {
     addTearDown(tester.view.reset);
     final share = _ImageShare();
     await AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
       location: '/companions/abu-bakr/sections/abu-bakr.hijrah',
       overrides: [
         shareServiceProvider.overrideWithValue(share),
@@ -148,7 +151,10 @@ void main() {
       ..devicePixelRatio = 1
       ..physicalSize = const Size(600, 2400);
     addTearDown(tester.view.reset);
-    await AppUnderTest(location: '/companions/abu-bakr/timeline').pump(tester);
+    await AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      location: '/companions/abu-bakr/timeline',
+    ).pump(tester);
     await tester.tap(find.byType(CitationMarker).first);
     await tester.pumpAndSettle();
     expect(find.byType(CitationSheet), findsOneWidget);

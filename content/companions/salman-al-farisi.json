@@ -354,13 +354,72 @@
     "sirat-ibn-hisham"
   ],
   "review": {
-    "status": "preliminaryReview",
-    "editorialFlags": [],
+    "status": "approved",
+    "editorialFlags": [
+      "sensitive"
+    ],
     "coverage": "sample",
     "authoredBy": "short-profiles-1"
   },
   "titles": [],
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "كان سلمان من أهل فارس، وكان يذكر أنه من رامهرمز، وأنه تداوله بضعة عشر سيّدًا من ربّ إلى ربّ، كما في صحيح البخاري."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3947"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3946"
+        }
+      ],
+      "sectionId": "salman-al-farisi.search"
+    },
+    {
+      "text": {
+        "ar": "ويذكر سلمان أنه شهد مع رسول الله ﷺ الخندق حرًّا، ثم لم يفته معه مشهد."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "511"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "224"
+        }
+      ],
+      "sectionId": "salman-al-farisi.freedom"
+    },
+    {
+      "text": {
+        "ar": "ولي سلمان المدائن، ويروي الذهبي أنه كان أميرًا على عشرين ألفًا، فكان يُرى جالسًا على سرير من ليف يسفّ الخوص بيده، ويأكل من عمل يده."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "535"
+        }
+      ],
+      "sectionId": "salman-al-farisi.madain"
+    }
+  ],
   "relations": [],
   "storyIds": [
     "brotherhood-of-the-ansar",

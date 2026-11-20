@@ -36,7 +36,7 @@ jobs:
       - name: Content is valid (draft rules)
         run: dart run tool/content_validate.dart
       - name: Bundled content is up to date
-        run: dart run tool/content_build.dart --check
+        run: dart run tool/content_build.dart --check --channel=published
       - name: Format
         run: dart format --output=none --set-exit-if-changed lib test tool integration_test test_driver benchmark
       - name: Analyze
@@ -138,7 +138,7 @@ jobs:
   # Internal preview: draft content, debug-signed APKs for sideloading.
   # Not for the stores (see docs/release.md).
   preview:
-    name: Internal preview APK (draft)
+    name: Internal preview APK
     if: github.event_name == 'workflow_dispatch' && inputs.build == 'preview'
     needs: [checks, goldens]
     runs-on: ubuntu-latest
@@ -154,23 +154,23 @@ jobs:
           channel: stable
           cache: true
       - run: flutter pub get
-      - run: dart run tool/content_build.dart --check
+      - run: dart run tool/content_build.dart --check --channel=published
       - run: flutter build apk --release --split-per-abi --build-number=${{ github.run_number }}
       - name: Check the bundled content
         run: |
           for apk in build/app/outputs/flutter-apk/app-*-release.apk; do
-            dart run tool/release_check.dart artifact "$apk" --channel=draft
+            dart run tool/release_check.dart artifact "$apk" --channel=published
           done
       - uses: actions/upload-artifact@v4
         with:
-          name: suhba-preview-draft-${{ github.run_number }}
+          name: suhba-preview-${{ github.run_number }}
           path: build/app/outputs/flutter-apk/app-*-release.apk
           retention-days: 14
 
   # The public Android artifact. Every gate runs in this same job, before and
   # after the build: final identity, published content, the complete first
   # release (the Ten, reviewed), real signing, and the content inside the
-  # bundle. It fails today by design (no reviewer, placeholder identity).
+  # bundle.
   public-android:
     name: Public Android bundle
     if: github.event_name == 'workflow_dispatch' && inputs.build == 'public'

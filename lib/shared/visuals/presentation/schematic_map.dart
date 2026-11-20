@@ -18,8 +18,11 @@ import 'package:suhba/shared/content/presentation/content_text.dart';
 /// text direction, while labels stay Arabic. Positions come from each
 /// place's recorded point; approximate and uncertain sites are drawn
 /// differently from identified ones, and route legs whose path is not
-/// known are dashed. It can be zoomed; the place list that accompanies it
-/// is the accessible equivalent.
+/// known are dashed. Places too close to tell apart at the map's scale
+/// (Makkah and Thawr, Quba and Madinah) are drawn further apart, keeping
+/// their bearing to each other, and a note says so (review F21, D8). It
+/// can be zoomed; the place list that accompanies it is the accessible
+/// equivalent.
 class SchematicMap extends StatefulWidget {
   const SchematicMap({
     required this.places,
@@ -78,162 +81,175 @@ class _SchematicMapState extends State<SchematicMap> {
           if (byId[leg.toPlaceId] case final to?) (from, to, leg),
     ];
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        ClipRRect(
-          borderRadius: const BorderRadius.all(AppRadii.md),
-          child: SizedBox(
-            height: widget.height,
-            child: Stack(
-              children: [
-                Semantics(
-                  label: l10n.mapSemantics(
-                    format.integer(widget.places.length),
-                  ),
-                  child: LayoutBuilder(
-                    builder: (context, constraints) {
-                      final size = Size(constraints.maxWidth, widget.height);
-                      final projection = _Projection.fit(widget.places, size);
-                      // Geography is not mirrored in RTL.
-                      final map = Directionality(
-                        textDirection: TextDirection.ltr,
-                        child: SizedBox.fromSize(
-                          size: size,
-                          child: Stack(
-                            children: [
-                              Positioned.fill(
-                                child: CustomPaint(
-                                  painter: _MapPainter(
-                                    places: widget.places,
-                                    route: route,
-                                    projection: projection,
-                                    textStyle: SuhbaTextStyles.of(
-                                      context,
-                                    ).kicker.copyWith(color: Palette.paper),
-                                    textScaler: MediaQuery.textScalerOf(
-                                      context,
-                                    ).clamp(maxScaleFactor: 1.4),
-                                  ),
-                                ),
-                              ),
-                              for (final p in widget.places)
-                                Positioned.fromRect(
-                                  rect: Rect.fromCircle(
-                                    center: projection.offsetOf(p.location),
-                                    radius: kMinInteractiveDimension / 2,
-                                  ),
-                                  child: ExcludeSemantics(
-                                    child: Tooltip(
-                                      message: p.name.of(context),
-                                      child: InkResponse(
-                                        radius: kMinInteractiveDimension / 2,
-                                        onTap: () => widget.onOpenPlace(p),
+    return LayoutBuilder(
+      builder: (context, outer) {
+        final layout = MapLayout.of(
+          widget.places,
+          Size(outer.maxWidth, widget.height),
+        );
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            ClipRRect(
+              borderRadius: const BorderRadius.all(AppRadii.md),
+              child: SizedBox(
+                height: widget.height,
+                child: Stack(
+                  children: [
+                    Semantics(
+                      label: l10n.mapSemantics(
+                        format.integer(widget.places.length),
+                      ),
+                      child: LayoutBuilder(
+                        builder: (context, constraints) {
+                          final size = Size(
+                            constraints.maxWidth,
+                            widget.height,
+                          );
+                          // Geography is not mirrored in RTL.
+                          final map = Directionality(
+                            textDirection: TextDirection.ltr,
+                            child: SizedBox.fromSize(
+                              size: size,
+                              child: Stack(
+                                children: [
+                                  Positioned.fill(
+                                    child: CustomPaint(
+                                      painter: _MapPainter(
+                                        places: widget.places,
+                                        route: route,
+                                        layout: layout,
+                                        textStyle: SuhbaTextStyles.of(
+                                          context,
+                                        ).kicker.copyWith(color: Palette.paper),
+                                        textScaler: MediaQuery.textScalerOf(
+                                          context,
+                                        ).clamp(maxScaleFactor: 1.4),
                                       ),
                                     ),
                                   ),
-                                ),
+                                  for (final p in widget.places)
+                                    Positioned.fromRect(
+                                      rect: Rect.fromCircle(
+                                        center: layout.positions[p.id]!,
+                                        radius: kMinInteractiveDimension / 2,
+                                      ),
+                                      child: ExcludeSemantics(
+                                        child: Tooltip(
+                                          message: p.name.of(context),
+                                          child: InkResponse(
+                                            radius:
+                                                kMinInteractiveDimension / 2,
+                                            onTap: () => widget.onOpenPlace(p),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                ],
+                              ),
+                            ),
+                          );
+                          return widget.interactive
+                              ? InteractiveViewer(
+                                  transformationController: _transform,
+                                  maxScale: 4,
+                                  child: map,
+                                )
+                              : map;
+                        },
+                      ),
+                    ),
+                    if (widget.interactive)
+                      PositionedDirectional(
+                        end: AppSpacing.xs,
+                        bottom: AppSpacing.xs,
+                        child: Column(
+                          children: [
+                            _ZoomButton(
+                              icon: Icons.add,
+                              tooltip: l10n.mapZoomIn,
+                              onPressed: () => _zoom(1.5),
+                            ),
+                            const SizedBox(height: AppSpacing.xxs),
+                            _ZoomButton(
+                              icon: Icons.remove,
+                              tooltip: l10n.mapZoomOut,
+                              onPressed: () => _zoom(1 / 1.5),
+                            ),
+                          ],
+                        ),
+                      ),
+                    PositionedDirectional(
+                      start: AppSpacing.xs,
+                      top: AppSpacing.xs,
+                      child: ExcludeSemantics(
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: AppSpacing.xs,
+                            vertical: AppSpacing.xxs,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Palette.green.withValues(alpha: 0.7),
+                            borderRadius: const BorderRadius.all(AppRadii.sm),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              const Icon(
+                                Icons.north,
+                                size: 14,
+                                color: Palette.goldOnInk,
+                              ),
+                              Text(
+                                l10n.mapNorth,
+                                style: SuhbaTextStyles.of(
+                                  context,
+                                ).kicker.copyWith(color: Palette.goldOnInk),
+                              ),
                             ],
                           ),
                         ),
-                      );
-                      return widget.interactive
-                          ? InteractiveViewer(
-                              transformationController: _transform,
-                              maxScale: 4,
-                              child: map,
-                            )
-                          : map;
-                    },
-                  ),
-                ),
-                if (widget.interactive)
-                  PositionedDirectional(
-                    end: AppSpacing.xs,
-                    bottom: AppSpacing.xs,
-                    child: Column(
-                      children: [
-                        _ZoomButton(
-                          icon: Icons.add,
-                          tooltip: l10n.mapZoomIn,
-                          onPressed: () => _zoom(1.5),
-                        ),
-                        const SizedBox(height: AppSpacing.xxs),
-                        _ZoomButton(
-                          icon: Icons.remove,
-                          tooltip: l10n.mapZoomOut,
-                          onPressed: () => _zoom(1 / 1.5),
-                        ),
-                      ],
-                    ),
-                  ),
-                PositionedDirectional(
-                  start: AppSpacing.xs,
-                  top: AppSpacing.xs,
-                  child: ExcludeSemantics(
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: AppSpacing.xs,
-                        vertical: AppSpacing.xxs,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Palette.green.withValues(alpha: 0.7),
-                        borderRadius: const BorderRadius.all(AppRadii.sm),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          const Icon(
-                            Icons.north,
-                            size: 14,
-                            color: Palette.goldOnInk,
-                          ),
-                          Text(
-                            l10n.mapNorth,
-                            style: SuhbaTextStyles.of(
-                              context,
-                            ).kicker.copyWith(color: Palette.goldOnInk),
-                          ),
-                        ],
                       ),
                     ),
-                  ),
+                  ],
                 ),
+              ),
+            ),
+            const SizedBox(height: AppSpacing.xs),
+            Wrap(
+              spacing: AppSpacing.md,
+              runSpacing: AppSpacing.xxs,
+              children: [
+                _Legend(
+                  symbol: _LegendSymbol.identified,
+                  label: l10n.mapLegendIdentified,
+                ),
+                _Legend(
+                  symbol: _LegendSymbol.approximate,
+                  label: l10n.mapLegendApproximate,
+                ),
+                _Legend(
+                  symbol: _LegendSymbol.uncertain,
+                  label: l10n.mapLegendUncertain,
+                ),
+                if (route.isNotEmpty)
+                  _Legend(
+                    symbol: _LegendSymbol.dashed,
+                    label: l10n.mapApproximatePath,
+                  ),
               ],
             ),
-          ),
-        ),
-        const SizedBox(height: AppSpacing.xs),
-        Wrap(
-          spacing: AppSpacing.md,
-          runSpacing: AppSpacing.xxs,
-          children: [
-            _Legend(
-              symbol: _LegendSymbol.identified,
-              label: l10n.mapLegendIdentified,
+            Text(
+              layout.spread
+                  ? '${l10n.mapSchematicNote} ${l10n.mapSpreadNote}'
+                  : l10n.mapSchematicNote,
+              style: Theme.of(
+                context,
+              ).textTheme.bodySmall?.copyWith(color: colors.onSurfaceDim),
             ),
-            _Legend(
-              symbol: _LegendSymbol.approximate,
-              label: l10n.mapLegendApproximate,
-            ),
-            _Legend(
-              symbol: _LegendSymbol.uncertain,
-              label: l10n.mapLegendUncertain,
-            ),
-            if (route.isNotEmpty)
-              _Legend(
-                symbol: _LegendSymbol.dashed,
-                label: l10n.mapApproximatePath,
-              ),
           ],
-        ),
-        Text(
-          l10n.mapSchematicNote,
-          style: Theme.of(
-            context,
-          ).textTheme.bodySmall?.copyWith(color: colors.onSurfaceDim),
-        ),
-      ],
+        );
+      },
     );
   }
 }
@@ -356,6 +372,98 @@ void _dashed(Canvas canvas, Offset a, Offset b, Paint paint) {
   }
 }
 
+/// Where each place is drawn on a map of a given size: projected, then
+/// with places too close to tell apart pushed away from each other.
+class MapLayout {
+  MapLayout._(this.positions, {required this.spread});
+
+  factory MapLayout.of(List<HistoricalPlace> places, Size size) {
+    final projection = _Projection.fit(places, size);
+    final at = {for (final p in places) p.id: projection.offsetOf(p.location)};
+    final spread = _spreadClusters(at, size);
+    return MapLayout._(at, spread: spread);
+  }
+
+  /// The least distance between two markers, in logical pixels: room for
+  /// a marker and the start of its label (review D8).
+  static const minSeparation = 44.0;
+
+  /// Centre of each place's marker, by place ID.
+  final Map<String, Offset> positions;
+
+  /// Whether some places were drawn further apart than their true
+  /// distance, so the map can say so.
+  final bool spread;
+
+  /// Groups markers closer than [minSeparation], then scales each group
+  /// about its centre until its closest pair is that far apart. Bearings
+  /// within a group are kept (Thawr stays south of Makkah); coincident
+  /// points are set around a circle. Returns whether anything moved.
+  static bool _spreadClusters(Map<String, Offset> at, Size size) {
+    final ids = at.keys.toList();
+    final group = {for (final id in ids) id: id};
+    String root(String id) {
+      var r = id;
+      while (group[r] != r) {
+        r = group[r]!;
+      }
+      return r;
+    }
+
+    for (var i = 0; i < ids.length; i++) {
+      for (var j = i + 1; j < ids.length; j++) {
+        if ((at[ids[i]]! - at[ids[j]]!).distance < minSeparation) {
+          group[root(ids[i])] = root(ids[j]);
+        }
+      }
+    }
+    final clusters = <String, List<String>>{};
+    for (final id in ids) {
+      (clusters[root(id)] ??= []).add(id);
+    }
+
+    var moved = false;
+    for (final members in clusters.values.where((m) => m.length > 1)) {
+      moved = true;
+      final centre =
+          members.map((id) => at[id]!).reduce((a, b) => a + b) /
+          members.length.toDouble();
+      var closest = double.infinity;
+      for (var i = 0; i < members.length; i++) {
+        for (var j = i + 1; j < members.length; j++) {
+          closest = math.min(
+            closest,
+            (at[members[i]]! - at[members[j]]!).distance,
+          );
+        }
+      }
+      if (closest < 0.5) {
+        // Same point: around a circle, starting north.
+        final r = minSeparation / (2 * math.sin(math.pi / members.length));
+        for (var i = 0; i < members.length; i++) {
+          final a = -math.pi / 2 + 2 * math.pi * i / members.length;
+          at[members[i]] = centre + Offset(math.cos(a), math.sin(a)) * r;
+        }
+      } else {
+        final factor = minSeparation / closest;
+        for (final id in members) {
+          at[id] = centre + (at[id]! - centre) * factor;
+        }
+      }
+    }
+    // Keep every marker inside the map.
+    const edge = 16.0;
+    for (final id in ids) {
+      final o = at[id]!;
+      at[id] = Offset(
+        o.dx.clamp(edge, math.max(edge, size.width - edge)),
+        o.dy.clamp(edge, math.max(edge, size.height - edge)),
+      );
+    }
+    return moved;
+  }
+}
+
 /// Equirectangular projection fitted to the places, with the longitude
 /// scaled by the cosine of the mean latitude so shapes stay true.
 class _Projection {
@@ -404,14 +512,14 @@ class _MapPainter extends CustomPainter {
   _MapPainter({
     required this.places,
     required this.route,
-    required this.projection,
+    required this.layout,
     required this.textStyle,
     required this.textScaler,
   });
 
   final List<HistoricalPlace> places;
   final List<(HistoricalPlace, HistoricalPlace, RouteLeg)> route;
-  final _Projection projection;
+  final MapLayout layout;
   final TextStyle textStyle;
   final TextScaler textScaler;
 
@@ -435,8 +543,8 @@ class _MapPainter extends CustomPainter {
       ..strokeWidth = 2.5
       ..strokeCap = StrokeCap.round;
     for (final (from, to, leg) in route) {
-      final a = projection.offsetOf(from.location);
-      final b = projection.offsetOf(to.location);
+      final a = layout.positions[from.id]!;
+      final b = layout.positions[to.id]!;
       if (leg.approximate) {
         _dashed(canvas, a, b, gold);
       } else {
@@ -448,10 +556,10 @@ class _MapPainter extends CustomPainter {
     // Labels avoid every marker as well as each other.
     final placed = <Rect>[
       for (final p in places)
-        Rect.fromCircle(center: projection.offsetOf(p.location), radius: 7),
+        Rect.fromCircle(center: layout.positions[p.id]!, radius: 7),
     ];
     for (final p in places) {
-      final c = projection.offsetOf(p.location);
+      final c = layout.positions[p.id]!;
       _marker(canvas, c, p.location.precision.index, Palette.goldOnInk, 6);
       final painter = TextPainter(
         text: TextSpan(text: p.name.ar, style: textStyle),
@@ -518,5 +626,8 @@ class _MapPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(_MapPainter old) =>
-      old.places != places || old.route != route || old.textStyle != textStyle;
+      old.places != places ||
+      old.route != route ||
+      old.layout != layout ||
+      old.textStyle != textStyle;
 }

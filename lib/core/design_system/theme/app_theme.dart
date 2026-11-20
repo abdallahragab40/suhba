@@ -13,6 +13,7 @@ abstract final class AppTheme {
   static final ThemeData feature = _build(
     _darkScheme.copyWith(
       surface: Palette.green,
+      onSurface: Palette.paper,
       surfaceContainerLowest: Palette.greenLowest,
       surfaceContainerLow: Palette.greenLow,
       surfaceContainer: Palette.greenAlt,
@@ -27,6 +28,44 @@ abstract final class AppTheme {
     SuhbaColors.feature,
   );
 
+  /// The reader's warm paper tone (review K5): the light theme on a warmer,
+  /// lighter page. Readers only; the rest of the app keeps its theme.
+  static final ThemeData warmPaper = _build(
+    _lightScheme.copyWith(
+      surface: Palette.warmPaper,
+      surfaceContainerLowest: Palette.warmPaper,
+      surfaceContainerLow: Palette.warmPaper,
+      surfaceContainer: Palette.warmPaperAlt,
+      outlineVariant: Palette.lineOnWarmPaper,
+    ),
+    SuhbaColors.light.copyWith(
+      surfaceAlt: Palette.warmPaperAlt,
+      line: Palette.lineOnWarmPaper,
+      draftSurface: Palette.warmPaperAlt,
+    ),
+  );
+
+  /// The warm tone at night: [warmPaper]'s counterpart in the dark theme,
+  /// a warm near-black page with cream text (K5).
+  static final ThemeData warmNight = _build(
+    _darkScheme.copyWith(
+      surface: Palette.warmNight,
+      surfaceContainerLowest: Palette.warmNight,
+      surfaceContainerLow: Palette.warmNight,
+      surfaceContainer: Palette.warmNightAlt,
+      onSurface: Palette.textOnWarmNight,
+      onSurfaceVariant: Palette.dimOnWarmNight,
+      outlineVariant: Palette.lineOnWarmNight,
+    ),
+    SuhbaColors.dark.copyWith(
+      surfaceAlt: Palette.warmNightAlt,
+      onSurfaceDim: Palette.dimOnWarmNight,
+      line: Palette.lineOnWarmNight,
+      draft: Palette.dimOnWarmNight,
+      draftSurface: Palette.warmNightAlt,
+    ),
+  );
+
   static const _lightScheme = ColorScheme(
     brightness: Brightness.light,
     primary: Palette.green,
@@ -39,10 +78,10 @@ abstract final class AppTheme {
     onSecondaryContainer: Palette.green,
     tertiary: Palette.establishedOnPaper,
     onTertiary: Palette.paper,
-    error: Palette.draftOnPaper,
+    error: Palette.clay,
     onError: Palette.paper,
-    errorContainer: Palette.draftWash,
-    onErrorContainer: Palette.draftOnPaper,
+    errorContainer: Palette.clayWash,
+    onErrorContainer: Palette.clay,
     surface: Palette.paper,
     onSurface: Palette.ink,
     onSurfaceVariant: Palette.inkDim,
@@ -68,31 +107,33 @@ abstract final class AppTheme {
     // stays distinct from the green of the "established" label.
     primary: Palette.goldOnInk,
     onPrimary: Palette.ink,
-    primaryContainer: Palette.inkHighest,
-    onPrimaryContainer: Palette.paper,
+    primaryContainer: Palette.nightHighest,
+    onPrimaryContainer: Palette.textOnNight,
     secondary: Palette.goldOnInk,
     onSecondary: Palette.ink,
     secondaryContainer: Palette.greenWashOnInk,
     onSecondaryContainer: Palette.greenWash,
     tertiary: Palette.establishedOnInk,
     onTertiary: Palette.ink,
-    error: Palette.draftOnInk,
-    onError: Palette.ink,
-    errorContainer: Palette.draftWashOnInk,
-    onErrorContainer: Palette.draftOnInk,
-    surface: Palette.ink,
-    onSurface: Palette.paper,
-    onSurfaceVariant: Palette.paperDim,
-    surfaceContainerLowest: Palette.inkLowest,
-    surfaceContainerLow: Palette.inkLow,
-    surfaceContainer: Palette.inkAlt,
-    surfaceContainerHigh: Palette.inkHigh,
-    surfaceContainerHighest: Palette.inkHighest,
+    error: Palette.clayOnInk,
+    onError: Palette.clayWashOnInk,
+    errorContainer: Palette.clayWashOnInk,
+    onErrorContainer: Palette.clayOnInk,
+    surface: Palette.night,
+    onSurface: Palette.textOnNight,
+    onSurfaceVariant: Palette.dimOnNight,
+    surfaceContainerLowest: Palette.nightLowest,
+    surfaceContainerLow: Palette.nightLow,
+    surfaceContainer: Palette.nightAlt,
+    surfaceContainerHigh: Palette.nightHigh,
+    surfaceContainerHighest: Palette.nightHighest,
     outline: Palette.outlineOnInk,
-    outlineVariant: Palette.lineOnInk,
-    inverseSurface: Palette.paper,
-    onInverseSurface: Palette.ink,
-    inversePrimary: Palette.goldText,
+    outlineVariant: Palette.lineOnNight,
+    // Snack bars at night: paper on Madinah green with a gold action,
+    // not a bright paper bar across a dark screen.
+    inverseSurface: Palette.greenHigh,
+    onInverseSurface: Palette.paper,
+    inversePrimary: Palette.goldOnInk,
     shadow: Colors.black,
     scrim: Colors.black,
     surfaceTint: Colors.transparent,
@@ -104,11 +145,12 @@ abstract final class AppTheme {
       borderRadius: BorderRadius.all(AppRadii.pill),
     );
     final buttonText = WidgetStatePropertyAll(textTheme.labelLarge);
+    final dark = scheme.brightness == Brightness.dark;
 
     return ThemeData(
       useMaterial3: true,
       colorScheme: scheme,
-      fontFamily: AppFonts.cairo,
+      fontFamily: AppFonts.zain,
       fontFamilyFallback: const [AppFonts.amiri],
       textTheme: textTheme,
       scaffoldBackgroundColor: scheme.surface,
@@ -130,8 +172,11 @@ abstract final class AppTheme {
         color: colors.surfaceAlt,
         elevation: 0,
         margin: EdgeInsets.zero,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(AppRadii.md),
+        // At night a hairline edges each card: tone alone separates
+        // too little on a dark page.
+        shape: RoundedRectangleBorder(
+          borderRadius: const BorderRadius.all(AppRadii.md),
+          side: dark ? BorderSide(color: colors.line) : BorderSide.none,
         ),
       ),
       chipTheme: ChipThemeData(
@@ -142,11 +187,24 @@ abstract final class AppTheme {
         selectedColor: scheme.secondaryContainer,
       ),
       navigationBarTheme: NavigationBarThemeData(
-        backgroundColor: scheme.surface,
+        // At night the bar sits a step above the page.
+        backgroundColor: dark ? scheme.surfaceContainerLow : scheme.surface,
         surfaceTintColor: Colors.transparent,
         elevation: 0,
-        indicatorColor: scheme.secondaryContainer,
-        labelTextStyle: WidgetStatePropertyAll(textTheme.labelMedium),
+        indicatorColor: scheme.brightness == Brightness.light
+            ? Palette.greenWashStrong
+            : scheme.secondaryContainer,
+        // Five labels share a phone's width: the floor size, 13 (F01).
+        labelTextStyle: WidgetStatePropertyAll(
+          textTheme.labelMedium?.copyWith(fontSize: 13),
+        ),
+      ),
+      // Snack bars are Madinah green, like the feature bands they often
+      // rise over; a gold hairline keeps them apart from the band.
+      snackBarTheme: SnackBarThemeData(
+        shape: Border(
+          top: BorderSide(color: Palette.goldOnInk.withValues(alpha: 0.6)),
+        ),
       ),
       bottomSheetTheme: BottomSheetThemeData(
         backgroundColor: scheme.surface,

@@ -326,11 +326,78 @@
     "tabaqat-ibn-sad"
   ],
   "review": {
-    "status": "sourced",
-    "editorialFlags": [],
+    "status": "approved",
+    "editorialFlags": [
+      "sensitive"
+    ],
     "coverage": "sample",
     "authoredBy": "ummahat-2"
   },
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "كانت زينب بنت خزيمة الهلالية تُدعى أم المساكين، ويذكر ابن سعد أنها كانت تسمى بذلك في الجاهلية، ويعلّله الذهبي بكثرة معروفها."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 8,
+          "page": "91"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "218"
+        }
+      ],
+      "sectionId": "zaynab-bint-khuzaymah.name"
+    },
+    {
+      "text": {
+        "ar": "ويروي ابن سعد أن النبي ﷺ خطبها فجعلت أمرها إليه، فتزوجها وأصدقها اثنتي عشرة أوقية ونشًّا، وكان ذلك في شهر رمضان على رأس أحد وثلاثين شهرًا من الهجرة."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 8,
+          "page": "91"
+        }
+      ],
+      "sectionId": "zaynab-bint-khuzaymah.marriage"
+    },
+    {
+      "text": {
+        "ar": "ويذكر الذهبي أنها لم تمكث عنده إلا شهرين أو أكثر، وأنها لم تروِ شيئًا."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 8,
+          "page": "91"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 8,
+          "page": "92"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "218"
+        }
+      ],
+      "sectionId": "zaynab-bint-khuzaymah.death"
+    }
+  ],
   "storyIds": []
 }

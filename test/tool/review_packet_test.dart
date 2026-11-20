@@ -69,6 +69,18 @@ void main() {
         jsonDecode(packet['templates/companion.comp-a.json']!) as Map;
     expect((template['checklist'] as Map)['fitnaSignOff'], isFalse);
   });
+  test('sensitive flag requires its sign-off but never checks the box', () {
+    final fx = ContentFixture();
+    (fx.companionA['review'] as Map)['editorialFlags'] = ['sensitive'];
+    final packet = reviewPacket(fx.toFiles(), schemas);
+    expect(
+      packet['items/companion.comp-a.md'],
+      contains('Sensitive sign-off required by current flags: true'),
+    );
+    final template =
+        jsonDecode(packet['templates/companion.comp-a.json']!) as Map;
+    expect((template['checklist'] as Map)['sensitiveSignOff'], isFalse);
+  });
   group('journey reviewer handoff', () {
     late ContentFixture fx;
     setUp(() {
@@ -76,6 +88,7 @@ void main() {
       fx.files['journeys/journey-a.json'] = {
         'schemaVersion': 1,
         'id': 'journey-a',
+        'order': 1,
         'title': {'ar': 'رحلة تجريبية'},
         'description': {'ar': 'قراءات'},
         'steps': [

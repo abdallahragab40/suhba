@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/routes.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
 import 'package:suhba/core/design_system/widgets/draft_badge.dart';
 import 'package:suhba/core/design_system/widgets/empty_state.dart';
 import 'package:suhba/core/design_system/widgets/error_view.dart';
@@ -11,6 +12,7 @@ import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/core/result/failure.dart';
 import 'package:suhba/features/journeys/domain/journey_progress.dart';
 import 'package:suhba/features/journeys/domain/journey_runtime.dart';
+import 'package:suhba/features/journeys/presentation/journey_progress_text.dart';
 import 'package:suhba/features/journeys/presentation/journey_providers.dart';
 import 'package:suhba/features/quiz/domain/quiz_question.dart';
 import 'package:suhba/features/quiz/presentation/quiz_providers.dart';
@@ -157,10 +159,11 @@ class _JourneyPageState extends ConsumerState<JourneyPage> {
         Text(l10n.journeyPacing),
         const SizedBox(height: AppSpacing.md),
         Text(
-          l10n.journeyProgress(
-            format.integer(finished.length),
-            j.steps.length,
-            format.integer(j.steps.length),
+          journeyProgressText(
+            l10n,
+            format,
+            done: finished.length,
+            total: j.steps.length,
           ),
         ),
         const SizedBox(height: AppSpacing.xs),
@@ -254,46 +257,58 @@ class _JourneyPageState extends ConsumerState<JourneyPage> {
           ),
         const ReminderSettingsTile(),
         const SizedBox(height: AppSpacing.md),
-        for (final (index, step) in j.steps.indexed) ...[
-          Semantics(
-            label: l10n.journeyStepNumber(
-              format.integer(index + 1),
-              format.integer(j.steps.length),
-            ),
-            value: progress.any((p) => p.stepId == step.id && p.skipped)
-                ? l10n.journeySkipped
-                : finished.contains(step.id)
-                ? l10n.journeyCompleteStep
-                : null,
-            child: ListTile(
-              contentPadding: EdgeInsets.zero,
-              leading: ExcludeSemantics(
-                child: progress.any((p) => p.stepId == step.id && p.skipped)
-                    ? const Icon(Icons.skip_next_outlined)
-                    : finished.contains(step.id)
-                    ? const Icon(Icons.check_circle_outline)
-                    : Text(format.padded(index + 1)),
-              ),
-              title: Text(step.title.of(context)),
-              subtitle: Text(
-                runtime.missing(step.id)
-                    ? l10n.journeySkipped
-                    : runtime.unlocked(step.id, progress)
-                    ? l10n.journeyMinutes(
-                        runtime.minutes(step.id),
-                        format.integer(runtime.minutes(step.id)),
-                      )
-                    : l10n.journeyLocked,
-              ),
-              enabled:
+        // A vertical stepper (review K4): done, current and upcoming
+        // differ by shape as well as colour; only the current step has a
+        // button.
+        for (final (index, step) in j.steps.indexed)
+          Builder(
+            builder: (context) {
+              final skipped = progress.any(
+                (p) => p.stepId == step.id && p.skipped,
+              );
+              final state = skipped
+                  ? JourneyStepState.skipped
+                  : finished.contains(step.id)
+                  ? JourneyStepState.done
+                  : enrollment != null && step == next
+                  ? JourneyStepState.current
+                  : JourneyStepState.upcoming;
+              final open =
                   enrollment != null &&
                   !runtime.missing(step.id) &&
-                  runtime.unlocked(step.id, progress),
-              onTap: () => context.push(AppRoutes.journeyStep(j.id, step.id)),
-            ),
+                  runtime.unlocked(step.id, progress);
+              return Semantics(
+                label: l10n.journeyStepNumber(
+                  format.integer(index + 1),
+                  format.integer(j.steps.length),
+                ),
+                value: switch (state) {
+                  JourneyStepState.skipped => l10n.journeySkipped,
+                  JourneyStepState.done => l10n.journeyCompleteStep,
+                  _ => null,
+                },
+                child: JourneyStepRow(
+                  number: format.integer(index + 1),
+                  state: state,
+                  first: index == 0,
+                  last: index == j.steps.length - 1,
+                  title: step.title.of(context),
+                  subtitle: runtime.missing(step.id)
+                      ? l10n.journeySkipped
+                      : runtime.unlocked(step.id, progress)
+                      ? l10n.journeyMinutes(
+                          runtime.minutes(step.id),
+                          format.integer(runtime.minutes(step.id)),
+                        )
+                      : l10n.journeyLocked,
+                  continueLabel: l10n.journeyStepContinue,
+                  onTap: open
+                      ? () => context.push(AppRoutes.journeyStep(j.id, step.id))
+                      : null,
+                ),
+              );
+            },
           ),
-          const Divider(height: 1),
-        ],
         const SizedBox(height: AppSpacing.lg),
       ],
     );
@@ -490,6 +505,150 @@ class _JourneyPageState extends ConsumerState<JourneyPage> {
           ),
         const SizedBox(height: AppSpacing.lg),
       ],
+    );
+  }
+}
+
+/// Where a step stands in the journey.
+enum JourneyStepState { done, current, upcoming, skipped }
+
+/// One step of the journey stepper: a node on a vertical rail, the title,
+/// and on the current step a single «تابع».
+class JourneyStepRow extends StatelessWidget {
+  const JourneyStepRow({
+    required this.number,
+    required this.state,
+    required this.first,
+    required this.last,
+    required this.title,
+    required this.subtitle,
+    required this.continueLabel,
+    this.onTap,
+    super.key,
+  });
+
+  final String number;
+  final JourneyStepState state;
+  final bool first;
+  final bool last;
+  final String title;
+  final String subtitle;
+  final String continueLabel;
+  final VoidCallback? onTap;
+
+  static const _node = 32.0;
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = SuhbaColors.of(context);
+    final scheme = Theme.of(context).colorScheme;
+    final textTheme = Theme.of(context).textTheme;
+    final current = state == JourneyStepState.current;
+    final done = state == JourneyStepState.done;
+
+    final Widget node = switch (state) {
+      // Filled, with a tick.
+      JourneyStepState.done => CircleAvatar(
+        radius: _node / 2,
+        backgroundColor: colors.link,
+        child: Icon(Icons.check, size: 18, color: scheme.surface),
+      ),
+      // A thick ring around the number.
+      JourneyStepState.current => Container(
+        width: _node,
+        height: _node,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          border: Border.all(color: colors.link, width: 3),
+        ),
+        child: Text(
+          number,
+          style: textTheme.labelLarge?.copyWith(color: colors.link),
+        ),
+      ),
+      // A thin ring, dimmed.
+      JourneyStepState.upcoming => Container(
+        width: _node,
+        height: _node,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          border: Border.all(color: colors.line),
+        ),
+        child: Text(
+          number,
+          style: textTheme.labelLarge?.copyWith(color: colors.onSurfaceDim),
+        ),
+      ),
+      JourneyStepState.skipped => SizedBox.square(
+        dimension: _node,
+        child: Icon(Icons.skip_next_outlined, color: colors.onSurfaceDim),
+      ),
+    };
+
+    Widget line(bool visible, bool strong) => Container(
+      width: 2,
+      color: visible
+          ? (strong ? colors.link : colors.line)
+          : Colors.transparent,
+    );
+
+    return InkWell(
+      onTap: onTap,
+      child: IntrinsicHeight(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            SizedBox(
+              width: 48,
+              child: Column(
+                children: [
+                  SizedBox(height: AppSpacing.sm, child: line(!first, done)),
+                  ExcludeSemantics(child: node),
+                  Expanded(child: line(!last, done)),
+                ],
+              ),
+            ),
+            const SizedBox(width: AppSpacing.xs),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: AppSpacing.sm),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style:
+                          (current
+                                  ? textTheme.titleMedium
+                                  : textTheme.bodyLarge)
+                              ?.copyWith(
+                                color: onTap == null && !done
+                                    ? colors.onSurfaceDim
+                                    : null,
+                              ),
+                    ),
+                    Text(
+                      subtitle,
+                      style: textTheme.bodySmall?.copyWith(
+                        color: colors.onSurfaceDim,
+                      ),
+                    ),
+                    if (current && onTap != null) ...[
+                      const SizedBox(height: AppSpacing.xs),
+                      FilledButton.tonal(
+                        onPressed: onTap,
+                        child: Text(continueLabel),
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

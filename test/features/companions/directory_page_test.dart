@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:suhba/core/design_system/widgets/companion_card.dart';
+import 'package:suhba/core/design_system/widgets/companion_row.dart';
 import 'package:suhba/core/design_system/widgets/draft_badge.dart';
 import 'package:suhba/core/design_system/widgets/draft_banner.dart';
 import 'package:suhba/core/design_system/widgets/error_view.dart';
@@ -14,9 +14,7 @@ import '../../helpers/app_harness.dart';
 import '../../helpers/content_bundle.dart';
 
 List<String> _cardNames(WidgetTester tester) => [
-  for (final card in tester.widgetList<CompanionCard>(
-    find.byType(CompanionCard),
-  ))
+  for (final card in tester.widgetList<CompanionRow>(find.byType(CompanionRow)))
     card.name,
 ];
 
@@ -52,6 +50,7 @@ void main() {
       ..physicalSize = const Size(800, 6000);
     addTearDown(tester.view.reset);
     await AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
       location: '/companions?category=ashara-mubashshara',
     ).pump(tester);
 
@@ -73,7 +72,10 @@ void main() {
   });
 
   testApp('everyone is listed, beyond the Ten', (tester) async {
-    await AppUnderTest(location: '/companions').pump(tester);
+    await AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      location: '/companions',
+    ).pump(tester);
     expect(_cardNames(tester).first, 'أبو بكر الصديق');
     await tester.scrollUntilVisible(
       find.text('عبد الله بن رواحة'),
@@ -90,7 +92,10 @@ void main() {
       ..devicePixelRatio = 1
       ..physicalSize = const Size(800, 6000);
     addTearDown(tester.view.reset);
-    final app = AppUnderTest(location: '/companions');
+    final app = AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      location: '/companions',
+    );
     await app.pump(tester);
 
     await tester.tap(find.widgetWithText(ChoiceChip, 'الخلفاء الراشدون'));
@@ -110,7 +115,10 @@ void main() {
   });
 
   testApp('an unknown category in the URL shows everyone', (tester) async {
-    await AppUnderTest(location: '/companions?category=nope').pump(tester);
+    await AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      location: '/companions?category=nope',
+    ).pump(tester);
     final all = tester.widget<ChoiceChip>(
       find.widgetWithText(ChoiceChip, 'الكل'),
     );
@@ -120,7 +128,10 @@ void main() {
   testApp('tapping a card opens the profile; back keeps the filter', (
     tester,
   ) async {
-    final app = AppUnderTest(location: '/companions?category=khulafa-rashidun');
+    final app = AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      location: '/companions?category=khulafa-rashidun',
+    );
     await app.pump(tester);
 
     await tester.tap(find.text('عمر بن الخطاب'));
@@ -136,7 +147,7 @@ void main() {
   testApp('shows an error with retry when the index cannot load', (
     tester,
   ) async {
-    final bundle = MemoryAssetBundle.builtContent();
+    final bundle = MemoryAssetBundle.draftContent();
     final index = bundle.files.remove('assets/content/index/companions.json')!;
     await AppUnderTest(location: '/companions', bundle: bundle).pump(tester);
     expect(find.byType(ErrorView), findsOneWidget);
@@ -144,11 +155,11 @@ void main() {
     bundle.files['assets/content/index/companions.json'] = index;
     await tester.tap(find.text('إعادة المحاولة'));
     await tester.pumpAndSettle();
-    expect(find.byType(CompanionCard), findsWidgets);
+    expect(find.byType(CompanionRow), findsWidgets);
   });
 
   testApp('approved companions carry no draft badge', (tester) async {
-    final bundle = MemoryAssetBundle.builtContent()
+    final bundle = MemoryAssetBundle.draftContent()
       ..editJson('assets/content/index/companions.json', (json) {
         ((json['companions'] as List).first as Map)['review'] = {
           'status': 'approved',
@@ -165,7 +176,7 @@ void main() {
     expect(find.byType(DraftBadge), findsNWidgets(9));
     expect(
       find.descendant(
-        of: find.widgetWithText(CompanionCard, 'أبو بكر الصديق'),
+        of: find.widgetWithText(CompanionRow, 'أبو بكر الصديق'),
         matching: find.byType(DraftBadge),
       ),
       findsNothing,
@@ -175,14 +186,20 @@ void main() {
   testApp('no overflow at text scale 2.0', (tester) async {
     tester.platformDispatcher.textScaleFactorTestValue = 2;
     addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
-    await AppUnderTest(location: '/companions').pump(tester);
+    await AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      location: '/companions',
+    ).pump(tester);
     expect(tester.takeException(), isNull);
-    expect(find.byType(CompanionCard), findsWidgets);
+    expect(find.byType(CompanionRow), findsWidgets);
   });
 
   testApp('meets tap-target and labelling guidelines', (tester) async {
     final handle = tester.ensureSemantics();
-    await AppUnderTest(location: '/companions').pump(tester);
+    await AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      location: '/companions',
+    ).pump(tester);
     await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
     await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
     await expectLater(tester, meetsGuideline(textContrastGuideline));

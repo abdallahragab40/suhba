@@ -28,9 +28,13 @@ sealed class ContentBlock with _$ContentBlock {
     required List<Citation> citations,
   }) = ParagraphBlock;
 
-  /// An editorial reflection ("درس وعبرة"); commentary, not a claim.
-  const factory ContentBlock.lesson({required LocalizedText text}) =
-      LessonBlock;
+  /// An editorial reflection ("درس وعبرة"); commentary, not a claim. It
+  /// points back to the passages it is drawn from ([basedOn]: section or
+  /// chapter IDs of the same work), so the reader can check it (E7).
+  const factory ContentBlock.lesson({
+    required LocalizedText text,
+    @Default(<String>[]) List<String> basedOn,
+  }) = LessonBlock;
 
   /// A Qur'anic verse, stored by reference only.
   const factory ContentBlock.quranQuote({

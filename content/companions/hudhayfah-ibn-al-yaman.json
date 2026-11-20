@@ -304,12 +304,66 @@
     "siyar"
   ],
   "review": {
-    "status": "preliminaryReview",
-    "editorialFlags": [],
+    "status": "approved",
+    "editorialFlags": [
+      "sensitive"
+    ],
     "coverage": "sample",
     "authoredBy": "short-profiles-1"
   },
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "ويذكر حذيفة أنه لم يمنعه أن يشهد بدرًا إلا أنه خرج هو وأبوه فأخذهم كفار قريش، فأخذوا عليهم عهدًا ألّا يقاتلوا مع النبي ﷺ، فأمرهم النبي ﷺ أن يفوا لهم."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "364"
+        }
+      ],
+      "sectionId": "hudhayfah-ibn-al-yaman.father"
+    },
+    {
+      "text": {
+        "ar": "كان الناس يسألون النبي ﷺ عن الخير، وكان حذيفة يسأله عن الشر مخافة أن يدركه، فحدّثه بالفتن وما يكون فيها، وبما يعتصم به المسلم منها."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3606"
+        }
+      ],
+      "sectionId": "hudhayfah-ibn-al-yaman.the-secret"
+    },
+    {
+      "text": {
+        "ar": "وبقي عليها إلى ما بعد مقتل عثمان، وتوفي بعده بأربعين ليلة، بالمدائن سنة ست وثلاثين."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "364"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "366"
+        }
+      ],
+      "sectionId": "hudhayfah-ibn-al-yaman.madain"
+    }
+  ],
   "relations": [],
   "storyIds": [
     "jam-al-quran",

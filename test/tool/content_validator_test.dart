@@ -158,6 +158,148 @@ void main() {
     });
   });
 
+  group('E3 glossary', () {
+    Map<String, dynamic> term(String id, List<String> forms) => {
+      'id': id,
+      'term': {'ar': forms.first},
+      'forms': forms,
+      'definition': {'ar': 'تعريف'},
+      'reliability': 'established',
+      'citations': [
+        {'sourceId': 'bio-a', 'locatorStatus': 'pending'},
+      ],
+      'review': {'status': 'draft'},
+    };
+    void glossary(List<Map<String, dynamic>> terms) =>
+        fx.files['glossary.json'] = {'schemaVersion': 1, 'terms': terms};
+
+    test('a cited term the text uses is valid', () {
+      glossary([
+        term('nass', ['نص']),
+      ]);
+      expect(
+        validate().issues.where((i) => i.file == 'glossary.json'),
+        isEmpty,
+      );
+    });
+
+    test('a definition needs a citation', () {
+      glossary([
+        {
+          ...term('nass', ['نص']),
+          'citations': <Object>[],
+        },
+      ]);
+      expect(codes(validate()), contains('V3'));
+    });
+
+    test('a spelling belongs to one term', () {
+      glossary([
+        term('nass', ['نص']),
+        term('other', ['نص']),
+      ]);
+      expect(codes(validate()), contains('V2'));
+    });
+
+    test('a term no passage uses is reported', () {
+      glossary([
+        term('absent', ['كلمة غائبة']),
+      ]);
+      expect(
+        validate().issues.where((i) => i.message.contains('never linked')),
+        hasLength(1),
+      );
+    });
+  });
+
+  group('E2 overview sentences come from cited paragraphs', () {
+    Map<String, dynamic> fact({
+      String text = 'خلاصة السيرة.',
+      String? section,
+    }) => {
+      'text': {'ar': text},
+      'reliability': 'established',
+      'citations': [
+        {'sourceId': 'bio-a', 'locatorStatus': 'pending'},
+      ],
+      'sectionId': section ?? 'comp-a.early',
+    };
+    void overview(List<Map<String, dynamic>> facts) =>
+        fx.companionA['overview'] = facts;
+    Iterable<Issue> fewer() => validate().issues.where(
+      (i) => i.message.contains('of the 3–5 sentences'),
+    );
+
+    test('a sentence copied with its paragraph\'s citations is valid', () {
+      overview([fact(), fact(), fact()]);
+      expect(validate().issues, isEmpty);
+    });
+
+    test('a sentence the biography does not make is rejected', () {
+      overview([fact(text: 'خبر جديد'), fact(), fact()]);
+      expectOnly('V3');
+    });
+
+    test('so is a citation the paragraph does not carry', () {
+      overview([
+        {
+          ...fact(),
+          'citations': [
+            {'sourceId': 'hadith-a', 'locatorStatus': 'pending'},
+          ],
+        },
+        fact(),
+        fact(),
+      ]);
+      expectOnly('V3');
+    });
+
+    test('and a section that does not exist', () {
+      overview([fact(section: 'comp-a.nowhere'), fact(), fact()]);
+      expectOnly('V2');
+    });
+
+    test('fewer than three sentences is pending work', () {
+      overview([fact()]);
+      expect(fewer(), hasLength(1));
+      overview([fact(), fact(), fact()]);
+      expect(fewer(), isEmpty);
+    });
+  });
+
+  group('E7 lessons point to their passages', () {
+    Map<String, dynamic> lesson() => block(1);
+
+    test('a lesson may name a passage of its own work', () {
+      lesson()['basedOn'] = ['comp-a.early'];
+      expect(validate().issues, isEmpty);
+    });
+
+    test('but not a passage that does not exist', () {
+      lesson()['basedOn'] = ['comp-a.nowhere'];
+      expectOnly('V2');
+    });
+
+    test('in the Ten, an unlinked lesson is pending work', () {
+      // The fixture's one category becomes the Ten.
+      (fx.list('categories.json', 'categories')[0] as Map)['id'] =
+          'ashara-mubashshara';
+      ((fx.companionA['memberships'] as List)[0] as Map)['categoryId'] =
+          'ashara-mubashshara';
+      final warnings = validate().issues.where(
+        (i) => i.message.contains('does not yet point'),
+      );
+      expect(warnings, hasLength(1));
+      lesson()['basedOn'] = ['comp-a.early'];
+      expect(
+        validate().issues.where(
+          (i) => i.message.contains('does not yet point'),
+        ),
+        isEmpty,
+      );
+    });
+  });
+
   group('V3 citations', () {
     test('a biography needs references', () {
       fx.companionA['references'] = <String>[];
@@ -286,6 +428,28 @@ void main() {
       expect(validate().issues, isEmpty);
     });
 
+    test('sensitive items need their own explicit sign-off (E1)', () {
+      fx.approve('companion', 'comp-a', fx.companionA);
+      fx.companionA['review'] = {
+        'status': 'approved',
+        'editorialFlags': ['sensitive'],
+      };
+      fx.files['reviews/companion.comp-a.json'] = fx.approvalFor(
+        'companion',
+        'comp-a',
+        fx.companionA,
+        fitnaSignOff: true, // the fitna box does not cover it
+      );
+      expectOnly('V8');
+      fx.files['reviews/companion.comp-a.json'] = fx.approvalFor(
+        'companion',
+        'comp-a',
+        fx.companionA,
+        sensitiveSignOff: true,
+      );
+      expect(validate().issues, isEmpty);
+    });
+
     test('an approval for an unapproved item is warned about', () {
       fx.files['reviews/companion.comp-b.json'] = fx.approvalFor(
         'companion',
@@ -367,6 +531,41 @@ void main() {
           (jsonDecode(jsonEncode(chapter())) as Map<String, dynamic>)
             ..['id'] = 'chapter-b';
       expectOnly('V2');
+    });
+
+    group('Home\'s feature and the map (D7)', () {
+      Map<String, dynamic> seerah() => fx.files['seerah/seerah.json']!;
+
+      test('a chapter and one of its visuals is valid', () {
+        seerah()
+          ..['feature'] = {'chapterId': 'chapter-a', 'visualId': 'visual-a'}
+          ..['mapVisualId'] = 'visual-a';
+        final report = validate();
+        expect(report.issues, isEmpty, reason: report.issues.join('\n'));
+      });
+
+      test('the featured chapter must be in the reading order', () {
+        seerah()['feature'] = {
+          'chapterId': 'chapter-b',
+          'visualId': 'visual-a',
+        };
+        expectOnly('V2');
+      });
+
+      test('the featured visual must be one of that chapter\'s', () {
+        chapter()['visualIds'] = <String>[];
+        (chapter()['blocks'] as List).removeLast();
+        seerah()['feature'] = {
+          'chapterId': 'chapter-a',
+          'visualId': 'visual-a',
+        };
+        expectOnly('V2');
+      });
+
+      test('the map must be one of the Seerah\'s visuals', () {
+        seerah()['mapVisualId'] = 'visual-b';
+        expectOnly('V2');
+      });
     });
 
     test('a chapter needs work-level references', () {

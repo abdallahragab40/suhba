@@ -20,7 +20,10 @@ void main() {
       ..devicePixelRatio = 1
       ..physicalSize = const Size(800, 8000);
     addTearDown(tester.view.reset);
-    final app = AppUnderTest(location: '/companions/$id', bundle: bundle);
+    final app = AppUnderTest(
+      location: '/companions/$id',
+      bundle: bundle ?? MemoryAssetBundle.draftContent(),
+    );
     await app.pump(tester);
     return app;
   }
@@ -32,9 +35,9 @@ void main() {
 
     expect(find.text('أبو بكر الصديق'), findsOneWidget);
     expect(find.text('رضي الله عنه'), findsOneWidget);
-    expect(find.text('أبو بكر · الصديق · العتيق'), findsOneWidget);
+    expect(find.text('أبو بكر، الصديق، العتيق'), findsOneWidget);
     expect(
-      find.text('المدينة المنورة · جمادى الآخرة ١٣ هـ / ٦٣٤ م'),
+      find.text('المدينة المنورة، جمادى الآخرة ١٣ هـ / ٦٣٤ م'),
       findsWidgets,
     );
     expect(find.byType(DraftBadge), findsWidgets);
@@ -42,15 +45,15 @@ void main() {
     // Sections of the page, numbered in order.
     for (final title in [
       'في سطور',
-      'فصول السيرة',
+      'فصول سيرته',
       'محطات من حياته',
       'قصص من السيرة',
       'ذوو صلة',
-      'مراجع هذه السيرة',
+      'مراجع سيرته',
     ]) {
       expect(find.text(title), findsOneWidget, reason: title);
     }
-    expect(find.text('٠٦'), findsWidgets);
+    expect(find.text('٦'), findsWidgets);
 
     // Facts: birth (approximate) and death.
     expect(find.text('نحو سنة ٥٧٣ م'), findsWidgets);
@@ -150,9 +153,9 @@ void main() {
       bundle: MemoryAssetBundle.withSkeleton('talha'),
     );
     expect(find.text('طلحة بن عبيد الله'), findsOneWidget);
-    expect(find.text('فصول السيرة'), findsNothing);
+    expect(find.text('فصول سيرته'), findsNothing);
     expect(find.text('طلحة الخير'), findsNothing); // only in the subtitle
-    expect(find.text('أبو محمد · طلحة الخير'), findsOneWidget);
+    expect(find.text('أبو محمد، طلحة الخير'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 
@@ -165,7 +168,10 @@ void main() {
   });
 
   testApp('an unknown companion shows a friendly message', (tester) async {
-    await AppUnderTest(location: '/companions/nobody').pump(tester);
+    await AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      location: '/companions/nobody',
+    ).pump(tester);
     expect(find.text('لم نجد هذا الصحابي.'), findsOneWidget);
     await tester.tap(find.text('العودة إلى الصحابة'));
     await tester.pumpAndSettle();
@@ -181,7 +187,10 @@ void main() {
 
   testApp('meets tap-target and labelling guidelines', (tester) async {
     final handle = tester.ensureSemantics();
-    await AppUnderTest(location: '/companions/abu-bakr').pump(tester);
+    await AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      location: '/companions/abu-bakr',
+    ).pump(tester);
     await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
     await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
     handle.dispose();

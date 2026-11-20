@@ -9,6 +9,7 @@ import 'package:suhba/core/design_system/widgets/error_view.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/features/journeys/domain/journey.dart';
+import 'package:suhba/features/journeys/presentation/journey_progress_text.dart';
 import 'package:suhba/features/journeys/presentation/journey_providers.dart';
 import 'package:suhba/shared/content/presentation/content_text.dart';
 
@@ -103,19 +104,21 @@ class JourneyCard extends ConsumerWidget {
               ],
               const SizedBox(height: AppSpacing.md),
               Text(
-                l10n.journeyProgress(
-                  format.integer(done),
-                  journey.steps.length,
-                  format.integer(journey.steps.length),
+                journeyProgressText(
+                  l10n,
+                  format,
+                  done: done,
+                  total: journey.steps.length,
                 ),
               ),
               const SizedBox(height: AppSpacing.xs),
               LinearProgressIndicator(
                 value: done / journey.steps.length,
-                semanticsLabel: l10n.journeyProgress(
-                  format.integer(done),
-                  journey.steps.length,
-                  format.integer(journey.steps.length),
+                semanticsLabel: journeyProgressText(
+                  l10n,
+                  format,
+                  done: done,
+                  total: journey.steps.length,
                 ),
               ),
             ],

@@ -477,11 +477,11 @@ return infographic(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( LocalizedTextDto text,  Reliability reliability,  List<CitationDto> citations)?  paragraph,TResult Function( LocalizedTextDto text)?  lesson,TResult Function( QuranRefDto ref,  LocalizedTextDto? note)?  quranQuote,TResult Function( TextStatus textStatus,  Reliability reliability,  List<CitationDto> citations,  LocalizedTextDto? text,  LocalizedTextDto? summary)?  hadithQuote,TResult Function( TextStatus textStatus,  Reliability reliability,  List<CitationDto> citations,  LocalizedTextDto? text,  LocalizedTextDto? summary)?  reportQuote,TResult Function( LocalizedTextDto text,  List<OpinionDto> opinions)?  disputeNote,TResult Function( LocalizedTextDto text)?  heading,TResult Function( String visualId,  LocalizedTextDto? caption)?  infographic,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( LocalizedTextDto text,  Reliability reliability,  List<CitationDto> citations)?  paragraph,TResult Function( LocalizedTextDto text, @JsonKey(toJson: _omitEmpty)  List<String> basedOn)?  lesson,TResult Function( QuranRefDto ref,  LocalizedTextDto? note)?  quranQuote,TResult Function( TextStatus textStatus,  Reliability reliability,  List<CitationDto> citations,  LocalizedTextDto? text,  LocalizedTextDto? summary)?  hadithQuote,TResult Function( TextStatus textStatus,  Reliability reliability,  List<CitationDto> citations,  LocalizedTextDto? text,  LocalizedTextDto? summary)?  reportQuote,TResult Function( LocalizedTextDto text,  List<OpinionDto> opinions)?  disputeNote,TResult Function( LocalizedTextDto text)?  heading,TResult Function( String visualId,  LocalizedTextDto? caption)?  infographic,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case ParagraphBlockDto() when paragraph != null:
 return paragraph(_that.text,_that.reliability,_that.citations);case LessonBlockDto() when lesson != null:
-return lesson(_that.text);case QuranQuoteBlockDto() when quranQuote != null:
+return lesson(_that.text,_that.basedOn);case QuranQuoteBlockDto() when quranQuote != null:
 return quranQuote(_that.ref,_that.note);case HadithQuoteBlockDto() when hadithQuote != null:
 return hadithQuote(_that.textStatus,_that.reliability,_that.citations,_that.text,_that.summary);case ReportQuoteBlockDto() when reportQuote != null:
 return reportQuote(_that.textStatus,_that.reliability,_that.citations,_that.text,_that.summary);case DisputeNoteBlockDto() when disputeNote != null:
@@ -505,11 +505,11 @@ return infographic(_that.visualId,_that.caption);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( LocalizedTextDto text,  Reliability reliability,  List<CitationDto> citations)  paragraph,required TResult Function( LocalizedTextDto text)  lesson,required TResult Function( QuranRefDto ref,  LocalizedTextDto? note)  quranQuote,required TResult Function( TextStatus textStatus,  Reliability reliability,  List<CitationDto> citations,  LocalizedTextDto? text,  LocalizedTextDto? summary)  hadithQuote,required TResult Function( TextStatus textStatus,  Reliability reliability,  List<CitationDto> citations,  LocalizedTextDto? text,  LocalizedTextDto? summary)  reportQuote,required TResult Function( LocalizedTextDto text,  List<OpinionDto> opinions)  disputeNote,required TResult Function( LocalizedTextDto text)  heading,required TResult Function( String visualId,  LocalizedTextDto? caption)  infographic,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( LocalizedTextDto text,  Reliability reliability,  List<CitationDto> citations)  paragraph,required TResult Function( LocalizedTextDto text, @JsonKey(toJson: _omitEmpty)  List<String> basedOn)  lesson,required TResult Function( QuranRefDto ref,  LocalizedTextDto? note)  quranQuote,required TResult Function( TextStatus textStatus,  Reliability reliability,  List<CitationDto> citations,  LocalizedTextDto? text,  LocalizedTextDto? summary)  hadithQuote,required TResult Function( TextStatus textStatus,  Reliability reliability,  List<CitationDto> citations,  LocalizedTextDto? text,  LocalizedTextDto? summary)  reportQuote,required TResult Function( LocalizedTextDto text,  List<OpinionDto> opinions)  disputeNote,required TResult Function( LocalizedTextDto text)  heading,required TResult Function( String visualId,  LocalizedTextDto? caption)  infographic,}) {final _that = this;
 switch (_that) {
 case ParagraphBlockDto():
 return paragraph(_that.text,_that.reliability,_that.citations);case LessonBlockDto():
-return lesson(_that.text);case QuranQuoteBlockDto():
+return lesson(_that.text,_that.basedOn);case QuranQuoteBlockDto():
 return quranQuote(_that.ref,_that.note);case HadithQuoteBlockDto():
 return hadithQuote(_that.textStatus,_that.reliability,_that.citations,_that.text,_that.summary);case ReportQuoteBlockDto():
 return reportQuote(_that.textStatus,_that.reliability,_that.citations,_that.text,_that.summary);case DisputeNoteBlockDto():
@@ -529,11 +529,11 @@ return infographic(_that.visualId,_that.caption);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( LocalizedTextDto text,  Reliability reliability,  List<CitationDto> citations)?  paragraph,TResult? Function( LocalizedTextDto text)?  lesson,TResult? Function( QuranRefDto ref,  LocalizedTextDto? note)?  quranQuote,TResult? Function( TextStatus textStatus,  Reliability reliability,  List<CitationDto> citations,  LocalizedTextDto? text,  LocalizedTextDto? summary)?  hadithQuote,TResult? Function( TextStatus textStatus,  Reliability reliability,  List<CitationDto> citations,  LocalizedTextDto? text,  LocalizedTextDto? summary)?  reportQuote,TResult? Function( LocalizedTextDto text,  List<OpinionDto> opinions)?  disputeNote,TResult? Function( LocalizedTextDto text)?  heading,TResult? Function( String visualId,  LocalizedTextDto? caption)?  infographic,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( LocalizedTextDto text,  Reliability reliability,  List<CitationDto> citations)?  paragraph,TResult? Function( LocalizedTextDto text, @JsonKey(toJson: _omitEmpty)  List<String> basedOn)?  lesson,TResult? Function( QuranRefDto ref,  LocalizedTextDto? note)?  quranQuote,TResult? Function( TextStatus textStatus,  Reliability reliability,  List<CitationDto> citations,  LocalizedTextDto? text,  LocalizedTextDto? summary)?  hadithQuote,TResult? Function( TextStatus textStatus,  Reliability reliability,  List<CitationDto> citations,  LocalizedTextDto? text,  LocalizedTextDto? summary)?  reportQuote,TResult? Function( LocalizedTextDto text,  List<OpinionDto> opinions)?  disputeNote,TResult? Function( LocalizedTextDto text)?  heading,TResult? Function( String visualId,  LocalizedTextDto? caption)?  infographic,}) {final _that = this;
 switch (_that) {
 case ParagraphBlockDto() when paragraph != null:
 return paragraph(_that.text,_that.reliability,_that.citations);case LessonBlockDto() when lesson != null:
-return lesson(_that.text);case QuranQuoteBlockDto() when quranQuote != null:
+return lesson(_that.text,_that.basedOn);case QuranQuoteBlockDto() when quranQuote != null:
 return quranQuote(_that.ref,_that.note);case HadithQuoteBlockDto() when hadithQuote != null:
 return hadithQuote(_that.textStatus,_that.reliability,_that.citations,_that.text,_that.summary);case ReportQuoteBlockDto() when reportQuote != null:
 return reportQuote(_that.textStatus,_that.reliability,_that.citations,_that.text,_that.summary);case DisputeNoteBlockDto() when disputeNote != null:
@@ -643,10 +643,21 @@ $LocalizedTextDtoCopyWith<$Res> get text {
 @JsonSerializable()
 
 class LessonBlockDto implements ContentBlockDto {
-  const LessonBlockDto({required this.text, final  String? $type}): $type = $type ?? 'lesson';
+  const LessonBlockDto({required this.text, @JsonKey(toJson: _omitEmpty) final  List<String> basedOn = const <String>[], final  String? $type}): _basedOn = basedOn,$type = $type ?? 'lesson';
   factory LessonBlockDto.fromJson(Map<String, dynamic> json) => _$LessonBlockDtoFromJson(json);
 
  final  LocalizedTextDto text;
+/// The passages (section or chapter IDs of the same work) the lesson
+/// is drawn from (review E7).
+ final  List<String> _basedOn;
+/// The passages (section or chapter IDs of the same work) the lesson
+/// is drawn from (review E7).
+@JsonKey(toJson: _omitEmpty) List<String> get basedOn {
+  if (_basedOn is EqualUnmodifiableListView) return _basedOn;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_basedOn);
+}
+
 
 @JsonKey(name: 'type')
 final String $type;
@@ -665,16 +676,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is LessonBlockDto&&(identical(other.text, text) || other.text == text));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LessonBlockDto&&(identical(other.text, text) || other.text == text)&&const DeepCollectionEquality().equals(other._basedOn, _basedOn));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,text);
+int get hashCode => Object.hash(runtimeType,text,const DeepCollectionEquality().hash(_basedOn));
 
 @override
 String toString() {
-  return 'ContentBlockDto.lesson(text: $text)';
+  return 'ContentBlockDto.lesson(text: $text, basedOn: $basedOn)';
 }
 
 
@@ -685,7 +696,7 @@ abstract mixin class $LessonBlockDtoCopyWith<$Res> implements $ContentBlockDtoCo
   factory $LessonBlockDtoCopyWith(LessonBlockDto value, $Res Function(LessonBlockDto) _then) = _$LessonBlockDtoCopyWithImpl;
 @useResult
 $Res call({
- LocalizedTextDto text
+ LocalizedTextDto text,@JsonKey(toJson: _omitEmpty) List<String> basedOn
 });
 
 
@@ -702,10 +713,11 @@ class _$LessonBlockDtoCopyWithImpl<$Res>
 
 /// Create a copy of ContentBlockDto
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? text = null,}) {
+@pragma('vm:prefer-inline') $Res call({Object? text = null,Object? basedOn = null,}) {
   return _then(LessonBlockDto(
 text: null == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
-as LocalizedTextDto,
+as LocalizedTextDto,basedOn: null == basedOn ? _self._basedOn : basedOn // ignore: cast_nullable_to_non_nullable
+as List<String>,
   ));
 }
 

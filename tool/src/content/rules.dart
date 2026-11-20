@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:suhba/core/domain/historical_date.dart';
 import 'package:suhba/core/domain/quran_ref.dart';
 import 'package:suhba/core/domain/reliability.dart';
@@ -50,6 +52,8 @@ class _Rules {
       sink.error('V2', 'meta.json', '', 'meta.json is missing or invalid.');
     }
     _duplicates();
+    _journeyOrder();
+    _journeyWords();
     for (final item in tree.journeys) {
       _journey(item);
     }
@@ -71,6 +75,7 @@ class _Rules {
     for (final item in tree.places) {
       _place(item);
     }
+    _glossary();
     if (tree.seerah case final seerah?) _seerah(seerah);
     for (final item in tree.seerahChapters) {
       _seerahChapter(item);
@@ -112,6 +117,58 @@ class _Rules {
     check(tree.seerahChapters);
     check(tree.seerahTopics);
     check(tree.visuals);
+  }
+
+  /// Two journeys may not claim the same catalog position.
+  /// E5 (review C4): each step has its own framing line and its own
+  /// reflection; a prompt repeated across steps reads as generated.
+  void _journeyWords() {
+    final reflections = <String, String>{};
+    String plain(String t) => t.replaceAll(RegExp(r'[\u064B-\u0652\s]'), '');
+    for (final item in tree.journeys) {
+      for (final (i, step) in item.dto.steps.indexed) {
+        final path = '\$.steps[$i]';
+        if (step.framing == null || step.reflection == null) {
+          sink.warning(
+            'V9',
+            item.file,
+            path,
+            'Step "${step.id}" needs a framing line and a reflection.',
+          );
+        }
+        if (step.reflection case final r?) {
+          final key = plain(r.ar);
+          if (reflections[key] case final other?) {
+            sink.error(
+              'V5',
+              item.file,
+              '$path.reflection',
+              'Step "${step.id}" repeats the reflection of "$other".',
+            );
+          } else {
+            reflections[key] = step.id;
+          }
+        }
+      }
+    }
+  }
+
+  void _journeyOrder() {
+    final byOrder = <int, String>{};
+    for (final item in tree.journeys) {
+      final order = item.dto.order;
+      if (order == null) continue; // the schema requires it
+      if (byOrder[order] case final other?) {
+        sink.error(
+          'V2',
+          item.file,
+          r'$.order',
+          'Journey order $order is already used by "$other".',
+        );
+      } else {
+        byOrder[order] = item.id;
+      }
+    }
   }
 
   Item<Object>? _readingItem(StepRefDto r) => switch (r.type) {
@@ -226,9 +283,104 @@ class _Rules {
 
   // ── Items ─────────────────────────────────────────────────────────────
 
+  /// E2: the overview repeats, word for word, sentences already made and
+  /// cited in the biography, with those paragraphs' own citations, so it
+  /// can add no new claim.
+  void _overview(Item<CompanionDto> item, CompanionDto c) {
+    String plain(String t) => t
+        .replaceAll(RegExp('[\u064B-\u0652\u0670\u0640]'), '')
+        .replaceAll(RegExp(r'\s+'), ' ')
+        .replaceAll(RegExp(r'[.،؛:!؟]+$'), '')
+        .trim();
+    for (var i = 0; i < c.overview.length; i++) {
+      final f = c.overview[i];
+      final path = '\$.overview[$i]';
+      final section = c.sections.where((s) => s.id == f.sectionId).firstOrNull;
+      if (section == null) {
+        sink.error(
+          'V2',
+          item.file,
+          '$path.sectionId',
+          '"${f.sectionId}" is not a section of this biography.',
+        );
+        continue;
+      }
+      final sentence = plain(f.text.ar);
+      final cites = {for (final x in f.citations) jsonEncode(x.toJson())};
+      final source = section.blocks.whereType<ParagraphBlockDto>().where(
+        (p) =>
+            plain(p.text.ar).contains(sentence) &&
+            p.reliability == f.reliability &&
+            cites.every(
+              {for (final x in p.citations) jsonEncode(x.toJson())}.contains,
+            ),
+      );
+      if (sentence.isEmpty || source.isEmpty) {
+        sink.error(
+          'V3',
+          item.file,
+          path,
+          'An overview sentence must be copied from a cited paragraph of '
+              '"${f.sectionId}", with that paragraph\'s reliability and '
+              'citations.',
+        );
+      }
+    }
+    if (c.sections.isNotEmpty && c.overview.length < 3) {
+      sink.warning(
+        'V9',
+        item.file,
+        r'$.overview',
+        'The overview has ${c.overview.length} of the 3–5 sentences it needs.',
+      );
+    }
+  }
+
+  /// E7: a lesson points to passages of its own work, never to a missing
+  /// one; [required] makes an unlinked lesson a warning (the Ten).
+  void _lessonSources(
+    Item<Object> item,
+    Iterable<(String, ContentBlockDto)> blocks,
+    Set<String> passages, {
+    bool required = false,
+  }) {
+    for (final (path, block) in blocks) {
+      if (block is! LessonBlockDto) continue;
+      for (var i = 0; i < block.basedOn.length; i++) {
+        if (!passages.contains(block.basedOn[i])) {
+          sink.error(
+            'V2',
+            item.file,
+            '$path.basedOn[$i]',
+            '"${block.basedOn[i]}" is not a passage of this work.',
+          );
+        }
+      }
+      if (required && block.basedOn.isEmpty) {
+        sink.warning(
+          'V9',
+          item.file,
+          path,
+          'This lesson does not yet point to the passage it is drawn from.',
+        );
+      }
+    }
+  }
+
   void _companion(Item<CompanionDto> item) {
     final c = item.dto;
     _fileNameMatchesId(item, 'companions');
+    _overview(item, c);
+    _lessonSources(
+      item,
+      [
+        for (var s = 0; s < c.sections.length; s++)
+          for (var b = 0; b < c.sections[s].blocks.length; b++)
+            ('\$.sections[$s].blocks[$b]', c.sections[s].blocks[b]),
+      ],
+      {for (final s in c.sections) s.id},
+      required: c.memberships.any((m) => m.categoryId == 'ashara-mubashshara'),
+    );
     _childIds(item, r'$.sections', c.sections.map((s) => s.id));
     _childIds(item, r'$.timeline', c.timeline.map((t) => t.id));
 
@@ -332,6 +484,15 @@ class _Rules {
   void _story(Item<StoryDto> item) {
     final story = item.dto;
     _fileNameMatchesId(item, 'stories');
+    _lessonSources(
+      item,
+      [
+        for (var c = 0; c < story.chapters.length; c++)
+          for (var b = 0; b < story.chapters[c].blocks.length; b++)
+            ('\$.chapters[$c].blocks[$b]', story.chapters[c].blocks[b]),
+      ],
+      {for (final c in story.chapters) c.id},
+    );
     _childIds(item, r'$.chapters', story.chapters.map((c) => c.id));
     for (var i = 0; i < story.companionIds.length; i++) {
       _ref(
@@ -406,6 +567,69 @@ class _Rules {
     _citations(item, _blockCitations(r'$.basis', basis));
   }
 
+  /// E3: every term is cited, no spelling belongs to two terms, and a
+  /// term no passage uses is reported (it would never be linked).
+  void _glossary() {
+    if (tree.glossary.isEmpty) return;
+    String plain(String t) =>
+        t.replaceAll(RegExp('[\u064B-\u0652\u0670\u0640]'), '');
+    final corpus = StringBuffer();
+    void add(Iterable<ContentBlockDto> blocks) {
+      for (final b in blocks) {
+        switch (b) {
+          case ParagraphBlockDto(:final text):
+          case LessonBlockDto(:final text):
+            corpus.writeln(plain(text.ar));
+          case _:
+        }
+      }
+    }
+
+    for (final c in tree.companions) {
+      for (final s in c.dto.sections) {
+        add(s.blocks);
+      }
+    }
+    for (final st in tree.stories) {
+      for (final ch in st.dto.chapters) {
+        add(ch.blocks);
+      }
+    }
+    for (final ch in tree.seerahChapters) {
+      add(ch.dto.blocks);
+    }
+    for (final t in tree.seerahTopics) {
+      add(t.dto.blocks);
+    }
+    final text = corpus.toString();
+    final owner = <String, String>{};
+    for (final item in tree.glossary) {
+      final t = item.dto;
+      _needsCitations(item, r'$', t.citations, t.reliability);
+      _citations(item, _list(r'$', t.citations));
+      for (final (i, form) in t.forms.indexed) {
+        final f = plain(form);
+        if (owner[f] case final other? when other != t.id) {
+          sink.error(
+            'V2',
+            item.file,
+            '\$.forms[$i]',
+            '"$form" already belongs to the term "$other".',
+          );
+        }
+        owner[f] = t.id;
+      }
+      if (!t.forms.any((f) => text.contains(plain(f)))) {
+        sink.warning(
+          'V9',
+          item.file,
+          r'$.forms',
+          'No passage uses "${t.term.ar}", so it is never linked.',
+        );
+      }
+    }
+  }
+
   void _place(Item<PlaceDto> item) {
     final p = item.dto;
     _noHonorificInName(item, r'$.name', p.name);
@@ -474,6 +698,35 @@ class _Rules {
       tree.sourceById,
       ContentKind.source,
     );
+    // Home's feature is one of the Seerah's chapters, told by one of that
+    // chapter's own visuals; the map is one of the Seerah's visuals.
+    if (s.feature case final f?) {
+      if (!s.chapterIds.contains(f.chapterId)) {
+        sink.error(
+          'V2',
+          item.file,
+          r'$.feature.chapterId',
+          'Chapter "${f.chapterId}" is not in chapterIds.',
+        );
+      } else if (tree.seerahChapterById[f.chapterId] case final c?
+          when !c.dto.visualIds.contains(f.visualId)) {
+        sink.error(
+          'V2',
+          item.file,
+          r'$.feature.visualId',
+          'Visual "${f.visualId}" is not one of chapter "${f.chapterId}"\'s '
+              'visualIds.',
+        );
+      }
+    }
+    if (s.mapVisualId case final id? when !s.visualIds.contains(id)) {
+      sink.error(
+        'V2',
+        item.file,
+        r'$.mapVisualId',
+        'Visual "$id" is not in visualIds.',
+      );
+    }
     // Every chapter and topic must be in the reading order, or no screen
     // could reach it.
     for (final (items, listed, what) in [
@@ -517,6 +770,9 @@ class _Rules {
   void _seerahChapter(Item<SeerahChapterDto> item) {
     final c = item.dto;
     _fileNameMatchesId(item, 'seerah/chapters');
+    _lessonSources(item, [
+      for (var b = 0; b < c.blocks.length; b++) ('\$.blocks[$b]', c.blocks[b]),
+    ], tree.seerahChapterById.keys.toSet());
     _workRefs(item, c.references);
     _refs(item, r'$.eventIds', c.eventIds, tree.eventById, ContentKind.event);
     _refs(item, r'$.placeIds', c.placeIds, tree.placeById, ContentKind.place);
@@ -1029,6 +1285,16 @@ class _Rules {
         r'$.checklist.fitnaSignOff',
         'This item '
             'touches the fitna and needs the reviewer\'s explicit sign-off.',
+      );
+    }
+    if (item.review.editorialFlags.contains(EditorialFlag.sensitive) &&
+        !checklist.sensitiveSignOff) {
+      sink.error(
+        'V8',
+        record.file,
+        r'$.checklist.sensitiveSignOff',
+        'This item '
+            'is flagged sensitive and needs the reviewer\'s explicit sign-off.',
       );
     }
   }

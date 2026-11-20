@@ -8,7 +8,7 @@
       },
       "order": 1,
       "review": {
-        "status": "preliminaryReview",
+        "status": "approved",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -45,7 +45,7 @@
       },
       "order": 2,
       "review": {
-        "status": "preliminaryReview",
+        "status": "approved",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -120,7 +120,7 @@
       },
       "order": 3,
       "review": {
-        "status": "preliminaryReview",
+        "status": "approved",
         "editorialFlags": [],
         "authoredBy": "sample-content"
       },
@@ -166,7 +166,7 @@
       },
       "order": 4,
       "review": {
-        "status": "preliminaryReview",
+        "status": "approved",
         "editorialFlags": [],
         "authoredBy": "short-profiles-1"
       },
@@ -207,7 +207,7 @@
       },
       "order": 5,
       "review": {
-        "status": "preliminaryReview",
+        "status": "approved",
         "editorialFlags": [],
         "authoredBy": "short-profiles-1"
       },
@@ -251,7 +251,7 @@
       },
       "order": 6,
       "review": {
-        "status": "preliminaryReview",
+        "status": "approved",
         "editorialFlags": [],
         "authoredBy": "short-profiles-1"
       },

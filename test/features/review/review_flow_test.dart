@@ -159,6 +159,10 @@ void main() {
       await seedReview(app);
       const id = 'meet-the-companions';
       await app.container.read(journeyActionsProvider).start(id);
+      // Home shows today's portion first, so keep the general next step
+      // alive while it is not on screen.
+      final keep = app.container.listen(nextStepProvider, (_, _) {});
+      addTearDown(keep.close);
       await app.pump(tester);
       expect(
         app.container.read(nextStepProvider).requireValue,

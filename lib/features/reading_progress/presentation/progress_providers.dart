@@ -7,6 +7,7 @@ import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/features/reading_progress/data/drift_reading_progress_repository.dart';
 import 'package:suhba/features/reading_progress/domain/progress_recorder.dart';
 import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
+import 'package:suhba/features/settings/presentation/reading_settings.dart';
 import 'package:suhba/shared/content/domain/passage_position.dart';
 import 'package:suhba/shared/content/presentation/reader_scaffold.dart';
 import 'package:suhba/shared/content/providers.dart';
@@ -224,18 +225,20 @@ class _TrackedReaderScaffoldState extends ConsumerState<TrackedReaderScaffold>
       }
     }
 
-    return _TrackedReader(
-      target: widget.target,
-      targetId: widget.targetId,
-      markCompleted: _markCompleted,
-      restart: _restart,
-      child: ReaderScaffold(
-        key: _reader,
-        title: widget.title,
-        actions: widget.actions,
-        initialPosition: initial,
-        onProgress: _recorder.report,
-        children: widget.children,
+    return ReaderToneScope(
+      child: _TrackedReader(
+        target: widget.target,
+        targetId: widget.targetId,
+        markCompleted: _markCompleted,
+        restart: _restart,
+        child: ReaderScaffold(
+          key: _reader,
+          title: widget.title,
+          actions: widget.actions,
+          initialPosition: initial,
+          onProgress: _recorder.report,
+          children: widget.children,
+        ),
       ),
     );
   }

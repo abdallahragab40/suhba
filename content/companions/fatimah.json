@@ -357,12 +357,57 @@
     "siyar"
   ],
   "review": {
-    "status": "preliminaryReview",
+    "status": "approved",
     "editorialFlags": [],
     "coverage": "sample",
     "authoredBy": "short-profiles-1"
   },
   "atAGlance": [],
+  "overview": [
+    {
+      "text": {
+        "ar": "وُلدت فاطمة قبل المبعث بقليل، ونشأت في بيت النبوة بمكة، ثم هاجرت إلى المدينة."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "119"
+        }
+      ],
+      "sectionId": "fatimah.life"
+    },
+    {
+      "text": {
+        "ar": "أخبر النبي ﷺ أن فاطمة بضعة منه، فمن أغضبها أغضبه."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3714"
+        }
+      ],
+      "sectionId": "fatimah.virtues"
+    },
+    {
+      "text": {
+        "ar": "عاشت فاطمة بعد النبي ﷺ ستة أشهر، ثم توفيت، فدفنها علي ليلًا وصلّى عليها، كما تروي عائشة في صحيح البخاري، فكانت أول أهله لحوقًا به كما أخبرها."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4240"
+        }
+      ],
+      "sectionId": "fatimah.death"
+    }
+  ],
   "storyIds": [],
   "memberships": [
     {
