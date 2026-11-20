@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:suhba/core/design_system/theme/app_theme.dart';
-import 'package:suhba/core/design_system/tokens/fonts.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/tokens/typography.dart';
 import 'package:suhba/core/feedback/haptics.dart';
@@ -182,7 +181,7 @@ class ReadingSettingsSheet extends ConsumerWidget {
             segments: [
               ButtonSegment(
                 value: DigitStyle.arabicIndic,
-                label: TrueDigitsText(l10n.digitsArabicIndic),
+                label: Text(l10n.digitsArabicIndic),
               ),
               ButtonSegment(
                 value: DigitStyle.western,
@@ -201,29 +200,3 @@ class ReadingSettingsSheet extends ConsumerWidget {
   }
 }
 
-/// [text] with its Arabic-Indic digits drawn in Amiri. The interface font,
-/// Zain, draws ٠–٩ with Western shapes, which would make the two digit
-/// choices look the same («(123)» twice).
-class TrueDigitsText extends StatelessWidget {
-  const TrueDigitsText(this.text, {super.key});
-
-  final String text;
-
-  static final _runs = RegExp('[٠-٩]+|[^٠-٩]+');
-  static final _digit = RegExp('[٠-٩]');
-
-  @override
-  Widget build(BuildContext context) => Text.rich(
-    TextSpan(
-      children: [
-        for (final m in _runs.allMatches(text))
-          TextSpan(
-            text: m[0],
-            style: _digit.hasMatch(m[0]!)
-                ? const TextStyle(fontFamily: AppFonts.amiri)
-                : null,
-          ),
-      ],
-    ),
-  );
-}

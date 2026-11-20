@@ -199,6 +199,13 @@ abstract final class AppTheme {
           textTheme.labelMedium?.copyWith(fontSize: 13),
         ),
       ),
+      // Snack bars are Madinah green, like the feature bands they often
+      // rise over; a gold hairline keeps them apart from the band.
+      snackBarTheme: SnackBarThemeData(
+        shape: Border(
+          top: BorderSide(color: Palette.goldOnInk.withValues(alpha: 0.6)),
+        ),
+      ),
       bottomSheetTheme: BottomSheetThemeData(
         backgroundColor: scheme.surface,
         surfaceTintColor: Colors.transparent,
