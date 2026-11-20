@@ -11,6 +11,7 @@ import 'package:suhba/features/sources/presentation/citation_sheet.dart';
 import 'package:suhba/shared/content/presentation/reader_scaffold.dart';
 
 import '../../helpers/app_harness.dart';
+import '../../helpers/content_bundle.dart';
 
 void main() {
   Future<AppUnderTest> open(WidgetTester tester, String path) async {
@@ -18,7 +19,10 @@ void main() {
       ..devicePixelRatio = 1
       ..physicalSize = const Size(600, 4000);
     addTearDown(tester.view.reset);
-    final app = AppUnderTest(location: path);
+    final app = AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      location: path,
+    );
     await app.pump(tester);
     return app;
   }

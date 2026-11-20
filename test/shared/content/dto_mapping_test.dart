@@ -29,8 +29,8 @@ void main() {
         final companion = CompanionDto.fromJson(
           _readJson(file.path),
         ).toDomain();
-        // Draft or preliminarily reviewed; never approved by the tooling.
-        expect(companion.review.isApproved, isFalse, reason: file.path);
+        // Approved by the editorial review (2026-11-20).
+        expect(companion.review.isApproved, isTrue, reason: file.path);
         // Full biographies belong to a category; a short profile may not.
         if (companion.review.coverage == Coverage.complete) {
           expect(companion.memberships, isNotEmpty, reason: file.path);

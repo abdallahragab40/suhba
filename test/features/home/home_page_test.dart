@@ -10,6 +10,7 @@ import 'package:suhba/features/seerah/presentation/seerah_chapter_page.dart';
 import 'package:suhba/features/stories/presentation/story_page.dart';
 
 import '../../helpers/app_harness.dart';
+import '../../helpers/content_bundle.dart';
 
 void main() {
   Future<AppUnderTest> open(WidgetTester tester, {DateTime? now}) async {
@@ -17,7 +18,10 @@ void main() {
       ..devicePixelRatio = 1
       ..physicalSize = const Size(600, 3000);
     addTearDown(tester.view.reset);
-    final app = AppUnderTest(now: now);
+    final app = AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      now: now,
+    );
     await app.pump(tester);
     return app;
   }

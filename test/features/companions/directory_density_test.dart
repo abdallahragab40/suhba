@@ -4,6 +4,7 @@ import 'package:suhba/core/design_system/widgets/companion_row.dart';
 import 'package:suhba/core/design_system/widgets/draft_badge.dart';
 
 import '../../helpers/app_harness.dart';
+import '../../helpers/content_bundle.dart';
 import '../../helpers/pump_app.dart' show loadAppFonts;
 
 /// The directory is for scanning (review F07): compact rows, grouped by
@@ -16,7 +17,10 @@ void main() {
       ..devicePixelRatio = 1
       ..physicalSize = const Size(393, 852);
     addTearDown(tester.view.reset);
-    await AppUnderTest(location: '/companions').pump(tester);
+    await AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      location: '/companions',
+    ).pump(tester);
   }
 
   testApp('at least five companions on the first screen', (tester) async {

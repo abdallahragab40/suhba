@@ -347,7 +347,7 @@
     }
   ],
   "review": {
-    "status": "draft",
+    "status": "approved",
     "coverage": "complete"
   }
 }

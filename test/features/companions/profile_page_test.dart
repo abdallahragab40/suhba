@@ -20,7 +20,10 @@ void main() {
       ..devicePixelRatio = 1
       ..physicalSize = const Size(800, 8000);
     addTearDown(tester.view.reset);
-    final app = AppUnderTest(location: '/companions/$id', bundle: bundle);
+    final app = AppUnderTest(
+      location: '/companions/$id',
+      bundle: bundle ?? MemoryAssetBundle.draftContent(),
+    );
     await app.pump(tester);
     return app;
   }
@@ -165,7 +168,10 @@ void main() {
   });
 
   testApp('an unknown companion shows a friendly message', (tester) async {
-    await AppUnderTest(location: '/companions/nobody').pump(tester);
+    await AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      location: '/companions/nobody',
+    ).pump(tester);
     expect(find.text('لم نجد هذا الصحابي.'), findsOneWidget);
     await tester.tap(find.text('العودة إلى الصحابة'));
     await tester.pumpAndSettle();
@@ -181,7 +187,10 @@ void main() {
 
   testApp('meets tap-target and labelling guidelines', (tester) async {
     final handle = tester.ensureSemantics();
-    await AppUnderTest(location: '/companions/abu-bakr').pump(tester);
+    await AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      location: '/companions/abu-bakr',
+    ).pump(tester);
     await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
     await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
     handle.dispose();

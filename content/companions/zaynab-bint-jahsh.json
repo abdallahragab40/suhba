@@ -207,7 +207,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "ويذكر الذهبي قولًا أن النبي ﷺ تزوجها في ذي القعدة سنة خمس، وهي يومئذ بنت خمس وعشرين سنة."
+            "ar": "ويذكر الذهبي قولًا أن النبي ﷺ تزوجها في ذي القعدة سنة خمس، وهي يومئذ بنت خمس وثلاثين سنة."
           },
           "reliability": "reported",
           "citations": [
@@ -406,7 +406,7 @@
     "siyar"
   ],
   "review": {
-    "status": "sourced",
+    "status": "approved",
     "editorialFlags": [
       "sensitive"
     ],

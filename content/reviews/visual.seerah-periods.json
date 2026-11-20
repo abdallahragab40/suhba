@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "kind": "visual",
+  "id": "seerah-periods",
+  "reviewerId": "suhba-editorial",
+  "approvedAt": "2026-11-20",
+  "contentHash": "6ab8ff9c607b736ff09da6a9d48b7a3bbc19c82376edb848f66f71256e131426",
+  "checklist": {
+    "sourcesMatch": true,
+    "gradingsCorrect": true,
+    "noEmbellishment": true,
+    "reliabilityCorrect": true,
+    "honorificsCorrect": true,
+    "fitnaSignOff": true,
+    "sensitiveSignOff": true
+  },
+  "notes": "Editorial review on the owner's instruction (2026-11-20); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors. Checked: the full text read for accuracy, embellishment, honorifics and the stated reliability; every hadith citation compared with the cited text in content/hadith; Qur'an quotations checked by the validator against the Tanzil text. Not checked: book page locators against the printed editions, and chains of transmission. This is not the approval of a qualified scholar."
+}

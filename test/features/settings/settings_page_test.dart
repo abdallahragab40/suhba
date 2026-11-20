@@ -11,6 +11,7 @@ import 'package:suhba/features/sources/presentation/about_page.dart';
 import 'package:suhba/features/sources/presentation/sources_page.dart';
 
 import '../../helpers/app_harness.dart';
+import '../../helpers/content_bundle.dart';
 
 void main() {
   void tall(WidgetTester tester) {
@@ -23,7 +24,11 @@ void main() {
   testApp('choices persist across a restart', (tester) async {
     tall(tester);
     final store = MemorySettingsStore();
-    final first = AppUnderTest(location: '/settings', settings: store);
+    final first = AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      location: '/settings',
+      settings: store,
+    );
     await first.pump(tester);
 
     await tester.tap(find.text('داكن'));
@@ -35,7 +40,10 @@ void main() {
     expect(store.getString(SettingsKeys.digitStyle), 'western');
 
     // A second app on the same store starts with the saved choices.
-    final second = AppUnderTest(settings: store);
+    final second = AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      settings: store,
+    );
     await second.pump(tester);
     final background = Theme.of(
       tester.element(find.byType(HomePage)),
@@ -47,7 +55,7 @@ void main() {
     tester,
   ) async {
     tall(tester);
-    final app = AppUnderTest();
+    final app = AppUnderTest(bundle: MemoryAssetBundle.draftContent());
     await app.pump(tester);
     await tester.tap(find.byTooltip('الإعدادات'));
     await tester.pumpAndSettle();
@@ -104,6 +112,7 @@ void main() {
     );
     final opened = <Uri>[];
     await AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
       location: '/settings',
       overrides: [
         mailLauncherProvider.overrideWithValue((uri) async {
@@ -126,6 +135,7 @@ void main() {
   ) async {
     tall(tester);
     await AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
       location: '/settings',
       overrides: [mailLauncherProvider.overrideWithValue((uri) async => true)],
     ).pump(tester);
@@ -136,7 +146,10 @@ void main() {
 
   testApp('the content version and channel are shown', (tester) async {
     tall(tester);
-    await AppUnderTest(location: '/settings').pump(tester);
+    await AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      location: '/settings',
+    ).pump(tester);
     expect(find.text('إصدار المحتوى: 0.3.0'), findsOneWidget);
     expect(find.text('محتوى تجريبي (مسودة)'), findsOneWidget);
   });
@@ -145,7 +158,10 @@ void main() {
     tester,
   ) async {
     tall(tester);
-    await AppUnderTest(location: '/settings').pump(tester);
+    await AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      location: '/settings',
+    ).pump(tester);
     await tester.tap(find.text('عن التطبيق والمنهج'));
     await tester.pumpAndSettle();
     expect(find.byType(AboutPage), findsOneWidget);
@@ -169,7 +185,10 @@ void main() {
 
   testApp('the sources directory groups works by kind', (tester) async {
     tall(tester);
-    await AppUnderTest(location: '/settings/sources').pump(tester);
+    await AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      location: '/settings/sources',
+    ).pump(tester);
     expect(find.byType(SourcesPage), findsOneWidget);
     for (final group in [
       'القرآن الكريم',

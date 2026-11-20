@@ -187,7 +187,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "ويذكر الذهبي عن سعيد بن المسيّب أن ابن عمر كان يوم مات خير من بقي، وعن طاووس أنه ما رأى أورع منه، وأنه قال: ما غرست غرسًا منذ توفي رسول الله ﷺ."
+            "ar": "ويذكر الذهبي عن سعيد بن المسيّب أن ابن عمر كان يوم مات خير من بقي، وعن طاووس أنه ما رأى أورع منه، وأن ابن عمر قال: ما غرست غرسًا منذ توفي رسول الله ﷺ."
           },
           "reliability": "reported",
           "citations": [
@@ -332,7 +332,7 @@
     "siyar"
   ],
   "review": {
-    "status": "preliminaryReview",
+    "status": "approved",
     "editorialFlags": [],
     "coverage": "sample",
     "authoredBy": "short-profiles-1"

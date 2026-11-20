@@ -12,17 +12,18 @@
         "الصحابة"
       ],
       "definition": {
-        "ar": "من لقي النبي ﷺ مؤمنًا به ومات على الإسلام."
+        "ar": "من لقي النبي ﷺ مؤمنًا به ومات على الإسلام، على ما رجّحه ابن حجر في تعريفه."
       },
       "reliability": "established",
       "citations": [
         {
-          "sourceId": "isabah",
-          "locatorStatus": "pending"
+          "sourceId": "muslim",
+          "locatorStatus": "complete",
+          "hadithNumber": "2541"
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -53,7 +54,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [],
         "authoredBy": "draft-glossary-e3"
       }
@@ -81,7 +82,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [],
         "authoredBy": "draft-glossary-e3"
       }
@@ -101,12 +102,19 @@
       "reliability": "established",
       "citations": [
         {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3777"
+        },
+        {
           "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "428"
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -129,11 +137,13 @@
       "citations": [
         {
           "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "1"
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -156,12 +166,13 @@
       "reliability": "established",
       "citations": [
         {
-          "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "pending"
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4404"
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -184,12 +195,13 @@
       "reliability": "established",
       "citations": [
         {
-          "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "pending"
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4360"
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -211,12 +223,13 @@
       "reliability": "established",
       "citations": [
         {
-          "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "pending"
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3893"
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -247,7 +260,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [],
         "authoredBy": "draft-glossary-e3"
       }
@@ -266,12 +279,18 @@
       "reliability": "established",
       "citations": [
         {
-          "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "pending"
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3905"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3934"
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -293,11 +312,12 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "2"
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -319,11 +339,12 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3851"
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -344,12 +365,13 @@
       "reliability": "established",
       "citations": [
         {
-          "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "pending"
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "30"
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -370,12 +392,19 @@
       "reliability": "established",
       "citations": [
         {
+          "sourceId": "muslim",
+          "locatorStatus": "complete",
+          "hadithNumber": "2276"
+        },
+        {
           "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "111"
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -406,7 +435,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [],
         "authoredBy": "draft-glossary-e3"
       }
@@ -435,7 +464,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [],
         "authoredBy": "draft-glossary-e3"
       }
@@ -463,7 +492,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [],
         "authoredBy": "draft-glossary-e3"
       }
@@ -484,12 +513,19 @@
       "reliability": "established",
       "citations": [
         {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3668"
+        },
+        {
           "sourceId": "tarikh-al-tabari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "201"
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -519,7 +555,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [],
         "authoredBy": "draft-glossary-e3"
       }
@@ -540,11 +576,12 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3780"
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -567,11 +604,12 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "442"
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -592,12 +630,19 @@
       "reliability": "established",
       "citations": [
         {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4337"
+        },
+        {
           "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "412"
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -620,11 +665,17 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "2846"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "2997"
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -648,11 +699,12 @@
       "citations": [
         {
           "sourceId": "tirmidhi",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "3747"
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -683,7 +735,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [],
         "authoredBy": "draft-glossary-e3"
       }
@@ -704,12 +756,13 @@
       "reliability": "established",
       "citations": [
         {
-          "sourceId": "istiab",
-          "locatorStatus": "pending"
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "441"
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -731,11 +784,13 @@
       "citations": [
         {
           "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "416"
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -765,7 +820,7 @@
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [],
         "authoredBy": "draft-glossary-e3"
       }
@@ -785,11 +840,12 @@
       "citations": [
         {
           "sourceId": "bukhari",
-          "locatorStatus": "pending"
+          "locatorStatus": "complete",
+          "hadithNumber": "99"
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [
           "needsLocators"
         ],
@@ -810,12 +866,13 @@
       "reliability": "established",
       "citations": [
         {
-          "sourceId": "sirat-ibn-hisham",
-          "locatorStatus": "pending"
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4276"
         }
       ],
       "review": {
-        "status": "draft",
+        "status": "approved",
         "editorialFlags": [
           "needsLocators"
         ],

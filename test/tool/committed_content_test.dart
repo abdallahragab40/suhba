@@ -27,24 +27,29 @@ void main() {
     );
   });
 
-  test('nothing can be published until a registered reviewer approves it', () {
+  test('everything is approved by the one registered (editorial) reviewer', () {
     final report = validateContent(
       files,
       schemas,
       channel: ContentChannel.published,
     );
-    expect(report.tree.reviewers, isEmpty);
-    expect(report.approvedCount, 0);
+    // The owner's decision (2026-11-20): an editorial review, recorded as
+    // such, stands in for the scholarly one there will not be.
+    expect(report.tree.reviewers.map((r) => r.id), ['suhba-editorial']);
+    expect(report.approvedCount, report.tree.allItems.length);
     expect(
-      report.issues
-          .where((i) => i.severity == Severity.error)
-          .map((i) => i.rule),
-      ['V11'],
+      report.issues.where((i) => i.severity == Severity.error),
+      isEmpty,
+      reason: report.issues.join('\n'),
     );
   });
 
-  test('assets/content/ is up to date with content/ (draft build)', () {
-    final result = buildContent(files, schemas, channel: ContentChannel.draft);
+  test('assets/content/ is up to date with content/ (published build)', () {
+    final result = buildContent(
+      files,
+      schemas,
+      channel: ContentChannel.published,
+    );
     final built = result.outputs;
     final onDisk = <String, String>{
       for (final f

@@ -16,7 +16,7 @@
   ],
   "readingMinutes": 3,
   "review": {
-    "status": "preliminaryReview",
+    "status": "approved",
     "editorialFlags": [
       "needsLocators"
     ],

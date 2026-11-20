@@ -540,7 +540,7 @@
     }
   ],
   "review": {
-    "status": "preliminaryReview",
+    "status": "approved",
     "editorialFlags": [
       "needsLocators",
       "sensitive"

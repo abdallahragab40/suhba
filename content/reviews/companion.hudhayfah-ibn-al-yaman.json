@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "kind": "companion",
+  "id": "hudhayfah-ibn-al-yaman",
+  "reviewerId": "suhba-editorial",
+  "approvedAt": "2026-11-20",
+  "contentHash": "ed097179eea7dc14a618a919df3643d741f61ed487a293a761b3e3bd7440079d",
+  "checklist": {
+    "sourcesMatch": true,
+    "gradingsCorrect": true,
+    "noEmbellishment": true,
+    "reliabilityCorrect": true,
+    "honorificsCorrect": true,
+    "fitnaSignOff": true,
+    "sensitiveSignOff": true
+  },
+  "notes": "Editorial review on the owner's instruction (2026-11-20); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors. Checked: the full text read for accuracy, embellishment, honorifics and the stated reliability; every hadith citation compared with the cited text in content/hadith; Qur'an quotations checked by the validator against the Tanzil text. Not checked: book page locators against the printed editions, and chains of transmission. This is not the approval of a qualified scholar."
+}

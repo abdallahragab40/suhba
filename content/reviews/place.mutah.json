@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "kind": "place",
+  "id": "mutah",
+  "reviewerId": "suhba-editorial",
+  "approvedAt": "2026-11-20",
+  "contentHash": "8980af2bb64e31e10d788a12a9a4259978cc4825bd12539bb59ff685aa4566a8",
+  "checklist": {
+    "sourcesMatch": true,
+    "gradingsCorrect": true,
+    "noEmbellishment": true,
+    "reliabilityCorrect": true,
+    "honorificsCorrect": true,
+    "fitnaSignOff": true,
+    "sensitiveSignOff": true
+  },
+  "notes": "Editorial review on the owner's instruction (2026-11-20); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors. Checked: the full text read for accuracy, embellishment, honorifics and the stated reliability; every hadith citation compared with the cited text in content/hadith; Qur'an quotations checked by the validator against the Tanzil text. Not checked: book page locators against the printed editions, and chains of transmission. This is not the approval of a qualified scholar."
+}
