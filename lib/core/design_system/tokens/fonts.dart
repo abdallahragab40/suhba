@@ -1,9 +1,9 @@
 /// Bundled font families (see assets/fonts/LICENSES.md). Never fetched at
 /// runtime.
 abstract final class AppFonts {
-  /// UI: headlines, titles, body, labels. Draws Arabic-Indic digits with
-  /// Western shapes and has no ﷺ; its styles fall back to Amiri.
-  static const zain = 'Zain';
+  /// UI: headlines, titles, body, labels. IBM Plex Sans Arabic, the
+  /// interface face of Nusuk; it has true Arabic-Indic digits and ﷺ.
+  static const plexArabic = 'IBMPlexSansArabic';
 
   /// Biographies and stories, and calligraphic display names.
   static const amiri = 'Amiri';

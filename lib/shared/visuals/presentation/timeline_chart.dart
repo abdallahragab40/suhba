@@ -295,7 +295,7 @@ class _AxisPainter extends CustomPainter {
           style: textStyle.copyWith(
             fontSize: 10,
             color: strong ? markColor : textStyle.color,
-            fontWeight: strong ? FontWeight.w800 : null,
+            fontWeight: strong ? FontWeight.w700 : null,
           ),
         ),
         textDirection: rtl ? TextDirection.rtl : TextDirection.ltr,

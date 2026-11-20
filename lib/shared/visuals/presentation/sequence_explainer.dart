@@ -118,7 +118,7 @@ class _Step extends StatelessWidget {
                           color: step.orderUncertain
                               ? colors.accentText
                               : Theme.of(context).colorScheme.surface,
-                          fontWeight: FontWeight.w800,
+                          fontWeight: FontWeight.w700,
                         ),
                       ),
                     ),

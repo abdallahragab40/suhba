@@ -150,7 +150,7 @@ abstract final class AppTheme {
     return ThemeData(
       useMaterial3: true,
       colorScheme: scheme,
-      fontFamily: AppFonts.zain,
+      fontFamily: AppFonts.plexArabic,
       fontFamilyFallback: const [AppFonts.amiri],
       textTheme: textTheme,
       scaffoldBackgroundColor: scheme.surface,

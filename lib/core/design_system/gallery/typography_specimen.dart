@@ -29,19 +29,19 @@ class TypographySpecimen extends StatelessWidget {
 
     final rows = <(String, TextStyle?, String)>[
       ('displaySmall · Amiri 700', text.displaySmall, 'سِيَر الصحابة'),
-      ('headlineLarge · Zain 800', text.headlineLarge, 'عشرة فصول'),
-      ('headlineSmall · Zain 700', text.headlineSmall, 'النشأة والإسلام'),
-      ('titleLarge · Zain 700', text.titleLarge, 'الهجرة إلى المدينة ﷺ'),
-      ('titleSmall · Zain 700', text.titleSmall, 'الخط الزمني'),
-      ('bodyLarge · Zain 400', text.bodyLarge, _uiSample),
-      ('bodySmall · Zain 400', text.bodySmall, _uiSample),
-      ('labelLarge · Zain 700', text.labelLarge, 'مكتبتي، الإعدادات'),
-      ('labelSmall · Zain 700', text.labelSmall, 'أنجزت ٣ من ١٤، ٩ مساءً'),
+      ('headlineLarge · Plex 700', text.headlineLarge, 'عشرة فصول'),
+      ('headlineSmall · Plex 600', text.headlineSmall, 'النشأة والإسلام'),
+      ('titleLarge · Plex 600', text.titleLarge, 'الهجرة إلى المدينة ﷺ'),
+      ('titleSmall · Plex 600', text.titleSmall, 'الخط الزمني'),
+      ('bodyLarge · Plex 400', text.bodyLarge, _uiSample),
+      ('bodySmall · Plex 400', text.bodySmall, _uiSample),
+      ('labelLarge · Plex 600', text.labelLarge, 'مكتبتي، الإعدادات'),
+      ('labelSmall · Plex 500', text.labelSmall, 'أنجزت ٣ من ١٤، ٩ مساءً'),
       ('reading · Amiri 400', styles.reading, _readingSample),
       ('readingStrong · Amiri 400, larger', styles.readingStrong, 'مُسَوَّدة'),
       ('readingHeading · Amiri 700', styles.readingHeading, 'النسب والمولد'),
       ('quran · Amiri Quran', styles.quran, _verseSample),
-      ('numeral · Zain 800', styles.numeral, '١٣'),
+      ('numeral · Plex 700', styles.numeral, '١٣'),
     ];
 
     return Column(

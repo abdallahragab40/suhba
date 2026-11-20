@@ -4,12 +4,14 @@ import 'package:suhba/core/design_system/tokens/fonts.dart';
 // Every style sets letterSpacing to 0: Material's defaults add tracking,
 // which pulls connected Arabic letters apart. Even leading keeps Arabic
 // glyphs, with their tall marks, vertically centred in the line box.
-// Zain lacks some Arabic ligatures (notably ﷺ, U+FDFA), so Zain styles
-// fall back to Amiri for any glyph Zain does not have.
+// IBM Plex Sans Arabic covers Arabic, Arabic-Indic digits and ﷺ; its
+// styles still fall back to Amiri for any rarer glyph it lacks.
 TextStyle _style(String family, double size, double height, FontWeight weight) {
   return TextStyle(
     fontFamily: family,
-    fontFamilyFallback: family == AppFonts.zain ? const [AppFonts.amiri] : null,
+    fontFamilyFallback: family == AppFonts.plexArabic
+        ? const [AppFonts.amiri]
+        : null,
     fontSize: size,
     height: height,
     fontWeight: weight,
@@ -19,8 +21,11 @@ TextStyle _style(String family, double size, double height, FontWeight weight) {
 }
 
 /// The Material type scale (review §2.7, decision 8). Display roles use
-/// Amiri (calligraphic names); everything else uses Zain, in its three
-/// bundled weights: 400, 700 and 800. Nothing is set below 13.
+/// Amiri (calligraphic names); everything else uses IBM Plex Sans Arabic
+/// (2026-11-20, after Nusuk), in its four bundled weights: 400 for text,
+/// 500 for small labels, 600 for titles and buttons, 700 for headlines.
+/// Plex sets larger than Zain did at the same size, so the labels are
+/// back to 14 / 13 / 13. Nothing is set below 13.
 abstract final class AppTypography {
   static TextTheme textTheme(Color color) {
     return TextTheme(
@@ -28,21 +33,19 @@ abstract final class AppTypography {
       displayMedium: _style(AppFonts.amiri, 48, 1.35, FontWeight.w700),
       // Tall marks and descenders need the 1.5 line (review F08).
       displaySmall: _style(AppFonts.amiri, 40, 1.5, FontWeight.w700),
-      headlineLarge: _style(AppFonts.zain, 30, 1.3, FontWeight.w800),
-      headlineMedium: _style(AppFonts.zain, 26, 1.3, FontWeight.w700),
+      headlineLarge: _style(AppFonts.plexArabic, 28, 1.35, FontWeight.w700),
+      headlineMedium: _style(AppFonts.plexArabic, 24, 1.4, FontWeight.w700),
       // Page section titles: lighter and smaller than before (F13).
-      headlineSmall: _style(AppFonts.zain, 24, 1.35, FontWeight.w700),
-      titleLarge: _style(AppFonts.zain, 20, 1.4, FontWeight.w700),
-      titleMedium: _style(AppFonts.zain, 17, 1.45, FontWeight.w700),
-      titleSmall: _style(AppFonts.zain, 15, 1.45, FontWeight.w700),
-      bodyLarge: _style(AppFonts.zain, 16, 1.6, FontWeight.w400),
-      bodyMedium: _style(AppFonts.zain, 15, 1.6, FontWeight.w400),
-      bodySmall: _style(AppFonts.zain, 13, 1.55, FontWeight.w400),
-      // Zain sets smaller than Cairo did at the same size, so labels and
-      // badges are a step up (review §2.7): 15 / 14 / 14.
-      labelLarge: _style(AppFonts.zain, 15, 1.4, FontWeight.w700),
-      labelMedium: _style(AppFonts.zain, 14, 1.4, FontWeight.w700),
-      labelSmall: _style(AppFonts.zain, 14, 1.4, FontWeight.w700),
+      headlineSmall: _style(AppFonts.plexArabic, 22, 1.4, FontWeight.w600),
+      titleLarge: _style(AppFonts.plexArabic, 19, 1.45, FontWeight.w600),
+      titleMedium: _style(AppFonts.plexArabic, 16, 1.5, FontWeight.w600),
+      titleSmall: _style(AppFonts.plexArabic, 14, 1.5, FontWeight.w600),
+      bodyLarge: _style(AppFonts.plexArabic, 16, 1.65, FontWeight.w400),
+      bodyMedium: _style(AppFonts.plexArabic, 14, 1.65, FontWeight.w400),
+      bodySmall: _style(AppFonts.plexArabic, 13, 1.6, FontWeight.w400),
+      labelLarge: _style(AppFonts.plexArabic, 14, 1.45, FontWeight.w600),
+      labelMedium: _style(AppFonts.plexArabic, 13, 1.45, FontWeight.w500),
+      labelSmall: _style(AppFonts.plexArabic, 13, 1.45, FontWeight.w500),
     ).apply(bodyColor: color, displayColor: color);
   }
 }
@@ -94,15 +97,17 @@ class SuhbaTextStyles extends ThemeExtension<SuhbaTextStyles> {
         FontWeight.w400,
       ).copyWith(color: text),
       kicker: _style(
-        AppFonts.zain,
-        14,
-        1.4,
-        FontWeight.w700,
+        AppFonts.plexArabic,
+        13,
+        1.45,
+        FontWeight.w500,
       ).copyWith(color: dimText),
-      numeral: _style(AppFonts.zain, 72, 1, FontWeight.w800).copyWith(
-        color: text,
-        fontFeatures: const [FontFeature.tabularFigures()],
-      ),
+      numeral: _style(
+        AppFonts.plexArabic,
+        64,
+        1.1,
+        FontWeight.w700,
+      ).copyWith(color: text),
     );
   }
 

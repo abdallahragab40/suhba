@@ -121,7 +121,7 @@ class PlacePanel extends StatelessWidget {
                       format.integer(i + 1),
                       style: kicker.copyWith(
                         color: colors.accentText,
-                        fontWeight: FontWeight.w800,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                   ),

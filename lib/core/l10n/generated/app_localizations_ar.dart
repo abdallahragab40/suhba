@@ -703,7 +703,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get aboutReviewPublished =>
-      'راجع المحتوى المنشور مختصون مؤهلون قبل نشره.';
+      'راجع فريق التحرير المحتوى المنشور قبل نشره: طابق كل خبر بمصدره، وبيّن درجة ثبوته، وتحقّق من نصوص الآيات والأحاديث المنقولة. وهي مراجعة تحريرية، لا اعتماد من عالم مختص، ولا حكم على أسانيد جميع الروايات؛ فإن وجدت خطأ فأخبرنا من «أرسل ملاحظاتك» في الإعدادات.';
 
   @override
   String get aboutImagesTitle => 'الصور';
@@ -1672,7 +1672,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get welcome4BodyPublished =>
-      'تُعزى الأخبار إلى كتب الحديث والسيرة، وتُبيَّن درجتها: ثابت، أو رواية تاريخية، أو مختلف فيه. وقد راجع المحتوى مختصون مؤهلون قبل نشره. ويعمل التطبيق كلّه دون اتصال.';
+      'تُعزى الأخبار إلى كتب الحديث والسيرة، وتُبيَّن درجتها: ثابت، أو رواية تاريخية، أو مختلف فيه. وقد روجع المحتوى تحريريًا بمطابقة كل خبر بمصدره قبل نشره. ويعمل التطبيق كلّه دون اتصال.';
 
   @override
   String get quizTitle => 'اختبر معلوماتك';
@@ -2431,8 +2431,8 @@ class AppLocalizationsAr extends AppLocalizations {
       'خط الأميري (Amiri) وخط الأميري قرآن (Amiri Quran)، من تصميم خالد حسني، لنصوص القراءة والأسماء والآيات. برخصة الخطوط المفتوحة SIL OFL 1.1.';
 
   @override
-  String get aboutCreditZain =>
-      'خط زين (Zain)، من تصميم Boutros Fonts، لعناوين الواجهة ونصوصها. برخصة الخطوط المفتوحة SIL OFL 1.1.';
+  String get aboutCreditPlex =>
+      'خط بلكس العربي (IBM Plex Sans Arabic)، من تصميم مايك أبينك وخاجاك أبيليان ووائل مرقص مع استوديو بولد مندي، لعناوين الواجهة ونصوصها. برخصة الخطوط المفتوحة SIL OFL 1.1.';
 
   @override
   String get aboutCreditSources => 'المصادر';

@@ -67,7 +67,7 @@ void main() {
       await tester.pumpAndSettle();
     }
     expect(find.textContaining('في مراجعة أولية'), findsOneWidget);
-    expect(find.textContaining('مختصون مؤهلون'), findsNothing);
+    expect(find.textContaining('روجع المحتوى تحريريًا'), findsNothing);
   });
 
   testApp('a published build says the content was reviewed', (tester) async {
@@ -87,7 +87,7 @@ void main() {
       await tester.tap(find.text('التالي'));
       await tester.pumpAndSettle();
     }
-    expect(find.textContaining('مختصون مؤهلون'), findsOneWidget);
+    expect(find.textContaining('روجع المحتوى تحريريًا'), findsOneWidget);
     expect(find.textContaining('في مراجعة أولية'), findsNothing);
   });
 

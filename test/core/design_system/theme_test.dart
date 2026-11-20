@@ -44,23 +44,23 @@ void main() {
         expect(theme.extension<SuhbaTextStyles>(), isNotNull);
       });
 
-      test('display roles use Amiri; all other roles use Zain', () {
+      test('display roles use Amiri; all other roles use Plex Arabic', () {
         for (final (role, style) in _roles(theme.textTheme)) {
           final expected = role.startsWith('display')
               ? AppFonts.amiri
-              : AppFonts.zain;
+              : AppFonts.plexArabic;
           expect(style!.fontFamily, expected, reason: role);
         }
       });
 
-      test('Zain falls back to Amiri for glyphs it lacks (e.g. ﷺ)', () {
+      test('Plex Arabic falls back to Amiri for glyphs it lacks', () {
         for (final (role, style) in _roles(theme.textTheme)) {
-          if (style!.fontFamily != AppFonts.zain) continue;
+          if (style!.fontFamily != AppFonts.plexArabic) continue;
           expect(style.fontFamilyFallback, [AppFonts.amiri], reason: role);
         }
       });
 
-      test('Zain only in its bundled weights, nothing below 13', () {
+      test('Plex Arabic only in its bundled weights, nothing below 13', () {
         final styles = theme.extension<SuhbaTextStyles>()!;
         for (final (role, style) in [
           ..._roles(theme.textTheme),
@@ -68,11 +68,16 @@ void main() {
           ('numeral', styles.numeral),
         ]) {
           expect(style!.fontSize, greaterThanOrEqualTo(13), reason: role);
-          if (style.fontFamily != AppFonts.zain) continue;
+          if (style.fontFamily != AppFonts.plexArabic) continue;
           expect(
-            [FontWeight.w400, FontWeight.w700, FontWeight.w800],
+            [
+              FontWeight.w400,
+              FontWeight.w500,
+              FontWeight.w600,
+              FontWeight.w700,
+            ],
             contains(style.fontWeight),
-            reason: '$role: Zain ships 400, 700 and 800 only',
+            reason: '$role: Plex Arabic ships 400, 500, 600 and 700 only',
           );
         }
       });

@@ -3023,9 +3023,9 @@
   "@aboutCreditAmiri": {
     "description": "About credits: Amiri and Amiri Quran (OFL 1.1)."
   },
-  "aboutCreditZain": "خط زين (Zain)، من تصميم Boutros Fonts، لعناوين الواجهة ونصوصها. برخصة الخطوط المفتوحة SIL OFL 1.1.",
-  "@aboutCreditZain": {
-    "description": "About credits: Zain (OFL 1.1)."
+  "aboutCreditPlex": "خط بلكس العربي (IBM Plex Sans Arabic)، من تصميم مايك أبينك وخاجاك أبيليان ووائل مرقص مع استوديو بولد مندي، لعناوين الواجهة ونصوصها. برخصة الخطوط المفتوحة SIL OFL 1.1.",
+  "@aboutCreditPlex": {
+    "description": "About credits: IBM Plex Sans Arabic (OFL 1.1)."
   },
   "aboutCreditSources": "المصادر",
   "@aboutCreditSources": {

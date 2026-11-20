@@ -122,7 +122,7 @@ class AboutPage extends ConsumerWidget {
                 Text(l10n.aboutCreditFontsTitle, style: textTheme.titleSmall),
                 Text(l10n.aboutCreditAmiri, style: textTheme.bodyMedium),
                 const SizedBox(height: AppSpacing.xxs),
-                Text(l10n.aboutCreditZain, style: textTheme.bodyMedium),
+                Text(l10n.aboutCreditPlex, style: textTheme.bodyMedium),
               ],
             ),
           ),

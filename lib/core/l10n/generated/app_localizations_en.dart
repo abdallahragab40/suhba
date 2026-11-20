@@ -685,7 +685,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutReviewPublished =>
-      'The published content was checked by qualified reviewers before publication.';
+      'Before publication the editors checked the published content: each report against its source, its stated standing, and the quoted text of every verse and hadith. This is an editorial review, not approval by a qualified scholar, and it does not judge every chain of transmission; if you find an error, tell us through “Send feedback” in Settings.';
 
   @override
   String get aboutImagesTitle => 'Images';
@@ -1640,7 +1640,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get welcome4BodyPublished =>
-      'Reports are attributed to the books of hadith and Seerah, and their standing is shown: established, historical report or disputed. Qualified specialists reviewed the content before it was published. The whole app works offline.';
+      'Reports are attributed to the books of hadith and Seerah, and their standing is shown: established, historical report or disputed. The content was reviewed editorially against its sources before it was published. The whole app works offline.';
 
   @override
   String get quizTitle => 'Test your knowledge';
@@ -2392,8 +2392,8 @@ class AppLocalizationsEn extends AppLocalizations {
       'Amiri and Amiri Quran, by Khaled Hosny, for reading text, names and verses. SIL Open Font License 1.1.';
 
   @override
-  String get aboutCreditZain =>
-      'Zain, by Boutros Fonts, for interface titles and text. SIL Open Font License 1.1.';
+  String get aboutCreditPlex =>
+      'IBM Plex Sans Arabic, by IBM, designed by Mike Abbink and Bold Monday with Khajag Apelian and Wael Morcos, for interface titles and text. SIL Open Font License 1.1.';
 
   @override
   String get aboutCreditSources => 'Sources';

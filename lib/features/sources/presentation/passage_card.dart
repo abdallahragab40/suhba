@@ -70,7 +70,7 @@ class PassageCard extends StatelessWidget {
     Text text(
       String value,
       double font, {
-      String family = AppFonts.zain,
+      String family = AppFonts.plexArabic,
       Color? color,
     }) => Text(
       value,
@@ -171,16 +171,16 @@ bool passageCardFits({
   return 48 +
           39 +
           4 +
-          height(origin, 11, AppFonts.zain) +
+          height(origin, 11, AppFonts.plexArabic) +
           12 +
           1 +
           14 +
           height(excerpt, 16, AppFonts.amiri) +
           14 +
-          height(sources, 9, AppFonts.zain) +
-          (notice == null ? 0 : height(notice, 10, AppFonts.zain)) +
+          height(sources, 9, AppFonts.plexArabic) +
+          (notice == null ? 0 : height(notice, 10, AppFonts.plexArabic)) +
           8 +
-          height(footer, 10, AppFonts.zain) <=
+          height(footer, 10, AppFonts.plexArabic) <=
       360;
 }
 

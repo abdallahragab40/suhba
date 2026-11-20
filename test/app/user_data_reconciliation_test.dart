@@ -242,7 +242,10 @@ void main() {
         settings,
       ).read(userDataReconciliationProvider.future);
       expect(report, isNotNull);
-      expect(settings.getString(SettingsKeys.reconciledContent), '0.3.0+published');
+      expect(
+        settings.getString(SettingsKeys.reconciledContent),
+        '0.3.0+published',
+      );
       expect(
         await containerWith(
           settings,

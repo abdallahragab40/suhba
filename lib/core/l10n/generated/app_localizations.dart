@@ -1217,7 +1217,7 @@ abstract class AppLocalizations {
   /// About: published status.
   ///
   /// In ar, this message translates to:
-  /// **'راجع المحتوى المنشور مختصون مؤهلون قبل نشره.'**
+  /// **'راجع فريق التحرير المحتوى المنشور قبل نشره: طابق كل خبر بمصدره، وبيّن درجة ثبوته، وتحقّق من نصوص الآيات والأحاديث المنقولة. وهي مراجعة تحريرية، لا اعتماد من عالم مختص، ولا حكم على أسانيد جميع الروايات؛ فإن وجدت خطأ فأخبرنا من «أرسل ملاحظاتك» في الإعدادات.'**
   String get aboutReviewPublished;
 
   /// About section.
@@ -2855,7 +2855,7 @@ abstract class AppLocalizations {
   /// No description provided for @welcome4BodyPublished.
   ///
   /// In ar, this message translates to:
-  /// **'تُعزى الأخبار إلى كتب الحديث والسيرة، وتُبيَّن درجتها: ثابت، أو رواية تاريخية، أو مختلف فيه. وقد راجع المحتوى مختصون مؤهلون قبل نشره. ويعمل التطبيق كلّه دون اتصال.'**
+  /// **'تُعزى الأخبار إلى كتب الحديث والسيرة، وتُبيَّن درجتها: ثابت، أو رواية تاريخية، أو مختلف فيه. وقد روجع المحتوى تحريريًا بمطابقة كل خبر بمصدره قبل نشره. ويعمل التطبيق كلّه دون اتصال.'**
   String get welcome4BodyPublished;
 
   /// No description provided for @quizTitle.
@@ -3979,11 +3979,11 @@ abstract class AppLocalizations {
   /// **'خط الأميري (Amiri) وخط الأميري قرآن (Amiri Quran)، من تصميم خالد حسني، لنصوص القراءة والأسماء والآيات. برخصة الخطوط المفتوحة SIL OFL 1.1.'**
   String get aboutCreditAmiri;
 
-  /// About credits: Zain (OFL 1.1).
+  /// About credits: IBM Plex Sans Arabic (OFL 1.1).
   ///
   /// In ar, this message translates to:
-  /// **'خط زين (Zain)، من تصميم Boutros Fonts، لعناوين الواجهة ونصوصها. برخصة الخطوط المفتوحة SIL OFL 1.1.'**
-  String get aboutCreditZain;
+  /// **'خط بلكس العربي (IBM Plex Sans Arabic)، من تصميم مايك أبينك وخاجاك أبيليان ووائل مرقص مع استوديو بولد مندي، لعناوين الواجهة ونصوصها. برخصة الخطوط المفتوحة SIL OFL 1.1.'**
+  String get aboutCreditPlex;
 
   /// About credits: button opening the sources page, where the full Tanzil notice is.
   ///

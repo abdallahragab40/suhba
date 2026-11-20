@@ -72,7 +72,7 @@ class PeriodBands extends StatelessWidget {
                               format.integer(i + 1),
                               style: kicker.copyWith(
                                 color: dark ? Palette.paper : Palette.ink,
-                                fontWeight: FontWeight.w800,
+                                fontWeight: FontWeight.w700,
                               ),
                             ),
                           ),

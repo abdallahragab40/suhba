@@ -199,4 +199,3 @@ class ReadingSettingsSheet extends ConsumerWidget {
     );
   }
 }
-

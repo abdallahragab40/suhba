@@ -12,7 +12,7 @@ import '../../helpers/app_harness.dart';
 void main() {
   /// How About writes a pubspec font family.
   const displayNames = {
-    'Zain': 'Zain',
+    'IBMPlexSansArabic': 'IBM Plex Sans Arabic',
     'Amiri': 'Amiri',
     'AmiriQuran': 'Amiri Quran',
   };

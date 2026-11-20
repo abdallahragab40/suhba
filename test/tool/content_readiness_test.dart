@@ -258,26 +258,29 @@ void main() {
     expect(report().toJsonString(), report().toJsonString());
   });
 
-  test('the committed content: every companion is listed, the edition ready', () {
-    final r = contentReadiness(
-      ContentFiles.fromDirectory(Directory('content')),
-      schemas,
-    );
-    final companions = r.items.where((i) => i.key.startsWith('companion.'));
-    expect(companions, hasLength(47));
-    expect(r.editionId, 'expanded-edition-1');
-    expect(r.editionReady, isTrue, reason: r.editionProblems.join('\n'));
-    expect(
-      r.items.where((i) => i.approval == ApprovalState.notApproved),
-      isEmpty,
-    );
-    // The first wave meets the checklist's coverage.
-    for (final key in [
-      'companion.abu-bakr',
-      'seerahChapter.hijrah-to-madinah',
-    ]) {
-      expect(item(r, key).coverage, Coverage.complete, reason: key);
-      expect(item(r, key).gaps, isEmpty, reason: key);
-    }
-  });
+  test(
+    'the committed content: every companion is listed, the edition ready',
+    () {
+      final r = contentReadiness(
+        ContentFiles.fromDirectory(Directory('content')),
+        schemas,
+      );
+      final companions = r.items.where((i) => i.key.startsWith('companion.'));
+      expect(companions, hasLength(47));
+      expect(r.editionId, 'expanded-edition-1');
+      expect(r.editionReady, isTrue, reason: r.editionProblems.join('\n'));
+      expect(
+        r.items.where((i) => i.approval == ApprovalState.notApproved),
+        isEmpty,
+      );
+      // The first wave meets the checklist's coverage.
+      for (final key in [
+        'companion.abu-bakr',
+        'seerahChapter.hijrah-to-madinah',
+      ]) {
+        expect(item(r, key).coverage, Coverage.complete, reason: key);
+        expect(item(r, key).gaps, isEmpty, reason: key);
+      }
+    },
+  );
 }
