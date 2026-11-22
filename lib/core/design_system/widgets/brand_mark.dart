@@ -24,7 +24,10 @@ enum BrandMarkLayout {
   /// White mark on transparent, inside the safe zone: Android 13 themed icons.
   monochrome,
 
-  /// Ink disc with the mark, on transparent: launch screens.
+  /// Green disc with the mark, on transparent: launch screens and the
+  /// opening screen. Drawn as Android 12+ draws its splash icon (the adaptive
+  /// foreground at 240 dp on a 160 dp disc of flat green), so every launch
+  /// screen and the opening screen after it show the same mark.
   disc,
 }
 
@@ -88,8 +91,7 @@ void paintBrandMark(
         ground(r),
       );
     case BrandMarkLayout.disc:
-      final r = Rect.fromCircle(center: centre, radius: s / 2);
-      canvas.drawCircle(centre, s / 2, ground(r));
+      canvas.drawCircle(centre, s / 2, Paint()..color = groundColor);
     case BrandMarkLayout.squareDark ||
         BrandMarkLayout.adaptiveForeground ||
         BrandMarkLayout.monochrome:
@@ -105,7 +107,8 @@ void paintBrandMark(
         BrandMarkLayout.squareDark ||
         BrandMarkLayout.squareTinted => 0.72,
         BrandMarkLayout.roundedSquare => 0.66,
-        BrandMarkLayout.disc => 0.6,
+        // The adaptive foreground's 0.53 of 240 dp, on a 160 dp disc.
+        BrandMarkLayout.disc => 0.53 * 240 / 160,
         // The feet's outer corners are 57 units from the centre: at 0.53
         // they stay inside the safe circle's 30.5% radius.
         BrandMarkLayout.adaptiveForeground ||

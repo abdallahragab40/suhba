@@ -948,6 +948,18 @@
   "@feedbackHint": {
     "description": "Subtitle of the feedback tile."
   },
+  "rateAppTitle": "قيّم التطبيق",
+  "@rateAppTitle": {
+    "description": "Settings tile that opens the app's page in Google Play to rate it."
+  },
+  "rateAppHint": "في Google Play؛ تقييمك يعين غيرك على الوصول إليه",
+  "@rateAppHint": {
+    "description": "Subtitle of the rate-the-app tile."
+  },
+  "loadingApp": "جارٍ تجهيز صُحبة",
+  "@loadingApp": {
+    "description": "Accessibility label of the opening screen while the app loads."
+  },
   "feedbackSubject": "ملاحظات على تطبيق صُحبة",
   "@feedbackSubject": {
     "description": "Subject line of the feedback email."

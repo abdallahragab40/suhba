@@ -52,10 +52,11 @@ void main() {
           (108 * scale).round(),
           BrandMarkLayout.monochrome,
         );
-        // Launch screen before Android 12: drawn at 120 dp.
+        // Launch screen before Android 12: the disc at 160 dp, as Android
+        // 12+ and the opening screen draw it.
         await _write(
           '$_androidRes/drawable-$bucket/splash_mark.png',
-          (120 * scale).round(),
+          (160 * scale).round(),
           BrandMarkLayout.disc,
         );
       }
@@ -93,11 +94,11 @@ void main() {
         );
       }
 
-      // iOS launch screen: drawn at 120 pt.
+      // iOS launch screen: the disc at 160 pt.
       for (final (suffix, scale) in [('', 1), ('@2x', 2), ('@3x', 3)]) {
         await _write(
           '$_iosAssets/LaunchImage.imageset/LaunchImage$suffix.png',
-          120 * scale,
+          160 * scale,
           BrandMarkLayout.disc,
         );
       }

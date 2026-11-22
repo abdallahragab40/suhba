@@ -42,7 +42,16 @@ abstract final class SettingsKeys {
   /// The best quiz score in a mode ('mixed', 'companions', 'seerah').
   static String quizBest(String mode) => 'quizBest.$mode';
 
+  /// The rating prompt (see `decideRatingPrompt`): achievements already
+  /// seen, kinds already asked about (JSON lists), and when it last asked.
+  static const ratingKnown = 'ratingKnown';
+  static const ratingAsked = 'ratingAsked';
+  static const ratingLastAsked = 'ratingLastAsked';
+
   static const all = {
+    ratingKnown,
+    ratingAsked,
+    ratingLastAsked,
     readingReminder,
     themeMode,
     digitStyle,

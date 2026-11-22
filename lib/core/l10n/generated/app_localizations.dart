@@ -1160,6 +1160,24 @@ abstract class AppLocalizations {
   /// **'خطأ، أو اقتراح، أو تصحيح في المحتوى'**
   String get feedbackHint;
 
+  /// Settings tile that opens the app's page in Google Play to rate it.
+  ///
+  /// In ar, this message translates to:
+  /// **'قيّم التطبيق'**
+  String get rateAppTitle;
+
+  /// Subtitle of the rate-the-app tile.
+  ///
+  /// In ar, this message translates to:
+  /// **'في Google Play؛ تقييمك يعين غيرك على الوصول إليه'**
+  String get rateAppHint;
+
+  /// Accessibility label of the opening screen while the app loads.
+  ///
+  /// In ar, this message translates to:
+  /// **'جارٍ تجهيز صُحبة'**
+  String get loadingApp;
+
   /// Subject line of the feedback email.
   ///
   /// In ar, this message translates to:

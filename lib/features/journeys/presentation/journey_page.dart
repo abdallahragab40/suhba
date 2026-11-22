@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/routes.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
+import 'package:suhba/core/design_system/widgets/brand_loader.dart';
 import 'package:suhba/core/design_system/widgets/draft_badge.dart';
 import 'package:suhba/core/design_system/widgets/empty_state.dart';
 import 'package:suhba/core/design_system/widgets/error_view.dart';
@@ -105,7 +106,7 @@ class _JourneyPageState extends ConsumerState<JourneyPage> {
           ? _overview(runtime.value!, enrollment, progress)
           : _step(runtime.value!, enrollment, progress);
     } else {
-      body = const Center(child: CircularProgressIndicator());
+      body = const PageLoader();
     }
     return Scaffold(
       appBar: AppBar(title: Text(l10n.journeysTitle)),

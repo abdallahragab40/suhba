@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:suhba/app/opening/opening_cover.dart';
 import 'package:suhba/app/reconciliation/user_data_reconciliation.dart';
 import 'package:suhba/app/router/app_router.dart';
 import 'package:suhba/app/router/routes.dart';
@@ -9,6 +10,7 @@ import 'package:suhba/core/design_system/theme/app_theme.dart';
 import 'package:suhba/core/design_system/tokens/motion.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/features/rating/presentation/rating_providers.dart';
 import 'package:suhba/features/reminders/presentation/reminder_providers.dart';
 import 'package:suhba/features/settings/presentation/digit_style_controller.dart';
 import 'package:suhba/features/settings/presentation/theme_mode_controller.dart';
@@ -54,6 +56,12 @@ class SuhbaApp extends ConsumerWidget {
       }
     });
 
+    // After finishing a passage, a period, the Seerah or a journey, the
+    // store may be asked for its rating card (see `decideRatingPrompt`).
+    ref.listen(reachedAchievementsProvider, (_, next) {
+      if (next != null) ref.read(ratingPrompterProvider).onReached(next);
+    });
+
     return MaterialApp.router(
       onGenerateTitle: (context) => AppLocalizations.of(context).appTitle,
       debugShowCheckedModeBanner: false,
@@ -66,15 +74,17 @@ class SuhbaApp extends ConsumerWidget {
       routerConfig: ref.watch(appRouterProvider),
       // The welcome screens, on the first launch only, cover the app until
       // they are finished or skipped; the router keeps its state beneath.
-      builder: (context, child) => DisplayFormatterScope(
-        formatter: DisplayFormatter(AppLocalizations.of(context), digitStyle),
-        child: GlossaryScope(
-          matcher: ref.watch(glossaryMatcherProvider),
-          child: AnimatedSwitcher(
-            duration: AppMotion.resolve(context, AppMotion.long),
-            child: welcome == WelcomeMode.hidden
-                ? child!
-                : WelcomePage(mode: welcome),
+      builder: (context, child) => OpeningCover(
+        child: DisplayFormatterScope(
+          formatter: DisplayFormatter(AppLocalizations.of(context), digitStyle),
+          child: GlossaryScope(
+            matcher: ref.watch(glossaryMatcherProvider),
+            child: AnimatedSwitcher(
+              duration: AppMotion.resolve(context, AppMotion.long),
+              child: welcome == WelcomeMode.hidden
+                  ? child!
+                  : WelcomePage(mode: welcome),
+            ),
           ),
         ),
       ),

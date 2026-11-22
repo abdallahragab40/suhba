@@ -651,6 +651,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get feedbackHint => 'A bug, a suggestion or a content correction';
 
   @override
+  String get rateAppTitle => 'Rate the app';
+
+  @override
+  String get rateAppHint => 'On Google Play; your rating helps others find it';
+
+  @override
+  String get loadingApp => 'Getting Suhba ready';
+
+  @override
   String get feedbackSubject => 'Feedback on Suhba';
 
   @override

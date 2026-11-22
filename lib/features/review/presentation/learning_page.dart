@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/routes.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/widgets/brand_loader.dart';
 import 'package:suhba/core/design_system/widgets/error_view.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/features/review/domain/learning_topics.dart';
@@ -64,7 +65,7 @@ class LearningPage extends ConsumerWidget {
           ref.invalidate(learningTopicsProvider);
         },
       ),
-      _ => const Center(child: CircularProgressIndicator()),
+      _ => const PageLoader(),
     };
     return Scaffold(
       appBar: AppBar(title: Text(l10n.learnedTitle)),

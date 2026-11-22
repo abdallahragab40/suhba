@@ -8,6 +8,7 @@ import 'package:suhba/core/design_system/tokens/palette.dart';
 import 'package:suhba/core/design_system/tokens/radii.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/tokens/typography.dart';
+import 'package:suhba/core/design_system/widgets/brand_loader.dart';
 import 'package:suhba/core/design_system/widgets/error_view.dart';
 import 'package:suhba/core/feedback/haptics.dart';
 import 'package:suhba/core/format/display_formatter.dart';
@@ -114,7 +115,7 @@ class _QuizPlayPageState extends ConsumerState<QuizPlayPage> {
               AsyncError() => ErrorView(
                 onRetry: () => ref.invalidate(quizContentProvider),
               ),
-              _ => const Center(child: CircularProgressIndicator()),
+              _ => const PageLoader(),
             },
           ),
         ),

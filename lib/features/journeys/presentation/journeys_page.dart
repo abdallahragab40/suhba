@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/routes.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/widgets/brand_loader.dart';
 import 'package:suhba/core/design_system/widgets/draft_badge.dart';
 import 'package:suhba/core/design_system/widgets/empty_state.dart';
 import 'package:suhba/core/design_system/widgets/error_view.dart';
@@ -43,7 +44,7 @@ class JourneysPage extends ConsumerWidget {
           error: error,
           onRetry: () => ref.invalidate(journeysProvider),
         ),
-        _ => const Center(child: CircularProgressIndicator()),
+        _ => const PageLoader(),
       },
     );
   }

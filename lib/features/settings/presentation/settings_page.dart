@@ -9,6 +9,7 @@ import 'package:suhba/core/feedback/haptics.dart';
 import 'package:suhba/core/format/digits.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/features/rating/presentation/rate_app_tile.dart';
 import 'package:suhba/features/reading_plan/presentation/reading_plan_setting.dart';
 import 'package:suhba/features/reminders/presentation/reminder_page.dart';
 import 'package:suhba/features/settings/presentation/digit_style_controller.dart';
@@ -180,6 +181,7 @@ class SettingsPage extends ConsumerWidget {
             onTap: () => context.push(AppRoutes.sourcesDirectory),
           ),
           const FeedbackTile(),
+          const RateAppTile(),
         ],
       ),
     );

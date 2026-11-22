@@ -9,17 +9,20 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:meta/meta.dart';
 import 'package:suhba/app/app.dart';
+import 'package:suhba/app/opening/opening_cover.dart';
 import 'package:suhba/app/provider_retry.dart';
 import 'package:suhba/app/router/app_router.dart';
 import 'package:suhba/app/router/routes.dart';
 import 'package:suhba/core/database/app_database.dart';
 import 'package:suhba/core/database/database_provider.dart';
 import 'package:suhba/core/storage/settings_store.dart';
+import 'package:suhba/features/rating/presentation/rating_providers.dart';
 import 'package:suhba/features/search/presentation/search_providers.dart';
 import 'package:suhba/features/welcome/presentation/welcome_controller.dart';
 import 'package:suhba/shared/content/providers.dart';
 
 import 'content_bundle.dart';
+import 'recording_rating.dart';
 
 /// The whole app at [location], reading content from [bundle] (the
 /// committed draft build by default).
@@ -32,8 +35,11 @@ class AppUnderTest {
     DateTime? now,
     DateTime Function()? clock,
     bool welcome = false,
+    bool openingCover = false,
     List<Override> overrides = const [],
-  }) : router = buildAppRouter(initialLocation: location),
+    RecordingRating? rating,
+  }) : rating = rating ?? RecordingRating(),
+       router = buildAppRouter(initialLocation: location),
        bundle = bundle ?? MemoryAssetBundle.builtContent(),
        database = database ?? AppDatabase(NativeDatabase.memory()) {
     // Each test opens its own in-memory database.
@@ -49,6 +55,11 @@ class AppUnderTest {
         searchIsolateThresholdProvider.overrideWithValue(null),
         // The welcome screens have their own tests.
         welcomeEnabledProvider.overrideWithValue(welcome),
+        // So has the opening screen.
+        openingCoverEnabledProvider.overrideWithValue(openingCover),
+        // No store in tests; ask at once rather than on a timer.
+        ratingServiceProvider.overrideWithValue(this.rating),
+        ratingPromptDelayProvider.overrideWithValue(Duration.zero),
         appDatabaseProvider.overrideWithValue(this.database),
         settingsStoreProvider.overrideWithValue(_followSystemTheme(settings)),
         // A fixed day, so the companion of the day is predictable.
@@ -62,6 +73,9 @@ class AppUnderTest {
   }
 
   final GoRouter router;
+
+  /// The rating requests the app made.
+  final RecordingRating rating;
   final AssetBundle bundle;
 
   /// In-memory by default; pass one to keep data across two app runs.

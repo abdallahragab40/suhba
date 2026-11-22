@@ -669,6 +669,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get feedbackHint => 'خطأ، أو اقتراح، أو تصحيح في المحتوى';
 
   @override
+  String get rateAppTitle => 'قيّم التطبيق';
+
+  @override
+  String get rateAppHint => 'في Google Play؛ تقييمك يعين غيرك على الوصول إليه';
+
+  @override
+  String get loadingApp => 'جارٍ تجهيز صُحبة';
+
+  @override
   String get feedbackSubject => 'ملاحظات على تطبيق صُحبة';
 
   @override
