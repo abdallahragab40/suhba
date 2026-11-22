@@ -139,23 +139,14 @@ class ReadingBody extends StatelessWidget {
         text: text.of(context),
         terms: terms,
         style: _reading(context),
-        trailing: [
-          const TextSpan(text: ' '),
-          WidgetSpan(
-            alignment: PlaceholderAlignment.middle,
-            child: CitationMarker.inline(
-              count: citations.length,
-              lineHeight:
-                  _reading(context).fontSize! * (_reading(context).height ?? 1),
-              reported: reliability == Reliability.reported,
-              onPressed: () => onCitations(
-                citations,
-                reliability,
-                passage: text.of(context),
-              ),
-            ),
-          ),
-        ],
+        mark: CitationMarker.inline(
+          count: citations.length,
+          lineHeight:
+              _reading(context).fontSize! * (_reading(context).height ?? 1),
+          reported: reliability == Reliability.reported,
+          onPressed: () =>
+              onCitations(citations, reliability, passage: text.of(context)),
+        ),
       ),
     ParagraphBlock(:final text, :final reliability, :final citations) => Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -349,6 +340,7 @@ class _Callout extends StatelessWidget {
     required this.child,
     this.icon,
     this.accent,
+    this.color,
     this.trailing,
   });
 
@@ -363,6 +355,9 @@ class _Callout extends StatelessWidget {
   /// The start-edge rule colour; the hairline colour by default.
   final Color? accent;
 
+  /// The panel's ground; the card tone by default.
+  final Color? color;
+
   @override
   Widget build(BuildContext context) {
     final colors = SuhbaColors.of(context);
@@ -370,10 +365,12 @@ class _Callout extends StatelessWidget {
     // A Material (not a plain coloured box) so ink from the markers and the
     // dispute's expansion tile shows. The start-edge rule is a positioned
     // strip: a rounded box cannot have a border on one side only.
+    // A hairline edges the panel: a card is only a step off the page.
     return Material(
-      color: colors.surfaceAlt,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(AppRadii.md),
+      color: color ?? colors.surfaceAlt,
+      shape: RoundedRectangleBorder(
+        borderRadius: const BorderRadius.all(AppRadii.md),
+        side: BorderSide(color: colors.line),
       ),
       clipBehavior: Clip.antiAlias,
       child: Stack(
@@ -448,6 +445,7 @@ class _QuranQuote extends ConsumerWidget {
       kicker: l10n.quranReference(format.quranRef(quranRef)),
       icon: Icons.menu_book_outlined,
       accent: colors.accent,
+      color: colors.verseSurface,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -468,6 +466,8 @@ class _QuranQuote extends ConsumerWidget {
                 ],
               ),
               style: style,
+              // A verse is set like an inscription, centred in its panel.
+              textAlign: TextAlign.center,
             ),
             const SizedBox(height: AppSpacing.xxs),
             Text(
@@ -680,20 +680,26 @@ class _LessonSource extends StatelessWidget {
   }
 }
 
-/// A paragraph's text with its glossary links (E3) and any [trailing]
-/// spans (the source mark). Owns the links' tap recognizers.
+/// A paragraph's text with its glossary links (E3) and its source [mark].
+/// Owns the links' tap recognizers.
+///
+/// The mark is set with the paragraph's last word, as one unbreakable
+/// piece: a line can then break before that word but never between it and
+/// the mark, so the mark is never left alone on a line of its own. (A
+/// no-break space does not do this: the text layout always allows a break
+/// beside an inline widget.)
 class _ParagraphText extends StatefulWidget {
   const _ParagraphText({
     required this.text,
     required this.terms,
     required this.style,
-    this.trailing = const [],
+    this.mark,
   });
 
   final String text;
   final List<TermMatch> terms;
   final TextStyle style;
-  final List<InlineSpan> trailing;
+  final Widget? mark;
 
   @override
   State<_ParagraphText> createState() => _ParagraphTextState();
@@ -718,14 +724,72 @@ class _ParagraphTextState extends State<_ParagraphText> {
   @override
   Widget build(BuildContext context) {
     _release();
-    if (widget.terms.isEmpty && widget.trailing.isEmpty) {
+    final mark = widget.mark;
+    if (widget.terms.isEmpty && mark == null) {
       return Text(widget.text, style: widget.style);
+    }
+    if (mark == null) {
+      return Text.rich(
+        TextSpan(
+          children: linkedSpans(
+            context,
+            widget.text,
+            widget.terms,
+            _recognizers,
+          ),
+        ),
+        style: widget.style,
+      );
+    }
+    // The last word travels with the mark, unless a glossary link reaches
+    // into it (a link must stay text) or the paragraph is one word.
+    final text = widget.text.trimRight();
+    final cut = text.lastIndexOf(' ') + 1;
+    final split = cut > 0 && widget.terms.every((t) => t.end <= cut);
+    final head = split ? text.substring(0, cut) : '$text ';
+    final spans = linkedSpans(context, head, widget.terms, _recognizers);
+    if (split) {
+      // To a screen reader the paragraph is still one sentence: the last
+      // stretch of text speaks for the word that travels with the mark.
+      final last = spans.removeLast() as TextSpan;
+      spans.add(
+        TextSpan(
+          text: last.text,
+          semanticsLabel: '${last.text}${text.substring(cut)}',
+        ),
+      );
     }
     return Text.rich(
       TextSpan(
         children: [
-          ...linkedSpans(context, widget.text, widget.terms, _recognizers),
-          ...widget.trailing,
+          ...spans,
+          if (split)
+            WidgetSpan(
+              alignment: PlaceholderAlignment.baseline,
+              baseline: TextBaseline.alphabetic,
+              // The paragraph scales its inline widgets with its text.
+              child: MediaQuery.withNoTextScaling(
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.baseline,
+                  textBaseline: TextBaseline.alphabetic,
+                  children: [
+                    ExcludeSemantics(
+                      child: Text(
+                        text.substring(cut),
+                        style: DefaultTextStyle.of(
+                          context,
+                        ).style.merge(widget.style),
+                      ),
+                    ),
+                    const SizedBox(width: AppSpacing.xxs),
+                    mark,
+                  ],
+                ),
+              ),
+            )
+          else
+            WidgetSpan(alignment: PlaceholderAlignment.middle, child: mark),
         ],
       ),
       style: widget.style,

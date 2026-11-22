@@ -20,8 +20,9 @@ TextStyle _style(String family, double size, double height, FontWeight weight) {
   );
 }
 
-/// The Material type scale (review §2.7, decision 8). Display roles use
-/// Amiri (calligraphic names); everything else uses IBM Plex Sans Arabic
+/// The Material type scale (review §2.7, decision 8). Since 2026-11-21
+/// every role, display names and titles and the reading text included,
+/// uses IBM Plex Sans Arabic
 /// (2026-11-20, after Nusuk), in its four bundled weights: 400 for text,
 /// 500 for small labels, 600 for titles and buttons, 700 for headlines.
 /// Plex sets larger than Zain did at the same size, so the labels are
@@ -29,10 +30,11 @@ TextStyle _style(String family, double size, double height, FontWeight weight) {
 abstract final class AppTypography {
   static TextTheme textTheme(Color color) {
     return TextTheme(
-      displayLarge: _style(AppFonts.amiri, 56, 1.35, FontWeight.w700),
-      displayMedium: _style(AppFonts.amiri, 48, 1.35, FontWeight.w700),
-      // Tall marks and descenders need the 1.5 line (review F08).
-      displaySmall: _style(AppFonts.amiri, 40, 1.5, FontWeight.w700),
+      // Display: names and titles, in the interface face. Plex sets
+      // large, so the sizes are a step below the old Amiri ones.
+      displayLarge: _style(AppFonts.plexArabic, 40, 1.35, FontWeight.w700),
+      displayMedium: _style(AppFonts.plexArabic, 34, 1.4, FontWeight.w700),
+      displaySmall: _style(AppFonts.plexArabic, 28, 1.4, FontWeight.w700),
       headlineLarge: _style(AppFonts.plexArabic, 28, 1.35, FontWeight.w700),
       headlineMedium: _style(AppFonts.plexArabic, 24, 1.4, FontWeight.w700),
       // Page section titles: lighter and smaller than before (F13).
@@ -70,23 +72,27 @@ class SuhbaTextStyles extends ThemeExtension<SuhbaTextStyles> {
     required Color dimText,
   }) {
     return SuhbaTextStyles(
+      // Long-form text is set in the interface's own face: a clean
+      // sans reads easily on a phone, and the page keeps one voice. The
+      // open line (1.8) gives vocalised words room for their marks.
       reading: _style(
-        AppFonts.amiri,
+        AppFonts.plexArabic,
         readingSize,
         1.8,
         FontWeight.w400,
       ).copyWith(color: text),
-      // Quoted wording is set apart by size, not by bold: fully vocalised
-      // text in bold closes up its marks (review §2.3).
+      // Quoted wording is set apart by a step in size and the medium
+      // weight, never bold: fully vocalised text in bold closes up its
+      // marks (review §2.3).
       readingStrong: _style(
-        AppFonts.amiri,
+        AppFonts.plexArabic,
         21,
-        1.9,
-        FontWeight.w400,
+        2,
+        FontWeight.w500,
       ).copyWith(color: text),
       readingHeading: _style(
-        AppFonts.amiri,
-        24,
+        AppFonts.plexArabic,
+        22,
         1.5,
         FontWeight.w700,
       ).copyWith(color: text),
@@ -114,14 +120,14 @@ class SuhbaTextStyles extends ThemeExtension<SuhbaTextStyles> {
   /// Default reading size, before the reader's own setting.
   static const readingSize = 20.0;
 
-  /// Biography and story body text (Amiri).
+  /// Biography and story body text.
   final TextStyle reading;
 
   /// Quoted wording inside reading text: a step larger, not bolder.
   final TextStyle readingStrong;
 
-  /// Headings inside a passage: Amiri, so the reading column keeps one
-  /// voice (review F13).
+  /// Headings inside a passage: the reading face, so the column keeps
+  /// one voice (review F13).
   final TextStyle readingHeading;
 
   /// Qur'anic verses (Amiri Quran). Use for verse text only.

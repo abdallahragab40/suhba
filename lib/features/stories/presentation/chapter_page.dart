@@ -187,6 +187,7 @@ class _Chapter extends ConsumerWidget {
             padding: const EdgeInsets.all(AppSpacing.md),
             decoration: BoxDecoration(
               color: colors.surfaceAlt,
+              border: Border.all(color: colors.line),
               borderRadius: const BorderRadius.all(AppRadii.md),
             ),
             child: Column(

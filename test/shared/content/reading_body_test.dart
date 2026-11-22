@@ -232,7 +232,7 @@ void main() {
     await pump(tester, blocks: specimenBlocks.sublist(0, 1), textSize: 26);
     final text = tester.widget<Text>(find.textContaining('فقرة ثابتة'));
     expect(text.style!.fontSize, 26);
-    expect(text.style!.fontFamily, 'Amiri');
+    expect(text.style!.fontFamily, 'IBMPlexSansArabic');
   });
 
   testWidgets('every block meets tap-target guidelines', (tester) async {

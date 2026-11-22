@@ -681,6 +681,84 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
+  String get feedbackSheetIntro =>
+      'تصل رسالتك إلى مطوّر التطبيق عبر تطبيق البريد في جهازك، فتراها قبل إرسالها. لا يرسل التطبيق شيئًا بنفسه.';
+
+  @override
+  String get feedbackKindLabel => 'نوع الملاحظة';
+
+  @override
+  String get feedbackKindContent => 'خطأ في المحتوى';
+
+  @override
+  String get feedbackKindBug => 'مشكلة في التطبيق';
+
+  @override
+  String get feedbackKindIdea => 'اقتراح';
+
+  @override
+  String get feedbackKindThanks => 'شكر وتشجيع';
+
+  @override
+  String get feedbackMessageLabel => 'ملاحظتك';
+
+  @override
+  String get feedbackMessageHint => 'ما الذي لاحظته؟ وأين؟';
+
+  @override
+  String get feedbackAboutPassage => 'عن هذا النص';
+
+  @override
+  String get feedbackIncludeDetails => 'أرفق معلومات التطبيق';
+
+  @override
+  String feedbackDetailsHint(String details) {
+    return '$details';
+  }
+
+  @override
+  String get feedbackSend => 'اكتب الرسالة في البريد';
+
+  @override
+  String get feedbackCopyAddress => 'نسخ العنوان';
+
+  @override
+  String feedbackAddressCopied(String email) {
+    return 'نُسخ العنوان: $email';
+  }
+
+  @override
+  String feedbackMessageCopied(String email) {
+    return 'لا يوجد تطبيق بريد. نُسخت رسالتك، فألصقها في رسالة إلى $email';
+  }
+
+  @override
+  String get feedbackDetailsHeading => 'معلومات التطبيق';
+
+  @override
+  String feedbackDetailVersion(String version) {
+    return 'الإصدار: $version';
+  }
+
+  @override
+  String feedbackDetailContent(String version) {
+    return 'المحتوى: $version';
+  }
+
+  @override
+  String feedbackDetailSystem(String system) {
+    return 'النظام: $system';
+  }
+
+  @override
+  String feedbackDetailDisplay(String theme, String size) {
+    return 'العرض: $theme، حجم الخط $size';
+  }
+
+  @override
+  String get citationReportAction => 'أبلغ عن خطأ في هذا النص';
+
+  @override
   String get aboutIntro =>
       'صُحبة تطبيق تعليمي يعرض سيرة النبي ﷺ وسِيَر أصحابه وقصصهم، معزوّةً كلها إلى مصادرها.';
 
@@ -2428,11 +2506,11 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get aboutCreditAmiri =>
-      'خط الأميري (Amiri) وخط الأميري قرآن (Amiri Quran)، من تصميم خالد حسني، لنصوص القراءة والأسماء والآيات. برخصة الخطوط المفتوحة SIL OFL 1.1.';
+      'خط الأميري (Amiri) وخط الأميري قرآن (Amiri Quran)، من تصميم خالد حسني، للأسماء والعناوين البارزة والآيات. برخصة الخطوط المفتوحة SIL OFL 1.1.';
 
   @override
   String get aboutCreditPlex =>
-      'خط بلكس العربي (IBM Plex Sans Arabic)، من تصميم مايك أبينك وخاجاك أبيليان ووائل مرقص مع استوديو بولد مندي، لعناوين الواجهة ونصوصها. برخصة الخطوط المفتوحة SIL OFL 1.1.';
+      'خط بلكس العربي (IBM Plex Sans Arabic)، من تصميم مايك أبينك وخاجاك أبيليان ووائل مرقص مع استوديو بولد مندي، لنصوص القراءة وللواجهة. برخصة الخطوط المفتوحة SIL OFL 1.1.';
 
   @override
   String get aboutCreditSources => 'المصادر';

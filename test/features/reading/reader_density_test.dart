@@ -16,14 +16,19 @@ import '../../helpers/pump_app.dart' show loadAppFonts;
 /// little: 21% for both. The rest is not chrome: about a third of chapter 1
 /// is framed blocks (a Qur'an quote, a hadith, a dispute, a lesson), and an
 /// inline source mark sometimes takes a line of its own, the price of
-/// attaching it to its paragraph. The gains are pinned so they cannot
-/// regress.
+/// attaching it to its paragraph.
+///
+/// 2026-11-21: the owner moved reading text from Amiri to IBM Plex Sans
+/// Arabic and kept the default size at 20. Plex at 20/1.8 is taller than
+/// Amiri at 20/1.8, so the gain fell to 12% (3,899 px) and 15% (2,303 px):
+/// a deliberate trade for the face readers asked for, not added chrome.
+/// The gains are pinned there so they cannot regress further.
 void main() {
   setUpAll(loadAppFonts);
 
   for (final (route, baseline, gain) in [
-    ('/seerah/chapters/makkah-lineage-birth', 4366.0, 1.21),
-    ('/companions/abu-bakr/sections/abu-bakr.hijrah', 2653.0, 1.20),
+    ('/seerah/chapters/makkah-lineage-birth', 4366.0, 1.11),
+    ('/companions/abu-bakr/sections/abu-bakr.hijrah', 2653.0, 1.14),
   ]) {
     testApp('reading density: $route', (tester) async {
       tester.view

@@ -663,6 +663,84 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get feedbackSheetIntro =>
+      'Your message reaches the developer through the mail app on your device, where you see it before sending. The app sends nothing itself.';
+
+  @override
+  String get feedbackKindLabel => 'Kind of feedback';
+
+  @override
+  String get feedbackKindContent => 'Content mistake';
+
+  @override
+  String get feedbackKindBug => 'App problem';
+
+  @override
+  String get feedbackKindIdea => 'Suggestion';
+
+  @override
+  String get feedbackKindThanks => 'Thanks';
+
+  @override
+  String get feedbackMessageLabel => 'Your feedback';
+
+  @override
+  String get feedbackMessageHint => 'What did you notice, and where?';
+
+  @override
+  String get feedbackAboutPassage => 'About this text';
+
+  @override
+  String get feedbackIncludeDetails => 'Include app details';
+
+  @override
+  String feedbackDetailsHint(String details) {
+    return '$details';
+  }
+
+  @override
+  String get feedbackSend => 'Write it in my mail app';
+
+  @override
+  String get feedbackCopyAddress => 'Copy address';
+
+  @override
+  String feedbackAddressCopied(String email) {
+    return 'Address copied: $email';
+  }
+
+  @override
+  String feedbackMessageCopied(String email) {
+    return 'No mail app found. Your message was copied; paste it into an email to $email';
+  }
+
+  @override
+  String get feedbackDetailsHeading => 'App details';
+
+  @override
+  String feedbackDetailVersion(String version) {
+    return 'Version: $version';
+  }
+
+  @override
+  String feedbackDetailContent(String version) {
+    return 'Content: $version';
+  }
+
+  @override
+  String feedbackDetailSystem(String system) {
+    return 'System: $system';
+  }
+
+  @override
+  String feedbackDetailDisplay(String theme, String size) {
+    return 'Display: $theme, text size $size';
+  }
+
+  @override
+  String get citationReportAction => 'Report a mistake in this text';
+
+  @override
   String get aboutIntro =>
       'Suhba is an educational app presenting the life of the Prophet ﷺ and the lives and stories of his Companions, each attributed to its sources.';
 
@@ -2389,11 +2467,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutCreditAmiri =>
-      'Amiri and Amiri Quran, by Khaled Hosny, for reading text, names and verses. SIL Open Font License 1.1.';
+      'Amiri and Amiri Quran, by Khaled Hosny, for display names, titles and verses. SIL Open Font License 1.1.';
 
   @override
   String get aboutCreditPlex =>
-      'IBM Plex Sans Arabic, by IBM, designed by Mike Abbink and Bold Monday with Khajag Apelian and Wael Morcos, for interface titles and text. SIL Open Font License 1.1.';
+      'IBM Plex Sans Arabic, by IBM, designed by Mike Abbink and Bold Monday with Khajag Apelian and Wael Morcos, for reading text and the interface. SIL Open Font License 1.1.';
 
   @override
   String get aboutCreditSources => 'Sources';

@@ -106,13 +106,15 @@ class PassageCard extends StatelessWidget {
                   Expanded(
                     child: LayoutBuilder(
                       builder: (context, constraints) {
-                        var font = 22.0;
-                        while (font > 16) {
+                        // The reading face: Plex at 20 down to 15 fills
+                        // the card as Amiri did at 22 down to 16.
+                        var font = 20.0;
+                        while (font > _minExcerptFont) {
                           final painter = TextPainter(
                             text: TextSpan(
                               text: excerpt,
                               style: TextStyle(
-                                fontFamily: AppFonts.amiri,
+                                fontFamily: AppFonts.plexArabic,
                                 fontSize: font,
                                 height: 1.5,
                               ),
@@ -126,7 +128,7 @@ class PassageCard extends StatelessWidget {
                         }
                         return Align(
                           alignment: AlignmentDirectional.centerStart,
-                          child: text(excerpt, font, family: AppFonts.amiri),
+                          child: text(excerpt, font),
                         );
                       },
                     ),
@@ -146,8 +148,11 @@ class PassageCard extends StatelessWidget {
   }
 }
 
-/// Keep references intact and require at least 16 logical pixels for the
-/// excerpt. Oversized source lists use text sharing rather than tiny image text.
+/// The smallest size the excerpt is drawn at.
+const _minExcerptFont = 15.0;
+
+/// Keep references intact and require at least [_minExcerptFont] logical
+/// pixels for the excerpt. Oversized source lists use text sharing rather than tiny image text.
 bool passageCardFits({
   required String excerpt,
   required String origin,
@@ -175,7 +180,7 @@ bool passageCardFits({
           12 +
           1 +
           14 +
-          height(excerpt, 16, AppFonts.amiri) +
+          height(excerpt, _minExcerptFont, AppFonts.plexArabic) +
           14 +
           height(sources, 9, AppFonts.plexArabic) +
           (notice == null ? 0 : height(notice, 10, AppFonts.plexArabic)) +

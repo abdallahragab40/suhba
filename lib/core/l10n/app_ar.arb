@@ -965,6 +965,128 @@
       }
     }
   },
+  "feedbackSheetIntro": "تصل رسالتك إلى مطوّر التطبيق عبر تطبيق البريد في جهازك، فتراها قبل إرسالها. لا يرسل التطبيق شيئًا بنفسه.",
+  "@feedbackSheetIntro": {
+    "description": "Feedback sheet: how the message is sent (the user's own mail app)."
+  },
+  "feedbackKindLabel": "نوع الملاحظة",
+  "@feedbackKindLabel": {
+    "description": "Feedback sheet: label above the kind choices."
+  },
+  "feedbackKindContent": "خطأ في المحتوى",
+  "@feedbackKindContent": {
+    "description": "Feedback kind: a mistake in the content."
+  },
+  "feedbackKindBug": "مشكلة في التطبيق",
+  "@feedbackKindBug": {
+    "description": "Feedback kind: something in the app does not work."
+  },
+  "feedbackKindIdea": "اقتراح",
+  "@feedbackKindIdea": {
+    "description": "Feedback kind: a suggestion."
+  },
+  "feedbackKindThanks": "شكر وتشجيع",
+  "@feedbackKindThanks": {
+    "description": "Feedback kind: thanks and encouragement."
+  },
+  "feedbackMessageLabel": "ملاحظتك",
+  "@feedbackMessageLabel": {
+    "description": "Feedback sheet: label of the message field."
+  },
+  "feedbackMessageHint": "ما الذي لاحظته؟ وأين؟",
+  "@feedbackMessageHint": {
+    "description": "Feedback sheet: hint inside the message field."
+  },
+  "feedbackAboutPassage": "عن هذا النص",
+  "@feedbackAboutPassage": {
+    "description": "Feedback sheet: label above the passage being reported."
+  },
+  "feedbackIncludeDetails": "أرفق معلومات التطبيق",
+  "@feedbackIncludeDetails": {
+    "description": "Feedback sheet: switch to append app details to the message."
+  },
+  "feedbackDetailsHint": "{details}",
+  "@feedbackDetailsHint": {
+    "description": "Feedback sheet: the exact details that will be appended.",
+    "placeholders": {
+      "details": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackSend": "اكتب الرسالة في البريد",
+  "@feedbackSend": {
+    "description": "Feedback sheet: button that opens the mail app with the message."
+  },
+  "feedbackCopyAddress": "نسخ العنوان",
+  "@feedbackCopyAddress": {
+    "description": "Feedback sheet: copies the feedback email address."
+  },
+  "feedbackAddressCopied": "نُسخ العنوان: {email}",
+  "@feedbackAddressCopied": {
+    "description": "Snack bar after copying the feedback address.",
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackMessageCopied": "لا يوجد تطبيق بريد. نُسخت رسالتك، فألصقها في رسالة إلى {email}",
+  "@feedbackMessageCopied": {
+    "description": "Shown when no mail app opens; the whole message was copied.",
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackDetailsHeading": "معلومات التطبيق",
+  "@feedbackDetailsHeading": {
+    "description": "Heading of the details block in the feedback email."
+  },
+  "feedbackDetailVersion": "الإصدار: {version}",
+  "@feedbackDetailVersion": {
+    "description": "Feedback email detail: app version.",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackDetailContent": "المحتوى: {version}",
+  "@feedbackDetailContent": {
+    "description": "Feedback email detail: content version.",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackDetailSystem": "النظام: {system}",
+  "@feedbackDetailSystem": {
+    "description": "Feedback email detail: operating system.",
+    "placeholders": {
+      "system": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackDetailDisplay": "العرض: {theme}، حجم الخط {size}",
+  "@feedbackDetailDisplay": {
+    "description": "Feedback email detail: theme and reading size.",
+    "placeholders": {
+      "theme": {
+        "type": "String"
+      },
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "citationReportAction": "أبلغ عن خطأ في هذا النص",
+  "@citationReportAction": {
+    "description": "Sources sheet: opens the feedback sheet about this passage."
+  },
   "aboutIntro": "صُحبة تطبيق تعليمي يعرض سيرة النبي ﷺ وسِيَر أصحابه وقصصهم، معزوّةً كلها إلى مصادرها.",
   "@aboutIntro": {
     "description": "About: introduction."
@@ -3019,11 +3141,11 @@
   "@aboutCreditFontsTitle": {
     "description": "About credits: heading for the bundled fonts."
   },
-  "aboutCreditAmiri": "خط الأميري (Amiri) وخط الأميري قرآن (Amiri Quran)، من تصميم خالد حسني، لنصوص القراءة والأسماء والآيات. برخصة الخطوط المفتوحة SIL OFL 1.1.",
+  "aboutCreditAmiri": "خط الأميري (Amiri) وخط الأميري قرآن (Amiri Quran)، من تصميم خالد حسني، للأسماء والعناوين البارزة والآيات. برخصة الخطوط المفتوحة SIL OFL 1.1.",
   "@aboutCreditAmiri": {
     "description": "About credits: Amiri and Amiri Quran (OFL 1.1)."
   },
-  "aboutCreditPlex": "خط بلكس العربي (IBM Plex Sans Arabic)، من تصميم مايك أبينك وخاجاك أبيليان ووائل مرقص مع استوديو بولد مندي، لعناوين الواجهة ونصوصها. برخصة الخطوط المفتوحة SIL OFL 1.1.",
+  "aboutCreditPlex": "خط بلكس العربي (IBM Plex Sans Arabic)، من تصميم مايك أبينك وخاجاك أبيليان ووائل مرقص مع استوديو بولد مندي، لنصوص القراءة وللواجهة. برخصة الخطوط المفتوحة SIL OFL 1.1.",
   "@aboutCreditPlex": {
     "description": "About credits: IBM Plex Sans Arabic (OFL 1.1)."
   },

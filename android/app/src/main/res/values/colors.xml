@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Palette.ink and Palette.paper (lib/core/design_system/tokens/palette.dart). -->
-    <color name="brand_ink">#FF09120E</color>
-    <color name="brand_paper">#FFEDEBE6</color>
+    <!-- Palette.paper, the light page
+         (lib/core/design_system/tokens/palette.dart). -->
+    <color name="brand_paper">#FFF8F4EB</color>
     <!-- Palette.green: the adaptive icon's background layer. -->
-    <color name="brand_green">#FF0E3A2C</color>
-    <!-- Launch background: paper in light mode, ink in dark (values-night). -->
+    <color name="brand_green">#FF124A39</color>
+    <!-- Launch background: always paper. The app opens in the light theme by
+         default, so a night splash would flash dark before a light page. -->
     <color name="launch_background">@color/brand_paper</color>
 </resources>

@@ -67,6 +67,7 @@ class AboutPage extends ConsumerWidget {
               padding: const EdgeInsets.all(AppSpacing.sm),
               decoration: BoxDecoration(
                 color: isDraft ? colors.draftSurface : colors.surfaceAlt,
+                border: Border.all(color: colors.line),
                 borderRadius: const BorderRadius.all(AppRadii.sm),
               ),
               child: Text(

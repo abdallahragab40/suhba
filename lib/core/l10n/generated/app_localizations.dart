@@ -1178,6 +1178,132 @@ abstract class AppLocalizations {
   /// **'لا يوجد تطبيق بريد. نُسخ العنوان: {email}'**
   String feedbackCopied(String email);
 
+  /// Feedback sheet: how the message is sent (the user's own mail app).
+  ///
+  /// In ar, this message translates to:
+  /// **'تصل رسالتك إلى مطوّر التطبيق عبر تطبيق البريد في جهازك، فتراها قبل إرسالها. لا يرسل التطبيق شيئًا بنفسه.'**
+  String get feedbackSheetIntro;
+
+  /// Feedback sheet: label above the kind choices.
+  ///
+  /// In ar, this message translates to:
+  /// **'نوع الملاحظة'**
+  String get feedbackKindLabel;
+
+  /// Feedback kind: a mistake in the content.
+  ///
+  /// In ar, this message translates to:
+  /// **'خطأ في المحتوى'**
+  String get feedbackKindContent;
+
+  /// Feedback kind: something in the app does not work.
+  ///
+  /// In ar, this message translates to:
+  /// **'مشكلة في التطبيق'**
+  String get feedbackKindBug;
+
+  /// Feedback kind: a suggestion.
+  ///
+  /// In ar, this message translates to:
+  /// **'اقتراح'**
+  String get feedbackKindIdea;
+
+  /// Feedback kind: thanks and encouragement.
+  ///
+  /// In ar, this message translates to:
+  /// **'شكر وتشجيع'**
+  String get feedbackKindThanks;
+
+  /// Feedback sheet: label of the message field.
+  ///
+  /// In ar, this message translates to:
+  /// **'ملاحظتك'**
+  String get feedbackMessageLabel;
+
+  /// Feedback sheet: hint inside the message field.
+  ///
+  /// In ar, this message translates to:
+  /// **'ما الذي لاحظته؟ وأين؟'**
+  String get feedbackMessageHint;
+
+  /// Feedback sheet: label above the passage being reported.
+  ///
+  /// In ar, this message translates to:
+  /// **'عن هذا النص'**
+  String get feedbackAboutPassage;
+
+  /// Feedback sheet: switch to append app details to the message.
+  ///
+  /// In ar, this message translates to:
+  /// **'أرفق معلومات التطبيق'**
+  String get feedbackIncludeDetails;
+
+  /// Feedback sheet: the exact details that will be appended.
+  ///
+  /// In ar, this message translates to:
+  /// **'{details}'**
+  String feedbackDetailsHint(String details);
+
+  /// Feedback sheet: button that opens the mail app with the message.
+  ///
+  /// In ar, this message translates to:
+  /// **'اكتب الرسالة في البريد'**
+  String get feedbackSend;
+
+  /// Feedback sheet: copies the feedback email address.
+  ///
+  /// In ar, this message translates to:
+  /// **'نسخ العنوان'**
+  String get feedbackCopyAddress;
+
+  /// Snack bar after copying the feedback address.
+  ///
+  /// In ar, this message translates to:
+  /// **'نُسخ العنوان: {email}'**
+  String feedbackAddressCopied(String email);
+
+  /// Shown when no mail app opens; the whole message was copied.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا يوجد تطبيق بريد. نُسخت رسالتك، فألصقها في رسالة إلى {email}'**
+  String feedbackMessageCopied(String email);
+
+  /// Heading of the details block in the feedback email.
+  ///
+  /// In ar, this message translates to:
+  /// **'معلومات التطبيق'**
+  String get feedbackDetailsHeading;
+
+  /// Feedback email detail: app version.
+  ///
+  /// In ar, this message translates to:
+  /// **'الإصدار: {version}'**
+  String feedbackDetailVersion(String version);
+
+  /// Feedback email detail: content version.
+  ///
+  /// In ar, this message translates to:
+  /// **'المحتوى: {version}'**
+  String feedbackDetailContent(String version);
+
+  /// Feedback email detail: operating system.
+  ///
+  /// In ar, this message translates to:
+  /// **'النظام: {system}'**
+  String feedbackDetailSystem(String system);
+
+  /// Feedback email detail: theme and reading size.
+  ///
+  /// In ar, this message translates to:
+  /// **'العرض: {theme}، حجم الخط {size}'**
+  String feedbackDetailDisplay(String theme, String size);
+
+  /// Sources sheet: opens the feedback sheet about this passage.
+  ///
+  /// In ar, this message translates to:
+  /// **'أبلغ عن خطأ في هذا النص'**
+  String get citationReportAction;
+
   /// About: introduction.
   ///
   /// In ar, this message translates to:
@@ -3976,13 +4102,13 @@ abstract class AppLocalizations {
   /// About credits: Amiri and Amiri Quran (OFL 1.1).
   ///
   /// In ar, this message translates to:
-  /// **'خط الأميري (Amiri) وخط الأميري قرآن (Amiri Quran)، من تصميم خالد حسني، لنصوص القراءة والأسماء والآيات. برخصة الخطوط المفتوحة SIL OFL 1.1.'**
+  /// **'خط الأميري (Amiri) وخط الأميري قرآن (Amiri Quran)، من تصميم خالد حسني، للأسماء والعناوين البارزة والآيات. برخصة الخطوط المفتوحة SIL OFL 1.1.'**
   String get aboutCreditAmiri;
 
   /// About credits: IBM Plex Sans Arabic (OFL 1.1).
   ///
   /// In ar, this message translates to:
-  /// **'خط بلكس العربي (IBM Plex Sans Arabic)، من تصميم مايك أبينك وخاجاك أبيليان ووائل مرقص مع استوديو بولد مندي، لعناوين الواجهة ونصوصها. برخصة الخطوط المفتوحة SIL OFL 1.1.'**
+  /// **'خط بلكس العربي (IBM Plex Sans Arabic)، من تصميم مايك أبينك وخاجاك أبيليان ووائل مرقص مع استوديو بولد مندي، لنصوص القراءة وللواجهة. برخصة الخطوط المفتوحة SIL OFL 1.1.'**
   String get aboutCreditPlex;
 
   /// About credits: button opening the sources page, where the full Tanzil notice is.

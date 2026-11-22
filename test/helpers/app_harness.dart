@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:drift/drift.dart';
 import 'package:drift/native.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/misc.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -50,7 +50,7 @@ class AppUnderTest {
         // The welcome screens have their own tests.
         welcomeEnabledProvider.overrideWithValue(welcome),
         appDatabaseProvider.overrideWithValue(this.database),
-        if (settings != null) settingsStoreProvider.overrideWithValue(settings),
+        settingsStoreProvider.overrideWithValue(_followSystemTheme(settings)),
         // A fixed day, so the companion of the day is predictable.
         clockProvider.overrideWithValue(
           clock ?? () => now ?? DateTime(2026, 10, 9),
@@ -92,6 +92,18 @@ class AppUnderTest {
 }
 
 final _live = <AppUnderTest>[];
+
+/// Tests choose light or dark through the platform brightness, so under
+/// test the app follows the system unless a test saved a theme itself.
+/// (The app on a device opens in the light theme; see
+/// `ThemeModeController.defaultMode`.)
+SettingsStore _followSystemTheme(SettingsStore? settings) {
+  final store = settings ?? MemorySettingsStore();
+  if (store.getString(SettingsKeys.themeMode) == null) {
+    unawaited(store.setString(SettingsKeys.themeMode, ThemeMode.system.name));
+  }
+  return store;
+}
 
 /// A widget test of the whole app. After [body] (pass or fail) the app is
 /// unmounted, its providers disposed and its database closed, while still

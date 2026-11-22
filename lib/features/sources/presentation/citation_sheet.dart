@@ -9,6 +9,7 @@ import 'package:suhba/core/domain/reliability.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/core/share/share_service.dart';
+import 'package:suhba/features/settings/presentation/feedback_tile.dart';
 import 'package:suhba/features/sources/domain/share_card_policy.dart';
 import 'package:suhba/features/sources/presentation/passage_card.dart';
 import 'package:suhba/features/sources/presentation/passage_share.dart';
@@ -258,6 +259,19 @@ class CitationSheet extends ConsumerWidget {
                 ),
               ),
             ],
+          // A reader who spots a mistake reports it here, with the passage
+          // already quoted in the message.
+          if (share case final share?) ...[
+            const SizedBox(height: AppSpacing.xs),
+            TextButton.icon(
+              icon: const Icon(Icons.flag_outlined),
+              label: Text(l10n.citationReportAction),
+              onPressed: () => showFeedbackSheet(
+                context,
+                passage: (origin: share.origin, text: share.text),
+              ),
+            ),
+          ],
         ],
       ),
     );

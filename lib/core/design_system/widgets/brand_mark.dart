@@ -28,12 +28,15 @@ enum BrandMarkLayout {
   disc,
 }
 
-/// The name صحبة within a pointed arch, above an open book: a doorway
-/// into the Seerah and the lives of the Companions, read from its sources.
-/// Gold on the app's Madinah green, with no figurative
-/// imagery (D5); the gold deepens slightly towards the foot, and the green
-/// glows faintly behind the name. The monochrome (themed) and tinted icons
-/// are flat, in one colour, so the OS can tint them.
+/// The name صحبة in a doorway: two leaning strokes that meet at a
+/// rhombic dot, the *nuqta* that Arabic letters are measured by. Two
+/// halves that make one arch, a companionship, and a door into the Seerah
+/// and the lives of the Companions. No figurative imagery (D5).
+///
+/// The arch and its dot are sand gold, the name ivory, on Madinah green;
+/// there is nothing finer than the name itself, so the mark holds at
+/// launcher sizes. The monochrome (themed) and tinted icons are flat, in
+/// one colour, so the OS can tint them.
 void paintBrandMark(
   Canvas canvas,
   Size size,
@@ -41,20 +44,28 @@ void paintBrandMark(
   String fontFamily = AppFonts.amiri,
   Color groundColor = Palette.green,
   Color markColor = Palette.goldOnInk,
+  Color nameColor = Palette.paper,
 }) {
   final s = size.shortestSide;
   final centre = size.center(Offset.zero);
   final flat =
       layout == BrandMarkLayout.monochrome ||
       layout == BrandMarkLayout.squareTinted;
-  final gold = flat ? const Color(0xFFFFFFFF) : markColor;
+  const white = Color(0xFFFFFFFF);
+  final gold = flat ? white : markColor;
+  final ivory = flat ? white : nameColor;
 
-  // The ink ground, lit faintly from behind the name.
+  // The green ground, lit faintly from behind the name.
   Paint ground(Rect bounds) => Paint()
     ..shader = RadialGradient(
-      center: const Alignment(0, -0.15),
-      radius: 0.75,
-      colors: [Color.lerp(groundColor, markColor, 0.09)!, groundColor],
+      center: const Alignment(0, -0.1),
+      radius: 0.8,
+      colors: [
+        Color.lerp(groundColor, white, 0.07)!,
+        groundColor,
+        Color.lerp(groundColor, const Color(0xFF000000), 0.18)!,
+      ],
+      stops: const [0, 0.6, 1],
     ).createShader(bounds);
 
   switch (layout) {
@@ -92,11 +103,13 @@ void paintBrandMark(
       switch (layout) {
         BrandMarkLayout.square ||
         BrandMarkLayout.squareDark ||
-        BrandMarkLayout.squareTinted => 0.74,
-        BrandMarkLayout.roundedSquare => 0.68,
-        BrandMarkLayout.disc => 0.64,
+        BrandMarkLayout.squareTinted => 0.72,
+        BrandMarkLayout.roundedSquare => 0.66,
+        BrandMarkLayout.disc => 0.6,
+        // The feet's outer corners are 57 units from the centre: at 0.53
+        // they stay inside the safe circle's 30.5% radius.
         BrandMarkLayout.adaptiveForeground ||
-        BrandMarkLayout.monochrome => 0.54,
+        BrandMarkLayout.monochrome => 0.53,
       };
   canvas
     ..save()
@@ -104,54 +117,74 @@ void paintBrandMark(
     ..scale(extent / 100);
 
   // Gold, a touch lighter at the crown and deeper at the foot.
-  final shader = flat
-      ? null
-      : LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            Color.lerp(gold, const Color(0xFFFFFFFF), 0.22)!,
-            gold,
-            Color.lerp(gold, Palette.goldDeep, 0.25)!,
-          ],
-          stops: const [0, 0.55, 1],
-        ).createShader(const Rect.fromLTWH(0, 0, 100, 100));
-  Paint ink({double? stroke}) {
-    final p = Paint()
-      ..color = gold
-      ..shader = shader
-      ..isAntiAlias = true;
-    if (stroke != null) {
-      p
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = stroke
-        ..strokeCap = StrokeCap.round
-        ..strokeJoin = StrokeJoin.round;
-    }
-    return p;
+  final goldPaint = Paint()
+    ..color = gold
+    ..isAntiAlias = true;
+  if (!flat) {
+    goldPaint.shader = LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [
+        Color.lerp(gold, white, 0.25)!,
+        gold,
+        Color.lerp(gold, Palette.goldDeep, 0.22)!,
+      ],
+      stops: const [0, 0.5, 1],
+    ).createShader(const Rect.fromLTWH(0, 0, 100, 100));
   }
 
-  // The pointed arch: straight jambs, then two curves meeting at the apex.
-  Path arch(double inset) {
-    final l = 12 + inset;
-    final r = 88 - inset;
-    const spring = 40.0;
-    const foot = 72.0;
-    final apex = 6 + inset * 1.25;
-    final half = (r - l) / 2;
+  // One half of the arch, a stroke like a reed pen's: broad at the foot,
+  // a straight jamb, then a curve thinning to the crown. [side] is -1 for
+  // the left half and 1 for the right.
+  const foot = 92.0;
+  const spring = 48.0;
+  const crown = 14.0; // where the two strokes would meet
+  const halfWidth = 39.0; // outer edge, from the centre line
+  const broad = 6.4; // the stroke at the foot
+  const gap = 2.6; // each stroke stops this far short of the centre line
+  Path stroke(double side) {
+    double x(double v) => 50 + side * v;
+    const inner = halfWidth - broad;
     return Path()
-      ..moveTo(l, foot)
-      ..lineTo(l, spring)
-      ..cubicTo(l, spring - 16, 50 - half * 0.32, apex + 9, 50, apex)
-      ..cubicTo(50 + half * 0.32, apex + 9, r, spring - 16, r, spring)
-      ..lineTo(r, foot);
+      ..moveTo(x(halfWidth), foot)
+      ..lineTo(x(halfWidth), spring)
+      ..cubicTo(
+        x(halfWidth),
+        spring - 20,
+        x(halfWidth * 0.36),
+        crown + 9.5,
+        x(gap),
+        crown + 1.5,
+      )
+      ..lineTo(x(gap), crown + 5.2)
+      ..cubicTo(
+        x(inner * 0.36),
+        crown + 13,
+        x(inner),
+        spring - 17,
+        x(inner),
+        spring,
+      )
+      ..lineTo(x(inner), foot)
+      ..close();
   }
+
+  // The nuqta at the crown: a reed pen's square dot, set on its corner.
+  const dot = 5.6; // half its diagonal
+  const dotY = crown - 0.6;
+  final nuqta = Path()
+    ..moveTo(50, dotY - dot)
+    ..lineTo(50 + dot, dotY)
+    ..lineTo(50, dotY + dot)
+    ..lineTo(50 - dot, dotY)
+    ..close();
 
   canvas
-    ..drawPath(arch(0), ink(stroke: 3.4))
-    ..drawPath(arch(5), ink(stroke: 1.1));
+    ..drawPath(stroke(-1), goldPaint)
+    ..drawPath(stroke(1), goldPaint)
+    ..drawPath(nuqta, goldPaint);
 
-  // The name, centred in the arch's opening.
+  // The name, centred in the doorway.
   TextPainter word(double fontSize) => TextPainter(
     text: TextSpan(
       text: 'صحبة',
@@ -160,50 +193,24 @@ void paintBrandMark(
         fontWeight: FontWeight.w700,
         fontSize: fontSize,
         height: 1,
-        foreground: ink(),
+        color: ivory,
       ),
     ),
     textDirection: TextDirection.rtl,
   )..layout();
   final probe = word(100);
-  final name = word(100 * 56 / probe.width);
-  // Centred on the book: the letters' ink sits over the spine and rests
-  // just above the pages. Measured in Amiri Bold: the ink's centre is 0.85
-  // units left of the line box's, and its foot is at 0.87 of the box.
+  final name = word(100 * 57 / probe.width);
+  // Measured in Amiri Bold: the ink's centre is 0.85 units left of the line
+  // box's, and its foot is at 0.87 of the box.
   const inkCentreShift = 0.85;
   const inkFoot = 0.87; // the ink's lowest point, as a share of the box
-  const rest = 69.0; // where the ink's foot rests, above the pages
+  const rest = 79.0; // where the ink's foot rests
   name.paint(
     canvas,
     Offset(50 - name.width / 2 + inkCentreShift, rest - name.height * inkFoot),
   );
   probe.dispose();
   name.dispose();
-
-  // The open book: two pages curving down to the spine, each with a page
-  // edge beneath, broad enough to read at the smallest sizes.
-  Path page(double side) {
-    double x(double v) => 50 + side * v;
-    return Path()
-      ..moveTo(x(2), 83)
-      ..cubicTo(x(10), 76.5, x(26), 72.5, x(40), 74.5)
-      ..lineTo(x(40), 86.5)
-      ..cubicTo(x(26), 84.5, x(10), 88.5, x(2), 95)
-      ..close();
-  }
-
-  Path edge(double side) {
-    double x(double v) => 50 + side * v;
-    return Path()
-      ..moveTo(x(2), 98.4)
-      ..cubicTo(x(10), 92, x(26), 88, x(40.5), 90);
-  }
-
-  for (final side in const [-1.0, 1.0]) {
-    canvas
-      ..drawPath(page(side), ink())
-      ..drawPath(edge(side), ink(stroke: 1.4));
-  }
   canvas.restore();
 }
 

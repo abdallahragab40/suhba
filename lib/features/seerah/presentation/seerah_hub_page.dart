@@ -334,12 +334,15 @@ class SeerahOpening extends ConsumerWidget {
                           Text(
                             introText,
                             // Room for the whole introduction at the
-                            // default reading size (20 since D3).
+                            // default reading size on a phone.
                             maxLines: compact ? 5 : null,
                             overflow: compact ? TextOverflow.ellipsis : null,
-                            style: SuhbaTextStyles.of(
-                              context,
-                            ).reading.copyWith(color: Palette.paper),
+                            // A lead paragraph on the banner: a step below
+                            // the reading size, so the way in stays near.
+                            style: SuhbaTextStyles.of(context).reading.copyWith(
+                              color: Palette.paper,
+                              fontSize: 18,
+                            ),
                           ),
                         ],
                         if (total > 0) ...[
@@ -466,6 +469,7 @@ class _PeriodHeading extends StatelessWidget {
         padding: const EdgeInsets.all(AppSpacing.md),
         decoration: BoxDecoration(
           color: colors.surfaceAlt,
+          border: Border.all(color: colors.line),
           borderRadius: const BorderRadius.all(AppRadii.md),
         ),
         child: Column(

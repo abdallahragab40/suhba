@@ -58,20 +58,23 @@ class CitationMarker extends StatelessWidget {
         : l10n.citationsButton(formatted);
     // Inline, the enclosing WidgetSpan does the scaling.
     final glyphSize = inline ? 16.0 : scaler.scale(16);
+    // In running text the mark is quieter than a link: it follows every
+    // paragraph, and must not out-shine the words.
+    final color = inline ? colors.mark : colors.link;
     final glyph = Row(
       mainAxisSize: MainAxisSize.min,
       children: [
         Icon(
           reported ? glyphReported : glyphSource,
           size: glyphSize,
-          color: colors.link,
+          color: color,
         ),
         if (count > 1)
           Text(
             formatted,
             style: Theme.of(
               context,
-            ).textTheme.labelSmall?.copyWith(color: colors.link),
+            ).textTheme.labelSmall?.copyWith(color: color),
           ),
       ],
     );

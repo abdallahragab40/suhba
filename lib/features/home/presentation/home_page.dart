@@ -3,8 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/app_shell.dart';
 import 'package:suhba/app/router/routes.dart';
-import 'package:suhba/core/design_system/theme/app_theme.dart';
-import 'package:suhba/core/design_system/tokens/palette.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
 import 'package:suhba/core/design_system/tokens/typography.dart';
@@ -39,7 +37,6 @@ import 'package:suhba/shared/content/domain/story.dart';
 import 'package:suhba/shared/content/presentation/content_text.dart';
 import 'package:suhba/shared/content/presentation/record_links.dart';
 import 'package:suhba/shared/content/providers.dart';
-import 'package:suhba/shared/visuals/presentation/infographic_view.dart';
 
 /// Home (S02): the next-step card (today's journey step, due review, or the
 /// most recent unfinished reading; the full list of positions is in
@@ -183,9 +180,13 @@ class _Home extends ConsumerWidget {
           ]),
           if (seerah != null)
             SeerahOpening(index: seerah, progress: progress, compact: true),
-          if ((feature, featureChapter) case (final f?, final c?))
-            _InkEpisode(feature: f, chapter: c),
           paper([
+            // One compact card: the episode's own steps and map are a tap
+            // away, in its chapter, and no longer stretch Home.
+            if ((feature, featureChapter) case (final f?, final c?)) ...[
+              const SizedBox(height: AppSpacing.lg),
+              _FeaturedEpisode(feature: f, chapter: c),
+            ],
             // Only in a month the sources date something to.
             if ((hijri, monthName) case (
               final h?,
@@ -246,10 +247,10 @@ class _Home extends ConsumerWidget {
 /// How many stories Home shows before linking to the full list.
 const homeStoryCount = 3;
 
-/// The ink band: the one episode the content features (`feature` in
-/// `seerah.json`), told by its visual, with a way into its chapter.
-class _InkEpisode extends StatelessWidget {
-  const _InkEpisode({required this.feature, required this.chapter});
+/// The one episode the content features (`feature` in `seerah.json`): a
+/// card with what it is about, a way into its chapter, and its visual.
+class _FeaturedEpisode extends StatelessWidget {
+  const _FeaturedEpisode({required this.feature, required this.chapter});
 
   final SeerahFeature feature;
   final SeerahChapterSummary chapter;
@@ -257,40 +258,63 @@ class _InkEpisode extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    return Theme(
-      data: AppTheme.feature,
-      child: Builder(
-        builder: (context) => Material(
-          color: Palette.green,
-          child: Padding(
-            padding: const EdgeInsets.all(AppSpacing.gutter),
-            child: Center(
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 760),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    SectionHeader(
-                      kicker: l10n.seerahFeatureKicker,
-                      title: chapter.title.of(context),
-                    ),
-                    const SizedBox(height: AppSpacing.md),
-                    InfographicView(visualId: feature.visualId, inline: true),
-                    const SizedBox(height: AppSpacing.md),
-                    Align(
-                      alignment: AlignmentDirectional.centerStart,
-                      child: FilledButton.tonalIcon(
-                        onPressed: () =>
-                            context.push(AppRoutes.seerahChapter(chapter.id)),
-                        icon: const Icon(Icons.auto_stories),
-                        label: Text(l10n.seerahFeatureRead),
-                      ),
-                    ),
-                  ],
+    final colors = SuhbaColors.of(context);
+    final textTheme = Theme.of(context).textTheme;
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(AppSpacing.md),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(Icons.auto_awesome, size: 18, color: colors.accentText),
+                const SizedBox(width: AppSpacing.xxs),
+                Expanded(
+                  child: Text(
+                    l10n.seerahFeatureKicker,
+                    style: SuhbaTextStyles.of(context).kicker,
+                  ),
                 ),
+              ],
+            ),
+            const SizedBox(height: AppSpacing.xxs),
+            Semantics(
+              header: true,
+              child: Text(
+                chapter.title.of(context),
+                style: textTheme.titleLarge,
               ),
             ),
-          ),
+            const SizedBox(height: AppSpacing.xxs),
+            Text(
+              chapter.abstract.of(context),
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
+              style: textTheme.bodyMedium?.copyWith(
+                color: colors.onSurfaceDim,
+              ),
+            ),
+            const SizedBox(height: AppSpacing.sm),
+            Wrap(
+              spacing: AppSpacing.xs,
+              runSpacing: AppSpacing.xxs,
+              children: [
+                FilledButton.tonalIcon(
+                  onPressed: () =>
+                      context.push(AppRoutes.seerahChapter(chapter.id)),
+                  icon: const Icon(Icons.auto_stories),
+                  label: Text(l10n.seerahFeatureRead),
+                ),
+                TextButton.icon(
+                  onPressed: () =>
+                      context.push(AppRoutes.visual(feature.visualId)),
+                  icon: const Icon(Icons.schema_outlined),
+                  label: Text(l10n.visualPageTitle),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );

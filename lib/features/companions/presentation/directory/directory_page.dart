@@ -4,7 +4,9 @@ import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/app_shell.dart';
 import 'package:suhba/app/router/routes.dart';
 import 'package:suhba/core/design_system/tokens/app_icons.dart';
+import 'package:suhba/core/design_system/tokens/radii.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
 import 'package:suhba/core/design_system/widgets/companion_row.dart';
 import 'package:suhba/core/design_system/widgets/draft_badge.dart';
 import 'package:suhba/core/design_system/widgets/empty_state.dart';
@@ -126,46 +128,62 @@ class _DirectoryList extends StatelessWidget {
                       AppSpacing.gutter,
                       AppSpacing.lg,
                       AppSpacing.gutter,
-                      AppSpacing.xxs,
+                      AppSpacing.xs,
                     ),
                     sliver: SliverToBoxAdapter(
-                      child: Semantics(
-                        header: true,
-                        child: Text(
-                          category?.name.of(context) ?? l10n.directoryOthers,
-                          style: Theme.of(context).textTheme.titleMedium,
-                        ),
+                      child: _GroupHeader(
+                        title:
+                            category?.name.of(context) ?? l10n.directoryOthers,
+                        count: members.length,
                       ),
                     ),
+                  )
+                else
+                  const SliverToBoxAdapter(
+                    child: SizedBox(height: AppSpacing.xs),
                   ),
+                // Each group is one sheet, edged like a card, its rows
+                // divided by inset hairlines.
                 SliverPadding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: AppSpacing.gutter,
                   ),
-                  sliver: SliverList.separated(
-                    itemCount: members.length,
-                    separatorBuilder: (_, _) => const Divider(height: 1),
-                    itemBuilder: (context, i) {
-                      final c = members[i];
-                      return CompanionRow(
-                        key: ValueKey(c.id),
-                        name: c.name.of(context),
-                        honorific: companionHonorific(c.gender),
-                        subtitle: [
-                          if (c.kunya case final k?) k.of(context),
-                          for (final t in c.titles) t.of(context),
-                        ].join(DisplayFormatter.separator),
-                        depth: switch (BiographyDepth.of(c)) {
-                          BiographyDepth.full => l10n.depthFull,
-                          BiographyDepth.brief => l10n.depthBrief,
-                          null => null,
-                        },
-                        isDraft: !c.review.isApproved,
-                        isPreliminary: c.review.isPreliminary,
-                        heroTag: DirectoryPage.heroTag(c.id),
-                        onTap: () => context.push(AppRoutes.companion(c.id)),
-                      );
-                    },
+                  sliver: DecoratedSliver(
+                    decoration: BoxDecoration(
+                      color: SuhbaColors.of(context).surfaceAlt,
+                      border: Border.all(color: SuhbaColors.of(context).line),
+                      borderRadius: const BorderRadius.all(AppRadii.md),
+                    ),
+                    sliver: SliverList.separated(
+                      itemCount: members.length,
+                      separatorBuilder: (_, _) => const Divider(
+                        height: 1,
+                        indent: AppSpacing.md + 40 + AppSpacing.sm,
+                      ),
+                      itemBuilder: (context, i) {
+                        final c = members[i];
+                        final depth = BiographyDepth.of(c);
+                        return CompanionRow(
+                          key: ValueKey(c.id),
+                          name: c.name.of(context),
+                          honorific: companionHonorific(c.gender),
+                          subtitle: [
+                            if (c.kunya case final k?) k.of(context),
+                            for (final t in c.titles) t.of(context),
+                          ].join(DisplayFormatter.separator),
+                          depth: switch (depth) {
+                            BiographyDepth.full => l10n.depthFull,
+                            BiographyDepth.brief => l10n.depthBrief,
+                            null => null,
+                          },
+                          isFull: depth == BiographyDepth.full,
+                          isDraft: !c.review.isApproved,
+                          isPreliminary: c.review.isPreliminary,
+                          heroTag: DirectoryPage.heroTag(c.id),
+                          onTap: () => context.push(AppRoutes.companion(c.id)),
+                        );
+                      },
+                    ),
                   ),
                 ),
               ],
@@ -173,6 +191,44 @@ class _DirectoryList extends StatelessWidget {
             ],
           ],
         ),
+      ),
+    );
+  }
+}
+
+/// A group's title and how many it holds.
+class _GroupHeader extends StatelessWidget {
+  const _GroupHeader({required this.title, required this.count});
+
+  final String title;
+  final int count;
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = SuhbaColors.of(context);
+    final textTheme = Theme.of(context).textTheme;
+    return Semantics(
+      header: true,
+      child: Row(
+        children: [
+          Flexible(child: Text(title, style: textTheme.titleMedium)),
+          const SizedBox(width: AppSpacing.xs),
+          Container(
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.xs,
+              vertical: 1,
+            ),
+            decoration: BoxDecoration(
+              color: colors.surfaceAlt,
+              border: Border.all(color: colors.line),
+              borderRadius: const BorderRadius.all(AppRadii.pill),
+            ),
+            child: Text(
+              DisplayFormatter.of(context).integer(count),
+              style: textTheme.labelSmall?.copyWith(color: colors.onSurfaceDim),
+            ),
+          ),
+        ],
       ),
     );
   }

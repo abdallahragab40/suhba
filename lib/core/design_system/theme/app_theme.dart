@@ -28,19 +28,22 @@ abstract final class AppTheme {
     SuhbaColors.feature,
   );
 
-  /// The reader's warm paper tone (review K5): the light theme on a warmer,
-  /// lighter page. Readers only; the rest of the app keeps its theme.
+  /// The reader's warm paper tone (review K5): the light theme on a sepia
+  /// page, a clear step warmer than the app's ivory. Readers only; the
+  /// rest of the app keeps its theme.
   static final ThemeData warmPaper = _build(
     _lightScheme.copyWith(
       surface: Palette.warmPaper,
-      surfaceContainerLowest: Palette.warmPaper,
+      onSurface: Palette.inkTextOnWarmPaper,
+      surfaceContainerLowest: Palette.warmPaperAlt,
       surfaceContainerLow: Palette.warmPaper,
-      surfaceContainer: Palette.warmPaperAlt,
+      surfaceContainer: Palette.warmPaper,
       outlineVariant: Palette.lineOnWarmPaper,
     ),
     SuhbaColors.light.copyWith(
       surfaceAlt: Palette.warmPaperAlt,
       line: Palette.lineOnWarmPaper,
+      verseSurface: Palette.verseWashOnWarmPaper,
       draftSurface: Palette.warmPaperAlt,
     ),
   );
@@ -61,6 +64,7 @@ abstract final class AppTheme {
       surfaceAlt: Palette.warmNightAlt,
       onSurfaceDim: Palette.dimOnWarmNight,
       line: Palette.lineOnWarmNight,
+      verseSurface: Palette.verseWashOnWarmNight,
       draft: Palette.dimOnWarmNight,
       draftSurface: Palette.warmNightAlt,
     ),
@@ -83,7 +87,7 @@ abstract final class AppTheme {
     errorContainer: Palette.clayWash,
     onErrorContainer: Palette.clay,
     surface: Palette.paper,
-    onSurface: Palette.ink,
+    onSurface: Palette.inkText,
     onSurfaceVariant: Palette.inkDim,
     surfaceContainerLowest: Palette.paperLowest,
     surfaceContainerLow: Palette.paperLow,
@@ -172,11 +176,12 @@ abstract final class AppTheme {
         color: colors.surfaceAlt,
         elevation: 0,
         margin: EdgeInsets.zero,
-        // At night a hairline edges each card: tone alone separates
-        // too little on a dark page.
+        // A hairline edges each card: by day a card is only a little
+        // lighter than the page, and at night tone alone separates too
+        // little.
         shape: RoundedRectangleBorder(
           borderRadius: const BorderRadius.all(AppRadii.md),
-          side: dark ? BorderSide(color: colors.line) : BorderSide.none,
+          side: BorderSide(color: colors.line),
         ),
       ),
       chipTheme: ChipThemeData(
@@ -187,8 +192,11 @@ abstract final class AppTheme {
         selectedColor: scheme.secondaryContainer,
       ),
       navigationBarTheme: NavigationBarThemeData(
-        // At night the bar sits a step above the page.
-        backgroundColor: dark ? scheme.surfaceContainerLow : scheme.surface,
+        // The bar sits a step above the page: the cards' tone by day,
+        // a lifted one at night.
+        backgroundColor: dark
+            ? scheme.surfaceContainerLow
+            : scheme.surfaceContainerLowest,
         surfaceTintColor: Colors.transparent,
         elevation: 0,
         indicatorColor: scheme.brightness == Brightness.light

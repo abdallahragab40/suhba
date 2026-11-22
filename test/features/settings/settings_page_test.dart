@@ -92,10 +92,7 @@ void main() {
     expect(uri.queryParameters['body'], 'سطر\nثانٍ');
   });
 
-  testApp('send feedback copies the address when no mail app opens', (
-    tester,
-  ) async {
-    tall(tester);
+  Future<List<Object?>> mockClipboard(WidgetTester tester) async {
     final copied = <Object?>[];
     tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
       SystemChannels.platform,
@@ -110,6 +107,33 @@ void main() {
         null,
       ),
     );
+    return copied;
+  }
+
+  Future<void> writeFeedback(WidgetTester tester, String message) async {
+    await tester.tap(find.text('أرسل ملاحظاتك'));
+    await tester.pumpAndSettle();
+    expect(find.byType(FeedbackSheet), findsOneWidget);
+    // Nothing to send until something is written.
+    expect(
+      tester
+          .widget<FilledButton>(
+            find.widgetWithText(FilledButton, 'اكتب الرسالة في البريد'),
+          )
+          .onPressed,
+      isNull,
+    );
+    await tester.tap(find.text('مشكلة في التطبيق'));
+    await tester.enterText(find.byType(TextField), message);
+    await tester.pump();
+    await tester.tap(find.text('اكتب الرسالة في البريد'));
+    await tester.pumpAndSettle();
+  }
+
+  testApp('feedback opens the mail app with kind, message and details', (
+    tester,
+  ) async {
+    tall(tester);
     final opened = <Uri>[];
     await AppUnderTest(
       bundle: MemoryAssetBundle.draftContent(),
@@ -117,31 +141,84 @@ void main() {
       overrides: [
         mailLauncherProvider.overrideWithValue((uri) async {
           opened.add(uri);
-          return false;
+          return true;
+        }),
+      ],
+    ).pump(tester);
+    await writeFeedback(tester, 'الشاشة لا تتحرك');
+
+    final uri = opened.single;
+    expect(uri.path, feedbackEmail);
+    expect(
+      uri.queryParameters['subject'],
+      'مشكلة في التطبيق — ملاحظات على تطبيق صُحبة',
+    );
+    final body = uri.queryParameters['body']!;
+    expect(body, startsWith('الشاشة لا تتحرك'));
+    expect(body, contains('معلومات التطبيق'));
+    expect(body, contains('المحتوى: '));
+    expect(find.byType(FeedbackSheet), findsNothing);
+    expect(find.byType(SnackBar), findsNothing);
+  });
+
+  testApp('without a mail app the whole message is copied', (tester) async {
+    tall(tester);
+    final copied = await mockClipboard(tester);
+    await AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      location: '/settings',
+      overrides: [mailLauncherProvider.overrideWithValue((uri) async => false)],
+    ).pump(tester);
+    await writeFeedback(tester, 'رسالة');
+
+    final text = (copied.single! as Map)['text'] as String;
+    expect(text, startsWith(feedbackEmail));
+    expect(text, contains('رسالة'));
+    expect(find.textContaining(feedbackEmail), findsOneWidget);
+  });
+
+  testApp('the address can be copied from the sheet', (tester) async {
+    tall(tester);
+    final copied = await mockClipboard(tester);
+    await AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      location: '/settings',
+    ).pump(tester);
+    await tester.tap(find.text('أرسل ملاحظاتك'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.textContaining('نسخ العنوان'));
+    await tester.pumpAndSettle();
+    expect(copied, [
+      {'text': feedbackEmail},
+    ]);
+  });
+
+  testApp('app details can be left out', (tester) async {
+    tall(tester);
+    final opened = <Uri>[];
+    await AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      location: '/settings',
+      overrides: [
+        mailLauncherProvider.overrideWithValue((uri) async {
+          opened.add(uri);
+          return true;
         }),
       ],
     ).pump(tester);
     await tester.tap(find.text('أرسل ملاحظاتك'));
     await tester.pumpAndSettle();
-    expect(opened.single.path, feedbackEmail);
-    expect(copied, [
-      {'text': feedbackEmail},
-    ]);
-    expect(find.textContaining(feedbackEmail), findsOneWidget);
-  });
-
-  testApp('send feedback opens the mail app when one is available', (
-    tester,
-  ) async {
-    tall(tester);
-    await AppUnderTest(
-      bundle: MemoryAssetBundle.draftContent(),
-      location: '/settings',
-      overrides: [mailLauncherProvider.overrideWithValue((uri) async => true)],
-    ).pump(tester);
-    await tester.tap(find.text('أرسل ملاحظاتك'));
+    await tester.tap(
+      find.descendant(
+        of: find.byType(FeedbackSheet),
+        matching: find.byType(Switch),
+      ),
+    );
+    await tester.enterText(find.byType(TextField), 'شكرًا');
+    await tester.pump();
+    await tester.tap(find.text('اكتب الرسالة في البريد'));
     await tester.pumpAndSettle();
-    expect(find.byType(SnackBar), findsNothing);
+    expect(opened.single.queryParameters['body'], 'شكرًا');
   });
 
   testApp('the content version and channel are shown', (tester) async {

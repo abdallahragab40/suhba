@@ -44,12 +44,9 @@ void main() {
         expect(theme.extension<SuhbaTextStyles>(), isNotNull);
       });
 
-      test('display roles use Amiri; all other roles use Plex Arabic', () {
+      test('every role uses Plex Arabic', () {
         for (final (role, style) in _roles(theme.textTheme)) {
-          final expected = role.startsWith('display')
-              ? AppFonts.amiri
-              : AppFonts.plexArabic;
-          expect(style!.fontFamily, expected, reason: role);
+          expect(style!.fontFamily, AppFonts.plexArabic, reason: role);
         }
       });
 
@@ -82,13 +79,13 @@ void main() {
         }
       });
 
-      test('reading text uses Amiri and verses use Amiri Quran', () {
+      test('reading text uses Plex Arabic and verses use Amiri Quran', () {
         final styles = theme.extension<SuhbaTextStyles>()!;
-        expect(styles.reading.fontFamily, AppFonts.amiri);
-        expect(styles.readingStrong.fontFamily, AppFonts.amiri);
-        expect(styles.readingHeading.fontFamily, AppFonts.amiri);
-        // Quoted wording is larger, not bolder.
-        expect(styles.readingStrong.fontWeight, FontWeight.w400);
+        expect(styles.reading.fontFamily, AppFonts.plexArabic);
+        expect(styles.readingStrong.fontFamily, AppFonts.plexArabic);
+        expect(styles.readingHeading.fontFamily, AppFonts.plexArabic);
+        // Quoted wording is larger and medium, never bold.
+        expect(styles.readingStrong.fontWeight, FontWeight.w500);
         expect(
           styles.readingStrong.fontSize,
           greaterThan(styles.reading.fontSize!),
@@ -121,6 +118,6 @@ void main() {
       expect(style!.letterSpacing, 0, reason: role);
     }
     expect(localized.bodyLarge!.fontSize, 16);
-    expect(localized.displaySmall!.fontSize, 40);
+    expect(localized.displaySmall!.fontSize, 28);
   });
 }

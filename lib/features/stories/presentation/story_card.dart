@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/routes.dart';
-import 'package:suhba/core/design_system/tokens/radii.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
 import 'package:suhba/core/design_system/tokens/typography.dart';
@@ -26,9 +25,6 @@ class StoryCard extends StatelessWidget {
     return Card(
       margin: const EdgeInsetsDirectional.only(bottom: AppSpacing.sm),
       clipBehavior: Clip.antiAlias,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(AppRadii.md),
-      ),
       child: InkWell(
         onTap: () => context.push(AppRoutes.story(s.id)),
         child: Padding(

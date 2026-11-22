@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:suhba/core/design_system/widgets/citation_marker.dart';
 import 'package:suhba/core/share/share_service.dart';
+import 'package:suhba/features/settings/presentation/feedback_tile.dart';
 import 'package:suhba/features/sources/domain/share_card_policy.dart';
 import 'package:suhba/features/sources/presentation/citation_sheet.dart';
 import 'package:suhba/features/sources/presentation/passage_share.dart';
@@ -93,6 +94,49 @@ void main() {
     // Draft content never leaves the app without saying so.
     expect(lines, contains('المحتوى قيد المراجعة ولم يكتمل اعتماده العلمي.'));
     expect(lines.last, 'من تطبيق صُحبة');
+  });
+
+  testApp('a reader reports a mistake in a passage by mail', (tester) async {
+    tester.view
+      ..devicePixelRatio = 1
+      ..physicalSize = const Size(600, 2400);
+    addTearDown(tester.view.reset);
+    final opened = <Uri>[];
+    await AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      location: '/companions/abu-bakr/sections/abu-bakr.hijrah',
+      overrides: [
+        mailLauncherProvider.overrideWithValue((uri) async {
+          opened.add(uri);
+          return true;
+        }),
+      ],
+    ).pump(tester);
+
+    await tester.tap(find.byType(CitationMarker).first);
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('أبلغ عن خطأ في هذا النص'));
+    await tester.pumpAndSettle();
+    expect(find.byType(FeedbackSheet), findsOneWidget);
+    // A passage report starts as a content mistake, with the passage shown.
+    expect(
+      tester
+          .widget<ChoiceChip>(find.widgetWithText(ChoiceChip, 'خطأ في المحتوى'))
+          .selected,
+      isTrue,
+    );
+    await tester.enterText(find.byType(TextField), 'التاريخ غير دقيق');
+    await tester.pump();
+    await tester.tap(find.text('اكتب الرسالة في البريد'));
+    await tester.pumpAndSettle();
+
+    final uri = opened.single;
+    expect(uri.path, feedbackEmail);
+    expect(uri.queryParameters['subject'], startsWith('خطأ في المحتوى'));
+    final body = uri.queryParameters['body']!;
+    expect(body, startsWith('التاريخ غير دقيق'));
+    expect(body, contains('أبو بكر الصديق — صاحبه في الهجرة'));
+    expect(body, contains('«صحب النبيَّ ﷺ في هجرته'));
   });
 
   testApp('debug preview shares a PNG only after explicit share', (
