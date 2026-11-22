@@ -291,9 +291,7 @@ class _FeaturedEpisode extends StatelessWidget {
               chapter.abstract.of(context),
               maxLines: 3,
               overflow: TextOverflow.ellipsis,
-              style: textTheme.bodyMedium?.copyWith(
-                color: colors.onSurfaceDim,
-              ),
+              style: textTheme.bodyMedium?.copyWith(color: colors.onSurfaceDim),
             ),
             const SizedBox(height: AppSpacing.sm),
             Wrap(
