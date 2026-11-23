@@ -6,9 +6,9 @@ import 'package:suhba/app/router/routes.dart';
 import 'package:suhba/core/design_system/theme/app_theme.dart';
 import 'package:suhba/core/design_system/tokens/app_icons.dart';
 import 'package:suhba/core/design_system/tokens/motion.dart';
-import 'package:suhba/core/design_system/tokens/palette.dart';
 import 'package:suhba/core/design_system/tokens/radii.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
 import 'package:suhba/core/design_system/tokens/typography.dart';
 import 'package:suhba/core/design_system/widgets/scene_backdrop.dart';
 import 'package:suhba/core/format/display_formatter.dart';
@@ -77,18 +77,22 @@ class _QuizHomePageState extends ConsumerState<QuizHomePage>
       ),
     ];
 
+    final feature = AppTheme.featureOf(context);
+    final ground = feature.colorScheme.surface;
+    final onGround = feature.colorScheme.onSurface;
+    final dim = feature.extension<SuhbaColors>()!.onSurfaceDim;
     return Theme(
-      data: AppTheme.feature,
+      data: feature,
       child: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle.light,
         child: Scaffold(
-          backgroundColor: Palette.green,
+          backgroundColor: ground,
           body: CustomScrollView(
             slivers: [
               SliverAppBar(
                 pinned: true,
                 expandedHeight: 240,
-                backgroundColor: Palette.green,
+                backgroundColor: ground,
                 flexibleSpace: FlexibleSpaceBar(
                   background: Stack(
                     fit: StackFit.expand,
@@ -102,8 +106,8 @@ class _QuizHomePageState extends ConsumerState<QuizHomePage>
                             end: Alignment.bottomCenter,
                             stops: const [0.25, 1],
                             colors: [
-                              Palette.green.withValues(alpha: 0),
-                              Palette.green.withValues(alpha: 0.92),
+                              ground.withValues(alpha: 0),
+                              ground.withValues(alpha: 0.92),
                             ],
                           ),
                         ),
@@ -123,7 +127,7 @@ class _QuizHomePageState extends ConsumerState<QuizHomePage>
                                 ),
                                 l10n.quizTitle,
                                 style: Theme.of(context).textTheme.displaySmall
-                                    ?.copyWith(color: Palette.paper),
+                                    ?.copyWith(color: onGround),
                               ),
                             ),
                             const SizedBox(height: AppSpacing.xs),
@@ -131,7 +135,7 @@ class _QuizHomePageState extends ConsumerState<QuizHomePage>
                               l10n.quizSubtitle,
                               style: SuhbaTextStyles.of(
                                 context,
-                              ).reading.copyWith(color: Palette.paper),
+                              ).reading.copyWith(color: onGround),
                             ),
                           ],
                         ),
@@ -180,9 +184,9 @@ class _QuizHomePageState extends ConsumerState<QuizHomePage>
                               true)
                           ? l10n.quizNote
                           : l10n.quizNotePublished,
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: Palette.paperDimOnGreen,
-                      ),
+                      style: Theme.of(
+                        context,
+                      ).textTheme.bodySmall?.copyWith(color: dim),
                     ),
                   ],
                 ),
@@ -233,13 +237,16 @@ class _ModeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final format = DisplayFormatter.of(context);
-    final textTheme = Theme.of(context).textTheme;
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
+    final scheme = theme.colorScheme;
+    final colors = SuhbaColors.of(context);
     final score = best;
     return Material(
-      color: Palette.greenAlt,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(AppRadii.lg),
-        side: BorderSide(color: Palette.lineOnGreen),
+      color: scheme.surfaceContainer,
+      shape: RoundedRectangleBorder(
+        borderRadius: const BorderRadius.all(AppRadii.lg),
+        side: BorderSide(color: colors.line),
       ),
       clipBehavior: Clip.antiAlias,
       child: InkWell(
@@ -253,10 +260,10 @@ class _ModeCard extends StatelessWidget {
                 height: 56,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Palette.greenHighest,
-                  border: Border.all(color: Palette.goldOnInk),
+                  color: scheme.surfaceContainerHighest,
+                  border: Border.all(color: colors.accent),
                 ),
-                child: Icon(icon, color: Palette.goldOnInk),
+                child: Icon(icon, color: colors.accent),
               ),
               const SizedBox(width: AppSpacing.md),
               Expanded(
@@ -266,14 +273,14 @@ class _ModeCard extends StatelessWidget {
                     Text(
                       title,
                       style: textTheme.titleLarge?.copyWith(
-                        color: Palette.paper,
+                        color: scheme.onSurface,
                       ),
                     ),
                     const SizedBox(height: AppSpacing.xxs),
                     Text(
                       hint,
                       style: textTheme.bodyMedium?.copyWith(
-                        color: Palette.paperDimOnGreen,
+                        color: colors.onSurfaceDim,
                       ),
                     ),
                     const SizedBox(height: AppSpacing.xs),
@@ -285,13 +292,13 @@ class _ModeCard extends StatelessWidget {
                               format.integer(10),
                             ),
                       style: textTheme.labelMedium?.copyWith(
-                        color: Palette.goldOnInk,
+                        color: colors.accent,
                       ),
                     ),
                   ],
                 ),
               ),
-              const Icon(Icons.chevron_right, color: Palette.paperDimOnGreen),
+              Icon(Icons.chevron_right, color: colors.onSurfaceDim),
             ],
           ),
         ),

@@ -4,9 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:suhba/core/design_system/theme/app_theme.dart';
 import 'package:suhba/core/design_system/tokens/motion.dart';
-import 'package:suhba/core/design_system/tokens/palette.dart';
 import 'package:suhba/core/design_system/tokens/radii.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
 import 'package:suhba/core/design_system/tokens/typography.dart';
 import 'package:suhba/core/design_system/widgets/brand_loader.dart';
 import 'package:suhba/core/design_system/widgets/error_view.dart';
@@ -97,14 +97,15 @@ class _QuizPlayPageState extends ConsumerState<QuizPlayPage> {
   @override
   Widget build(BuildContext context) {
     final content = ref.watch(quizContentProvider);
+    final feature = AppTheme.featureOf(context);
     return Theme(
-      data: AppTheme.feature,
+      data: feature,
       child: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle.light,
         child: Scaffold(
-          backgroundColor: Palette.green,
+          backgroundColor: feature.colorScheme.surface,
           appBar: AppBar(
-            backgroundColor: Palette.green,
+            backgroundColor: feature.colorScheme.surface,
             leading: const CloseButton(),
             title: Text(_modeName(AppLocalizations.of(context), widget.mode)),
           ),
@@ -254,6 +255,8 @@ class _QuizStepState extends State<_QuizStep>
     final l10n = AppLocalizations.of(context);
     final format = DisplayFormatter.of(context);
     final textTheme = Theme.of(context).textTheme;
+    final scheme = Theme.of(context).colorScheme;
+    final colors = SuhbaColors.of(context);
     final styles = SuhbaTextStyles.of(context);
     final q = widget.question;
     final picked = widget.picked;
@@ -284,7 +287,7 @@ class _QuizStepState extends State<_QuizStep>
                   format.integer(widget.index + 1),
                   format.integer(widget.total),
                 ),
-                style: styles.kicker.copyWith(color: Palette.paperDimOnGreen),
+                style: styles.kicker.copyWith(color: colors.onSurfaceDim),
               ),
             ),
             QuizStreak(count: widget.streak),
@@ -305,8 +308,8 @@ class _QuizStepState extends State<_QuizStep>
               child: LinearProgressIndicator(
                 value: value,
                 minHeight: 6,
-                color: Palette.goldOnInk,
-                backgroundColor: Palette.greenHighest,
+                color: colors.accent,
+                backgroundColor: scheme.surfaceContainerHighest,
               ),
             ),
           ),
@@ -326,7 +329,7 @@ class _QuizStepState extends State<_QuizStep>
                   q.kind.mode == QuizMode.seerah
                       ? l10n.quizAboutSeerah
                       : l10n.quizAboutCompanions,
-                  style: styles.kicker.copyWith(color: Palette.goldOnInk),
+                  style: styles.kicker.copyWith(color: colors.accent),
                 ),
                 const SizedBox(height: AppSpacing.xs),
                 Semantics(
@@ -334,7 +337,7 @@ class _QuizStepState extends State<_QuizStep>
                   child: Text(
                     quizPrompt(l10n, q),
                     style: textTheme.headlineSmall?.copyWith(
-                      color: Palette.paper,
+                      color: scheme.onSurface,
                       height: 1.5,
                     ),
                     textScaler: AppTypography.displayScaler(context),
@@ -396,6 +399,8 @@ class _Feedback extends StatelessWidget {
     final l10n = AppLocalizations.of(context);
     final format = DisplayFormatter.of(context);
     final textTheme = Theme.of(context).textTheme;
+    final scheme = Theme.of(context).colorScheme;
+    final colors = SuhbaColors.of(context);
     final route = question.route;
     final explanation = question.explanation;
     return Padding(
@@ -403,9 +408,9 @@ class _Feedback extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(AppSpacing.md),
         decoration: BoxDecoration(
-          color: Palette.greenLow,
+          color: scheme.surfaceContainerLow,
           borderRadius: const BorderRadius.all(AppRadii.md),
-          border: Border.all(color: Palette.lineOnGreen),
+          border: Border.all(color: colors.line),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -419,7 +424,7 @@ class _Feedback extends StatelessWidget {
                         quizChoiceLabel(format, question.answer),
                       ),
                 style: textTheme.titleMedium?.copyWith(
-                  color: right ? Palette.goldOnInk : Palette.draftOnGreen,
+                  color: right ? colors.accent : colors.draft,
                   fontWeight: FontWeight.w700,
                 ),
               ),
@@ -431,7 +436,7 @@ class _Feedback extends StatelessWidget {
                 maxLines: 4,
                 overflow: TextOverflow.ellipsis,
                 style: textTheme.bodyMedium?.copyWith(
-                  color: Palette.paperDimOnGreen,
+                  color: colors.onSurfaceDim,
                 ),
               ),
             ],
@@ -488,6 +493,8 @@ class _QuizResultState extends State<_QuizResult> {
     final l10n = AppLocalizations.of(context);
     final format = DisplayFormatter.of(context);
     final textTheme = Theme.of(context).textTheme;
+    final scheme = Theme.of(context).colorScheme;
+    final colors = SuhbaColors.of(context);
     final total = widget.round.length;
     final ratio = total == 0 ? 0.0 : widget.score / total;
     final stars = ratio >= 0.9
@@ -523,7 +530,7 @@ class _QuizResultState extends State<_QuizResult> {
         Text(
           message,
           textAlign: TextAlign.center,
-          style: textTheme.headlineSmall?.copyWith(color: Palette.paper),
+          style: textTheme.headlineSmall?.copyWith(color: scheme.onSurface),
           textScaler: AppTypography.displayScaler(context),
         ),
         if (widget.newBest) ...[
@@ -536,22 +543,20 @@ class _QuizResultState extends State<_QuizResult> {
               ),
               decoration: BoxDecoration(
                 borderRadius: const BorderRadius.all(AppRadii.pill),
-                border: Border.all(color: Palette.goldOnInk),
+                border: Border.all(color: colors.accent),
               ),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Icon(
+                  Icon(
                     Icons.emoji_events_outlined,
-                    color: Palette.goldOnInk,
+                    color: colors.accent,
                     size: 18,
                   ),
                   const SizedBox(width: AppSpacing.xs),
                   Text(
                     l10n.quizNewBest,
-                    style: textTheme.labelLarge?.copyWith(
-                      color: Palette.goldOnInk,
-                    ),
+                    style: textTheme.labelLarge?.copyWith(color: colors.accent),
                   ),
                 ],
               ),
@@ -610,6 +615,8 @@ class _ReviewRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final textTheme = Theme.of(context).textTheme;
+    final scheme = Theme.of(context).colorScheme;
+    final colors = SuhbaColors.of(context);
     final right = picked == question.correct;
     final route = question.route;
     return Card(
@@ -617,11 +624,11 @@ class _ReviewRow extends StatelessWidget {
       child: ListTile(
         leading: Icon(
           right ? Icons.check_circle : Icons.cancel,
-          color: right ? Palette.goldOnInk : Palette.draftOnGreen,
+          color: right ? colors.accent : colors.draft,
         ),
         title: Text(
           quizPrompt(l10n, question),
-          style: textTheme.titleSmall?.copyWith(color: Palette.paper),
+          style: textTheme.titleSmall?.copyWith(color: scheme.onSurface),
         ),
         subtitle: Text(
           [
@@ -631,7 +638,7 @@ class _ReviewRow extends StatelessWidget {
                 quizChoiceLabel(format, question.choices[picked!]),
               ),
           ].join('\n'),
-          style: textTheme.bodySmall?.copyWith(color: Palette.paperDimOnGreen),
+          style: textTheme.bodySmall?.copyWith(color: colors.onSurfaceDim),
         ),
         trailing: route == null ? null : const Icon(Icons.chevron_right),
         onTap: route == null ? null : () => context.push(route),

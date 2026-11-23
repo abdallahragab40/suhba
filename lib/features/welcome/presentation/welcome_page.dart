@@ -8,8 +8,8 @@ import 'package:suhba/app/router/app_router.dart';
 import 'package:suhba/app/router/routes.dart';
 import 'package:suhba/core/design_system/theme/app_theme.dart';
 import 'package:suhba/core/design_system/tokens/motion.dart';
-import 'package:suhba/core/design_system/tokens/palette.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
 import 'package:suhba/core/design_system/tokens/typography.dart';
 import 'package:suhba/core/design_system/widgets/brand_mark.dart';
 import 'package:suhba/core/design_system/widgets/scene_backdrop.dart';
@@ -102,15 +102,16 @@ class _WelcomePageState extends ConsumerState<WelcomePage> {
     final last = _page == pages.length - 1;
 
     return Theme(
-      data: AppTheme.feature,
+      data: AppTheme.featureOf(context),
       child: Builder(
         builder: (context) {
           final scheme = Theme.of(context).colorScheme;
+          final colors = SuhbaColors.of(context);
           return AnnotatedRegion<SystemUiOverlayStyle>(
             // Light status bar text on the green.
             value: SystemUiOverlayStyle.light,
             child: Scaffold(
-              backgroundColor: Palette.green,
+              backgroundColor: scheme.surface,
               body: SafeArea(
                 // On tablets the screens keep a reading width, centred,
                 // with the controls beneath them rather than in the corners.
@@ -180,7 +181,7 @@ class _WelcomePageState extends ConsumerState<WelcomePage> {
                                             height: 8,
                                             decoration: BoxDecoration(
                                               color: i == _page
-                                                  ? Palette.goldOnInk
+                                                  ? colors.accent
                                                   : scheme.outlineVariant,
                                               borderRadius:
                                                   BorderRadius.circular(4),
@@ -273,6 +274,8 @@ class _WelcomeContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
+    final scheme = Theme.of(context).colorScheme;
+    final colors = SuhbaColors.of(context);
     final styles = SuhbaTextStyles.of(context);
     final art = ClipRRect(
       borderRadius: BorderRadius.circular(24),
@@ -302,18 +305,18 @@ class _WelcomeContent extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(kicker, style: styles.kicker.copyWith(color: Palette.goldOnInk)),
+        Text(kicker, style: styles.kicker.copyWith(color: colors.accent)),
         const SizedBox(height: AppSpacing.xs),
         Semantics(
           header: true,
           child: Text(
             title,
-            style: textTheme.displaySmall?.copyWith(color: Palette.paper),
+            style: textTheme.displaySmall?.copyWith(color: scheme.onSurface),
             textScaler: AppTypography.displayScaler(context),
           ),
         ),
         const SizedBox(height: AppSpacing.md),
-        Text(body, style: styles.reading.copyWith(color: Palette.paper)),
+        Text(body, style: styles.reading.copyWith(color: scheme.onSurface)),
       ],
     );
     return LayoutBuilder(

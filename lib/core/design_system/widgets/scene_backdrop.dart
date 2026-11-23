@@ -1,7 +1,9 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:suhba/core/design_system/theme/app_theme.dart';
 import 'package:suhba/core/design_system/tokens/palette.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
 
 /// The kinds of landscape the app draws. All are original vector
 /// compositions: land, sky and plants only, never people or buildings
@@ -21,7 +23,8 @@ enum SceneKind {
 }
 
 /// An illustrative landscape on Madinah green, drawn in gold and green
-/// tones.
+/// tones: the feature theme's greens ([AppTheme.featureOf]), so at night
+/// the scene is the quieter deep green and its gold is dimmer.
 ///
 /// Decorative only (no semantics); its meaning is always carried by the
 /// text laid over or beside it. It scales to any size and is drawn at most
@@ -36,11 +39,25 @@ class SceneBackdrop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final feature = AppTheme.featureOf(context);
+    final scheme = feature.colorScheme;
     return ExcludeSemantics(
       child: RepaintBoundary(
         child: CustomPaint(
           isComplex: true,
-          painter: _ScenePainter(kind, glow: glow),
+          painter: _ScenePainter(
+            kind,
+            glow: glow,
+            colors: (
+              lowest: scheme.surfaceContainerLowest,
+              high: scheme.surfaceContainerHigh,
+              highest: scheme.surfaceContainerHighest,
+              water: scheme.surfaceContainer,
+              moon: feature.extension<SuhbaColors>()!.accent,
+              // The decorative gold: rim lights, waves and the glow.
+              gold: identical(feature, AppTheme.featureDark) ? 0.7 : 1.0,
+            ),
+          ),
           child: const SizedBox.expand(),
         ),
       ),
@@ -48,11 +65,26 @@ class SceneBackdrop extends StatelessWidget {
   }
 }
 
+/// The scene's colours: the feature greens, the moon and stars' gold, and
+/// how strongly the decorative gold ([Palette.gold]) is laid on.
+typedef _SceneColors = ({
+  Color lowest,
+  Color high,
+  Color highest,
+  Color water,
+  Color moon,
+  double gold,
+});
+
 class _ScenePainter extends CustomPainter {
-  _ScenePainter(this.kind, {required this.glow});
+  _ScenePainter(this.kind, {required this.glow, required this.colors});
 
   final SceneKind kind;
   final bool glow;
+  final _SceneColors colors;
+
+  Color _gold(double alpha) =>
+      Palette.gold.withValues(alpha: alpha * colors.gold);
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -60,10 +92,10 @@ class _ScenePainter extends CustomPainter {
     canvas.drawRect(
       rect,
       Paint()
-        ..shader = const LinearGradient(
+        ..shader = LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [Palette.greenLowest, Palette.greenHigh],
+          colors: [colors.lowest, colors.high],
         ).createShader(rect),
     );
     if (glow) {
@@ -71,13 +103,8 @@ class _ScenePainter extends CustomPainter {
         Offset(size.width * 0.5, size.height * 0.78),
         size.width * 0.7,
         Paint()
-          ..shader =
-              RadialGradient(
-                colors: [
-                  Palette.gold.withValues(alpha: 0.18),
-                  Palette.gold.withValues(alpha: 0),
-                ],
-              ).createShader(
+          ..shader = RadialGradient(colors: [_gold(0.18), _gold(0)])
+              .createShader(
                 Rect.fromCircle(
                   center: Offset(size.width * 0.5, size.height * 0.78),
                   radius: size.width * 0.7,
@@ -142,7 +169,7 @@ class _ScenePainter extends CustomPainter {
   /// Stars at fixed pseudo-random places, so every paint is identical.
   void _stars(Canvas canvas, Size size, {required int count}) {
     final random = math.Random(kind.index * 31 + 7);
-    final paint = Paint()..color = Palette.goldOnInk.withValues(alpha: 0.55);
+    final paint = Paint()..color = colors.moon.withValues(alpha: 0.55);
     for (var i = 0; i < count; i++) {
       final p = Offset(
         random.nextDouble() * size.width,
@@ -161,7 +188,7 @@ class _ScenePainter extends CustomPainter {
       );
     canvas.drawPath(
       Path.combine(PathOperation.difference, moon, bite),
-      Paint()..color = Palette.goldOnInk.withValues(alpha: 0.9),
+      Paint()..color = colors.moon.withValues(alpha: 0.9),
     );
   }
 
@@ -206,11 +233,7 @@ class _ScenePainter extends CustomPainter {
         ..lineTo(size.width, points.last.dy)
         ..lineTo(size.width, size.height)
         ..close();
-      final colour = Color.lerp(
-        Palette.greenHighest,
-        Palette.greenLowest,
-        depth,
-      )!;
+      final colour = Color.lerp(colors.highest, colors.lowest, depth)!;
       canvas.drawPath(path, Paint()..color = colour);
       // A thin gold rim light on each crest.
       canvas.drawPath(
@@ -218,14 +241,14 @@ class _ScenePainter extends CustomPainter {
         Paint()
           ..style = PaintingStyle.stroke
           ..strokeWidth = 1
-          ..color = Palette.gold.withValues(alpha: 0.25 * (1 - depth) + 0.05),
+          ..color = _gold(0.25 * (1 - depth) + 0.05),
       );
     }
   }
 
   void _palm(Canvas canvas, Offset foot, double height) {
     final trunk = Paint()
-      ..color = Palette.greenLowest
+      ..color = colors.lowest
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round
       ..strokeWidth = math.max(2, height * 0.05);
@@ -241,7 +264,7 @@ class _ScenePainter extends CustomPainter {
         ),
       trunk,
     );
-    final frond = Paint()..color = Palette.greenLowest;
+    final frond = Paint()..color = colors.lowest;
     for (var i = 0; i < 7; i++) {
       final angle = -math.pi / 2 + (i - 3) * 0.48;
       final tip =
@@ -262,12 +285,12 @@ class _ScenePainter extends CustomPainter {
     final horizon = size.height * 0.62;
     canvas.drawRect(
       Rect.fromLTWH(0, horizon, size.width, size.height - horizon),
-      Paint()..color = Palette.greenAlt,
+      Paint()..color = colors.water,
     );
     final line = Paint()
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1
-      ..color = Palette.gold.withValues(alpha: 0.3);
+      ..color = _gold(0.3);
     for (var row = 0; row < 6; row++) {
       final y = horizon + (size.height - horizon) * (row + 0.5) / 6;
       final path = Path()..moveTo(0, y);
@@ -282,5 +305,6 @@ class _ScenePainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(_ScenePainter old) => old.kind != kind || old.glow != glow;
+  bool shouldRepaint(_ScenePainter old) =>
+      old.kind != kind || old.glow != glow || old.colors != colors;
 }

@@ -1,10 +1,11 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:suhba/core/design_system/theme/app_theme.dart';
 import 'package:suhba/core/design_system/tokens/motion.dart';
-import 'package:suhba/core/design_system/tokens/palette.dart';
 import 'package:suhba/core/design_system/tokens/radii.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
 import 'package:suhba/core/design_system/tokens/typography.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
@@ -98,22 +99,31 @@ class _QuizChoiceTileState extends State<QuizChoiceTile>
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
+    final scheme = Theme.of(context).colorScheme;
+    final colors = SuhbaColors.of(context);
     final (background, border, icon, iconColor) = switch (widget.state) {
-      ChoiceState.idle => (Palette.greenAlt, Palette.lineOnGreen, null, null),
+      ChoiceState.idle => (scheme.surfaceContainer, colors.line, null, null),
       ChoiceState.correct => (
-        Palette.greenHighest,
-        Palette.goldOnInk,
+        scheme.surfaceContainerHighest,
+        colors.accent,
         Icons.check_circle,
-        Palette.goldOnInk,
+        colors.accent,
       ),
       ChoiceState.wrong => (
-        Palette.draftWashOnGreen,
-        Palette.draftOnGreen,
+        colors.draftSurface,
+        colors.draft,
         Icons.cancel,
-        Palette.draftOnGreen,
+        colors.draft,
       ),
-      ChoiceState.dimmed => (Palette.greenLow, Palette.lineOnGreen, null, null),
+      ChoiceState.dimmed => (
+        scheme.surfaceContainerLow,
+        colors.line,
+        null,
+        null,
+      ),
     };
+    // The right answer glows by day; at night its gold edge is enough.
+    final glow = !identical(AppTheme.featureOf(context), AppTheme.featureDark);
     final medium = AppMotion.resolve(context, AppMotion.medium);
 
     final tile = AnimatedContainer(
@@ -128,9 +138,9 @@ class _QuizChoiceTileState extends State<QuizChoiceTile>
           width: widget.state == ChoiceState.idle ? 1 : 2,
         ),
         boxShadow: [
-          if (widget.state == ChoiceState.correct)
+          if (glow && widget.state == ChoiceState.correct)
             BoxShadow(
-              color: Palette.goldOnInk.withValues(alpha: 0.35),
+              color: colors.accent.withValues(alpha: 0.35),
               blurRadius: 18,
             ),
         ],
@@ -154,7 +164,7 @@ class _QuizChoiceTileState extends State<QuizChoiceTile>
                     child: Text(
                       widget.label,
                       style: textTheme.titleMedium?.copyWith(
-                        color: Palette.paper,
+                        color: scheme.onSurface,
                       ),
                     ),
                   ),
@@ -263,26 +273,31 @@ class _GoldBurstState extends State<GoldBurst>
       dimension: widget.size,
       child: AnimatedBuilder(
         animation: _controller,
-        builder: (context, _) =>
-            CustomPaint(painter: _BurstPainter(_sparks, _controller.value)),
+        builder: (context, _) => CustomPaint(
+          painter: _BurstPainter(
+            _sparks,
+            _controller.value,
+            SuhbaColors.of(context).accent,
+          ),
+        ),
       ),
     );
   }
 }
 
 class _BurstPainter extends CustomPainter {
-  _BurstPainter(this.sparks, this.t);
+  _BurstPainter(this.sparks, this.t, this.gold);
 
   final List<(double, double, double)> sparks;
   final double t;
+  final Color gold;
 
   @override
   void paint(Canvas canvas, Size size) {
     if (t == 0 || t == 1) return;
     final centre = size.center(Offset.zero);
     final eased = Curves.easeOutCubic.transform(t);
-    final paint = Paint()
-      ..color = Palette.goldOnInk.withValues(alpha: (1 - t).clamp(0, 1));
+    final paint = Paint()..color = gold.withValues(alpha: (1 - t).clamp(0, 1));
     for (final (angle, distance, r) in sparks) {
       final at =
           centre +
@@ -308,7 +323,7 @@ class _BurstPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(_BurstPainter old) => old.t != t;
+  bool shouldRepaint(_BurstPainter old) => old.t != t || old.gold != gold;
 }
 
 /// The result: a gold ring fills to the score while the number counts up.
@@ -329,6 +344,8 @@ class QuizScoreRing extends StatelessWidget {
     final format = DisplayFormatter.of(context);
     final l10n = AppLocalizations.of(context);
     final textTheme = Theme.of(context).textTheme;
+    final scheme = Theme.of(context).colorScheme;
+    final colors = SuhbaColors.of(context);
     final fraction = total == 0 ? 0.0 : score / total;
     return Semantics(
       label: l10n.quizScore(format.integer(score), format.integer(total)),
@@ -343,7 +360,12 @@ class QuizScoreRing extends StatelessWidget {
         builder: (context, value, _) => SizedBox.square(
           dimension: size,
           child: CustomPaint(
-            painter: _RingPainter(value),
+            painter: _RingPainter(
+              value,
+              track: scheme.surfaceContainerHighest,
+              gold: colors.accent,
+              light: scheme.onSurface,
+            ),
             child: Center(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -352,14 +374,14 @@ class QuizScoreRing extends StatelessWidget {
                     textScaler: AppTypography.displayScaler(context),
                     format.integer((value * total).round()),
                     style: textTheme.displayMedium?.copyWith(
-                      color: Palette.paper,
+                      color: scheme.onSurface,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
                   Text(
                     l10n.quizOutOf(format.integer(total)),
                     style: textTheme.titleSmall?.copyWith(
-                      color: Palette.paperDimOnGreen,
+                      color: colors.onSurfaceDim,
                     ),
                   ),
                 ],
@@ -373,18 +395,28 @@ class QuizScoreRing extends StatelessWidget {
 }
 
 class _RingPainter extends CustomPainter {
-  _RingPainter(this.value);
+  _RingPainter(
+    this.value, {
+    required this.track,
+    required this.gold,
+    required this.light,
+  });
 
   final double value;
+  final Color track;
+  final Color gold;
+
+  /// The text colour the arc's start is lightened towards.
+  final Color light;
 
   @override
   void paint(Canvas canvas, Size size) {
     final rect = (Offset.zero & size).deflate(10);
-    final track = Paint()
+    final trackPaint = Paint()
       ..style = PaintingStyle.stroke
       ..strokeWidth = 12
-      ..color = Palette.greenHighest;
-    canvas.drawArc(rect, 0, math.pi * 2, false, track);
+      ..color = track;
+    canvas.drawArc(rect, 0, math.pi * 2, false, trackPaint);
     if (value <= 0) return;
     final arc = Paint()
       ..style = PaintingStyle.stroke
@@ -393,17 +425,18 @@ class _RingPainter extends CustomPainter {
       ..shader = SweepGradient(
         startAngle: -math.pi / 2,
         endAngle: math.pi * 1.5,
-        colors: [
-          Color.lerp(Palette.goldOnInk, Palette.paper, 0.3)!,
-          Palette.goldOnInk,
-        ],
+        colors: [Color.lerp(gold, light, 0.3)!, gold],
         transform: const GradientRotation(-math.pi / 2),
       ).createShader(rect);
     canvas.drawArc(rect, -math.pi / 2, math.pi * 2 * value, false, arc);
   }
 
   @override
-  bool shouldRepaint(_RingPainter old) => old.value != value;
+  bool shouldRepaint(_RingPainter old) =>
+      old.value != value ||
+      old.track != track ||
+      old.gold != gold ||
+      old.light != light;
 }
 
 /// Stars earned for a result, popping in one after another.
@@ -415,6 +448,7 @@ class QuizStars extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final step = AppMotion.resolve(context, const Duration(milliseconds: 260));
+    final colors = SuhbaColors.of(context);
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -430,7 +464,7 @@ class QuizStars extends StatelessWidget {
               child: Icon(
                 i < count ? Icons.star_rounded : Icons.star_outline_rounded,
                 size: i == 1 ? 52 : 40,
-                color: i < count ? Palette.goldOnInk : Palette.lineOnGreen,
+                color: i < count ? colors.accent : colors.line,
               ),
             ),
           ),
@@ -449,6 +483,7 @@ class QuizStreak extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final format = DisplayFormatter.of(context);
+    final colors = SuhbaColors.of(context);
     return AnimatedSwitcher(
       duration: AppMotion.resolve(context, AppMotion.medium),
       transitionBuilder: (child, a) => ScaleTransition(
@@ -463,24 +498,20 @@ class QuizStreak extends StatelessWidget {
                 horizontal: AppSpacing.sm,
                 vertical: AppSpacing.xxs,
               ),
-              decoration: const BoxDecoration(
-                color: Palette.draftWashOnGreen,
-                borderRadius: BorderRadius.all(AppRadii.pill),
+              decoration: BoxDecoration(
+                color: colors.draftSurface,
+                borderRadius: const BorderRadius.all(AppRadii.pill),
               ),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Icon(
-                    Icons.auto_awesome,
-                    size: 16,
-                    color: Palette.goldOnInk,
-                  ),
+                  Icon(Icons.auto_awesome, size: 16, color: colors.accent),
                   const SizedBox(width: AppSpacing.xxs),
                   Text(
                     l10n.quizStreak(format.integer(count)),
-                    style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                      color: Palette.draftOnGreen,
-                    ),
+                    style: Theme.of(
+                      context,
+                    ).textTheme.labelMedium?.copyWith(color: colors.draft),
                   ),
                 ],
               ),

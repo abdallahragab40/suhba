@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/routes.dart';
 import 'package:suhba/core/design_system/theme/app_theme.dart';
-import 'package:suhba/core/design_system/tokens/palette.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
 import 'package:suhba/core/design_system/tokens/typography.dart';
@@ -112,11 +111,14 @@ class _Place extends ConsumerWidget {
     final city =
         local ?? HolyCity.values.where((c) => c.placeId == p.id).firstOrNull;
 
+    final featureTheme = AppTheme.featureOf(context);
+    final feature = featureTheme.extension<SuhbaColors>()!;
+    final featureText = featureTheme.colorScheme.onSurface;
     return ListView(
       padding: EdgeInsets.zero,
       children: [
         Theme(
-          data: AppTheme.feature,
+          data: featureTheme,
           child: SizedBox(
             height: 220,
             child: Stack(
@@ -133,7 +135,7 @@ class _Place extends ConsumerWidget {
                         l10n.sceneIllustration,
                         style: SuhbaTextStyles.of(
                           context,
-                        ).kicker.copyWith(color: Palette.goldOnInk),
+                        ).kicker.copyWith(color: feature.accent),
                       ),
                       Semantics(
                         header: true,
@@ -141,7 +143,7 @@ class _Place extends ConsumerWidget {
                           textScaler: AppTypography.displayScaler(context),
                           p.name.of(context),
                           style: textTheme.displayMedium?.copyWith(
-                            color: Palette.paper,
+                            color: featureText,
                           ),
                         ),
                       ),

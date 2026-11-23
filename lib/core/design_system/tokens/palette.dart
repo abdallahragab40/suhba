@@ -26,19 +26,45 @@ abstract final class Palette {
   static const inkHigh = Color(0xFF16241D);
   static const inkHighest = Color(0xFF1C2C24);
 
-  // Night: the dark theme's surfaces. A soft charcoal with a breath of
-  // green, lighter and less saturated than [ink], with clear steps, so
-  // cards stand off the page and long reading does not tire the eye; text
-  // is a warm off-white rather than [paper], which glares on a dark page.
-  static const nightLowest = Color(0xFF0B110F);
-  static const night = Color(0xFF101816);
-  static const nightLow = Color(0xFF141D1A);
-  static const nightAlt = Color(0xFF19231F);
-  static const nightHigh = Color(0xFF1F2B26);
-  static const nightHighest = Color(0xFF26342E);
-  static const lineOnNight = Color(0xFF2E3D37);
-  static const textOnNight = Color(0xFFE7E3D9);
-  static const dimOnNight = Color(0xFFA8A69E);
+  // Night: the dark theme's surfaces. A soft green-charcoal, never black:
+  // lighter and less saturated than [ink], in even steps (page, low, card,
+  // high for dialogs, highest), so cards stand off the page by tone and a
+  // quiet hairline. Text is a warm off-white, about 13:1 on the page
+  // rather than [paper]'s glare; secondary text about 7:1.
+  static const nightLowest = Color(0xFF111715);
+  static const night = Color(0xFF151C1A);
+  static const nightLow = Color(0xFF19211E);
+  static const nightAlt = Color(0xFF1D2622);
+  static const nightHigh = Color(0xFF232D29);
+  static const nightHighest = Color(0xFF2A3530);
+  static const lineOnNight = Color(0xFF2E3934);
+  static const outlineOnNight = Color(0xFF6E7B75);
+  static const textOnNight = Color(0xFFE4E0D6);
+  static const dimOnNight = Color(0xFFA5A49C);
+  // The selected chip and tab at night: a tonal, desaturated green.
+  static const greenWashOnNight = Color(0xFF223F36);
+
+  // Gold at night: [goldOnInk] softened and a little desaturated, so the
+  // accent glows rather than glares. [goldOnNight] is for text, icons and
+  // links; [goldFillOnNight], a touch deeper, fills buttons, checks and
+  // the active part of sliders and bars; [goldTrackOnNight] is the dim
+  // track under a switch's gold thumb.
+  static const goldOnNight = Color(0xFFD2B67A);
+  static const goldFillOnNight = Color(0xFFC9AD72);
+  static const goldTrackOnNight = Color(0xFF51472F);
+
+  // Deep green: the feature sections at night. Madinah green deepened and
+  // quietened, so a showcase band sits in the dark page as a calm green
+  // rather than a bright one. Steps mirror [green]'s, lightest last.
+  static const deepGreenLowest = Color(0xFF0F221C);
+  static const deepGreen = Color(0xFF153329);
+  static const deepGreenLow = Color(0xFF17362C);
+  static const deepGreenAlt = Color(0xFF1B3B31);
+  static const deepGreenHigh = Color(0xFF1E4035);
+  static const deepGreenHighest = Color(0xFF23463B);
+  static const lineOnDeepGreen = Color(0xFF2C5245);
+  static const dimOnDeepGreen = Color(0xFFB3C0B8);
+  static const outlineOnDeepGreen = Color(0xFF7E978B);
 
   // Warm night: the reader's warm tone in the dark theme (K5 at night).
   static const warmNight = Color(0xFF1A1612);
@@ -63,7 +89,7 @@ abstract final class Palette {
   // Sand gold. [gold] is decorative on paper (about 2.2:1); use [goldText]
   // there. [verseWash] grounds a Qur'anic verse: the page's illumination.
   static const verseWash = Color(0xFFF7F0DC);
-  static const verseWashOnNight = Color(0xFF1F2218);
+  static const verseWashOnNight = Color(0xFF22261E);
   static const verseWashOnWarmPaper = Color(0xFFF8EDD0);
   static const verseWashOnWarmNight = Color(0xFF29221A);
   // Source marks in running text: present, never louder than the words.
@@ -76,10 +102,10 @@ abstract final class Palette {
   static const goldWashOnInk = Color(0xFF332A14);
   static const goldDeep = Color(0xFF4A3608);
 
-  // Madinah green: the brand colour. [green] is the ground of the icon and
-  // of the app's feature sections (the Seerah hero, the night scenes);
-  // the light theme's primary actions use it on paper. Its steps mirror
-  // the ink surfaces, lightest last.
+  // Madinah green: the brand colour. [green] is the ground of the icon and,
+  // by day, of the app's feature sections (the Seerah hero, the night
+  // scenes; [deepGreen] at night); the light theme's primary actions use it
+  // on paper. Its steps mirror the ink surfaces, lightest last.
   static const greenLowest = Color(0xFF0A2E24);
   static const green = Color(0xFF124A39);
   static const greenLow = Color(0xFF154E3C);

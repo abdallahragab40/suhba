@@ -71,7 +71,9 @@ class PeriodBands extends StatelessWidget {
                             child: Text(
                               format.integer(i + 1),
                               style: kicker.copyWith(
-                                color: dark ? Palette.paper : Palette.ink,
+                                // Ink on the gold end, soft light text on
+                                // the dark end (the night theme's text).
+                                color: dark ? Palette.textOnNight : Palette.ink,
                                 fontWeight: FontWeight.w700,
                               ),
                             ),

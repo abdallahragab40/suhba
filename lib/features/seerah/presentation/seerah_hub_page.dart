@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/app_shell.dart';
 import 'package:suhba/app/router/routes.dart';
 import 'package:suhba/core/design_system/theme/app_theme.dart';
-import 'package:suhba/core/design_system/tokens/palette.dart';
 import 'package:suhba/core/design_system/tokens/radii.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
@@ -279,10 +278,12 @@ class SeerahOpening extends ConsumerWidget {
     };
 
     return Theme(
-      data: AppTheme.feature,
+      data: AppTheme.featureOf(context),
       child: Builder(
         builder: (context) {
           final textTheme = Theme.of(context).textTheme;
+          final scheme = Theme.of(context).colorScheme;
+          final colors = SuhbaColors.of(context);
           return Stack(
             children: [
               const Positioned.fill(
@@ -305,7 +306,7 @@ class SeerahOpening extends ConsumerWidget {
                           s.subtitle.of(context),
                           style: SuhbaTextStyles.of(
                             context,
-                          ).kicker.copyWith(color: Palette.goldOnInk),
+                          ).kicker.copyWith(color: colors.accent),
                         ),
                         const SizedBox(height: AppSpacing.sm),
                         Semantics(
@@ -318,7 +319,7 @@ class SeerahOpening extends ConsumerWidget {
                                 (compact
                                         ? textTheme.displaySmall
                                         : textTheme.displayMedium)
-                                    ?.copyWith(color: Palette.paper),
+                                    ?.copyWith(color: scheme.onSurface),
                           ),
                         ),
                         if (!s.review.isApproved) ...[
@@ -341,7 +342,7 @@ class SeerahOpening extends ConsumerWidget {
                             // A lead paragraph on the banner: a step below
                             // the reading size, so the way in stays near.
                             style: SuhbaTextStyles.of(context).reading.copyWith(
-                              color: Palette.paper,
+                              color: scheme.onSurface,
                               fontSize: 18,
                             ),
                           ),
@@ -353,14 +354,14 @@ class SeerahOpening extends ConsumerWidget {
                               ProgressRing(
                                 value: done / total,
                                 label: progressText,
-                                color: Palette.goldOnInk,
-                                trackColor: Palette.lineOnGreen,
+                                color: colors.accent,
+                                trackColor: colors.line,
                                 size: 44,
                                 child: finished
-                                    ? const Icon(
+                                    ? Icon(
                                         Icons.check,
                                         size: 20,
-                                        color: Palette.goldOnInk,
+                                        color: colors.accent,
                                       )
                                     // Empty at zero: the words say it.
                                     : done == 0
@@ -369,7 +370,7 @@ class SeerahOpening extends ConsumerWidget {
                                         format.integer(done),
                                         textScaler: TextScaler.noScaling,
                                         style: textTheme.titleSmall?.copyWith(
-                                          color: Palette.paper,
+                                          color: scheme.onSurface,
                                         ),
                                       ),
                               ),
@@ -380,7 +381,7 @@ class SeerahOpening extends ConsumerWidget {
                                     progressText,
                                     style: SuhbaTextStyles.of(
                                       context,
-                                    ).kicker.copyWith(color: Palette.paper),
+                                    ).kicker.copyWith(color: scheme.onSurface),
                                   ),
                                 ),
                               ),
@@ -426,14 +427,12 @@ class SeerahOpening extends ConsumerWidget {
                                   child: Text(
                                     l10n.seerahScrollHint,
                                     style: SuhbaTextStyles.of(context).kicker
-                                        .copyWith(
-                                          color: Palette.paperDimOnGreen,
-                                        ),
+                                        .copyWith(color: colors.onSurfaceDim),
                                   ),
                                 ),
-                                const Icon(
+                                Icon(
                                   Icons.keyboard_arrow_down,
-                                  color: Palette.goldOnInk,
+                                  color: colors.accent,
                                 ),
                               ],
                             ),

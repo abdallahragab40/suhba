@@ -119,14 +119,11 @@ List<InlineSpan> linkedSpans(
 /// through the dots below Arabic letters (the ي of «قريش», «يُكنى»), and
 /// Flutter cannot lower it beneath them. The wash marks the term by more
 /// than its colour alone, and follows the theme: green on paper and sepia,
-/// gold at night.
+/// soft gold at night on a fainter wash ([SuhbaColors.linkWash]).
 TextStyle glossaryLinkStyle(SuhbaColors colors) => TextStyle(
   color: colors.link,
-  background: Paint()..color = colors.link.withValues(alpha: glossaryWash),
+  background: Paint()..color = colors.link.withValues(alpha: colors.linkWash),
 );
-
-/// The opacity of the wash behind a linked glossary term.
-const glossaryWash = 0.12;
 
 /// A term's definition, with its sources and a way to the full glossary.
 Future<void> showGlossarySheet(BuildContext context, GlossaryTerm term) {

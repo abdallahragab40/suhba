@@ -2,7 +2,7 @@ import 'dart:math' as math;
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
-import 'package:suhba/core/design_system/tokens/palette.dart';
+import 'package:suhba/core/design_system/theme/app_theme.dart';
 import 'package:suhba/core/design_system/tokens/radii.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
@@ -74,6 +74,16 @@ class _SchematicMapState extends State<SchematicMap> {
     final l10n = AppLocalizations.of(context);
     final format = DisplayFormatter.of(context);
     final colors = SuhbaColors.of(context);
+    // The map is drawn on the feature green: Madinah green by day, the
+    // deep green at night.
+    final feature = AppTheme.featureOf(context);
+    final featureColors = feature.extension<SuhbaColors>()!;
+    final mapColors = (
+      ground: feature.colorScheme.surfaceContainer,
+      grid: featureColors.line,
+      gold: featureColors.accent,
+      labelGround: feature.colorScheme.surface,
+    );
     final byId = {for (final p in widget.places) p.id: p};
     final route = [
       for (final leg in widget.route)
@@ -119,9 +129,13 @@ class _SchematicMapState extends State<SchematicMap> {
                                         places: widget.places,
                                         route: route,
                                         layout: layout,
-                                        textStyle: SuhbaTextStyles.of(
-                                          context,
-                                        ).kicker.copyWith(color: Palette.paper),
+                                        colors: mapColors,
+                                        textStyle: SuhbaTextStyles.of(context)
+                                            .kicker
+                                            .copyWith(
+                                              color:
+                                                  feature.colorScheme.onSurface,
+                                            ),
                                         textScaler: MediaQuery.textScalerOf(
                                           context,
                                         ).clamp(maxScaleFactor: 1.4),
@@ -189,22 +203,22 @@ class _SchematicMapState extends State<SchematicMap> {
                             vertical: AppSpacing.xxs,
                           ),
                           decoration: BoxDecoration(
-                            color: Palette.green.withValues(alpha: 0.7),
+                            color: mapColors.labelGround.withValues(alpha: 0.7),
                             borderRadius: const BorderRadius.all(AppRadii.sm),
                           ),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              const Icon(
+                              Icon(
                                 Icons.north,
                                 size: 14,
-                                color: Palette.goldOnInk,
+                                color: mapColors.gold,
                               ),
                               Text(
                                 l10n.mapNorth,
                                 style: SuhbaTextStyles.of(
                                   context,
-                                ).kicker.copyWith(color: Palette.goldOnInk),
+                                ).kicker.copyWith(color: mapColors.gold),
                               ),
                             ],
                           ),
@@ -508,11 +522,20 @@ class _Projection {
       );
 }
 
+/// The map's colours, from the feature theme.
+typedef _MapColors = ({
+  Color ground,
+  Color grid,
+  Color gold,
+  Color labelGround,
+});
+
 class _MapPainter extends CustomPainter {
   _MapPainter({
     required this.places,
     required this.route,
     required this.layout,
+    required this.colors,
     required this.textStyle,
     required this.textScaler,
   });
@@ -520,16 +543,17 @@ class _MapPainter extends CustomPainter {
   final List<HistoricalPlace> places;
   final List<(HistoricalPlace, HistoricalPlace, RouteLeg)> route;
   final MapLayout layout;
+  final _MapColors colors;
   final TextStyle textStyle;
   final TextScaler textScaler;
 
   @override
   void paint(Canvas canvas, Size size) {
     final rect = Offset.zero & size;
-    canvas.drawRect(rect, Paint()..color = Palette.greenAlt);
+    canvas.drawRect(rect, Paint()..color = colors.ground);
     // A faint graticule, so the map reads as a map.
     final grid = Paint()
-      ..color = Palette.lineOnGreen
+      ..color = colors.grid
       ..strokeWidth = 1;
     for (var x = 0.0; x < size.width; x += 48) {
       canvas.drawLine(Offset(x, 0), Offset(x, size.height), grid);
@@ -539,7 +563,7 @@ class _MapPainter extends CustomPainter {
     }
 
     final gold = Paint()
-      ..color = Palette.goldOnInk
+      ..color = colors.gold
       ..strokeWidth = 2.5
       ..strokeCap = StrokeCap.round;
     for (final (from, to, leg) in route) {
@@ -560,7 +584,7 @@ class _MapPainter extends CustomPainter {
     ];
     for (final p in places) {
       final c = layout.positions[p.id]!;
-      _marker(canvas, c, p.location.precision.index, Palette.goldOnInk, 6);
+      _marker(canvas, c, p.location.precision.index, colors.gold, 6);
       final painter = TextPainter(
         text: TextSpan(text: p.name.ar, style: textStyle),
         textDirection: TextDirection.rtl,
@@ -594,7 +618,7 @@ class _MapPainter extends CustomPainter {
       );
       canvas.drawRRect(
         bg,
-        Paint()..color = Palette.green.withValues(alpha: 0.75),
+        Paint()..color = colors.labelGround.withValues(alpha: 0.75),
       );
       painter.paint(canvas, at);
     }
@@ -629,5 +653,6 @@ class _MapPainter extends CustomPainter {
       old.places != places ||
       old.route != route ||
       old.layout != layout ||
+      old.colors != colors ||
       old.textStyle != textStyle;
 }

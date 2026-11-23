@@ -217,6 +217,31 @@ void main() {
       );
     });
 
+    // At night the quiz is on the deep feature green.
+    testApp('quiz home, dark', (tester) async {
+      await phone(tester);
+      tester.platformDispatcher.platformBrightnessTestValue = Brightness.dark;
+      addTearDown(tester.platformDispatcher.clearPlatformBrightnessTestValue);
+      await open(tester, '/quiz');
+      await expectLater(
+        find.byType(QuizHomePage),
+        matchesGoldenFile('goldens/quiz_home_dark.png'),
+      );
+    });
+
+    testApp('a question answered right, dark', (tester) async {
+      await phone(tester);
+      tester.platformDispatcher.platformBrightnessTestValue = Brightness.dark;
+      addTearDown(tester.platformDispatcher.clearPlatformBrightnessTestValue);
+      final (_, round) = await open(tester, '/quiz/mixed');
+      await tester.tap(tile(label(tester, round.first.answer)));
+      await tester.pumpAndSettle();
+      await expectLater(
+        find.byType(QuizPlayPage),
+        matchesGoldenFile('goldens/quiz_answered_dark.png'),
+      );
+    });
+
     testApp('a question answered right', (tester) async {
       await phone(tester);
       final (_, round) = await open(tester, '/quiz/mixed');
