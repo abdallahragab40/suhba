@@ -1,6 +1,8 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:suhba/app/font_licenses.dart';
 import 'package:suhba/core/design_system/tokens/palette.dart';
 import 'package:suhba/core/storage/settings_store.dart';
 import 'package:suhba/features/home/presentation/home_page.dart';
@@ -227,7 +229,8 @@ void main() {
       bundle: MemoryAssetBundle.draftContent(),
       location: '/settings',
     ).pump(tester);
-    expect(find.text('إصدار المحتوى: 0.3.0'), findsOneWidget);
+    // In the reader's digits.
+    expect(find.text('إصدار المحتوى: ٠.٤.٠'), findsOneWidget);
     expect(find.text('محتوى تجريبي (مسودة)'), findsOneWidget);
   });
 
@@ -254,7 +257,7 @@ void main() {
       find.textContaining('لا يجمع التطبيق أي بيانات عنك'),
       findsOneWidget,
     );
-    expect(find.textContaining('لا يُقرأ موقعك إلا حين تطلب'), findsOneWidget);
+    expect(find.textContaining('لا يطلب التطبيق إذن الموقع'), findsOneWidget);
     for (final level in ['ثابت', 'رواية تاريخية', 'مختلف فيه', 'غير معروف']) {
       expect(find.text(level), findsOneWidget, reason: level);
     }
@@ -277,7 +280,7 @@ void main() {
       expect(find.text(group), findsWidgets, reason: group);
     }
     expect(find.text('سير أعلام النبلاء'), findsOneWidget);
-    expect(find.text('شمس الدين الذهبي (ت ٧٤٨ هـ)'), findsOneWidget);
+    expect(find.text('شمس الدين الذهبي (ت ٧٤٨\u00a0هـ)'), findsOneWidget);
 
     // The verse text's source, licence and notice (O3).
     await tester.scrollUntilVisible(
@@ -294,5 +297,91 @@ void main() {
     await tester.tap(find.text('نص الترخيص'));
     await tester.pumpAndSettle();
     expect(find.textContaining('CHANGING IT IS NOT ALLOWED'), findsOneWidget);
+  });
+
+  testApp(
+    'the app version shows in Settings and About, in the reader\'s digits',
+    (tester) async {
+      tall(tester);
+      await AppUnderTest(
+        bundle: MemoryAssetBundle.draftContent(),
+        location: '/settings',
+        overrides: [
+          appVersionProvider.overrideWith((ref) async => '2.2.0 (4)'),
+        ],
+      ).pump(tester);
+      expect(find.text('إصدار التطبيق: ٢.٢.٠ (٤)'), findsOneWidget);
+      await tester.tap(find.text('عن التطبيق والمنهج'));
+      await tester.pumpAndSettle();
+      expect(find.text('إصدار التطبيق: ٢.٢.٠ (٤)'), findsOneWidget);
+    },
+  );
+
+  testApp('About\'s sections do not repeat its title', (tester) async {
+    tall(tester);
+    await AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      location: '/settings/about',
+    ).pump(tester);
+    // Only the app bar's.
+    expect(find.text('عن التطبيق والمنهج'), findsOneWidget);
+    expect(find.text('الخصوصية'), findsOneWidget);
+  });
+
+  testApp('About opens the open-source licences', (tester) async {
+    tall(tester);
+    await AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      location: '/settings/about',
+    ).pump(tester);
+    final licences = find.text('تراخيص البرمجيات مفتوحة المصدر');
+    await tester.scrollUntilVisible(
+      licences,
+      300,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.tap(licences);
+    await tester.pumpAndSettle();
+    expect(find.byType(LicensePage), findsOneWidget);
+  });
+
+  test('the bundled fonts\' licences are read from the app', () async {
+    final entries = await fontLicenses(rootBundle).toList();
+    expect(entries.expand((e) => e.packages).toSet(), {
+      'IBM Plex Sans Arabic',
+      'Amiri',
+      'Amiri Quran',
+    });
+    for (final e in entries) {
+      final text = e.paragraphs.map((p) => p.text).join('\n');
+      expect(text, contains('SIL Open Font License'), reason: '${e.packages}');
+    }
+  });
+
+  testApp('no daily reminder entry where the platform has none (iOS)', (
+    tester,
+  ) async {
+    tall(tester);
+    debugDefaultTargetPlatformOverride = TargetPlatform.iOS;
+    try {
+      await AppUnderTest(
+        bundle: MemoryAssetBundle.draftContent(),
+        location: '/settings',
+      ).pump(tester);
+      expect(find.text('تذكير يومي'), findsNothing);
+      // The reading plan stays: it is not a notification.
+      expect(find.text('الورد والتذكير'), findsOneWidget);
+    } finally {
+      debugDefaultTargetPlatformOverride = null;
+    }
+  });
+
+  testApp('the daily reminder entry is there on Android', (tester) async {
+    tall(tester);
+    await AppUnderTest(
+      bundle: MemoryAssetBundle.draftContent(),
+      location: '/settings',
+    ).pump(tester);
+    expect(find.text('تذكير يومي'), findsOneWidget);
   });
 }

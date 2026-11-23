@@ -63,7 +63,10 @@ void main() {
       ),
     ]);
     expect(find.text('الجامع الصحيح (صحيح البخاري)'), findsOneWidget);
-    expect(find.text('محمد بن إسماعيل البخاري (ت ٢٥٦ هـ)'), findsOneWidget);
+    expect(
+      find.text('محمد بن إسماعيل البخاري (ت ٢٥٦\u00a0هـ)'),
+      findsOneWidget,
+    );
     expect(
       find.text('كتاب فضائل أصحاب النبي ﷺ، ج ٥، ص ١٢–١٣، رقم ٣٦٥٣'),
       findsOneWidget,

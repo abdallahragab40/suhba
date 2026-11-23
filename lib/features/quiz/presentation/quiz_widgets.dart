@@ -5,6 +5,7 @@ import 'package:suhba/core/design_system/tokens/motion.dart';
 import 'package:suhba/core/design_system/tokens/palette.dart';
 import 'package:suhba/core/design_system/tokens/radii.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/typography.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/features/quiz/domain/quiz_question.dart';
@@ -348,6 +349,7 @@ class QuizScoreRing extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
+                    textScaler: AppTypography.displayScaler(context),
                     format.integer((value * total).round()),
                     style: textTheme.displayMedium?.copyWith(
                       color: Palette.paper,

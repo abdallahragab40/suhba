@@ -118,6 +118,9 @@ class _QuizHomePageState extends ConsumerState<QuizHomePage>
                             Semantics(
                               header: true,
                               child: Text(
+                                textScaler: AppTypography.displayScaler(
+                                  context,
+                                ),
                                 l10n.quizTitle,
                                 style: Theme.of(context).textTheme.displaySmall
                                     ?.copyWith(color: Palette.paper),

@@ -38,7 +38,7 @@ void main() {
       (
         'year AH',
         const HistoricalDate(precision: DatePrecision.year, hijriYear: 13),
-        '١٣ هـ',
+        '١٣\u00a0هـ',
       ),
       (
         'year AH with Gregorian',
@@ -47,7 +47,7 @@ void main() {
           hijriYear: 13,
           gregorianYear: 634,
         ),
-        '١٣ هـ / ٦٣٤ م',
+        '١٣\u00a0هـ / ٦٣٤\u00a0م',
       ),
       (
         'year BH',
@@ -56,7 +56,7 @@ void main() {
           era: bh,
           hijriYear: 13,
         ),
-        '١٣ قبل الهجرة',
+        '١٣\u00a0قبل الهجرة',
       ),
       (
         'month and year',
@@ -65,7 +65,7 @@ void main() {
           hijriYear: 13,
           hijriMonth: 6,
         ),
-        'جمادى الآخرة ١٣ هـ',
+        'جمادى الآخرة ١٣\u00a0هـ',
       ),
       (
         'month and year with Gregorian',
@@ -75,7 +75,7 @@ void main() {
           hijriMonth: 6,
           gregorianYear: 634,
         ),
-        'جمادى الآخرة ١٣ هـ / ٦٣٤ م',
+        'جمادى الآخرة ١٣\u00a0هـ / ٦٣٤\u00a0م',
       ),
       (
         'exact day',
@@ -85,7 +85,7 @@ void main() {
           hijriMonth: 9,
           hijriDay: 17,
         ),
-        '١٧ رمضان ٢ هـ',
+        '١٧ رمضان ٢\u00a0هـ',
       ),
       (
         'exact without a day falls back to month',
@@ -94,7 +94,7 @@ void main() {
           hijriYear: 2,
           hijriMonth: 9,
         ),
-        'رمضان ٢ هـ',
+        'رمضان ٢\u00a0هـ',
       ),
       (
         'year precision hides a recorded month',
@@ -103,12 +103,12 @@ void main() {
           hijriYear: 2,
           hijriMonth: 9,
         ),
-        '٢ هـ',
+        '٢\u00a0هـ',
       ),
       (
         'approximate Hijri year',
         const HistoricalDate(precision: DatePrecision.approx, hijriYear: 13),
-        'نحو سنة ١٣ هـ',
+        'نحو سنة ١٣\u00a0هـ',
       ),
       (
         'approximate Gregorian year only',
@@ -116,12 +116,12 @@ void main() {
           precision: DatePrecision.approx,
           gregorianYear: 573,
         ),
-        'نحو سنة ٥٧٣ م',
+        'نحو سنة ٥٧٣\u00a0م',
       ),
       (
         'Gregorian year only',
         const HistoricalDate(precision: DatePrecision.year, gregorianYear: 573),
-        '٥٧٣ م',
+        '٥٧٣\u00a0م',
       ),
       (
         'range AH',
@@ -130,7 +130,7 @@ void main() {
           hijriYear: 11,
           hijriYearEnd: 13,
         ),
-        '١١ – ١٣ هـ',
+        '١١ – ١٣\u00a0هـ',
       ),
       (
         'range AH with Gregorian range',
@@ -141,7 +141,7 @@ void main() {
           gregorianYear: 632,
           gregorianYearEnd: 634,
         ),
-        '١١ – ١٣ هـ / ٦٣٢ – ٦٣٤ م',
+        '١١ – ١٣\u00a0هـ / ٦٣٢ – ٦٣٤\u00a0م',
       ),
       (
         'range BH',
@@ -151,7 +151,7 @@ void main() {
           hijriYear: 13,
           hijriYearEnd: 10,
         ),
-        '١٣ – ١٠ قبل الهجرة',
+        '١٣ – ١٠\u00a0قبل الهجرة',
       ),
       (
         'range across the Hijrah',
@@ -162,12 +162,12 @@ void main() {
           endEra: ah,
           hijriYearEnd: 1,
         ),
-        '١ قبل الهجرة – ١ هـ',
+        '١\u00a0قبل الهجرة – ١\u00a0هـ',
       ),
       (
         'range without an end shows the start',
         const HistoricalDate(precision: DatePrecision.range, hijriYear: 11),
-        '١١ هـ',
+        '١١\u00a0هـ',
       ),
       (
         'Gregorian range only',
@@ -176,7 +176,7 @@ void main() {
           gregorianYear: 610,
           gregorianYearEnd: 622,
         ),
-        '٦١٠ – ٦٢٢ م',
+        '٦١٠ – ٦٢٢\u00a0م',
       ),
       ('unknown', const HistoricalDate.unknown(), 'غير معروف على وجه التحقيق'),
       (
@@ -204,7 +204,7 @@ void main() {
           ),
           withGregorian: false,
         ),
-        '١٣ هـ',
+        '١٣\u00a0هـ',
       );
     });
 
@@ -217,7 +217,7 @@ void main() {
           ),
           withGregorian: false,
         ),
-        '٥٧٣ م',
+        '٥٧٣\u00a0م',
       );
     });
 
@@ -230,7 +230,7 @@ void main() {
             gregorianYear: 634,
           ),
         ),
-        '13 هـ / 634 م',
+        '13\u00a0هـ / 634\u00a0م',
       );
     });
 
@@ -248,7 +248,7 @@ void main() {
             gregorianYear: 634,
           ),
         ),
-        'Jumada al-Akhirah 13 AH / 634 CE',
+        'Jumada al-Akhirah 13\u00a0AH / 634\u00a0CE',
       );
     });
 
@@ -276,7 +276,7 @@ void main() {
               hijriMonth: m,
             ),
           ),
-          '${months[m - 1]} ١ هـ',
+          '${months[m - 1]} ١\u00a0هـ',
         );
       });
     }
@@ -327,8 +327,8 @@ void main() {
   group('join', () {
     test('uses the Arabic comma and skips empty parts', () {
       expect(
-        DisplayFormatter.join(['الفصل ٣', null, '', '٢ هـ']),
-        'الفصل ٣، ٢ هـ',
+        DisplayFormatter.join(['الفصل ٣', null, '', '٢\u00a0هـ']),
+        'الفصل ٣، ٢\u00a0هـ',
       );
     });
     test('never uses the middle dot', () {

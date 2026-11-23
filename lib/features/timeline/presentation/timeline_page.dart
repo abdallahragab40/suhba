@@ -222,6 +222,7 @@ class TimelineEntryTile extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
+            textScaler: AppTypography.displayScaler(context),
             format.historicalDate(t.date, withGregorian: false),
             style: textTheme.headlineSmall?.copyWith(
               color: t.eventId != null ? colors.accentText : null,

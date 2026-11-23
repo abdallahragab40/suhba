@@ -34,7 +34,9 @@ void main() {
     expect(visible, greaterThanOrEqualTo(5));
   });
 
-  testApp('every row states its depth; the Ten are full', (tester) async {
+  testApp('every row states its depth; the long biographies are full', (
+    tester,
+  ) async {
     await open(tester);
     final scrollable = find.byType(Scrollable).first;
     final seen = <String, String?>{};
@@ -47,8 +49,11 @@ void main() {
       await tester.pumpAndSettle();
     }
     expect(seen, hasLength(47));
-    expect(seen.values.where((d) => d == 'سيرة كاملة'), hasLength(10));
-    expect(seen.values.where((d) => d == 'تعريف موجز'), hasLength(37));
+    // The Ten plus Khadijah, Aisha and Umm Salamah (2.3). Hafsa was
+    // deepened too but stays under BiographyDepth.fullFromWords.
+    expect(seen.values.where((d) => d == 'سيرة كاملة'), hasLength(13));
+    expect(seen.values.where((d) => d == 'تعريف موجز'), hasLength(34));
+    expect(seen['عائشة بنت أبي بكر'], 'سيرة كاملة');
     expect(seen['أبو بكر الصديق'], 'سيرة كاملة');
   });
 

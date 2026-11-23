@@ -70,8 +70,10 @@ class SearchHit {
   final SearchDocument document;
   final int score;
 
-  /// Where the query was found when it matched body text only: the original
-  /// words around the match, with the match marked.
+  /// Where the query was found when the result itself does not show it:
+  /// the original words around a match in body text, or in a name the
+  /// result's title and subtitle leave out (a full name, an alias), with
+  /// the match marked.
   final SearchExcerpt? excerpt;
 }
 
@@ -159,6 +161,11 @@ class SearchFilter {
 /// other field (at least 1 × 1 for a contains-match in a category, and
 /// usually far more), so names and titles outrank body matches.
 ///
+/// A result always shows why it was found: when a query word matched only
+/// body text, or a field the result's title and subtitle do not show
+/// (searching «أبو بكر» finds Bilal by his full name, «مولى أبي بكر»), an
+/// excerpt of that text comes with it.
+///
 /// The catalog is small enough to search in memory; the interface lets a
 /// build-time full-text index replace this if it grows to thousands (see
 /// docs/performance.md).
@@ -174,10 +181,15 @@ class SearchIndex {
                     when text.isNotEmpty)
                   (text, text.split(' '), f.weight, f.text),
             ],
+            ArabicNormalizer.normalize('${d.title} ${d.subtitle ?? ''}'),
           ),
       ];
 
-  final List<(SearchDocument, List<(String, List<String>, int, String)>)>
+  /// Each document, its normalized fields (text, words, weight, original),
+  /// and its normalized title and subtitle: what a result shows.
+  final List<
+    (SearchDocument, List<(String, List<String>, int, String)>, String)
+  >
   _entries;
 
   /// Content files that could not be loaded when the index was built: the
@@ -199,15 +211,19 @@ class SearchIndex {
 
     // Excerpts are cut only for the hits returned.
     final hits = <(SearchHit, String?, String)>[];
-    for (final (doc, fields) in _entries) {
+    for (final (doc, fields, shown) in _entries) {
       if (!filter.accepts(doc)) continue;
       var total = 0;
       String? bodyMatch;
       var bodyToken = '';
+      // A word found only in a field the result does not show.
+      String? hiddenMatch;
+      var hiddenToken = '';
       for (final token in tokens) {
         var best = 0;
         var bestIsBody = false;
         String? bodyText;
+        String? bestOriginal;
         for (final (text, words, weight, original) in fields) {
           if (weight == SearchField.bodyWeight) {
             // Any match in body text counts 1, below every other field.
@@ -225,7 +241,10 @@ class SearchIndex {
               : text.contains(token)
               ? 1
               : 0;
-          if (score * weight > best) best = score * weight;
+          if (score * weight > best) {
+            best = score * weight;
+            bestOriginal = original;
+          }
         }
         if (best == 0 && bodyText != null) {
           best = 1;
@@ -239,6 +258,11 @@ class SearchIndex {
         if (bestIsBody && bodyMatch == null) {
           bodyMatch = bodyText;
           bodyToken = token;
+        } else if (!bestIsBody &&
+            hiddenMatch == null &&
+            !shown.contains(token)) {
+          hiddenMatch = bestOriginal;
+          hiddenToken = token;
         }
       }
       if (total == 0) continue;
@@ -259,7 +283,11 @@ class SearchIndex {
           }
         }
       }
-      hits.add((SearchHit(doc, total), bodyMatch, bodyToken));
+      hits.add(
+        bodyMatch != null
+            ? (SearchHit(doc, total), bodyMatch, bodyToken)
+            : (SearchHit(doc, total), hiddenMatch, hiddenToken),
+      );
     }
 
     hits.sort((x, y) {

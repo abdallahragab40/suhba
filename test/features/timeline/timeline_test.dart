@@ -100,7 +100,7 @@ void main() {
       expect(find.text('الحدث: غزوة بدر'), findsOneWidget);
       expect(find.text('الحدث: الهجرة النبوية'), findsOneWidget);
       // The disputed calendar date range is Umar's; Abu Bakr has a range too.
-      expect(find.text('١١ – ١٢ هـ'), findsWidgets);
+      expect(find.text('١١ – ١٢\u00a0هـ'), findsWidgets);
     });
 
     testApp('"read in the biography" opens the linked section', (tester) async {

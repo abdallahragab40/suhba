@@ -60,7 +60,11 @@ class SectionHeader extends StatelessWidget {
         const SizedBox(height: AppSpacing.xxs),
         Semantics(
           header: true,
-          child: Text(title, style: textTheme.headlineMedium),
+          child: Text(
+            title,
+            style: textTheme.headlineMedium,
+            textScaler: AppTypography.displayScaler(context),
+          ),
         ),
         if (note != null) ...[
           const SizedBox(height: AppSpacing.xs),

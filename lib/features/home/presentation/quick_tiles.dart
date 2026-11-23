@@ -8,6 +8,7 @@ import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/features/journeys/presentation/journey_providers.dart';
+import 'package:suhba/features/reading_progress/domain/continue_items.dart';
 import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
 import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
 import 'package:suhba/features/review/presentation/review_providers.dart';
@@ -61,11 +62,13 @@ class QuickTiles extends ConsumerWidget {
     final due = ref.watch(dueReviewsProvider).value?.length ?? 0;
     final map = seerah?.collection.mapVisualId;
 
+    final open = ref.watch(continueReadingProvider).value ?? const [];
     final tiles = [
       _Tile(
         icon: Icons.menu_book_outlined,
-        label: l10n.homeTileContinue,
-        route: _continueRoute(context, ref),
+        // «تابع» only with something to continue.
+        label: open.isEmpty ? l10n.homeTileStart : l10n.homeTileContinue,
+        route: _continueRoute(context, ref, open),
       ),
       _Tile(
         icon: Icons.route_outlined,
@@ -123,13 +126,16 @@ class QuickTiles extends ConsumerWidget {
     );
   }
 
-  /// The passage read most recently and not finished; else the Seerah
-  /// from where the reader stopped, or from its start.
-  String _continueRoute(BuildContext context, WidgetRef ref) {
-    final open = [...?ref.watch(inProgressProvider).value]
-      ..sort((a, b) => b.updatedAt.compareTo(a.updatedAt));
-    for (final p in open.take(1)) {
-      final found = ref.watch(targetLookupProvider(p.contentTarget)).value;
+  /// The place to pick reading up touched most recently ([open]: an
+  /// unfinished passage, or the next passage of a work read in part); else
+  /// the Seerah's next chapter not yet read, or its start.
+  String _continueRoute(
+    BuildContext context,
+    WidgetRef ref,
+    List<ContinueItem> open,
+  ) {
+    for (final item in open.take(1)) {
+      final found = ref.watch(targetLookupProvider(item.contentTarget)).value;
       if (found != null) {
         if (describeTarget(context, found) case final d?) return d.route;
       }

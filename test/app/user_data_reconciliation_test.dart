@@ -244,7 +244,7 @@ void main() {
       expect(report, isNotNull);
       expect(
         settings.getString(SettingsKeys.reconciledContent),
-        '0.3.0+published',
+        '0.4.0+published',
       );
       expect(
         await containerWith(

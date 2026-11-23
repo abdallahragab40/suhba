@@ -223,6 +223,32 @@ class _QuizStepState extends State<_QuizStep>
     curve: Interval(start, end, curve: AppMotion.easeStandard),
   );
 
+  final _feedbackKey = GlobalKey();
+
+  /// Once the feedback has opened, brings it into view: on a small screen
+  /// or at a large text size it opens below the fold. All of it when it
+  /// fits, with the way on at the bottom; otherwise its top, which names
+  /// the right answer.
+  void _revealFeedback() {
+    if (widget.picked == null) return;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final target = _feedbackKey.currentContext;
+      if (!mounted || target == null) return;
+      final box = target.findRenderObject();
+      final viewport = Scrollable.maybeOf(target)?.position.viewportDimension;
+      if (box is! RenderBox || viewport == null) return;
+      final fits = box.size.height <= viewport;
+      Scrollable.ensureVisible(
+        target,
+        duration: AppMotion.resolve(context, AppMotion.medium),
+        curve: AppMotion.easeStandard,
+        alignmentPolicy: fits
+            ? ScrollPositionAlignmentPolicy.keepVisibleAtEnd
+            : ScrollPositionAlignmentPolicy.explicit,
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
@@ -265,19 +291,23 @@ class _QuizStepState extends State<_QuizStep>
           ],
         ),
         const SizedBox(height: AppSpacing.xs),
-        TweenAnimationBuilder<double>(
-          tween: Tween(
-            begin: widget.index / widget.total,
-            end: (widget.index + (answered ? 1 : 0)) / widget.total,
-          ),
-          duration: medium,
-          builder: (context, value, _) => ClipRRect(
-            borderRadius: const BorderRadius.all(AppRadii.pill),
-            child: LinearProgressIndicator(
-              value: value,
-              minHeight: 6,
-              color: Palette.goldOnInk,
-              backgroundColor: Palette.greenHighest,
+        // The line above says how far the round has come; the bar only
+        // shows it.
+        ExcludeSemantics(
+          child: TweenAnimationBuilder<double>(
+            tween: Tween(
+              begin: widget.index / widget.total,
+              end: (widget.index + (answered ? 1 : 0)) / widget.total,
+            ),
+            duration: medium,
+            builder: (context, value, _) => ClipRRect(
+              borderRadius: const BorderRadius.all(AppRadii.pill),
+              child: LinearProgressIndicator(
+                value: value,
+                minHeight: 6,
+                color: Palette.goldOnInk,
+                backgroundColor: Palette.greenHighest,
+              ),
             ),
           ),
         ),
@@ -307,6 +337,7 @@ class _QuizStepState extends State<_QuizStep>
                       color: Palette.paper,
                       height: 1.5,
                     ),
+                    textScaler: AppTypography.displayScaler(context),
                   ),
                 ),
               ],
@@ -328,9 +359,11 @@ class _QuizStepState extends State<_QuizStep>
           duration: medium,
           curve: AppMotion.easeStandard,
           alignment: Alignment.topCenter,
+          onEnd: _revealFeedback,
           child: !answered
               ? const SizedBox(width: double.infinity)
               : _Feedback(
+                  key: _feedbackKey,
                   question: q,
                   right: picked == q.correct,
                   last: last,
@@ -350,6 +383,7 @@ class _Feedback extends StatelessWidget {
     required this.right,
     required this.last,
     required this.onNext,
+    super.key,
   });
 
   final QuizQuestion question;
@@ -490,6 +524,7 @@ class _QuizResultState extends State<_QuizResult> {
           message,
           textAlign: TextAlign.center,
           style: textTheme.headlineSmall?.copyWith(color: Palette.paper),
+          textScaler: AppTypography.displayScaler(context),
         ),
         if (widget.newBest) ...[
           const SizedBox(height: AppSpacing.sm),

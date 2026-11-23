@@ -61,6 +61,29 @@ void main() {
     expect(reader(tester).sectionId, 'abu-bakr.hijrah');
   });
 
+  testApp('a section opened but not scrolled is «started», not «٠٪»', (
+    tester,
+  ) async {
+    tall(tester);
+    final app = AppUnderTest(location: '/companions/abu-bakr');
+    await save(app, 'abu-bakr.hijrah', fraction: 0);
+    await app.pump(tester);
+    expect(find.text('صاحبه في الهجرة، بدأتَ القراءة'), findsOneWidget);
+    expect(find.textContaining('٠٪'), findsNothing);
+  });
+
+  testApp('sections read so far finished: on to the next one', (tester) async {
+    tall(tester);
+    final app = AppUnderTest(location: '/companions/abu-bakr');
+    await save(app, 'abu-bakr.early-life', fraction: 1, completed: true);
+    await app.pump(tester);
+    expect(find.text('التالي: إسلامه'), findsOneWidget);
+    expect(find.textContaining('٠٪'), findsNothing);
+    await tester.tap(find.text('تابع القراءة'));
+    await tester.pumpAndSettle();
+    expect(reader(tester).sectionId, 'abu-bakr.conversion');
+  });
+
   testApp('all read: says so and offers the start again', (tester) async {
     tall(tester);
     final app = AppUnderTest(location: '/companions/abu-bakr');

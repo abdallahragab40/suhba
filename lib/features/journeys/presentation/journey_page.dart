@@ -168,7 +168,13 @@ class _JourneyPageState extends ConsumerState<JourneyPage> {
           ),
         ),
         const SizedBox(height: AppSpacing.xs),
-        LinearProgressIndicator(value: finished.length / j.steps.length),
+        // The line above says it in words, in the reader's digits; the bar
+        // would add a bare Western percentage.
+        ExcludeSemantics(
+          child: LinearProgressIndicator(
+            value: finished.length / j.steps.length,
+          ),
+        ),
         const SizedBox(height: AppSpacing.lg),
         if (enrollment?.paused ?? false) Text(l10n.journeyPaused),
         if (next == null)

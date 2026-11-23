@@ -9,7 +9,9 @@ import 'package:suhba/core/design_system/widgets/reliability_badge.dart';
 import 'package:suhba/core/design_system/widgets/section_header.dart';
 import 'package:suhba/core/design_system/widgets/wordmark.dart';
 import 'package:suhba/core/domain/reliability.dart';
+import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/features/settings/presentation/feedback_tile.dart';
 import 'package:suhba/shared/content/providers.dart';
 
 /// About and methodology (S13): what the app is, how it treats sources,
@@ -24,6 +26,8 @@ class AboutPage extends ConsumerWidget {
     final colors = SuhbaColors.of(context);
     final textTheme = Theme.of(context).textTheme;
     final isDraft = ref.watch(contentManifestProvider).value?.isDraft ?? true;
+    final version = ref.watch(appVersionProvider).value;
+    final format = DisplayFormatter.of(context);
 
     var index = 0;
     Widget section(String title, Widget child) => Padding(
@@ -31,11 +35,8 @@ class AboutPage extends ConsumerWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          SectionHeader(
-            index: ++index,
-            kicker: l10n.settingsAbout,
-            title: title,
-          ),
+          // No kicker: it would only repeat the page's title.
+          SectionHeader(index: ++index, title: title),
           const SizedBox(height: AppSpacing.sm),
           child,
         ],
@@ -60,6 +61,16 @@ class AboutPage extends ConsumerWidget {
         ),
         children: [
           const Wordmark(size: 40),
+          if (version != null)
+            Padding(
+              padding: const EdgeInsetsDirectional.only(bottom: AppSpacing.xs),
+              child: Text(
+                l10n.aboutVersion(format.digits(version)),
+                style: textTheme.bodySmall?.copyWith(
+                  color: colors.onSurfaceDim,
+                ),
+              ),
+            ),
           Text(l10n.aboutIntro, style: textTheme.bodyLarge),
           section(
             l10n.aboutReviewTitle,
@@ -124,6 +135,20 @@ class AboutPage extends ConsumerWidget {
                 Text(l10n.aboutCreditAmiri, style: textTheme.bodyMedium),
                 const SizedBox(height: AppSpacing.xxs),
                 Text(l10n.aboutCreditPlex, style: textTheme.bodyMedium),
+                // The licences of the software and fonts in the app,
+                // Flutter's own page (fonts registered at start-up).
+                TextButton.icon(
+                  style: TextButton.styleFrom(padding: EdgeInsets.zero),
+                  icon: const Icon(Icons.description_outlined, size: 18),
+                  label: Text(l10n.aboutLicenses),
+                  onPressed: () => showLicensePage(
+                    context: context,
+                    applicationName: l10n.appTitle,
+                    applicationVersion: version == null
+                        ? null
+                        : format.digits(version),
+                  ),
+                ),
               ],
             ),
           ),

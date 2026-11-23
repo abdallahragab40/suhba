@@ -88,32 +88,32 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String dateHijriYear(String year) {
-    return '$year هـ';
+    return '$year هـ';
   }
 
   @override
   String dateBeforeHijraYear(String year) {
-    return '$year قبل الهجرة';
+    return '$year قبل الهجرة';
   }
 
   @override
   String dateGregorianYear(String year) {
-    return '$year م';
+    return '$year م';
   }
 
   @override
   String dateHijriRange(String start, String end) {
-    return '$start – $end هـ';
+    return '$start – $end هـ';
   }
 
   @override
   String dateBeforeHijraRange(String start, String end) {
-    return '$start – $end قبل الهجرة';
+    return '$start – $end قبل الهجرة';
   }
 
   @override
   String dateGregorianRange(String start, String end) {
-    return '$start – $end م';
+    return '$start – $end م';
   }
 
   @override
@@ -313,7 +313,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String citationAuthorDeath(String author, String year) {
-    return '$author (ت $year هـ)';
+    return '$author (ت $year هـ)';
   }
 
   @override
@@ -804,7 +804,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get aboutPrivacyBody =>
-      'لا يجمع التطبيق أي بيانات عنك ولا يرسلها إلى أي جهة: لا حساب فيه ولا إعلانات ولا أدوات تتبّع أو تحليل، ولا يتصل بالإنترنت.\n\nتُحفظ العناصر المحفوظة ومواضع القراءة والإعدادات ونتائج الاختبارات على جهازك فقط. يمكنك مسح المحفوظات ومواضع القراءة من الإعدادات، ويُزال كل شيء بحذف التطبيق. وقد يضمّنها نظام جهازك في نسخه الاحتياطية بحسب إعداداتك.\n\nلا يُقرأ موقعك إلا حين تطلب ترتيب الأماكن بحسب قربها منك، وبدقة تقريبية. يُستعمل على جهازك لهذا الترتيب فقط، ولا يُحفظ ولا يُرسل.\n\nعند مشاركة نص أو تصدير بياناتك يُسلَّم المحتوى إلى نافذة المشاركة في نظام جهازك، وأنت من يختار وجهته. وعند الاستيراد لا يقرأ التطبيق إلا الملف الذي تختاره.\n\nوعند «أرسل ملاحظاتك» يُفتح تطبيق البريد في جهازك برسالة إلى المطوّر، تكتبها وترسلها بنفسك.';
+      'لا يجمع التطبيق أي بيانات عنك ولا يرسلها إلى أي جهة: لا حساب فيه ولا إعلانات ولا أدوات تتبّع أو تحليل، ولا يتصل بالإنترنت.\n\nتُحفظ العناصر المحفوظة ومواضع القراءة والإعدادات ونتائج الاختبارات على جهازك فقط. يمكنك مسح المحفوظات ومواضع القراءة من الإعدادات، ويُزال كل شيء بحذف التطبيق. وقد يضمّنها نظام جهازك في نسخه الاحتياطية بحسب إعداداتك.\n\nلا يطلب التطبيق إذن الموقع ولا يقرأ موقعك.\n\nعند مشاركة نص أو تصدير بياناتك يُسلَّم المحتوى إلى نافذة المشاركة في نظام جهازك، وأنت من يختار وجهته. وعند الاستيراد لا يقرأ التطبيق إلا الملف الذي تختاره.\n\nوعند «أرسل ملاحظاتك» يُفتح تطبيق البريد في جهازك برسالة إلى المطوّر، تكتبها وترسلها بنفسك.';
 
   @override
   String get sourceTypeQuran => 'القرآن الكريم';
@@ -1969,7 +1969,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String homeThisMonthNote(String day, String month, String year) {
-    return 'اليوم $day $month $year هـ بتقويم أم القرى، وقد يختلف يومًا عن بداية الشهر برؤية الهلال في بلدك.';
+    return 'اليوم $day $month $year هـ بتقويم أم القرى، وقد يختلف يومًا عن بداية الشهر برؤية الهلال في بلدك.';
   }
 
   @override
@@ -1986,25 +1986,7 @@ class AppLocalizationsAr extends AppLocalizations {
       'أماكن من السيرة وحياة الصحابة في المدينة ومكة وما حولهما، مع ما جرى فيها ومصادره. الصفحة تعرّف بتاريخ هذه الأماكن، وليست دليلًا للمناسك ولا لآداب الزيارة.';
 
   @override
-  String get visitNearMe => 'رتّبها بحسب قربها مني';
-
-  @override
   String get visitLocating => 'جارٍ تحديد موقعك…';
-
-  @override
-  String get visitLocationOff =>
-      'خدمة الموقع متوقفة في جهازك، فشغّلها ثم أعد المحاولة.';
-
-  @override
-  String get visitLocationDenied =>
-      'لم يُسمح بالوصول إلى موقعك، فبقيت الأماكن مرتبة بحسب قربها من الحرم.';
-
-  @override
-  String get visitLocationDeniedForever =>
-      'الوصول إلى موقعك ممنوع لهذا التطبيق، ويمكنك السماح به من إعدادات الجهاز.';
-
-  @override
-  String get visitLocationFailed => 'تعذّر تحديد موقعك الآن، فحاول مرة أخرى.';
 
   @override
   String get visitOpenSettings => 'فتح الإعدادات';
@@ -2028,11 +2010,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get visitUnderOneKm => 'على أقل من كيلومتر منك';
-
-  @override
-  String visitKmAway(String km) {
-    return 'على نحو $km كم منك';
-  }
 
   @override
   String get exploreVisitBody =>
@@ -2162,7 +2139,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get journeyReflectionOnly =>
-      'لا توجد أسئلة مولّدة مناسبة لهذه القراءة الآن. خذ وقتك مع سؤال التأمل.';
+      'لا أسئلة لهذه الخطوة؛ خذ وقتك مع سؤال التأمل.';
 
   @override
   String get journeyCompleteStep => 'أكملت الخطوة';
@@ -2297,7 +2274,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get reminderTimingNote =>
-      'قد يصل التذكير بعد الوقت المختار بحسب إعدادات الجهاز. بعد إعادة تشغيل الجهاز، افتح صُحبة مرة لاستعادة التذكير.';
+      'قد يصل التذكير بعد الوقت المختار بحسب إعدادات الجهاز. ويبقى التذكير مضبوطًا بعد إعادة تشغيل الجهاز.';
 
   @override
   String get reminderNotificationTitle => 'موعدك مع صُحبة';
@@ -2350,7 +2327,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get shareCardFailed => 'تعذّر تجهيز البطاقة. حاول مرة أخرى.';
 
   @override
-  String get shareCardFooter => 'تطبيق صُحبة • السيرة والصحابة\nGoogle Play';
+  String shareCardFooter(String store) {
+    String _temp0 = intl.Intl.selectLogic(store, {
+      'googlePlay': 'تطبيق صُحبة • السيرة والصحابة\nGoogle Play',
+      'other': 'تطبيق صُحبة • السيرة والصحابة',
+    });
+    return '$_temp0';
+  }
 
   @override
   String get shareCardOption => 'بطاقة';
@@ -2515,11 +2498,11 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get aboutCreditAmiri =>
-      'خط الأميري (Amiri) وخط الأميري قرآن (Amiri Quran)، من تصميم خالد حسني، للأسماء والعناوين البارزة والآيات. برخصة الخطوط المفتوحة SIL OFL 1.1.';
+      'خط الأميري (Amiri)، من تصميم خالد حسني، لاسم «صُحبة» في الشعار وللرموز القليلة التي لا يتضمنها خط بلكس، وخط الأميري قرآن (Amiri Quran) لنص الآيات. برخصة الخطوط المفتوحة SIL OFL 1.1.';
 
   @override
   String get aboutCreditPlex =>
-      'خط بلكس العربي (IBM Plex Sans Arabic)، من تصميم مايك أبينك وخاجاك أبيليان ووائل مرقص مع استوديو بولد مندي، لنصوص القراءة وللواجهة. برخصة الخطوط المفتوحة SIL OFL 1.1.';
+      'خط بلكس العربي (IBM Plex Sans Arabic) من شركة IBM، صمّمه مايك أبينك واستوديو بولد مندي مع خاجاك أبيليان ووائل مرقص، لكل نصوص التطبيق: القراءة والواجهة. برخصة الخطوط المفتوحة SIL OFL 1.1.';
 
   @override
   String get aboutCreditSources => 'المصادر';
@@ -2547,4 +2530,34 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get journeyStepContinue => 'تابع';
+
+  @override
+  String get progressJustStarted => 'بدأتَ القراءة';
+
+  @override
+  String profileResumeJustStarted(String title) {
+    return '$title، بدأتَ القراءة';
+  }
+
+  @override
+  String profileNextDetail(String title) {
+    return 'التالي: $title';
+  }
+
+  @override
+  String get continueNext => 'التالي';
+
+  @override
+  String get homeTileStart => 'ابدأ القراءة';
+
+  @override
+  String get welcomeStartHereTour => 'جولة تعريفية قصيرة';
+
+  @override
+  String aboutVersion(String version) {
+    return 'إصدار التطبيق: $version';
+  }
+
+  @override
+  String get aboutLicenses => 'تراخيص البرمجيات مفتوحة المصدر';
 }

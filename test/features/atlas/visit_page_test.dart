@@ -1,44 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:suhba/app/router/routes.dart';
-import 'package:suhba/core/location/location_service.dart';
 import 'package:suhba/features/atlas/presentation/place_page.dart';
 import 'package:suhba/features/atlas/presentation/visit_page.dart';
 import 'package:suhba/features/companions/presentation/profile/companion_profile_page.dart';
 
 import '../../helpers/app_harness.dart';
 
-/// A position (or problem) fixed by the test; records settings requests.
-class FakeLocation implements LocationService {
-  FakeLocation(this.result);
-
-  final LocationResult result;
-  var settingsOpened = 0;
-
-  @override
-  Future<LocationResult> currentPosition() async => result;
-
-  @override
-  Future<void> openSettings() async => settingsOpened++;
-}
-
 void main() {
   Future<void> open(
     WidgetTester tester, {
     String location = AppRoutes.visitRoot,
-    LocationResult result = const LocationUnavailable(LocationProblem.failed),
-    FakeLocation? fake,
   }) async {
     tester.view
       ..devicePixelRatio = 1
       ..physicalSize = const Size(600, 3000);
     addTearDown(tester.view.reset);
-    await AppUnderTest(
-      location: location,
-      overrides: [
-        locationServiceProvider.overrideWithValue(fake ?? FakeLocation(result)),
-      ],
-    ).pump(tester);
+    await AppUnderTest(location: location).pump(tester);
   }
 
   /// The top of [text]'s first widget, to compare the order of rows.
@@ -68,45 +46,17 @@ void main() {
     expect(find.text('بقيع الغرقد'), findsNothing);
   });
 
-  testApp('ordered from the reader when they are in the city', (tester) async {
-    // At the foot of Uhud.
-    await open(tester, result: const LocationFound(24.499, 39.6125));
-    await tester.tap(find.text('رتّبها بحسب قربها مني'));
-    await tester.pumpAndSettle();
-    expect(find.text('الأماكن مرتبة بحسب قربها منك.'), findsOneWidget);
-    expect(find.textContaining('على أقل من كيلومتر منك'), findsOneWidget);
-    expect(top(tester, 'أُحُد'), lessThan(top(tester, 'المسجد النبوي')));
-  });
-
-  testApp('a reader in Makkah is shown Makkah', (tester) async {
-    await open(tester, result: const LocationFound(21.42, 39.83));
-    await tester.tap(find.text('رتّبها بحسب قربها مني'));
-    await tester.pumpAndSettle();
-    expect(find.text('المسجد الحرام'), findsWidgets);
-    expect(find.textContaining('كم منك'), findsWidgets);
-  });
-
-  testApp('a reader elsewhere keeps the order from the Haram', (tester) async {
-    await open(tester, result: const LocationFound(30.04, 31.24)); // Cairo
-    await tester.tap(find.text('رتّبها بحسب قربها مني'));
-    await tester.pumpAndSettle();
-    expect(
-      find.text('لست في المدينة الآن، فالأماكن مرتبة بحسب قربها من الحرم.'),
-      findsOneWidget,
-    );
+  testApp('the reader chooses the city; the app never asks where they are', (
+    tester,
+  ) async {
+    await open(tester);
+    expect(find.byIcon(Icons.my_location), findsNothing);
+    expect(find.textContaining('موقعك'), findsNothing);
     expect(find.textContaining('كم منك'), findsNothing);
-  });
-
-  testApp('a permanent refusal points to the device settings', (tester) async {
-    final fake = FakeLocation(
-      const LocationUnavailable(LocationProblem.deniedForever),
-    );
-    await open(tester, fake: fake);
-    await tester.tap(find.text('رتّبها بحسب قربها مني'));
+    await tester.tap(find.text('مكة'));
     await tester.pumpAndSettle();
-    expect(find.textContaining('من إعدادات الجهاز'), findsOneWidget);
-    await tester.tap(find.text('فتح الإعدادات'));
-    expect(fake.settingsOpened, 1);
+    // Nearest the Haram first.
+    expect(top(tester, 'المسجد الحرام'), lessThan(top(tester, 'غار حراء')));
   });
 
   testApp('opened from Explore', (tester) async {

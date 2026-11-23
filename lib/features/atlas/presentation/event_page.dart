@@ -136,6 +136,7 @@ class _Event extends ConsumerWidget {
                 Semantics(
                   header: true,
                   child: Text(
+                    textScaler: AppTypography.displayScaler(context),
                     e.name.of(context),
                     style: textTheme.displaySmall,
                   ),

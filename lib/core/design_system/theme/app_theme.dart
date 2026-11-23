@@ -148,7 +148,14 @@ abstract final class AppTheme {
     const pill = RoundedRectangleBorder(
       borderRadius: BorderRadius.all(AppRadii.pill),
     );
-    final buttonText = WidgetStatePropertyAll(textTheme.labelLarge);
+    // Button labels set on a tall line: at the default size it still fits
+    // Material's 40 dp minimum height, so nothing changes there, but as the
+    // system text size grows the pill grows with it, keeping the marks
+    // above and dots below the letters (the tail and dots of «التالي»)
+    // inside the button rather than spilling past its edge.
+    final buttonText = WidgetStatePropertyAll(
+      textTheme.labelLarge?.copyWith(height: 2),
+    );
     final dark = scheme.brightness == Brightness.dark;
 
     return ThemeData(

@@ -85,13 +85,40 @@ void main() {
         doc('passage', [
           const SearchField.body('وكان الصديق أول من أسلم من الرجال.'),
         ]),
-        doc('companion', kind: SearchKind.companion, [
-          const SearchField('الصديق', SearchField.aliasWeight),
-        ]),
+        const SearchDocument(
+          kind: SearchKind.companion,
+          id: 'companion',
+          title: 'أبو بكر الصديق',
+          fields: [SearchField('الصديق', SearchField.aliasWeight)],
+        ),
       ]);
       final hits = index.search('الصديق');
       expect(hits.map((h) => h.document.id), ['companion', 'passage']);
-      expect(hits.first.excerpt, isNull, reason: 'matched by name');
+      expect(hits.first.excerpt, isNull, reason: 'its title shows the name');
+    });
+
+    test('a word found in a name the result does not show comes with it', () {
+      // «أبو بكر» finds Bilal: «أبو» in his kunya, shown under his name,
+      // and «بكر» only in his full name, which is not.
+      final index = SearchIndex([
+        const SearchDocument(
+          kind: SearchKind.companion,
+          id: 'bilal',
+          title: 'بلال بن رباح',
+          subtitle: 'أبو عبد الله، مؤذن رسول الله ﷺ',
+          fields: [
+            SearchField('بلال بن رباح', SearchField.nameWeight),
+            SearchField(
+              'بلال بن رباح الحبشي، مولى أبي بكر الصديق',
+              SearchField.aliasWeight,
+            ),
+            SearchField('أبو عبد الله', SearchField.aliasWeight),
+          ],
+        ),
+      ]);
+      final e = index.search('أبو بكر').single.excerpt!;
+      expect(e.text, contains('مولى أبي بكر'));
+      expect(e.text.substring(e.matchStart, e.matchEnd), 'بكر');
     });
 
     test('the whole phrase ranks above scattered words', () {

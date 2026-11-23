@@ -147,6 +147,7 @@ class _SectionReader extends ConsumerWidget {
         Semantics(
           header: true,
           child: Text(
+            textScaler: AppTypography.displayScaler(context),
             section.title.of(context),
             style: Theme.of(context).textTheme.headlineMedium,
           ),

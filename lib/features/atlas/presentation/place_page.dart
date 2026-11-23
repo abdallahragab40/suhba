@@ -138,6 +138,7 @@ class _Place extends ConsumerWidget {
                       Semantics(
                         header: true,
                         child: Text(
+                          textScaler: AppTypography.displayScaler(context),
                           p.name.of(context),
                           style: textTheme.displayMedium?.copyWith(
                             color: Palette.paper,

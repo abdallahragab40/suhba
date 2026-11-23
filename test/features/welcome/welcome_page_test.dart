@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:suhba/core/design_system/widgets/scene_backdrop.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/core/storage/settings_store.dart';
 import 'package:suhba/features/home/presentation/home_page.dart';
 import 'package:suhba/features/welcome/presentation/welcome_controller.dart';
@@ -151,6 +153,89 @@ void main() {
       await tester.pumpAndSettle();
     }
     expect(tester.takeException(), isNull);
+  });
+
+  group('on a small phone (320 × 569)', () {
+    Future<void> small(WidgetTester tester, double scale) async {
+      tester.view
+        ..devicePixelRatio = 1
+        ..physicalSize = const Size(320, 569)
+        ..padding = const FakeViewPadding(top: 24);
+      tester.platformDispatcher.textScaleFactorTestValue = scale;
+      addTearDown(tester.view.reset);
+      addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
+      await open(tester);
+    }
+
+    String body(WidgetTester tester, int page) {
+      final l10n = AppLocalizations.of(tester.element(find.byType(PageView)));
+      return [
+        l10n.welcome1Body,
+        l10n.welcome2Body,
+        l10n.welcome3Body,
+        l10n.welcomeJourneysBody,
+        l10n.welcome4Body,
+      ][page];
+    }
+
+    testApp('every page shows all its words without scrolling', (tester) async {
+      await small(tester, 1);
+      final view = tester.getRect(find.byType(PageView));
+      for (var i = 0; i < 5; i++) {
+        final text = tester.getRect(find.text(body(tester, i)));
+        expect(text.top, greaterThanOrEqualTo(view.top), reason: 'page $i');
+        expect(text.bottom, lessThanOrEqualTo(view.bottom), reason: 'page $i');
+        expect(tester.takeException(), isNull);
+        await tester.tap(find.byType(FilledButton));
+        await tester.pumpAndSettle();
+      }
+    });
+
+    testApp('the first page keeps its scene when there is room', (
+      tester,
+    ) async {
+      await small(tester, 1);
+      final scene = find.byType(SceneBackdrop).first;
+      expect(tester.getSize(scene).height, greaterThanOrEqualTo(120));
+    });
+
+    testApp('at 2× the words start on screen and the scene gives way', (
+      tester,
+    ) async {
+      await small(tester, 2);
+      final view = tester.getRect(find.byType(PageView));
+      for (var i = 0; i < 5; i++) {
+        expect(find.byType(SceneBackdrop), findsNothing, reason: 'page $i');
+        final text = tester.getRect(find.text(body(tester, i)));
+        expect(text.top, greaterThanOrEqualTo(view.top), reason: 'page $i');
+        expect(text.top, lessThan(view.bottom - 60), reason: 'page $i');
+        expect(tester.takeException(), isNull);
+        await tester.tap(find.byType(FilledButton));
+        await tester.pumpAndSettle();
+      }
+    });
+
+    testApp('at 2× the button grows to hold its label', (tester) async {
+      await small(tester, 2);
+      // The pill itself, inside the button's 48 dp tap target.
+      final button = tester.getRect(
+        find.descendant(
+          of: find.byType(FilledButton),
+          matching: find.byType(Material),
+        ),
+      );
+      final label = tester.getRect(
+        find.descendant(
+          of: find.byType(FilledButton),
+          matching: find.text('التالي'),
+        ),
+      );
+      // The label's line (twice its 28 dp size) sits inside the pill.
+      expect(label.height, greaterThanOrEqualTo(2 * 28 - 0.5));
+      expect(button.top, lessThanOrEqualTo(label.top));
+      expect(button.bottom, greaterThanOrEqualTo(label.bottom));
+      expect(tester.takeException(), isNull);
+    });
   });
 
   testApp('the first page', (tester) async {

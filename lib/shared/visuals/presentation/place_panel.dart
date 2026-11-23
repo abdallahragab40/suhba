@@ -72,6 +72,7 @@ class PlacePanel extends StatelessWidget {
                       ),
                       Text(
                         place.name.of(context),
+                        textScaler: AppTypography.displayScaler(context),
                         style: Theme.of(context).textTheme.displaySmall
                             ?.copyWith(color: Palette.paper),
                       ),

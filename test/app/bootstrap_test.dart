@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:suhba/app/bootstrap.dart';
 import 'package:suhba/core/error/error_reporter.dart';
+import 'package:suhba/core/storage/settings_store.dart';
 
 class _RecordingReporter implements ErrorReporter {
   final reports = <(Object, String?)>[];
@@ -51,5 +52,28 @@ void main() {
     );
     expect(handled, isTrue);
     expect(reporter.reports.single.$2, 'platform');
+  });
+
+  test('settings that cannot be opened fall back to memory', () async {
+    final store = await openSettingsStore(
+      reporter: reporter,
+      open: () => Future.error(StateError('no preferences')),
+    );
+    expect(store, isA<MemorySettingsStore>());
+    expect(store.getString(SettingsKeys.themeMode), isNull);
+    // Still usable for this run.
+    await store.setString(SettingsKeys.themeMode, 'dark');
+    expect(store.getString(SettingsKeys.themeMode), 'dark');
+    expect(reporter.reports.single.$2, 'settings store');
+  });
+
+  test('settings that open are used as they are', () async {
+    final saved = MemorySettingsStore();
+    final store = await openSettingsStore(
+      reporter: reporter,
+      open: () async => saved,
+    );
+    expect(store, same(saved));
+    expect(reporter.reports, isEmpty);
   });
 }

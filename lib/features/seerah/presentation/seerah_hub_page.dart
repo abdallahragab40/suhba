@@ -19,6 +19,7 @@ import 'package:suhba/core/design_system/widgets/section_header.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/core/result/failure.dart';
+import 'package:suhba/features/reading_progress/domain/reading_entry.dart';
 import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
 import 'package:suhba/features/reading_progress/presentation/passage_contents.dart';
 import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
@@ -71,19 +72,15 @@ class SeerahHubPage extends ConsumerWidget {
 }
 
 /// Where to continue the Seerah: the most recent unfinished chapter, else
-/// the first chapter not yet finished, else null (finished, or no
-/// progress yet and so start at chapter one).
+/// the next chapter not yet finished after the furthest one read (see
+/// [resumePassage]), else null (finished, or no progress yet and so start
+/// at chapter one).
 SeerahChapterSummary? seerahResumeChapter(
   List<SeerahChapterSummary> chapters,
   Map<String, ReadingProgress> progress,
 ) {
-  final unfinished = [
-    for (final c in chapters)
-      if (progress[c.id] case final p? when !p.completed) (c, p),
-  ]..sort((a, b) => b.$2.updatedAt.compareTo(a.$2.updatedAt));
-  if (unfinished.isNotEmpty) return unfinished.first.$1;
-  if (progress.isEmpty) return null;
-  return chapters.where((c) => progress[c.id]?.completed != true).firstOrNull;
+  final id = resumePassage([for (final c in chapters) c.id], progress);
+  return chapters.where((c) => c.id == id).firstOrNull;
 }
 
 class _Hub extends ConsumerWidget {
@@ -311,6 +308,7 @@ class SeerahOpening extends ConsumerWidget {
                         Semantics(
                           header: true,
                           child: Text(
+                            textScaler: AppTypography.displayScaler(context),
                             s.title.of(context),
                             textAlign: TextAlign.center,
                             style:

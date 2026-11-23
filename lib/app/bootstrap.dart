@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:suhba/app/app.dart';
+import 'package:suhba/app/font_licenses.dart';
 import 'package:suhba/app/provider_retry.dart';
 import 'package:suhba/core/error/app_error_widget.dart';
 import 'package:suhba/core/error/error_reporter.dart';
@@ -19,8 +20,9 @@ Future<void> bootstrap({
 }) async {
   WidgetsFlutterBinding.ensureInitialized();
   installErrorHandlers(reporter);
+  registerFontLicenses();
 
-  final settings = await PrefsSettingsStore.open();
+  final settings = await openSettingsStore(reporter: reporter);
 
   runApp(
     ProviderScope(
@@ -32,6 +34,23 @@ Future<void> bootstrap({
       child: const SuhbaApp(),
     ),
   );
+}
+
+/// The device's saved settings or, if they cannot be opened (storage
+/// unavailable, a corrupt preferences file), settings kept in memory for
+/// this run: the app still opens, with its defaults. The failure is
+/// reported (printed in debug builds).
+@visibleForTesting
+Future<SettingsStore> openSettingsStore({
+  ErrorReporter reporter = const DebugErrorReporter(),
+  Future<SettingsStore> Function() open = PrefsSettingsStore.open,
+}) async {
+  try {
+    return await open();
+  } on Object catch (error, stackTrace) {
+    reporter.report(error, stackTrace, context: 'settings store');
+    return MemorySettingsStore();
+  }
 }
 
 /// Routes framework and platform errors to [reporter] instead of crashing

@@ -11,10 +11,18 @@ class Wordmark extends StatelessWidget {
   final double size;
   final Color? color;
 
+  /// The most the wordmark grows with the system text size. It is a logo,
+  /// already large, and sits in a fixed-height app bar: at 2× its damma
+  /// would rise out of the bar into the status bar.
+  static const maxScale = 1.2;
+
   @override
   Widget build(BuildContext context) {
     return Text(
       AppLocalizations.of(context).appTitle,
+      textScaler: MediaQuery.textScalerOf(
+        context,
+      ).clamp(maxScaleFactor: maxScale),
       style: TextStyle(
         fontFamily: AppFonts.amiri,
         fontWeight: FontWeight.w700,

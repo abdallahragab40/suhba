@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/routes.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/typography.dart';
 import 'package:suhba/core/design_system/widgets/brand_loader.dart';
 import 'package:suhba/core/design_system/widgets/draft_badge.dart';
 import 'package:suhba/core/design_system/widgets/empty_state.dart';
@@ -87,6 +88,7 @@ class JourneyCard extends ConsumerWidget {
                 const SizedBox(height: AppSpacing.sm),
               ],
               Text(
+                textScaler: AppTypography.displayScaler(context),
                 journey.title.of(context),
                 style: Theme.of(context).textTheme.headlineSmall,
               ),
@@ -113,13 +115,11 @@ class JourneyCard extends ConsumerWidget {
                 ),
               ),
               const SizedBox(height: AppSpacing.xs),
-              LinearProgressIndicator(
-                value: done / journey.steps.length,
-                semanticsLabel: journeyProgressText(
-                  l10n,
-                  format,
-                  done: done,
-                  total: journey.steps.length,
+              // The line above says it in words, in the reader's digits;
+              // the bar would add a bare Western percentage.
+              ExcludeSemantics(
+                child: LinearProgressIndicator(
+                  value: done / journey.steps.length,
                 ),
               ),
             ],

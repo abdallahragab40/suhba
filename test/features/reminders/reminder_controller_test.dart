@@ -113,7 +113,7 @@ void main() {
     },
   );
   testApp(
-    'denial persists once; system settings can grant permission without another prompt',
+    'each opt-in asks the system again; system settings can grant permission without another prompt',
     (tester) async {
       final service = FakeReminderService()..requestGrants = false;
       final store = MemorySettingsStore();
@@ -125,7 +125,8 @@ void main() {
       final controller = app.container.read(reminderProvider.notifier);
       await controller.setEnabled(true);
       await controller.setEnabled(true);
-      expect(service.requests, 1);
+      // The system decides whether its dialog still appears.
+      expect(service.requests, 2);
       expect(service.scheduled, isNull);
       expect(
         app.container.read(reminderProvider).requireValue.issue,
@@ -146,7 +147,7 @@ void main() {
         isFalse,
       );
       await controller.setEnabled(true);
-      expect(service.requests, 1);
+      expect(service.requests, 2, reason: 'already granted: no prompt');
       expect(service.scheduled?.enabled, isTrue);
       final restoredService = FakeReminderService()..granted = true;
       final restored = AppUnderTest(
@@ -171,6 +172,30 @@ void main() {
       );
     },
   );
+  testApp('after one refusal, turning the reminder on asks again', (
+    tester,
+  ) async {
+    // Android shows its dialog again after a first refusal: a reader who
+    // said no once and changed their mind is asked, not sent to settings.
+    final service = FakeReminderService()..requestGrants = false;
+    final app = AppUnderTest(
+      overrides: [reminderServiceProvider.overrideWithValue(service)],
+    );
+    await app.container.read(reminderProvider.future);
+    final controller = app.container.read(reminderProvider.notifier);
+    await controller.setEnabled(true);
+    expect(
+      app.container.read(reminderProvider).requireValue.issue,
+      ReminderIssue.denied,
+    );
+    service.requestGrants = true;
+    await controller.setEnabled(true);
+    expect(service.requests, 2);
+    final state = app.container.read(reminderProvider).requireValue;
+    expect(state.settings.enabled, isTrue);
+    expect(state.issue, isNull);
+    expect(service.scheduled?.enabled, isTrue);
+  });
   testApp(
     'pre-granted permission needs no prompt; resume restores time and permission revocation turns it off',
     (tester) async {

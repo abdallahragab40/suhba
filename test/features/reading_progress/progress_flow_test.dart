@@ -50,7 +50,7 @@ void main() {
     expect(p!.fraction, greaterThan(0));
     expect(p.completed, isFalse);
     expect(p.parentId, 'abu-bakr');
-    expect(p.contentVersion, '0.3.0');
+    expect(p.contentVersion, '0.4.0');
   });
 
   testApp('reaching the end completes the passage', (tester) async {
@@ -96,7 +96,7 @@ void main() {
             parentId: 'abu-bakr',
             fraction: 0.6,
             completed: false,
-            contentVersion: '0.3.0',
+            contentVersion: '0.4.0',
             updatedAt: DateTime(2026, 10, 9),
           ),
         );
@@ -136,6 +136,56 @@ void main() {
     expect(find.byType(ContinueReadingTile), findsOneWidget);
     expect(find.text('في الغار'), findsOneWidget);
     expect(find.text('قُرئ ٤٢٪'), findsOneWidget);
+  });
+
+  testApp('a biography read in part stays in «مكتبتي», at its next section', (
+    tester,
+  ) async {
+    // The first section of Abu Bakr's biography finished; the second not
+    // opened. Nothing is unfinished, yet the biography is in progress.
+    final app = AppUnderTest(location: '/saved');
+    await app.container
+        .read(readingProgressRepositoryProvider)
+        .save(
+          ReadingProgress(
+            target: ProgressTarget.section,
+            targetId: 'abu-bakr.early-life',
+            parentId: 'abu-bakr',
+            fraction: 1,
+            completed: true,
+            contentVersion: '0.3.0',
+            updatedAt: DateTime(2026, 10, 9),
+          ),
+        );
+    await app.pump(tester);
+    expect(find.text('لا توجد محفوظات بعد'), findsNothing);
+    expect(find.text('تابع القراءة'), findsOneWidget);
+    expect(find.byType(NextPassageTile), findsOneWidget);
+    expect(find.text('أبو بكر الصديق'), findsOneWidget);
+    expect(find.text('التالي'), findsOneWidget);
+    await tester.tap(find.byType(NextPassageTile));
+    await tester.pumpAndSettle();
+    expect(app.location, '/companions/abu-bakr/sections/abu-bakr.conversion');
+  });
+
+  testApp('under 1% read is «started», never «٠٪»', (tester) async {
+    final app = AppUnderTest(location: '/saved');
+    await app.container
+        .read(readingProgressRepositoryProvider)
+        .save(
+          ReadingProgress(
+            target: ProgressTarget.chapter,
+            targetId: 'the-cave.2',
+            parentId: 'the-cave',
+            fraction: 0.003,
+            completed: false,
+            contentVersion: '0.3.0',
+            updatedAt: DateTime(2026, 10, 9),
+          ),
+        );
+    await app.pump(tester);
+    expect(find.text('بدأتَ القراءة'), findsOneWidget);
+    expect(find.textContaining('٠٪'), findsNothing);
   });
 
   testApp('a position in a passage that no longer exists is removed', (

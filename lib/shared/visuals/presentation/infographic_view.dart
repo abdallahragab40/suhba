@@ -149,6 +149,7 @@ class _InfographicViewState extends ConsumerState<InfographicView> {
           header: true,
           child: Text(
             v.title.of(context),
+            textScaler: AppTypography.displayScaler(context),
             style: widget.inline
                 ? textTheme.titleLarge
                 : textTheme.headlineSmall,

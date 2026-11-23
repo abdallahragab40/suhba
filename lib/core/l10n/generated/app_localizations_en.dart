@@ -90,32 +90,32 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String dateHijriYear(String year) {
-    return '$year AH';
+    return '$year AH';
   }
 
   @override
   String dateBeforeHijraYear(String year) {
-    return '$year BH';
+    return '$year BH';
   }
 
   @override
   String dateGregorianYear(String year) {
-    return '$year CE';
+    return '$year CE';
   }
 
   @override
   String dateHijriRange(String start, String end) {
-    return '$start–$end AH';
+    return '$start–$end AH';
   }
 
   @override
   String dateBeforeHijraRange(String start, String end) {
-    return '$start–$end BH';
+    return '$start–$end BH';
   }
 
   @override
   String dateGregorianRange(String start, String end) {
-    return '$start–$end CE';
+    return '$start–$end CE';
   }
 
   @override
@@ -786,7 +786,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutPrivacyBody =>
-      'The app collects no data about you and sends nothing anywhere: it has no account, no ads, no tracking or analytics, and it does not connect to the internet.\n\nSaved items, reading positions, settings and quiz scores are stored on your device only. You can clear saved items and reading positions in Settings, and deleting the app removes everything. Your device may include them in its backups, depending on your settings.\n\nYour location is read only when you ask to order places by distance from you, and only approximately. It is used on your device for that ordering alone, and is never stored or sent.\n\nWhen you share a passage or export your data, the content is handed to your device\'s share sheet and you choose where it goes. When you import, the app reads only the file you choose.\n\n“Send feedback” opens your mail app with a message to the developer, which you write and send yourself.';
+      'The app collects no data about you and sends nothing anywhere: it has no account, no ads, no tracking or analytics, and it does not connect to the internet.\n\nSaved items, reading positions, settings and quiz scores are stored on your device only. You can clear saved items and reading positions in Settings, and deleting the app removes everything. Your device may include them in its backups, depending on your settings.\n\nThe app does not request location permission and never reads your location.\n\nWhen you share a passage or export your data, the content is handed to your device\'s share sheet and you choose where it goes. When you import, the app reads only the file you choose.\n\n“Send feedback” opens your mail app with a message to the developer, which you write and send yourself.';
 
   @override
   String get sourceTypeQuran => 'The Qur\'an';
@@ -1956,26 +1956,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Places of the Seerah and the Companions\' lives in and around Madinah and Makkah, with what happened there and its sources. This page introduces their history; it is not a guide to the rites or to visiting.';
 
   @override
-  String get visitNearMe => 'Order by distance from me';
-
-  @override
   String get visitLocating => 'Finding your location…';
-
-  @override
-  String get visitLocationOff =>
-      'Location services are off on your device. Turn them on and try again.';
-
-  @override
-  String get visitLocationDenied =>
-      'Location access was not allowed, so the places stay ordered by distance from the Haram.';
-
-  @override
-  String get visitLocationDeniedForever =>
-      'Location access is blocked for this app. You can allow it in the device settings.';
-
-  @override
-  String get visitLocationFailed =>
-      'Your location could not be found just now. Try again.';
 
   @override
   String get visitOpenSettings => 'Open settings';
@@ -2000,11 +1981,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get visitUnderOneKm => 'Less than a kilometre from you';
-
-  @override
-  String visitKmAway(String km) {
-    return 'About $km km from you';
-  }
 
   @override
   String get exploreVisitBody =>
@@ -2126,7 +2102,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get journeyReflectionOnly =>
-      'There are no suitable generated questions for this reading yet. Take your time with the reflection.';
+      'No questions for this step; take your time with the reflection.';
 
   @override
   String get journeyCompleteStep => 'Complete step';
@@ -2263,7 +2239,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get reminderTimingNote =>
-      'Delivery may follow the selected time depending on device settings. After restarting the device, open Suhba once to restore the reminder.';
+      'Delivery may follow the selected time depending on device settings. The reminder stays set after the device restarts.';
 
   @override
   String get reminderNotificationTitle => 'Time for Suhba';
@@ -2316,8 +2292,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get shareCardFailed => 'Could not prepare the card. Try again.';
 
   @override
-  String get shareCardFooter =>
-      'Suhba app • Seerah and Companions\nGoogle Play';
+  String shareCardFooter(String store) {
+    String _temp0 = intl.Intl.selectLogic(store, {
+      'googlePlay': 'Suhba app • Seerah and Companions\nGoogle Play',
+      'other': 'Suhba app • Seerah and Companions',
+    });
+    return '$_temp0';
+  }
 
   @override
   String get shareCardOption => 'Card';
@@ -2476,11 +2457,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutCreditAmiri =>
-      'Amiri and Amiri Quran, by Khaled Hosny, for display names, titles and verses. SIL Open Font License 1.1.';
+      'Amiri, by Khaled Hosny, for the «صُحبة» wordmark and the few symbols Plex lacks, and Amiri Quran for the Qur\'anic verses. SIL Open Font License 1.1.';
 
   @override
   String get aboutCreditPlex =>
-      'IBM Plex Sans Arabic, by IBM, designed by Mike Abbink and Bold Monday with Khajag Apelian and Wael Morcos, for reading text and the interface. SIL Open Font License 1.1.';
+      'IBM Plex Sans Arabic, by IBM, designed by Mike Abbink and Bold Monday with Khajag Apelian and Wael Morcos, for all the app\'s text: reading and interface. SIL Open Font License 1.1.';
 
   @override
   String get aboutCreditSources => 'Sources';
@@ -2509,4 +2490,34 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get journeyStepContinue => 'Continue';
+
+  @override
+  String get progressJustStarted => 'Started';
+
+  @override
+  String profileResumeJustStarted(String title) {
+    return '$title · started';
+  }
+
+  @override
+  String profileNextDetail(String title) {
+    return 'Next: $title';
+  }
+
+  @override
+  String get continueNext => 'Next';
+
+  @override
+  String get homeTileStart => 'Start reading';
+
+  @override
+  String get welcomeStartHereTour => 'A short tour';
+
+  @override
+  String aboutVersion(String version) {
+    return 'App version: $version';
+  }
+
+  @override
+  String get aboutLicenses => 'Open-source licences';
 }

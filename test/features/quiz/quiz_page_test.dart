@@ -144,6 +144,40 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
+  for (final scale in [1.0, 2.0]) {
+    testApp('on a small phone at $scale× the feedback scrolls into view', (
+      tester,
+    ) async {
+      tester.view
+        ..devicePixelRatio = 1
+        ..physicalSize = const Size(320, 569);
+      tester.platformDispatcher.textScaleFactorTestValue = scale;
+      addTearDown(tester.view.reset);
+      addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
+      final (_, round) = await open(tester, '/quiz/mixed');
+      final list = tester.getRect(find.byType(ListView));
+      await tester.tap(tile(label(tester, round.first.answer)));
+      await tester.pumpAndSettle();
+
+      bool onScreen(Finder f) {
+        final r = tester.getRect(f);
+        return r.top >= list.top - 0.5 && r.bottom <= list.bottom + 0.5;
+      }
+
+      // The verdict, which names the right answer, is in view; and the
+      // way on with it whenever the feedback fits the screen.
+      expect(onScreen(find.text('أحسنت!')), isTrue);
+      final next = find.widgetWithText(FilledButton, 'التالي');
+      if (scale == 1) expect(onScreen(next), isTrue);
+      await tester.ensureVisible(next);
+      await tester.pumpAndSettle();
+      await tester.tap(next);
+      await tester.pumpAndSettle();
+      expect(find.text('السؤال ٢ من ١٠'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+  }
+
   group('goldens', () {
     Future<void> phone(WidgetTester tester) async {
       tester.view

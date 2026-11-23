@@ -44,13 +44,21 @@ abstract class ReadingProgress with _$ReadingProgress {
     blockOffset: blockOffset,
   );
 
-  ContentTarget get contentTarget => switch (target) {
-    ProgressTarget.section => ContentTarget.section(parentId, targetId),
-    ProgressTarget.chapter => ContentTarget.chapter(parentId, targetId),
-    ProgressTarget.seerahChapter => ContentTarget.seerahChapter(targetId),
-    ProgressTarget.seerahTopic => ContentTarget.seerahTopic(targetId),
-  };
+  ContentTarget get contentTarget =>
+      progressContentTarget(target, parentId: parentId, targetId: targetId);
 }
+
+/// The content a reading position of [target] points to.
+ContentTarget progressContentTarget(
+  ProgressTarget target, {
+  required String parentId,
+  required String targetId,
+}) => switch (target) {
+  ProgressTarget.section => ContentTarget.section(parentId, targetId),
+  ProgressTarget.chapter => ContentTarget.chapter(parentId, targetId),
+  ProgressTarget.seerahChapter => ContentTarget.seerahChapter(targetId),
+  ProgressTarget.seerahTopic => ContentTarget.seerahTopic(targetId),
+};
 
 /// Whether a saved position still fits the passage as it is now.
 enum PositionFit {
