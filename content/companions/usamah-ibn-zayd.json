@@ -28,18 +28,26 @@
   },
   "death": {
     "date": {
-      "precision": "approx",
+      "precision": "range",
       "era": "afterHijra",
       "hijriYear": 54,
-      "gregorianYear": 674
+      "hijriYearEnd": 59,
+      "gregorianYear": 674,
+      "gregorianYearEnd": 679
     },
-    "reliability": "reported",
+    "reliability": "disputed",
     "citations": [
       {
         "sourceId": "isabah",
         "locatorStatus": "complete",
         "volume": 1,
         "page": "49"
+      },
+      {
+        "sourceId": "istiab",
+        "locatorStatus": "complete",
+        "volume": 1,
+        "page": "77"
       }
     ]
   },
@@ -194,7 +202,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "اعتزل أسامة الفتن بعد مقتل عثمان، وسكن المزّة من عمل دمشق ثم وادي القرى، ثم رجع إلى المدينة فمات بالجرف في أواخر خلافة معاوية، وصحّح ابن عبد البر أنه مات سنة أربع وخمسين."
+            "ar": "اعتزل أسامة الفتن بعد مقتل عثمان، وسكن المزّة من عمل دمشق ثم وادي القرى، ثم رجع إلى المدينة فمات بالجرف في خلافة معاوية، سنة أربع وخمسين على ما صحّحه ابن عبد البر، وقيل سنة ثمان أو تسع وخمسين."
           },
           "reliability": "reported",
           "citations": [
@@ -205,10 +213,10 @@
               "page": "49"
             },
             {
-              "sourceId": "isabah",
+              "sourceId": "istiab",
               "locatorStatus": "complete",
               "volume": 1,
-              "page": "49"
+              "page": "77"
             }
           ]
         }
@@ -270,21 +278,29 @@
       "id": "usamah-ibn-zayd.death",
       "era": "afterProphet",
       "date": {
-        "precision": "approx",
+        "precision": "range",
         "era": "afterHijra",
         "hijriYear": 54,
-        "gregorianYear": 674
+        "hijriYearEnd": 59,
+        "gregorianYear": 674,
+        "gregorianYearEnd": 679
       },
       "title": {
         "ar": "وفاته بالمدينة"
       },
-      "reliability": "reported",
+      "reliability": "disputed",
       "citations": [
         {
           "sourceId": "isabah",
           "locatorStatus": "complete",
           "volume": 1,
           "page": "49"
+        },
+        {
+          "sourceId": "istiab",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "77"
         }
       ],
       "sectionId": "usamah-ibn-zayd.death"
@@ -292,7 +308,9 @@
   ],
   "references": [
     "siyar",
-    "isabah"
+    "isabah",
+    "istiab",
+    "bukhari"
   ],
   "review": {
     "status": "approved",

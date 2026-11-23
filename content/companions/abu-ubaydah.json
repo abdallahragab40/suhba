@@ -15,7 +15,6 @@
   "review": {
     "status": "approved",
     "editorialFlags": [
-      "needsLocators",
       "sensitive"
     ],
     "coverage": "complete",
@@ -26,7 +25,14 @@
     "siyar",
     "istiab",
     "usd-al-ghabah",
-    "tabaqat-ibn-sad"
+    "tabaqat-ibn-sad",
+    "sirat-ibn-hisham",
+    "tarikh-al-tabari",
+    "al-bidaya",
+    "bukhari",
+    "muslim",
+    "abu-dawud",
+    "tirmidhi"
   ],
   "kunya": {
     "ar": "أبو عبيدة"
@@ -75,6 +81,11 @@
           "sourceId": "tirmidhi",
           "locatorStatus": "complete",
           "hadithNumber": "3747"
+        },
+        {
+          "sourceId": "tirmidhi",
+          "locatorStatus": "complete",
+          "hadithNumber": "3748"
         }
       ]
     },
@@ -176,28 +187,34 @@
   "overview": [
     {
       "text": {
-        "ar": "ويذكر ابن سعد أنه شهد بدرًا وهو ابن إحدى وأربعين سنة، وأنه مات في طاعون عمواس سنة ثماني عشرة وهو ابن ثمان وخمسين سنة."
+        "ar": "هو عامر بن عبد الله بن الجراح، من بني الحارث بن فهر من قريش، ويلتقي نسبه بنسب النبي ﷺ في فهر بن مالك، واشتهر بكنيته أبي عبيدة ونسبته إلى جده الجراح."
       },
-      "reliability": "reported",
+      "reliability": "established",
       "citations": [
         {
-          "sourceId": "tabaqat-ibn-sad",
+          "sourceId": "isabah",
           "locatorStatus": "complete",
           "volume": 3,
-          "page": "316"
+          "page": "586"
         },
         {
           "sourceId": "siyar",
           "locatorStatus": "complete",
           "volume": 1,
-          "page": "23"
+          "page": "5"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "312"
         }
       ],
       "sectionId": "abu-ubaydah.early-life"
     },
     {
       "text": {
-        "ar": "ويذكر ابن سعد أنه أسلم مع عثمان بن مظعون وعبد الرحمن بن عوف وأصحابهم قبل دخول النبي ﷺ دار الأرقم."
+        "ar": "يذكر ابن سعد أنه أسلم مع عثمان بن مظعون وعبد الرحمن بن عوف وأصحابهم قبل دخول النبي ﷺ دار الأرقم."
       },
       "reliability": "reported",
       "citations": [
@@ -218,28 +235,26 @@
     },
     {
       "text": {
-        "ar": "ويذكر ابن سعد أنه شهد بدرًا وأحدًا والخندق والمشاهد كلها مع النبي ﷺ، ويذكر الذهبي بلاءه يوم أحد."
+        "ar": "لما قدم وفد نجران سألوا النبي ﷺ أن يبعث معهم رجلًا أمينًا، فذكر أنه سيبعث معهم رجلًا أمينًا حق أمين، فاستشرف لها أصحابه، فبعث أبا عبيدة."
       },
-      "reliability": "reported",
+      "reliability": "established",
       "citations": [
         {
-          "sourceId": "tabaqat-ibn-sad",
+          "sourceId": "bukhari",
           "locatorStatus": "complete",
-          "volume": 3,
-          "page": "313"
+          "hadithNumber": "4380"
         },
         {
-          "sourceId": "siyar",
+          "sourceId": "muslim",
           "locatorStatus": "complete",
-          "volume": 1,
-          "page": "8"
+          "hadithNumber": "2420"
         }
       ],
       "sectionId": "abu-ubaydah.with-prophet"
     },
     {
       "text": {
-        "ar": "ويوم السقيفة قال أبو بكر للأنصار إنه رضي لهم أحد هذين الرجلين، وأخذ بيد عمر وبيد أبي عبيدة، فقدّم عمرُ أبا بكر وبايعه، كما في حديث السقيفة في صحيح البخاري."
+        "ar": "يوم السقيفة قال أبو بكر للأنصار إنه رضي لهم أحد هذين الرجلين، وأخذ بيد عمر وبيد أبي عبيدة، فقدّم عمرُ أبا بكر وبايعه، كما في حديث السقيفة في صحيح البخاري."
       },
       "reliability": "established",
       "citations": [
@@ -253,7 +268,7 @@
     },
     {
       "text": {
-        "ar": "ثم أرسل إلى معاذ بمثله، فلما بلغه ما فعلا حمد الله."
+        "ar": "أرسل عمر إلى أبي عبيدة بمال لينظر ما يصنع به فقسمه، ثم أرسل إلى معاذ بمثله فقسمه إلا شيئًا احتاج إليه أهله، فحمد عمر الله."
       },
       "reliability": "reported",
       "citations": [
@@ -719,7 +734,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وهو أحد العشرة الذين بشّرهم النبي ﷺ بالجنة، وذُكر في رواية عبد الرحمن بن عوف لحديث العشرة عند الترمذي."
+            "ar": "وهو أحد العشرة الذين بشّرهم النبي ﷺ بالجنة، وذُكر في حديث العشرة عند الترمذي من رواية عبد الرحمن بن عوف، ومن رواية سعيد بن زيد التي قال البخاري إنها أصح."
           },
           "reliability": "established",
           "citations": [
@@ -727,6 +742,11 @@
               "sourceId": "tirmidhi",
               "locatorStatus": "complete",
               "hadithNumber": "3747"
+            },
+            {
+              "sourceId": "tirmidhi",
+              "locatorStatus": "complete",
+              "hadithNumber": "3748"
             }
           ]
         },
@@ -889,7 +909,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وينقل الذهبي عن مالك أن عمر أرسل إلى أبي عبيدة بمال، وقال للرسول أن ينظر ما يصنع به، فقسمه أبو عبيدة. ثم أرسل إلى معاذ بمثله، فلما بلغه ما فعلا حمد الله. ويورد ابن سعد خبرًا بهذا المعنى أيضًا."
+            "ar": "وينقل الذهبي عن مالك خبرًا: أرسل عمر إلى أبي عبيدة بمال لينظر ما يصنع به فقسمه، ثم أرسل إلى معاذ بمثله فقسمه إلا شيئًا احتاج إليه أهله، فحمد عمر الله. ويورد ابن سعد خبرًا بهذا المعنى أيضًا."
           },
           "reliability": "reported",
           "citations": [
@@ -1151,7 +1171,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "ويروي الطبري أنه خطب الناس حين وقع الطاعون، فذكر أنه رحمة من الله ودعوة نبيهم وموت الصالحين قبلهم، ودعا أن يقسم الله له منه حظّه. وفي الرواية أنه طُعن فمات، ثم تولّى معاذ بن جبل أمر الناس بعده."
+            "ar": "ويروي الطبري أنه خطب الناس حين وقع الطاعون، فذكر أنه رحمة من الله ودعوة نبيهم ﷺ وموت الصالحين قبلهم، ودعا أن يقسم الله له منه حظّه."
           },
           "reliability": "reported",
           "citations": [
@@ -1457,7 +1477,7 @@
       "title": {
         "ar": "إمارته سرية سيف البحر"
       },
-      "reliability": "established",
+      "reliability": "reported",
       "citations": [
         {
           "sourceId": "bukhari",
@@ -1555,7 +1575,7 @@
       "title": {
         "ar": "وفاته في طاعون عمواس"
       },
-      "reliability": "reported",
+      "reliability": "established",
       "citations": [
         {
           "sourceId": "tarikh-al-tabari",

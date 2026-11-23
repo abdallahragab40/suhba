@@ -360,6 +360,30 @@
   ],
   "timeline": [
     {
+      "id": "umm-habibah.abyssinia",
+      "era": "makkan",
+      "date": {
+        "precision": "approx",
+        "era": "beforeHijra",
+        "hijriYear": 8,
+        "gregorianYear": 615
+      },
+      "title": {
+        "ar": "هجرتها إلى الحبشة"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "324"
+        }
+      ],
+      "sectionId": "umm-habibah.abyssinia",
+      "eventId": "hijrah-to-abyssinia"
+    },
+    {
       "id": "umm-habibah.marriage",
       "era": "madinan",
       "date": {
@@ -409,7 +433,12 @@
     }
   ],
   "references": [
-    "siyar"
+    "siyar",
+    "sirat-ibn-hisham",
+    "bukhari",
+    "muslim",
+    "abu-dawud",
+    "quran"
   ],
   "review": {
     "status": "approved",

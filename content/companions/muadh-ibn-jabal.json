@@ -23,12 +23,14 @@
   },
   "death": {
     "date": {
-      "precision": "approx",
+      "precision": "range",
       "era": "afterHijra",
-      "hijriYear": 18,
-      "gregorianYear": 639
+      "hijriYear": 17,
+      "hijriYearEnd": 18,
+      "gregorianYear": 638,
+      "gregorianYearEnd": 639
     },
-    "reliability": "reported",
+    "reliability": "disputed",
     "citations": [
       {
         "sourceId": "siyar",
@@ -314,15 +316,17 @@
       "id": "muadh-ibn-jabal.death",
       "era": "afterProphet",
       "date": {
-        "precision": "approx",
+        "precision": "range",
         "era": "afterHijra",
-        "hijriYear": 18,
-        "gregorianYear": 639
+        "hijriYear": 17,
+        "hijriYearEnd": 18,
+        "gregorianYear": 638,
+        "gregorianYearEnd": 639
       },
       "title": {
         "ar": "وفاته في طاعون عمواس"
       },
-      "reliability": "reported",
+      "reliability": "disputed",
       "citations": [
         {
           "sourceId": "siyar",
@@ -335,7 +339,10 @@
     }
   ],
   "references": [
-    "siyar"
+    "siyar",
+    "bukhari",
+    "abu-dawud",
+    "tirmidhi"
   ],
   "review": {
     "status": "approved",

@@ -3,8 +3,8 @@
   "kind": "companion",
   "id": "zayd-ibn-harithah",
   "reviewerId": "suhba-editorial",
-  "approvedAt": "2026-11-20",
-  "contentHash": "55c3cabe8e0cce4bfb9922c32282cfd0e9d8fb8ba961ba1fdc2a31834b811ed3",
+  "approvedAt": "2026-11-23",
+  "contentHash": "b54e8cff560345818a2278daf4cb514106d87e77367d6d2d2f9ad5422a8725e4",
   "checklist": {
     "sourcesMatch": true,
     "gradingsCorrect": true,
@@ -14,5 +14,5 @@
     "fitnaSignOff": true,
     "sensitiveSignOff": true
   },
-  "notes": "Editorial review on the owner's instruction (2026-11-20); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors. Checked: the full text read for accuracy, embellishment, honorifics and the stated reliability; every hadith citation compared with the cited text in content/hadith; Qur'an quotations checked by the validator against the Tanzil text. Not checked: book page locators against the printed editions, and chains of transmission. This is not the approval of a qualified scholar."
+  "notes": "Editorial review on the owner's instruction (2026-11-20); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors. Checked: the full text read for accuracy, embellishment, honorifics and the stated reliability; every hadith citation compared with the cited text in content/hadith; Qur'an quotations checked by the validator against the Tanzil text. Not checked: book page locators against the printed editions, and chains of transmission. This is not the approval of a qualified scholar. Re-approved 2026-11-23 as an editorial correction after source checking in the pre-launch audit: Khadijah's gift of Zayd now also cites Ibn Hisham 1/248 (Ibn Ishaq), paragraph and overview; Badr membership locator al-Isabah 1/83 could not be verified and was replaced with Siyar 1/225 (checked against the digital text); reverse relation to Zaynab bint Jahsh added; work-level references now list every source cited. Content checked against the cited hadith texts in content/hadith and, for book locators, against the OpenITI digital texts of the editions that match (Siyar, Ibn Sa'd, al-Istiab, al-Bidaya). Done by Claude, an AI model, for the app's editors. This is an editorial review, not the approval of a qualified scholar."
 }

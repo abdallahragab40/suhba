@@ -315,7 +315,11 @@
     }
   ],
   "references": [
-    "siyar"
+    "siyar",
+    "bukhari",
+    "muslim",
+    "abu-dawud",
+    "quran"
   ],
   "review": {
     "status": "approved",

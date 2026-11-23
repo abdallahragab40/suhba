@@ -28,12 +28,14 @@
   },
   "death": {
     "date": {
-      "precision": "approx",
+      "precision": "range",
       "era": "afterHijra",
       "hijriYear": 20,
-      "gregorianYear": 641
+      "hijriYearEnd": 21,
+      "gregorianYear": 641,
+      "gregorianYearEnd": 642
     },
-    "reliability": "reported",
+    "reliability": "disputed",
     "citations": [
       {
         "sourceId": "siyar",
@@ -120,7 +122,7 @@
     },
     {
       "text": {
-        "ar": "ويذكر أهل السير أنه توفي بدمشق سنة عشرين وهو ابن بضع وستين سنة، وقيل غير ذلك في سنته وموضعه."
+        "ar": "ويذكر أهل السير أنه توفي بدمشق سنة عشرين وهو ابن بضع وستين سنة، وقيل سنة إحدى وعشرين، وقيل غير ذلك في موضعه، على ما يذكر الذهبي."
       },
       "reliability": "reported",
       "citations": [
@@ -374,7 +376,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "ويذكر أهل السير أنه توفي بدمشق سنة عشرين وهو ابن بضع وستين سنة، وقيل غير ذلك في سنته وموضعه."
+            "ar": "ويذكر أهل السير أنه توفي بدمشق سنة عشرين وهو ابن بضع وستين سنة، وقيل سنة إحدى وعشرين، وقيل غير ذلك في موضعه، على ما يذكر الذهبي."
           },
           "reliability": "reported",
           "citations": [
@@ -450,15 +452,17 @@
       "id": "bilal.death",
       "era": "afterProphet",
       "date": {
-        "precision": "approx",
+        "precision": "range",
         "era": "afterHijra",
         "hijriYear": 20,
-        "gregorianYear": 641
+        "hijriYearEnd": 21,
+        "gregorianYear": 641,
+        "gregorianYearEnd": 642
       },
       "title": {
         "ar": "وفاته بالشام على أشهر الأقوال"
       },
-      "reliability": "reported",
+      "reliability": "disputed",
       "citations": [
         {
           "sourceId": "siyar",
@@ -472,7 +476,10 @@
   ],
   "references": [
     "siyar",
-    "tabaqat-ibn-sad"
+    "tabaqat-ibn-sad",
+    "bukhari",
+    "muslim",
+    "quran"
   ],
   "review": {
     "status": "approved",

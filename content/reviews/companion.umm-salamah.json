@@ -3,8 +3,8 @@
   "kind": "companion",
   "id": "umm-salamah",
   "reviewerId": "suhba-editorial",
-  "approvedAt": "2026-11-20",
-  "contentHash": "a86b0b2efa9f09a1a68d2c2f740c822dacf5e4de74593193bfa46e59615c9d60",
+  "approvedAt": "2026-11-23",
+  "contentHash": "26d9065fb629edadecb83a47912fed23c56c074065c5be08f1ca57c2fb84245f",
   "checklist": {
     "sourcesMatch": true,
     "gradingsCorrect": true,
@@ -14,5 +14,5 @@
     "fitnaSignOff": true,
     "sensitiveSignOff": true
   },
-  "notes": "Editorial review on the owner's instruction (2026-11-20); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors. Checked: the full text read for accuracy, embellishment, honorifics and the stated reliability; every hadith citation compared with the cited text in content/hadith; Qur'an quotations checked by the validator against the Tanzil text. Not checked: book page locators against the printed editions, and chains of transmission. This is not the approval of a qualified scholar."
+  "notes": "Editorial review on the owner's instruction; the owner decided the app will have no scholarly reviewer. Expanded profile (2026-11-23): lineage and family; both emigrations (Abyssinia, her narration of the Negus account, the return to Makkah, and the separation story from Ibn Ishaq); Abu Salamah's death, the Prophet's supplication for him (Muslim 920) and the supplication on bereavement (Muslim 918, quoted from the narration without inline punctuation marks); the proposal and marriage; her counsel at Hudaybiyah (Bukhari 2731/2732, her words quoted); episodes in the Prophet's household; her knowledge and narrations; death. The recent corrections are kept: the visit of Abdullah ibn Safwan dated as Muslim 2882 says, \"in the days of Ibn al-Zubayr\", during Yazid's caliphate per al-Dhahabi; death a disputed 59-61 range, now with a disputeNote (59 al-Waqidi, 60 Ibn Abd al-Barr, 61 al-Dhahabi). Other disputes given as disputeNotes: who gave her in marriage (her son Umar, or Salamah per Ibn Hisham) and her age at death (84 or about 90). Reports through al-Waqidi or Ibn Ishaq are marked reported. Fitna matters (including al-Dhahabi's dating by news of al-Husayn's killing) are left out. Book locators were checked against the OpenITI digital transcriptions of the editions named in sources.json (Ibn Hisham, al-Saqqa ed.; Ibn Sa'd, Ata ed.; Siyar, Risala ed.; al-Istiab, al-Bajawi ed.), reading the page markers as page ends; only pages actually seen are cited. Every hadith citation was compared with its text in the pinned hadith-api dataset (content/hadith), and quoted hadith wording is verbatim from it. Not checked: chains of transmission beyond what the cited authors state, and page locators against printed copies. Done by Claude, an AI model, for the app's editors, after source checking. This is an editorial review, not the approval of a qualified scholar."
 }

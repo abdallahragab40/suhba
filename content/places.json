@@ -931,6 +931,49 @@
       "contemporaryNote": {
         "ar": "وُسّع المسجد مرات كثيرة عبر القرون، والبناء القائم اليوم حديث يحيط بالكعبة وموضع المسجد الأول."
       }
+    },
+    {
+      "id": "al-hajun",
+      "name": {
+        "ar": "الحجون"
+      },
+      "kind": "other",
+      "location": {
+        "lat": 21.4353,
+        "lon": 39.8283,
+        "precision": "approximate"
+      },
+      "summary": {
+        "ar": "موضع بمكة، دُفنت فيه خديجة أم المؤمنين، وأمر النبي ﷺ يوم الفتح أن تُركز رايته فيه."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 8,
+          "page": "15"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "112"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4280"
+        }
+      ],
+      "review": {
+        "status": "approved",
+        "editorialFlags": [],
+        "authoredBy": "khadijah-deepen-1"
+      },
+      "companionIds": [
+        "khadijah"
+      ]
     }
   ]
 }

@@ -3,8 +3,8 @@
   "kind": "companion",
   "id": "ammar-ibn-yasir",
   "reviewerId": "suhba-editorial",
-  "approvedAt": "2026-11-20",
-  "contentHash": "9a252116e1c269546532dad37b5068e115506e8d856574a9de7301de321939cd",
+  "approvedAt": "2026-11-23",
+  "contentHash": "39689c8ec3699ced8400b965aeaae7806d70ac344b7a1032b33fa478320356db",
   "checklist": {
     "sourcesMatch": true,
     "gradingsCorrect": true,
@@ -14,5 +14,5 @@
     "fitnaSignOff": true,
     "sensitiveSignOff": true
   },
-  "notes": "Editorial review on the owner's instruction (2026-11-20); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors. Checked: the full text read for accuracy, embellishment, honorifics and the stated reliability; every hadith citation compared with the cited text in content/hadith; Qur'an quotations checked by the validator against the Tanzil text. Not checked: book page locators against the printed editions, and chains of transmission. This is not the approval of a qualified scholar."
+  "notes": "Editorial review on the owner's instruction (2026-11-20); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors. Checked: the full text read for accuracy, embellishment, honorifics and the stated reliability; every hadith citation compared with the cited text in content/hadith; Qur'an quotations checked by the validator against the Tanzil text. Not checked: book page locators against the printed editions, and chains of transmission. This is not the approval of a qualified scholar. Re-approved 2026-11-23 as an editorial correction after source checking in the pre-launch audit: owner decision: the Prophet's words \"ويح عمار، تقتله الفئة الباغية، يدعوهم إلى الجنة ويدعونه إلى النار\" added from the cited Bukhari 447 (checked against the dataset text), framed like Ali's profile with a lesson that the strife is told only as far as it is established, without blame; item now flagged fitnaAdjacent; the internal sentence about the app's method removed; Tirmidhi 3805 noted as hasan gharib with a weakened narrator, as al-Tirmidhi says; work-level references now list every source cited. Content checked against the cited hadith texts in content/hadith and, for book locators, against the OpenITI digital texts of the editions that match (Siyar, Ibn Sa'd, al-Istiab, al-Bidaya). Done by Claude, an AI model, for the app's editors. This is an editorial review, not the approval of a qualified scholar."
 }

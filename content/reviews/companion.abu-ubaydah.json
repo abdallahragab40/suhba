@@ -3,8 +3,8 @@
   "kind": "companion",
   "id": "abu-ubaydah",
   "reviewerId": "suhba-editorial",
-  "approvedAt": "2026-11-20",
-  "contentHash": "492431d7212ac0b96f73bab98f2f72351963c408c341e756721a9591dec6bf81",
+  "approvedAt": "2026-11-23",
+  "contentHash": "1a3472ce1ef5271fc397fc275aed3df73916a8087683d561e9d4244c0b240bdb",
   "checklist": {
     "sourcesMatch": true,
     "gradingsCorrect": true,
@@ -14,5 +14,5 @@
     "fitnaSignOff": true,
     "sensitiveSignOff": true
   },
-  "notes": "Editorial review on the owner's instruction (2026-11-20); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors. Checked: the full text read for accuracy, embellishment, honorifics and the stated reliability; every hadith citation compared with the cited text in content/hadith; Qur'an quotations checked by the validator against the Tanzil text. Not checked: book page locators against the printed editions, and chains of transmission. This is not the approval of a qualified scholar."
+  "notes": "Editorial review on the owner's instruction (2026-11-20); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors. Checked: the full text read for accuracy, embellishment, honorifics and the stated reliability; every hadith citation compared with the cited text in content/hadith; Qur'an quotations checked by the validator against the Tanzil text. Not checked: book page locators against the printed editions, and chains of transmission. This is not the approval of a qualified scholar. Re-approved 2026-11-23 as an editorial correction after source checking in the pre-launch audit: overview rebuilt: opens with the lineage line, no two lines start the same way, and the cut fragment about Umar sending money is replaced by a self-contained sentence checked against Siyar 1/17 (character paragraph reworded to match); Tirmidhi 3748 (Sa'id ibn Zayd's narration naming him, which al-Bukhari judged sounder) added to the Ten membership and virtues; death told once instead of twice; Khabat timeline entry marked reported and death timeline aligned with the death record; ﷺ added after \"نبيهم\"; stale needsLocators flag removed; work-level references now list every source cited. Content checked against the cited hadith texts in content/hadith and, for book locators, against the OpenITI digital texts of the editions that match (Siyar, Ibn Sa'd, al-Istiab, al-Bidaya). Done by Claude, an AI model, for the app's editors. This is an editorial review, not the approval of a qualified scholar."
 }

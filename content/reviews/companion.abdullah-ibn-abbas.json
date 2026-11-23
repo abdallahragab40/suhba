@@ -3,8 +3,8 @@
   "kind": "companion",
   "id": "abdullah-ibn-abbas",
   "reviewerId": "suhba-editorial",
-  "approvedAt": "2026-11-20",
-  "contentHash": "72dd089ef1d6ff0dc937d86d07ead49eb3990a9a1660ac7c880cecc83b519d4c",
+  "approvedAt": "2026-11-23",
+  "contentHash": "7bdfef0bb545af45f9afed84389f2c4cc595683fd367af460399c22e1cf8e2eb",
   "checklist": {
     "sourcesMatch": true,
     "gradingsCorrect": true,
@@ -14,5 +14,5 @@
     "fitnaSignOff": true,
     "sensitiveSignOff": true
   },
-  "notes": "Editorial review on the owner's instruction (2026-11-20); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors. Checked: the full text read for accuracy, embellishment, honorifics and the stated reliability; every hadith citation compared with the cited text in content/hadith; Qur'an quotations checked by the validator against the Tanzil text. Not checked: book page locators against the printed editions, and chains of transmission. This is not the approval of a qualified scholar."
+  "notes": "Editorial review on the owner's instruction (2026-11-20); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors. Checked: the full text read for accuracy, embellishment, honorifics and the stated reliability; every hadith citation compared with the cited text in content/hadith; Qur'an quotations checked by the validator against the Tanzil text. Not checked: book page locators against the printed editions, and chains of transmission. This is not the approval of a qualified scholar. Re-approved 2026-11-23 as an editorial correction after source checking in the pre-launch audit: childhood: added that another report (Bukhari 6299, 76) indicates he was near puberty when the Prophet died; death modelled as a disputed 67-68 range as the text states; reverse relation to Maymunah added; work-level references now list every source cited. Content checked against the cited hadith texts in content/hadith and, for book locators, against the OpenITI digital texts of the editions that match (Siyar, Ibn Sa'd, al-Istiab, al-Bidaya). Done by Claude, an AI model, for the app's editors. This is an editorial review, not the approval of a qualified scholar."
 }

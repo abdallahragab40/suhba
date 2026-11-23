@@ -3,8 +3,8 @@
   "kind": "companion",
   "id": "said-ibn-zayd",
   "reviewerId": "suhba-editorial",
-  "approvedAt": "2026-11-20",
-  "contentHash": "63bddea0f84ef73c2f9dc14e02f4959a8d7770e8062bf1f9d1c219aa3ffd2410",
+  "approvedAt": "2026-11-23",
+  "contentHash": "913f6e7c7962c58de73c7f7f20b668e260d0afca3dd2f2c0ed31773a7a29ebad",
   "checklist": {
     "sourcesMatch": true,
     "gradingsCorrect": true,
@@ -14,5 +14,5 @@
     "fitnaSignOff": true,
     "sensitiveSignOff": true
   },
-  "notes": "Editorial review on the owner's instruction (2026-11-20); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors. Checked: the full text read for accuracy, embellishment, honorifics and the stated reliability; every hadith citation compared with the cited text in content/hadith; Qur'an quotations checked by the validator against the Tanzil text. Not checked: book page locators against the printed editions, and chains of transmission. This is not the approval of a qualified scholar."
+  "notes": "Editorial review on the owner's instruction (2026-11-20); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors. Checked: the full text read for accuracy, embellishment, honorifics and the stated reliability; every hadith citation compared with the cited text in content/hadith; Qur'an quotations checked by the validator against the Tanzil text. Not checked: book page locators against the printed editions, and chains of transmission. This is not the approval of a qualified scholar. Re-approved 2026-11-23 as an editorial correction after source checking in the pre-launch audit: Ten hadith corrected: he counted nine and named himself when asked (Abu Dawud 4649, Tirmidhi 3748); his own Tirmidhi narration names Abu Ubaydah and al-Bukhari judged it sounder; Arwa story follows one Muslim 1610 narration only; repeated Hira hadith trimmed; overview opens with the lineage line; death timeline marked disputed like the record; \"عليه السلام\" for Ibrahim and Nuh on first mention; Khabbab spelling; stale needsLocators flag removed; work-level references now list every source cited. Content checked against the cited hadith texts in content/hadith and, for book locators, against the OpenITI digital texts of the editions that match (Siyar, Ibn Sa'd, al-Istiab, al-Bidaya). Done by Claude, an AI model, for the app's editors. This is an editorial review, not the approval of a qualified scholar."
 }

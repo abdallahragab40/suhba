@@ -3,8 +3,8 @@
   "kind": "companion",
   "id": "khadijah",
   "reviewerId": "suhba-editorial",
-  "approvedAt": "2026-11-20",
-  "contentHash": "9d7922e570486c8f9ead3af8aa5524ba923e5e1247b2f218008dcb8bc1c5ceb8",
+  "approvedAt": "2026-11-23",
+  "contentHash": "90e1de38b486bcf0027b551a0104f06d406af22148a88e2d14793fa69d9379ad",
   "checklist": {
     "sourcesMatch": true,
     "gradingsCorrect": true,
@@ -14,5 +14,5 @@
     "fitnaSignOff": true,
     "sensitiveSignOff": true
   },
-  "notes": "Editorial review on the owner's instruction (2026-11-20); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors. Checked: the full text read for accuracy, embellishment, honorifics and the stated reliability; every hadith citation compared with the cited text in content/hadith; Qur'an quotations checked by the validator against the Tanzil text. Not checked: book page locators against the printed editions, and chains of transmission. This is not the approval of a qualified scholar."
+  "notes": "Editorial review on the owner's instruction (2026-11-23); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors, after checking the sources. Expanded profile: the full text read for accuracy, embellishment, honorifics and the stated reliability. Every hadith citation was compared with its text in content/hadith (the pinned dataset), and quoted wording is verbatim from it. Book locators were checked against digital transcriptions of the editions named in sources.json (OpenITI: Ibn Hisham, al-Saqqa ed.; Ibn Sa'd, Ata ed.; Siyar, Risala ed.; al-Bidaya, al-Turki ed.; Wikisource: Usd al-Ghabah, Wahbiyya printing). Disputes (order of her first marriages, her age at marriage, who gave her in marriage, the number of her sons, and whether she died before or after Abu Talib) are given as disputeNotes with each opinion sourced. Al-Bukhari 3821 is a suspended (mu'allaq) report and is cited with Muslim 2437, which is connected; the reports of her death, burial and the Prophet entering her grave come through al-Waqidi and are marked reported. The name «عام الحزن» itself does not appear in the cited sources; only the events do. Not checked: chains of transmission, and page locators against printed copies. This is not the approval of a qualified scholar."
 }

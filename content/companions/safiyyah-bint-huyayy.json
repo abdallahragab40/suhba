@@ -93,7 +93,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "كانت صفية قبل إسلامها عند سلّام بن أبي الحقيق، ثم عند كنانة بن أبي الحقيق، فقُتل كنانة يوم خيبر، على ما يذكر الذهبي."
+            "ar": "كانت صفية قبل إسلامها عند كنانة بن أبي الحقيق بعد زوجها الأول، فقُتل كنانة يوم خيبر، على ما يذكر الذهبي وابن عبد البر."
           },
           "reliability": "reported",
           "citations": [
@@ -102,6 +102,46 @@
               "locatorStatus": "complete",
               "volume": 2,
               "page": "231"
+            },
+            {
+              "sourceId": "istiab",
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "1871"
+            }
+          ]
+        },
+        {
+          "type": "disputeNote",
+          "text": {
+            "ar": "اختُلف في زوجها الأول قبل كنانة بن أبي الحقيق."
+          },
+          "opinions": [
+            {
+              "text": {
+                "ar": "سلّام بن أبي الحقيق، على ما يذكر الذهبي."
+              },
+              "citations": [
+                {
+                  "sourceId": "siyar",
+                  "locatorStatus": "complete",
+                  "volume": 2,
+                  "page": "231"
+                }
+              ]
+            },
+            {
+              "text": {
+                "ar": "سلام بن مشكم، على ما ينقل ابن عبد البر عن أبي عبيدة."
+              },
+              "citations": [
+                {
+                  "sourceId": "istiab",
+                  "locatorStatus": "complete",
+                  "volume": 4,
+                  "page": "1871"
+                }
+              ]
             }
           ]
         },
@@ -127,21 +167,19 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "ويروي أنس أيضًا أن النبي ﷺ دفعها إلى أم سليم تهيّئها، وأن الناقة عثرت بهما مرة فصُرع وصُرعت، فأسرع أبو طلحة فألقى ثوبه عليها، وشدّ لها على راحلتها."
+            "ar": "ويروي أنس أيضًا أن النبي ﷺ دفعها إلى أم سليم تهيّئها، وأن ناقته عثرت بهما مرة فصُرع وصُرعت، فأسرع أبو طلحة فألقى ثوبًا عليها، وأصلح لهما مركبهما."
           },
-          "reliability": "reported",
+          "reliability": "established",
           "citations": [
             {
-              "sourceId": "siyar",
+              "sourceId": "muslim",
               "locatorStatus": "complete",
-              "volume": 2,
-              "page": "235"
+              "hadithNumber": "1365"
             },
             {
-              "sourceId": "siyar",
+              "sourceId": "bukhari",
               "locatorStatus": "complete",
-              "volume": 2,
-              "page": "236"
+              "hadithNumber": "3085"
             }
           ]
         }
@@ -337,7 +375,11 @@
     }
   ],
   "references": [
-    "siyar"
+    "siyar",
+    "istiab",
+    "bukhari",
+    "muslim",
+    "quran"
   ],
   "review": {
     "status": "approved",
@@ -351,7 +393,7 @@
   "overview": [
     {
       "text": {
-        "ar": "كانت صفية قبل إسلامها عند سلّام بن أبي الحقيق، ثم عند كنانة بن أبي الحقيق، فقُتل كنانة يوم خيبر، على ما يذكر الذهبي."
+        "ar": "كانت صفية قبل إسلامها عند كنانة بن أبي الحقيق بعد زوجها الأول، فقُتل كنانة يوم خيبر، على ما يذكر الذهبي وابن عبد البر."
       },
       "reliability": "reported",
       "citations": [
@@ -360,6 +402,12 @@
           "locatorStatus": "complete",
           "volume": 2,
           "page": "231"
+        },
+        {
+          "sourceId": "istiab",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "1871"
         }
       ],
       "sectionId": "safiyyah-bint-huyayy.marriage"

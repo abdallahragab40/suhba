@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "kind": "place",
+  "id": "al-hajun",
+  "reviewerId": "suhba-editorial",
+  "approvedAt": "2026-11-23",
+  "contentHash": "54d83cc2da8ef02a9750f6035fc3b811c8418c460e95ddc41900c05e6fa540d6",
+  "checklist": {
+    "sourcesMatch": true,
+    "gradingsCorrect": true,
+    "noEmbellishment": true,
+    "reliabilityCorrect": true,
+    "honorificsCorrect": true,
+    "fitnaSignOff": true,
+    "sensitiveSignOff": true
+  },
+  "notes": "Editorial review on the owner's instruction (2026-11-23); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors, after checking the sources. New place: Khadijah's burial at al-Hajun (Ibn Sa'd 8/15 and Siyar 2/112, both through al-Waqidi, so reported) and the Prophet's banner set up there at the conquest (al-Bukhari 4280, compared with content/hadith). The map point is approximate (the area of the Ma'la cemetery) and is not taken from a cited source. Not checked: chains of transmission, and page locators against printed copies. This is not the approval of a qualified scholar."
+}

@@ -3,8 +3,8 @@
   "kind": "journey",
   "id": "meet-the-companions",
   "reviewerId": "suhba-editorial",
-  "approvedAt": "2026-11-20",
-  "contentHash": "0968970b9eba01f09f1328e87bd84c542f58271865b427c870db80949efb71d0",
+  "approvedAt": "2026-11-23",
+  "contentHash": "d01054211ff290ed899032eb71191254b8206665447fe2573b769f81b78e33fe",
   "checklist": {
     "sourcesMatch": true,
     "gradingsCorrect": true,
@@ -14,5 +14,5 @@
     "fitnaSignOff": true,
     "sensitiveSignOff": true
   },
-  "notes": "Editorial review on the owner's instruction (2026-11-20); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors. Checked: the full text read for accuracy, embellishment, honorifics and the stated reliability; every hadith citation compared with the cited text in content/hadith; Qur'an quotations checked by the validator against the Tanzil text. Not checked: book page locators against the printed editions, and chains of transmission. This is not the approval of a qualified scholar."
+  "notes": "Editorial review on the owner's instruction (2026-11-23); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors, after checking the sources. The Khadijah step now reads her new sections (support in Makkah, virtues, the Prophet's loyalty to her); the framing line was updated to match and the step has no authored questions. Not checked: chains of transmission, and page locators against printed copies. This is not the approval of a qualified scholar."
 }

@@ -206,6 +206,24 @@
           "locatorStatus": "complete",
           "volume": 1,
           "page": "321"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "323"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "322"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "324"
         }
       ],
       "review": {
@@ -236,6 +254,24 @@
             "ar": "عبد الرحمن بن عوف"
           },
           "companionId": "abd-al-rahman-ibn-awf"
+        },
+        {
+          "displayName": {
+            "ar": "جعفر بن أبي طالب"
+          },
+          "companionId": "jafar-ibn-abi-talib"
+        },
+        {
+          "displayName": {
+            "ar": "أم سلمة"
+          },
+          "companionId": "umm-salamah"
+        },
+        {
+          "displayName": {
+            "ar": "أم حبيبة"
+          },
+          "companionId": "umm-habibah"
         }
       ],
       "placeIds": [
@@ -278,6 +314,12 @@
           "sourceId": "bukhari",
           "locatorStatus": "complete",
           "hadithNumber": "1590"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "354"
         }
       ],
       "review": {
@@ -296,6 +338,12 @@
             "ar": "أبو طالب بن عبد المطلب"
           },
           "personId": "abu-talib"
+        },
+        {
+          "displayName": {
+            "ar": "خديجة بنت خويلد"
+          },
+          "companionId": "khadijah"
         }
       ],
       "placeIds": [
@@ -1416,6 +1464,11 @@
               "ar": "البخاري، بإخراجه في صحيحه"
             }
           }
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4200"
         }
       ],
       "review": {
@@ -1434,6 +1487,12 @@
             "ar": "علي بن أبي طالب"
           },
           "companionId": "ali"
+        },
+        {
+          "displayName": {
+            "ar": "صفية بنت حيي"
+          },
+          "companionId": "safiyyah-bint-huyayy"
         }
       ],
       "placeIds": [
@@ -1479,6 +1538,12 @@
             "surah": 48,
             "ayahFrom": 27
           }
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "239"
         }
       ],
       "review": {
@@ -1491,6 +1556,14 @@
       "place": {
         "ar": "مكة"
       },
+      "participants": [
+        {
+          "displayName": {
+            "ar": "ميمونة بنت الحارث"
+          },
+          "companionId": "maymunah"
+        }
+      ],
       "placeIds": [
         "makkah"
       ],

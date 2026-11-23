@@ -24,18 +24,26 @@
   },
   "death": {
     "date": {
-      "precision": "approx",
+      "precision": "range",
       "era": "afterHijra",
-      "hijriYear": 36,
-      "gregorianYear": 656
+      "hijriYear": 35,
+      "hijriYearEnd": 36,
+      "gregorianYear": 656,
+      "gregorianYearEnd": 656
     },
-    "reliability": "reported",
+    "reliability": "disputed",
     "citations": [
       {
         "sourceId": "siyar",
         "locatorStatus": "complete",
         "volume": 1,
         "page": "554"
+      },
+      {
+        "sourceId": "istiab",
+        "locatorStatus": "complete",
+        "volume": 2,
+        "page": "638"
       }
     ]
   },
@@ -252,7 +260,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "ويذكر الذهبي أنه توفي بالمدائن، وينقل اختلافًا في سنة وفاته: قيل في خلافة عثمان، وقيل سنة ست وثلاثين."
+            "ar": "ويذكر الذهبي أنه توفي بالمدائن، وينقل اختلافًا في سنة وفاته: قيل في خلافة عثمان، وقيل سنة ست وثلاثين؛ ويذكر ابن عبد البر أنه توفي في آخر خلافة عثمان سنة خمس وثلاثين، وقيل في أول سنة ست وثلاثين."
           },
           "reliability": "reported",
           "citations": [
@@ -267,6 +275,12 @@
               "locatorStatus": "complete",
               "volume": 1,
               "page": "555"
+            },
+            {
+              "sourceId": "istiab",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "638"
             }
           ]
         }
@@ -329,21 +343,29 @@
       "id": "salman-al-farisi.death",
       "era": "afterProphet",
       "date": {
-        "precision": "approx",
+        "precision": "range",
         "era": "afterHijra",
-        "hijriYear": 36,
-        "gregorianYear": 656
+        "hijriYear": 35,
+        "hijriYearEnd": 36,
+        "gregorianYear": 656,
+        "gregorianYearEnd": 656
       },
       "title": {
         "ar": "وفاته بالمدائن"
       },
-      "reliability": "reported",
+      "reliability": "disputed",
       "citations": [
         {
           "sourceId": "siyar",
           "locatorStatus": "complete",
           "volume": 1,
           "page": "554"
+        },
+        {
+          "sourceId": "istiab",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "638"
         }
       ],
       "sectionId": "salman-al-farisi.madain"
@@ -351,7 +373,10 @@
   ],
   "references": [
     "siyar",
-    "sirat-ibn-hisham"
+    "sirat-ibn-hisham",
+    "istiab",
+    "bukhari",
+    "quran"
   ],
   "review": {
     "status": "approved",

@@ -15,7 +15,6 @@
   "review": {
     "status": "approved",
     "editorialFlags": [
-      "needsLocators",
       "fitnaAdjacent"
     ],
     "coverage": "complete",
@@ -26,7 +25,15 @@
     "siyar",
     "istiab",
     "usd-al-ghabah",
-    "tabaqat-ibn-sad"
+    "tabaqat-ibn-sad",
+    "sirat-ibn-hisham",
+    "tarikh-al-tabari",
+    "al-bidaya",
+    "bukhari",
+    "muslim",
+    "abu-dawud",
+    "tirmidhi",
+    "quran"
   ],
   "kunya": {
     "ar": "أبو محمد"
@@ -155,15 +162,27 @@
   "overview": [
     {
       "text": {
-        "ar": "ويذكر ابن سعد أنه قُتل سنة ست وثلاثين، وينقل اختلافًا في عمره يومئذ: فقيل أربع وستون سنة، وقيل اثنتان وستون."
+        "ar": "هو طلحة بن عبيد الله بن عثمان، من بني تيم بن مرة من قريش، وهم قوم أبي بكر الصديق، ويلتقي نسبه بنسب النبي ﷺ في مرة بن كعب، ويُكنى أبا محمد."
       },
-      "reliability": "reported",
+      "reliability": "established",
       "citations": [
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "529"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "23"
+        },
         {
           "sourceId": "tabaqat-ibn-sad",
           "locatorStatus": "complete",
           "volume": 3,
-          "page": "168"
+          "page": "160"
         }
       ],
       "sectionId": "talha.early-life"
@@ -199,28 +218,33 @@
     },
     {
       "text": {
-        "ar": "ثم شهد الخندق والمشاهد كلها مع النبي ﷺ، كما يذكر ابن سعد."
+        "ar": "يوم أحد أبلى بلاءً حسنًا، كما يقول ابن حجر؛ فحين انكشف المسلمون كان فيمن ثبت مع النبي ﷺ، وبايعه على الموت على ما يذكره ابن سعد، ووقاه بيده من سهم رماه مالك بن زهير نحو وجهه، فشُلّت يده."
       },
-      "reliability": "reported",
+      "reliability": "established",
       "citations": [
         {
-          "sourceId": "isabah",
+          "sourceId": "bukhari",
           "locatorStatus": "complete",
-          "volume": 3,
-          "page": "530"
+          "hadithNumber": "4063"
         },
         {
           "sourceId": "tabaqat-ibn-sad",
           "locatorStatus": "complete",
           "volume": 3,
-          "page": "163"
+          "page": "162"
+        },
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 3,
+          "page": "530"
         }
       ],
       "sectionId": "talha.with-prophet"
     },
     {
       "text": {
-        "ar": "وهو أحد العشرة الذين سمّاهم النبي ﷺ في حديث واحد وبشّرهم بالجنة، وأحد الستة أهل الشورى الذين توفي النبي ﷺ وهو عنهم راضٍ، كما قال عمر بن الخطاب."
+        "ar": "أحد العشرة الذين سمّاهم النبي ﷺ في حديث واحد وبشّرهم بالجنة، وأحد الستة أهل الشورى الذين توفي النبي ﷺ وهو عنهم راضٍ، كما قال عمر بن الخطاب."
       },
       "reliability": "established",
       "citations": [
@@ -239,7 +263,7 @@
     },
     {
       "text": {
-        "ar": "ويروي أهل التراجم عن قبيصة بن جابر أنه ما رأى أحدًا أعطى للجزيل من غير مسألة من طلحة، وأنه كان يعطي قبل أن يُسأل."
+        "ar": "يروي أهل التراجم عن قبيصة بن جابر أنه ما رأى أحدًا أعطى للجزيل من غير مسألة من طلحة، وأنه كان يعطي قبل أن يُسأل."
       },
       "reliability": "reported",
       "citations": [
@@ -726,7 +750,7 @@
             }
           ],
           "text": {
-            "ar": "كَانَ عَلَى حِرَاءٍ هُوَ وَأَبُو بَكْرٍ وَعُمَرُ وَعُثْمَانُ وَعَلِيٌّ وَطَلْحَةُ وَالزُّبَيْرُ فَتَحَرَّكَتِ الصَّخْرَةُ فَقَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم ‏ \"‏ اهْدَأْ فَمَا عَلَيْكَ إِلاَّ نَبِيٌّ أَوْ صِدِّيقٌ أَوْ شَهِيدٌ"
+            "ar": "اهْدَأْ فَمَا عَلَيْكَ إِلاَّ نَبِيٌّ أَوْ صِدِّيقٌ أَوْ شَهِيدٌ"
           },
           "summary": {
             "ar": "حديث أبي هريرة في أن النبي ﷺ كان على جبل حراء ومعه أبو بكر وعمر وعثمان وعلي وطلحة والزبير، فتحرّكت الصخرة، فأمرها أن تهدأ، فما عليها إلا نبي أو صدّيق أو شهيد."

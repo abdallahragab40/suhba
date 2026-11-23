@@ -298,7 +298,12 @@
     }
   ],
   "references": [
-    "siyar"
+    "siyar",
+    "bukhari",
+    "muslim",
+    "abu-dawud",
+    "tirmidhi",
+    "quran"
   ],
   "review": {
     "status": "approved",
