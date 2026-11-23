@@ -1,0 +1,34 @@
+# What `dart run tool/release_check.dart artifact <app.aab|app.apk>` requires
+# of the built Android artifact's manifest and signature
+# (tool/src/release/android_artifact.dart).
+
+# The lowest acceptable versionCode. Google Play rejects a code it has seen,
+# so after uploading code N, raise this to N + 1.
+# 2.0 = code 2 (Alpha, 2026-11-11); 2.2.0 = code 4 (built 2026-11-22); 2.3.0 = code 5.
+minVersionCode: 5
+
+# Google Play's minimum target API level for new apps and updates.
+minTargetSdk: 35
+
+# The only permissions the merged manifest may request. `{package}` is the
+# application ID; AndroidX core adds that signature-level permission to
+# protect its non-exported dynamic receivers. INTERNET is never allowed.
+allowedPermissions:
+  - android.permission.POST_NOTIFICATIONS
+  - android.permission.RECEIVE_BOOT_COMPLETED
+  - "{package}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+
+# Components (activities, services, receivers, providers) whose class names
+# start with any of these must not be merged into the app: analytics, ads,
+# telemetry and crash reporting, which the privacy policy rules out.
+# (com.google.android.gms.common.api.GoogleApiActivity is expected: it comes
+# from play-services-base, a dependency of in_app_review.)
+forbiddenComponentPrefixes:
+  - com.google.firebase.
+  - com.google.android.gms.measurement.
+  - com.google.android.gms.ads.
+  - com.google.android.datatransport.
+
+# SHA-256 of the upload certificate (keys/, docs/release.md). The .aab sent
+# to Play must be signed with it; Play re-signs with the app signing key.
+uploadCertificateSha256: "C1:15:54:A6:0B:26:4B:AD:4D:82:FE:CF:9C:FD:C9:FE:3A:DB:EE:50:6A:37:D0:8C:B5:DA:27:13:24:42:03:34"
