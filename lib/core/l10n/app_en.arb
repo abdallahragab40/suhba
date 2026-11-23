@@ -549,7 +549,7 @@
   "quizQMember": "Which of these is among {subject}?",
   "quizQFather": "Who is {subject}'s father?",
   "quizQMother": "Who is {subject}'s mother?",
-  "quizQStory": "Which of these is in the story “{subject}”?",
+  "quizQStory": "Which of these Companions appears in the story “{subject}”?",
   "quizQEventYear": "In which year was “{subject}”?",
   "quizQEarliestEvent": "Which of these came first?",
   "quizQEventPlace": "Where was “{subject}”?",
@@ -627,6 +627,7 @@
   "journeySkipped": "This step was skipped because a reading is no longer available. Your earlier progress is kept.",
   "journeyReading": "Step readings",
   "journeyReadNext": "Continue reading",
+  "journeyReadFirst": "Start reading",
   "journeyMinutes": "{count, plural, =1{About 1 minute of reading} other{About {minutes} minutes of reading}}",
   "@journeyMinutes": {
     "description": "Guided journeys: journeyMinutes",

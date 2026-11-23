@@ -1899,7 +1899,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String quizQStory(String subject) {
-    return 'Which of these is in the story “$subject”?';
+    return 'Which of these Companions appears in the story “$subject”?';
   }
 
   @override
@@ -2082,6 +2082,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get journeyReadNext => 'Continue reading';
+
+  @override
+  String get journeyReadFirst => 'Start reading';
 
   @override
   String journeyMinutes(int count, String minutes) {

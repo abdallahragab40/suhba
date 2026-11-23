@@ -261,10 +261,13 @@ class SeerahOpening extends ConsumerWidget {
         .where((c) => progress[c.id]?.completed ?? false)
         .length;
     final finished = total > 0 && done == total;
+    // Any saved position counts as started, a chapter part-read included,
+    // so the words never say «لم تبدأ بعد» above «تابع: …».
+    final started = index.chapters.any((c) => progress.containsKey(c.id));
     final progressText = finished
         ? l10n.seerahProgressDone
         : done == 0
-        ? l10n.seerahProgressNone
+        ? (started ? l10n.progressJustStarted : l10n.seerahProgressNone)
         : l10n.seerahProgressRead(
             total,
             format.integer(done),

@@ -363,6 +363,17 @@ class _JourneyPageState extends ConsumerState<JourneyPage> {
           (r.ref.progressTarget, r.ref.targetId),
     };
     final allRead = done.length == readings.length;
+    // Any saved position in the step's readings, finished or not: until
+    // then the way in is «ابدأ القراءة», not «تابع القراءة».
+    final started = readings.any(
+      (r) =>
+          positions.value?.any(
+            (p) =>
+                p.target == r.ref.progressTarget &&
+                p.targetId == r.ref.targetId,
+          ) ??
+          false,
+    );
     final questions = runtime.questions[step.id]!;
     final allAnswered = questions.every(
       (q) => saved?.answeredKeys.contains(q.key) ?? false,
@@ -432,7 +443,7 @@ class _JourneyPageState extends ConsumerState<JourneyPage> {
                         .route,
                   )
                 : null,
-            child: Text(l10n.journeyReadNext),
+            child: Text(started ? l10n.journeyReadNext : l10n.journeyReadFirst),
           ),
         if (allRead && questions.isNotEmpty) ...[
           _heading(l10n.journeyQuestions),

@@ -1930,7 +1930,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String quizQStory(String subject) {
-    return 'أيّ هؤلاء من أصحاب قصة «$subject»؟';
+    return 'مَن مِن هؤلاء الصحابة ورد ذكرُه في قصة «$subject»؟';
   }
 
   @override
@@ -2117,6 +2117,9 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get journeyReadNext => 'تابع القراءة';
+
+  @override
+  String get journeyReadFirst => 'ابدأ القراءة';
 
   @override
   String journeyMinutes(int count, String minutes) {

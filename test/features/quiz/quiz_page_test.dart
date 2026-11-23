@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:suhba/core/feedback/haptics.dart';
 import 'package:suhba/core/format/display_formatter.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/core/storage/settings_store.dart';
 import 'package:suhba/features/quiz/domain/quiz_generator.dart';
 import 'package:suhba/features/quiz/domain/quiz_question.dart';
@@ -11,6 +12,7 @@ import 'package:suhba/features/quiz/presentation/quiz_home_page.dart';
 import 'package:suhba/features/quiz/presentation/quiz_play_page.dart';
 import 'package:suhba/features/quiz/presentation/quiz_providers.dart';
 import 'package:suhba/features/quiz/presentation/quiz_widgets.dart';
+import 'package:suhba/shared/content/domain/localized_text.dart';
 
 import '../../helpers/app_harness.dart';
 import '../../helpers/pump_app.dart';
@@ -142,6 +144,26 @@ void main() {
     await tester.tap(tile(label(tester, round.first.answer)));
     await tester.pumpAndSettle();
     expect(tester.takeException(), isNull);
+  });
+
+  test('a story question asks which Companion the story names', () {
+    // «أيّ هؤلاء من أصحاب قصة …» read as "who owns the story"; the prompt
+    // asks who appears in it, in words that fit a woman as well as a man.
+    const story = LocalizedText(ar: 'الرماة يوم أحد', en: 'The archers');
+    const q = QuizQuestion(
+      key: 'story:the-archers-of-uhud:talha',
+      kind: QuizKind.companionInStory,
+      subject: story,
+      choices: [
+        TextChoice(LocalizedText(ar: 'أ', en: 'a')),
+        TextChoice(LocalizedText(ar: 'ب', en: 'b')),
+      ],
+      correct: 0,
+    );
+    expect(
+      quizPrompt(lookupAppLocalizations(const Locale('ar')), q),
+      'مَن مِن هؤلاء الصحابة ورد ذكرُه في قصة «الرماة يوم أحد»؟',
+    );
   });
 
   for (final scale in [1.0, 2.0]) {

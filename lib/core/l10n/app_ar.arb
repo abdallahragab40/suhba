@@ -2437,7 +2437,7 @@
   "@quizQFather": {"placeholders": {"subject": {"type": "String"}}},
   "quizQMother": "مَن أمّ {subject}؟",
   "@quizQMother": {"placeholders": {"subject": {"type": "String"}}},
-  "quizQStory": "أيّ هؤلاء من أصحاب قصة «{subject}»؟",
+  "quizQStory": "مَن مِن هؤلاء الصحابة ورد ذكرُه في قصة «{subject}»؟",
   "@quizQStory": {"placeholders": {"subject": {"type": "String"}}},
   "quizQEventYear": "في أيّ سنة كان حدث «{subject}»؟",
   "@quizQEventYear": {"placeholders": {"subject": {"type": "String"}}},
@@ -2652,6 +2652,10 @@
   "journeyReadNext": "تابع القراءة",
   "@journeyReadNext": {
     "description": "Guided journeys: journeyReadNext"
+  },
+  "journeyReadFirst": "ابدأ القراءة",
+  "@journeyReadFirst": {
+    "description": "Guided journeys: the step's reading button before any of its readings is opened; journeyReadNext once one is."
   },
   "journeyMinutes": "{count, plural, =1{نحو دقيقة قراءة} =2{نحو دقيقتَي قراءة} few{نحو {minutes} دقائق قراءة} other{نحو {minutes} دقيقة قراءة}}",
   "@journeyMinutes": {

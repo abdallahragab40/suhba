@@ -3269,7 +3269,7 @@ abstract class AppLocalizations {
   /// No description provided for @quizQStory.
   ///
   /// In ar, this message translates to:
-  /// **'أيّ هؤلاء من أصحاب قصة «{subject}»؟'**
+  /// **'مَن مِن هؤلاء الصحابة ورد ذكرُه في قصة «{subject}»؟'**
   String quizQStory(String subject);
 
   /// No description provided for @quizQEventYear.
@@ -3522,6 +3522,12 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'تابع القراءة'**
   String get journeyReadNext;
+
+  /// Guided journeys: the step's reading button before any of its readings is opened; journeyReadNext once one is.
+  ///
+  /// In ar, this message translates to:
+  /// **'ابدأ القراءة'**
+  String get journeyReadFirst;
 
   /// Guided journeys: journeyMinutes
   ///
