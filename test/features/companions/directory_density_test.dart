@@ -49,11 +49,12 @@ void main() {
       await tester.pumpAndSettle();
     }
     expect(seen, hasLength(47));
-    // The Ten plus Khadijah, Aisha and Umm Salamah (2.3). Hafsa was
-    // deepened too but stays under BiographyDepth.fullFromWords.
-    expect(seen.values.where((d) => d == 'سيرة كاملة'), hasLength(13));
-    expect(seen.values.where((d) => d == 'تعريف موجز'), hasLength(34));
+    // The Ten plus Khadijah, Aisha, Umm Salamah and Hafsa (2.3), each at
+    // or above BiographyDepth.fullFromWords.
+    expect(seen.values.where((d) => d == 'سيرة كاملة'), hasLength(14));
+    expect(seen.values.where((d) => d == 'تعريف موجز'), hasLength(33));
     expect(seen['عائشة بنت أبي بكر'], 'سيرة كاملة');
+    expect(seen['حفصة بنت عمر'], 'سيرة كاملة');
     expect(seen['أبو بكر الصديق'], 'سيرة كاملة');
   });
 

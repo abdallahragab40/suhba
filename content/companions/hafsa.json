@@ -177,6 +177,21 @@
         {
           "type": "paragraph",
           "text": {
+            "ar": "ويفتتح الذهبي ترجمتها بقوله: «الستر الرفيع، بنت أمير المؤمنين أبي حفص عمر بن الخطاب»."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "227"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
             "ar": "وأمها زينب بنت مظعون الجمحية، أخت عثمان بن مظعون، فهي أخت عبد الله بن عمر لأبيه وأمه."
           },
           "reliability": "established",
@@ -333,6 +348,21 @@
               "locatorStatus": "complete",
               "volume": 4,
               "page": "1811"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وقال سعيد بن المسيب في ذلك: فخار الله لهما جميعًا، كان رسول الله ﷺ لحفصة خيرًا من عثمان، وكانت بنت رسول الله ﷺ لعثمان خيرًا من حفصة، فيما يرويه ابن سعد."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "67"
             }
           ]
         },
@@ -602,6 +632,25 @@
         {
           "type": "paragraph",
           "text": {
+            "ar": "وكان سؤالها هذا في حجة الوداع، حين أمر النبي ﷺ أزواجه أن يحللن، كما في الصحيحين."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "4398"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "1229"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
             "ar": "وروت أن النبي ﷺ كان إذا بدا الصبح صلّى ركعتين خفيفتين قبل أن تقام الصلاة، كما في صحيح البخاري."
           },
           "reliability": "established",
@@ -610,6 +659,105 @@
               "sourceId": "bukhari",
               "locatorStatus": "complete",
               "hadithNumber": "618"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكان أخوها عبد الله يذكر ما حفظه من صلاة النبي ﷺ، فلما ذكر الركعتين قبل الصبح قال: وكانت ساعة لا يُدخل على النبي ﷺ فيها، حدّثتني حفصة أنه كان إذا أذّن المؤذن وطلع الفجر صلّى ركعتين، كما في صحيح البخاري."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "1180"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وروت أنها ما رأت النبي ﷺ يصلي في سُبحته، أي نافلته، قاعدًا حتى كان قبل وفاته بعام، فكان يصلي فيها قاعدًا، ويقرأ بالسورة فيرتّلها حتى تكون أطول من أطول منها، كما في صحيح مسلم."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "733"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وروت عن النبي ﷺ ما يُقتل من الدواب، كما في الصحيحين، فقال ﷺ:"
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "1828"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "1200"
+            }
+          ]
+        },
+        {
+          "type": "hadithQuote",
+          "textStatus": "complete",
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "1828",
+              "grading": {
+                "grade": "sahih",
+                "gradedBy": {
+                  "ar": "البخاري، بإخراجه في صحيحه"
+                }
+              }
+            }
+          ],
+          "text": {
+            "ar": "خَمْسٌ مِنَ الدَّوَابِّ لاَ حَرَجَ عَلَى مَنْ قَتَلَهُنَّ الْغُرَابُ وَالْحِدَأَةُ وَالْفَأْرَةُ وَالْعَقْرَبُ وَالْكَلْبُ الْعَقُورُ"
+          },
+          "summary": {
+            "ar": "قول النبي ﷺ في خمس من الدواب لا حرج على من قتلهن، كما ترويه حفصة."
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وروى عنها عبد الله بن صفوان أنها سمعت النبي ﷺ يخبر أن جيشًا سيؤمّ هذا البيت يغزونه، حتى إذا كانوا ببيداء من الأرض خُسف بهم، فلا يبقى إلا الشريد الذي يخبر عنهم، كما في صحيح مسلم."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "2883"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وروت دعاء أبيها عمر: «اللهم ارزقني شهادة في سبيلك، واجعل موتي في بلد رسولك ﷺ»، أخرجه البخاري من حديث أسلم عن عمر، وذكر تعليقًا أن حفصة سمعته من أبيها بنحوه."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "1890"
             }
           ]
         },
@@ -727,7 +875,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وأوصى عمر إلى حفصة، وأوصت هي إلى أخيها عبد الله بما أوصى به إليها عمر، على ما يذكر ابن عبد البر."
+            "ar": "وأوصى عمر إلى حفصة، وأوصت هي إلى أخيها عبد الله بما أوصى به إليها عمر، وبصدقة تصدّقت بها، ومال وقفته بالغابة، على ما يذكر ابن عبد البر."
           },
           "reliability": "reported",
           "citations": [
@@ -839,6 +987,33 @@
               "locatorStatus": "complete",
               "volume": 2,
               "page": "229"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وحمل مروان سريرها من دار بني حزم إلى دار المغيرة بن شعبة، وتبعها إلى البقيع، وجلس حتى فُرغ من دفنها، فيما يرويه ابن سعد عن الواقدي."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "68"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "69"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "230"
             }
           ]
         },
@@ -993,6 +1168,7 @@
     "sirat-ibn-hisham",
     "tabaqat-ibn-sad",
     "bukhari",
+    "muslim",
     "abu-dawud",
     "istiab",
     "siyar",
