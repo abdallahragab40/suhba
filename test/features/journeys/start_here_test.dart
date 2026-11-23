@@ -46,11 +46,11 @@ void main() {
     tall(tester);
     final app = AppUnderTest(welcome: true, settings: MemorySettingsStore());
     await app.pump(tester);
-    while (find.text('ابدأ من هنا').evaluate().isEmpty) {
+    while (find.text('جولة تعريفية قصيرة').evaluate().isEmpty) {
       await tester.tap(find.text('التالي'));
       await tester.pumpAndSettle();
     }
-    await tester.tap(find.text('ابدأ من هنا'));
+    await tester.tap(find.text('جولة تعريفية قصيرة'));
     await tester.pumpAndSettle();
     expect(find.byType(WelcomePage), findsNothing);
     expect(app.location, '/journeys/start-here');

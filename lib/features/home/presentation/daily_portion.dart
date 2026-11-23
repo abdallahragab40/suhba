@@ -17,6 +17,7 @@ import 'package:suhba/features/journeys/presentation/journey_providers.dart';
 import 'package:suhba/features/reading_plan/domain/reading_plan.dart';
 import 'package:suhba/features/reading_plan/presentation/reading_plan_providers.dart';
 import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
+import 'package:suhba/features/reading_progress/presentation/progress_label.dart';
 import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
 import 'package:suhba/features/seerah/presentation/seerah_hub_page.dart';
 import 'package:suhba/shared/content/domain/content_target.dart';
@@ -186,7 +187,7 @@ class DailyPortionCard extends ConsumerWidget {
         : l10n.dailyPortionKicker;
     final started = switch (portion) {
       SeerahPortion(progress: final p?) when !p.completed && p.fraction > 0 =>
-        l10n.progressRead(format.percent((p.fraction * 100).round())),
+        readProgressLabel(l10n, format, p.fraction),
       _ => null,
     };
 

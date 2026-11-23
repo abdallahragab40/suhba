@@ -8,6 +8,7 @@ import 'package:suhba/core/design_system/widgets/reliability_badge.dart';
 import 'package:suhba/core/domain/reliability.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/core/share/share_card_footer.dart';
 import 'package:suhba/core/share/share_service.dart';
 import 'package:suhba/features/settings/presentation/feedback_tile.dart';
 import 'package:suhba/features/sources/domain/share_card_policy.dart';
@@ -142,7 +143,7 @@ class CitationSheet extends ConsumerWidget {
           excerpt: excerpt,
           origin: share!.origin,
           sources: sourceText,
-          footer: l10n.shareCardFooter,
+          footer: shareCardFooter(l10n),
           notice: provisional ? l10n.shareDraftNotice : null,
         ) &&
         canShareCard(
@@ -227,7 +228,7 @@ class CitationSheet extends ConsumerWidget {
                       excerpt: excerpt,
                       origin: share.origin,
                       sources: sourceText,
-                      footer: l10n.shareCardFooter,
+                      footer: shareCardFooter(l10n),
                       notice: provisional ? l10n.shareDraftNotice : null,
                     ),
                   ),

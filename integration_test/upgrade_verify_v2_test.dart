@@ -1,4 +1,7 @@
-// Never seeds or resets data: a missing 1.0 snapshot must fail the upgrade.
+// Verifies an installed older APK (seeded by upgrade_seed_v1/v2_test.dart)
+// upgraded in place to this checkout. Never seeds or resets data: a missing
+// snapshot must fail the upgrade. The expected app version comes from
+// SUHBA_UPGRADE_TO (pubspec), the expected schema from AppDatabase.
 import 'dart:convert';
 import 'dart:io';
 
@@ -22,69 +25,90 @@ import 'package:suhba/features/quiz/presentation/quiz_providers.dart';
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
   testWidgets(
-    '2.0 upgrade preserves 1.0 data before and after reconciliation',
+    'an in-place upgrade preserves older data before and after reconciliation',
     (tester) async {
       final info = await PackageInfo.fromPlatform();
       expect(info.packageName, 'com.abdallahragab.suhba.integration_test');
-      expect(info.version, '2.0.0');
+      const toVersion = String.fromEnvironment('SUHBA_UPGRADE_TO');
+      expect(toVersion, isNotEmpty, reason: 'Pass SUHBA_UPGRADE_TO.');
+      expect(info.version, toVersion);
       final snapshot = File(
-        '${(await getApplicationDocumentsDirectory()).path}/v1-upgrade-snapshot.json',
+        '${(await getApplicationDocumentsDirectory()).path}/upgrade-snapshot.json',
       );
       expect(
         await snapshot.exists(),
         isTrue,
-        reason: 'The 1.0 install must not be uninstalled or reset.',
+        reason: 'The older install must not be uninstalled or reset.',
       );
       final expected =
           jsonDecode(await snapshot.readAsString()) as Map<String, dynamic>;
-      expect(expected['schema'], 3);
+      final fromSchema = expected['schema'] as int;
       final db = AppDatabase.open();
+      final toSchema = db.schemaVersion;
+      expect(fromSchema, lessThanOrEqualTo(toSchema));
+      final seeded = (expected['tables'] as Map<String, dynamic>).map(
+        (table, rows) => MapEntry(table, [
+          for (final row in rows as List) Map<String, dynamic>.from(row as Map),
+        ]),
+      );
+      final orders = (expected['orders'] as Map<String, dynamic>)
+          .cast<String, String>();
+
       Future<void> checkRows({required bool reconciled}) async {
-        final bookmarks = await db
-            .customSelect(
-              'SELECT * FROM bookmarks ORDER BY target_type, target_id',
-            )
-            .get();
-        final positions = await db
-            .customSelect(
-              'SELECT * FROM reading_progress_entries ORDER BY target_type, target_id',
-            )
-            .get();
-        expect(bookmarks.map((r) => r.data).toList(), expected['bookmarks']);
-        final actual = positions
-            .map((r) => Map<String, dynamic>.from(r.data))
-            .toList();
-        final prior = (expected['positions'] as List)
-            .map((r) => Map<String, dynamic>.from(r as Map))
-            .toList();
-        if (reconciled) {
-          // Reconciliation may attach a current revision to legacy null anchors.
-          for (final row in actual) {
-            row.remove('target_revision');
+        for (final MapEntry(key: table, value: prior) in seeded.entries) {
+          final rows = await db
+              .customSelect('SELECT * FROM $table ORDER BY ${orders[table]}')
+              .get();
+          // Columns added by a later schema are not part of the comparison.
+          final actual = [
+            for (final (i, r) in rows.indexed)
+              {
+                for (final key in (i < prior.length ? prior[i] : r.data).keys)
+                  key: r.data[key],
+              },
+          ];
+          final want = [
+            for (final row in prior) {...row},
+          ];
+          if (reconciled && table == 'reading_progress_entries') {
+            // Reconciliation may attach a current revision to legacy null anchors.
+            for (final row in [...actual, ...want]) {
+              row.remove('target_revision');
+            }
           }
-          for (final row in prior) {
-            row.remove('target_revision');
-          }
+          expect(actual, want, reason: '$table (reconciled: $reconciled)');
         }
-        expect(actual, prior);
       }
 
       await checkRows(reconciled: false);
       final version = await db.customSelect('PRAGMA user_version').getSingle();
-      expect(version.data.values.single, 5);
-      expect(await db.select(db.reviewItems).get(), isEmpty);
-      expect(await db.select(db.journeyEnrollments).get(), isEmpty);
-      expect(await db.select(db.journeyProgressEntries).get(), isEmpty);
+      expect(version.data.values.single, toSchema);
+      // Tables the older schema did not have start empty.
+      final tables = await db
+          .customSelect(
+            "SELECT name FROM sqlite_master WHERE type = 'table' AND "
+            "name NOT LIKE 'sqlite_%' AND name != 'android_metadata'",
+          )
+          .get();
+      for (final name in tables.map((r) => r.data['name'] as String)) {
+        if (seeded.containsKey(name)) continue;
+        final rows = await db.customSelect('SELECT * FROM $name').get();
+        expect(rows, isEmpty, reason: '$name is new and must start empty');
+      }
       final settings = await PrefsSettingsStore.open();
-      for (final entry
-          in (expected['strings'] as Map<String, dynamic>).entries) {
-        expect(settings.getString(entry.key), entry.value);
+      final strings = expected['strings'] as Map<String, dynamic>;
+      for (final entry in strings.entries) {
+        expect(settings.getString(entry.key), entry.value, reason: entry.key);
       }
       for (final entry
           in (expected['doubles'] as Map<String, dynamic>).entries) {
-        expect(settings.getDouble(entry.key), entry.value);
+        expect(settings.getDouble(entry.key), entry.value, reason: entry.key);
       }
-      expect(settings.getString(SettingsKeys.readingReminder), isNull);
+      // Upgrading never opts a reader into reminders: unset stays unset.
+      expect(
+        settings.getString(SettingsKeys.readingReminder),
+        strings[SettingsKeys.readingReminder],
+      );
       final app = ProviderContainer(
         retry: noAutomaticRetry,
         overrides: [
@@ -112,7 +136,9 @@ void main() {
       await tester.pumpAndSettle();
       await tester.runAsync(db.close);
       debugPrintSynchronously(
-        'UPGRADE_V2_VERIFIED schema 3 to 5, all saved rows/anchors/scores preserved',
+        'UPGRADE_VERIFIED ${expected['fromVersion']} to ${info.version}, '
+        'schema $fromSchema to $toSchema, all saved rows/anchors/scores '
+        'preserved',
       );
     },
     skip: !const bool.fromEnvironment('SUHBA_UPGRADE_VERIFY'),

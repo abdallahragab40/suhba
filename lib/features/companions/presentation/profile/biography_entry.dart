@@ -8,6 +8,7 @@ import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/features/reading_progress/domain/reading_entry.dart';
 import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
+import 'package:suhba/features/reading_progress/presentation/progress_label.dart';
 import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
 import 'package:suhba/shared/content/domain/companion.dart';
 import 'package:suhba/shared/content/presentation/content_text.dart';
@@ -75,10 +76,22 @@ class BiographyEntry extends ConsumerWidget {
         ),
       ),
       ResumeReading(:final passageId, :final fraction) => _EntryRow(
-        detail: l10n.profileResumeDetail(
-          titleOf(passageId),
-          format.percent((fraction * 100).round()),
+        // Never «قُرئ ٠٪» (decision Q4).
+        detail: barelyStarted(fraction)
+            ? l10n.profileResumeJustStarted(titleOf(passageId))
+            : l10n.profileResumeDetail(
+                titleOf(passageId),
+                format.percent((fraction * 100).round()),
+              ),
+        button: FilledButton.icon(
+          onPressed: () => open(passageId),
+          icon: const Icon(Icons.play_arrow),
+          label: Text(l10n.profileContinueReading),
         ),
+      ),
+      // The sections read so far are finished: the next one.
+      NextReading(:final passageId) => _EntryRow(
+        detail: l10n.profileNextDetail(titleOf(passageId)),
         button: FilledButton.icon(
           onPressed: () => open(passageId),
           icon: const Icon(Icons.play_arrow),

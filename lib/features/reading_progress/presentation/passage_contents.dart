@@ -7,6 +7,7 @@ import 'package:suhba/core/design_system/tokens/typography.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
+import 'package:suhba/features/reading_progress/presentation/progress_label.dart';
 import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
 
 /// How far a reader got in one passage: a check when finished, the share
@@ -30,7 +31,8 @@ class PassageProgressMarker extends StatelessWidget {
         semanticLabel: l10n.passageFinished,
       );
     }
-    if (p.fraction <= 0) return const SizedBox.shrink();
+    // Under 1% counts as not started: never «٠٪» (decision Q4).
+    if (barelyStarted(p.fraction)) return const SizedBox.shrink();
     final percent = DisplayFormatter.of(
       context,
     ).percent((p.fraction * 100).round());

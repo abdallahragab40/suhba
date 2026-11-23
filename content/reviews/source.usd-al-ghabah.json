@@ -3,8 +3,8 @@
   "kind": "source",
   "id": "usd-al-ghabah",
   "reviewerId": "suhba-editorial",
-  "approvedAt": "2026-11-20",
-  "contentHash": "baecaaaf6c0636cf29db4e4587e500659af8e77a1f8a5d0a123bb9b920e9d311",
+  "approvedAt": "2026-11-23",
+  "contentHash": "12673179ab130cff8899622a0f88d021147ae98e89a12007413ad1c204b69a5b",
   "checklist": {
     "sourcesMatch": true,
     "gradingsCorrect": true,
@@ -14,5 +14,5 @@
     "fitnaSignOff": true,
     "sensitiveSignOff": true
   },
-  "notes": "Editorial review on the owner's instruction (2026-11-20); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors. Checked: the full text read for accuracy, embellishment, honorifics and the stated reliability; every hadith citation compared with the cited text in content/hadith; Qur'an quotations checked by the validator against the Tanzil text. Not checked: book page locators against the printed editions, and chains of transmission. This is not the approval of a qualified scholar."
+  "notes": "Editorial review on the owner's instruction (2026-11-23); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors, after checking the sources. Edition added: the Wahbiyya printing (1286 AH), whose volume 5 the Khadijah page numbers follow (checked against its Wikisource transcription). No existing citation of this work gives a volume or page. Not checked: chains of transmission, and page locators against printed copies. This is not the approval of a qualified scholar."
 }

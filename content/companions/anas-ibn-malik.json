@@ -28,12 +28,14 @@
   },
   "death": {
     "date": {
-      "precision": "approx",
+      "precision": "range",
       "era": "afterHijra",
-      "hijriYear": 93,
-      "gregorianYear": 712
+      "hijriYear": 91,
+      "hijriYearEnd": 93,
+      "gregorianYear": 710,
+      "gregorianYearEnd": 712
     },
-    "reliability": "reported",
+    "reliability": "disputed",
     "citations": [
       {
         "sourceId": "siyar",
@@ -303,15 +305,17 @@
       "id": "anas-ibn-malik.death",
       "era": "afterProphet",
       "date": {
-        "precision": "approx",
+        "precision": "range",
         "era": "afterHijra",
-        "hijriYear": 93,
-        "gregorianYear": 712
+        "hijriYear": 91,
+        "hijriYearEnd": 93,
+        "gregorianYear": 710,
+        "gregorianYearEnd": 712
       },
       "title": {
         "ar": "وفاته بالبصرة"
       },
-      "reliability": "reported",
+      "reliability": "disputed",
       "citations": [
         {
           "sourceId": "siyar",
@@ -324,7 +328,9 @@
     }
   ],
   "references": [
-    "siyar"
+    "siyar",
+    "bukhari",
+    "quran"
   ],
   "review": {
     "status": "approved",

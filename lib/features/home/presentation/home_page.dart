@@ -223,7 +223,7 @@ class _Home extends ConsumerWidget {
                   child: TextButton.icon(
                     onPressed: () =>
                         context.go('${AppRoutes.explore}?show=stories'),
-                    icon: const Icon(Icons.arrow_back),
+                    icon: const Icon(Icons.arrow_forward),
                     label: Text(l10n.homeAllStories),
                   ),
                 ),
@@ -352,8 +352,10 @@ class _FeaturedCompanion extends ConsumerWidget {
           ),
           const SizedBox(height: AppSpacing.xs),
         ],
+        // Its own tag: the directory, alive in its own tab, may show the
+        // same companion at the same time.
         Hero(
-          tag: DirectoryPage.heroTag(c.id),
+          tag: 'home-${DirectoryPage.heroTag(c.id)}',
           child: Material(
             type: MaterialType.transparency,
             child: Text(

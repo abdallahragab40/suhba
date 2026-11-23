@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:suhba/core/domain/historical_date.dart';
+import 'package:suhba/core/text/arabic_normalizer.dart';
 import 'package:suhba/features/quiz/domain/quiz_question.dart';
 import 'package:suhba/features/search/domain/search_documents.dart';
 import 'package:suhba/shared/content/domain/atlas.dart';
@@ -437,17 +438,10 @@ class QuizGenerator {
   }
 
   List<QuizQuestion> _inStory() {
-    String textOf(Story s) => [
-      s.title.ar,
-      s.synopsis.ar,
-      for (final ch in s.chapters) ...searchableText(ch.blocks),
-    ].join(' ');
-    bool mentioned(Companion c, String text) =>
-        [c.name.ar, ...c.aliases].any((n) => n.isNotEmpty && text.contains(n));
     final byId = {for (final c in content.companions) c.id: c};
-    final storyTexts = {
-      for (final story in content.stories) story.id: textOf(story),
-    };
+    final named = _namedInStories[content] ??= _companionsNamedInStories(
+      content,
+    );
     return [
       for (final s in content.stories)
         for (final id in s.companionIds)
@@ -459,9 +453,7 @@ class QuizGenerator {
               correct: TextChoice(c.name),
               wrong: [
                 for (final o in content.companions)
-                  if (!s.companionIds.contains(o.id) &&
-                      !mentioned(o, storyTexts[s.id]!))
-                    TextChoice(o.name),
+                  if (!named[s.id]!.contains(o.id)) TextChoice(o.name),
               ],
               explanation: s.synopsis,
               provenance: QuizProvenance(
@@ -472,6 +464,68 @@ class QuizGenerator {
               route: '/stories/${s.id}',
             ),
     ];
+  }
+
+  /// Per content, the companions each story may not offer as a wrong
+  /// answer; worked out once, as every round builds every kind.
+  static final _namedInStories = Expando<Map<String, Set<String>>>();
+
+  /// By story id: the companions it links, those whose own record links
+  /// it, and those its text names ([_mentionedIn]).
+  static Map<String, Set<String>> _companionsNamedInStories(
+    QuizContent content,
+  ) => {
+    for (final s in content.stories)
+      s.id: () {
+        final text = ArabicNormalizer.normalize(
+          [
+            s.title.ar,
+            s.synopsis.ar,
+            for (final ch in s.chapters) ...searchableText(ch.blocks),
+          ].join(' '),
+        );
+        return {
+          ...s.companionIds,
+          for (final o in content.companions)
+            if (o.storyIds.contains(s.id) || _mentionedIn(o, text)) o.id,
+        };
+      }(),
+  };
+
+  /// First words that name no one by themselves (أبو …, عبد …, ابن …).
+  static const _genericFirstWords = {
+    'ابو',
+    'ابا',
+    'ابي',
+    'ام',
+    'عبد',
+    'ابن',
+    'بنت',
+  };
+
+  /// Whether [text] (normalized, see [ArabicNormalizer]) names [c] in any
+  /// way a reader would take as them: the name, an alias, a title, the
+  /// kunya in any case (أبو/أبا/أبي), or the bare first name (عمر, سعد),
+  /// as a whole word, allowing a joined و/ف/ب/ل. A namesake counts too,
+  /// so a wrong answer never looks like someone in the story.
+  static bool _mentionedIn(Companion c, String text) {
+    final kunya = c.kunya == null
+        ? null
+        : ArabicNormalizer.normalize(c.kunya!.ar);
+    final first = ArabicNormalizer.normalize(c.name.ar).split(' ').first;
+    final names = {
+      for (final n in [c.name.ar, ...c.aliases, for (final t in c.titles) t.ar])
+        ArabicNormalizer.normalize(n),
+      if (kunya != null)
+        for (final form in ['ابو', 'ابا', 'ابي'])
+          kunya.replaceFirst(RegExp('^ابو '), '$form '),
+      if (!_genericFirstWords.contains(first)) first,
+    }..remove('');
+    return names.any(
+      (n) => RegExp(
+        '(?:^| )[وفبل]{0,2}${RegExp.escape(n)}(?= |\$)',
+      ).hasMatch(text),
+    );
   }
 
   // ── The Seerah ─────────────────────────────────────────────────────────

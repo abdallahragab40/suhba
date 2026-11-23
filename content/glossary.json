@@ -17,9 +17,12 @@
       "reliability": "established",
       "citations": [
         {
-          "sourceId": "muslim",
+          "sourceId": "isabah",
           "locatorStatus": "complete",
-          "hadithNumber": "2541"
+          "volume": 1,
+          "chapterTitle": {
+            "ar": "الفصل الأول في تعريف الصحابي"
+          }
         }
       ],
       "review": {
@@ -877,6 +880,262 @@
           "needsLocators"
         ],
         "authoredBy": "draft-glossary-e3"
+      }
+    },
+    {
+      "id": "jiwar",
+      "term": {
+        "ar": "الجوار"
+      },
+      "forms": [
+        "الجوار",
+        "جوار"
+      ],
+      "definition": {
+        "ar": "أن يُدخل رجل ذو منعة غيره في حمايته، فلا يُعتدى عليه ما دام في جواره، كجوار ابن الدغنة لأبي بكر. ويأتي أيضًا بمعنى المجاورة، ومنه حسن الجوار."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3905"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "369"
+        }
+      ],
+      "review": {
+        "status": "approved",
+        "editorialFlags": [],
+        "authoredBy": "glossary-terms-2"
+      }
+    },
+    {
+      "id": "mawla",
+      "term": {
+        "ar": "المولى"
+      },
+      "forms": [
+        "مولى",
+        "مولاه",
+        "مولاة"
+      ],
+      "definition": {
+        "ar": "يُطلق على العبد المعتَق وعلى من أعتقه، فزيد بن حارثة مولى النبي ﷺ أي عتيقه، و«الولاء لمن أعتق». ويُطلق أيضًا على الناصر والوليّ، ومنه قوله تعالى: «ذلك بأن الله مولى الذين آمنوا وأن الكافرين لا مولى لهم»."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "6752"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "247"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 47,
+            "ayahFrom": 11
+          }
+        }
+      ],
+      "review": {
+        "status": "approved",
+        "editorialFlags": [],
+        "authoredBy": "glossary-terms-2"
+      }
+    },
+    {
+      "id": "naqib",
+      "term": {
+        "ar": "النقيب"
+      },
+      "forms": [
+        "النقيب",
+        "النقباء",
+        "نقيبا"
+      ],
+      "definition": {
+        "ar": "من يكون على قومه ويتكفّل بأمرهم. وطلب النبي ﷺ من الأنصار ليلة العقبة الثانية اثني عشر نقيبًا يكونون على قومهم، فأخرجوا تسعة من الخزرج وثلاثة من الأوس."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "443"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "18"
+        }
+      ],
+      "review": {
+        "status": "approved",
+        "editorialFlags": [],
+        "authoredBy": "glossary-terms-2"
+      }
+    },
+    {
+      "id": "hanif",
+      "term": {
+        "ar": "الحنيف"
+      },
+      "forms": [
+        "الحنيف",
+        "الحنيفية",
+        "حنيفا"
+      ],
+      "definition": {
+        "ar": "من كان على دين إبراهيم عليه السلام، الذي لم يكن يهوديًّا ولا نصرانيًّا ولا يعبد إلا الله، كما جاء في خبر زيد بن عمرو بن نفيل؛ والحنيفية: هذا الدين."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "3827"
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 3,
+            "ayahFrom": 67
+          }
+        }
+      ],
+      "review": {
+        "status": "approved",
+        "editorialFlags": [],
+        "authoredBy": "glossary-terms-2"
+      }
+    },
+    {
+      "id": "sadaq",
+      "term": {
+        "ar": "الصداق"
+      },
+      "forms": [
+        "الصداق",
+        "صداق",
+        "صداقها",
+        "صداقا",
+        "أصدقها"
+      ],
+      "definition": {
+        "ar": "المهر: ما يعطيه الرجل المرأة في عقد الزواج، وقد أمر الله به في قوله: «وآتوا النساء صدقاتهن نحلة»."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 4,
+            "ayahFrom": 4
+          }
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4200"
+        }
+      ],
+      "review": {
+        "status": "approved",
+        "editorialFlags": [],
+        "authoredBy": "glossary-terms-2"
+      }
+    },
+    {
+      "id": "iddah",
+      "term": {
+        "ar": "العِدّة"
+      },
+      "forms": [
+        "العدة",
+        "عدتها"
+      ],
+      "definition": {
+        "ar": "المدة التي تنتظرها المرأة بعد طلاقها أو وفاة زوجها، فلا تتزوج حتى تنقضي."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 2,
+            "ayahFrom": 228
+          }
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 2,
+            "ayahFrom": 234
+          }
+        },
+        {
+          "sourceId": "quran",
+          "locatorStatus": "complete",
+          "quranRef": {
+            "surah": 65,
+            "ayahFrom": 1
+          }
+        }
+      ],
+      "review": {
+        "status": "approved",
+        "editorialFlags": [],
+        "authoredBy": "glossary-terms-2"
+      }
+    },
+    {
+      "id": "shib",
+      "term": {
+        "ar": "الشِّعب"
+      },
+      "forms": [
+        "الشعب",
+        "شعب أبي طالب"
+      ],
+      "definition": {
+        "ar": "الطريق في الجبل أو ما انفرج بين جبلين. وأشهر ما يُذكر منه في السيرة شعب أبي طالب بمكة، الذي انحاز إليه بنو هاشم وبنو المطلب أيام حصار قريش لهم، والشعب من أُحد الذي نزله النبي ﷺ يوم أحد."
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "351"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "65"
+        }
+      ],
+      "review": {
+        "status": "approved",
+        "editorialFlags": [],
+        "authoredBy": "glossary-terms-2"
       }
     }
   ]

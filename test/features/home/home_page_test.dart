@@ -5,9 +5,12 @@ import 'package:suhba/features/atlas/presentation/event_page.dart';
 import 'package:suhba/features/companions/presentation/profile/companion_profile_page.dart';
 import 'package:suhba/features/explore/presentation/explore_page.dart';
 import 'package:suhba/features/home/presentation/quick_tiles.dart';
+import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
+import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
 import 'package:suhba/features/search/presentation/search_page.dart';
 import 'package:suhba/features/seerah/presentation/seerah_chapter_page.dart';
 import 'package:suhba/features/stories/presentation/story_page.dart';
+import 'package:suhba/shared/content/domain/content_target.dart';
 
 import '../../helpers/app_harness.dart';
 import '../../helpers/content_bundle.dart';
@@ -66,7 +69,7 @@ void main() {
     await open(tester, now: DateTime(2026, 2, 20));
     await reveal(tester, find.text('في رمضان من السيرة'));
     expect(
-      find.textContaining('٣ رمضان ١٤٤٧ هـ بتقويم أم القرى'),
+      find.textContaining('٣ رمضان ١٤٤٧\u00a0هـ بتقويم أم القرى'),
       findsOneWidget,
     );
     // Earliest first.
@@ -120,8 +123,8 @@ void main() {
       ('المراجعة', '/review'),
       // No journey started yet: the list of journeys.
       ('رحلة اليوم', '/journeys'),
-      // Nothing read yet: the Seerah from its first chapter.
-      ('تابع القراءة', '/seerah/chapters/makkah-lineage-birth'),
+      // Nothing read yet: «start», the Seerah from its first chapter.
+      ('ابدأ القراءة', '/seerah/chapters/makkah-lineage-birth'),
     ]) {
       testApp('«$label» opens $location', (tester) async {
         final app = await open(tester);
@@ -138,9 +141,86 @@ void main() {
 
     testApp('each tile is one button for screen readers', (tester) async {
       await open(tester);
-      for (final label in ['تابع القراءة', 'رحلة اليوم', 'المراجعة']) {
+      for (final label in ['ابدأ القراءة', 'رحلة اليوم', 'المراجعة']) {
         expect(find.semantics.byLabel(label), findsOne, reason: label);
       }
+    });
+
+    Future<void> save(
+      AppUnderTest app,
+      ProgressTarget target,
+      String parentId,
+      String id, {
+      bool completed = false,
+      int minute = 0,
+    }) => app.container
+        .read(readingProgressRepositoryProvider)
+        .save(
+          ReadingProgress(
+            target: target,
+            targetId: id,
+            parentId: parentId,
+            fraction: completed ? 1 : 0.4,
+            completed: completed,
+            contentVersion: '0.3.0',
+            updatedAt: DateTime(2026, 10, 9, 8, minute),
+          ),
+        );
+
+    Future<String> tapContinue(WidgetTester tester, AppUnderTest app) async {
+      await tester.pumpAndSettle();
+      await tester.tap(
+        find.descendant(
+          of: find.byType(QuickTiles),
+          matching: find.text('تابع القراءة'),
+        ),
+      );
+      await tester.pumpAndSettle();
+      return app.location;
+    }
+
+    testApp('a chapter read through a journey: on to the next one', (
+      tester,
+    ) async {
+      final app = await open(tester);
+      // The fourth chapter, finished from a journey; nothing open.
+      await save(
+        app,
+        ProgressTarget.seerahChapter,
+        seerahParentId,
+        'beginning-of-revelation',
+        completed: true,
+      );
+      expect(
+        await tapContinue(tester, app),
+        '/seerah/chapters/dawah-in-makkah',
+        reason: 'the fifth chapter, not the first',
+      );
+    });
+
+    testApp('the most recent reading wins, a biography included', (
+      tester,
+    ) async {
+      final app = await open(tester);
+      await save(
+        app,
+        ProgressTarget.seerahChapter,
+        seerahParentId,
+        'makkah-lineage-birth',
+      );
+      // Later: a section of Abu Bakr's biography, finished.
+      await save(
+        app,
+        ProgressTarget.section,
+        'abu-bakr',
+        'abu-bakr.early-life',
+        completed: true,
+        minute: 5,
+      );
+      expect(
+        await tapContinue(tester, app),
+        '/companions/abu-bakr/sections/abu-bakr.conversion',
+      );
     });
   });
 

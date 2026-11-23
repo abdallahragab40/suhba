@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/routes.dart';
-import 'package:suhba/core/design_system/tokens/palette.dart';
+import 'package:suhba/core/design_system/theme/app_theme.dart';
 import 'package:suhba/core/design_system/tokens/radii.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
+import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 
-/// The way into the quiz from Home and Explore: a green card whose gold
-/// emblem breathes gently when it appears (not when the user reduces
-/// motion).
+/// The way into the quiz from Home and Explore: a green card (the feature
+/// green, deep at night) whose gold emblem breathes gently when it appears
+/// (not when the user reduces motion).
 class QuizBanner extends StatefulWidget {
   const QuizBanner({super.key});
 
@@ -52,9 +53,14 @@ class _QuizBannerState extends State<QuizBanner>
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final feature = AppTheme.featureOf(context);
+    final scheme = feature.colorScheme;
+    final colors = feature.extension<SuhbaColors>()!;
     final textTheme = Theme.of(context).textTheme;
+    // The emblem's halo is a day-time flourish; at night it would glare.
+    final halo = !identical(feature, AppTheme.featureDark);
     return Material(
-      color: Palette.green,
+      color: scheme.surface,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(AppRadii.lg),
       ),
@@ -62,11 +68,11 @@ class _QuizBannerState extends State<QuizBanner>
       child: InkWell(
         onTap: () => context.push(AppRoutes.quiz),
         child: Ink(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             gradient: LinearGradient(
               begin: AlignmentDirectional.topStart,
               end: AlignmentDirectional.bottomEnd,
-              colors: [Palette.greenHigh, Palette.green],
+              colors: [scheme.surfaceContainerHigh, scheme.surface],
             ),
           ),
           padding: const EdgeInsets.all(AppSpacing.md),
@@ -81,19 +87,17 @@ class _QuizBannerState extends State<QuizBanner>
                   height: 56,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Palette.greenHighest,
-                    border: Border.all(color: Palette.goldOnInk, width: 1.5),
+                    color: scheme.surfaceContainerHighest,
+                    border: Border.all(color: colors.accent, width: 1.5),
                     boxShadow: [
-                      BoxShadow(
-                        color: Palette.goldOnInk.withValues(alpha: 0.25),
-                        blurRadius: 14,
-                      ),
+                      if (halo)
+                        BoxShadow(
+                          color: colors.accent.withValues(alpha: 0.25),
+                          blurRadius: 14,
+                        ),
                     ],
                   ),
-                  child: const Icon(
-                    Icons.auto_awesome,
-                    color: Palette.goldOnInk,
-                  ),
+                  child: Icon(Icons.auto_awesome, color: colors.accent),
                 ),
               ),
               const SizedBox(width: AppSpacing.md),
@@ -104,20 +108,20 @@ class _QuizBannerState extends State<QuizBanner>
                     Text(
                       l10n.quizTileTitle,
                       style: textTheme.titleLarge?.copyWith(
-                        color: Palette.paper,
+                        color: scheme.onSurface,
                       ),
                     ),
                     const SizedBox(height: AppSpacing.xxs),
                     Text(
                       l10n.quizTileSubtitle,
                       style: textTheme.bodyMedium?.copyWith(
-                        color: Palette.paperDimOnGreen,
+                        color: colors.onSurfaceDim,
                       ),
                     ),
                   ],
                 ),
               ),
-              const Icon(Icons.chevron_right, color: Palette.goldOnInk),
+              Icon(Icons.chevron_right, color: colors.accent),
             ],
           ),
         ),

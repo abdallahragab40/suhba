@@ -43,9 +43,11 @@ void main() {
         await expectLater(tester, meetsGuideline(textContrastGuideline));
         handle.dispose();
         tester.platformDispatcher.textScaleFactorTestValue = 2;
+        // Reset even if an expectation above or below throws, so a failure
+        // here cannot leak the larger text into the next test's golden.
+        addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
         await tester.pumpAndSettle();
         expect(tester.takeException(), isNull);
-        tester.platformDispatcher.clearTextScaleFactorTestValue();
       });
     }
   }

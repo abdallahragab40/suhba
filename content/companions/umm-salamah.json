@@ -22,25 +22,39 @@
     "هند بنت أبي أمية"
   ],
   "summary": {
-    "ar": "أم المؤمنين، هاجرت إلى الحبشة ثم إلى المدينة، وتزوّجها النبي ﷺ بعد وفاة أبي سلمة، وكانت ذات رأي، وهي من آخر أمهات المؤمنين وفاة."
+    "ar": "أم المؤمنين، هاجرت إلى الحبشة ثم إلى المدينة، وتزوّجها النبي ﷺ بعد وفاة أبي سلمة، وكانت ذات رأي وعلم، وهي آخر أمهات المؤمنين وفاة."
   },
   "lineage": {
     "ar": "من بني مخزوم، من قريش"
   },
   "death": {
     "date": {
-      "precision": "approx",
+      "precision": "range",
       "era": "afterHijra",
-      "hijriYear": 61,
-      "gregorianYear": 680
+      "hijriYear": 59,
+      "hijriYearEnd": 61,
+      "gregorianYear": 679,
+      "gregorianYearEnd": 681
     },
-    "reliability": "reported",
+    "reliability": "disputed",
     "citations": [
       {
         "sourceId": "siyar",
         "locatorStatus": "complete",
         "volume": 2,
         "page": "210"
+      },
+      {
+        "sourceId": "tabaqat-ibn-sad",
+        "locatorStatus": "complete",
+        "volume": 8,
+        "page": "69"
+      },
+      {
+        "sourceId": "istiab",
+        "locatorStatus": "complete",
+        "volume": 4,
+        "page": "1921"
       }
     ]
   },
@@ -99,16 +113,76 @@
   ],
   "sections": [
     {
-      "id": "umm-salamah.hijrah",
+      "id": "umm-salamah.lineage",
       "kind": "earlyLife",
       "title": {
-        "ar": "هجرتها"
+        "ar": "نسبها وأسرتها"
       },
       "blocks": [
         {
           "type": "paragraph",
           "text": {
-            "ar": "كانت أم سلمة من المهاجرات الأُوَل، وكانت قبل النبي ﷺ عند أبي سلمة بن عبد الأسد المخزومي، وهو أخو النبي ﷺ من الرضاعة، على ما يذكر الذهبي، وهاجرت معه إلى الحبشة ثم إلى المدينة."
+            "ar": "هي هند بنت أبي أمية بن المغيرة بن عبد الله بن عمر بن مخزوم، القرشية المخزومية، وهي ابنة عم خالد بن الوليد وأبي جهل بن هشام، على ما يذكر الذهبي."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "201"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "202"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "69"
+            },
+            {
+              "sourceId": "istiab",
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "1920"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكان أبوها أبو أمية يُعرف بزاد الراكب، وهو أحد أجواد قريش المشهورين بالكرم، واختُلف في اسمه، فقيل: حذيفة، وقيل: سهيل."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "istiab",
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "1920"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "202"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "69"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "واسمها هند على الصواب، ووهم من سمّاها رملة، فرملة اسم أم حبيبة، على ما يذكر الذهبي وابن عبد البر."
           },
           "reliability": "reported",
           "citations": [
@@ -118,6 +192,72 @@
               "volume": 2,
               "page": "202"
             },
+            {
+              "sourceId": "istiab",
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "1920"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكانت قبل النبي ﷺ عند أبي سلمة عبد الله بن عبد الأسد المخزومي، وهو أخو النبي ﷺ من الرضاعة، ويصفه الذهبي بالرجل الصالح."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "202"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "69"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وولدت لأبي سلمة سلمة وعمر وزينب ودرّة، على ما يذكر ابن سعد، ويذكر الذهبي أن عمر وسلمة وزينب كانت لهم صحبة."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "69"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "202"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "umm-salamah.hijrah",
+      "kind": "earlyLife",
+      "title": {
+        "ar": "هجرتاها"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "كانت أم سلمة من المهاجرات الأُوَل، وخرجت مع أبي سلمة إلى الحبشة في الهجرة الأولى، فيما يذكر ابن إسحاق، ويذكر ابن سعد أنه هاجر بها إلى الحبشة في الهجرتين جميعًا."
+          },
+          "reliability": "reported",
+          "citations": [
             {
               "sourceId": "siyar",
               "locatorStatus": "complete",
@@ -129,13 +269,79 @@
               "locatorStatus": "complete",
               "volume": 1,
               "page": "322"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "69"
             }
           ]
         },
         {
           "type": "paragraph",
           "text": {
-            "ar": "ويروي ابن إسحاق عنها أن أبا سلمة لما أراد الهجرة إلى المدينة حملها وابنها سلمة على بعير، فمنعها رجال من قومها بني المغيرة، وأخذ بنو عبد الأسد ابنها، ففُرّق بينها وبين زوجها وابنها، فكانت تخرج كل غداة إلى الأبطح تبكي نحو سنة، حتى رحمها رجل من قومها فأذنوا لها، وردّ عليها ابنها."
+            "ar": "ومن طريقها يروي ابن إسحاق خبر رسولَي قريش إلى النجاشي، وفيه قولها: لما نزلنا أرض الحبشة جاورنا بها خير جار، النجاشي، أمِنّا على ديننا."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "334"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ثم كانت فيمن رجع من الحبشة إلى مكة مع زوجها أبي سلمة، على ما يذكر ابن إسحاق."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "366"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويذكر ابن إسحاق أن أبا سلمة كان أول من هاجر إلى المدينة من المهاجرين من قريش، خرج إليها قبل بيعة أصحاب العقبة بسنة لما آذته قريش."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "468"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويروي ابن إسحاق عنها أن أبا سلمة لما أجمع الخروج إلى المدينة حملها وابنها سلمة على بعير، فقام إليه رجال من قومها بني المغيرة فأخذوها منه، وغضب بنو عبد الأسد، رهط أبي سلمة، فأخذوا ابنها، وانطلق أبو سلمة إلى المدينة، ففُرّق بينها وبين زوجها وابنها."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "469"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "فكانت تخرج كل غداة فتجلس بالأبطح تبكي، سنة أو قريبًا منها، حتى رحمها رجل من بني عمها، فكلّم قومه فيها، فأذنوا لها أن تلحق بزوجها، وردّ عليها بنو عبد الأسد ابنها."
           },
           "reliability": "reported",
           "citations": [
@@ -159,13 +365,34 @@
               "locatorStatus": "complete",
               "volume": 1,
               "page": "469"
+            },
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "470"
             }
           ]
         },
         {
           "type": "paragraph",
           "text": {
-            "ar": "ويروي ابن سعد أنها قالت لأبي سلمة إنه بلغها أن المرأة إذا مات زوجها ولم تتزوج بعده جمع الله بينهما في الجنة، فأرادت أن يتعاهدا ألّا يتزوج أحدهما بعد الآخر، فأمرها أن تتزوج بعده، ودعا الله أن يرزقها بعده رجلًا خيرًا منه لا يحزنها ولا يؤذيها."
+            "ar": "وكانت تقول، فيما يرويه ابن إسحاق: «والله ما أعلم أهل بيت في الإسلام أصابهم ما أصاب آل أبي سلمة»."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "470"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ولما قدمت المدينة أخبرتهم أنها بنت أبي أمية فلم يصدّقوها، حتى كتبت إلى أهلها مع ناس خرجوا إلى الحج، فلما رجعوا صدّقوها، وازدادت عليهم كرامة."
           },
           "reliability": "reported",
           "citations": [
@@ -173,7 +400,13 @@
               "sourceId": "siyar",
               "locatorStatus": "complete",
               "volume": 2,
-              "page": "203"
+              "page": "206"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "74"
             }
           ]
         }
@@ -189,14 +422,36 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "أصيب أبو سلمة بجرح يوم أحد ثم انتقض عليه فمات منه، فتذكّرت أم سلمة ما سمعته من النبي ﷺ: أن من أصابته مصيبة فقال ما أمر الله: إنا لله وإنا إليه راجعون، اللهم أجرني في مصيبتي وأخلف لي خيرًا منها، أخلف الله له خيرًا منها. فقالتها وهي تتعجّب من يكون خيرًا من أبي سلمة، فأخلف الله لها رسول الله ﷺ."
+            "ar": "ويروي ابن سعد أنها قالت لأبي سلمة إنه بلغها أن المرأة إذا مات زوجها ولم تتزوج بعده جمع الله بينهما في الجنة، فأرادت أن يتعاهدا ألّا يتزوج أحدهما بعد الآخر، فأمرها أن تتزوج بعده، ودعا الله أن يرزقها بعده رجلًا خيرًا منه لا يحزنها ولا يؤذيها."
           },
-          "reliability": "established",
+          "reliability": "reported",
           "citations": [
             {
-              "sourceId": "muslim",
+              "sourceId": "siyar",
               "locatorStatus": "complete",
-              "hadithNumber": "918"
+              "volume": 2,
+              "page": "203"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "70"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وأصيب أبو سلمة يوم أحد بسهم في عضده فبرئ، ثم بعثه النبي ﷺ في المحرّم سنة أربع، فرجع وقد انتقض جرحه، فمات منه لثمانٍ خلون من جمادى الآخرة، فيما يرويه ابن سعد والذهبي من طريق الواقدي."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "69"
             },
             {
               "sourceId": "siyar",
@@ -209,10 +464,214 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "ولما انقضت عدّتها خطبها النبي ﷺ، فاعتذرت بأنها شديدة الغيرة وذات عيال، فطمأنها أن الله سيكفيها صبيانها، وأنه سيدعو الله أن يُذهب غيرتها، فتزوّجها في سنة أربع، على ما يرويه ابن سعد ويذكره الذهبي."
+            "ar": "ودخل النبي ﷺ على أبي سلمة وقد شقّ بصره، فأغمضه، وقال: «إن الروح إذا قُبض تبعه البصر»، ثم دعا له، كما تروي أم سلمة في صحيح مسلم:"
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "920"
+            }
+          ]
+        },
+        {
+          "type": "hadithQuote",
+          "textStatus": "complete",
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "920",
+              "grading": {
+                "grade": "sahih",
+                "gradedBy": {
+                  "ar": "مسلم، بإخراجه في صحيحه"
+                }
+              }
+            }
+          ],
+          "text": {
+            "ar": "اللَّهُمَّ اغْفِرْ لأَبِي سَلَمَةَ وَارْفَعْ دَرَجَتَهُ فِي الْمَهْدِيِّينَ وَاخْلُفْهُ فِي عَقِبِهِ فِي الْغَابِرِينَ وَاغْفِرْ لَنَا وَلَهُ يَا رَبَّ الْعَالَمِينَ وَافْسَحْ لَهُ فِي قَبْرِهِ"
+          },
+          "summary": {
+            "ar": "دعاء النبي ﷺ لأبي سلمة عند موته: أن يغفر الله له ويرفع درجته ويخلفه في عقبه."
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكانت أم سلمة قد سمعت النبي ﷺ يقول:"
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "918"
+            }
+          ]
+        },
+        {
+          "type": "hadithQuote",
+          "textStatus": "complete",
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "918",
+              "grading": {
+                "grade": "sahih",
+                "gradedBy": {
+                  "ar": "مسلم، بإخراجه في صحيحه"
+                }
+              }
+            }
+          ],
+          "text": {
+            "ar": "مَا مِنْ عَبْدٍ تُصِيبُهُ مُصِيبَةٌ فَيَقُولُ إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ اللَّهُمَّ أْجُرْنِي فِي مُصِيبَتِي وَأَخْلِفْ لِي خَيْرًا مِنْهَا إِلاَّ أَجَرَهُ اللَّهُ فِي مُصِيبَتِهِ وَأَخْلَفَ لَهُ خَيْرًا مِنْهَا"
+          },
+          "summary": {
+            "ar": "قول النبي ﷺ فيمن تصيبه مصيبة فيسترجع ويسأل الله الأجر والخلف، كما ترويه أم سلمة."
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "فلما توفي أبو سلمة قالت: أيّ المسلمين خير من أبي سلمة، أول بيت هاجر إلى رسول الله ﷺ؟ ثم قالتها، فأخلف الله لها رسول الله ﷺ."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "918"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ولما انقضت عدّتها خطبها أبو بكر فردّته، ثم خطبها عمر فردّته، فيما يرويه ابن سعد والذهبي من حديث ابنها عمر."
           },
           "reliability": "reported",
           "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "204"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "71"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ثم أرسل إليها النبي ﷺ حاطب بن أبي بلتعة يخطبها له، فقالت: إن لي بنتًا، وأنا غيور، فقال ﷺ: أما ابنتها فندعو الله أن يغنيها عنها، وأدعو الله أن يذهب بالغيرة."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "918"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وفي روايات ابن سعد والذهبي أنها اعتذرت كذلك بأنها امرأة قد أسنّت، وأنها أم أيتام، فقال ﷺ: «أما السن فأنا أكبر منك، وأما أيتامك فعلى الله وعلى رسوله»."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "205"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "72"
+            }
+          ]
+        },
+        {
+          "type": "disputeNote",
+          "text": {
+            "ar": "واختُلف فيمن زوّجها."
+          },
+          "opinions": [
+            {
+              "text": {
+                "ar": "ابنها عمر بن أبي سلمة: في حديث ثابت عن ابن عمر بن أبي سلمة عن أبيه أنها قالت: يا عمر، قم فزوّج رسول الله ﷺ، ويروي الواقدي أنه كان يومئذ غلامًا صغيرًا."
+              },
+              "citations": [
+                {
+                  "sourceId": "siyar",
+                  "locatorStatus": "complete",
+                  "volume": 2,
+                  "page": "204"
+                },
+                {
+                  "sourceId": "tabaqat-ibn-sad",
+                  "locatorStatus": "complete",
+                  "volume": 8,
+                  "page": "71"
+                },
+                {
+                  "sourceId": "tabaqat-ibn-sad",
+                  "locatorStatus": "complete",
+                  "volume": 8,
+                  "page": "73"
+                }
+              ]
+            },
+            {
+              "text": {
+                "ar": "ابنها سلمة بن أبي سلمة، على ما يذكر ابن هشام."
+              },
+              "citations": [
+                {
+                  "sourceId": "sirat-ibn-hisham",
+                  "locatorStatus": "complete",
+                  "volume": 2,
+                  "page": "644"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وتزوّجها في شوال سنة أربع، بعد أن انقضت عدّتها، على ما يذكر ابن سعد والذهبي وابن عبد البر."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "69"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "75"
+            },
             {
               "sourceId": "siyar",
               "locatorStatus": "complete",
@@ -223,7 +682,27 @@
               "sourceId": "siyar",
               "locatorStatus": "complete",
               "volume": 2,
-              "page": "204"
+              "page": "210"
+            },
+            {
+              "sourceId": "istiab",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "45"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ولما أصبحت عنده قال لها إنه ليس بها على أهلها هوان، وخيّرها بين أن يقيم عندها سبعًا ويسبّع لنسائه، أو ثلاثًا ثم يدور، فاختارت الثلاث."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "1460"
             }
           ]
         }
@@ -239,7 +718,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "لما كُتب صلح الحديبية أمر النبي ﷺ أصحابه أن ينحروا ويحلقوا، فلم يقم منهم أحد لشدة ما وجدوا، فدخل على أم سلمة فذكر لها ذلك، فأشارت عليه أن يخرج فلا يكلّم أحدًا حتى ينحر بُدنه ويدعو حالقه فيحلقه، ففعل، فقاموا فنحروا وجعل بعضهم يحلق بعضًا."
+            "ar": "لما فرغ النبي ﷺ من كتاب صلح الحديبية أمر أصحابه أن ينحروا ثم يحلقوا، فما قام منهم رجل حتى قال ذلك ثلاث مرات، فلما لم يقم منهم أحد دخل على أم سلمة فذكر لها ما لقي من الناس. فقالت:"
           },
           "reliability": "established",
           "citations": [
@@ -247,6 +726,198 @@
               "sourceId": "bukhari",
               "locatorStatus": "complete",
               "hadithNumber": "2731"
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "2732"
+            }
+          ]
+        },
+        {
+          "type": "reportQuote",
+          "textStatus": "complete",
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "2731"
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "2732"
+            }
+          ],
+          "text": {
+            "ar": "يَا نَبِيَّ اللَّهِ، أَتُحِبُّ ذَلِكَ اخْرُجْ ثُمَّ لاَ تُكَلِّمْ أَحَدًا مِنْهُمْ كَلِمَةً حَتَّى تَنْحَرَ بُدْنَكَ، وَتَدْعُوَ حَالِقَكَ فَيَحْلِقَكَ"
+          },
+          "summary": {
+            "ar": "مشورة أم سلمة على النبي ﷺ يوم الحديبية أن يخرج فينحر ويحلق دون أن يكلّم أحدًا."
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "فخرج فلم يكلّم أحدًا منهم حتى نحر بُدنه ودعا حالقه فحلقه، فلما رأوا ذلك قاموا فنحروا، وجعل بعضهم يحلق بعضًا، حتى كاد بعضهم يقتل بعضًا غمًّا."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "2731"
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "2732"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "umm-salamah.household",
+      "kind": "withProphet",
+      "title": {
+        "ar": "في بيت النبوة"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ونزلت توبة أبي لبابة على النبي ﷺ من السَّحَر وهو في بيتها، فسمعته يضحك فسألته، فأخبرها، فاستأذنته أن تبشّره، فقامت على باب حجرتها، وذلك قبل أن يُضرب الحجاب، فبشّرته بتوبة الله عليه، فيما يرويه ابن إسحاق."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "237"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وأتى جبريل النبي ﷺ وعنده أم سلمة، فجعل يتحدث، فلما قام سألها النبي ﷺ: من هذا؟ فقالت: دحية، ثم سمعت النبي ﷺ يخطب فيخبر خبر جبريل، فعلمت أنه هو، كما في صحيح البخاري من حديث أسامة بن زيد."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "3634"
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "4980"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ولقي النبيَّ ﷺ في مسيره عام الفتح بنِيق العُقاب ابنُ عمه أبو سفيان بن الحارث وأخوها عبد الله بن أبي أمية، فالتمسا الدخول عليه، فكلّمته أم سلمة فيهما، فأبى أولًا، ثم رقّ لهما فأذن لهما، فدخلا عليه فأسلما، فيما يذكر ابن إسحاق."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "400"
+            },
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "401"
+            },
+            {
+              "sourceId": "istiab",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "868"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "umm-salamah.knowledge",
+      "kind": "virtues",
+      "title": {
+        "ar": "علمها وروايتها"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكانت تُعدّ من فقهاء الصحابيات، على ما يذكر الذهبي."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "203"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويبلغ مسندها، فيما يذكر الذهبي، ثلاثمائة وثمانية وسبعين حديثًا، اتفق البخاري ومسلم منها على ثلاثة عشر، وانفرد البخاري بثلاثة، ومسلم بثلاثة عشر."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "210"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وروى عنها خلق كثير، منهم سعيد بن المسيب، وشقيق بن سلمة، والشعبي، ومجاهد، وعطاء بن أبي رباح، ونافع مولاها، وابن أبي مليكة."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "202"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وتروي أم الحسين أنها كانت عندها، فأتى مساكين يُلحّون في المسألة، فأمرتهم بالخروج، فقالت أم سلمة: «ما بهذا أُمرنا يا جارية»، وأمرتها أن تردّ كل سائل ولو بتمرة تضعها في يده، فيما يرويه ابن عبد البر."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "istiab",
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "1939"
+            },
+            {
+              "sourceId": "istiab",
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "1940"
             }
           ]
         }
@@ -262,7 +933,36 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "عاشت أم سلمة طويلًا بعد النبي ﷺ، ويرجّح الذهبي أنها توفيت سنة إحدى وستين، لأن في صحيح مسلم أن عبد الله بن صفوان دخل عليها في خلافة يزيد، وأرّخها غيره بسنة تسع وخمسين."
+            "ar": "وعُمّرت أم سلمة بعد النبي ﷺ طويلًا، وكانت آخر من مات من أمهات المؤمنين، على ما يذكر الذهبي."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "202"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ودخل عليها عبد الله بن صفوان والحارث بن أبي ربيعة فسألاها عن الجيش الذي يُخسف به، فحدّثتهما فيه عن النبي ﷺ، وكان ذلك في أيام ابن الزبير، كما في صحيح مسلم."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "2882"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويرجّح الذهبي أنها توفيت سنة إحدى وستين، لأن في صحيح مسلم أن عبد الله بن صفوان دخل عليها في أيام ابن الزبير، وكان ذلك في خلافة يزيد."
           },
           "reliability": "reported",
           "citations": [
@@ -271,6 +971,143 @@
               "locatorStatus": "complete",
               "volume": 2,
               "page": "210"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "2882"
+            }
+          ]
+        },
+        {
+          "type": "disputeNote",
+          "text": {
+            "ar": "واختُلف في سنة وفاتها."
+          },
+          "opinions": [
+            {
+              "text": {
+                "ar": "سنة تسع وخمسين في ذي القعدة، على ما يرويه ابن سعد عن الواقدي، وذكره ابن عبد البر قولًا وقال: في رمضان أو شوال، ويعدّه الذهبي وهمًا."
+              },
+              "citations": [
+                {
+                  "sourceId": "tabaqat-ibn-sad",
+                  "locatorStatus": "complete",
+                  "volume": 8,
+                  "page": "69"
+                },
+                {
+                  "sourceId": "tabaqat-ibn-sad",
+                  "locatorStatus": "complete",
+                  "volume": 8,
+                  "page": "76"
+                },
+                {
+                  "sourceId": "istiab",
+                  "locatorStatus": "complete",
+                  "volume": 4,
+                  "page": "1921"
+                },
+                {
+                  "sourceId": "siyar",
+                  "locatorStatus": "complete",
+                  "volume": 2,
+                  "page": "203"
+                },
+                {
+                  "sourceId": "siyar",
+                  "locatorStatus": "complete",
+                  "volume": 2,
+                  "page": "210"
+                }
+              ]
+            },
+            {
+              "text": {
+                "ar": "سنة ستين، في أول خلافة يزيد بن معاوية، على ما يذكر ابن عبد البر."
+              },
+              "citations": [
+                {
+                  "sourceId": "istiab",
+                  "locatorStatus": "complete",
+                  "volume": 4,
+                  "page": "1921"
+                }
+              ]
+            },
+            {
+              "text": {
+                "ar": "سنة إحدى وستين، وهو الظاهر عند الذهبي."
+              },
+              "citations": [
+                {
+                  "sourceId": "siyar",
+                  "locatorStatus": "complete",
+                  "volume": 2,
+                  "page": "210"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ودُفنت بالبقيع، ونزل في قبرها ابناها عمر وسلمة، وعبد الله بن عبد الله بن أبي أمية، وعبد الله بن وهب بن زمعة، فيما يرويه ابن سعد."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "209"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "76"
+            },
+            {
+              "sourceId": "istiab",
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "1921"
+            }
+          ]
+        },
+        {
+          "type": "disputeNote",
+          "text": {
+            "ar": "واختُلف في سنّها يوم ماتت."
+          },
+          "opinions": [
+            {
+              "text": {
+                "ar": "أربع وثمانون سنة، فيما يرويه ابن سعد عن الواقدي."
+              },
+              "citations": [
+                {
+                  "sourceId": "tabaqat-ibn-sad",
+                  "locatorStatus": "complete",
+                  "volume": 8,
+                  "page": "76"
+                }
+              ]
+            },
+            {
+              "text": {
+                "ar": "نحو تسعين سنة، على ما يذكر الذهبي."
+              },
+              "citations": [
+                {
+                  "sourceId": "siyar",
+                  "locatorStatus": "complete",
+                  "volume": 2,
+                  "page": "202"
+                }
+              ]
             }
           ]
         }
@@ -286,19 +1123,102 @@
         {
           "type": "lesson",
           "text": {
-            "ar": "أن الاسترجاع والدعاء عند المصيبة باب للعوض من الله."
-          }
+            "ar": "أن الاسترجاع والدعاء عند المصيبة باب للعوض من الله، فقد قالت أم سلمة ما علّمها النبي ﷺ، فأخلف الله لها خيرًا من أبي سلمة."
+          },
+          "basedOn": [
+            "umm-salamah.marriage"
+          ]
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "وأن الهجرة في سبيل الله قد تكلّف المرء فراق أحبّ الناس إليه، فقد فارقت أم سلمة زوجها وابنها نحو سنة، ثم خرجت وحدها لتلحق بزوجها."
+          },
+          "basedOn": [
+            "umm-salamah.hijrah"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وأن الرأي الحكيم ينفع في الأزمات، وأن المشورة مع أهل البيت من هدي النبي ﷺ."
-          }
+          },
+          "basedOn": [
+            "umm-salamah.counsel"
+          ]
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "وأن السائل لا يُردّ خائبًا ولو بالقليل، كما أمرت أم سلمة أن يُعطى كل مسكين ولو تمرة."
+          },
+          "basedOn": [
+            "umm-salamah.knowledge"
+          ]
         }
       ]
     }
   ],
   "timeline": [
+    {
+      "id": "umm-salamah.abyssinia",
+      "era": "makkan",
+      "date": {
+        "precision": "approx",
+        "era": "beforeHijra",
+        "hijriYear": 8,
+        "gregorianYear": 615
+      },
+      "title": {
+        "ar": "هجرتها إلى الحبشة مع أبي سلمة"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "322"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 8,
+          "page": "69"
+        }
+      ],
+      "sectionId": "umm-salamah.hijrah",
+      "eventId": "hijrah-to-abyssinia"
+    },
+    {
+      "id": "umm-salamah.abu-salamah-death",
+      "era": "madinan",
+      "date": {
+        "precision": "year",
+        "era": "afterHijra",
+        "hijriYear": 4,
+        "gregorianYear": 625
+      },
+      "title": {
+        "ar": "وفاة زوجها أبي سلمة"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 8,
+          "page": "69"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "203"
+        }
+      ],
+      "sectionId": "umm-salamah.marriage"
+    },
     {
       "id": "umm-salamah.marriage",
       "era": "madinan",
@@ -318,6 +1238,12 @@
           "locatorStatus": "complete",
           "volume": 2,
           "page": "202"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 8,
+          "page": "69"
         }
       ],
       "sectionId": "umm-salamah.marriage"
@@ -346,30 +1272,80 @@
       "eventId": "hudaybiyah"
     },
     {
+      "id": "umm-salamah.conquest",
+      "era": "madinan",
+      "date": {
+        "precision": "year",
+        "era": "afterHijra",
+        "hijriYear": 8,
+        "gregorianYear": 630
+      },
+      "title": {
+        "ar": "شفاعتها لأبي سفيان بن الحارث وأخيها عبد الله عام الفتح"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "400"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "401"
+        }
+      ],
+      "sectionId": "umm-salamah.household",
+      "eventId": "conquest-of-makkah"
+    },
+    {
       "id": "umm-salamah.death",
       "era": "afterProphet",
       "date": {
-        "precision": "approx",
+        "precision": "range",
         "era": "afterHijra",
-        "hijriYear": 61,
-        "gregorianYear": 680
+        "hijriYear": 59,
+        "hijriYearEnd": 61,
+        "gregorianYear": 679,
+        "gregorianYearEnd": 681
       },
       "title": {
         "ar": "وفاتها"
       },
-      "reliability": "reported",
+      "reliability": "disputed",
       "citations": [
         {
           "sourceId": "siyar",
           "locatorStatus": "complete",
           "volume": 2,
           "page": "210"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 8,
+          "page": "69"
+        },
+        {
+          "sourceId": "istiab",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "1921"
         }
       ],
       "sectionId": "umm-salamah.death"
     }
   ],
   "references": [
+    "quran",
+    "sirat-ibn-hisham",
+    "tabaqat-ibn-sad",
+    "bukhari",
+    "muslim",
+    "istiab",
     "siyar"
   ],
   "review": {
@@ -377,10 +1353,80 @@
     "editorialFlags": [
       "sensitive"
     ],
-    "coverage": "sample",
-    "authoredBy": "short-profiles-1"
+    "coverage": "complete",
+    "authoredBy": "umm-salamah-deepen-1"
   },
-  "atAGlance": [],
+  "atAGlance": [
+    {
+      "label": {
+        "ar": "أبوها"
+      },
+      "text": {
+        "ar": "أبو أمية بن المغيرة المخزومي، المعروف بزاد الراكب"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "202"
+        },
+        {
+          "sourceId": "istiab",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "1920"
+        }
+      ]
+    },
+    {
+      "label": {
+        "ar": "أمها"
+      },
+      "text": {
+        "ar": "عاتكة بنت عامر بن ربيعة، من كنانة"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 8,
+          "page": "69"
+        },
+        {
+          "sourceId": "istiab",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "1920"
+        }
+      ]
+    },
+    {
+      "label": {
+        "ar": "مدفنها"
+      },
+      "text": {
+        "ar": "البقيع بالمدينة"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "209"
+        },
+        {
+          "sourceId": "istiab",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "1921"
+        }
+      ]
+    }
+  ],
   "overview": [
     {
       "text": {
@@ -393,13 +1439,19 @@
           "locatorStatus": "complete",
           "volume": 1,
           "page": "469"
+        },
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "470"
         }
       ],
       "sectionId": "umm-salamah.hijrah"
     },
     {
       "text": {
-        "ar": "فقالتها وهي تتعجّب من يكون خيرًا من أبي سلمة، فأخلف الله لها رسول الله ﷺ."
+        "ar": "ثم قالتها، فأخلف الله لها رسول الله ﷺ."
       },
       "reliability": "established",
       "citations": [
@@ -407,19 +1459,13 @@
           "sourceId": "muslim",
           "locatorStatus": "complete",
           "hadithNumber": "918"
-        },
-        {
-          "sourceId": "siyar",
-          "locatorStatus": "complete",
-          "volume": 2,
-          "page": "203"
         }
       ],
       "sectionId": "umm-salamah.marriage"
     },
     {
       "text": {
-        "ar": "لما كُتب صلح الحديبية أمر النبي ﷺ أصحابه أن ينحروا ويحلقوا، فلم يقم منهم أحد لشدة ما وجدوا، فدخل على أم سلمة فذكر لها ذلك."
+        "ar": "لما فرغ النبي ﷺ من كتاب صلح الحديبية أمر أصحابه أن ينحروا ثم يحلقوا، فما قام منهم رجل حتى قال ذلك ثلاث مرات، فلما لم يقم منهم أحد دخل على أم سلمة فذكر لها ما لقي من الناس."
       },
       "reliability": "established",
       "citations": [
@@ -427,9 +1473,44 @@
           "sourceId": "bukhari",
           "locatorStatus": "complete",
           "hadithNumber": "2731"
+        },
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "2732"
         }
       ],
       "sectionId": "umm-salamah.counsel"
+    },
+    {
+      "text": {
+        "ar": "وكانت تُعدّ من فقهاء الصحابيات، على ما يذكر الذهبي."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "203"
+        }
+      ],
+      "sectionId": "umm-salamah.knowledge"
+    },
+    {
+      "text": {
+        "ar": "وعُمّرت أم سلمة بعد النبي ﷺ طويلًا، وكانت آخر من مات من أمهات المؤمنين، على ما يذكر الذهبي."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "202"
+        }
+      ],
+      "sectionId": "umm-salamah.death"
     }
   ],
   "storyIds": [

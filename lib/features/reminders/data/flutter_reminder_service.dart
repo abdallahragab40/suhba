@@ -6,6 +6,12 @@ import 'package:suhba/features/reminders/domain/reminder_time.dart';
 import 'package:timezone/data/latest.dart' as tz_data;
 import 'package:timezone/timezone.dart' as tz;
 
+/// Whether this platform has the daily reminder: Android only, by design
+/// while the iOS release is on hold. Where it has none, the reminder's
+/// entries are not shown at all.
+bool get remindersOnThisPlatform =>
+    !kIsWeb && defaultTargetPlatform == TargetPlatform.android;
+
 /// Android only while the iOS release is on hold. Initialization never asks for
 /// permission. One stable ID replaces a previous time instead of adding alarms.
 class FlutterReminderService implements ReminderService {
@@ -30,8 +36,7 @@ class FlutterReminderService implements ReminderService {
   bool _zonesReady = false;
 
   @override
-  bool get supported =>
-      !kIsWeb && defaultTargetPlatform == TargetPlatform.android;
+  bool get supported => remindersOnThisPlatform;
   AndroidFlutterLocalNotificationsPlugin get _android => _plugin
       .resolvePlatformSpecificImplementation<
         AndroidFlutterLocalNotificationsPlugin

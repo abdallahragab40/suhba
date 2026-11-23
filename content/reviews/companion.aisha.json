@@ -3,8 +3,8 @@
   "kind": "companion",
   "id": "aisha",
   "reviewerId": "suhba-editorial",
-  "approvedAt": "2026-11-20",
-  "contentHash": "ae8a42f2f38cadbd40978eb57eb08cfcd3cf9e16773e5baf8f36bbf963a63261",
+  "approvedAt": "2026-11-23",
+  "contentHash": "a7c4c1667181575d9c11d2f251389304b08df80b4f68ebac2a7516ea99d9d4ae",
   "checklist": {
     "sourcesMatch": true,
     "gradingsCorrect": true,
@@ -14,5 +14,5 @@
     "fitnaSignOff": true,
     "sensitiveSignOff": true
   },
-  "notes": "Editorial review on the owner's instruction (2026-11-20); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors. Checked: the full text read for accuracy, embellishment, honorifics and the stated reliability; every hadith citation compared with the cited text in content/hadith; Qur'an quotations checked by the validator against the Tanzil text. Not checked: book page locators against the printed editions, and chains of transmission. This is not the approval of a qualified scholar."
+  "notes": "Editorial review on the owner's instruction (2026-11-23); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors, after checking the sources. Expanded from a short profile to a standard-depth biography (about 1,300 words in nine sections: early life, marriage and Hijrah, life in the Prophet's house, the slander and the verse of tayammum, the Prophet's last days, knowledge, generosity, death, lessons); every existing section id is kept, so the journey readings (aisha.marriage, aisha.trial, aisha.the-last-days) still resolve. The full text was read for accuracy, embellishment, honorifics and the stated reliability. Every hadith citation was compared with its text in content/hadith (the pinned dataset), and every quotation marked complete is verbatim from it. Book locators were checked against digital transcriptions of the editions named in sources.json (OpenITI: Siyar, Risala ed.; Ibn Sa'd, Ata ed.; al-Istiab, al-Bajawi ed.; al-Bidaya, al-Turki ed.), counting the text before each page marker as that page. Owner decisions kept: the single neutral sentence on her age (Bukhari 3894/3896) is unchanged, with no commentary; the fitna, including the Battle of the Camel, is left out entirely; the slander is told briefly from Bukhari 4750 and an-Nur 11-20, and the item stays flagged sensitive. Disputes are given as disputeNotes with each opinion sourced: when the marriage was consummated in Madinah (eight months after the Hijrah per al-Waqidi, or Shawwal 2 AH after Badr), and the year of her death (57 or 58). Reports that come only through al-Waqidi or the later compilers (her Hijrah, her burial, her charity of 70,000 and of 100,000, Masruq on the senior Companions asking her about inheritance, al-Zuhri on her knowledge) are marked reported. Not checked: chains of transmission, and page locators against printed copies. This is an editorial review, not the approval of a qualified scholar."
 }

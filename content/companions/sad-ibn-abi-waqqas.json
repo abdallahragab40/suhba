@@ -15,7 +15,6 @@
   "review": {
     "status": "approved",
     "editorialFlags": [
-      "needsLocators",
       "sensitive"
     ],
     "coverage": "complete",
@@ -26,7 +25,15 @@
     "siyar",
     "istiab",
     "usd-al-ghabah",
-    "tabaqat-ibn-sad"
+    "tabaqat-ibn-sad",
+    "sirat-ibn-hisham",
+    "tarikh-al-tabari",
+    "al-bidaya",
+    "bukhari",
+    "muslim",
+    "abu-dawud",
+    "tirmidhi",
+    "quran"
   ],
   "kunya": {
     "ar": "أبو إسحاق"
@@ -37,11 +44,14 @@
   ],
   "death": {
     "date": {
-      "precision": "year",
+      "precision": "range",
       "era": "afterHijra",
-      "hijriYear": 55
+      "hijriYear": 55,
+      "hijriYearEnd": 58,
+      "gregorianYear": 675,
+      "gregorianYearEnd": 678
     },
-    "reliability": "reported",
+    "reliability": "disputed",
     "citations": [
       {
         "sourceId": "isabah",
@@ -207,7 +217,7 @@
     },
     {
       "text": {
-        "ar": "وكان إسلامه وهو ابن سبع عشرة سنة على ما يذكره ابن سعد وغيره."
+        "ar": "كان إسلامه وهو ابن سبع عشرة سنة على ما يذكره ابن سعد وغيره."
       },
       "reliability": "reported",
       "citations": [
@@ -248,7 +258,7 @@
     },
     {
       "text": {
-        "ar": "وتروي عائشة أن النبي ﷺ سهر ليلة مقدمه المدينة، فتمنّى أن يحرسه رجل صالح من أصحابه، فسمعوا صوت سلاح، فإذا هو سعد جاء يحرسه، فدعا له النبي ﷺ ونام."
+        "ar": "تروي عائشة أن النبي ﷺ سهر ليلة مقدمه المدينة، فتمنّى أن يحرسه رجل صالح من أصحابه، فسمعوا صوت سلاح، فإذا هو سعد جاء يحرسه، فدعا له النبي ﷺ ونام."
       },
       "reliability": "established",
       "citations": [
@@ -267,7 +277,7 @@
     },
     {
       "text": {
-        "ar": "ويروي ابن عبد البر وغيره أن عمر ألبس سراقة بن مالك سواري كسرى، تصديقًا لما بشّره به النبي ﷺ في طريق الهجرة، وكان ذلك من غنائم فتح سعد."
+        "ar": "يروي ابن عبد البر وغيره أن عمر ألبس سراقة بن مالك سواري كسرى، تصديقًا لما بشّره به النبي ﷺ في طريق الهجرة، وكان ذلك من غنائم فتح سعد."
       },
       "reliability": "reported",
       "citations": [
@@ -414,7 +424,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "ويروي الذهبي عن موسى بن طلحة أن عليًّا والزبير وطلحة وسعدًا وُلدوا في عام واحد."
+            "ar": "ويروي الذهبي عن موسى بن طلحة أن عليًّا والزبير وطلحة وسعدًا وُلدوا في عام واحد، وهذا لا يتفق مع ما رُوي من أعمارهم عند الوفاة، فهو تقريب."
           },
           "reliability": "reported",
           "citations": [
@@ -618,7 +628,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "ويوم أحد ثبت مع النبي ﷺ يرمي عنه، والنبي ﷺ يناوله النبل ويقول له: ارمِ فداك أبي وأمي، وذكر علي بن أبي طالب أنه ما سمع النبي ﷺ جمع أبويه لأحد غير سعد."
+            "ar": "ويوم أحد ثبت مع النبي ﷺ يرمي عنه، والنبي ﷺ يناوله النبل ويقول له: ارمِ فداك أبي وأمي، وذكر علي بن أبي طالب أنه ما سمع النبي ﷺ جمع أبويه لأحد غير سعد، فيما علم علي."
           },
           "reliability": "established",
           "citations": [
@@ -1306,7 +1316,7 @@
         {
           "type": "lesson",
           "text": {
-            "ar": "وفي بكاء عمر أمام كنوز كسرى تنبيه إلى أن الفتح المادي ابتلاء، وأن الخوف من فتنة المال من فقه القادة الصالحين."
+            "ar": "وفي بشارة النبي ﷺ بأن كنوز كسرى ستُنفق في سبيل الله، ثم تحقّقها في فتح سعد للمدائن، بيان لصدق النبوة، وأن ما يُفتح على المسلمين من المال أمانة تُنفق في سبيل الله."
           },
           "basedOn": [
             "sad-ibn-abi-waqqas.contributions"
@@ -1568,15 +1578,17 @@
       "id": "sad-ibn-abi-waqqas.t.death",
       "era": "afterProphet",
       "date": {
-        "precision": "approx",
+        "precision": "range",
         "era": "afterHijra",
         "hijriYear": 55,
-        "gregorianYear": 675
+        "hijriYearEnd": 58,
+        "gregorianYear": 675,
+        "gregorianYearEnd": 678
       },
       "title": {
         "ar": "وفاته بالعقيق ودفنه بالبقيع"
       },
-      "reliability": "reported",
+      "reliability": "disputed",
       "citations": [
         {
           "sourceId": "tabaqat-ibn-sad",

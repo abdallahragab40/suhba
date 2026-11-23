@@ -151,6 +151,36 @@ void main() {
     }
   });
 
+  test('a story never offers, as a wrong answer, someone it names', () {
+    // Each story text names these by first name, kunya in another case
+    // or a namesake, not by their full name, and does not link them.
+    const named = {
+      'the-coastal-expedition': {'عمر بن الخطاب'}, // «عمر دخل عليه»
+      'the-house-of-said-ibn-zayd': {'أبو بكر الصديق'}, // «بنت أبي بكر»
+      'brotherhood-of-the-ansar': {'سعد بن أبي وقاص', 'سعد بن معاذ'},
+    };
+    for (var seed = 0; seed < 50; seed++) {
+      final generator = QuizGenerator(content, random: Random(seed));
+      final questions = generator.questionsOf(QuizKind.companionInStory);
+      // Every linked companion is still asked about.
+      expect(
+        questions,
+        hasLength(
+          content.stories.fold<int>(0, (n, s) => n + s.companionIds.length),
+        ),
+      );
+      for (final q in questions) {
+        final story = content.stories.firstWhere((s) => s.title == q.subject);
+        final names = q.choices.map(text).toSet();
+        expect(
+          names.intersection(named[story.id] ?? const {}),
+          isEmpty,
+          reason: q.key,
+        );
+      }
+    }
+  });
+
   test('a title is never asked when it gives the name away', () {
     final generator = QuizGenerator(content, random: Random(2));
     final titles = {

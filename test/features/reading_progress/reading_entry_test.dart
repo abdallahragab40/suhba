@@ -42,9 +42,30 @@ void main() {
       'a': _p('a', completed: true),
       'b': _p('b', completed: true),
     });
-    expect(e, isA<ResumeReading>());
-    expect((e as ResumeReading).passageId, 'c');
-    expect(e.fraction, 0);
+    // Not «resume at 0%» (decision Q4): the next passage.
+    expect(e, isA<NextReading>());
+    expect((e as NextReading).passageId, 'c');
+  });
+
+  test('one read out of order moves the reader on from there', () {
+    // Chapter 2 of 4 read through a journey: chapter 3 is next, not 1.
+    const four = ['a', 'b', 'c', 'd'];
+    expect(
+      (readingEntryFor(four, {'b': _p('b', completed: true)}) as NextReading)
+          .passageId,
+      'c',
+    );
+    expect(nextUnreadPassage(four, {'b': _p('b', completed: true)}), 'c');
+    // Nothing left after the furthest: back to the first one not finished.
+    expect(
+      nextUnreadPassage(four, {
+        'a': _p('a', completed: true),
+        'd': _p('d', completed: true),
+      }),
+      'b',
+    );
+    expect(resumePassage(four, {'d': _p('d', completed: true)}), 'a');
+    expect(resumePassage(four, const {}), isNull, reason: 'nothing read');
   });
 
   test('all finished', () {

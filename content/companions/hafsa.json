@@ -18,25 +18,39 @@
     "حفصة"
   ],
   "summary": {
-    "ar": "أم المؤمنين، بنت عمر بن الخطاب، تزوّجها النبي ﷺ سنة ثلاث، وعندها حُفظت صحف القرآن التي جُمعت في عهد أبي بكر."
+    "ar": "أم المؤمنين، بنت عمر بن الخطاب، تزوّجها النبي ﷺ سنة ثلاث بعد وفاة زوجها خنيس بن حذافة، وعندها حُفظت صحف القرآن التي جُمعت في عهد أبي بكر."
   },
   "lineage": {
     "ar": "من بني عدي بن كعب، من قريش"
   },
   "death": {
     "date": {
-      "precision": "approx",
+      "precision": "range",
       "era": "afterHijra",
       "hijriYear": 41,
-      "gregorianYear": 661
+      "hijriYearEnd": 45,
+      "gregorianYear": 661,
+      "gregorianYearEnd": 665
     },
-    "reliability": "reported",
+    "reliability": "disputed",
     "citations": [
       {
         "sourceId": "siyar",
         "locatorStatus": "complete",
         "volume": 2,
         "page": "229"
+      },
+      {
+        "sourceId": "tabaqat-ibn-sad",
+        "locatorStatus": "complete",
+        "volume": 8,
+        "page": "69"
+      },
+      {
+        "sourceId": "istiab",
+        "locatorStatus": "complete",
+        "volume": 4,
+        "page": "1812"
       }
     ]
   },
@@ -112,9 +126,155 @@
           "hadithNumber": "4005"
         }
       ]
+    },
+    {
+      "type": "sibling",
+      "person": {
+        "displayName": {
+          "ar": "عبد الله بن عمر"
+        },
+        "companionId": "abdullah-ibn-umar"
+      },
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "227"
+        }
+      ]
     }
   ],
   "sections": [
+    {
+      "id": "hafsa.lineage",
+      "kind": "earlyLife",
+      "title": {
+        "ar": "نسبها ونشأتها"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "هي حفصة بنت عمر بن الخطاب بن نفيل، القرشية العدوية، من بني عدي بن كعب بن لؤي."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "65"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "227"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويفتتح الذهبي ترجمتها بقوله: «الستر الرفيع، بنت أمير المؤمنين أبي حفص عمر بن الخطاب»."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "227"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وأمها زينب بنت مظعون الجمحية، أخت عثمان بن مظعون، فهي أخت عبد الله بن عمر لأبيه وأمه."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "65"
+            },
+            {
+              "sourceId": "istiab",
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "1811"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويروي ابن سعد عن الواقدي بإسناده إلى عمر أنها وُلدت وقريش تبني البيت، قبل مبعث النبي ﷺ بخمس سنين."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "65"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "227"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "230"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وهي أسنّ من أخيها عبد الله بست سنين، على ما يذكر الذهبي، ويذكر أنها كانت على رواية مولدها تلك نحوًا من عشرين سنة حين دخل بها النبي ﷺ."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "227"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وتزوّجها خنيس بن حذافة السهمي، فهاجرت معه إلى المدينة، فكانت من المهاجرات، ومات عنها بعد مقدم النبي ﷺ من بدر، فيما يرويه ابن سعد عن الواقدي."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "65"
+            },
+            {
+              "sourceId": "istiab",
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "1811"
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "hafsa.marriage",
       "kind": "withProphet",
@@ -126,6 +286,20 @@
           "type": "paragraph",
           "text": {
             "ar": "كانت حفصة تحت خنيس بن حذافة السهمي، وهو من أهل بدر، فتوفي بالمدينة، فعرضها أبوها عمر على عثمان فاعتذر، ثم على أبي بكر فسكت، ثم خطبها النبي ﷺ فزوّجه إياها."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "4005"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكان عثمان قد استمهل عمر ليالي ثم قال: قد بدا لي ألّا أتزوج يومي هذا، وأما أبو بكر فصمت فلم يرجع إليه شيئًا، فكان عمر عليه أوجد منه على عثمان."
           },
           "reliability": "established",
           "citations": [
@@ -153,7 +327,49 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وكان ذلك في السنة الثالثة من الهجرة على ما يذكر الذهبي، ويُروى أن مولدها كان قبل المبعث بخمس سنين، وأنها أسنّ من أخيها عبد الله بن عمر بست سنين."
+            "ar": "ويروي ابن سعد وغيره أن عمر شكا ذلك إلى النبي ﷺ، فأخبره أن حفصة يتزوجها من هو خير من عثمان، وأن عثمان يتزوج من هي خير من حفصة، فتزوّج النبي ﷺ حفصة، وزوّج عثمان ابنته أم كلثوم."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "66"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "228"
+            },
+            {
+              "sourceId": "istiab",
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "1811"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وقال سعيد بن المسيب في ذلك: فخار الله لهما جميعًا، كان رسول الله ﷺ لحفصة خيرًا من عثمان، وكانت بنت رسول الله ﷺ لعثمان خيرًا من حفصة، فيما يرويه ابن سعد."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "67"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكان زواجها في السنة الثالثة من الهجرة عند أكثرهم، في شعبان قبل أحد، على ما يذكر ابن سعد عن الواقدي، وقال أبو عبيدة: سنة اثنتين."
           },
           "reliability": "reported",
           "citations": [
@@ -167,17 +383,183 @@
               "sourceId": "siyar",
               "locatorStatus": "complete",
               "volume": 2,
-              "page": "227"
+              "page": "230"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "66"
+            },
+            {
+              "sourceId": "istiab",
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "1811"
+            },
+            {
+              "sourceId": "istiab",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "45"
             }
           ]
         },
         {
           "type": "paragraph",
           "text": {
-            "ar": "ويروي الذهبي بإسناد يصفه بالصالح أن النبي ﷺ طلّقها تطليقة ثم راجعها، وأن جبريل وصفها بأنها صوّامة قوّامة، وأنها زوجته في الجنة."
+            "ar": "وزوّجه إياها أبوها عمر، وأصدقها النبي ﷺ أربعمائة درهم، على ما يذكر ابن هشام."
           },
           "reliability": "reported",
           "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "645"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hafsa.worship",
+      "kind": "character",
+      "title": {
+        "ar": "عبادتها"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويروي أبو داود وابن سعد من حديث ابن عباس عن عمر أن النبي ﷺ طلّق حفصة ثم راجعها."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "abu-dawud",
+              "locatorStatus": "complete",
+              "hadithNumber": "2283"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "67"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويروي الذهبي بإسناد يصفه بالصالح، من حديث عقبة بن عامر، أن النبي ﷺ راجعها بأمر جبريل عليه السلام، وأنه قال فيها: «إنها صوّامة، قوّامة، وهي زوجتك في الجنة»."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "228"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "229"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويروي ابن سعد نحوه مرسلًا من حديث قيس بن زيد وقتادة ومحمد بن سيرين، ويذكر الذهبي أنه رُوي كذلك من حديث أنس مرفوعًا."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "67"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "68"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "230"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "231"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويروي ابن سعد عن نافع مولى ابن عمر أنه قال في صيامها: «ما ماتت حفصة حتى ما تُفطر»."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "68"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hafsa.knowledge",
+      "kind": "virtues",
+      "title": {
+        "ar": "علمها وروايتها"
+      },
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ويروي أبو داود أن الشفاء بنت عبد الله علّمت حفصة الكتابة، فقد دخل النبي ﷺ وهي عندها، فقال للشفاء: «ألا تعلّمين هذه رقية النملة كما علّمتيها الكتابة»."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "abu-dawud",
+              "locatorStatus": "complete",
+              "hadithNumber": "3887"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "67"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وروت عن النبي ﷺ أحاديث، وروى عنها أخوها عبد الله بن عمر، وحارثة بن وهب، وشتير بن شكل، والمطلب بن أبي وداعة، وعبد الله بن صفوان الجمحي، وطائفة."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "227"
+            },
             {
               "sourceId": "siyar",
               "locatorStatus": "complete",
@@ -189,7 +571,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وروت عن النبي ﷺ أحاديث، وروى عنها أخوها عبد الله بن عمر وغيره."
+            "ar": "ويبلغ مسندها في كتاب بقي بن مخلد ستين حديثًا، اتفق البخاري ومسلم لها على أربعة، وانفرد مسلم بستة، على ما يذكر الذهبي."
           },
           "reliability": "reported",
           "citations": [
@@ -197,7 +579,199 @@
               "sourceId": "siyar",
               "locatorStatus": "complete",
               "volume": 2,
-              "page": "227"
+              "page": "230"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "ومما روته أنها سألت النبي ﷺ:"
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "1566"
+            }
+          ]
+        },
+        {
+          "type": "reportQuote",
+          "textStatus": "complete",
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "1566"
+            }
+          ],
+          "text": {
+            "ar": "يَا رَسُولَ اللَّهِ، مَا شَأْنُ النَّاسِ حَلُّوا بِعُمْرَةٍ وَلَمْ تَحْلِلْ أَنْتَ مِنْ عُمْرَتِكَ"
+          },
+          "summary": {
+            "ar": "سؤال حفصة النبي ﷺ عن بقائه على إحرامه وقد حلّ الناس من عمرتهم."
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "فأخبرها ﷺ أنه لبّد رأسه وقلّد هديه، فلا يحلّ حتى ينحر."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "1566"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكان سؤالها هذا في حجة الوداع، حين أمر النبي ﷺ أزواجه أن يحللن، كما في الصحيحين."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "4398"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "1229"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وروت أن النبي ﷺ كان إذا بدا الصبح صلّى ركعتين خفيفتين قبل أن تقام الصلاة، كما في صحيح البخاري."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "618"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وكان أخوها عبد الله يذكر ما حفظه من صلاة النبي ﷺ، فلما ذكر الركعتين قبل الصبح قال: وكانت ساعة لا يُدخل على النبي ﷺ فيها، حدّثتني حفصة أنه كان إذا أذّن المؤذن وطلع الفجر صلّى ركعتين، كما في صحيح البخاري."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "1180"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وروت أنها ما رأت النبي ﷺ يصلي في سُبحته، أي نافلته، قاعدًا حتى كان قبل وفاته بعام، فكان يصلي فيها قاعدًا، ويقرأ بالسورة فيرتّلها حتى تكون أطول من أطول منها، كما في صحيح مسلم."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "733"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وروت عن النبي ﷺ ما يُقتل من الدواب، كما في الصحيحين، فقال ﷺ:"
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "1828"
+            },
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "1200"
+            }
+          ]
+        },
+        {
+          "type": "hadithQuote",
+          "textStatus": "complete",
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "1828",
+              "grading": {
+                "grade": "sahih",
+                "gradedBy": {
+                  "ar": "البخاري، بإخراجه في صحيحه"
+                }
+              }
+            }
+          ],
+          "text": {
+            "ar": "خَمْسٌ مِنَ الدَّوَابِّ لاَ حَرَجَ عَلَى مَنْ قَتَلَهُنَّ الْغُرَابُ وَالْحِدَأَةُ وَالْفَأْرَةُ وَالْعَقْرَبُ وَالْكَلْبُ الْعَقُورُ"
+          },
+          "summary": {
+            "ar": "قول النبي ﷺ في خمس من الدواب لا حرج على من قتلهن، كما ترويه حفصة."
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وروى عنها عبد الله بن صفوان أنها سمعت النبي ﷺ يخبر أن جيشًا سيؤمّ هذا البيت يغزونه، حتى إذا كانوا ببيداء من الأرض خُسف بهم، فلا يبقى إلا الشريد الذي يخبر عنهم، كما في صحيح مسلم."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "2883"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وروت دعاء أبيها عمر: «اللهم ارزقني شهادة في سبيلك، واجعل موتي في بلد رسولك ﷺ»، أخرجه البخاري من حديث أسلم عن عمر، وذكر تعليقًا أن حفصة سمعته من أبيها بنحوه."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "1890"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وفي صحيح مسلم أن أم مبشّر سمعت النبي ﷺ يقول عند حفصة: «لا يدخل النار إن شاء الله من أصحاب الشجرة أحد، الذين بايعوا تحتها»، فذكرت حفصة قول الله تعالى: ﴿وإن منكم إلا واردها﴾، فقال النبي ﷺ: قد قال الله عز وجل: ﴿ثم ننجي الذين اتقوا ونذر الظالمين فيها جثيًّا﴾."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "muslim",
+              "locatorStatus": "complete",
+              "hadithNumber": "2496"
             }
           ]
         }
@@ -210,6 +784,20 @@
         "ar": "الصحف عندها"
       },
       "blocks": [
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وأمر أبو بكر زيد بن ثابت، بعد مقتل القرّاء يوم اليمامة، أن يتتبّع القرآن فيجمعه، فجمعه من العُسُب واللِّخاف وصدور الرجال."
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "4986"
+            }
+          ]
+        },
         {
           "type": "paragraph",
           "text": {
@@ -227,7 +815,39 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "فلما أراد عثمان أن ينسخ المصاحف أرسل إليها أن ترسل بالصحف، فبعثت بها، ثم ردّها إليها بعد النسخ."
+            "ar": "فلما قدم حذيفة بن اليمان على عثمان وقد أفزعه اختلاف الناس في القراءة، أرسل عثمان إلى حفصة:"
+          },
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "4987"
+            }
+          ]
+        },
+        {
+          "type": "reportQuote",
+          "textStatus": "complete",
+          "reliability": "established",
+          "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "4987"
+            }
+          ],
+          "text": {
+            "ar": "أَنْ أَرْسِلِي إِلَيْنَا بِالصُّحُفِ نَنْسَخُهَا فِي الْمَصَاحِفِ ثُمَّ نَرُدُّهَا إِلَيْكِ"
+          },
+          "summary": {
+            "ar": "رسالة عثمان إلى حفصة يطلب الصحف لينسخها في المصاحف ثم يردّها إليها."
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "فأرسلت بها حفصة إلى عثمان، فنسخوها في المصاحف، ثم ردّ عثمان الصحف إليها."
           },
           "reliability": "established",
           "citations": [
@@ -251,6 +871,27 @@
               "hadithNumber": "2879"
             }
           ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وأوصى عمر إلى حفصة، وأوصت هي إلى أخيها عبد الله بما أوصى به إليها عمر، وبصدقة تصدّقت بها، ومال وقفته بالغابة، على ما يذكر ابن عبد البر."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "istiab",
+              "locatorStatus": "complete",
+              "volume": 4,
+              "page": "1812"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "67"
+            }
+          ]
         }
       ]
     },
@@ -264,7 +905,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "يذكر الذهبي أنها توفيت سنة إحدى وأربعين، وفي ذلك قول آخر."
+            "ar": "يذكر الذهبي أنها توفيت سنة إحدى وأربعين عام الجماعة، وقيل سنة خمس وأربعين."
           },
           "reliability": "reported",
           "citations": [
@@ -273,6 +914,127 @@
               "locatorStatus": "complete",
               "volume": 2,
               "page": "229"
+            }
+          ]
+        },
+        {
+          "type": "disputeNote",
+          "text": {
+            "ar": "واختُلف في سنة وفاتها."
+          },
+          "opinions": [
+            {
+              "text": {
+                "ar": "سنة إحدى وأربعين، عام الجماعة، على ما يذكر الذهبي، وهو قول أبي معشر فيما ينقله ابن عبد البر."
+              },
+              "citations": [
+                {
+                  "sourceId": "siyar",
+                  "locatorStatus": "complete",
+                  "volume": 2,
+                  "page": "229"
+                },
+                {
+                  "sourceId": "istiab",
+                  "locatorStatus": "complete",
+                  "volume": 4,
+                  "page": "1812"
+                }
+              ]
+            },
+            {
+              "text": {
+                "ar": "سنة خمس وأربعين في شعبان، في خلافة معاوية، وهي بنت ستين سنة، على ما يرويه ابن سعد عن الواقدي، وذكره الذهبي وابن عبد البر قولًا."
+              },
+              "citations": [
+                {
+                  "sourceId": "tabaqat-ibn-sad",
+                  "locatorStatus": "complete",
+                  "volume": 8,
+                  "page": "69"
+                },
+                {
+                  "sourceId": "siyar",
+                  "locatorStatus": "complete",
+                  "volume": 2,
+                  "page": "229"
+                },
+                {
+                  "sourceId": "istiab",
+                  "locatorStatus": "complete",
+                  "volume": 4,
+                  "page": "1812"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وصلّى عليها مروان بن الحكم، وهو يومئذ عامل المدينة، فيما يرويه ابن سعد عن الواقدي بإسناده إلى ابن عمر."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "68"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "229"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وحمل مروان سريرها من دار بني حزم إلى دار المغيرة بن شعبة، وتبعها إلى البقيع، وجلس حتى فُرغ من دفنها، فيما يرويه ابن سعد عن الواقدي."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "68"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "69"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "230"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": {
+            "ar": "وحمل أبو هريرة سريرها إلى قبرها، ودُفنت بالبقيع، ونزل في قبرها أخواها عبد الله وعاصم ابنا عمر، وبنو أخيها سالم وعبد الله وحمزة أبناء عبد الله بن عمر، فيما يرويه ابن سعد."
+          },
+          "reliability": "reported",
+          "citations": [
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 8,
+              "page": "69"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "230"
             }
           ]
         }
@@ -289,13 +1051,46 @@
           "type": "lesson",
           "text": {
             "ar": "أن حفظ الأمانة من أعظم القربات، فقد ائتُمنت حفصة على أصل المصحف فأدّته."
-          }
+          },
+          "basedOn": [
+            "hafsa.the-suhuf"
+          ]
         },
         {
           "type": "lesson",
           "text": {
             "ar": "وأن كتمان السرّ من خلق الصالحين، كما صنع أبو بكر."
-          }
+          },
+          "basedOn": [
+            "hafsa.marriage"
+          ]
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "وأن الأب الصالح يسعى في تزويج ابنته بالكفء، فيعرضها على أهل الفضل، كما صنع عمر."
+          },
+          "basedOn": [
+            "hafsa.marriage"
+          ]
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "وأن السؤال عن العلم من شأن أهل الفضل، فقد سألت حفصة النبي ﷺ عمّا أشكل عليها."
+          },
+          "basedOn": [
+            "hafsa.knowledge"
+          ]
+        },
+        {
+          "type": "lesson",
+          "text": {
+            "ar": "وأن الصيام والقيام من أجلّ ما يُذكر به المرء، فقد وُصفت حفصة بأنها صوّامة قوّامة."
+          },
+          "basedOn": [
+            "hafsa.worship"
+          ]
         }
       ]
     }
@@ -320,6 +1115,12 @@
           "locatorStatus": "complete",
           "volume": 2,
           "page": "227"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 8,
+          "page": "66"
         }
       ],
       "sectionId": "hafsa.marriage"
@@ -328,38 +1129,117 @@
       "id": "hafsa.death",
       "era": "afterProphet",
       "date": {
-        "precision": "approx",
+        "precision": "range",
         "era": "afterHijra",
         "hijriYear": 41,
-        "gregorianYear": 661
+        "hijriYearEnd": 45,
+        "gregorianYear": 661,
+        "gregorianYearEnd": 665
       },
       "title": {
         "ar": "وفاتها"
       },
-      "reliability": "reported",
+      "reliability": "disputed",
       "citations": [
         {
           "sourceId": "siyar",
           "locatorStatus": "complete",
           "volume": 2,
           "page": "229"
+        },
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 8,
+          "page": "69"
+        },
+        {
+          "sourceId": "istiab",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "1812"
         }
       ],
       "sectionId": "hafsa.death"
     }
   ],
   "references": [
-    "siyar"
+    "quran",
+    "sirat-ibn-hisham",
+    "tabaqat-ibn-sad",
+    "bukhari",
+    "muslim",
+    "abu-dawud",
+    "istiab",
+    "siyar",
+    "al-bidaya"
   ],
   "review": {
     "status": "approved",
     "editorialFlags": [
       "sensitive"
     ],
-    "coverage": "sample",
-    "authoredBy": "short-profiles-1"
+    "coverage": "complete",
+    "authoredBy": "hafsa-deepen-1"
   },
-  "atAGlance": [],
+  "atAGlance": [
+    {
+      "label": {
+        "ar": "أمها"
+      },
+      "text": {
+        "ar": "زينب بنت مظعون، أخت عثمان بن مظعون"
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 8,
+          "page": "65"
+        },
+        {
+          "sourceId": "istiab",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "1811"
+        }
+      ]
+    },
+    {
+      "label": {
+        "ar": "زوجها الأول"
+      },
+      "text": {
+        "ar": "خنيس بن حذافة السهمي، من أهل بدر"
+      },
+      "reliability": "established",
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "4005"
+        }
+      ]
+    },
+    {
+      "label": {
+        "ar": "مدفنها"
+      },
+      "text": {
+        "ar": "البقيع بالمدينة"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "tabaqat-ibn-sad",
+          "locatorStatus": "complete",
+          "volume": 8,
+          "page": "69"
+        }
+      ]
+    }
+  ],
   "overview": [
     {
       "text": {
@@ -391,7 +1271,22 @@
     },
     {
       "text": {
-        "ar": "يذكر الذهبي أنها توفيت سنة إحدى وأربعين، وفي ذلك قول آخر."
+        "ar": "ويبلغ مسندها في كتاب بقي بن مخلد ستين حديثًا، اتفق البخاري ومسلم لها على أربعة، وانفرد مسلم بستة، على ما يذكر الذهبي."
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "230"
+        }
+      ],
+      "sectionId": "hafsa.knowledge"
+    },
+    {
+      "text": {
+        "ar": "يذكر الذهبي أنها توفيت سنة إحدى وأربعين عام الجماعة، وقيل سنة خمس وأربعين."
       },
       "reliability": "reported",
       "citations": [

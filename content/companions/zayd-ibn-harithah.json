@@ -67,10 +67,10 @@
       "categoryId": "ahl-badr",
       "citations": [
         {
-          "sourceId": "isabah",
+          "sourceId": "siyar",
           "locatorStatus": "complete",
           "volume": 1,
-          "page": "83"
+          "page": "225"
         }
       ]
     }
@@ -91,6 +91,22 @@
           "hadithNumber": "3730"
         }
       ]
+    },
+    {
+      "type": "spouse",
+      "person": {
+        "displayName": {
+          "ar": "زينب بنت جحش"
+        },
+        "companionId": "zaynab-bint-jahsh"
+      },
+      "citations": [
+        {
+          "sourceId": "bukhari",
+          "locatorStatus": "complete",
+          "hadithNumber": "7420"
+        }
+      ]
     }
   ],
   "sections": [
@@ -104,7 +120,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "كان زيد مملوكًا لخديجة، فوهبته للنبي ﷺ فأعتقه، على ما يذكر الذهبي."
+            "ar": "كان زيد مملوكًا لخديجة، فوهبته للنبي ﷺ فأعتقه، على ما يذكر ابن إسحاق والذهبي."
           },
           "reliability": "reported",
           "citations": [
@@ -113,6 +129,12 @@
               "locatorStatus": "complete",
               "volume": 1,
               "page": "223"
+            },
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "248"
             }
           ]
         },
@@ -309,7 +331,9 @@
   ],
   "references": [
     "siyar",
-    "isabah"
+    "sirat-ibn-hisham",
+    "bukhari",
+    "quran"
   ],
   "review": {
     "status": "approved",
@@ -323,7 +347,7 @@
   "overview": [
     {
       "text": {
-        "ar": "كان زيد مملوكًا لخديجة، فوهبته للنبي ﷺ فأعتقه، على ما يذكر الذهبي."
+        "ar": "كان زيد مملوكًا لخديجة، فوهبته للنبي ﷺ فأعتقه، على ما يذكر ابن إسحاق والذهبي."
       },
       "reliability": "reported",
       "citations": [

@@ -33,6 +33,7 @@ class SettingsPage extends ConsumerWidget {
     final size = ref.watch(readingTextSizeProvider);
     final haptics = ref.watch(hapticsEnabledProvider);
     final manifest = ref.watch(contentManifestProvider).value;
+    final version = ref.watch(appVersionProvider).value;
 
     Widget group(String title) => Padding(
       padding: const EdgeInsetsDirectional.only(
@@ -154,8 +155,10 @@ class SettingsPage extends ConsumerWidget {
               contentPadding: EdgeInsets.zero,
               leading: const Icon(Icons.inventory_2_outlined),
               title: Text(
-                // A technical identifier: never localised.
-                l10n.settingsContentVersion(manifest.contentVersion),
+                // A technical identifier, in the reader's digits.
+                l10n.settingsContentVersion(
+                  format.digits(manifest.contentVersion),
+                ),
               ),
               subtitle: Text(
                 // The debug preview says so: nothing here was reviewed.
@@ -170,6 +173,9 @@ class SettingsPage extends ConsumerWidget {
             contentPadding: EdgeInsets.zero,
             leading: const Icon(Icons.info_outline),
             title: Text(l10n.settingsAbout),
+            subtitle: version == null
+                ? null
+                : Text(l10n.aboutVersion(format.digits(version))),
             trailing: const Icon(Icons.chevron_right),
             onTap: () => context.push(AppRoutes.about),
           ),

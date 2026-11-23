@@ -105,7 +105,7 @@
   "@reliabilityProvisional": {
     "description": "Shown on reliability badges of unreviewed (draft) content."
   },
-  "dateHijriYear": "{year} هـ",
+  "dateHijriYear": "{year} هـ",
   "@dateHijriYear": {
     "description": "A year after the Hijrah.",
     "placeholders": {
@@ -114,7 +114,7 @@
       }
     }
   },
-  "dateBeforeHijraYear": "{year} قبل الهجرة",
+  "dateBeforeHijraYear": "{year} قبل الهجرة",
   "@dateBeforeHijraYear": {
     "description": "A year before the Hijrah.",
     "placeholders": {
@@ -123,7 +123,7 @@
       }
     }
   },
-  "dateGregorianYear": "{year} م",
+  "dateGregorianYear": "{year} م",
   "@dateGregorianYear": {
     "description": "A Gregorian year.",
     "placeholders": {
@@ -132,7 +132,7 @@
       }
     }
   },
-  "dateHijriRange": "{start} – {end} هـ",
+  "dateHijriRange": "{start} – {end} هـ",
   "@dateHijriRange": {
     "description": "A span of years after the Hijrah.",
     "placeholders": {
@@ -144,7 +144,7 @@
       }
     }
   },
-  "dateBeforeHijraRange": "{start} – {end} قبل الهجرة",
+  "dateBeforeHijraRange": "{start} – {end} قبل الهجرة",
   "@dateBeforeHijraRange": {
     "description": "A span of years before the Hijrah.",
     "placeholders": {
@@ -156,7 +156,7 @@
       }
     }
   },
-  "dateGregorianRange": "{start} – {end} م",
+  "dateGregorianRange": "{start} – {end} م",
   "@dateGregorianRange": {
     "description": "A span of Gregorian years.",
     "placeholders": {
@@ -457,7 +457,7 @@
       }
     }
   },
-  "citationAuthorDeath": "{author} (ت {year} هـ)",
+  "citationAuthorDeath": "{author} (ت {year} هـ)",
   "@citationAuthorDeath": {
     "description": "Author with death year.",
     "placeholders": {
@@ -1139,7 +1139,7 @@
   "@aboutPrivacyTitle": {
     "description": "About section."
   },
-  "aboutPrivacyBody": "لا يجمع التطبيق أي بيانات عنك ولا يرسلها إلى أي جهة: لا حساب فيه ولا إعلانات ولا أدوات تتبّع أو تحليل، ولا يتصل بالإنترنت.\n\nتُحفظ العناصر المحفوظة ومواضع القراءة والإعدادات ونتائج الاختبارات على جهازك فقط. يمكنك مسح المحفوظات ومواضع القراءة من الإعدادات، ويُزال كل شيء بحذف التطبيق. وقد يضمّنها نظام جهازك في نسخه الاحتياطية بحسب إعداداتك.\n\nلا يُقرأ موقعك إلا حين تطلب ترتيب الأماكن بحسب قربها منك، وبدقة تقريبية. يُستعمل على جهازك لهذا الترتيب فقط، ولا يُحفظ ولا يُرسل.\n\nعند مشاركة نص أو تصدير بياناتك يُسلَّم المحتوى إلى نافذة المشاركة في نظام جهازك، وأنت من يختار وجهته. وعند الاستيراد لا يقرأ التطبيق إلا الملف الذي تختاره.\n\nوعند «أرسل ملاحظاتك» يُفتح تطبيق البريد في جهازك برسالة إلى المطوّر، تكتبها وترسلها بنفسك.",
+  "aboutPrivacyBody": "لا يجمع التطبيق أي بيانات عنك ولا يرسلها إلى أي جهة: لا حساب فيه ولا إعلانات ولا أدوات تتبّع أو تحليل، ولا يتصل بالإنترنت.\n\nتُحفظ العناصر المحفوظة ومواضع القراءة والإعدادات ونتائج الاختبارات على جهازك فقط. يمكنك مسح المحفوظات ومواضع القراءة من الإعدادات، ويُزال كل شيء بحذف التطبيق. وقد يضمّنها نظام جهازك في نسخه الاحتياطية بحسب إعداداتك.\n\nلا يطلب التطبيق إذن الموقع ولا يقرأ موقعك.\n\nعند مشاركة نص أو تصدير بياناتك يُسلَّم المحتوى إلى نافذة المشاركة في نظام جهازك، وأنت من يختار وجهته. وعند الاستيراد لا يقرأ التطبيق إلا الملف الذي تختاره.\n\nوعند «أرسل ملاحظاتك» يُفتح تطبيق البريد في جهازك برسالة إلى المطوّر، تكتبها وترسلها بنفسك.",
   "@aboutPrivacyBody": {
     "description": "About: privacy policy, in short. Must stay true to what the app does; keep in step with site/privacy.html."
   },
@@ -1382,7 +1382,14 @@
   "settingsLearningCounts": "أسئلة المراجعة: {reviews}، الرحلات: {journeys}",
   "@settingsLearningCounts": {
     "description": "Subtitle: how much review and journey data there is.",
-    "placeholders": {"reviews": {"type": "String"}, "journeys": {"type": "String"}}
+    "placeholders": {
+      "reviews": {
+        "type": "String"
+      },
+      "journeys": {
+        "type": "String"
+      }
+    }
   },
   "clearLearningTitle": "مسح سجل المراجعة والرحلات؟",
   "@clearLearningTitle": {
@@ -2430,7 +2437,7 @@
   "@quizQFather": {"placeholders": {"subject": {"type": "String"}}},
   "quizQMother": "مَن أمّ {subject}؟",
   "@quizQMother": {"placeholders": {"subject": {"type": "String"}}},
-  "quizQStory": "أيّ هؤلاء من أصحاب قصة «{subject}»؟",
+  "quizQStory": "مَن مِن هؤلاء الصحابة ورد ذكرُه في قصة «{subject}»؟",
   "@quizQStory": {"placeholders": {"subject": {"type": "String"}}},
   "quizQEventYear": "في أيّ سنة كان حدث «{subject}»؟",
   "@quizQEventYear": {"placeholders": {"subject": {"type": "String"}}},
@@ -2455,7 +2462,7 @@
       }
     }
   },
-  "homeThisMonthNote": "اليوم {day} {month} {year} هـ بتقويم أم القرى، وقد يختلف يومًا عن بداية الشهر برؤية الهلال في بلدك.",
+  "homeThisMonthNote": "اليوم {day} {month} {year} هـ بتقويم أم القرى، وقد يختلف يومًا عن بداية الشهر برؤية الهلال في بلدك.",
   "@homeThisMonthNote": {
     "description": "Home: today's Umm al-Qura date under the month's events.",
     "placeholders": {
@@ -2486,29 +2493,9 @@
   "@visitIntro": {
     "description": "Visiting page introduction."
   },
-  "visitNearMe": "رتّبها بحسب قربها مني",
-  "@visitNearMe": {
-    "description": "Visiting page: button that reads the reader's position."
-  },
   "visitLocating": "جارٍ تحديد موقعك…",
   "@visitLocating": {
     "description": "Visiting page: while reading the position."
-  },
-  "visitLocationOff": "خدمة الموقع متوقفة في جهازك، فشغّلها ثم أعد المحاولة.",
-  "@visitLocationOff": {
-    "description": "Visiting page: location services off."
-  },
-  "visitLocationDenied": "لم يُسمح بالوصول إلى موقعك، فبقيت الأماكن مرتبة بحسب قربها من الحرم.",
-  "@visitLocationDenied": {
-    "description": "Visiting page: permission declined."
-  },
-  "visitLocationDeniedForever": "الوصول إلى موقعك ممنوع لهذا التطبيق، ويمكنك السماح به من إعدادات الجهاز.",
-  "@visitLocationDeniedForever": {
-    "description": "Visiting page: permission permanently declined."
-  },
-  "visitLocationFailed": "تعذّر تحديد موقعك الآن، فحاول مرة أخرى.",
-  "@visitLocationFailed": {
-    "description": "Visiting page: no position returned."
   },
   "visitOpenSettings": "فتح الإعدادات",
   "@visitOpenSettings": {
@@ -2543,15 +2530,6 @@
   "visitUnderOneKm": "على أقل من كيلومتر منك",
   "@visitUnderOneKm": {
     "description": "Visiting page: distance under 1 km."
-  },
-  "visitKmAway": "على نحو {km} كم منك",
-  "@visitKmAway": {
-    "description": "Visiting page: rounded distance in km.",
-    "placeholders": {
-      "km": {
-        "type": "String"
-      }
-    }
   },
   "exploreVisitBody": "أماكن السيرة في المدينة ومكة وما حولهما على خريطة واحدة، ويمكن ترتيبها بحسب قربها منك.",
   "@exploreVisitBody": {
@@ -2675,6 +2653,10 @@
   "@journeyReadNext": {
     "description": "Guided journeys: journeyReadNext"
   },
+  "journeyReadFirst": "ابدأ القراءة",
+  "@journeyReadFirst": {
+    "description": "Guided journeys: the step's reading button before any of its readings is opened; journeyReadNext once one is."
+  },
   "journeyMinutes": "{count, plural, =1{نحو دقيقة قراءة} =2{نحو دقيقتَي قراءة} few{نحو {minutes} دقائق قراءة} other{نحو {minutes} دقيقة قراءة}}",
   "@journeyMinutes": {
     "description": "Guided journeys: journeyMinutes",
@@ -2695,7 +2677,7 @@
   "@journeyReflection": {
     "description": "Guided journeys: journeyReflection"
   },
-  "journeyReflectionOnly": "لا توجد أسئلة مولّدة مناسبة لهذه القراءة الآن. خذ وقتك مع سؤال التأمل.",
+  "journeyReflectionOnly": "لا أسئلة لهذه الخطوة؛ خذ وقتك مع سؤال التأمل.",
   "@journeyReflectionOnly": {
     "description": "Guided journeys: journeyReflectionOnly"
   },
@@ -2875,7 +2857,7 @@
   "@reminderUnsupported": {
     "description": "Optional reading reminder: reminderUnsupported"
   },
-  "reminderTimingNote": "قد يصل التذكير بعد الوقت المختار بحسب إعدادات الجهاز. بعد إعادة تشغيل الجهاز، افتح صُحبة مرة لاستعادة التذكير.",
+  "reminderTimingNote": "قد يصل التذكير بعد الوقت المختار بحسب إعدادات الجهاز. ويبقى التذكير مضبوطًا بعد إعادة تشغيل الجهاز.",
   "@reminderTimingNote": {
     "description": "Optional reading reminder: reminderTimingNote"
   },
@@ -2928,7 +2910,8 @@
   "shareCardStory": "قصة",
   "shareCardAction": "مشاركة البطاقة",
   "shareCardFailed": "تعذّر تجهيز البطاقة. حاول مرة أخرى.",
-  "shareCardFooter": "تطبيق صُحبة • السيرة والصحابة\nGoogle Play",
+  "shareCardFooter": "{store, select, googlePlay{تطبيق صُحبة • السيرة والصحابة\nGoogle Play} other{تطبيق صُحبة • السيرة والصحابة}}",
+  "@shareCardFooter": {"description": "Footer of a shared card; store is googlePlay on Android (where the app is published) and other elsewhere, where no store is named.", "placeholders": {"store": {"type": "String"}}},
   "shareCardOption": "بطاقة",
   "journeyNotStarted": "لم تبدأ بعد، {totalCount, plural, =1{خطوة واحدة} =2{خطوتان} few{{total} خطوات} other{{total} خطوة}}",
   "@journeyNotStarted": {
@@ -3153,11 +3136,11 @@
   "@aboutCreditFontsTitle": {
     "description": "About credits: heading for the bundled fonts."
   },
-  "aboutCreditAmiri": "خط الأميري (Amiri) وخط الأميري قرآن (Amiri Quran)، من تصميم خالد حسني، للأسماء والعناوين البارزة والآيات. برخصة الخطوط المفتوحة SIL OFL 1.1.",
+  "aboutCreditAmiri": "خط الأميري (Amiri)، من تصميم خالد حسني، لاسم «صُحبة» في الشعار وللرموز القليلة التي لا يتضمنها خط بلكس، وخط الأميري قرآن (Amiri Quran) لنص الآيات. برخصة الخطوط المفتوحة SIL OFL 1.1.",
   "@aboutCreditAmiri": {
     "description": "About credits: Amiri and Amiri Quran (OFL 1.1)."
   },
-  "aboutCreditPlex": "خط بلكس العربي (IBM Plex Sans Arabic)، من تصميم مايك أبينك وخاجاك أبيليان ووائل مرقص مع استوديو بولد مندي، لنصوص القراءة وللواجهة. برخصة الخطوط المفتوحة SIL OFL 1.1.",
+  "aboutCreditPlex": "خط بلكس العربي (IBM Plex Sans Arabic) من شركة IBM، صمّمه مايك أبينك واستوديو بولد مندي مع خاجاك أبيليان ووائل مرقص، لكل نصوص التطبيق: القراءة والواجهة. برخصة الخطوط المفتوحة SIL OFL 1.1.",
   "@aboutCreditPlex": {
     "description": "About credits: IBM Plex Sans Arabic (OFL 1.1)."
   },
@@ -3196,5 +3179,21 @@
   "journeyStepContinue": "تابع",
   "@journeyStepContinue": {
     "description": "Journey stepper: the one button, on the current step (review K4)."
-  }
+  },
+  "progressJustStarted": "بدأتَ القراءة",
+  "@progressJustStarted": {"description": "Reading progress under 1%: never shown as zero (decision Q4)."},
+  "profileResumeJustStarted": "{title}، بدأتَ القراءة",
+  "@profileResumeJustStarted": {"description": "Profile: the section to resume, opened but read less than 1% of.", "placeholders": {"title": {"type": "String"}}},
+  "profileNextDetail": "التالي: {title}",
+  "@profileNextDetail": {"description": "Profile: the next section to read, when the sections read so far are finished.", "placeholders": {"title": {"type": "String"}}},
+  "continueNext": "التالي",
+  "@continueNext": {"description": "Continue reading: on the next passage of a work read in part, in place of a percentage."},
+  "homeTileStart": "ابدأ القراءة",
+  "@homeTileStart": {"description": "Quick tile on Home with nothing in progress: opens the next Seerah chapter not yet read."},
+  "welcomeStartHereTour": "جولة تعريفية قصيرة",
+  "@welcomeStartHereTour": {"description": "Welcome, last page: the secondary button that opens the start-here journey, beside «ابدأ»."},
+  "aboutVersion": "إصدار التطبيق: {version}",
+  "@aboutVersion": {"description": "About and Settings: the app version and build, e.g. \"2.2.0 (4)\"; digits follow the reader's choice.", "placeholders": {"version": {"type": "String"}}},
+  "aboutLicenses": "تراخيص البرمجيات مفتوحة المصدر",
+  "@aboutLicenses": {"description": "About: opens the licences of the open-source software and fonts in the app."}
 }

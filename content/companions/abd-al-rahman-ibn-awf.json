@@ -14,9 +14,7 @@
   },
   "review": {
     "status": "approved",
-    "editorialFlags": [
-      "needsLocators"
-    ],
+    "editorialFlags": [],
     "coverage": "complete",
     "authoredBy": "draft-revision-4"
   },
@@ -25,7 +23,13 @@
     "siyar",
     "istiab",
     "usd-al-ghabah",
-    "tabaqat-ibn-sad"
+    "tabaqat-ibn-sad",
+    "sirat-ibn-hisham",
+    "tarikh-al-tabari",
+    "bukhari",
+    "muslim",
+    "abu-dawud",
+    "tirmidhi"
   ],
   "kunya": {
     "ar": "أبو محمد"
@@ -162,20 +166,27 @@
   "overview": [
     {
       "text": {
-        "ar": "ويذكر الذهبي نقلًا عن ابن عبد البر أنه كان مجدودًا في التجارة، وأنه خلّف إبلًا وغنمًا وخيلًا، وكانت له زراعة بالجرف."
+        "ar": "هو عبد الرحمن بن عوف بن عبد عوف، من بني زهرة بن كلاب من قريش، وهم أخوال النبي ﷺ، إذ كانت آمنة بنت وهب أم النبي ﷺ منهم، ويلتقي نسبه بنسب النبي ﷺ في كلاب بن مرة، ويُكنى أبا محمد."
       },
-      "reliability": "reported",
+      "reliability": "established",
       "citations": [
+        {
+          "sourceId": "isabah",
+          "locatorStatus": "complete",
+          "volume": 4,
+          "page": "346"
+        },
         {
           "sourceId": "siyar",
           "locatorStatus": "complete",
           "volume": 1,
-          "page": "92"
+          "page": "68"
         },
         {
-          "sourceId": "bukhari",
+          "sourceId": "tabaqat-ibn-sad",
           "locatorStatus": "complete",
-          "hadithNumber": "2048"
+          "volume": 3,
+          "page": "92"
         }
       ],
       "sectionId": "abd-al-rahman-ibn-awf.early-life"
@@ -203,7 +214,7 @@
     },
     {
       "text": {
-        "ar": "وروى في البخاري أنه كاتب أمية بن خلف على أن يحفظه في صاغيته بمكة، ويحفظ أمية في صاغيته بالمدينة."
+        "ar": "يروي البخاري عنه أنه كاتب أمية بن خلف على أن يحفظه في صاغيته بمكة، ويحفظ أمية في صاغيته بالمدينة."
       },
       "reliability": "established",
       "citations": [
@@ -217,7 +228,7 @@
     },
     {
       "text": {
-        "ar": "وفي رواية المغيرة أن عبد الرحمن لما أحسّ بالنبي ﷺ أراد أن يتأخّر، فأومأ إليه النبي ﷺ أن يستمرّ في الصلاة."
+        "ar": "في غزوة تبوك تأخّر النبي ﷺ لحاجته في صلاة الفجر، فقدّم الناس عبد الرحمن بن عوف فصلّى بهم، فأدرك النبي ﷺ معه ركعة."
       },
       "reliability": "established",
       "citations": [
@@ -227,11 +238,11 @@
           "hadithNumber": "274"
         }
       ],
-      "sectionId": "abd-al-rahman-ibn-awf.virtues"
+      "sectionId": "abd-al-rahman-ibn-awf.with-prophet"
     },
     {
       "text": {
-        "ar": "ويروي الذهبي عن جعفر بن بُرقان أنه بلغه أن عبد الرحمن أعتق ثلاثين ألف بيت، وهو بلاغ لا إسناد متصل له، فيُذكر على أنه رواية."
+        "ar": "يروي الذهبي عن جعفر بن بُرقان أنه بلغه أن عبد الرحمن أعتق ثلاثين ألف بيت، وهو بلاغ لا إسناد متصل له، فيُذكر على أنه رواية."
       },
       "reliability": "reported",
       "citations": [
@@ -510,7 +521,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وفي حديث أنس أن النبي ﷺ دعا له بالبركة حين أخبره بزواجه، وأمره أن يولم ولو بشاة."
+            "ar": "وفي حديث أنس أن النبي ﷺ دعا له بالبركة حين أخبره بزواجه."
           },
           "reliability": "established",
           "citations": [
@@ -567,7 +578,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وروى في البخاري أنه كاتب أمية بن خلف على أن يحفظه في صاغيته بمكة، ويحفظ أمية في صاغيته بالمدينة. ويوم بدر حاول أن يحميه، فرآه بلال واستنصر عليه فريقًا من الأنصار، فقُتل أمية وابنه، وأُصيبت قدم عبد الرحمن بسيف في أثناء ذلك، وكان يُري أثر الجرح."
+            "ar": "ويروي البخاري عنه أنه كاتب أمية بن خلف على أن يحفظه في صاغيته بمكة، ويحفظ أمية في صاغيته بالمدينة. ويوم بدر حاول أن يحميه، فرآه بلال واستنصر عليه فريقًا من الأنصار، فقُتل أمية وابنه، وأُصيبت قدم عبد الرحمن بسيف في أثناء ذلك، وكان يُري أثر الجرح."
           },
           "reliability": "established",
           "citations": [
@@ -1424,7 +1435,7 @@
       "title": {
         "ar": "وفاته بالمدينة"
       },
-      "reliability": "established",
+      "reliability": "reported",
       "citations": [
         {
           "sourceId": "tabaqat-ibn-sad",

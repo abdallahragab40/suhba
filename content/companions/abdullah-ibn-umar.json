@@ -23,12 +23,14 @@
   },
   "death": {
     "date": {
-      "precision": "approx",
+      "precision": "range",
       "era": "afterHijra",
       "hijriYear": 73,
-      "gregorianYear": 692
+      "hijriYearEnd": 74,
+      "gregorianYear": 692,
+      "gregorianYearEnd": 693
     },
-    "reliability": "reported",
+    "reliability": "disputed",
     "citations": [
       {
         "sourceId": "siyar",
@@ -308,15 +310,17 @@
       "id": "abdullah-ibn-umar.death",
       "era": "afterProphet",
       "date": {
-        "precision": "approx",
+        "precision": "range",
         "era": "afterHijra",
         "hijriYear": 73,
-        "gregorianYear": 692
+        "hijriYearEnd": 74,
+        "gregorianYear": 692,
+        "gregorianYearEnd": 693
       },
       "title": {
         "ar": "وفاته بمكة"
       },
-      "reliability": "reported",
+      "reliability": "disputed",
       "citations": [
         {
           "sourceId": "siyar",
@@ -329,7 +333,8 @@
     }
   ],
   "references": [
-    "siyar"
+    "siyar",
+    "bukhari"
   ],
   "review": {
     "status": "approved",

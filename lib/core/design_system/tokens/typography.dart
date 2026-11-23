@@ -50,6 +50,17 @@ abstract final class AppTypography {
       labelSmall: _style(AppFonts.plexArabic, 13, 1.45, FontWeight.w500),
     ).apply(bodyColor: color, displayColor: color);
   }
+
+  /// The most the display and headline roles grow with the system text
+  /// size. They start large: at the largest accessibility sizes (2× and
+  /// more) a heading such as «تعرّف على صحابي» would break a word to a
+  /// line on a phone. Reading text is never capped.
+  static const displayMaxScale = 1.5;
+
+  /// The text scaler for a display or headline role: the system's, capped
+  /// at [displayMaxScale]. Pass it as `Text.textScaler`.
+  static TextScaler displayScaler(BuildContext context) =>
+      MediaQuery.textScalerOf(context).clamp(maxScaleFactor: displayMaxScale);
 }
 
 /// Text styles outside the Material type scale: long-form reading, Qur'anic

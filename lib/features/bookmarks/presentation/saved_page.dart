@@ -31,7 +31,8 @@ class SavedPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
     final bookmarksAsync = ref.watch(bookmarksProvider);
-    final progressAsync = ref.watch(inProgressProvider);
+    // Unfinished passages, and the next passage of works read in part.
+    final progressAsync = ref.watch(continueReadingProvider);
 
     final Widget body;
     if (bookmarksAsync is AsyncError || progressAsync is AsyncError) {
@@ -40,7 +41,8 @@ class SavedPage extends ConsumerWidget {
         message: l10n.savedLoadErrorMessage,
         onRetry: () => ref
           ..invalidate(bookmarksProvider)
-          ..invalidate(inProgressProvider),
+          ..invalidate(allProgressProvider)
+          ..invalidate(continueReadingProvider),
       );
     } else if (!bookmarksAsync.hasValue || !progressAsync.hasValue) {
       body = const Padding(

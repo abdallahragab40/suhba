@@ -1,4 +1,5 @@
-// Built only from the pinned 1.0 checkout by tool/check_android_upgrade.sh.
+// Built only from the pinned 1.0 checkout (6e213d0) by
+// tool/check_android_upgrade.sh <device> 6e213d0.
 import 'dart:convert';
 import 'dart:io';
 
@@ -15,6 +16,12 @@ import 'package:suhba/features/bookmarks/domain/bookmark.dart';
 import 'package:suhba/features/reading_progress/data/drift_reading_progress_repository.dart';
 import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
 
+/// Every user table and its key order, as 1.0 (schema 3) defines them.
+const _tables = {
+  'bookmarks': 'target_type, target_id',
+  'reading_progress_entries': 'target_type, target_id',
+};
+
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
   testWidgets(
@@ -23,7 +30,7 @@ void main() {
       final info = await PackageInfo.fromPlatform();
       // Fail before opening or writing any data if the wrong APK was installed.
       expect(info.packageName, 'com.abdallahragab.suhba.integration_test');
-      expect(info.version, '1.0.0');
+      expect(info.version, const String.fromEnvironment('SUHBA_UPGRADE_FROM'));
       final db = AppDatabase.open();
       expect(db.schemaVersion, 3);
       final storedVersion = await db
@@ -96,24 +103,25 @@ void main() {
       for (final entry in doubles.entries) {
         await settings.setDouble(entry.key, entry.value);
       }
-      final bookmarks = await db
-          .customSelect(
-            'SELECT * FROM bookmarks ORDER BY target_type, target_id',
-          )
-          .get();
-      final positions = await db
-          .customSelect(
-            'SELECT * FROM reading_progress_entries ORDER BY target_type, target_id',
-          )
-          .get();
+      final tables = <String, List<Map<String, Object?>>>{};
+      for (final MapEntry(key: table, value: order) in _tables.entries) {
+        tables[table] = [
+          for (final row
+              in await db
+                  .customSelect('SELECT * FROM $table ORDER BY $order')
+                  .get())
+            row.data,
+        ];
+      }
       final snapshot = File(
-        '${(await getApplicationDocumentsDirectory()).path}/v1-upgrade-snapshot.json',
+        '${(await getApplicationDocumentsDirectory()).path}/upgrade-snapshot.json',
       );
       await snapshot.writeAsString(
         jsonEncode({
+          'fromVersion': info.version,
           'schema': 3,
-          'bookmarks': bookmarks.map((r) => r.data).toList(),
-          'positions': positions.map((r) => r.data).toList(),
+          'tables': tables,
+          'orders': _tables,
           'strings': strings,
           'doubles': doubles,
         }),
@@ -124,7 +132,7 @@ void main() {
       await tester.pumpAndSettle();
       await tester.runAsync(db.close);
       debugPrintSynchronously(
-        'UPGRADE_V1_SEEDED 6 bookmarks, 4 positions, 3 quiz best scores',
+        'UPGRADE_SEEDED ${info.version} schema 3: 6 bookmarks, 4 positions, 3 quiz best scores',
       );
     },
     skip: !const bool.fromEnvironment('SUHBA_UPGRADE_SEED'),

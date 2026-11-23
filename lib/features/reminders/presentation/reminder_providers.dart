@@ -168,10 +168,18 @@ class ReminderController extends AsyncNotifier<ReminderState>
       return _view(config);
     }
     var allowed = await _service.permissionGranted();
-    if (!allowed && !config.permissionRequested) {
-      config = config.copyWith(permissionRequested: true);
-      // Persist before opening the OS dialog, even if the app is then killed.
-      await _save(config);
+    if (!allowed) {
+      if (!config.permissionRequested) {
+        config = config.copyWith(permissionRequested: true);
+        // Persist before opening the OS dialog, even if the app is then
+        // killed.
+        await _save(config);
+      }
+      // Asked each time the reader turns the reminder on: the system
+      // decides whether its dialog may still appear. Android shows it again
+      // after one refusal and stops once the reader has refused twice; the
+      // request then returns at once, still refused, and the page offers
+      // the system settings instead.
       allowed = await _service.requestPermission();
     }
     if (!allowed) {

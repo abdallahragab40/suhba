@@ -202,8 +202,9 @@ GoRouter buildAppRouter({String initialLocation = AppRoutes.home}) {
           VisualPage(visualId: state.pathParameters['vid']!),
         ),
       ),
-      StatefulShellRoute.indexedStack(
+      StatefulShellRoute(
         builder: (context, state, shell) => AppShell(navigationShell: shell),
+        navigatorContainerBuilder: AppShell.branchContainer,
         branches: [
           StatefulShellBranch(
             routes: [

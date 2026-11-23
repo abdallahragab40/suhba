@@ -92,7 +92,7 @@ List<InlineSpan> linkedSpans(
   List<TapGestureRecognizer> recognizers,
 ) {
   if (matches.isEmpty) return [TextSpan(text: text)];
-  final colors = SuhbaColors.of(context);
+  final style = glossaryLinkStyle(SuhbaColors.of(context));
   final spans = <InlineSpan>[];
   var at = 0;
   for (final m in matches) {
@@ -105,11 +105,7 @@ List<InlineSpan> linkedSpans(
         text: text.substring(m.start, m.end),
         recognizer: tap,
         semanticsLabel: text.substring(m.start, m.end),
-        style: TextStyle(
-          decoration: TextDecoration.underline,
-          decorationStyle: TextDecorationStyle.dotted,
-          decorationColor: colors.link,
-        ),
+        style: style,
       ),
     );
     at = m.end;
@@ -117,6 +113,17 @@ List<InlineSpan> linkedSpans(
   if (at < text.length) spans.add(TextSpan(text: text.substring(at)));
   return spans;
 }
+
+/// How a linked glossary term is set in running text: in the link colour on
+/// a faint wash of it. Not underlined: an underline, dotted or solid, runs
+/// through the dots below Arabic letters (the ي of «قريش», «يُكنى»), and
+/// Flutter cannot lower it beneath them. The wash marks the term by more
+/// than its colour alone, and follows the theme: green on paper and sepia,
+/// soft gold at night on a fainter wash ([SuhbaColors.linkWash]).
+TextStyle glossaryLinkStyle(SuhbaColors colors) => TextStyle(
+  color: colors.link,
+  background: Paint()..color = colors.link.withValues(alpha: colors.linkWash),
+);
 
 /// A term's definition, with its sources and a way to the full glossary.
 Future<void> showGlossarySheet(BuildContext context, GlossaryTerm term) {

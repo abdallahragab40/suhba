@@ -21,7 +21,9 @@
     "tabaqat-ibn-sad",
     "bukhari",
     "muslim",
-    "al-bidaya"
+    "al-bidaya",
+    "usd-al-ghabah",
+    "siyar"
   ],
   "placeIds": [
     "makkah",
@@ -220,7 +222,7 @@
         },
         {
           "text": {
-            "ar": "وذكر ابن كثير أنها عاشت خمسين سنة، وقال إنه الأصح، فتكون على قوله دون الأربعين يوم زواجها، وقيل عاشت خمسًا وستين."
+            "ar": "ونقل ابن كثير عن مصعب الزبيري أنها بلغت خمسًا وستين سنة، ويقال خمسين، وأن هذا أصح، فتكون على هذا القول دون الأربعين يوم زواجها."
           },
           "citations": [
             {
@@ -236,7 +238,7 @@
     {
       "type": "paragraph",
       "text": {
-        "ar": "وولدت له خديجة أولاده كلهم إلا إبراهيم: القاسم وبه كان يُكنى، وعبد الله، وزينب، ورقية، وأم كلثوم، وفاطمة."
+        "ar": "وولدت له خديجة أولاده كلهم إلا إبراهيم: القاسم وبه كان يُكنى، وزينب، ورقية، وأم كلثوم، وفاطمة."
       },
       "reliability": "established",
       "citations": [
@@ -255,9 +257,80 @@
       ]
     },
     {
+      "type": "disputeNote",
+      "text": {
+        "ar": "واختلفت الروايات في عدد بنيه منها وأسمائهم."
+      },
+      "opinions": [
+        {
+          "text": {
+            "ar": "ابنان: القاسم وعبد الله، وهو قول قتادة؛ ويذكر الزبير بن بكار أن عبد الله كان يقال له الطيب ويقال له الطاهر، وبمعناه رواية الكلبي عند ابن سعد، وفيها أنه سُمّي بذلك لأنه وُلد في الإسلام."
+          },
+          "citations": [
+            {
+              "sourceId": "usd-al-ghabah",
+              "locatorStatus": "complete",
+              "volume": 5,
+              "page": "436"
+            },
+            {
+              "sourceId": "tabaqat-ibn-sad",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "106"
+            },
+            {
+              "sourceId": "al-bidaya",
+              "locatorStatus": "complete",
+              "volume": 3,
+              "page": "465"
+            }
+          ]
+        },
+        {
+          "text": {
+            "ar": "ثلاثة: القاسم والطاهر والطيب، على ما يذكر ابن إسحاق، وأنهم هلكوا في الجاهلية."
+          },
+          "citations": [
+            {
+              "sourceId": "sirat-ibn-hisham",
+              "locatorStatus": "complete",
+              "volume": 1,
+              "page": "190"
+            },
+            {
+              "sourceId": "usd-al-ghabah",
+              "locatorStatus": "complete",
+              "volume": 5,
+              "page": "435"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "114"
+            }
+          ]
+        },
+        {
+          "text": {
+            "ar": "أربعة: القاسم والطاهر والطيب وعبد الله، فيما يرويه الزبير بن بكار عن أبي الأسود."
+          },
+          "citations": [
+            {
+              "sourceId": "usd-al-ghabah",
+              "locatorStatus": "complete",
+              "volume": 5,
+              "page": "436"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "type": "paragraph",
       "text": {
-        "ar": "وتوفي ابناه القاسم وعبد الله صغيرين، وأما بناته فأدركن الإسلام وأسلمن وهاجرن، كما تذكر كتب السيرة أخبارهن."
+        "ar": "ومات بنوه منها صغارًا، وأما بناته فأدركن الإسلام وأسلمن وهاجرن، كما تذكر كتب السيرة أخبارهن."
       },
       "reliability": "reported",
       "citations": [

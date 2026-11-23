@@ -241,7 +241,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "أمّر النبي ﷺ على جيش مؤتة زيد بن حارثة، وقال: إن قُتل زيد فجعفر، وإن قُتل جعفر فعبد الله بن رواحة. فقاتل جعفر بعد زيد حتى قُتل، ويروي ابن عمر أنهم وجدوا في جسده بضعًا وتسعين من طعنة ورمية، ليس منها شيء في دبره."
+            "ar": "أمّر النبي ﷺ على جيش مؤتة زيد بن حارثة، وقال: إن قُتل زيد فجعفر، وإن قُتل جعفر فعبد الله بن رواحة. فقاتل جعفر بعد زيد حتى قُتل، ويروي ابن عمر أنهم وجدوا في جسده بضعًا وتسعين من طعنة ورمية، وفي رواية عنه: خمسين بين طعنة وضربة، ليس منها شيء في دبره."
           },
           "reliability": "established",
           "citations": [
@@ -249,6 +249,11 @@
               "sourceId": "bukhari",
               "locatorStatus": "complete",
               "hadithNumber": "4261"
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "4260"
             }
           ]
         },
@@ -307,6 +312,30 @@
   ],
   "timeline": [
     {
+      "id": "jafar-ibn-abi-talib.abyssinia",
+      "era": "makkan",
+      "date": {
+        "precision": "approx",
+        "era": "beforeHijra",
+        "hijriYear": 8,
+        "gregorianYear": 615
+      },
+      "title": {
+        "ar": "هجرته إلى الحبشة"
+      },
+      "reliability": "reported",
+      "citations": [
+        {
+          "sourceId": "sirat-ibn-hisham",
+          "locatorStatus": "complete",
+          "volume": 1,
+          "page": "323"
+        }
+      ],
+      "sectionId": "jafar-ibn-abi-talib.abyssinia",
+      "eventId": "hijrah-to-abyssinia"
+    },
+    {
       "id": "jafar-ibn-abi-talib.khaybar",
       "era": "madinan",
       "date": {
@@ -355,7 +384,9 @@
   ],
   "references": [
     "isabah",
-    "sirat-ibn-hisham"
+    "sirat-ibn-hisham",
+    "siyar",
+    "bukhari"
   ],
   "review": {
     "status": "approved",

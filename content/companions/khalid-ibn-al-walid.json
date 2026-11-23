@@ -250,7 +250,7 @@
         {
           "type": "lesson",
           "text": {
-            "ar": "أن الإسلام يجبّ ما قبله، فقد صار قائد المشركين يوم أحد سيفًا من سيوف الله."
+            "ar": "أن الإسلام يجبّ ما قبله، فقد صار قائدُ خيل المشركين يوم أحد سيفًا من سيوف الله."
           }
         },
         {
@@ -334,7 +334,8 @@
     }
   ],
   "references": [
-    "siyar"
+    "siyar",
+    "bukhari"
   ],
   "review": {
     "status": "approved",
@@ -431,7 +432,25 @@
       "sectionId": "khalid-ibn-al-walid.death"
     }
   ],
-  "relations": [],
+  "relations": [
+    {
+      "type": "relative",
+      "person": {
+        "displayName": {
+          "ar": "ميمونة بنت الحارث"
+        },
+        "companionId": "maymunah"
+      },
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "238"
+        }
+      ]
+    }
+  ],
   "storyIds": [
     "the-archers-of-uhud",
     "the-conquest-of-makkah"

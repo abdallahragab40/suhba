@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "kind": "glossaryTerm",
+  "id": "hanif",
+  "reviewerId": "suhba-editorial",
+  "approvedAt": "2026-11-23",
+  "contentHash": "2969d946855cd929d34b886a2b47fe6c22f9aa9c9940a3d906a1ee92a85042d2",
+  "checklist": {
+    "sourcesMatch": true,
+    "gradingsCorrect": true,
+    "noEmbellishment": true,
+    "reliabilityCorrect": true,
+    "honorificsCorrect": true,
+    "fitnaSignOff": true,
+    "sensitiveSignOff": true
+  },
+  "notes": "Editorial review on the owner's instruction (2026-11-23); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors, after checking the sources. New glossary term: the definition checked against its citations and against the passages it links in (it matches every sense used there). Every hadith citation was compared with its text in content/hadith (the pinned dataset), and quoted wording is verbatim from it. Qur'an references checked by the validator. Not checked: chains of transmission, and page locators against printed copies. This is not the approval of a qualified scholar."
+}

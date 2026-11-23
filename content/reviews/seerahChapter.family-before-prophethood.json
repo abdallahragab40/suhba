@@ -3,8 +3,8 @@
   "kind": "seerahChapter",
   "id": "family-before-prophethood",
   "reviewerId": "suhba-editorial",
-  "approvedAt": "2026-11-20",
-  "contentHash": "ffb19e694571d352f75b1fba55cd9d822346f4b2a3feebaf0903a1192516b235",
+  "approvedAt": "2026-11-23",
+  "contentHash": "52e0a4ec4cd32b6640acf0e76c94cb5e725c8478012cb4e2076baa98f3a4d73b",
   "checklist": {
     "sourcesMatch": true,
     "gradingsCorrect": true,
@@ -14,5 +14,5 @@
     "fitnaSignOff": true,
     "sensitiveSignOff": true
   },
-  "notes": "Editorial review on the owner's instruction (2026-11-20); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors. Checked: the full text read for accuracy, embellishment, honorifics and the stated reliability; every hadith citation compared with the cited text in content/hadith; Qur'an quotations checked by the validator against the Tanzil text. Not checked: book page locators against the printed editions, and chains of transmission. This is not the approval of a qualified scholar."
+  "notes": "Editorial review on the owner's instruction (2026-11-23); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors, after checking the sources. Revised so the sons of Khadijah match her profile: the agreed children are stated as established and the disagreement over her sons (two, three or four) is a disputeNote with each opinion sourced; the age dispute now attributes the «fifty years» opinion to Mus'ab al-Zubayri as quoted by Ibn Kathir (al-Bidaya 3/464). Every hadith citation was compared with its text in content/hadith (the pinned dataset), and quoted wording is verbatim from it. Book locators were checked against digital transcriptions of the editions named in sources.json (OpenITI: Ibn Hisham, al-Saqqa ed.; Ibn Sa'd, Ata ed.; Siyar, Risala ed.; al-Bidaya, al-Turki ed.; Wikisource: Usd al-Ghabah, Wahbiyya printing). Not checked: chains of transmission, and page locators against printed copies. This is not the approval of a qualified scholar."
 }

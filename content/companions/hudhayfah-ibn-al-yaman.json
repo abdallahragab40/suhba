@@ -76,15 +76,14 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "ويذكر حذيفة أنه لم يمنعه أن يشهد بدرًا إلا أنه خرج هو وأبوه فأخذهم كفار قريش، فأخذوا عليهم عهدًا ألّا يقاتلوا مع النبي ﷺ، فأمرهم النبي ﷺ أن يفوا لهم."
+            "ar": "ويذكر حذيفة أنه لم يمنعه أن يشهد بدرًا إلا أنه خرج هو وأبوه فأخذهم كفار قريش، فأخذوا عليهم عهدًا ألّا يقاتلوا مع النبي ﷺ، فأمرهم النبي ﷺ أن يفوا لهم، كما في صحيح مسلم."
           },
-          "reliability": "reported",
+          "reliability": "established",
           "citations": [
             {
-              "sourceId": "siyar",
+              "sourceId": "muslim",
               "locatorStatus": "complete",
-              "volume": 2,
-              "page": "364"
+              "hadithNumber": "1787"
             }
           ]
         }
@@ -301,7 +300,9 @@
     }
   ],
   "references": [
-    "siyar"
+    "siyar",
+    "bukhari",
+    "muslim"
   ],
   "review": {
     "status": "approved",
@@ -315,15 +316,14 @@
   "overview": [
     {
       "text": {
-        "ar": "ويذكر حذيفة أنه لم يمنعه أن يشهد بدرًا إلا أنه خرج هو وأبوه فأخذهم كفار قريش، فأخذوا عليهم عهدًا ألّا يقاتلوا مع النبي ﷺ، فأمرهم النبي ﷺ أن يفوا لهم."
+        "ar": "يذكر حذيفة أنه لم يمنعه أن يشهد بدرًا إلا أنه خرج هو وأبوه فأخذهم كفار قريش، فأخذوا عليهم عهدًا ألّا يقاتلوا مع النبي ﷺ، فأمرهم النبي ﷺ أن يفوا لهم."
       },
-      "reliability": "reported",
+      "reliability": "established",
       "citations": [
         {
-          "sourceId": "siyar",
+          "sourceId": "muslim",
           "locatorStatus": "complete",
-          "volume": 2,
-          "page": "364"
+          "hadithNumber": "1787"
         }
       ],
       "sectionId": "hudhayfah-ibn-al-yaman.father"

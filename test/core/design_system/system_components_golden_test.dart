@@ -9,7 +9,8 @@ import 'package:suhba/core/design_system/tokens/app_icons.dart';
 import '../../helpers/pump_app.dart';
 
 /// The Material components the app relies on, in the light, dark and
-/// feature themes, so a palette change shows everywhere at once: buttons,
+/// feature themes (day and night), so a palette change shows everywhere at
+/// once: buttons,
 /// switches, slider, progress, chips, segments, text field, snack bar,
 /// dialog and navigation bar.
 void main() {
@@ -19,6 +20,7 @@ void main() {
     ('light', AppTheme.light),
     ('dark', AppTheme.dark),
     ('feature', AppTheme.feature),
+    ('feature_dark', AppTheme.featureDark),
   ]) {
     testWidgets('system components, $name', (tester) async {
       tester.view

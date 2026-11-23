@@ -251,37 +251,37 @@ abstract class AppLocalizations {
   /// A year after the Hijrah.
   ///
   /// In ar, this message translates to:
-  /// **'{year} هـ'**
+  /// **'{year} هـ'**
   String dateHijriYear(String year);
 
   /// A year before the Hijrah.
   ///
   /// In ar, this message translates to:
-  /// **'{year} قبل الهجرة'**
+  /// **'{year} قبل الهجرة'**
   String dateBeforeHijraYear(String year);
 
   /// A Gregorian year.
   ///
   /// In ar, this message translates to:
-  /// **'{year} م'**
+  /// **'{year} م'**
   String dateGregorianYear(String year);
 
   /// A span of years after the Hijrah.
   ///
   /// In ar, this message translates to:
-  /// **'{start} – {end} هـ'**
+  /// **'{start} – {end} هـ'**
   String dateHijriRange(String start, String end);
 
   /// A span of years before the Hijrah.
   ///
   /// In ar, this message translates to:
-  /// **'{start} – {end} قبل الهجرة'**
+  /// **'{start} – {end} قبل الهجرة'**
   String dateBeforeHijraRange(String start, String end);
 
   /// A span of Gregorian years.
   ///
   /// In ar, this message translates to:
-  /// **'{start} – {end} م'**
+  /// **'{start} – {end} م'**
   String dateGregorianRange(String start, String end);
 
   /// A span between two fully formatted dates (e.g. across the Hijrah).
@@ -569,7 +569,7 @@ abstract class AppLocalizations {
   /// Author with death year.
   ///
   /// In ar, this message translates to:
-  /// **'{author} (ت {year} هـ)'**
+  /// **'{author} (ت {year} هـ)'**
   String citationAuthorDeath(String author, String year);
 
   /// A hadith grading and who made it.
@@ -1385,7 +1385,7 @@ abstract class AppLocalizations {
   /// About: privacy policy, in short. Must stay true to what the app does; keep in step with site/privacy.html.
   ///
   /// In ar, this message translates to:
-  /// **'لا يجمع التطبيق أي بيانات عنك ولا يرسلها إلى أي جهة: لا حساب فيه ولا إعلانات ولا أدوات تتبّع أو تحليل، ولا يتصل بالإنترنت.\n\nتُحفظ العناصر المحفوظة ومواضع القراءة والإعدادات ونتائج الاختبارات على جهازك فقط. يمكنك مسح المحفوظات ومواضع القراءة من الإعدادات، ويُزال كل شيء بحذف التطبيق. وقد يضمّنها نظام جهازك في نسخه الاحتياطية بحسب إعداداتك.\n\nلا يُقرأ موقعك إلا حين تطلب ترتيب الأماكن بحسب قربها منك، وبدقة تقريبية. يُستعمل على جهازك لهذا الترتيب فقط، ولا يُحفظ ولا يُرسل.\n\nعند مشاركة نص أو تصدير بياناتك يُسلَّم المحتوى إلى نافذة المشاركة في نظام جهازك، وأنت من يختار وجهته. وعند الاستيراد لا يقرأ التطبيق إلا الملف الذي تختاره.\n\nوعند «أرسل ملاحظاتك» يُفتح تطبيق البريد في جهازك برسالة إلى المطوّر، تكتبها وترسلها بنفسك.'**
+  /// **'لا يجمع التطبيق أي بيانات عنك ولا يرسلها إلى أي جهة: لا حساب فيه ولا إعلانات ولا أدوات تتبّع أو تحليل، ولا يتصل بالإنترنت.\n\nتُحفظ العناصر المحفوظة ومواضع القراءة والإعدادات ونتائج الاختبارات على جهازك فقط. يمكنك مسح المحفوظات ومواضع القراءة من الإعدادات، ويُزال كل شيء بحذف التطبيق. وقد يضمّنها نظام جهازك في نسخه الاحتياطية بحسب إعداداتك.\n\nلا يطلب التطبيق إذن الموقع ولا يقرأ موقعك.\n\nعند مشاركة نص أو تصدير بياناتك يُسلَّم المحتوى إلى نافذة المشاركة في نظام جهازك، وأنت من يختار وجهته. وعند الاستيراد لا يقرأ التطبيق إلا الملف الذي تختاره.\n\nوعند «أرسل ملاحظاتك» يُفتح تطبيق البريد في جهازك برسالة إلى المطوّر، تكتبها وترسلها بنفسك.'**
   String get aboutPrivacyBody;
 
   /// Source group.
@@ -3269,7 +3269,7 @@ abstract class AppLocalizations {
   /// No description provided for @quizQStory.
   ///
   /// In ar, this message translates to:
-  /// **'أيّ هؤلاء من أصحاب قصة «{subject}»؟'**
+  /// **'مَن مِن هؤلاء الصحابة ورد ذكرُه في قصة «{subject}»؟'**
   String quizQStory(String subject);
 
   /// No description provided for @quizQEventYear.
@@ -3323,7 +3323,7 @@ abstract class AppLocalizations {
   /// Home: today's Umm al-Qura date under the month's events.
   ///
   /// In ar, this message translates to:
-  /// **'اليوم {day} {month} {year} هـ بتقويم أم القرى، وقد يختلف يومًا عن بداية الشهر برؤية الهلال في بلدك.'**
+  /// **'اليوم {day} {month} {year} هـ بتقويم أم القرى، وقد يختلف يومًا عن بداية الشهر برؤية الهلال في بلدك.'**
   String homeThisMonthNote(String day, String month, String year);
 
   /// Title of the visiting page.
@@ -3350,41 +3350,11 @@ abstract class AppLocalizations {
   /// **'أماكن من السيرة وحياة الصحابة في المدينة ومكة وما حولهما، مع ما جرى فيها ومصادره. الصفحة تعرّف بتاريخ هذه الأماكن، وليست دليلًا للمناسك ولا لآداب الزيارة.'**
   String get visitIntro;
 
-  /// Visiting page: button that reads the reader's position.
-  ///
-  /// In ar, this message translates to:
-  /// **'رتّبها بحسب قربها مني'**
-  String get visitNearMe;
-
   /// Visiting page: while reading the position.
   ///
   /// In ar, this message translates to:
   /// **'جارٍ تحديد موقعك…'**
   String get visitLocating;
-
-  /// Visiting page: location services off.
-  ///
-  /// In ar, this message translates to:
-  /// **'خدمة الموقع متوقفة في جهازك، فشغّلها ثم أعد المحاولة.'**
-  String get visitLocationOff;
-
-  /// Visiting page: permission declined.
-  ///
-  /// In ar, this message translates to:
-  /// **'لم يُسمح بالوصول إلى موقعك، فبقيت الأماكن مرتبة بحسب قربها من الحرم.'**
-  String get visitLocationDenied;
-
-  /// Visiting page: permission permanently declined.
-  ///
-  /// In ar, this message translates to:
-  /// **'الوصول إلى موقعك ممنوع لهذا التطبيق، ويمكنك السماح به من إعدادات الجهاز.'**
-  String get visitLocationDeniedForever;
-
-  /// Visiting page: no position returned.
-  ///
-  /// In ar, this message translates to:
-  /// **'تعذّر تحديد موقعك الآن، فحاول مرة أخرى.'**
-  String get visitLocationFailed;
 
   /// Visiting page: opens the app's device settings.
   ///
@@ -3421,12 +3391,6 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'على أقل من كيلومتر منك'**
   String get visitUnderOneKm;
-
-  /// Visiting page: rounded distance in km.
-  ///
-  /// In ar, this message translates to:
-  /// **'على نحو {km} كم منك'**
-  String visitKmAway(String km);
 
   /// Explore: body of the visiting entry.
   ///
@@ -3559,6 +3523,12 @@ abstract class AppLocalizations {
   /// **'تابع القراءة'**
   String get journeyReadNext;
 
+  /// Guided journeys: the step's reading button before any of its readings is opened; journeyReadNext once one is.
+  ///
+  /// In ar, this message translates to:
+  /// **'ابدأ القراءة'**
+  String get journeyReadFirst;
+
   /// Guided journeys: journeyMinutes
   ///
   /// In ar, this message translates to:
@@ -3580,7 +3550,7 @@ abstract class AppLocalizations {
   /// Guided journeys: journeyReflectionOnly
   ///
   /// In ar, this message translates to:
-  /// **'لا توجد أسئلة مولّدة مناسبة لهذه القراءة الآن. خذ وقتك مع سؤال التأمل.'**
+  /// **'لا أسئلة لهذه الخطوة؛ خذ وقتك مع سؤال التأمل.'**
   String get journeyReflectionOnly;
 
   /// Guided journeys: journeyCompleteStep
@@ -3796,7 +3766,7 @@ abstract class AppLocalizations {
   /// Optional reading reminder: reminderTimingNote
   ///
   /// In ar, this message translates to:
-  /// **'قد يصل التذكير بعد الوقت المختار بحسب إعدادات الجهاز. بعد إعادة تشغيل الجهاز، افتح صُحبة مرة لاستعادة التذكير.'**
+  /// **'قد يصل التذكير بعد الوقت المختار بحسب إعدادات الجهاز. ويبقى التذكير مضبوطًا بعد إعادة تشغيل الجهاز.'**
   String get reminderTimingNote;
 
   /// Optional reading reminder: reminderNotificationTitle
@@ -3895,11 +3865,11 @@ abstract class AppLocalizations {
   /// **'تعذّر تجهيز البطاقة. حاول مرة أخرى.'**
   String get shareCardFailed;
 
-  /// No description provided for @shareCardFooter.
+  /// Footer of a shared card; store is googlePlay on Android (where the app is published) and other elsewhere, where no store is named.
   ///
   /// In ar, this message translates to:
-  /// **'تطبيق صُحبة • السيرة والصحابة\nGoogle Play'**
-  String get shareCardFooter;
+  /// **'{store, select, googlePlay{تطبيق صُحبة • السيرة والصحابة\nGoogle Play} other{تطبيق صُحبة • السيرة والصحابة}}'**
+  String shareCardFooter(String store);
 
   /// No description provided for @shareCardOption.
   ///
@@ -4120,13 +4090,13 @@ abstract class AppLocalizations {
   /// About credits: Amiri and Amiri Quran (OFL 1.1).
   ///
   /// In ar, this message translates to:
-  /// **'خط الأميري (Amiri) وخط الأميري قرآن (Amiri Quran)، من تصميم خالد حسني، للأسماء والعناوين البارزة والآيات. برخصة الخطوط المفتوحة SIL OFL 1.1.'**
+  /// **'خط الأميري (Amiri)، من تصميم خالد حسني، لاسم «صُحبة» في الشعار وللرموز القليلة التي لا يتضمنها خط بلكس، وخط الأميري قرآن (Amiri Quran) لنص الآيات. برخصة الخطوط المفتوحة SIL OFL 1.1.'**
   String get aboutCreditAmiri;
 
   /// About credits: IBM Plex Sans Arabic (OFL 1.1).
   ///
   /// In ar, this message translates to:
-  /// **'خط بلكس العربي (IBM Plex Sans Arabic)، من تصميم مايك أبينك وخاجاك أبيليان ووائل مرقص مع استوديو بولد مندي، لنصوص القراءة وللواجهة. برخصة الخطوط المفتوحة SIL OFL 1.1.'**
+  /// **'خط بلكس العربي (IBM Plex Sans Arabic) من شركة IBM، صمّمه مايك أبينك واستوديو بولد مندي مع خاجاك أبيليان ووائل مرقص، لكل نصوص التطبيق: القراءة والواجهة. برخصة الخطوط المفتوحة SIL OFL 1.1.'**
   String get aboutCreditPlex;
 
   /// About credits: button opening the sources page, where the full Tanzil notice is.
@@ -4182,6 +4152,54 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'تابع'**
   String get journeyStepContinue;
+
+  /// Reading progress under 1%: never shown as zero (decision Q4).
+  ///
+  /// In ar, this message translates to:
+  /// **'بدأتَ القراءة'**
+  String get progressJustStarted;
+
+  /// Profile: the section to resume, opened but read less than 1% of.
+  ///
+  /// In ar, this message translates to:
+  /// **'{title}، بدأتَ القراءة'**
+  String profileResumeJustStarted(String title);
+
+  /// Profile: the next section to read, when the sections read so far are finished.
+  ///
+  /// In ar, this message translates to:
+  /// **'التالي: {title}'**
+  String profileNextDetail(String title);
+
+  /// Continue reading: on the next passage of a work read in part, in place of a percentage.
+  ///
+  /// In ar, this message translates to:
+  /// **'التالي'**
+  String get continueNext;
+
+  /// Quick tile on Home with nothing in progress: opens the next Seerah chapter not yet read.
+  ///
+  /// In ar, this message translates to:
+  /// **'ابدأ القراءة'**
+  String get homeTileStart;
+
+  /// Welcome, last page: the secondary button that opens the start-here journey, beside «ابدأ».
+  ///
+  /// In ar, this message translates to:
+  /// **'جولة تعريفية قصيرة'**
+  String get welcomeStartHereTour;
+
+  /// About and Settings: the app version and build, e.g. "2.2.0 (4)"; digits follow the reader's choice.
+  ///
+  /// In ar, this message translates to:
+  /// **'إصدار التطبيق: {version}'**
+  String aboutVersion(String version);
+
+  /// About: opens the licences of the open-source software and fonts in the app.
+  ///
+  /// In ar, this message translates to:
+  /// **'تراخيص البرمجيات مفتوحة المصدر'**
+  String get aboutLicenses;
 }
 
 class _AppLocalizationsDelegate

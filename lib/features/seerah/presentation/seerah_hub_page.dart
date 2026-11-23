@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:suhba/app/router/app_shell.dart';
 import 'package:suhba/app/router/routes.dart';
 import 'package:suhba/core/design_system/theme/app_theme.dart';
-import 'package:suhba/core/design_system/tokens/palette.dart';
 import 'package:suhba/core/design_system/tokens/radii.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
@@ -19,6 +18,7 @@ import 'package:suhba/core/design_system/widgets/section_header.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/core/result/failure.dart';
+import 'package:suhba/features/reading_progress/domain/reading_entry.dart';
 import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
 import 'package:suhba/features/reading_progress/presentation/passage_contents.dart';
 import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
@@ -71,19 +71,15 @@ class SeerahHubPage extends ConsumerWidget {
 }
 
 /// Where to continue the Seerah: the most recent unfinished chapter, else
-/// the first chapter not yet finished, else null (finished, or no
-/// progress yet and so start at chapter one).
+/// the next chapter not yet finished after the furthest one read (see
+/// [resumePassage]), else null (finished, or no progress yet and so start
+/// at chapter one).
 SeerahChapterSummary? seerahResumeChapter(
   List<SeerahChapterSummary> chapters,
   Map<String, ReadingProgress> progress,
 ) {
-  final unfinished = [
-    for (final c in chapters)
-      if (progress[c.id] case final p? when !p.completed) (c, p),
-  ]..sort((a, b) => b.$2.updatedAt.compareTo(a.$2.updatedAt));
-  if (unfinished.isNotEmpty) return unfinished.first.$1;
-  if (progress.isEmpty) return null;
-  return chapters.where((c) => progress[c.id]?.completed != true).firstOrNull;
+  final id = resumePassage([for (final c in chapters) c.id], progress);
+  return chapters.where((c) => c.id == id).firstOrNull;
 }
 
 class _Hub extends ConsumerWidget {
@@ -264,10 +260,13 @@ class SeerahOpening extends ConsumerWidget {
         .where((c) => progress[c.id]?.completed ?? false)
         .length;
     final finished = total > 0 && done == total;
+    // Any saved position counts as started, a chapter part-read included,
+    // so the words never say «لم تبدأ بعد» above «تابع: …».
+    final started = index.chapters.any((c) => progress.containsKey(c.id));
     final progressText = finished
         ? l10n.seerahProgressDone
         : done == 0
-        ? l10n.seerahProgressNone
+        ? (started ? l10n.progressJustStarted : l10n.seerahProgressNone)
         : l10n.seerahProgressRead(
             total,
             format.integer(done),
@@ -279,10 +278,12 @@ class SeerahOpening extends ConsumerWidget {
     };
 
     return Theme(
-      data: AppTheme.feature,
+      data: AppTheme.featureOf(context),
       child: Builder(
         builder: (context) {
           final textTheme = Theme.of(context).textTheme;
+          final scheme = Theme.of(context).colorScheme;
+          final colors = SuhbaColors.of(context);
           return Stack(
             children: [
               const Positioned.fill(
@@ -305,19 +306,20 @@ class SeerahOpening extends ConsumerWidget {
                           s.subtitle.of(context),
                           style: SuhbaTextStyles.of(
                             context,
-                          ).kicker.copyWith(color: Palette.goldOnInk),
+                          ).kicker.copyWith(color: colors.accent),
                         ),
                         const SizedBox(height: AppSpacing.sm),
                         Semantics(
                           header: true,
                           child: Text(
+                            textScaler: AppTypography.displayScaler(context),
                             s.title.of(context),
                             textAlign: TextAlign.center,
                             style:
                                 (compact
                                         ? textTheme.displaySmall
                                         : textTheme.displayMedium)
-                                    ?.copyWith(color: Palette.paper),
+                                    ?.copyWith(color: scheme.onSurface),
                           ),
                         ),
                         if (!s.review.isApproved) ...[
@@ -340,7 +342,7 @@ class SeerahOpening extends ConsumerWidget {
                             // A lead paragraph on the banner: a step below
                             // the reading size, so the way in stays near.
                             style: SuhbaTextStyles.of(context).reading.copyWith(
-                              color: Palette.paper,
+                              color: scheme.onSurface,
                               fontSize: 18,
                             ),
                           ),
@@ -352,14 +354,14 @@ class SeerahOpening extends ConsumerWidget {
                               ProgressRing(
                                 value: done / total,
                                 label: progressText,
-                                color: Palette.goldOnInk,
-                                trackColor: Palette.lineOnGreen,
+                                color: colors.accent,
+                                trackColor: colors.line,
                                 size: 44,
                                 child: finished
-                                    ? const Icon(
+                                    ? Icon(
                                         Icons.check,
                                         size: 20,
-                                        color: Palette.goldOnInk,
+                                        color: colors.accent,
                                       )
                                     // Empty at zero: the words say it.
                                     : done == 0
@@ -368,7 +370,7 @@ class SeerahOpening extends ConsumerWidget {
                                         format.integer(done),
                                         textScaler: TextScaler.noScaling,
                                         style: textTheme.titleSmall?.copyWith(
-                                          color: Palette.paper,
+                                          color: scheme.onSurface,
                                         ),
                                       ),
                               ),
@@ -379,7 +381,7 @@ class SeerahOpening extends ConsumerWidget {
                                     progressText,
                                     style: SuhbaTextStyles.of(
                                       context,
-                                    ).kicker.copyWith(color: Palette.paper),
+                                    ).kicker.copyWith(color: scheme.onSurface),
                                   ),
                                 ),
                               ),
@@ -425,14 +427,12 @@ class SeerahOpening extends ConsumerWidget {
                                   child: Text(
                                     l10n.seerahScrollHint,
                                     style: SuhbaTextStyles.of(context).kicker
-                                        .copyWith(
-                                          color: Palette.paperDimOnGreen,
-                                        ),
+                                        .copyWith(color: colors.onSurfaceDim),
                                   ),
                                 ),
-                                const Icon(
+                                Icon(
                                   Icons.keyboard_arrow_down,
-                                  color: Palette.goldOnInk,
+                                  color: colors.accent,
                                 ),
                               ],
                             ),

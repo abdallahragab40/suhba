@@ -247,10 +247,15 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "ويذكر الذهبي أنها حزنت عليه حزنًا شديدًا، وأنها قالت لأنس بعد دفنه كيف طابت أنفسهم أن يحثوا التراب على رسول الله ﷺ."
+            "ar": "وحزنت عليه حزنًا شديدًا، وفي صحيح البخاري أنها قالت لأنس بعد دفنه: يا أنس، أطابت أنفسكم أن تحثوا على رسول الله ﷺ التراب؟"
           },
-          "reliability": "reported",
+          "reliability": "established",
           "citations": [
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "4462"
+            },
             {
               "sourceId": "siyar",
               "locatorStatus": "complete",
@@ -354,7 +359,12 @@
     }
   ],
   "references": [
-    "siyar"
+    "siyar",
+    "tabaqat-ibn-sad",
+    "al-bidaya",
+    "bukhari",
+    "muslim",
+    "quran"
   ],
   "review": {
     "status": "approved",

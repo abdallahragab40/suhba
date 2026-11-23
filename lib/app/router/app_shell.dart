@@ -23,6 +23,32 @@ class AppShell extends StatelessWidget {
   /// label, and every other screen keeps the reader's text size.
   static const maxLabelScale = 1.1;
 
+  /// Lays the destinations one above the other, only the current one shown,
+  /// as `StatefulShellRoute.indexedStack` does. The others stay alive with
+  /// their tickers and heroes off: two destinations may show the same
+  /// companion at once (Home's companion of the day, the directory), and a
+  /// route opened above the tabs must find each hero tag only once.
+  static Widget branchContainer(
+    BuildContext context,
+    StatefulNavigationShell shell,
+    List<Widget> children,
+  ) => IndexedStack(
+    index: shell.currentIndex,
+    children: [
+      for (var i = 0; i < children.length; i++)
+        Offstage(
+          offstage: i != shell.currentIndex,
+          child: TickerMode(
+            enabled: i == shell.currentIndex,
+            child: HeroMode(
+              enabled: i == shell.currentIndex,
+              child: children[i],
+            ),
+          ),
+        ),
+    ],
+  );
+
   void _select(BuildContext context, int index) {
     Haptics.selection(context);
     // Tapping the current destination again returns it to its root.

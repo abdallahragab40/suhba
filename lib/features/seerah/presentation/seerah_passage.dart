@@ -113,7 +113,11 @@ class SeerahPassageReader extends ConsumerWidget {
         const SizedBox(height: AppSpacing.xxs),
         Semantics(
           header: true,
-          child: Text(title, style: Theme.of(context).textTheme.displaySmall),
+          child: Text(
+            title,
+            textScaler: AppTypography.displayScaler(context),
+            style: Theme.of(context).textTheme.displaySmall,
+          ),
         ),
         const SizedBox(height: AppSpacing.sm),
         Text(

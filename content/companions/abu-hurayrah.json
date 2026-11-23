@@ -16,19 +16,21 @@
     "أبو هريرة"
   ],
   "summary": {
-    "ar": "من دوس، قدم المدينة عام خيبر فلزم النبي ﷺ نحو أربع سنين، فكان أحفظ الصحابة لحديثه وأكثرهم رواية، وتوفي بالمدينة نحو سنة سبع أو ثمان أو تسع وخمسين."
+    "ar": "من دوس، قدم المدينة عام خيبر فلزم النبي ﷺ نحو ثلاث سنين أو أكثر، فكان أحفظ الصحابة لحديثه وأكثرهم رواية، وتوفي بالمدينة نحو سنة سبع أو ثمان أو تسع وخمسين."
   },
   "lineage": {
     "ar": "من دوس من الأزد، من اليمن"
   },
   "death": {
     "date": {
-      "precision": "approx",
+      "precision": "range",
       "era": "afterHijra",
       "hijriYear": 57,
-      "gregorianYear": 677
+      "hijriYearEnd": 59,
+      "gregorianYear": 677,
+      "gregorianYearEnd": 679
     },
-    "reliability": "reported",
+    "reliability": "disputed",
     "citations": [
       {
         "sourceId": "siyar",
@@ -159,7 +161,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "كان أبو هريرة أكثر الصحابة رواية للحديث، ويذكر الذهبي أنه روى عنه ثمان مئة من أهل العلم أو أكثر، مع أن صحبته كانت نحو أربع سنين من فتح خيبر إلى وفاة النبي ﷺ."
+            "ar": "كان أبو هريرة أكثر الصحابة رواية للحديث، ويذكر الذهبي أنه روى عنه ثمان مئة من أهل العلم أو أكثر، مع أن صحبته كانت نحو ثلاث سنين أو أكثر من فتح خيبر إلى وفاة النبي ﷺ، وقد قال هو: صحبت رسول الله ﷺ ثلاث سنين."
           },
           "reliability": "reported",
           "citations": [
@@ -174,6 +176,11 @@
               "locatorStatus": "complete",
               "volume": 2,
               "page": "590"
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "3591"
             }
           ]
         }
@@ -254,15 +261,17 @@
       "id": "abu-hurayrah.death",
       "era": "afterProphet",
       "date": {
-        "precision": "approx",
+        "precision": "range",
         "era": "afterHijra",
         "hijriYear": 57,
-        "gregorianYear": 677
+        "hijriYearEnd": 59,
+        "gregorianYear": 677,
+        "gregorianYearEnd": 679
       },
       "title": {
         "ar": "وفاته بالمدينة"
       },
-      "reliability": "reported",
+      "reliability": "disputed",
       "citations": [
         {
           "sourceId": "siyar",
@@ -275,7 +284,9 @@
     }
   ],
   "references": [
-    "siyar"
+    "siyar",
+    "bukhari",
+    "muslim"
   ],
   "review": {
     "status": "approved",

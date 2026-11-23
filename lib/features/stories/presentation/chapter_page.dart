@@ -148,6 +148,7 @@ class _Chapter extends ConsumerWidget {
         Semantics(
           header: true,
           child: Text(
+            textScaler: AppTypography.displayScaler(context),
             chapter.title.of(context),
             style: Theme.of(context).textTheme.headlineMedium,
           ),

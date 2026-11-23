@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:suhba/core/design_system/tokens/palette.dart';
+import 'package:suhba/core/design_system/theme/app_theme.dart';
 import 'package:suhba/core/design_system/tokens/radii.dart';
 import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
@@ -48,6 +48,8 @@ class PlacePanel extends StatelessWidget {
     final format = DisplayFormatter.of(context);
     final colors = SuhbaColors.of(context);
     final kicker = SuhbaTextStyles.of(context).kicker;
+    // The scene's words take the feature theme's colours, as the scene does.
+    final feature = AppTheme.featureOf(context);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -68,12 +70,15 @@ class PlacePanel extends StatelessWidget {
                     children: [
                       Text(
                         l10n.sceneIllustration,
-                        style: kicker.copyWith(color: Palette.goldOnInk),
+                        style: kicker.copyWith(
+                          color: feature.extension<SuhbaColors>()!.accent,
+                        ),
                       ),
                       Text(
                         place.name.of(context),
+                        textScaler: AppTypography.displayScaler(context),
                         style: Theme.of(context).textTheme.displaySmall
-                            ?.copyWith(color: Palette.paper),
+                            ?.copyWith(color: feature.colorScheme.onSurface),
                       ),
                     ],
                   ),

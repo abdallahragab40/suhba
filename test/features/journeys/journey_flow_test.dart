@@ -136,6 +136,49 @@ void main() {
       expect(progress.answeredKeys, isNotEmpty);
     },
   );
+  // A step not begun says «ابدأ القراءة»; once a reading is part-read,
+  // «تابع القراءة».
+  for (final partRead in [false, true]) {
+    testApp('the step reading button, ${partRead ? 'part-read' : 'unread'}', (
+      tester,
+    ) async {
+      final app = AppUnderTest(
+        bundle: journeyBundle(),
+        location: AppRoutes.journeyStep(id, '$id.first'),
+      );
+      await app.container.read(journeyActionsProvider).start(id);
+      if (partRead) {
+        final runtime = await app.container.read(
+          journeyRuntimeProvider(id).future,
+        );
+        final ref = runtime.readings['$id.first']!.nonNulls.first.ref;
+        await app.container
+            .read(readingProgressRepositoryProvider)
+            .save(
+              ReadingProgress(
+                target: ref.progressTarget,
+                targetId: ref.targetId,
+                parentId: ref.parentId ?? '',
+                fraction: 0.4,
+                completed: false,
+                contentVersion: '1',
+                updatedAt: DateTime(2026, 11, 20),
+              ),
+            );
+      }
+      await app.pump(tester);
+      final button = find.ancestor(
+        of: find.text(partRead ? 'تابع القراءة' : 'ابدأ القراءة'),
+        matching: find.byType(FilledButton),
+      );
+      expect(button, findsOneWidget);
+      expect(
+        find.text(partRead ? 'ابدأ القراءة' : 'تابع القراءة'),
+        findsNothing,
+      );
+    });
+  }
+
   testApp('all launch journeys resolve offline and finish in order', (
     tester,
   ) async {

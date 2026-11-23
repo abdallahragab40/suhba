@@ -7,13 +7,17 @@ import 'package:suhba/core/design_system/tokens/typography.dart';
 import 'package:suhba/core/design_system/widgets/undo_snack_bar.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/features/reading_progress/domain/continue_items.dart';
 import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
+import 'package:suhba/features/reading_progress/presentation/progress_label.dart';
 import 'package:suhba/features/reading_progress/presentation/progress_providers.dart';
 import 'package:suhba/shared/content/domain/content_target.dart';
 import 'package:suhba/shared/content/presentation/target_description.dart';
 import 'package:suhba/shared/content/providers.dart';
 
-/// Unfinished sections and chapters, most recent first. Renders nothing
+/// Where reading can be picked up, most recent first: unfinished sections
+/// and chapters, and the next passage of each biography, story or the
+/// Seerah read in part (see [continueReadingProvider]). Renders nothing
 /// when there are none.
 class ContinueReadingList extends ConsumerWidget {
   const ContinueReadingList({this.limit = 3, this.header, super.key});
@@ -25,15 +29,104 @@ class ContinueReadingList extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final items = ref.watch(inProgressProvider).value ?? const [];
+    final items = ref.watch(continueReadingProvider).value ?? const [];
     if (items.isEmpty) return const SizedBox.shrink();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         ?header,
-        for (final p in items.take(limit))
-          ContinueReadingTile(key: ValueKey(p.targetId), progress: p),
+        for (final item in items.take(limit))
+          switch (item.progress) {
+            final p? => ContinueReadingTile(
+              key: ValueKey(p.targetId),
+              progress: p,
+            ),
+            null => NextPassageTile(key: ValueKey(item.passageId), item: item),
+          },
       ],
+    );
+  }
+}
+
+/// The next passage of a work read in part: its title, what it belongs
+/// to, and «التالي» where an unfinished passage shows how far it was read.
+/// Like [ContinueReadingTile], it keeps its place while its content loads,
+/// and is not shown if the passage left the content.
+class NextPassageTile extends ConsumerWidget {
+  const NextPassageTile({required this.item, super.key});
+
+  final ContinueItem item;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
+    final colors = SuhbaColors.of(context);
+    final lookup = ref.watch(targetLookupProvider(item.contentTarget));
+    if (lookup case AsyncData(value: TargetMissing())) {
+      return const SizedBox.shrink();
+    }
+    final description = switch (lookup) {
+      AsyncData(:final value) => describeTarget(context, value),
+      _ => null,
+    };
+    if (description == null) {
+      return Card(
+        margin: const EdgeInsetsDirectional.only(bottom: AppSpacing.sm),
+        child: ListTile(
+          title: Text(
+            lookup is AsyncError
+                ? l10n.savedItemLoadError
+                : l10n.savedItemLoading,
+            style: TextStyle(color: colors.onSurfaceDim),
+          ),
+          trailing: lookup is AsyncError
+              ? IconButton(
+                  tooltip: l10n.retry,
+                  icon: const Icon(Icons.refresh),
+                  onPressed: () =>
+                      ref.invalidate(targetLookupProvider(item.contentTarget)),
+                )
+              : null,
+        ),
+      );
+    }
+    final d = description;
+    return Card(
+      margin: const EdgeInsetsDirectional.only(bottom: AppSpacing.sm),
+      clipBehavior: Clip.antiAlias,
+      child: InkWell(
+        onTap: () => context.push(d.route),
+        child: Padding(
+          padding: const EdgeInsets.all(AppSpacing.md),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      d.parent ?? '',
+                      style: SuhbaTextStyles.of(context).kicker,
+                    ),
+                    Text(
+                      d.title,
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(width: AppSpacing.sm),
+              Text(
+                l10n.continueNext,
+                style: SuhbaTextStyles.of(
+                  context,
+                ).kicker.copyWith(color: colors.accentText),
+              ),
+              Icon(Icons.chevron_right, color: colors.accentText),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
@@ -119,20 +212,22 @@ class ContinueReadingTile extends ConsumerWidget {
               const SizedBox(height: AppSpacing.xs),
               Row(
                 children: [
+                  // The percentage beside it says it, in the reader's
+                  // digits; the bar would add a bare Western one.
                   Expanded(
-                    child: LinearProgressIndicator(
-                      value: p.fraction,
-                      minHeight: 4,
-                      borderRadius: BorderRadius.circular(2),
-                      color: colors.accent,
-                      backgroundColor: colors.line,
+                    child: ExcludeSemantics(
+                      child: LinearProgressIndicator(
+                        value: p.fraction,
+                        minHeight: 4,
+                        borderRadius: BorderRadius.circular(2),
+                        color: colors.accent,
+                        backgroundColor: colors.line,
+                      ),
                     ),
                   ),
                   const SizedBox(width: AppSpacing.sm),
                   Text(
-                    l10n.progressRead(
-                      format.percent((p.fraction * 100).round()),
-                    ),
+                    readProgressLabel(l10n, format, p.fraction),
                     style: SuhbaTextStyles.of(context).kicker,
                   ),
                 ],

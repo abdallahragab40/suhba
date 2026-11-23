@@ -3,8 +3,8 @@
   "kind": "event",
   "id": "hijrah-to-abyssinia",
   "reviewerId": "suhba-editorial",
-  "approvedAt": "2026-11-20",
-  "contentHash": "c6cccacd82a3d37dd544a464c4823b87b1a80b4b052449e0c1867339d458e3aa",
+  "approvedAt": "2026-11-23",
+  "contentHash": "32c24a3296a7d67fba67f3de90429a2845bf44c784247ba19981bb68a4a2ec62",
   "checklist": {
     "sourcesMatch": true,
     "gradingsCorrect": true,
@@ -14,5 +14,5 @@
     "fitnaSignOff": true,
     "sensitiveSignOff": true
   },
-  "notes": "Editorial review on the owner's instruction (2026-11-20); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors. Checked: the full text read for accuracy, embellishment, honorifics and the stated reliability; every hadith citation compared with the cited text in content/hadith; Qur'an quotations checked by the validator against the Tanzil text. Not checked: book page locators against the printed editions, and chains of transmission. This is not the approval of a qualified scholar."
+  "notes": "Editorial review on the owner's instruction (2026-11-23); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors, after checking the sources. Participants added: Ja'far ibn Abi Talib, Umm Salamah and Umm Habibah, each named in Ibn Ishaq's list of the emigrants (Ibn Hisham 1/322–324, checked against the OpenITI transcription of the al-Saqqa edition). Every hadith citation was compared with its text in content/hadith (the pinned dataset), and quoted wording is verbatim from it. Not checked: chains of transmission, and page locators against printed copies. This is not the approval of a qualified scholar."
 }

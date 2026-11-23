@@ -459,7 +459,10 @@
     }
   ],
   "references": [
-    "siyar"
+    "siyar",
+    "bukhari",
+    "muslim",
+    "quran"
   ],
   "review": {
     "status": "approved",

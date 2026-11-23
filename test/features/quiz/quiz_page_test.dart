@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:suhba/core/feedback/haptics.dart';
 import 'package:suhba/core/format/display_formatter.dart';
+import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/core/storage/settings_store.dart';
 import 'package:suhba/features/quiz/domain/quiz_generator.dart';
 import 'package:suhba/features/quiz/domain/quiz_question.dart';
@@ -11,6 +12,7 @@ import 'package:suhba/features/quiz/presentation/quiz_home_page.dart';
 import 'package:suhba/features/quiz/presentation/quiz_play_page.dart';
 import 'package:suhba/features/quiz/presentation/quiz_providers.dart';
 import 'package:suhba/features/quiz/presentation/quiz_widgets.dart';
+import 'package:suhba/shared/content/domain/localized_text.dart';
 
 import '../../helpers/app_harness.dart';
 import '../../helpers/pump_app.dart';
@@ -144,6 +146,60 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
+  test('a story question asks which Companion the story names', () {
+    // «أيّ هؤلاء من أصحاب قصة …» read as "who owns the story"; the prompt
+    // asks who appears in it, in words that fit a woman as well as a man.
+    const story = LocalizedText(ar: 'الرماة يوم أحد', en: 'The archers');
+    const q = QuizQuestion(
+      key: 'story:the-archers-of-uhud:talha',
+      kind: QuizKind.companionInStory,
+      subject: story,
+      choices: [
+        TextChoice(LocalizedText(ar: 'أ', en: 'a')),
+        TextChoice(LocalizedText(ar: 'ب', en: 'b')),
+      ],
+      correct: 0,
+    );
+    expect(
+      quizPrompt(lookupAppLocalizations(const Locale('ar')), q),
+      'مَن مِن هؤلاء الصحابة ورد ذكرُه في قصة «الرماة يوم أحد»؟',
+    );
+  });
+
+  for (final scale in [1.0, 2.0]) {
+    testApp('on a small phone at $scale× the feedback scrolls into view', (
+      tester,
+    ) async {
+      tester.view
+        ..devicePixelRatio = 1
+        ..physicalSize = const Size(320, 569);
+      tester.platformDispatcher.textScaleFactorTestValue = scale;
+      addTearDown(tester.view.reset);
+      addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
+      final (_, round) = await open(tester, '/quiz/mixed');
+      final list = tester.getRect(find.byType(ListView));
+      await tester.tap(tile(label(tester, round.first.answer)));
+      await tester.pumpAndSettle();
+
+      bool onScreen(Finder f) {
+        final r = tester.getRect(f);
+        return r.top >= list.top - 0.5 && r.bottom <= list.bottom + 0.5;
+      }
+
+      // The verdict, which names the right answer, is in view; and the
+      // way on with it whenever the feedback fits the screen.
+      expect(onScreen(find.text('أحسنت!')), isTrue);
+      final next = find.widgetWithText(FilledButton, 'التالي');
+      if (scale == 1) expect(onScreen(next), isTrue);
+      await tester.ensureVisible(next);
+      await tester.pumpAndSettle();
+      await tester.tap(next);
+      await tester.pumpAndSettle();
+      expect(find.text('السؤال ٢ من ١٠'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+  }
+
   group('goldens', () {
     Future<void> phone(WidgetTester tester) async {
       tester.view
@@ -158,6 +214,31 @@ void main() {
       await expectLater(
         find.byType(QuizHomePage),
         matchesGoldenFile('goldens/quiz_home.png'),
+      );
+    });
+
+    // At night the quiz is on the deep feature green.
+    testApp('quiz home, dark', (tester) async {
+      await phone(tester);
+      tester.platformDispatcher.platformBrightnessTestValue = Brightness.dark;
+      addTearDown(tester.platformDispatcher.clearPlatformBrightnessTestValue);
+      await open(tester, '/quiz');
+      await expectLater(
+        find.byType(QuizHomePage),
+        matchesGoldenFile('goldens/quiz_home_dark.png'),
+      );
+    });
+
+    testApp('a question answered right, dark', (tester) async {
+      await phone(tester);
+      tester.platformDispatcher.platformBrightnessTestValue = Brightness.dark;
+      addTearDown(tester.platformDispatcher.clearPlatformBrightnessTestValue);
+      final (_, round) = await open(tester, '/quiz/mixed');
+      await tester.tap(tile(label(tester, round.first.answer)));
+      await tester.pumpAndSettle();
+      await expectLater(
+        find.byType(QuizPlayPage),
+        matchesGoldenFile('goldens/quiz_answered_dark.png'),
       );
     });
 

@@ -97,7 +97,7 @@ void main() {
     await tester.tap(find.text('المصطلحات'));
     await tester.pumpAndSettle();
     expect(app.location, '/glossary');
-    expect(find.byType(ListTile), findsNWidgets(30));
+    expect(find.byType(ListTile), findsNWidgets(37));
   });
 }
 

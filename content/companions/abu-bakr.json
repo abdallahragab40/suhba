@@ -15,7 +15,6 @@
   "review": {
     "status": "approved",
     "editorialFlags": [
-      "needsLocators",
       "sensitive"
     ],
     "authoredBy": "draft-revision-4",
@@ -26,7 +25,15 @@
     "siyar",
     "istiab",
     "usd-al-ghabah",
-    "tabaqat-ibn-sad"
+    "tabaqat-ibn-sad",
+    "sirat-ibn-hisham",
+    "tarikh-al-tabari",
+    "al-bidaya",
+    "bukhari",
+    "muslim",
+    "abu-dawud",
+    "tirmidhi",
+    "quran"
   ],
   "kunya": {
     "ar": "أبو بكر"
@@ -547,7 +554,7 @@
     },
     {
       "text": {
-        "ar": "ولما اشتد المرض بالنبي ﷺ أمر أن يصلي أبو بكر بالناس."
+        "ar": "لما اشتد المرض بالنبي ﷺ أمر أن يصلي أبو بكر بالناس."
       },
       "reliability": "established",
       "citations": [
@@ -594,6 +601,23 @@
           "locatorStatus": "complete",
           "volume": 8,
           "page": "16"
+        }
+      ]
+    },
+    {
+      "type": "child",
+      "person": {
+        "displayName": {
+          "ar": "أسماء بنت أبي بكر"
+        },
+        "companionId": "asma-bint-abi-bakr"
+      },
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "287"
         }
       ]
     }
@@ -769,7 +793,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "ولم يتردد في الإسلام حين عرضه عليه النبي ﷺ؛ فيروي ابن إسحاق أن النبي ﷺ كان يذكر أنه ما دعا أحدًا إلى الإسلام إلا كانت له عنده كبوة وتردد، إلا أبا بكر، فإنه ما تلعثم فيه."
+            "ar": "ولم يتردد في الإسلام حين عرضه عليه النبي ﷺ؛ فيذكر ابن إسحاق بلاغًا أن النبي ﷺ كان يذكر أنه ما دعا أحدًا إلى الإسلام إلا كانت له عنده كبوة وتردد، إلا أبا بكر، فإنه ما تلعثم فيه."
           },
           "reliability": "reported",
           "citations": [
@@ -782,28 +806,18 @@
           ]
         },
         {
-          "type": "hadithQuote",
-          "textStatus": "complete",
+          "type": "paragraph",
+          "text": {
+            "ar": "وفي حديث أبي الدرداء في صحيح البخاري أنه لما كان بين أبي بكر وعمر شيء قال النبي ﷺ: «إن الله بعثني إليكم فقلتم: كذبت، وقال أبو بكر: صدق، وواساني بنفسه وماله، فهل أنتم تاركو لي صاحبي؟»."
+          },
           "reliability": "established",
           "citations": [
             {
               "sourceId": "bukhari",
               "locatorStatus": "complete",
-              "hadithNumber": "3661",
-              "grading": {
-                "grade": "sahih",
-                "gradedBy": {
-                  "ar": "البخاري، بإخراجه في صحيحه"
-                }
-              }
+              "hadithNumber": "3661"
             }
-          ],
-          "text": {
-            "ar": "إِنَّ اللَّهَ بَعَثَنِي إِلَيْكُمْ فَقُلْتُمْ كَذَبْتَ‏.‏ وَقَالَ أَبُو بَكْرٍ صَدَقَ‏.‏ وَوَاسَانِي بِنَفْسِهِ وَمَالِهِ، فَهَلْ أَنْتُمْ تَارِكُو لِي صَاحِبِي"
-          },
-          "summary": {
-            "ar": "حديث أبي الدرداء في خصومة بين أبي بكر وعمر، وفيه أن النبي ﷺ ذكر أن الناس كذّبوه أول ما بُعث وصدّقه أبو بكر، وواساه بنفسه وماله."
-          }
+          ]
         },
         {
           "type": "paragraph",
@@ -1308,39 +1322,23 @@
           }
         },
         {
-          "type": "hadithQuote",
-          "textStatus": "complete",
+          "type": "paragraph",
+          "text": {
+            "ar": "وسأله عمرو بن العاص: أي الناس أحب إليك؟ فقال: «عائشة»، قال: فمن الرجال؟ فقال: «أبوها»، قال: ثم من؟ قال: «ثم عمر بن الخطاب»، فعدّ رجالًا."
+          },
           "reliability": "established",
           "citations": [
             {
               "sourceId": "bukhari",
               "locatorStatus": "complete",
-              "hadithNumber": "3662",
-              "grading": {
-                "grade": "sahih",
-                "gradedBy": {
-                  "ar": "البخاري، بإخراجه في صحيحه"
-                }
-              }
+              "hadithNumber": "3662"
             },
             {
               "sourceId": "muslim",
               "locatorStatus": "complete",
-              "hadithNumber": "2384",
-              "grading": {
-                "grade": "sahih",
-                "gradedBy": {
-                  "ar": "مسلم، بإخراجه في صحيحه"
-                }
-              }
+              "hadithNumber": "2384"
             }
-          ],
-          "text": {
-            "ar": "أَىُّ النَّاسِ أَحَبُّ إِلَيْكَ قَالَ ‏\"‏ عَائِشَةُ ‏\"‏‏.‏ فَقُلْتُ مِنَ الرِّجَالِ فَقَالَ ‏\"‏ أَبُوهَا ‏\"‏‏.‏ قُلْتُ ثُمَّ مَنْ قَالَ ‏\"‏ ثُمَّ عُمَرُ بْنُ الْخَطَّابِ"
-          },
-          "summary": {
-            "ar": "حديث عمرو بن العاص لما سأل النبي ﷺ: أي الناس أحب إليك؟ فذكر عائشة، فلما سأله: من الرجال؟ ذكر أباها."
-          }
+          ]
         },
         {
           "type": "paragraph",
@@ -1775,21 +1773,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وكان عمر هو الذي أشار عليه بجمع القرآن خشية أن يذهب بموت القرّاء، فتردّد أبو بكر لأنه أمر لم يفعله النبي ﷺ، ثم شرح الله صدره له، فكلّف زيد بن ثابت، فتتبّع القرآن من الرقاع والعُسُب وصدور الرجال."
-          },
-          "reliability": "established",
-          "citations": [
-            {
-              "sourceId": "bukhari",
-              "locatorStatus": "complete",
-              "hadithNumber": "4986"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "text": {
-            "ar": "وبأمره جُمع القرآن في صحف بعد معركة اليمامة، وتولّى الجمعَ زيد بن ثابت."
+            "ar": "وكان عمر هو الذي أشار عليه بجمع القرآن خشية أن يذهب بموت القرّاء، فتردّد أبو بكر لأنه أمر لم يفعله النبي ﷺ، ثم شرح الله صدره له، فكلّف زيد بن ثابت، فتتبّع القرآن من الرقاع والعُسُب وصدور الرجال، فجُمع في صحف بعد معركة اليمامة."
           },
           "reliability": "established",
           "citations": [

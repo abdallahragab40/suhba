@@ -37,7 +37,7 @@ void main() {
     expect(find.text('رضي الله عنه'), findsOneWidget);
     expect(find.text('أبو بكر، الصديق، العتيق'), findsOneWidget);
     expect(
-      find.text('المدينة المنورة، جمادى الآخرة ١٣ هـ / ٦٣٤ م'),
+      find.text('المدينة المنورة، جمادى الآخرة ١٣\u00a0هـ / ٦٣٤\u00a0م'),
       findsWidgets,
     );
     expect(find.byType(DraftBadge), findsWidgets);
@@ -56,7 +56,7 @@ void main() {
     expect(find.text('٦'), findsWidgets);
 
     // Facts: birth (approximate) and death.
-    expect(find.text('نحو سنة ٥٧٣ م'), findsWidgets);
+    expect(find.text('نحو سنة ٥٧٣\u00a0م'), findsWidgets);
 
     // Biography sections listed by title.
     for (final title in ['النشأة', 'إسلامه', 'صاحبه في الهجرة', 'وفاته']) {
@@ -78,7 +78,7 @@ void main() {
 
     // References with author death years.
     expect(find.text('الإصابة في تمييز الصحابة'), findsOneWidget);
-    expect(find.text('ابن حجر العسقلاني (ت ٨٥٢ هـ)'), findsOneWidget);
+    expect(find.text('ابن حجر العسقلاني (ت ٨٥٢\u00a0هـ)'), findsOneWidget);
   });
 
   testApp('timeline preview is in date order, birth first', (tester) async {
@@ -139,7 +139,13 @@ void main() {
     await tester.tap(hijrahMarker.first);
     await tester.pumpAndSettle();
     expect(find.text('التوبة: ٤٠'), findsOneWidget);
-    expect(find.text('القرآن الكريم'), findsOneWidget);
+    expect(
+      find.descendant(
+        of: find.byType(CitationSheet),
+        matching: find.text('القرآن الكريم'),
+      ),
+      findsOneWidget,
+    );
   });
 
   testApp('a skeleton profile (Talha) renders without sections', (

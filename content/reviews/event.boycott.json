@@ -3,8 +3,8 @@
   "kind": "event",
   "id": "boycott",
   "reviewerId": "suhba-editorial",
-  "approvedAt": "2026-11-20",
-  "contentHash": "1b211c576a46b8a4581634352c157320fdf3579f6ea2697463850beaf1aaee22",
+  "approvedAt": "2026-11-23",
+  "contentHash": "8539809d1a16c548c984c30fa9b3ea890e1e31b7ced3307b981a1985d2f9a48e",
   "checklist": {
     "sourcesMatch": true,
     "gradingsCorrect": true,
@@ -14,5 +14,5 @@
     "fitnaSignOff": true,
     "sensitiveSignOff": true
   },
-  "notes": "Editorial review on the owner's instruction (2026-11-20); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors. Checked: the full text read for accuracy, embellishment, honorifics and the stated reliability; every hadith citation compared with the cited text in content/hadith; Qur'an quotations checked by the validator against the Tanzil text. Not checked: book page locators against the printed editions, and chains of transmission. This is not the approval of a qualified scholar."
+  "notes": "Editorial review on the owner's instruction (2026-11-23); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors, after checking the sources. Participant added: Khadijah, who Ibn Ishaq says was with the Prophet in the shi'b (Ibn Hisham 1/354, checked against the OpenITI transcription of the al-Saqqa edition). Every hadith citation was compared with its text in content/hadith (the pinned dataset), and quoted wording is verbatim from it. Not checked: chains of transmission, and page locators against printed copies. This is not the approval of a qualified scholar."
 }

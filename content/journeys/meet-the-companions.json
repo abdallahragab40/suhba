@@ -257,12 +257,17 @@
       "readings": [
         {
           "type": "companionSection",
-          "targetId": "khadijah.before",
+          "targetId": "khadijah.support",
           "parentId": "khadijah"
         },
         {
           "type": "companionSection",
           "targetId": "khadijah.virtues",
+          "parentId": "khadijah"
+        },
+        {
+          "type": "companionSection",
+          "targetId": "khadijah.loyalty",
           "parentId": "khadijah"
         }
       ],
@@ -270,7 +275,7 @@
         "ar": "كيف تكون المساندة في البيت عونًا على حمل الأمر الكبير؟"
       },
       "framing": {
-        "ar": "تقرأ عن خديجة قبل البعثة، ثم عن فضلها ومكانتها عند النبي ﷺ."
+        "ar": "تقرأ كيف ساندت خديجة النبي ﷺ في مكة، ثم عن فضلها، ثم عن وفائه لها بعد موتها."
       }
     },
     {

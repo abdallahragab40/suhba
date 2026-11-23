@@ -1,3 +1,5 @@
+import 'dart:ui' show lerpDouble;
+
 import 'package:flutter/material.dart';
 import 'package:suhba/core/design_system/tokens/palette.dart';
 
@@ -19,6 +21,7 @@ class SuhbaColors extends ThemeExtension<SuhbaColors> {
     required this.disputed,
     required this.draft,
     required this.draftSurface,
+    this.linkWash = 0.12,
   });
 
   /// Cards and alternate sections.
@@ -61,6 +64,10 @@ class SuhbaColors extends ThemeExtension<SuhbaColors> {
   /// Draft label and banner background.
   final Color draftSurface;
 
+  /// The opacity of the [link]-coloured wash behind a linked glossary term:
+  /// fainter at night, where a gold wash on prose would be loud.
+  final double linkWash;
+
   static const light = SuhbaColors(
     // Cards are lighter than the page, not darker: sheets on paper.
     surfaceAlt: Palette.paperLowest,
@@ -77,31 +84,55 @@ class SuhbaColors extends ThemeExtension<SuhbaColors> {
     draftSurface: Palette.draftWash,
   );
 
+  /// Night: soft gold for accents and links, green-charcoal steps.
   static const dark = SuhbaColors(
     surfaceAlt: Palette.nightAlt,
     onSurfaceDim: Palette.dimOnNight,
     line: Palette.lineOnNight,
-    accent: Palette.goldOnInk,
-    accentText: Palette.goldOnInk,
-    link: Palette.goldOnInk,
+    accent: Palette.goldOnNight,
+    accentText: Palette.goldOnNight,
+    link: Palette.goldOnNight,
     mark: Palette.markOnNight,
     verseSurface: Palette.verseWashOnNight,
     established: Palette.establishedOnInk,
     disputed: Palette.disputedOnInk,
     draft: Palette.dimOnNight,
     draftSurface: Palette.nightHigh,
+    linkWash: 0.07,
   );
 
-  /// The feature sections: dark text roles on Madinah green.
-  static final feature = dark.copyWith(
+  /// The feature sections by day: dark text roles on Madinah green.
+  static const feature = SuhbaColors(
     surfaceAlt: Palette.greenAlt,
     onSurfaceDim: Palette.paperDimOnGreen,
     line: Palette.lineOnGreen,
+    accent: Palette.goldOnInk,
+    accentText: Palette.goldOnInk,
+    link: Palette.goldOnInk,
     mark: Palette.goldOnInk,
     verseSurface: Palette.greenAlt,
     established: Palette.establishedOnGreen,
+    disputed: Palette.disputedOnInk,
     draft: Palette.draftOnGreen,
     draftSurface: Palette.draftWashOnGreen,
+  );
+
+  /// The feature sections at night: the night's text and gold on the
+  /// quieter deep green.
+  static const featureDark = SuhbaColors(
+    surfaceAlt: Palette.deepGreenAlt,
+    onSurfaceDim: Palette.dimOnDeepGreen,
+    line: Palette.lineOnDeepGreen,
+    accent: Palette.goldOnNight,
+    accentText: Palette.goldOnNight,
+    link: Palette.goldOnNight,
+    mark: Palette.goldOnNight,
+    verseSurface: Palette.deepGreenAlt,
+    established: Palette.establishedOnGreen,
+    disputed: Palette.disputedOnInk,
+    draft: Palette.dimOnDeepGreen,
+    draftSurface: Palette.deepGreenAlt,
+    linkWash: 0.07,
   );
 
   static SuhbaColors of(BuildContext context) =>
@@ -121,6 +152,7 @@ class SuhbaColors extends ThemeExtension<SuhbaColors> {
     Color? disputed,
     Color? draft,
     Color? draftSurface,
+    double? linkWash,
   }) {
     return SuhbaColors(
       surfaceAlt: surfaceAlt ?? this.surfaceAlt,
@@ -135,6 +167,7 @@ class SuhbaColors extends ThemeExtension<SuhbaColors> {
       disputed: disputed ?? this.disputed,
       draft: draft ?? this.draft,
       draftSurface: draftSurface ?? this.draftSurface,
+      linkWash: linkWash ?? this.linkWash,
     );
   }
 
@@ -154,6 +187,7 @@ class SuhbaColors extends ThemeExtension<SuhbaColors> {
       disputed: Color.lerp(disputed, other.disputed, t)!,
       draft: Color.lerp(draft, other.draft, t)!,
       draftSurface: Color.lerp(draftSurface, other.draftSurface, t)!,
+      linkWash: lerpDouble(linkWash, other.linkWash, t)!,
     );
   }
 }

@@ -24,18 +24,26 @@
   },
   "death": {
     "date": {
-      "precision": "approx",
+      "precision": "range",
       "era": "afterHijra",
       "hijriYear": 42,
-      "gregorianYear": 662
+      "hijriYearEnd": 53,
+      "gregorianYear": 662,
+      "gregorianYearEnd": 673
     },
-    "reliability": "reported",
+    "reliability": "disputed",
     "citations": [
       {
         "sourceId": "siyar",
         "locatorStatus": "complete",
         "volume": 2,
         "page": "382"
+      },
+      {
+        "sourceId": "siyar",
+        "locatorStatus": "complete",
+        "volume": 2,
+        "page": "397"
       }
     ]
   },
@@ -217,7 +225,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "يذكر الهيثم بن عدي فيما يرويه ابن سعد أنه مات سنة اثنتين وأربعين، وفي سنته وموضعه أقوال أخرى."
+            "ar": "يذكر الهيثم بن عدي فيما يرويه ابن سعد أنه مات سنة اثنتين وأربعين، وقيل سنة أربع وأربعين وصحّحه الذهبي، وقيل غير ذلك إلى سنة ثلاث وخمسين."
           },
           "reliability": "reported",
           "citations": [
@@ -226,6 +234,12 @@
               "locatorStatus": "complete",
               "volume": 2,
               "page": "382"
+            },
+            {
+              "sourceId": "siyar",
+              "locatorStatus": "complete",
+              "volume": 2,
+              "page": "397"
             }
           ]
         }
@@ -287,28 +301,37 @@
       "id": "abu-musa-al-ashari.death",
       "era": "afterProphet",
       "date": {
-        "precision": "approx",
+        "precision": "range",
         "era": "afterHijra",
         "hijriYear": 42,
-        "gregorianYear": 662
+        "hijriYearEnd": 53,
+        "gregorianYear": 662,
+        "gregorianYearEnd": 673
       },
       "title": {
         "ar": "وفاته"
       },
-      "reliability": "reported",
+      "reliability": "disputed",
       "citations": [
         {
           "sourceId": "siyar",
           "locatorStatus": "complete",
           "volume": 2,
           "page": "382"
+        },
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "397"
         }
       ],
       "sectionId": "abu-musa-al-ashari.death"
     }
   ],
   "references": [
-    "siyar"
+    "siyar",
+    "bukhari"
   ],
   "review": {
     "status": "approved",
@@ -368,7 +391,7 @@
     },
     {
       "text": {
-        "ar": "يذكر الهيثم بن عدي فيما يرويه ابن سعد أنه مات سنة اثنتين وأربعين، وفي سنته وموضعه أقوال أخرى."
+        "ar": "يذكر الهيثم بن عدي فيما يرويه ابن سعد أنه مات سنة اثنتين وأربعين، وقيل سنة أربع وأربعين وصحّحه الذهبي، وقيل غير ذلك إلى سنة ثلاث وخمسين."
       },
       "reliability": "reported",
       "citations": [

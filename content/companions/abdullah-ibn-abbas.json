@@ -31,12 +31,14 @@
   },
   "death": {
     "date": {
-      "precision": "approx",
+      "precision": "range",
       "era": "afterHijra",
-      "hijriYear": 68,
-      "gregorianYear": 687
+      "hijriYear": 67,
+      "hijriYearEnd": 68,
+      "gregorianYear": 687,
+      "gregorianYearEnd": 688
     },
-    "reliability": "reported",
+    "reliability": "disputed",
     "citations": [
       {
         "sourceId": "siyar",
@@ -64,6 +66,23 @@
           "locatorStatus": "complete",
           "volume": 3,
           "page": "331"
+        }
+      ]
+    },
+    {
+      "type": "relative",
+      "person": {
+        "displayName": {
+          "ar": "ميمونة بنت الحارث"
+        },
+        "companionId": "maymunah"
+      },
+      "citations": [
+        {
+          "sourceId": "siyar",
+          "locatorStatus": "complete",
+          "volume": 2,
+          "page": "238"
         }
       ]
     }
@@ -98,7 +117,7 @@
         {
           "type": "paragraph",
           "text": {
-            "ar": "وتوفي النبي ﷺ وابن عباس صغير، وكان يذكر أنه توفي وهو ابن عشر سنين وقد قرأ المحكم من القرآن."
+            "ar": "وتوفي النبي ﷺ وابن عباس صغير، وكان يذكر أنه توفي وهو ابن عشر سنين وقد قرأ المحكم من القرآن، وفي رواية أخرى ما يدل على أنه كان قد ناهز الاحتلام."
           },
           "reliability": "established",
           "citations": [
@@ -106,6 +125,16 @@
               "sourceId": "bukhari",
               "locatorStatus": "complete",
               "hadithNumber": "5035"
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "6299"
+            },
+            {
+              "sourceId": "bukhari",
+              "locatorStatus": "complete",
+              "hadithNumber": "76"
             }
           ]
         },
@@ -277,15 +306,17 @@
       "id": "abdullah-ibn-abbas.death",
       "era": "afterProphet",
       "date": {
-        "precision": "approx",
+        "precision": "range",
         "era": "afterHijra",
-        "hijriYear": 68,
-        "gregorianYear": 687
+        "hijriYear": 67,
+        "hijriYearEnd": 68,
+        "gregorianYear": 687,
+        "gregorianYearEnd": 688
       },
       "title": {
         "ar": "وفاته بالطائف"
       },
-      "reliability": "reported",
+      "reliability": "disputed",
       "citations": [
         {
           "sourceId": "siyar",
@@ -298,7 +329,9 @@
     }
   ],
   "references": [
-    "siyar"
+    "siyar",
+    "bukhari",
+    "quran"
   ],
   "review": {
     "status": "approved",

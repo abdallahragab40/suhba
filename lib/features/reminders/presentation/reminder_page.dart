@@ -6,6 +6,7 @@ import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/widgets/brand_loader.dart';
 import 'package:suhba/core/format/display_formatter.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
+import 'package:suhba/features/reminders/data/flutter_reminder_service.dart';
 import 'package:suhba/features/reminders/domain/reading_reminder.dart';
 import 'package:suhba/features/reminders/presentation/reminder_providers.dart';
 
@@ -14,11 +15,13 @@ String reminderTimeLabel(BuildContext context, ReadingReminder settings) {
   return format.timeOfDay(settings.hour, settings.minute);
 }
 
-/// One shared entry, available from Settings and journey overviews.
+/// One shared entry, available from Settings and journey overviews. Not
+/// shown where the platform has no reminder (iOS, for now).
 class ReminderSettingsTile extends ConsumerWidget {
   const ReminderSettingsTile({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    if (!remindersOnThisPlatform) return const SizedBox.shrink();
     final l10n = AppLocalizations.of(context);
     final config =
         ref.watch(reminderProvider).value?.settings ?? const ReadingReminder();

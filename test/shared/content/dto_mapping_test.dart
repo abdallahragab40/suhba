@@ -112,10 +112,7 @@ void main() {
       // Hadith wording is copied from the pinned dataset (V14 checks it);
       // only the printed works' page locators remain.
       // Saqifah and the Ridda (review §4.4).
-      expect(c.review.editorialFlags, {
-        EditorialFlag.needsLocators,
-        EditorialFlag.sensitive,
-      });
+      expect(c.review.editorialFlags, {EditorialFlag.sensitive});
       final quotes = c.sections
           .expand((x) => x.blocks)
           .whereType<HadithQuoteBlock>();

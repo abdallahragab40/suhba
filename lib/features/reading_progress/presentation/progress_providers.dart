@@ -5,6 +5,7 @@ import 'package:suhba/core/design_system/tokens/spacing.dart';
 import 'package:suhba/core/design_system/tokens/suhba_colors.dart';
 import 'package:suhba/core/l10n/generated/app_localizations.dart';
 import 'package:suhba/features/reading_progress/data/drift_reading_progress_repository.dart';
+import 'package:suhba/features/reading_progress/domain/continue_items.dart';
 import 'package:suhba/features/reading_progress/domain/progress_recorder.dart';
 import 'package:suhba/features/reading_progress/domain/reading_progress.dart';
 import 'package:suhba/features/settings/presentation/reading_settings.dart';
@@ -47,6 +48,44 @@ final allProgressProvider = StreamProvider<List<ReadingProgress>>(
 final inProgressProvider = StreamProvider<List<ReadingProgress>>(
   (ref) => ref.watch(readingProgressRepositoryProvider).watchInProgress(),
 );
+
+/// Where reading can be picked up, most recent first: unfinished passages,
+/// and the next passage of each work read in part (see [continueItems]).
+/// A work whose content fails to load offers no next passage; its
+/// unfinished passages are still listed.
+final continueReadingProvider = FutureProvider.autoDispose<List<ContinueItem>>((
+  ref,
+) async {
+  final all = await ref.watch(allProgressProvider.future);
+  final orders = <(ProgressTarget, String), List<String>>{};
+  for (final work in worksNeedingOrder(all)) {
+    try {
+      orders[work] = await _readingOrder(ref, work);
+    } on Object {
+      // Left out: see above.
+    }
+  }
+  return continueItems(all, (target, parentId) => orders[(target, parentId)]);
+});
+
+/// The passages of a work in reading order.
+Future<List<String>> _readingOrder(
+  Ref ref,
+  (ProgressTarget, String) work,
+) async => switch (work) {
+  (ProgressTarget.section, final id) => [
+    for (final s in (await ref.watch(companionProvider(id).future)).sections)
+      s.id,
+  ],
+  (ProgressTarget.chapter, final id) => [
+    for (final c in (await ref.watch(storyProvider(id).future)).chapters) c.id,
+  ],
+  (ProgressTarget.seerahChapter, _) => [
+    for (final c in (await ref.watch(seerahIndexProvider.future)).chapters)
+      c.id,
+  ],
+  (ProgressTarget.seerahTopic, _) => const <String>[],
+};
 
 /// A [ReaderScaffold] that restores the saved position on open and records
 /// the reader's progress (batched, and flushed when leaving or when the app

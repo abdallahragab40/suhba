@@ -3,8 +3,8 @@
   "kind": "event",
   "id": "umrat-al-qada",
   "reviewerId": "suhba-editorial",
-  "approvedAt": "2026-11-20",
-  "contentHash": "ed261a16d0503fb38f99e081a554af7a5ca05144a7d977679afcd8b0b9dbc2ae",
+  "approvedAt": "2026-11-23",
+  "contentHash": "c51e385698489f656b745646165c72f3a03c4c75a90ed4d3daf801e24bc9ddd2",
   "checklist": {
     "sourcesMatch": true,
     "gradingsCorrect": true,
@@ -14,5 +14,5 @@
     "fitnaSignOff": true,
     "sensitiveSignOff": true
   },
-  "notes": "Editorial review on the owner's instruction (2026-11-20); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors. Checked: the full text read for accuracy, embellishment, honorifics and the stated reliability; every hadith citation compared with the cited text in content/hadith; Qur'an quotations checked by the validator against the Tanzil text. Not checked: book page locators against the printed editions, and chains of transmission. This is not the approval of a qualified scholar."
+  "notes": "Editorial review on the owner's instruction (2026-11-23); the owner decided the app will have no scholarly reviewer. Done by Claude, an AI model, for the app's editors, after checking the sources. Participant added: Maymunah bint al-Harith, whom the Prophet married when he finished this umrah (Siyar 2/239, checked against the OpenITI transcription of the Risala edition). Every hadith citation was compared with its text in content/hadith (the pinned dataset), and quoted wording is verbatim from it. Not checked: chains of transmission, and page locators against printed copies. This is not the approval of a qualified scholar."
 }

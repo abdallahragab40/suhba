@@ -15,6 +15,7 @@ void main() {
     WidgetTester tester, {
     String location = '/seerah',
     int finished = 0,
+    double partFirst = 0,
   }) async {
     tester.view
       ..devicePixelRatio = 1
@@ -37,6 +38,21 @@ void main() {
             ),
           );
     }
+    if (partFirst > 0) {
+      await app.container
+          .read(readingProgressRepositoryProvider)
+          .save(
+            ReadingProgress(
+              target: ProgressTarget.seerahChapter,
+              targetId: index.chapters.first.id,
+              parentId: seerahParentId,
+              fraction: partFirst,
+              completed: false,
+              contentVersion: '1',
+              updatedAt: DateTime(2026, 10, 9),
+            ),
+          );
+    }
     await app.pump(tester);
     return app;
   }
@@ -50,6 +66,17 @@ void main() {
     expect(find.semantics.byLabel('لم تبدأ بعد'), findsOne);
     expect(find.text('ابدأ السيرة'), findsOneWidget);
   });
+
+  // A chapter part-read is a start: never «لم تبدأ بعد» above «تابع: …».
+  for (final location in ['/seerah', '/home']) {
+    testApp('a chapter part-read reads as started ($location)', (tester) async {
+      await open(tester, location: location, partFirst: 0.61);
+      expect(ringValue(tester), 0);
+      expect(find.semantics.byLabel('بدأتَ القراءة'), findsOne);
+      expect(find.semantics.byLabel('لم تبدأ بعد'), findsNothing);
+      expect(find.text('تابع: مكة والنسب والمولد'), findsOneWidget);
+    });
+  }
 
   testApp('chapters read out of all, in words', (tester) async {
     await open(tester, finished: 3);
