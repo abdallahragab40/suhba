@@ -129,7 +129,7 @@ void main() {
     await close(tester, app);
     app = await launch(tester);
 
-    await tab(tester, 'المحفوظات');
+    await tab(tester, 'مكتبتي');
     expect(find.text('أبو بكر الصديق رضي الله عنه'), findsOneWidget);
     expect(find.text('تابع القراءة'), findsOneWidget);
     expect(find.text('فضائله'), findsOneWidget);
@@ -212,6 +212,9 @@ void main() {
 
     // Home offers the chapter again, and it opens where it was left.
     expect(find.text('تابع: الهجرة إلى المدينة'), findsOneWidget);
+    // On a short screen it can sit under the destination bar.
+    await tester.ensureVisible(find.text('تابع: الهجرة إلى المدينة'));
+    await tester.pumpAndSettle();
     await tester.tap(find.text('تابع: الهجرة إلى المدينة'));
     await tester.pumpAndSettle();
     expect(find.byType(SeerahChapterPage), findsOneWidget);
@@ -220,7 +223,10 @@ void main() {
       greaterThan(0),
     );
 
-    await tab(tester, 'المحفوظات');
+    // The reader covers the destination bar: go back to reach it.
+    await tester.binding.handlePopRoute();
+    await tester.pumpAndSettle();
+    await tab(tester, 'مكتبتي');
     expect(find.text('من فصول السيرة'), findsOneWidget);
     await close(tester, app);
   });
@@ -243,7 +249,7 @@ void main() {
       ),
     );
     await tester.pumpAndSettle();
-    expect(find.text('أبو حفص · الفاروق'), findsOneWidget);
+    expect(find.text('أبو حفص، الفاروق'), findsOneWidget);
     await close(tester, app);
   });
 
@@ -263,8 +269,8 @@ void main() {
     await tester.tap(find.text('أبو بكر الصديق'));
     await tester.pumpAndSettle();
     expect(
-      find.text('المدينة المنورة · جمادى الآخرة 13 هـ / 634 م'),
-      findsOneWidget,
+      find.text('المدينة المنورة، جمادى الآخرة 13\u00a0هـ / 634\u00a0م'),
+      findsWidgets,
     );
     await close(tester, app);
   });
